@@ -481,7 +481,7 @@ function init_gear_sets()
             name = "Moonshade Earring",
             augments = {'Accuracy+4', 'TP Bonus +250'}
         },
-        left_ring = "Karieyh Ring",
+        left_ring = "Cornelia's Ring",
         right_ring = "Niqmaddu Ring",
         back = {
             name = "Ankou's Mantle",
@@ -509,7 +509,7 @@ function init_gear_sets()
             name = "Moonshade Earring",
             augments = {'Accuracy+4', 'TP Bonus +250'}
         },
-        left_ring = "Karieyh Ring",
+        left_ring = "Corneilia's Ring",
         right_ring = "Niqmaddu Ring",
         back = {
             name = "Ankou's Mantle",
@@ -537,7 +537,7 @@ function init_gear_sets()
             name = "Moonshade Earring",
             augments = {'Accuracy+4', 'TP Bonus +250'}
         },
-        left_ring = "Karieyh Ring",
+        left_ring = "Cornelia's Ring",
         right_ring = "Niqmaddu Ring",
         back = {
             name = "Ankou's Mantle",

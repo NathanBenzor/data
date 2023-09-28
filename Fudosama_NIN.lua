@@ -407,7 +407,7 @@ function init_gear_sets()
         },
         right_ear = "Lugra Earring +1",
         left_ring = "Ilabrat Ring",
-        right_ring = "Karieyh Ring",
+        right_ring = "Cornelia's Ring",
         back = {
             name = "Andartia's Mantle",
             augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%'}
