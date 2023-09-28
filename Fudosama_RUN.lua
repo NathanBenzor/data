@@ -853,10 +853,7 @@ function init_gear_sets()
         head = "Erilaz Galea +3",
         body = "Erilaz Surcoat +3",
         hands = "Erilaz Gauntlets +3",
-        legs = {
-            name = "Carmine Cuisses +1",
-            augments = {'Accuracy+20', 'Attack+12', '"Dual Wield"+6'}
-        },
+        legs = "Erilaz Leg Guards +3",
         feet = "Erilaz Greaves +3",
         neck = "Warder's Charm +1",
         waist = "Plat. Mog. Belt",
@@ -974,10 +971,7 @@ function init_gear_sets()
         head = "Erilaz Galea +3",
         body = "Erilaz Surcoat +3",
         hands = "Regal Gauntlets",
-        legs = {
-            name = "Carmine Cuisses +1",
-            augments = {'Accuracy+20', 'Attack+12', '"Dual Wield"+6'}
-        },
+        legs = "Erilaz Leg Guards +3",
         feet = "Erilaz Greaves +3",
         neck = "Futhark Torque +1",
         waist = "Plat. Mog. Belt",
@@ -986,7 +980,7 @@ function init_gear_sets()
             name = "Odnowa Earring +1",
             augments = {'Path: A'}
         },
-        left_ring = "Defending Ring",
+        left_ring = "Shneddick Ring",
         right_ring = "Moonlight Ring",
         back = {
             name = "Ogma's Cape",
@@ -995,7 +989,7 @@ function init_gear_sets()
     })
 
     sets.Kiting = {
-        legs = "Carmine Cuisses +1"
+        left_ring = "Shneddick Ring"
     }
 
     ------------------------------------------------------------------------------------------------

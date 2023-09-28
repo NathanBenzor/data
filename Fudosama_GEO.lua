@@ -479,7 +479,7 @@ function init_gear_sets()
 
     sets.midcast.MndEnfeebles = {
         main = "Daybreak",
-        -- sub = "Ammurapi Shield",
+        sub = "Culminus",
         head = "Geo. Galero +1",
         body = "Jhakri Robe +2",
         hands = "Geo. Mitaines +2",
@@ -547,7 +547,7 @@ function init_gear_sets()
     sets.midcast['Elemental Magic'] = {
         ammo = "Ghastly Tathlum +1", -- 8/8
         main = "Bunzi's Rod",
-        -- sub = "Enki Strap",
+        sub = "Culminus", -- 5/0
         head = "Azi. Hood +2",
         body = "Agwu's Robe",
         hands = "Agwu's Gages",
@@ -626,7 +626,7 @@ function init_gear_sets()
         waist = "Fucho-no-Obi",
         left_ear = "Infused Earring",
         right_ear = "Genmei Earring",
-        left_ring = "Stikini Ring +1",
+        left_ring = "Shneddick Ring",
         right_ring = "Stikini Ring +1",
         back = {
             name = "Nantosuelta's Cape",
@@ -733,7 +733,7 @@ function init_gear_sets()
             name = "Azimuth Earring +1",
             augments = {'System: 1 ID: 1676 Val: 0', 'Mag. Acc.+14', 'Damage taken-5%'}
         },
-        left_ring = "Stikini Ring +1",
+        left_ring = "Shneddick Ring",
         right_ring = "Stikini Ring +1",
         back = {
             name = "Nantosuelta's Cape",

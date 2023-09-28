@@ -840,30 +840,7 @@ function init_gear_sets()
 
     -- Idle sets
     sets.idle = {
-        -- main={ name="Heishi Shorinken", augments={'Path: A',}},
-        -- sub="Kunimitsu",
         ammo = "Seki Shuriken",
-        head = "Malignance Chapeau",
-        body = "Mpaca's Doublet",
-        hands = "Malignance Gloves",
-        legs = "Mpaca's Hose",
-        feet = "Danzo Sune-Ate",
-        neck = {
-            name = "Loricate Torque +1",
-            augments = {'Path: A'}
-        },
-        waist = "Plat. Mog. Belt",
-        left_ear = "Telos Earring",
-        right_ear = "Cessance Earring",
-        left_ring = "Defending Ring",
-        right_ring = "Regal Ring",
-        back = {
-            name = "Andartia's Mantle",
-            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%'}
-        }
-    }
-
-    sets.idle.DT = set_combine(sets.idle, {
         head = {
             name = "Nyame Helm",
             augments = {'Path: B'}
@@ -884,19 +861,6 @@ function init_gear_sets()
             name = "Nyame Sollerets",
             augments = {'Path: B'}
         },
-        waist = "Plat. Mog. Belt",
-        neck = "Warder's Charm +1",
-        ear1 = "Etiolation Earring",
-        ring1 = "Purity Ring", -- 0/4
-        ring2 = "Defending Ring", -- 10/10
-        back = "Moonlight Cape" -- 6/6
-    })
-
-    sets.idle.Town = set_combine(sets.idle, {
-        head = "Malignance Chapeau",
-        body = "Mpaca's Doublet",
-        hands = "Malignance Gloves",
-        feet = "Danzo Sune-Ate",
         neck = {
             name = "Loricate Torque +1",
             augments = {'Path: A'}
@@ -904,7 +868,59 @@ function init_gear_sets()
         waist = "Plat. Mog. Belt",
         left_ear = "Telos Earring",
         right_ear = "Cessance Earring",
-        left_ring = "Gere Ring",
+        left_ring = "Shneddick Ring",
+        right_ring = "Regal Ring",
+        back = {
+            name = "Andartia's Mantle",
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%'}
+        }
+    }
+
+    sets.idle.DT = set_combine(sets.idle, {
+        ammo = "Staunch Tathlum +1",
+        head = {
+            name = "Nyame Helm",
+            augments = {'Path: B'}
+        },
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
+        neck = "Warder's Charm +1",
+        waist = "Plat. Mog. Belt",
+        left_ear = "Eabani Earring",
+        right_ear = "Etiolation Earring",
+        left_ring = "Shneddick Ring",
+        right_ring = "Regal Ring",
+        back = "Moonbeam Cape"
+    })
+
+    sets.idle.Town = set_combine(sets.idle, {
+        head = "Malignance Chapeau",
+        body = "Mpaca's Doublet",
+        hands = "Malignance Gloves",
+        legs = "Mpaca's Hose",
+        feet = "Malignance Boots",
+        neck = {
+            name = "Loricate Torque +1",
+            augments = {'Path: A'}
+        },
+        waist = "Plat. Mog. Belt",
+        left_ear = "Telos Earring",
+        right_ear = "Cessance Earring",
+        left_ring = "Shneddick Ring",
         right_ring = "Regal Ring",
         back = {
             name = "Andartia's Mantle",

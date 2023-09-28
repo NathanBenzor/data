@@ -937,7 +937,7 @@ function init_gear_sets()
             augments = {'Path: A'}
         },
         legs = "Sakpata's Cuisses",
-        feet = "Hermes' Sandals",
+        feet = "Sakpata's Leggings",
         neck = {
             name = "War. Beads +2",
             augments = {'Path: A'}
@@ -954,7 +954,7 @@ function init_gear_sets()
             augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+9', 'Mag. Acc.+9'}
         },
         left_ring = "Moonlight Ring",
-        right_ring = "Niqmaddu Ring",
+        right_ring = "Shneddick Ring",
         back = {
             name = "Cichol's Mantle",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
@@ -970,7 +970,7 @@ function init_gear_sets()
         body = "Boii Lorica +3",
         hands = "Boii Mufflers +3",
         legs = "Boii Cuisses +3",
-        feet = "Hermes' Sandals",
+        feet = "Pumm. Calligae +3",
         neck = {
             name = "War. Beads +2",
             augments = {'Path: A'}
@@ -990,7 +990,7 @@ function init_gear_sets()
             augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+9', 'Mag. Acc.+9'}
         },
         left_ring = "Regal Ring",
-        right_ring = "Niqmaddu Ring",
+        right_ring = "Shneddick Ring",
         back = {
             name = "Cichol's Mantle",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}

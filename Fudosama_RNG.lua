@@ -756,8 +756,8 @@ function init_gear_sets()
             augments = {'Path: B'}
         },
         legs = {
-            name = "Carmine Cuisses +1",
-            augments = {'Accuracy+20', 'Attack+12', '"Dual Wield"+6'}
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
         },
         feet = {
             name = "Nyame Sollerets",
@@ -773,10 +773,7 @@ function init_gear_sets()
             augments = {'Path: A'}
         },
         right_ear = "Infused Earring",
-        left_ring = {
-            name = "Gelatinous Ring +1",
-            augments = {'Path: A'}
-        },
+        left_ring = "Shneddick Ring",
         right_ring = "Defending Ring",
         back = {
             name = "Belenus's Cape",
@@ -798,8 +795,8 @@ function init_gear_sets()
             augments = {'Path: B'}
         },
         legs = {
-            name = "Carmine Cuisses +1",
-            augments = {'Accuracy+20', 'Attack+12', '"Dual Wield"+6'}
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
         },
         feet = {
             name = "Nyame Sollerets",
@@ -830,18 +827,18 @@ function init_gear_sets()
     sets.idle.Town = set_combine(sets.idle, {
         head = "Amini Gapette +2",
         body = "Amini Caban +2",
-        hands = "Amini Glovelettes +2",
-        legs = {
-            name = "Carmine Cuisses +1",
-            augments = {'Accuracy+20', 'Attack+12', '"Dual Wield"+6'}
-        },
+        hands = "Amini Glove. +2",
+        legs = "Amini Bragues +2",
         feet = "Amini Bottillons +2",
-        neck = "Scout's Gorget +2",
+        neck = {
+            name = "Scout's Gorget +2",
+            augments = {'Path: A'}
+        },
         waist = "Yemaya Belt",
         left_ear = "Dedition Earring",
         right_ear = "Telos Earring",
         left_ring = "Regal Ring",
-        right_ring = "Ilabrat Ring",
+        right_ring = "Shneddick Ring",
         back = {
             name = "Belenus's Cape",
             augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'Rng.Acc.+10', '"Store TP"+10', 'Phys. dmg. taken-10%'}

@@ -834,10 +834,7 @@ function init_gear_sets()
         head = "Hjarrandi Helm",
         body = "Heath. Cuirass +2",
         hands = "Sakpata's Gauntlets",
-        legs = {
-            name = "Carmine Cuisses +1",
-            augments = {'Accuracy+20', 'Attack+12', '"Dual Wield"+6'}
-        },
+        legs = "Heath. Flanchard +2",
         feet = {
             name = "Sakpata's Leggings",
             augments = {'Path: A'}
@@ -850,7 +847,7 @@ function init_gear_sets()
         left_ear = "Cessance Earring",
         right_ear = "Telos Earring",
         left_ring = "Moonlight Ring",
-        right_ring = "Niqmaddu Ring",
+        right_ring = "Shneddick Ring",
         back = {
             name = "Ankou's Mantle",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
@@ -875,10 +872,7 @@ function init_gear_sets()
         head = "Heathen's Burgeonet +3",
         body = "Heath. Cuirass +2",
         hands = "Sakpata's Gauntlets",
-        legs = {
-            name = "Carmine Cuisses +1",
-            augments = {'Accuracy+20', 'Attack+12', '"Dual Wield"+6'}
-        },
+        legs = "Heath. Flanchard +2",
         feet = "Heathen's Sollerets +3",
         neck = {
             name = "Abyssal Beads +2",
@@ -892,7 +886,7 @@ function init_gear_sets()
             augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+13', 'Mag. Acc.+13', 'Weapon skill damage +2%'}
         },
         left_ring = "Regal Ring",
-        right_ring = "Niqmaddu Ring",
+        right_ring = "Shneddick Ring",
         back = {
             name = "Ankou's Mantle",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
