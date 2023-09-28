@@ -1006,16 +1006,9 @@ function init_gear_sets()
         body = "Boii Lorica +3",
         hands = "Sakpata's Gauntlets",
         legs = "Sakpata's Cuisses",
-        feet = "Hermes' Sandals",
-        neck = {
-            name = "War. Beads +2",
-            augments = {'Path: A'}
-        },
-        -- waist = "Ioskeha Belt +1",
-        waist = {
-            name = "Sailfi Belt +1",
-            augments = {'Path: A'}
-        },
+        feet = "Sakpata's Leggings",
+        neck = "Bathy Choker +1",
+        waist = "Plat. Mog. Belt",
         left_ear = {
             name = "Schere Earring",
             augments = {'Path: A'}
@@ -1025,7 +1018,7 @@ function init_gear_sets()
             augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+9', 'Mag. Acc.+9'}
         },
         left_ring = "Moonlight Ring",
-        right_ring = "Niqmaddu Ring",
+        right_ring = "Shneddick Ring",
         back = {
             name = "Cichol's Mantle",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
