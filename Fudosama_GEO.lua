@@ -73,7 +73,7 @@ function job_setup()
         ['Aspirs'] = {'Aspir', 'Aspir II', 'Aspir III'}
     }
 
-    lockstyleset = 196
+    lockstyleset = 193
 
 end
 
@@ -553,7 +553,7 @@ function init_gear_sets()
         hands = "Agwu's Gages",
         legs = "Agwu's Slops",
         feet = "Azi. Gaiters +2",
-        neck = "Sybil Scarf",
+        neck = "Mizu. Kubikazari",
         ear1 = "Malignance Earring",
         ear2 = "Regal Earring",
         ring1 = "Freke Ring",
