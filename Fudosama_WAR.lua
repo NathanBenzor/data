@@ -573,13 +573,20 @@ function init_gear_sets()
             name = "Agoge Mask +3",
             augments = {'Enhances "Savagery" effect'}
         },
-        body = "Pumm. Lorica +3",
-        hands = {
-            name = "Sakpata's Gauntlets",
-            augments = {'Path: A'}
+        -- body = "Pumm. Lorica +3",
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
         },
-        legs = "Sakpata's Cuisses",
-        feet = "Sulev. Leggings +2",
+        -- hands = {
+        --     name = "Sakpata's Gauntlets",
+        --     augments = {'Path: A'}
+        -- },\
+        hands = "Boii Mufflers +3",
+        -- legs = "Sakpata's Cuisses",
+        legs = "Boii Cuisses +3",
+        -- feet = "Sulev. Leggings +2",
+        feet = "Boii Calligae +3",
         neck = {
             name = "War. Beads +2",
             augments = {'Path: A'}
