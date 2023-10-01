@@ -439,7 +439,7 @@ function init_gear_sets()
         left_ear = "Ishvara Earring",
         right_ear = "Regal Earring",
         right_ring = "Cornelia's Ring",
-        right_ring = {
+        left_ring = {
             name = "Metamor. Ring +1",
             augments = {'Path: A'}
         },

@@ -1106,7 +1106,7 @@ function init_gear_sets()
         neck = "Erra Pendant",
         ear1 = "Malignance Earring",
         ear2 = "Regal Earring",
-        left_ring = "Stikini Ring +1",
+        right_ring = "Stikini Ring +1",
         left_ring = {
             name = "Metamor. Ring +1",
             augments = {'Path: A'}
