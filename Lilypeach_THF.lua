@@ -74,7 +74,7 @@ function job_setup()
     state.Ambush = M(false, 'Ambush')
     -- state.CP = M(false, "Capacity Points Mode")
 
-    lockstyleset = 1
+    lockstyleset = 180
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -90,8 +90,8 @@ function user_setup()
     state.IdleMode:options('Normal', 'DT', 'Refresh')
 
     -- Additional local binds
-    include('Global-Binds.lua') -- OK to remove this line
-    include('Global-GEO-Binds.lua') -- OK to remove this line
+    -- include('Global-Binds.lua') -- OK to remove this line
+    -- include('Global-GEO-Binds.lua') -- OK to remove this line
 
     send_command('bind ^` gs c cycle treasuremode')
     send_command('bind !` input /ja "Flee" <me>')
