@@ -388,17 +388,30 @@ function init_gear_sets()
 
     sets.precast.WS['Jishnu\'s Radiance'] = set_combine(sets.precast.WS, {
         head = "Orion Beret +3",
-        body = "Amini Caban +2",
-        hands = "Amini Glove. +2",
+        -- body = "Amini Caban +2",
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
+        -- hands = "Amini Glove. +2",
         legs = {
             name = "Nyame Flanchard",
             augments = {'Path: B'}
         },
-        feet = "Amini Bottillons +2",
-        neck = {
-            name = "Scout's Gorget +2",
-            augments = {'Path: A'}
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
         },
+        -- feet = "Amini Bottillons +2",
+        neck = "Fotia Gorget",
+        -- neck = {
+        --     name = "Scout's Gorget +2",
+        --     augments = {'Path: A'}
+        -- },
         waist = "Fotia Belt",
         left_ear = "Odr Earring",
         right_ear = {

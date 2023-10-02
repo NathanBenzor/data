@@ -162,7 +162,10 @@ function init_gear_sets()
 
     -- Precast sets to enhance JAs
     sets.precast.JA.Bolster = {
-        body = "Bagua Tunic +1"
+        body = {
+            name = "Bagua Tunic +3",
+            augments = {'Enhances "Bolster" effect'}
+        }
     }
     sets.precast.JA['Full Circle'] = {
         head = "Azimuth Hood +2"
@@ -306,7 +309,7 @@ function init_gear_sets()
         },
         head = "Azimuth Hood +2",
         body = {
-            name = "Bagua Tunic +2",
+            name = "Bagua Tunic +3",
             augments = {'Enhances "Bolster" effect'}
         },
         hands = "Geo. Mitaines +2",
@@ -336,12 +339,12 @@ function init_gear_sets()
         },
         head = "Azimuth Hood +2",
         body = {
-            name = "Bagua Tunic +2",
+            name = "Bagua Tunic +3",
             augments = {'Enhances "Bolster" effect'}
         },
         hands = "Geo. Mitaines +2",
         legs = {
-            name = "Bagua Pants +2",
+            name = "Bagua Pants +3",
             augments = {'Enhances "Mending Halation" effect'}
         },
         feet = "Azimuth Gaiters +2",
@@ -722,9 +725,15 @@ function init_gear_sets()
             augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
         },
         head = "Azimuth Hood +2",
-        body = "Azimuth Coat +2",
+        body = {
+            name = "Bagua Tunic +3",
+            augments = {'Enhances "Bolster" effect'}
+        },
         hands = "Geomancy Mitaines +2",
-        legs = "Bagua Pants +2",
+        legs = {
+            name = "Bagua Pants +3",
+            augments = {'Enhances "Mending Halation" effect'}
+        },
         feet = "Azimuth Gaiters +2",
         neck = "Incanter's Torque",
         waist = "Isa Belt",

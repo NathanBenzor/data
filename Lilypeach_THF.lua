@@ -399,7 +399,7 @@ function init_gear_sets()
         body = "Tu. Harness +1",
         hands = "Turms Mittens +1",
         legs = "Turms Subligar +1",
-        feet = "Turms Leggings +1",
+        feet = "Jute Boots +1",
         neck = "Bathy Choker +1",
         ear1 = "Eabani Earring",
         ear2 = "Sanare Earring",
@@ -447,7 +447,9 @@ function init_gear_sets()
         ear1 = "Sherida Earring",
         ear2 = "Telos Earring",
         back = gear.THF_TP_Cape,
-        waist = "Windbuffet Belt +1"
+        waist = "Windbuffet Belt +1",
+        feet = "Jute Boots +1"
+
     })
 
     ------------------------------------------------------------------------------------------------
@@ -476,7 +478,11 @@ function init_gear_sets()
         head = "Plun. Bonnet +3",
         body = gear.Adhemar_B_body,
         hands = gear.Adhemar_A_hands,
-        legs = "Samnuha Tights",
+        legs = {
+            name = "Herculean Trousers",
+            augments = {'"Fast Cast"+2', 'Phys. dmg. taken -1%', '"Treasure Hunter"+1', 'Accuracy+12 Attack+12',
+                        'Mag. Acc.+1 "Mag.Atk.Bns."+1'}
+        },
         feet = "Plun. Poulaines +3",
         neck = "Asn. Gorget +2",
         ear1 = "Sherida Earring",
