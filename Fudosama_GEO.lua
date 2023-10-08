@@ -287,16 +287,16 @@ function init_gear_sets()
 
     -- Base fast recast for spells
     sets.midcast.FastRecast = {
-        main = "Sucellus",
-        sub = "Chanter's Shield",
+        -- main = "Sucellus",
+        -- sub = "Chanter's Shield",
         head = "Amalric Coif +1",
-        hands = gear.Merl_FC_hands,
+        -- hands = gear.Merl_FC_hands,
         legs = "Geomancy Pants +1",
         ear1 = "Malignance Earring",
         ear2 = "Etiolation Earring",
         ring1 = "Kishar Ring",
         ring2 = "Weather. Ring +1",
-        back = gear.GEO_FC_Cape,
+        -- back = gear.GEO_FC_Cape,
         waist = "Shinjutsu-no-Obi +1"
     } -- Haste
 
@@ -313,7 +313,10 @@ function init_gear_sets()
             augments = {'Enhances "Bolster" effect'}
         },
         hands = "Geo. Mitaines +2",
-        legs = "BAgua Pants +2",
+        legs = {
+            name = "Bagua Pants +3",
+            augments = {'Enhances "Mending Halation" effect'}
+        },
         feet = "Azimuth Gaiters +2",
         neck = "Incanter's Torque",
         waist = "Austerity Belt +1",
@@ -481,8 +484,8 @@ function init_gear_sets()
     sets.midcast.Shellra = sets.midcast.Protect
 
     sets.midcast.MndEnfeebles = {
-        main = "Daybreak",
-        sub = "Culminus",
+        -- main = "Daybreak",
+        -- sub = "Culminus",
         head = "Geo. Galero +1",
         body = "Jhakri Robe +2",
         hands = "Geo. Mitaines +2",
@@ -493,8 +496,8 @@ function init_gear_sets()
         right_ear = "Regal Earring",
         ring1 = "Kishar Ring",
         ring2 = "Stikini Ring +1",
-        back = "Aurist's Cape +1",
-        waist = "Luminary Sash"
+        back = "Aurist's Cape +1"
+        -- waist = "Luminary Sash"
     } -- MND/Magic accuracy
 
     sets.midcast.IntEnfeebles = set_combine(sets.midcast.MndEnfeebles, {

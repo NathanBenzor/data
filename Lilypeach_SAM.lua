@@ -128,7 +128,7 @@ function user_setup()
 
     -- Load Gearinfo/Dressup Lua
 
-    send_command('wait 3; lua l gearinfo')
+    -- send_command('wait 3; lua l gearinfo')
     send_command('wait 10; lua l Dressup')
 
     -- Global Samurai binds (^ = CTRL)(! = ALT)(@ = Windows key)(~ = Shift)(# = Apps key)
