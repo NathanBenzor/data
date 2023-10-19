@@ -322,10 +322,6 @@ function init_gear_sets()
             name = "Nyame Gauntlets",
             augments = {'Path: B'}
         },
-        -- legs = {
-        --     name = "Fall. Flanchard +3",
-        --     augments = {'Enhances "Muted Soul" effect'}
-        -- },
         legs = {
             name = "Nyame Flanchard",
             augments = {'Path: B'}
@@ -335,22 +331,21 @@ function init_gear_sets()
             name = "Abyssal Beads +2",
             augments = {'Path: A'}
         },
-        -- waist = "Fotia Belt",
-        waist = {
-            name = "Sailfi Belt +1",
-            augments = {'Path: A'}
-        },
+        waist = "Fotia Belt",
+        -- waist = {
+        --     name = "Sailfi Belt +1",
+        --     augments = {'Path: A'}
+        -- },
         left_ear = {
             name = "Moonshade Earring",
             augments = {'Accuracy+4', 'TP Bonus +250'}
         },
-        -- right_ear = "Thrud Earring",
         right_ear = {
             name = "Heath. Earring +1",
             augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+13', 'Mag. Acc.+13', 'Weapon skill damage +2%'}
         },
         left_ring = "Regal Ring",
-        right_ring = "Cornelia's Ring",
+        right_ring = "Niqmaddu Ring",
         back = {
             name = "Ankou's Mantle",
             augments = {'VIT+20', 'Accuracy+20 Attack+20', 'VIT+10', 'Weapon skill damage +10%', 'Damage taken-5%'}
@@ -466,16 +461,28 @@ function init_gear_sets()
 
     sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
         ammo = "Knobkierrie",
-        head = "Sakpata's Helm",
-        body = "Ignominy Cuirass +3",
-        hands = "Sakpata's Gauntlets",
-        legs = "Heathe. Flanchard +1",
+        head = {
+            name = "Nyame Helm",
+            augments = {'Path: B'}
+        },
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
+        legs = {
+            name = "Nya. Flanchard",
+            augments = {'Path: B'}
+        },
         feet = "Heathen's Sollerets +3",
         neck = {
             name = "Abyssal Beads +2",
             augments = {'Path: A'}
         },
-        waist = "Fotia Belt",
+        waist = "Sailfi Belt +1",
         left_ear = "Thrud Earring",
         right_ear = {
             name = "Moonshade Earring",
@@ -803,7 +810,7 @@ function init_gear_sets()
     sets.midcast['Dread Spikes'] = set_combine(sets.midcast['Dark Magic'], {
         ammo = "Impatiens",
         head = "Ratri Sallet",
-        body = "Heathen's Cuirass +2",
+        body = "Heathen's Cuirass +3",
         hands = "Ratri Gadlings",
         legs = "Ratri Cuisses",
         feet = "Ratri Sollerets",
@@ -870,7 +877,7 @@ function init_gear_sets()
             augments = {'Path: A'}
         },
         head = "Heathen's Burgeonet +3",
-        body = "Heath. Cuirass +2",
+        body = "Heath. Cuirass +3",
         hands = "Sakpata's Gauntlets",
         legs = "Heath. Flanchard +2",
         feet = "Heathen's Sollerets +3",

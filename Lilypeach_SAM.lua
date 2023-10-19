@@ -419,7 +419,7 @@ function init_gear_sets()
             name = "Sakonji Domaru +3",
             augments = {'Enhances "Overwhelm" effect'}
         },
-        hands = "Kasuga Kote +2",
+        hands = "Kasuga Kote +3",
         legs = "Wakido Haidate +3",
         feet = {
             name = "Nyame Sollerets",

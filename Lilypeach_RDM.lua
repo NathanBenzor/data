@@ -96,7 +96,7 @@ function job_setup()
     -- Unblinkable JA IDs for actions that always have TH: Quick/Box/Stutter Step, Desperate/Violent Flourish
     info.default_u_ja_ids = S {201, 202, 203, 205, 207}
 
-    lockstyleset = 12
+    lockstyleset = 180
 end
 
 -------------------------------------------------------------------------------------------------------------------

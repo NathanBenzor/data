@@ -893,10 +893,11 @@ function init_gear_sets()
             name = "Odnowa Earring +1",
             augments = {'Path: A'}
         },
-        left_ring = {
-            name = "Gelatinous Ring +1",
-            augments = {'Path: A'}
-        },
+        -- left_ring = {
+        --     name = "Gelatinous Ring +1",
+        --     augments = {'Path: A'}
+        -- },
+        left = "Shneddick Ring",
         right_ring = "Moonlight Ring",
         back = {
             name = "Ogma's Cape",
