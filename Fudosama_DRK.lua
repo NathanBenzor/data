@@ -850,7 +850,7 @@ function init_gear_sets()
             name = "Abyssal Beads +2",
             augments = {'Path: A'}
         },
-        waist = "Ioskeha Belt +1",
+        waist = "Plat. Mog. Belt",
         left_ear = "Cessance Earring",
         right_ear = "Telos Earring",
         left_ring = "Moonlight Ring",
@@ -885,7 +885,7 @@ function init_gear_sets()
             name = "Abyssal Beads +2",
             augments = {'Path: A'}
         },
-        waist = "Ioskeha Belt +1",
+        waist = "Plat. Mog. Belt",
         left_ear = "Schere Earring",
         -- right_ear = "Telos Earring",
         right_ear = {
