@@ -453,31 +453,61 @@ function get_sets()
 
     -- High MACC for landing spells
     sets.Midcast.Enfeebling = {
+        -- sub = "Ammurapi Shield",
+        -- range = Instrument.Potency,
+        -- head = "Brioso Roundlet +3",
+        -- body = "Brioso Justau. +1",
+        -- hands = "Inyan. Dastanas +2",
+        -- legs = "Brioso Cannions +3",
+        -- feet = "Brioso Slippers +3",
+        -- neck = "Mnbw. Whistle +1",
+        -- waist = {
+        --     name = "Obstin. Sash",
+        --     augments = {'Path: A'}
+        -- },
+        -- left_ear = "Regal Earring",
+        -- right_ear = "Crep. Earring",
+        -- left_ring = {
+        --     name = "Stikini Ring +1",
+        --     bag = "wardrobe2"
+        -- },
+        -- right_ring = {
+        --     name = "Stikini Ring +1",
+        --     bag = "wardrobe3"
+        -- },
+        -- back = {
+        --     name = "Intarabus's Cape",
+        --     augments = {'CHR+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'Mag. Acc.+10', '"Fast Cast"+10', 'Phys. dmg. taken-10%'}
+        -- }
+        main = {
+            name = "Carnwenhan",
+            augments = {'Path: A'}
+        },
         sub = "Ammurapi Shield",
-        range = Instrument.Potency,
+        range = "Gjallarhorn",
         head = "Brioso Roundlet +3",
-        body = "Brioso Justau. +1",
-        hands = "Inyan. Dastanas +2",
-        legs = "Brioso Cannions +3",
+        body = "Fili Hongreline +2",
+        hands = "Brioso Cuffs +3",
+        legs = "Bihu Cannions +3",
         feet = "Brioso Slippers +3",
         neck = "Mnbw. Whistle +1",
         waist = {
-            name = "Obstin. Sash",
+            name = "Acuity Belt +1",
             augments = {'Path: A'}
         },
         left_ear = "Regal Earring",
-        right_ear = "Crep. Earring",
+        right_ear = {
+            name = "Fili Earring",
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+10', 'Mag. Acc.+10'}
+        },
         left_ring = {
-            name = "Stikini Ring +1",
-            bag = "wardrobe2"
+            name = "Metamor. Ring +1",
+            augments = {'Path: A'}
         },
-        right_ring = {
-            name = "Stikini Ring +1",
-            bag = "wardrobe3"
-        },
+        right_ring = "Stikini Ring +1",
         back = {
             name = "Intarabus's Cape",
-            augments = {'CHR+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'Mag. Acc.+10', '"Fast Cast"+10', 'Phys. dmg. taken-10%'}
+            augments = {'CHR+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'Mag. Acc.+10', '"Fast Cast"+10'}
         }
     }
     -- Bard Specific Sets
