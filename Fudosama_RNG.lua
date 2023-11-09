@@ -904,7 +904,7 @@ function init_gear_sets()
         -- left_ear = "Sherida Earring",
         left_ear = "Cessance Earring",
         right_ear = "Telos Earring",
-        left_ring = "Regal Ring",
+        left_ring = "Defending Ring",
         right_ring = "Epona's Ring",
         back = {
             name = "Belenus's Cape",

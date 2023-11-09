@@ -73,7 +73,7 @@ function job_setup()
         ['Aspirs'] = {'Aspir', 'Aspir II', 'Aspir III'}
     }
 
-    lockstyleset = 193
+    lockstyleset = 192
 
 end
 
@@ -312,7 +312,7 @@ function init_gear_sets()
             name = "Bagua Tunic +3",
             augments = {'Enhances "Bolster" effect'}
         },
-        hands = "Geo. Mitaines +2",
+        hands = "Geo. Mitaines +3",
         legs = {
             name = "Bagua Pants +3",
             augments = {'Enhances "Mending Halation" effect'}
@@ -345,7 +345,7 @@ function init_gear_sets()
             name = "Bagua Tunic +3",
             augments = {'Enhances "Bolster" effect'}
         },
-        hands = "Geo. Mitaines +2",
+        hands = "Geo. Mitaines +3",
         legs = {
             name = "Bagua Pants +3",
             augments = {'Enhances "Mending Halation" effect'}
@@ -488,7 +488,7 @@ function init_gear_sets()
         -- sub = "Culminus",
         head = "Geo. Galero +1",
         body = "Jhakri Robe +2",
-        hands = "Geo. Mitaines +2",
+        hands = "Geo. Mitaines +3",
         legs = "Geomancy Pants +1",
         feet = "Bagua Sandals +2",
         neck = "Bagua Charm +1",
@@ -520,7 +520,7 @@ function init_gear_sets()
         sub = "Ammurapi Shield",
         head = "Geo. Galero +1",
         body = "Geomancy Tunic +1",
-        hands = "Geo. Mitaines +1",
+        hands = "Geo. Mitaines +3",
         legs = "Geomancy Pants +1",
         feet = gear.Merl_MAB_feet,
         neck = "Erra Pendant",
@@ -674,7 +674,7 @@ function init_gear_sets()
         -- },
         head = "Azimuth Hood +2",
         body = "Jhakri Robe +2",
-        hands = "Geo. Mitaines +2",
+        hands = "Geo. Mitaines +3",
         legs = {
             name = "Nyame Flanchard",
             augments = {'Path: B'}
@@ -732,7 +732,7 @@ function init_gear_sets()
             name = "Bagua Tunic +3",
             augments = {'Enhances "Bolster" effect'}
         },
-        hands = "Geomancy Mitaines +2",
+        hands = "Geomancy Mitaines +3",
         legs = {
             name = "Bagua Pants +3",
             augments = {'Enhances "Mending Halation" effect'}
