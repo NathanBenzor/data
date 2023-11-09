@@ -336,8 +336,7 @@ function get_sets()
         back = {
             name = "Intarabus's Cape",
             augments = {'CHR+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'Mag. Acc.+10', '"Fast Cast"+10', 'Phys. dmg. taken-10%'}
-        },
-        feet = "Brioso Slippers +3"
+        }
     })
 
     -- Reduce Durations for Dummy songs (Ballad is lowest duration)
