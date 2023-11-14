@@ -344,7 +344,7 @@ function init_gear_sets()
             name = "Arc. Braccae +3",
             augments = {'Enhances "Eagle Eye Shot" effect'}
         },
-        feet = "Amini Bottillons +2",
+        feet = "Amini Bottillons +3",
         neck = "Fotia Gorget",
         waist = "Fotia Belt",
         left_ear = "Ishvara Earring",
@@ -402,11 +402,11 @@ function init_gear_sets()
             name = "Nyame Flanchard",
             augments = {'Path: B'}
         },
-        feet = {
-            name = "Nyame Sollerets",
-            augments = {'Path: B'}
-        },
-        -- feet = "Amini Bottillons +2",
+        -- feet = {
+        --     name = "Nyame Sollerets",
+        --     augments = {'Path: B'}
+        -- },
+        feet = "Amini Bottillons +3",
         neck = "Fotia Gorget",
         -- neck = {
         --     name = "Scout's Gorget +2",
@@ -461,11 +461,11 @@ function init_gear_sets()
         --     name = "Arc. Braccae +3",
         --     augments = {'Enhances "Eagle Eye Shot" effect'}
         -- },
-        -- feet = "Amini Bottillons +2",
-        feet = {
-            name = "Nyame Sollerets",
-            augments = {'Path: B'}
-        },
+        feet = "Amini Bottillons +3",
+        -- feet = {
+        --     name = "Nyame Sollerets",
+        --     augments = {'Path: B'}
+        -- },
         neck = "Fotia Gorget",
         waist = "Fotia Belt",
         left_ear = {
@@ -482,7 +482,7 @@ function init_gear_sets()
     })
 
     sets.precast.WS['Last Stand'].Acc = set_combine(sets.precast.WS['Last Stand'], {
-        feet = "Amini Bottillons +2"
+        feet = "Amini Bottillons +3"
     })
 
     sets.precast.WS['Last Stand'].Enmity = set_combine(sets.precast.WS['Last Stand'], {
@@ -525,11 +525,11 @@ function init_gear_sets()
         --     name = "Arc. Braccae +3",
         --     augments = {'Enhances "Eagle Eye Shot" effect'}
         -- },
-        feet = {
-            name = "Nyame Sollerets",
-            augments = {'Path: B'}
-        },
-        -- feet = "Amini Bottillons +2",
+        -- feet = {
+        --     name = "Nyame Sollerets",
+        --     augments = {'Path: B'}
+        -- },
+        feet = "Amini Bottillons +3",
         neck = {
             name = "Scout's Gorget +2",
             augments = {'Path: A'}
@@ -635,7 +635,7 @@ function init_gear_sets()
             name = "Nyame Flanchard",
             augments = {'Path: B'}
         },
-        feet = "Amini Bottillons +2",
+        feet = "Amini Bottillons +3",
         neck = "Scout's Gorget +2",
         waist = "Sailfi Belt +1",
         left_ear = {
@@ -842,7 +842,7 @@ function init_gear_sets()
         body = "Amini Caban +2",
         hands = "Amini Glove. +2",
         legs = "Amini Bragues +2",
-        feet = "Amini Bottillons +2",
+        feet = "Amini Bottillons +3",
         neck = {
             name = "Scout's Gorget +2",
             augments = {'Path: A'}

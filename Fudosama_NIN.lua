@@ -79,7 +79,7 @@ end
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-    state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc', 'STP', "Crit")
+    state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc', 'STP', "Crit", "DW30MidHaste")
     state.HybridMode:options('Normal', 'DT')
     state.WeaponskillMode:options('Normal', 'Acc')
     state.CastingMode:options('Normal', 'Resistant')
@@ -1013,6 +1013,26 @@ function init_gear_sets()
         feet = "Mpaca's Boots"
     })
 
+    
+    sets.engaged.DW30MidHaste = set_combine(sets.engaged, {
+        ammo = "Seki Shuriken",
+        head = "Malignance Chapeau",
+        body = "Adhemar Jacket +1", -- 9
+        hands = "Adhemar Wristbands +1", -- 6
+        legs = "Samnuha Tights",
+        feet = "Ken. Sune-Ate +1",
+        neck = "Ninja Nodowa +1",
+        ear1 = "Eabani Earring",
+        ear2 = "Suppanomimi", -- 5
+        ring1 = "Gere Ring",
+        ring2 = "Epona's Ring",
+        waist = "Reiki Yotai", -- 7
+        back = {
+            name = "Andartia's Mantle",
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%'}
+        },
+    })
+
     -- 15% Magic Haste (67% DW to cap)
     sets.engaged.LowHaste = {
         ammo = "Seki Shuriken",
@@ -1026,7 +1046,10 @@ function init_gear_sets()
         ear2 = "Suppanomimi", -- 5
         ring1 = "Gere Ring",
         ring2 = "Epona's Ring",
-        back = gear.NIN_TP_Cape,
+        back = {
+            name = "Andartia's Mantle",
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%'}
+        },
         waist = "Reiki Yotai" -- 7
     } -- 30%
 
@@ -1065,18 +1088,21 @@ function init_gear_sets()
     -- 30% Magic Haste (56% DW to cap)
     sets.engaged.MidHaste = {
         ammo = "Seki Shuriken",
-        head = "Ken. Jinpachi +1",
-        body = "Mochi. Chainmail +3", -- 9
-        hands = gear.Adhemar_B_hands,
-        legs = "Ken. Hakama +1",
+        head = "Malignance Chapeau",
+        body = "Adhemar Jacket +1", -- 9
+        hands = "Adhemar Wristbands +1", -- 6
+        legs = "Samnuha Tights",
         feet = "Ken. Sune-Ate +1",
-        neck = "Ninja Nodowa +2",
-        ear1 = "Cessance Earring",
+        neck = "Ninja Nodowa +1",
+        ear1 = "Eabani Earring",
         ear2 = "Suppanomimi", -- 5
         ring1 = "Gere Ring",
         ring2 = "Epona's Ring",
-        back = gear.NIN_TP_Cape,
-        waist = "Reiki Yotai" -- 7
+        waist = "Reiki Yotai", -- 7
+        back = {
+            name = "Andartia's Mantle",
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%'}
+        },
     } -- 21%
 
     sets.engaged.LowAcc.MidHaste = set_combine(sets.engaged.MidHaste, {
