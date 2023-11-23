@@ -1241,7 +1241,7 @@ function init_gear_sets()
         waist = "Kasiri Belt",
         left_ear = "Eabani Earring",
         right_ear = "Hearty Earring",
-        left_ring = "Chirich Ring +1",
+        left_ring = "Shneddick Ring",
         right_ring = "Defending Ring", -- 10%
         back = {
             name = "Toutatis's Cape",
@@ -1748,69 +1748,69 @@ function init_gear_sets()
         }
     }
 
-    sets.Twashtar = {
-        main = {
-            name = "Gleti's Knife",
-            augments = {'Path: A'}
-        },
-        sub = {
-            name = "Ternion Dagger +1",
-            augments = {'Path: A'}
-        }
-    }
-    sets.Twashtar_Centovente = {
-        main = {
-            name = "Gleti's Knife",
-            augments = {'Path: A'}
-        },
-        sub = "Fusetto +2"
-    }
+    -- sets.Twashtar = {
+    --     main = {
+    --         name = "Gleti's Knife",
+    --         augments = {'Path: A'}
+    --     },
+    --     sub = {
+    --         name = "Ternion Dagger +1",
+    --         augments = {'Path: A'}
+    --     }
+    -- }
+    -- sets.Twashtar_Centovente = {
+    --     main = {
+    --         name = "Gleti's Knife",
+    --         augments = {'Path: A'}
+    --     },
+    --     sub = "Fusetto +2"
+    -- }
 
-    sets.Mandau = {
-        main = {
-            name = "Mandau",
-            augments = {'Path: A'}
-        },
-        sub = {
-            name = "Gleti's Knife",
-            augments = {'Path: A'}
-        }
-    }
-    sets.Mandau_Centovente = {
-        main = {
-            name = "Mandau",
-            augments = {'Path: A'}
-        },
-        sub = "Fusetto +2"
-    }
+    -- sets.Mandau = {
+    --     main = {
+    --         name = "Mandau",
+    --         augments = {'Path: A'}
+    --     },
+    --     sub = {
+    --         name = "Gleti's Knife",
+    --         augments = {'Path: A'}
+    --     }
+    -- }
+    -- sets.Mandau_Centovente = {
+    --     main = {
+    --         name = "Mandau",
+    --         augments = {'Path: A'}
+    --     },
+    --     sub = "Fusetto +2"
+    -- }
 
-    sets.Tauret = {
-        main = "Tauret",
-        sub = {
-            name = "Gleti's Knife",
-            augments = {'Path: A'}
-        }
-    }
-    sets.Tauret_Centovente = {
-        main = "Tauret",
-        sub = "Fusetto +2"
-    }
+    -- sets.Tauret = {
+    --     main = "Tauret",
+    --     sub = {
+    --         name = "Gleti's Knife",
+    --         augments = {'Path: A'}
+    --     }
+    -- }
+    -- sets.Tauret_Centovente = {
+    --     main = "Tauret",
+    --     sub = "Fusetto +2"
+    -- }
 
-    sets.Naegling = {
-        main = "Naegling",
-        {
-            name = "Gleti's Knife",
-            augments = {'Path: A'}
-        }
-    }
-    sets.Naegling_Centovente = {
-        main = "Naegling",
-        sub = "Fusetto +2"
-    }
+    -- sets.Naegling = {
+    --     main = "Naegling",
+    --     {
+    --         name = "Gleti's Knife",
+    --         augments = {'Path: A'}
+    --     }
+    -- }
+    -- sets.Naegling_Centovente = {
+    --     main = "Naegling",
+    --     sub = "Fusetto +2"
+    -- }
 
-    sets.Karambit = {
-        main = "Karambit"
-    }
+    -- sets.Karambit = {
+    --     main = "Karambit"
+    -- }
 
 end
 

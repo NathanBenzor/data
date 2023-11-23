@@ -80,7 +80,9 @@ function user_setup()
         'Annihilator',
         'Fomalhaut',
         'Armageddon',
-        'Holliday'
+        'Holliday', 
+        'Gandiva',
+        'Gastraphetes',
     }
     -- state.CP = M(false, "Capacity Points Mode")
 
@@ -278,7 +280,7 @@ function init_gear_sets()
     -- (10% Snapshot, 5% Rapid from Merits)
     sets.precast.RA = {
         head = "Orion Beret +3",
-        body = "Amini Caban +2",
+        body = "Amini Caban +3",
         hands = {
             name = "Carmine Fin. Ga. +1",
             augments = {'Rng.Atk.+20', '"Mag.Atk.Bns."+12', '"Store TP"+6'}
@@ -388,24 +390,16 @@ function init_gear_sets()
 
     sets.precast.WS['Jishnu\'s Radiance'] = set_combine(sets.precast.WS, {
         head = "Orion Beret +3",
-        -- body = "Amini Caban +2",
-        body = {
-            name = "Nyame Mail",
-            augments = {'Path: B'}
-        },
-        hands = {
-            name = "Nyame Gauntlets",
-            augments = {'Path: B'}
-        },
-        -- hands = "Amini Glove. +2",
+        body = "Amini Caban +3",
+        -- hands = {
+        --     name = "Nyame Gauntlets",
+        --     augments = {'Path: B'}
+        -- },
+        hands = "Amini Glove. +2",
         legs = {
             name = "Nyame Flanchard",
             augments = {'Path: B'}
         },
-        -- feet = {
-        --     name = "Nyame Sollerets",
-        --     augments = {'Path: B'}
-        -- },
         feet = "Amini Bottillons +3",
         neck = "Fotia Gorget",
         -- neck = {
@@ -420,10 +414,7 @@ function init_gear_sets()
         },
         left_ring = "Regal Ring",
         right_ring = "Dingir Ring",
-        back = {
-            name = "Belenus's Cape",
-            augments = {'DEX+20', 'Rng.Acc.+20 Rng.Atk.+20', 'DEX+10', 'Weapon skill damage +10%'}
-        }
+        back={ name="Belenus's Cape", augments={'DEX+20','Rng.Acc.+20 Rng.Atk.+20','DEX+10','Crit.hit rate+10','Damage taken-5%',}},
     })
 
     sets.precast.WS['Jishnu\'s Radiance'].Acc = set_combine(sets.precast.WS['Jishnu\'s Radiance'], {
@@ -643,7 +634,7 @@ function init_gear_sets()
             augments = {'Accuracy+4', 'TP Bonus +250'}
         },
         right_ear = "Amini Earring",
-        left_ring = "Regal Ring",
+        left_ring = "Sroda Ring",
         right_ring = "Cornelia's Ring",
         back = {
             name = "Belenus's Cape",
@@ -707,14 +698,18 @@ function init_gear_sets()
     })
 
     sets.midcast.RA.Critical = set_combine(sets.midcast.RA, {
-        head = "Meghanada Visor +2",
-        body = "Mummu Jacket +2",
-        hands = "Kobo Kote",
-        legs = "Mummu Kecks +2",
-        feet = "Osh. Leggings +1",
-        ring1 = "Begrudging Ring",
-        ring2 = "Mummu Ring",
-        waist = "K. Kachina Belt +1"
+    head="Blistering Sallet +1",
+    body="Nisroch Jerkin",
+    hands="Amini Glove. +2",
+    legs="Amini Bragues +2",
+    feet={ name="Arcadian Socks +3", augments={'Enhances "Stealth Shot" effect',}},
+    neck={ name="Scout's Gorget +2", augments={'Path: A',}},
+    waist={ name="Tellen Belt", augments={'Path: A',}},
+    left_ear="Odr Earring",
+    right_ear="Telos Earring",
+    left_ring="Regal Ring",
+    right_ring="Ilabrat Ring",
+    back={ name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Rng.Acc.+10','Crit.hit rate+10','Damage taken-5%',}},
     })
 
     sets.midcast.RA.STP = set_combine(sets.midcast.RA, {
@@ -839,7 +834,7 @@ function init_gear_sets()
 
     sets.idle.Town = set_combine(sets.idle, {
         head = "Amini Gapette +2",
-        body = "Amini Caban +2",
+        body = "Amini Caban +3",
         hands = "Amini Glove. +2",
         legs = "Amini Bragues +2",
         feet = "Amini Bottillons +3",
@@ -1324,7 +1319,7 @@ function init_gear_sets()
         hands = "Orion Bracers +3"
     }
     sets.buff['Velocity Shot'] = set_combine(sets.midcast.RA, {
-        body = "Amini Caban +2",
+        body = "Amini Caban +3",
         back = gear.RNG_TP_Cape
     })
     sets.buff.Camouflage = {
