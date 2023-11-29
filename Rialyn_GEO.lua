@@ -672,15 +672,16 @@ function init_gear_sets()
         --     name = "Telchine Cap",
         --     augments = {'Pet: Damage taken -3%'}
         -- },
-        head = "Azimuth Hood +2",
-        body = "Jhakri Robe +2",
-        hands = "Geo. Mitaines +3",
+        head = "Azimuth Hood +1",
+        -- body = "Jhakri Robe +2",
+        body = "Azimuth Coat +1",
+        hands = "Geo. Mitaines +1",
         legs = {
             name = "Nyame Flanchard",
             augments = {'Path: B'}
         },
         feet = {
-            name = "Bagua Sandals +2",
+            name = "Bagua Sandals +1",
             augments = {'Enhances "Radial Arcana" effect'}
         },
         neck = {
@@ -692,10 +693,7 @@ function init_gear_sets()
         right_ear = "Genmei Earring",
         left_ring = "Defending Ring",
         right_ring = "Stikini Ring +1",
-        back = {
-            name = "Nantosuelta's Cape",
-            augments = {'VIT+20', 'Eva.+20 /Mag. Eva.+20', 'Pet: "Regen"+10', 'Pet: "Regen"+5'}
-        }
+    back={ name="Nantosuelta's Cape", augments={'VIT+20','Eva.+20 /Mag. Eva.+20','Pet: "Regen"+10','System: 1 ID: 1246 Val: 4',}},
         -- back = {
         --     name = "Mecisto. Mantle",
         --     augments = {'Cap. Point+48%', 'DEF+5'}

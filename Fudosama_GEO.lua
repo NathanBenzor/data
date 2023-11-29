@@ -646,14 +646,30 @@ function init_gear_sets()
 
     sets.idle.DT = set_combine(sets.idle, {
         sub = "Genmei Shield", -- 10/0
-        body = "Mallquis Saio +2", -- 8/8
+        -- body = "Mallquis Saio +2", -- 8/8
+        head = {
+            name = "Nyame Helm",
+            augments = {'Path: B'}
+        },
+        -- body = {
+        --     name = "Nyame Mail",
+        --     augments = {'Path: B'}
+        -- },
         hands = "Geo. Mitaines +3", -- 3/0
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
         neck = {
             name = "Loricate Torque +1",
             augments = {'Path: A'}
         },
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
         ear1 = "Genmei Earring", -- 2/0
-        ear2 = "Odnowa Earring +1", -- 3/3
+        -- ear2 = "Odnowa Earring +1", -- 3/3
         ring1 = "Gelatinous Ring +1", -- 7/(-1)
         ring2 = "Defending Ring", -- 10/10
         back = {

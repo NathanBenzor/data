@@ -883,10 +883,11 @@ function init_gear_sets()
         },
         -- body = "Nyame Mail",
         hands = "Malignance Gloves",
-        legs = {
-            name = "Samnuha Tights",
-            augments = {'STR+10', 'DEX+10', '"Dbl.Atk."+3', '"Triple Atk."+3'}
-        },
+        -- legs = {
+        --     name = "Samnuha Tights",
+        --     augments = {'STR+10', 'DEX+10', '"Dbl.Atk."+3', '"Triple Atk."+3'}
+        -- },
+        legs={ name="Tatena. Haidate +1", augments={'Path: A',}},
         feet = "Malignance Boots",
         neck = {
             name = "Scout's Gorget +2",
@@ -897,14 +898,13 @@ function init_gear_sets()
             augments = {'Path: A'}
         },
         -- left_ear = "Sherida Earring",
-        left_ear = "Cessance Earring",
-        right_ear = "Telos Earring",
+        -- left_ear = "Cessance Earring",
+        left_ear = "Eabani Earring",
+        -- right_ear = "Telos Earring",
+        right_ear="Suppanomimi",
         left_ring = "Defending Ring",
         right_ring = "Epona's Ring",
-        back = {
-            name = "Belenus's Cape",
-            augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'Rng.Acc.+10', '"Store TP"+10', 'Phys. dmg. taken-10%'}
-        }
+        back={ name="Belenus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%',}},
     }
 
     sets.engaged.LowAcc = set_combine(sets.engaged, {
