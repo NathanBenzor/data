@@ -302,7 +302,7 @@ function init_gear_sets()
 
     sets.midcast.Geomancy = {
         main = "Idris",
-        sub = "Genbu's Shield",
+        sub = "Genmei Shield",
         range = {
             name = "Dunna",
             augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
@@ -335,7 +335,7 @@ function init_gear_sets()
 
     sets.midcast.Geomancy.Indi = set_combine(sets.midcast.Geomancy, {
         main = "Idris",
-        sub = "Genbu's Shield",
+        sub = "Genmei Shield",
         range = {
             name = "Dunna",
             augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
@@ -368,7 +368,7 @@ function init_gear_sets()
 
     sets.midcast.Cure = {
         main = "Daybreak",
-        sub = "Genbu's Shield",
+        sub = "Genmei Shield",
         range = {
             name = "Dunna",
             augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
@@ -605,7 +605,7 @@ function init_gear_sets()
 
     sets.idle = {
         -- main = "Bolelabunga",
-        sub = "Genbu's Shield",
+        sub = "Genmei Shield",
         range = {
             name = "Dunna",
             augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
@@ -667,7 +667,7 @@ function init_gear_sets()
     sets.idle.Pet = set_combine(sets.idle, {
         -- Pet: -DT (37.5% to cap) / Pet: Regen  -DT cap -87.5%
         main = "Idris",
-        sub = "Genbu's Shield",
+        sub = "Genmei Shield",
         -- head = {
         --     name = "Telchine Cap",
         --     augments = {'Pet: Damage taken -3%'}
@@ -720,7 +720,7 @@ function init_gear_sets()
 
     sets.idle.Town = set_combine(sets.idle, {
         main = "Idris",
-        sub = "Genbu's Shield",
+        sub = "Genmei Shield",
         range = {
             name = "Dunna",
             augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}

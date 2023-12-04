@@ -813,30 +813,45 @@ function init_gear_sets()
 
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
     sets.idle = {
-        main = "Yagrush",
-        sub = "Ammurapi Shield",
-        ammo = "Pemphredo Tathlum",
-        head = "Nyame Helm",
-        body = "Shamash Robe",
-        hands = {
-            name = "Chironic Gloves",
-            augments = {'Pet: MND+4', 'Attack+5', '"Refresh"+2', 'Accuracy+2 Attack+2'}
-        },
-        legs = "Nyame Flanchard",
-        feet = {
-            name = "Nyame Sollerets",
-            augments = {'Path: B'}
-        },
-        neck = {
-            name = "Loricate Torque +1",
-            augments = {'Path: A'}
-        },
-        waist = "Rumination Sash",
-        left_ear = "Loquac. Earring",
-        right_ear = "Genmei Earring",
-        left_ring = "Stikini Ring +1",
-        right_ring = "Stikini Ring +1",
-        back = "Solemnity Cape"
+        -- main = "Yagrush",
+        -- sub = "Ammurapi Shield",
+        -- ammo = "Pemphredo Tathlum",
+        -- head = "Nyame Helm",
+        -- body = "Shamash Robe",
+        -- hands = {
+        --     name = "Chironic Gloves",
+        --     augments = {'Pet: MND+4', 'Attack+5', '"Refresh"+2', 'Accuracy+2 Attack+2'}
+        -- },
+        -- legs = "Nyame Flanchard",
+        -- feet = {
+        --     name = "Nyame Sollerets",
+        --     augments = {'Path: B'}
+        -- },
+        -- neck = {
+        --     name = "Loricate Torque +1",
+        --     augments = {'Path: A'}
+        -- },
+        -- waist = "Rumination Sash",
+        -- left_ear = "Loquac. Earring",
+        -- right_ear = "Genmei Earring",
+        -- left_ring = "Stikini Ring +1",
+        -- right_ring = "Stikini Ring +1",
+        -- back = "Solemnity Cape"
+            main={ name="Queller Rod", augments={'Healing magic skill +15','"Cure" potency +10%','"Cure" spellcasting time -7%',}},
+    sub="Sors Shield",
+    ammo="Elis Tome",
+    head="Ebers Cap +1",
+    body="Ebers Bliaut +1",
+    hands="Ebers Mitts +1",
+    legs="Ebers Pant. +1",
+    feet="Ebers Duckbills +1",
+    neck="Clr. Torque +1",
+    waist="Shinjutsu-no-Obi +1",
+    left_ear="Mendi. Earring",
+    right_ear="Genmei Earring",
+    left_ring="Stikini Ring",
+    right_ring="Stikini Ring",
+    back="Solemnity Cape",
     }
 
     sets.idle.DT = set_combine(sets.idle, {
@@ -846,14 +861,11 @@ function init_gear_sets()
         },
         sub = "Sors Shield",
         ammo = "Pemphredo Tathlum",
-        head = "Nyame Helm",
-        body = "Shamash Robe",
-        hands = "Nyame Gauntlets",
-        legs = "Nyame Flanchard",
-        feet = {
-            name = "Nyame Sollerets",
-            augments = {'Path: B'}
-        },
+        head="Nyame Helm",
+        body="Nyame Mail",
+        hands="Nyame Gauntlets",
+        legs="Nyame Flanchard",
+        feet="Nyame Sollerets",
         neck = {
             name = "Loricate Torque +1",
             augments = {'Path: A'}
@@ -886,14 +898,16 @@ function init_gear_sets()
 
     sets.idle.Town = set_combine(sets.idle, {
         main = "Yagrush",
-        sub = "Ammurapi Shield",
+        sub = "Genmei Shield",
         head = "Kaykaus Mitra +1",
         body = "Kaykaus Bliaut +1",
         legs = "Kaykaus Tights +1",
         feet = "Herald's Gaiters",
         neck = "Clr. Torque +2",
         ear1 = "Glorious Earring",
-        ear2 = "Regal Earring"
+        ear2 = "Regal Earring", 
+        ring1 = "Shneddick Ring",
+        ring2 = "Stikini Ring +1",
     })
 
     sets.precast.JA["Afflatus Solace"] = {

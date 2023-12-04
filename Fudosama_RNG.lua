@@ -231,7 +231,7 @@ function init_gear_sets()
         legs = "Arc. Braccae +3"
     }
     sets.precast.JA['Bounty Shot'] = {
-        hands = "Amini Glove. +2"
+        hands = "Amini Glove. +3"
     }
     sets.precast.JA['Camouflage'] = {
         body = "Orion Jerkin +3"
@@ -395,7 +395,7 @@ function init_gear_sets()
         --     name = "Nyame Gauntlets",
         --     augments = {'Path: B'}
         -- },
-        hands = "Amini Glove. +2",
+        hands = "Amini Glove. +3",
         legs = {
             name = "Nyame Flanchard",
             augments = {'Path: B'}
@@ -698,9 +698,9 @@ function init_gear_sets()
     })
 
     sets.midcast.RA.Critical = set_combine(sets.midcast.RA, {
-    head="Blistering Sallet +1",
+    head={ name="Blistering Sallet +1", augments={'Path: A',}},
     body="Nisroch Jerkin",
-    hands="Amini Glove. +2",
+    hands="Amini Glove. +3",
     legs="Amini Bragues +2",
     feet={ name="Arcadian Socks +3", augments={'Enhances "Stealth Shot" effect',}},
     neck={ name="Scout's Gorget +2", augments={'Path: A',}},
@@ -835,7 +835,7 @@ function init_gear_sets()
     sets.idle.Town = set_combine(sets.idle, {
         head = "Amini Gapette +2",
         body = "Amini Caban +3",
-        hands = "Amini Glove. +2",
+        hands = "Amini Glove. +3",
         legs = "Amini Bragues +2",
         feet = "Amini Bottillons +3",
         neck = {
@@ -877,10 +877,11 @@ function init_gear_sets()
 
     sets.engaged = {
         head = "Malignance Chapeau",
-        body = {
-            name = "Adhemar Jacket +1",
-            augments = {'DEX+12', 'AGI+12', 'Accuracy+20'}
-        },
+        -- body = {
+        --     name = "Adhemar Jacket +1",
+        --     augments = {'DEX+12', 'AGI+12', 'Accuracy+20'}
+        -- },
+        body="Malignance Tabard",
         -- body = "Nyame Mail",
         hands = "Malignance Gloves",
         -- legs = {

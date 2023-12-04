@@ -645,7 +645,7 @@ function init_gear_sets()
     sets.idle.Pet = set_combine(sets.idle, {
         -- Pet: -DT (37.5% to cap) / Pet: Regen  -DT cap -87.5%
         main={ name="Solstice", augments={'Mag. Acc.+20','Pet: Damage taken -4%','"Fast Cast"+5',}},
-        sub = "Genmei's Shield",
+        sub = "Genmei Shield",
         -- head = {
         --     name = "Telchine Cap",
         --     augments = {'Pet: Damage taken -3%'}
@@ -670,14 +670,11 @@ function init_gear_sets()
         right_ear = "Genmei Earring",
         left_ring = "Defending Ring",
         right_ring = "Stikini Ring +1",
-        back = {
-            name = "Nantosuelta's Cape",
-            augments = {'VIT+20', 'Eva.+20 /Mag. Eva.+20', 'Pet: "Regen"+10', 'Pet: "Regen"+5'}
-        }
         -- back = {
-        --     name = "Mecisto. Mantle",
-        --     augments = {'Cap. Point+48%', 'DEF+5'}
+        --     name = "Nantosuelta's Cape",
+        --     augments = {'VIT+20', 'Eva.+20 /Mag. Eva.+20', 'Pet: "Regen"+10', 'Pet: "Regen"+5'}
         -- }
+        back={ name="Mecisto. Mantle", augments={'Cap. Point+50%','MP+13','Rng.Acc.+1','DEF+1',}},
     })
 
     sets.idle.DT.Pet = set_combine(sets.idle.Pet, {
@@ -796,7 +793,7 @@ function init_gear_sets()
         hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
         legs = "Ea Slops +1", -- 8/(8)
         feet = "Bagua Sandals +2",
-        neck = "Mizu. Kubikazari", -- 10
+        neck = "Sybil Scarf",
         left_ring="Freke Ring",
         right_ring="Mujin Band" -- (5)
     }
