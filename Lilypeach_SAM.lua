@@ -128,7 +128,7 @@ function user_setup()
 
     -- Load Gearinfo/Dressup Lua
 
-    -- send_command('wait 3; lua l gearinfo')
+    send_command('wait 3; lua l gearinfo')
     send_command('wait 10; lua l Dressup')
 
     -- Global Samurai binds (^ = CTRL)(! = ALT)(@ = Windows key)(~ = Shift)(# = Apps key)
@@ -143,55 +143,55 @@ function user_setup()
 
     -- Command to show global binds in game[ CTRL + numpad- ]
     send_command([[bind ^numpad- 
-			input /echo -----Item_Binds-----;
-			input /echo [ Shift + Numpad1 ]	Echo Drop;
-			input /echo [ Shift + Numpad2 ]	Holy Water;
-			input /echo [ Shift + Numpad3 ]	Remedy;
-			input /echo [ Shift + Numpad4 ]	Panacea;
-			input /echo [ Shift + Numpad7 ]	Silent Oil;
-			input /echo [ Shift + Numpad9 ]	Prism Powder;
-			input /echo -----Food_Binds-----;
-			input /echo [ Windows + Numpad1 ]	Sublime Sushi;
-			input /echo [ Windows + Numpad2 ]	Grape Daifuku;
-			input /echo [ Windows + Numpad3 ]	Tropical Crepe;
-			input /echo [ Windows + Numpad4 ]	Miso Ramen;
-			input /echo [ Windows + Numpad5 ]	Red Curry Bun;
-			input /echo [ Windows + Numpad6 ]	Rolan. Daifuku;
-			input /echo [ Windows + Numpad7 ]	Toolbag (Shihei);
-			input /echo -----Modes-----;
-			input /echo [ Windows + R ]	Puts Reraise Set on;
-			input /echo [ Windows + 1 ]	Sets Weapon to Dojikiri;
-			input /echo [ Windows + 2 ]	Sets Weapon to Masamune;
-			input /echo [ Windows + 3 ]	Sets Weapon to Shining One;
-			input /echo [ Windows + 4 ]	Sets Weapon to Hachimonji;
-			input /echo [ Windows + 5 ]	Sets Weapon to Soboro;
-			input /echo [ Windows + 6 ]	Sets Weapon to Malevolence;
-			input /echo -----Toggles-----;
-			input /echo [ Windows + U ]	Toggles Gearswap autoupdate;
-			input /echo [ Windows + D ]	Unloads then reloads dressup;
-			]])
+		input /echo -----Item_Binds-----;
+		input /echo [ Shift + Numpad1 ]	Echo Drop;
+		input /echo [ Shift + Numpad2 ]	Holy Water;
+		input /echo [ Shift + Numpad3 ]	Remedy;
+		input /echo [ Shift + Numpad4 ]	Panacea;
+		input /echo [ Shift + Numpad7 ]	Silent Oil;
+		input /echo [ Shift + Numpad9 ]	Prism Powder;
+		input /echo -----Food_Binds-----;
+		input /echo [ Windows + Numpad1 ]	Sublime Sushi;
+		input /echo [ Windows + Numpad2 ]	Grape Daifuku;
+		input /echo [ Windows + Numpad3 ]	Tropical Crepe;
+		input /echo [ Windows + Numpad4 ]	Miso Ramen;
+		input /echo [ Windows + Numpad5 ]	Red Curry Bun;
+		input /echo [ Windows + Numpad6 ]	Rolan. Daifuku;
+		input /echo [ Windows + Numpad7 ]	Toolbag (Shihei);
+		input /echo -----Modes-----;
+		input /echo [ Windows + R ]	Puts Reraise Set on;
+		input /echo [ Windows + 1 ]	Sets Weapon to Dojikiri;
+		input /echo [ Windows + 2 ]	Sets Weapon to Masamune;
+		input /echo [ Windows + 3 ]	Sets Weapon to Shining One;
+		input /echo [ Windows + 4 ]	Sets Weapon to Hachimonji;
+		input /echo [ Windows + 5 ]	Sets Weapon to Soboro;
+		input /echo [ Windows + 6 ]	Sets Weapon to Malevolence;
+		input /echo -----Toggles-----;
+		input /echo [ Windows + U ]	Toggles Gearswap autoupdate;
+		input /echo [ Windows + D ]	Unloads then reloads dressup;
+		]])
 
     -- Command to show Rune Fencer binds in game[ ALT + numpad- ]
     send_command([[bind !numpad- 
-			input /echo -----Abilities-----;
-			input /echo [ CTRL + ` ] Uses Hasso;
-			input /echo [ ALT + ` ] Seigan;
-			input /echo -----Great_Katana-----;
-			input /echo [ CTRL + Numpad1 ] Tachi: Fudo;
-			input /echo [ CTRL + Numpad2 ] Tachi: Shoha;
-			input /echo [ CTRL + Numpad3 ] Tachi: Kasha;
-			input /echo [ CTRL + Numpad4 ] Tachi: Ageha;
-			input /echo [ CTRL + Numpad5 ] Tachi: Jinpu;
-			input /echo [ CTRL + Numpad6 ] Tachi: Yukikaze;
-			input /echo [ CTRL + Numpad7 ] Tachi: Rana;
-			input /echo [ ALT  + Numpad1 ] Tachi: Kagero;
-			input /echo [ ALT  + Numpad2 ] Tachi: Goten;
-			input /echo [ ALT  + Numpad3 ] Tachi: Koki;
-			input /echo -----Polearm-----;
-			input /echo [ ALT + Numpad4 ] Impulse Drive;
-			input /echo [ ALT + Numpad5 ] Stardiver;
-			input /echo [ ALT + Numpad6 ] Sonic Thrust;
-			]])
+		input /echo -----Abilities-----;
+		input /echo [ CTRL + ` ] Uses Hasso;
+		input /echo [ ALT + ` ] Seigan;
+		input /echo -----Great_Katana-----;
+		input /echo [ CTRL + Numpad1 ] Tachi: Fudo;
+		input /echo [ CTRL + Numpad2 ] Tachi: Shoha;
+		input /echo [ CTRL + Numpad3 ] Tachi: Kasha;
+		input /echo [ CTRL + Numpad4 ] Tachi: Ageha;
+		input /echo [ CTRL + Numpad5 ] Tachi: Jinpu;
+		input /echo [ CTRL + Numpad6 ] Tachi: Yukikaze;
+		input /echo [ CTRL + Numpad7 ] Tachi: Rana;
+		input /echo [ ALT  + Numpad1 ] Tachi: Kagero;
+		input /echo [ ALT  + Numpad2 ] Tachi: Goten;
+		input /echo [ ALT  + Numpad3 ] Tachi: Koki;
+		input /echo -----Polearm-----;
+		input /echo [ ALT + Numpad4 ] Impulse Drive;
+		input /echo [ ALT + Numpad5 ] Stardiver;
+		input /echo [ ALT + Numpad6 ] Sonic Thrust;
+		]])
 
     -- Weapon set Binds
 
@@ -737,7 +737,7 @@ function init_gear_sets()
         left_ear = "Digni. Earring",
         right_ear = {
             name = "Kasuga Earring",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+7', 'Mag. Acc.+7'}
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+8', 'Mag. Acc.+8'}
         },
         left_ring = {
             name = "Metamor. Ring +1",
@@ -774,12 +774,9 @@ function init_gear_sets()
             augments = {'Path: A'}
         },
         waist = "Orpheus's Sash",
-        left_ear = {
-            name = "Moonshade Earring",
-            augments = {'Accuracy+4', 'TP Bonus +250'}
-        },
+        left_ear = "Thrud Earring",
         right_ear = "Friomisi Earring",
-        left_ring = "Niqmaddu Ring",
+        left_ring = "Karieyh Ring",
         right_ring = "Cornelia's Ring",
         back = {
             name = "Smertrios's Mantle",
@@ -924,14 +921,18 @@ function init_gear_sets()
             name = "Sam. Nodowa +2",
             augments = {'Path: A'}
         },
-        waist = {
-            name = "Sailfi Belt +1",
-            augments = {'Path: A'}
-        },
+        -- waist = {
+        --     name = "Sailfi Belt +1",
+        --     augments = {'Path: A'}
+        -- },
+                waist = "Sweordfaetels +1",
         left_ear = "Dedition Earring",
-        right_ear = "Telos Earring",
-        left_ring = "Niqmaddu Ring",
-        right_ring = "Chirich Ring +1",
+        right_ear = {
+            name = "Kasuga Earring",
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+8', 'Mag. Acc.+8'}
+        },
+        left_ring = "Chirich Ring +1",
+        right_ring = "Niqmaddu Ring",
         back = {
             name = "Smertrios's Mantle",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Phys. dmg. taken-10%'}

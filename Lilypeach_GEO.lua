@@ -670,11 +670,7 @@ function init_gear_sets()
         right_ear = "Genmei Earring",
         left_ring = "Defending Ring",
         right_ring = "Stikini Ring +1",
-        -- back = {
-        --     name = "Nantosuelta's Cape",
-        --     augments = {'VIT+20', 'Eva.+20 /Mag. Eva.+20', 'Pet: "Regen"+10', 'Pet: "Regen"+5'}
-        -- }
-        back={ name="Mecisto. Mantle", augments={'Cap. Point+50%','MP+13','Rng.Acc.+1','DEF+1',}},
+        back={ name="Nantosuelta's Cape", augments={'VIT+20','Eva.+20 /Mag. Eva.+20','Pet: "Regen"+10','Pet: Damage taken -5%',}},
     })
 
     sets.idle.DT.Pet = set_combine(sets.idle.Pet, {

@@ -60,7 +60,7 @@ function job_setup()
                       "Echad Ring", "Facility Ring", "Capacity Ring", "Era. Bul. Pouch", "Dev. Bul. Pouch",
                       "Chr. Bul. Pouch", "Quelling B. Quiver", "Yoichi's Quiver", "Artemis's Quiver", "Chrono Quiver"}
 
-    lockstyleset = 118
+    lockstyleset = 119
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -72,7 +72,7 @@ function user_setup()
     state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc', 'STP')
     state.HybridMode:options('Normal', 'DT')
     state.RangedMode:options('STP', 'Normal', 'Acc', 'HighAcc', 'Critical')
-    state.WeaponskillMode:options('Normal', 'Acc', 'Enmity')
+    state.WeaponskillMode:options('Normal', 'Acc', 'Enmity', 'PDL')
     state.IdleMode:options('Normal', 'DT')
 
     state.WeaponSet = M {
@@ -80,9 +80,9 @@ function user_setup()
         'Annihilator',
         'Fomalhaut',
         'Armageddon',
-        'Holliday', 
+        'Holliday',
         'Gandiva',
-        'Gastraphetes',
+        'Gastraphetes'
     }
     -- state.CP = M(false, "Capacity Points Mode")
 
@@ -374,6 +374,19 @@ function init_gear_sets()
         ear1 = "Beyla Earring"
     })
 
+    sets.precast.WS.PDL = set_combine(sets.precast.WS, {
+        head = {
+            name = "Blistering Sallet +1",
+            augments = {'Path: A'}
+        },
+        neck = {
+            name = "Scout's Gorget +2",
+            augments = {'Path: A'}
+        },
+        hands = "Ikenga's Gloves",
+        legs = "Ikenga's Trousers",
+    })
+
     sets.precast.WS['Apex Arrow'] = sets.precast.WS
 
     sets.precast.WS['Apex Arrow'].Acc = set_combine(sets.precast.WS['Apex Arrow'], {
@@ -391,10 +404,6 @@ function init_gear_sets()
     sets.precast.WS['Jishnu\'s Radiance'] = set_combine(sets.precast.WS, {
         head = "Orion Beret +3",
         body = "Amini Caban +3",
-        -- hands = {
-        --     name = "Nyame Gauntlets",
-        --     augments = {'Path: B'}
-        -- },
         hands = "Amini Glove. +3",
         legs = {
             name = "Nyame Flanchard",
@@ -402,10 +411,6 @@ function init_gear_sets()
         },
         feet = "Amini Bottillons +3",
         neck = "Fotia Gorget",
-        -- neck = {
-        --     name = "Scout's Gorget +2",
-        --     augments = {'Path: A'}
-        -- },
         waist = "Fotia Belt",
         left_ear = "Odr Earring",
         right_ear = {
@@ -414,7 +419,10 @@ function init_gear_sets()
         },
         left_ring = "Regal Ring",
         right_ring = "Dingir Ring",
-        back={ name="Belenus's Cape", augments={'DEX+20','Rng.Acc.+20 Rng.Atk.+20','DEX+10','Crit.hit rate+10','Damage taken-5%',}},
+        back = {
+            name = "Belenus's Cape",
+            augments = {'DEX+20', 'Rng.Acc.+20 Rng.Atk.+20', 'DEX+10', 'Crit.hit rate+10', 'Damage taken-5%'}
+        }
     })
 
     sets.precast.WS['Jishnu\'s Radiance'].Acc = set_combine(sets.precast.WS['Jishnu\'s Radiance'], {
@@ -434,12 +442,22 @@ function init_gear_sets()
         ear1 = "Beyla Earring"
     })
 
+    sets.precast.WS['Jishnu\'s Radiance'].PDL = set_combine(sets.precast.WS['Jishnu\'s Radiance'], {
+        head = {
+            name = "Blistering Sallet +1",
+            augments = {'Path: A'}
+        },
+        neck = {
+            name = "Scout's Gorget +2",
+            augments = {'Path: A'}
+        },
+        hands = "Ikenga's Gloves",
+        legs = "Ikenga's Trousers",
+    })
+
     sets.precast.WS["Last Stand"] = set_combine(sets.precast.WS, {
         head = "Orion Beret +3",
-        body = {
-            name = "Nyame Mail",
-            augments = {'Path: B'}
-        },
+        body = "Amini Caban +3",
         hands = {
             name = "Nyame Gauntlets",
             augments = {'Path: B'}
@@ -448,15 +466,7 @@ function init_gear_sets()
             name = "Nyame Flanchard",
             augments = {'Path: B'}
         },
-        -- legs = {
-        --     name = "Arc. Braccae +3",
-        --     augments = {'Enhances "Eagle Eye Shot" effect'}
-        -- },
         feet = "Amini Bottillons +3",
-        -- feet = {
-        --     name = "Nyame Sollerets",
-        --     augments = {'Path: B'}
-        -- },
         neck = "Fotia Gorget",
         waist = "Fotia Belt",
         left_ear = {
@@ -698,18 +708,33 @@ function init_gear_sets()
     })
 
     sets.midcast.RA.Critical = set_combine(sets.midcast.RA, {
-    head={ name="Blistering Sallet +1", augments={'Path: A',}},
-    body="Nisroch Jerkin",
-    hands="Amini Glove. +3",
-    legs="Amini Bragues +2",
-    feet={ name="Arcadian Socks +3", augments={'Enhances "Stealth Shot" effect',}},
-    neck={ name="Scout's Gorget +2", augments={'Path: A',}},
-    waist={ name="Tellen Belt", augments={'Path: A',}},
-    left_ear="Odr Earring",
-    right_ear="Telos Earring",
-    left_ring="Regal Ring",
-    right_ring="Ilabrat Ring",
-    back={ name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Rng.Acc.+10','Crit.hit rate+10','Damage taken-5%',}},
+        head = {
+            name = "Blistering Sallet +1",
+            augments = {'Path: A'}
+        },
+        body = "Nisroch Jerkin",
+        hands = "Amini Glove. +3",
+        legs = "Amini Bragues +2",
+        feet = {
+            name = "Arcadian Socks +3",
+            augments = {'Enhances "Stealth Shot" effect'}
+        },
+        neck = {
+            name = "Scout's Gorget +2",
+            augments = {'Path: A'}
+        },
+        waist = {
+            name = "Tellen Belt",
+            augments = {'Path: A'}
+        },
+        left_ear = "Odr Earring",
+        right_ear = "Telos Earring",
+        left_ring = "Regal Ring",
+        right_ring = "Ilabrat Ring",
+        back = {
+            name = "Belenus's Cape",
+            augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'Rng.Acc.+10', 'Crit.hit rate+10', 'Damage taken-5%'}
+        }
     })
 
     sets.midcast.RA.STP = set_combine(sets.midcast.RA, {
@@ -881,14 +906,17 @@ function init_gear_sets()
         --     name = "Adhemar Jacket +1",
         --     augments = {'DEX+12', 'AGI+12', 'Accuracy+20'}
         -- },
-        body="Malignance Tabard",
+        body = "Malignance Tabard",
         -- body = "Nyame Mail",
         hands = "Malignance Gloves",
         -- legs = {
         --     name = "Samnuha Tights",
         --     augments = {'STR+10', 'DEX+10', '"Dbl.Atk."+3', '"Triple Atk."+3'}
         -- },
-        legs={ name="Tatena. Haidate +1", augments={'Path: A',}},
+        legs = {
+            name = "Tatena. Haidate +1",
+            augments = {'Path: A'}
+        },
         feet = "Malignance Boots",
         neck = {
             name = "Scout's Gorget +2",
@@ -902,10 +930,13 @@ function init_gear_sets()
         -- left_ear = "Cessance Earring",
         left_ear = "Eabani Earring",
         -- right_ear = "Telos Earring",
-        right_ear="Suppanomimi",
+        right_ear = "Suppanomimi",
         left_ring = "Defending Ring",
         right_ring = "Epona's Ring",
-        back={ name="Belenus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%',}},
+        back = {
+            name = "Belenus's Cape",
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%'}
+        }
     }
 
     sets.engaged.LowAcc = set_combine(sets.engaged, {

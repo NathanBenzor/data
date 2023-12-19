@@ -909,7 +909,7 @@ function init_gear_sets()
 
     sets.idle.Town = set_combine(sets.idle, {
         head = "Malignance Chapeau",
-        body = "Mpaca's Doublet",
+        body = "Malignance Tabard",
         hands = "Malignance Gloves",
         legs = "Mpaca's Hose",
         feet = "Malignance Boots",

@@ -615,7 +615,7 @@ function init_gear_sets()
             augments = {'Mag. Acc.+9', '"Avatar perpetuation cost" -2', '"Refresh"+1', 'Accuracy+3 Attack+3',
                         'Mag. Acc.+20 "Mag.Atk.Bns."+20'}
         },
-        body = "Jhakri Robe +2",
+        body="Azimuth Coat +1",
         hands = {
             name = "Bagua Mitaines +1",
             augments = {'Enhances "Curative Recantation" effect'}
@@ -633,7 +633,7 @@ function init_gear_sets()
         left_ear = "Infused Earring",
         right_ear = "Genmei Earring",
         left_ring = "Shneddick Ring",
-        right_ring = "Stikini Ring +1",
+        right_ring = "Stikini Ring",
         back = {
             name = "Nantosuelta's Cape",
             augments = {'VIT+20', 'Eva.+20 /Mag. Eva.+20', 'Pet: "Regen"+10', 'Phys. dmg. taken-10%'}
@@ -668,14 +668,9 @@ function init_gear_sets()
         -- Pet: -DT (37.5% to cap) / Pet: Regen  -DT cap -87.5%
         main = "Idris",
         sub = "Genmei Shield",
-        -- head = {
-        --     name = "Telchine Cap",
-        --     augments = {'Pet: Damage taken -3%'}
-        -- },
         head = "Azimuth Hood +1",
-        -- body = "Jhakri Robe +2",
         body = "Azimuth Coat +1",
-        hands = "Geo. Mitaines +1",
+        hands = "Geo. Mitaines +2",
         legs = {
             name = "Nyame Flanchard",
             augments = {'Path: B'}
@@ -692,7 +687,7 @@ function init_gear_sets()
         left_ear = "Etiolation Earring",
         right_ear = "Genmei Earring",
         left_ring = "Defending Ring",
-        right_ring = "Stikini Ring +1",
+        right_ring = "Stikini Ring",
     back={ name="Nantosuelta's Cape", augments={'VIT+20','Eva.+20 /Mag. Eva.+20','Pet: "Regen"+10','System: 1 ID: 1246 Val: 4',}},
         -- back = {
         --     name = "Mecisto. Mantle",
