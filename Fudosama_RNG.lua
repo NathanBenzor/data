@@ -680,7 +680,7 @@ function init_gear_sets()
         head = "Arcadian Beret +3",
         body = "Ikenga's Vest",
         hands = "Malignance Gloves",
-        legs = "Amini Bragues +2",
+        legs = "Amini Bragues +3",
         feet = "Malignance Boots",
         neck = "Scout's Gorget +2",
         waist = "Yemaya Belt",
@@ -714,7 +714,7 @@ function init_gear_sets()
         },
         body = "Nisroch Jerkin",
         hands = "Amini Glove. +3",
-        legs = "Amini Bragues +2",
+        legs = "Amini Bragues +3",
         feet = {
             name = "Arcadian Socks +3",
             augments = {'Enhances "Stealth Shot" effect'}
@@ -861,7 +861,7 @@ function init_gear_sets()
         head = "Amini Gapette +2",
         body = "Amini Caban +3",
         hands = "Amini Glove. +3",
-        legs = "Amini Bragues +2",
+        legs = "Amini Bragues +3",
         feet = "Amini Bottillons +3",
         neck = {
             name = "Scout's Gorget +2",
@@ -1296,7 +1296,7 @@ function init_gear_sets()
     sets.engaged.Hybrid = {
         head = "Malignance Chapeau", -- 6/6
         body = "Nyame Mail", -- 9/9
-        legs = "Amini Bragues +2", -- 7/0
+        legs = "Amini Bragues +3", -- 7/0
         neck = "Loricate Torque +1", -- 6/6
         ring2 = "Defending Ring" -- 10/10
     }
