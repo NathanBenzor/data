@@ -384,7 +384,7 @@ function init_gear_sets()
             augments = {'Path: A'}
         },
         hands = "Ikenga's Gloves",
-        legs = "Ikenga's Trousers",
+        legs = "Ikenga's Trousers"
     })
 
     sets.precast.WS['Apex Arrow'] = sets.precast.WS
@@ -452,7 +452,7 @@ function init_gear_sets()
             augments = {'Path: A'}
         },
         hands = "Ikenga's Gloves",
-        legs = "Ikenga's Trousers",
+        legs = "Ikenga's Trousers"
     })
 
     sets.precast.WS["Last Stand"] = set_combine(sets.precast.WS, {
@@ -723,10 +723,7 @@ function init_gear_sets()
             name = "Scout's Gorget +2",
             augments = {'Path: A'}
         },
-        waist = {
-            name = "Tellen Belt",
-            augments = {'Path: A'}
-        },
+        waist = "K. Kachina Belt +1",
         left_ear = "Odr Earring",
         right_ear = "Telos Earring",
         left_ring = "Regal Ring",
