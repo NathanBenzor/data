@@ -334,7 +334,7 @@ function init_gear_sets()
             name = "Vanya Cuffs",
             augments = {'Healing magic skill +20', '"Cure" spellcasting time -7%', 'Magic dmg. taken -3'}
         },
-        legs = "Ebers Pant. +1",
+        legs = "Ebers Pant. +2",
         feet = "Hygieia Clogs +1",
         neck = "Clr. Torque +1",
         waist = "Shinjutsu-no-Obi +1",
@@ -358,7 +358,7 @@ function init_gear_sets()
             name = "Vanya Cuffs",
             augments = {'Healing magic skill +20', '"Cure" spellcasting time -7%', 'Magic dmg. taken -3'}
         },
-        legs = "Ebers Pant. +1",
+        legs = "Ebers Pant. +2",
         feet = "Hygieia Clogs +1",
         neck = "Clr. Torque +1",
         waist = "Shinjutsu-no-Obi +1",
@@ -383,7 +383,7 @@ function init_gear_sets()
             name = "Vanya Cuffs",
             augments = {'Healing magic skill +20', '"Cure" spellcasting time -7%', 'Magic dmg. taken -3'}
         },
-        legs = "Ebers Pant. +1",
+        legs = "Ebers Pant. +2",
         feet = "Hygieia Clogs +1",
         neck = "Clr. Torque +1",
         waist = "Shinjutsu-no-Obi +1",
@@ -407,7 +407,7 @@ function init_gear_sets()
             name = "Vanya Cuffs",
             augments = {'Healing magic skill +20', '"Cure" spellcasting time -7%', 'Magic dmg. taken -3'}
         },
-        legs = "Ebers Pant. +1",
+        legs = "Ebers Pant. +2",
         feet = "Hygieia Clogs +1",
         neck = "Clr. Torque +1",
         waist = "Shinjutsu-no-Obi +1",
@@ -550,7 +550,7 @@ function init_gear_sets()
         head = "Ebers Cap +1",
         body = "Ebers Bliaut +1",
         hands = "Ebers Mitts +1",
-        legs = "Ebers Pant. +1",
+        legs = "Ebers Pant. +2",
         feet = "Regal Pumps +1",
         neck = "Clr. Torque +1",
         waist = "Olympus Sash",
@@ -836,7 +836,7 @@ function init_gear_sets()
         left_ear = "Etiolation Earring",
         right_ear = "Genmei Earring",
         left_ring = "Defending Ring",
-        right_ring = "Stikini Ring",
+        right_ring = "Shneddick Ring",
         back = "Solemnity Cape"
     }
 
@@ -888,7 +888,7 @@ function init_gear_sets()
         -- head = "Kaykaus Mitra +1",
         -- body = "Kaykaus Bliaut +1",
         -- legs = "Kaykaus Tights +1",
-        feet = "Herald's Gaiters",
+        feet = "Ebers Duckbills +1",
         neck = "Clr. Torque +1",
         ear1 = "Etiolation Earring",
         ear2 = "Regal Earring",
