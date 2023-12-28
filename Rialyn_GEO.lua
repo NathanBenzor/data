@@ -615,7 +615,7 @@ function init_gear_sets()
             augments = {'Mag. Acc.+9', '"Avatar perpetuation cost" -2', '"Refresh"+1', 'Accuracy+3 Attack+3',
                         'Mag. Acc.+20 "Mag.Atk.Bns."+20'}
         },
-        body="Azimuth Coat +1",
+        body = "Azimuth Coat +1",
         hands = {
             name = "Bagua Mitaines +1",
             augments = {'Enhances "Curative Recantation" effect'}
@@ -688,7 +688,10 @@ function init_gear_sets()
         right_ear = "Genmei Earring",
         left_ring = "Defending Ring",
         right_ring = "Stikini Ring",
-    back={ name="Nantosuelta's Cape", augments={'VIT+20','Eva.+20 /Mag. Eva.+20','Pet: "Regen"+10','System: 1 ID: 1246 Val: 4',}},
+        back = {
+            name = "Nantosuelta's Cape",
+            augments = {'VIT+20', 'Eva.+20 /Mag. Eva.+20', 'Pet: "Regen"+10', 'System: 1 ID: 1246 Val: 4'}
+        }
         -- back = {
         --     name = "Mecisto. Mantle",
         --     augments = {'Cap. Point+48%', 'DEF+5'}
