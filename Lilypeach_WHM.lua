@@ -899,7 +899,7 @@ function init_gear_sets()
         head = "Kaykaus Mitra +1",
         body = "Kaykaus Bliaut +1",
         legs = "Kaykaus Tights +1",
-        feet = "Herald's Gaiters",
+        ring1 = "Shneddick Ring",
         neck = "Clr. Torque +2",
         ear1 = "Glorious Earring",
         ear2 = "Regal Earring"

@@ -230,15 +230,21 @@ function init_gear_sets()
         },
         sub = "Sors Shield",
         ammo = "Impatiens",
-        head = "Welkin Crown",
-        body = "Inyanga Jubbah +2",
-        hands = "Theophany Mitts +3",
-        legs = "Aya. Cosciales +2",
+        head = {
+            name = "Vanya Hood",
+            augments = {'MP+50', '"Fast Cast"+10', 'Haste+2%'}
+        },
+        body = "Inyanga Jubbah +1",
+        hands = "Theophany Mitts +2",
+        legs = "Aya. Cosciales +1",
         feet = "Merlinic Crackows",
-        neck = "Baetyl Pendant",
+        neck = {
+            name = "Clr. Torque +1",
+            augments = {'Path: A'}
+        },
         waist = "Embla Sash",
         left_ear = "Malignance Earring",
-        right_ear = "Loquac. Earring",
+        right_ear = "Etiolation Earring",
         left_ring = "Kishar Ring",
         right_ring = "Rahab Ring",
         back = {
@@ -329,11 +335,8 @@ function init_gear_sets()
         sub = "Sors Shield",
         ammo = "Impatiens",
         head = "Ebers Cap +1",
-        body = "Ebers Bliaut +1",
-        hands = {
-            name = "Vanya Cuffs",
-            augments = {'Healing magic skill +20', '"Cure" spellcasting time -7%', 'Magic dmg. taken -3'}
-        },
+        body = "Ebers Bliaut +2",
+        hands = "Theophany Mitts +2",
         legs = "Ebers Pant. +2",
         feet = "Hygieia Clogs +1",
         neck = "Clr. Torque +1",
@@ -353,11 +356,8 @@ function init_gear_sets()
         sub = "Sors Shield",
         ammo = "Impatiens",
         head = "Ebers Cap +1",
-        body = "Ebers Bliaut +1",
-        hands = {
-            name = "Vanya Cuffs",
-            augments = {'Healing magic skill +20', '"Cure" spellcasting time -7%', 'Magic dmg. taken -3'}
-        },
+        body = "Ebers Bliaut +2",
+        hands = "Theophany Mitts +2",
         legs = "Ebers Pant. +2",
         feet = "Hygieia Clogs +1",
         neck = "Clr. Torque +1",
@@ -378,11 +378,8 @@ function init_gear_sets()
         sub = "Sors Shield",
         ammo = "Impatiens",
         head = "Ebers Cap +1",
-        body = "Ebers Bliaut +1",
-        hands = {
-            name = "Vanya Cuffs",
-            augments = {'Healing magic skill +20', '"Cure" spellcasting time -7%', 'Magic dmg. taken -3'}
-        },
+        body = "Ebers Bliaut +2",
+        hands = "Theophany Mitts +2",
         legs = "Ebers Pant. +2",
         feet = "Hygieia Clogs +1",
         neck = "Clr. Torque +1",
@@ -402,7 +399,7 @@ function init_gear_sets()
         sub = "Sors Shield",
         ammo = "Impatiens",
         head = "Ebers Cap +1",
-        body = "Ebers Bliaut +1",
+        body = "Ebers Bliaut +2",
         hands = {
             name = "Vanya Cuffs",
             augments = {'Healing magic skill +20', '"Cure" spellcasting time -7%', 'Magic dmg. taken -3'}
@@ -420,7 +417,7 @@ function init_gear_sets()
 
     sets.midcast.CuragaNormal = set_combine(sets.midcast.CureNormal, {
         body = "Theophany Bliaut +2", -- 0(+6)/(-6)
-        ring1 = "Stikini Ring +1",
+        ring1 = "Stikini Ring",
         ring2 = "Metamor. Ring +1",
         waist = "Luminary Sash"
     })
@@ -441,8 +438,8 @@ function init_gear_sets()
         sub = "Sors Shield",
         ammo = "Hydrocera",
         head = "Ebers Cap +1",
-        body = "Ebers Bliaut +1",
-        hands = "Theophany Mitts +3",
+        body = "Ebers Bliaut +2",
+        hands = "Theophany Mitts +2",
         legs = {
             name = "Piety Pantaln. +3",
             augments = {'Enhances "Afflatus Misery" effect'}
@@ -451,8 +448,11 @@ function init_gear_sets()
             name = "Vanya Clogs",
             augments = {'Healing magic skill +20', '"Cure" spellcasting time -7%', 'Magic dmg. taken -3'}
         },
-        neck = "Incanter's Torque",
-        waist = "Demonry Sash",
+        neck = {
+            name = "Clr. Torque +1",
+            augments = {'Path: A'}
+        },
+        waist = "Bishop's Sash",
         left_ear = "Meili Earring",
         right_ear = {
             name = "Ebers Earring",
@@ -467,22 +467,25 @@ function init_gear_sets()
     }
 
     sets.midcast.Cursna = {
-        main = "Yagrush",
+        main = {
+            name = "Queller Rod",
+            augments = {'Healing magic skill +15', '"Cure" potency +10%', '"Cure" spellcasting time -7%'}
+        },
         sub = "Sors Shield",
         ammo = "Pemphredo Tathlum",
         head = "Ebers Cap +1",
-        body = "Ebers Bliaut +1",
+        body = "Ebers Bliaut +2",
         hands = {
             name = "Fanatic Gloves",
             augments = {'MP+5', '"Fast Cast"+7'}
         },
-        legs = "Th. Pant. +3",
+        legs = "Th. Pant. +2",
         feet = {
             name = "Vanya Clogs",
             augments = {'Healing magic skill +20', '"Cure" spellcasting time -7%', 'Magic dmg. taken -3'}
         },
         neck = "Debilis Medallion",
-        waist = "Gishdubar Sash",
+        waist = "Bishop's Sash",
         left_ear = "Meili Earring",
         right_ear = {
             name = "Ebers Earring",
@@ -497,7 +500,7 @@ function init_gear_sets()
     }
 
     sets.midcast.Erase = set_combine(sets.midcast.StatusRemoval, {
-        neck = "Clr. Torque +2"
+        neck = "Clr. Torque +1"
     })
 
     -- 110 total Enhancing Magic Skill; caps even without Light Arts
@@ -524,7 +527,7 @@ function init_gear_sets()
             name = "Piety Pantaln. +3",
             augments = {'Enhances "Afflatus Misery" effect'}
         },
-        feet = "Theo. Duckbills +3",
+        feet = "Theo. Duckbills +2",
         neck = {
             name = "Clr. Torque +1",
             augments = {'Path: A'}
@@ -548,7 +551,7 @@ function init_gear_sets()
         sub = "Genmei Shield",
         ammo = "Impatiens",
         head = "Ebers Cap +1",
-        body = "Ebers Bliaut +1",
+        body = "Ebers Bliaut +2",
         hands = "Ebers Mitts +1",
         legs = "Ebers Pant. +2",
         feet = "Regal Pumps +1",
@@ -574,13 +577,13 @@ function init_gear_sets()
             augments = {'Enhances "Benediction" effect'}
         },
         hands = "Ebers Mitts +1",
-        legs = "Th. Pantaloons +3",
-        feet = "Theo. Duckbills +3",
+        legs = "Th. Pantaloons +2",
+        feet = "Theo. Duckbills +2",
         neck = "Incanter's Torque",
         waist = "Embla Sash",
         left_ear = "Andoaa Earring",
         right_ear = "Mimir Earring",
-        left_ring = "Stikini Ring +1",
+        left_ring = "Stikini Ring",
         right_ring = "Kishar Ring",
         back = {
             name = "Alaunus's Cape",
@@ -595,9 +598,9 @@ function init_gear_sets()
             name = "Piety Bliaut +3",
             augments = {'Enhances "Benediction" effect'}
         },
-        hands = "Ebers Mitts +2",
-        legs = "Th. Pant. +3",
-        feet = "Theo. Duckbills +3"
+        hands = "Ebers Mitts +1",
+        legs = "Th. Pantaloons +2",
+        feet = "Theo. Duckbills +2"
     })
 
     sets.midcast.Refresh = set_combine(sets.midcast.EnhancingDuration, {
@@ -625,7 +628,7 @@ function init_gear_sets()
             name = "Piety Pantaln. +3",
             augments = {'Enhances "Afflatus Misery" effect'}
         },
-        feet = "Theo. Duckbills +3",
+        feet = "Theo. Duckbills +2",
         neck = "Nodens Gorget",
         waist = "Siegel Sash",
         left_ear = "Andoaa Earring",
@@ -639,10 +642,7 @@ function init_gear_sets()
     }
 
     sets.midcast.Aquaveil = set_combine(sets.midcast.EnhancingDuration, {
-        main = {
-            name = "Gada",
-            augments = {'Enh. Mag. eff. dur. +5', 'VIT+2'}
-        },
+        main = "Vadose Rod",
         sub = "Ammurapi Shield",
         ammo = "Staunch Tathlum +1",
         hands = "Regal Cuffs",
@@ -659,17 +659,17 @@ function init_gear_sets()
 
     sets.midcast.BarElement = set_combine(sets.midcast.EnhancingDuration, {
         head = "Ebers Cap +1",
-        body = "Ebers Bliaut +1",
+        body = "Ebers Bliaut +2",
         hands = "Ebers Mitts +1",
-        legs = "Piety Pantaln. +1",
+        legs = "Piety Pantaln. +3",
         feet = "Ebers Duckbills +1"
     })
 
     sets.midcast.BarStatus = set_combine(sets.midcast.EnhancingDuration, {
         head = "Ebers Cap +1",
-        body = "Ebers Bliaut +1",
+        body = "Ebers Bliaut +2",
         hands = "Ebers Mitts +1",
-        legs = "Piety Pantaln. +1",
+        legs = "Piety Pantaln. +3",
         feet = "Ebers Duckbills +1"
     })
 
@@ -752,7 +752,7 @@ function init_gear_sets()
             name = "Chironic Hose",
             augments = {'Mag. Acc.+25 "Mag.Atk.Bns."+25', 'MND+13', 'Mag. Acc.+9', '"Mag.Atk.Bns."+15'}
         },
-        feet = "Theo. Duckbills +3",
+        feet = "Theo. Duckbills +2",
         neck = "Incanter's Torque",
         waist = "Rumination Sash",
         left_ear = "Vor Earring",
@@ -888,7 +888,7 @@ function init_gear_sets()
         -- head = "Kaykaus Mitra +1",
         -- body = "Kaykaus Bliaut +1",
         -- legs = "Kaykaus Tights +1",
-        feet = "Ebers Duckbills +1",
+        feet = "Herald's Gaiters",
         neck = "Clr. Torque +1",
         ear1 = "Etiolation Earring",
         ear2 = "Regal Earring",
@@ -897,7 +897,7 @@ function init_gear_sets()
     })
 
     sets.precast.JA["Afflatus Solace"] = {
-        body = "Ebers Bliaut +3"
+        body = "Ebers Bliaut +2"
     }
 
     -- Defense sets

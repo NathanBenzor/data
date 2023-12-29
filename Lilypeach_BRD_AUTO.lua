@@ -174,7 +174,7 @@ function get_sets()
 
     -- Used to swap into movement gear when the player is detected movement when not engaged
     sets.Movement = {
-        feet = "Fili Cothurnes +2"
+        left_ring = "Shneddick Ring"
     }
 
     -- Set to be used if you get cursna casted on you

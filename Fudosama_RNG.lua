@@ -91,7 +91,7 @@ function user_setup()
         ['Gandiva'] = "Chrono Arrow",
         ['Fail-Not'] = "Chrono Arrow",
         ['Annihilator'] = "Chrono Bullet",
-        ['Armageddon'] = "Chrono Bullet",
+        ['Armageddon'] = "Devastating Bullet",
         ['Gastraphetes'] = "Quelling Bolt",
         ['Fomalhaut'] = "Chrono Bullet",
         ['Holliday'] = "Eminent Bullet"
@@ -425,6 +425,39 @@ function init_gear_sets()
         }
     })
 
+    sets.precast.WS["Flaming Arrow"] = {
+        head = {
+            name = "Nyame Helm",
+            augments = {'Path: B'}
+        },
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
+        feet = "Amini Bottillons +3",
+        neck = "Fotia Gorget",
+        waist = "Eschan Stone",
+        left_ear = {
+            name = "Moonshade Earring",
+            augments = {'Accuracy+4', 'TP Bonus +250'}
+        },
+        right_ear = "Friomisi Earring",
+        left_ring = "Dingir Ring",
+        right_ring = "Cornelia's Ring",
+        back = {
+            name = "Belenus's Cape",
+            augments = {'AGI+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'AGI+10', 'Weapon skill damage +10%'}
+        }
+    }
+
     sets.precast.WS['Jishnu\'s Radiance'].Acc = set_combine(sets.precast.WS['Jishnu\'s Radiance'], {
         legs = "Mummu Kecks +2",
         feet = "Arcadian Socks +2",
@@ -522,14 +555,6 @@ function init_gear_sets()
             name = "Nyame Flanchard",
             augments = {'Path: B'}
         },
-        -- legs = {
-        --     name = "Arc. Braccae +3",
-        --     augments = {'Enhances "Eagle Eye Shot" effect'}
-        -- },
-        -- feet = {
-        --     name = "Nyame Sollerets",
-        --     augments = {'Path: B'}
-        -- },
         feet = "Amini Bottillons +3",
         neck = {
             name = "Scout's Gorget +2",
