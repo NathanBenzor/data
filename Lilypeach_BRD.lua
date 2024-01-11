@@ -529,9 +529,9 @@ function init_gear_sets()
             name = "Moonshade Earring",
             augments = {'Accuracy+4', 'TP Bonus +250'}
         },
-        right_ear = "Regal Earring",
+        right_ear = "Ishvara Earring",
         left_ring = "Cornelia's Ring",
-        right_ring = "Karieyh Ring",
+        right_ring = "Shukuyu Ring",
         back = {
             name = "Intarabus's Cape",
             augments = {'STR+20', 'Accuracy+20 Attack+20', 'Weapon skill damage +10%', 'Phys. dmg. taken-10%'}

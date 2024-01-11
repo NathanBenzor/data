@@ -880,7 +880,7 @@ function init_gear_sets()
     })
 
     sets.idle.Town = set_combine(sets.idle, {
-        head = "Amini Gapette +2",
+        head = "Amini Gapette +3",
         body = "Amini Caban +3",
         hands = "Amini Glove. +3",
         legs = "Amini Bragues +3",

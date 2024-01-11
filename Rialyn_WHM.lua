@@ -340,7 +340,7 @@ function init_gear_sets()
         legs = "Ebers Pant. +2",
         feet = "Hygieia Clogs +1",
         neck = "Clr. Torque +1",
-        waist = "Shinjutsu-no-Obi +1",
+        waist = "Acerbic Sash +1",
         left_ear = "Mendi. Earring",
         right_ear = "Glorious Earring",
         left_ring = "Stikini Ring",
@@ -383,7 +383,7 @@ function init_gear_sets()
         legs = "Ebers Pant. +2",
         feet = "Hygieia Clogs +1",
         neck = "Clr. Torque +1",
-        waist = "Shinjutsu-no-Obi +1",
+        waist = "Acerbic Sash +1",
         left_ear = "Glorious Earring",
         right_ear = "Nourish. Earring +1",
         left_ring = "Stikini Ring",
@@ -552,7 +552,7 @@ function init_gear_sets()
         ammo = "Impatiens",
         head = "Ebers Cap +1",
         body = "Ebers Bliaut +2",
-        hands = "Ebers Mitts +1",
+        hands = "Ebers Mitts +2",
         legs = "Ebers Pant. +2",
         feet = "Regal Pumps +1",
         neck = "Clr. Torque +1",
@@ -576,7 +576,7 @@ function init_gear_sets()
             name = "Piety Bliaut +3",
             augments = {'Enhances "Benediction" effect'}
         },
-        hands = "Ebers Mitts +1",
+        hands = "Ebers Mitts +2",
         legs = "Th. Pantaloons +2",
         feet = "Theo. Duckbills +2",
         neck = "Incanter's Torque",
@@ -598,7 +598,7 @@ function init_gear_sets()
             name = "Piety Bliaut +3",
             augments = {'Enhances "Benediction" effect'}
         },
-        hands = "Ebers Mitts +1",
+        hands = "Ebers Mitts +2",
         legs = "Th. Pantaloons +2",
         feet = "Theo. Duckbills +2"
     })
@@ -660,7 +660,7 @@ function init_gear_sets()
     sets.midcast.BarElement = set_combine(sets.midcast.EnhancingDuration, {
         head = "Ebers Cap +1",
         body = "Ebers Bliaut +2",
-        hands = "Ebers Mitts +1",
+        hands = "Ebers Mitts +2",
         legs = "Piety Pantaln. +3",
         feet = "Ebers Duckbills +1"
     })
@@ -668,7 +668,7 @@ function init_gear_sets()
     sets.midcast.BarStatus = set_combine(sets.midcast.EnhancingDuration, {
         head = "Ebers Cap +1",
         body = "Ebers Bliaut +2",
-        hands = "Ebers Mitts +1",
+        hands = "Ebers Mitts +2",
         legs = "Piety Pantaln. +3",
         feet = "Ebers Duckbills +1"
     })
@@ -827,11 +827,14 @@ function init_gear_sets()
         sub = "Genmei Shield",
         ammo = "Impatiens",
         head = "Nyame Helm",
-        body = "Inyanga Jubbah +1",
+        body = "Ebers Bliaut +2",
         hands = "Nyame Gauntlets",
-        legs = "Inyanga Shalwar +2",
+        legs = "Ebers Pant. +2",
         feet = "Nyame Sollerets",
-        neck = "Clr. Torque +1",
+        neck = {
+            name = "Clr. Torque +1",
+            augments = {'Path: A'}
+        },
         waist = "Shinjutsu-no-Obi +1",
         left_ear = "Etiolation Earring",
         right_ear = "Genmei Earring",
@@ -888,7 +891,6 @@ function init_gear_sets()
         -- head = "Kaykaus Mitra +1",
         -- body = "Kaykaus Bliaut +1",
         -- legs = "Kaykaus Tights +1",
-        feet = "Herald's Gaiters",
         neck = "Clr. Torque +1",
         ear1 = "Etiolation Earring",
         ear2 = "Regal Earring",

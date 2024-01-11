@@ -65,15 +65,16 @@ function get_sets()
 
     sets.Weapons['Savage Blade'] = {
         main = "Naegling",
-        sub = {
-            name = "Fusetto +2",
-            augments = {'TP Bonus +1000'}
-        }
+        sub = "Centovente"
     }
 
+    -- sets.Weapons['Eviceration'] = {
+    --     main = 'Tauret',
+    --     sub = "Crepuscular Knife"
+    -- }
     sets.Weapons['Eviceration'] = {
-        main = 'Tauret',
-        sub = "Crepuscular Knife"
+        main = 'Fusetto +2',
+        sub = "Ternion Dagger +1"
     }
 
     sets.Weapons['Rudra\'s Storm'] = {
@@ -197,38 +198,39 @@ function get_sets()
 
     -- Base TP set to build off
     sets.OffenseMode.TP = {
-        range = Instrument.TP,
+        ammo = {
+            name = "Coiste Bodhar",
+            augments = {'Path: A'}
+        },
         head = {
-            name = "Bunzi's Hat",
-            augments = {'Path: A'}
+            name = "Nyame Helm",
+            augments = {'Path: B'}
         },
-        body = "Ashera Harness",
-        hands = {
-            name = "Bunzi's Gloves",
-            augments = {'Path: A'}
+        body = "Ayanmo Corazza +2",
+        hands = "Bunzi's Gloves",
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
         },
-        legs = "Volte Tights",
-        feet = "Nyame Sollerets",
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
         neck = {
-            name = "Bard's Charm +2",
+            name = "Bard's Charm +1",
             augments = {'Path: A'}
         },
-        waist = "Windbuffet Belt +1", -- swapped out with Dual Wield
-        left_ear = "Crep. Earring", -- swapped out with Dual Wield
-        right_ear = "Telos Earring",
-        left_ring = {
-            name = "Chirich Ring +1",
-            bag = "wardrobe2",
-            priority = 2
+        waist = {
+            name = "Sailfi Belt +1",
+            augments = {'Path: A'}
         },
-        right_ring = {
-            name = "Chirich Ring +1",
-            bag = "wardrobe3",
-            priority = 1
-        },
+        left_ear = "Telos Earring",
+        right_ear = "Cessance Earring",
+        left_ring = "Chirich Ring +1",
+        right_ring = "Ilabrat Ring",
         back = {
             name = "Intarabus's Cape",
-            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Damage taken-5%'}
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', '"Store TP"+10', 'Phys. dmg. taken-10%'}
         }
     }
 
@@ -710,7 +712,49 @@ function get_sets()
     })
 
     sets.WS["Savage Blade"] = set_combine(sets.WS.WSD, {
-        left_ring = "Sroda Ring"
+        range = {
+            name = "Linos",
+            augments = {'Accuracy+13', 'Weapon skill damage +3%', 'STR+8'}
+        },
+        head = {
+            name = "Nyame Helm",
+            augments = {'Path: B'}
+        },
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
+        neck = {
+            name = "Bard's Charm +1",
+            augments = {'Path: A'}
+        },
+        waist = {
+            name = "Sailfi Belt +1",
+            augments = {'Path: A'}
+        },
+        left_ear = {
+            name = "Moonshade Earring",
+            augments = {'Accuracy+4', 'TP Bonus +250'}
+        },
+        right_ear = "Ishvara Earring",
+        left_ring = "Cornelia's Ring",
+        right_ring = "Shukuyu Ring",
+        back = {
+            name = "Intarabus's Cape",
+            augments = {'STR+20', 'Accuracy+20 Attack+20', 'Weapon skill damage +10%', 'Phys. dmg. taken-10%'}
+        }
     })
 
     sets.WS["Mordant Rime"] = set_combine(sets.WS, {
