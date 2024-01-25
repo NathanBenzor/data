@@ -73,7 +73,7 @@ function job_setup()
         ['Aspirs'] = {'Aspir', 'Aspir II', 'Aspir III'}
     }
 
-    lockstyleset = 192
+    lockstyleset = 196
 
 end
 
@@ -168,7 +168,7 @@ function init_gear_sets()
         }
     }
     sets.precast.JA['Full Circle'] = {
-        head = "Azimuth Hood +2"
+        head = "Azimuth Hood +3"
     }
     sets.precast.JA['Life Cycle'] = {
         head = "Bagua Galero +1",
@@ -209,7 +209,10 @@ function init_gear_sets()
     })
 
     sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, {
-        hands = "Bagua Mitaines +3"
+        hands = {
+            name = "Bagua Mitaines +2",
+            augments = {'Enhances "Curative Recantation" effect'}
+        },
     })
 
     sets.precast.FC.Cure = set_combine(sets.precast.FC, {
@@ -307,7 +310,7 @@ function init_gear_sets()
             name = "Dunna",
             augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
         },
-        head = "Azimuth Hood +2",
+        head = "Azimuth Hood +3",
         body = {
             name = "Bagua Tunic +3",
             augments = {'Enhances "Bolster" effect'}
@@ -317,7 +320,7 @@ function init_gear_sets()
             name = "Bagua Pants +3",
             augments = {'Enhances "Mending Halation" effect'}
         },
-        feet = "Azimuth Gaiters +2",
+        feet = "Bagua Sandals +2",
         neck = "Incanter's Torque",
         waist = "Austerity Belt +1",
         left_ear = "Malignance Earring",
@@ -340,7 +343,7 @@ function init_gear_sets()
             name = "Dunna",
             augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
         },
-        head = "Azimuth Hood +2",
+        head = "Azimuth Hood +3",
         body = {
             name = "Bagua Tunic +3",
             augments = {'Enhances "Bolster" effect'}
@@ -466,7 +469,8 @@ function init_gear_sets()
 
     sets.midcast.Stoneskin = set_combine(sets.midcast.EnhancingDuration, {
         neck = "Nodens Gorget",
-        waist = "Siegel Sash"
+        waist = "Siegel Sash",
+        legs="Querkening Brais",
     })
 
     sets.midcast.Aquaveil = set_combine(sets.midcast.EnhancingDuration, {
@@ -574,7 +578,10 @@ function init_gear_sets()
     sets.midcast['Elemental Magic'].Resistant = set_combine(sets.midcast['Elemental Magic'], {
         main = "Idris",
         sub = "Ammurapi Shield",
-        hands = "Bagua Mitaines +3",
+        hands = {
+            name = "Bagua Mitaines +2",
+            augments = {'Enhances "Curative Recantation" effect'}
+        },
         legs = gear.Merl_MAB_legs,
         feet = gear.Merl_MAB_feet,
         neck = "Sanctity Necklace",
@@ -617,7 +624,7 @@ function init_gear_sets()
         },
         body = "Jhakri Robe +2",
         hands = {
-            name = "Bagua Mitaines +1",
+            name = "Bagua Mitaines +2",
             augments = {'Enhances "Curative Recantation" effect'}
         },
         legs = "Assid. Pants +1",
@@ -688,7 +695,7 @@ function init_gear_sets()
         --     name = "Telchine Cap",
         --     augments = {'Pet: Damage taken -3%'}
         -- },
-        head = "Azimuth Hood +2",
+        head = "Azimuth Hood +3",
         body = "Jhakri Robe +2",
         hands = "Geo. Mitaines +3",
         legs = {
@@ -743,7 +750,7 @@ function init_gear_sets()
             name = "Dunna",
             augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
         },
-        head = "Azimuth Hood +2",
+        head = "Azimuth Hood +3",
         body = {
             name = "Bagua Tunic +3",
             augments = {'Enhances "Bolster" effect'}

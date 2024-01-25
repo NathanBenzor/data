@@ -141,7 +141,7 @@ function init_gear_sets()
         feet = "Fallen's Sollerets +1"
     }
     sets.precast.JA['Nether Void'] = {
-        legs = "Heath. Flanchard +1"
+        legs = "Heath. Flanchard +3"
     }
     sets.precast.JA['Souleater'] = {
         head = "Ig. Burgonet +3"
@@ -641,7 +641,7 @@ function init_gear_sets()
             name = "Fall. Fin. Gaunt. +2",
             augments = {'Enhances "Diabolic Eye" effect'}
         },
-        legs = "Heath. Flanchard +2",
+        legs = "Heath. Flanchard +3",
         feet = "Heathe. Sollerets +3",
         neck = "Erra Pendant",
         waist = "Austerity Belt +1",
@@ -665,7 +665,7 @@ function init_gear_sets()
             augments = {'HP+60', 'STR+10', 'INT+10'}
         },
         hands = "Pavor Gauntlets",
-        legs = "Heath. Flanchard +2",
+        legs = "Heath. Flanchard +3",
         feet = "Ratri Sollerets",
         neck = "Erra Pendant",
         waist = "Eschan Stone",
@@ -677,7 +677,7 @@ function init_gear_sets()
     })
 
     sets.midcast['Absorb-TP'] = set_combine(sets.midcast.Absorb, {
-        hands = "Heath. Gauntlets +1"
+        hands = "Heath. Gauntlets +3"
     })
 
     sets.midcast['Absorb-CHR'] = {
@@ -840,8 +840,8 @@ function init_gear_sets()
         },
         head = "Hjarrandi Helm",
         body = "Heath. Cuirass +2",
-        hands = "Sakpata's Gauntlets",
-        legs = "Heath. Flanchard +2",
+        hands = "Heath. Gauntlets +3",
+        legs = "Heath. Flanchard +3",
         feet = {
             name = "Sakpata's Leggings",
             augments = {'Path: A'}
@@ -878,8 +878,8 @@ function init_gear_sets()
         },
         head = "Heathen's Burgeonet +3",
         body = "Heath. Cuirass +3",
-        hands = "Sakpata's Gauntlets",
-        legs = "Heath. Flanchard +2",
+        hands = "Heath. Gauntlets +3",
+        legs = "Heath. Flanchard +3",
         feet = "Heathen's Sollerets +3",
         neck = {
             name = "Abyssal Beads +2",
