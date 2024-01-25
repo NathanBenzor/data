@@ -656,7 +656,7 @@ function init_gear_sets()
 
     sets.midcast.SpellInterrupt = {
         ammo = "Staunch Tathlum +1",
-        head = "Agwu's Cap",
+        head = "Erilaz Galae +3",
         body = {
             name = "Nyame Mail",
             augments = {'Path: B'}
@@ -671,7 +671,7 @@ function init_gear_sets()
             augments = {'Path: B'}
         },
         neck = "Moonbeam Necklace",
-        waist = "Plat. Mog. Belt",
+        waist="Audumbla Sash",
         left_ear = "Halasz Earring",
         right_ear = "Tuisto Earring",
         left_ring = "Evanescence Ring",
