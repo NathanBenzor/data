@@ -353,7 +353,7 @@ function init_gear_sets()
             name = "Bagua Pants +3",
             augments = {'Enhances "Mending Halation" effect'}
         },
-        feet = "Azimuth Gaiters +2",
+        feet = "Azimuth Gaiters +3",
         neck = "Incanter's Torque",
         waist = "Austerity Belt +1",
         left_ear = "Malignance Earring",
@@ -558,11 +558,11 @@ function init_gear_sets()
         ammo = "Ghastly Tathlum +1", -- 8/8
         main = "Bunzi's Rod",
         sub = "Culminus", -- 5/0
-        head = "Azi. Hood +2",
+        head = "Azi. Hood +3",
         body = "Agwu's Robe",
         hands = "Agwu's Gages",
         legs = "Agwu's Slops",
-        feet = "Azi. Gaiters +2",
+        feet = "Azi. Gaiters +3",
         neck = "Mizu. Kubikazari",
         ear1 = "Malignance Earring",
         ear2 = "Regal Earring",
@@ -760,7 +760,7 @@ function init_gear_sets()
             name = "Bagua Pants +3",
             augments = {'Enhances "Mending Halation" effect'}
         },
-        feet = "Azimuth Gaiters +2",
+        feet = "Azimuth Gaiters +3",
         neck = "Incanter's Torque",
         waist = "Isa Belt",
         left_ear = "Regal Earring",
