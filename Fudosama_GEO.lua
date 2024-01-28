@@ -371,11 +371,12 @@ function init_gear_sets()
 
     sets.midcast.Cure = {
         main = "Daybreak",
-        sub = "Genmei Shield",
-        range = {
-            name = "Dunna",
-            augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
-        },
+        sub = "Ammurapi Shield",
+        -- range = {
+        --     name = "Dunna",
+        --     augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
+        -- },
+        ammo = "Hydrocera",
         head = {
             name = "Vanya Hood",
             augments = {'MP+50', '"Cure" potency +7%', 'Enmity-6'}
@@ -488,8 +489,9 @@ function init_gear_sets()
     sets.midcast.Shellra = sets.midcast.Protect
 
     sets.midcast.MndEnfeebles = {
-        -- main = "Daybreak",
-        -- sub = "Culminus",
+        main = "Daybreak",
+        sub = "Ammurapi shield",
+        ammo = "Pemphredo Tathlum",
         head = "Geo. Galero +1",
         body = "Jhakri Robe +2",
         hands = "Geo. Mitaines +3",
@@ -557,10 +559,10 @@ function init_gear_sets()
     sets.midcast['Elemental Magic'] = {
         ammo = "Ghastly Tathlum +1", -- 8/8
         main = "Bunzi's Rod",
-        sub = "Culminus", -- 5/0
+        sub = "Ammurapi Shield",
         head = "Azi. Hood +3",
-        body = "Agwu's Robe",
-        hands = "Agwu's Gages",
+        body = "Azi. Coat +2",
+        hands = "Bagua Mitaines +2",
         legs = "Agwu's Slops",
         feet = "Azi. Gaiters +3",
         neck = "Mizu. Kubikazari",
@@ -745,7 +747,7 @@ function init_gear_sets()
 
     sets.idle.Town = set_combine(sets.idle, {
         main = "Idris",
-        sub = "Genmei Shield",
+        sub = "Ammurapi Shield",
         range = {
             name = "Dunna",
             augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
