@@ -611,7 +611,7 @@ function init_gear_sets()
         ring1 = "Stikini Ring +1",
         ring2 = "Stikini Ring +1",
         back = gear.DRK_FC_Cape,
-        waist = "Eschan Stone"
+        waist = "Plat. Mog. Belt"
     }
 
     sets.midcast['Dark Magic'] = {
