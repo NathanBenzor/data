@@ -612,10 +612,6 @@ function init_gear_sets()
             name = "Nyame Mail",
             augments = {'Path: B'}
         },
-        -- body = {
-        --     name = "Cohort Cloak +1",
-        --     augments = {'Path: A'}
-        -- },
         hands = {
             name = "Nyame Gauntlets",
             augments = {'Path: B'}
@@ -624,7 +620,6 @@ function init_gear_sets()
             name = "Nyame Flanchard",
             augments = {'Path: B'}
         },
-        -- legs = "Acradian Braccae +3",
         feet = {
             name = "Nyame Sollerets",
             augments = {'Path: B'}
@@ -638,10 +633,7 @@ function init_gear_sets()
         right_ear = "Friomisi Earring",
         left_ring = "Dingir Ring",
         right_ring = "Cornelia's Ring",
-        back = {
-            name = "Belenus's Cape",
-            augments = {'AGI+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'Weapon skill damage +10%'}
-        }
+        back={ name="Belenus's Cape", augments={'DEX+20','Mag. Acc+20 /Mag. Dmg.+20','DEX+10','Weapon skill damage +10%','Damage taken-5%',}},
     }
 
     sets.precast.WS["Savage Blade"] = {

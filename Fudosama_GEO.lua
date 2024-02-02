@@ -561,7 +561,7 @@ function init_gear_sets()
         main = "Bunzi's Rod",
         sub = "Ammurapi Shield",
         head = "Azi. Hood +3",
-        body = "Azi. Coat +2",
+        body = "Azi. Coat +3",
         hands = "Bagua Mitaines +2",
         legs = "Agwu's Slops",
         feet = "Azi. Gaiters +3",
@@ -624,7 +624,7 @@ function init_gear_sets()
             augments = {'Mag. Acc.+9', '"Avatar perpetuation cost" -2', '"Refresh"+1', 'Accuracy+3 Attack+3',
                         'Mag. Acc.+20 "Mag.Atk.Bns."+20'}
         },
-        body = "Jhakri Robe +2",
+        body = "Azimuth Coat +3",
         hands = {
             name = "Bagua Mitaines +2",
             augments = {'Enhances "Curative Recantation" effect'}
@@ -753,10 +753,7 @@ function init_gear_sets()
             augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
         },
         head = "Azimuth Hood +3",
-        body = {
-            name = "Bagua Tunic +3",
-            augments = {'Enhances "Bolster" effect'}
-        },
+        body = "Azimuth Coat +3",
         hands = "Geomancy Mitaines +3",
         legs = {
             name = "Bagua Pants +3",
