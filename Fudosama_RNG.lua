@@ -687,7 +687,10 @@ function init_gear_sets()
         right_ear = "Friomisi Earring",
         left_ring = "Dingir Ring",
         right_ring = "Cornelia's Ring",
-        back={ name="Belenus's Cape", augments={'DEX+20','Mag. Acc+20 /Mag. Dmg.+20','DEX+10','Weapon skill damage +10%','Damage taken-5%',}},
+        back = {
+            name = "Belenus's Cape",
+            augments = {'DEX+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'DEX+10', 'Weapon skill damage +10%', 'Damage taken-5%'}
+        }
     }
 
     sets.precast.WS["Savage Blade"] = {
