@@ -308,12 +308,10 @@ function init_gear_sets()
 
     sets.precast.WS['Torcleaver'] = set_combine(sets.precast.WS, {
         ammo = "Knobkierrie",
-        -- head = "Sakpata's Helm",
         head = {
             name = "Nyame Helm",
             augments = {'Path: B'}
         },
-        -- body = "Ignominy Cuirass +3",
         body = {
             name = "Nyame Mail",
             augments = {'Path: B'}
@@ -372,26 +370,45 @@ function init_gear_sets()
 
     sets.precast.WS['Cross Reaper'] = set_combine(sets.precast.WS, {
         ammo = "Knobkierrie",
-        head = "Heath. Bur. +3",
-        body = "Ignominy Cuirass +3",
+        -- head = "Heath. Bur. +3",
+        head = {
+            name = "Nyame Helm",
+            augments = {'Path: B'}
+        },
+        -- body = "Ignominy Cuirass +3",
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
         hands = {
             name = "Nyame Gauntlets",
             augments = {'Path: B'}
         },
-        legs = "Sakpata's Cuisses",
+        -- legs = "Sakpata's Cuisses",
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
         feet = "Heath. Sollerets +3",
         neck = {
             name = "Abyssal Beads +2",
             augments = {'Path: A'}
         },
-        waist = "Fotia Belt",
-        left_ear = "Thrud Earring",
+        -- waist = "Fotia Belt",
+        waist = {
+            name = "Sailfi Belt +1",
+            augments = {'Path: A'}
+        },
         right_ear = {
+            name = "Heath. Earring +1",
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+13', 'Mag. Acc.+13', 'Weapon skill damage +2%'}
+        },
+        left_ear = {
             name = "Moonshade Earring",
             augments = {'Accuracy+4', 'TP Bonus +250'}
         },
-        left_ring = "Regal Ring",
-        right_ring = "Niqmaddu Ring",
+        left_ring = "Niqmaddu Ring",
+        right_ring = "Cornelia's Ring",
         back = {
             name = "Ankou's Mantle",
             augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%'}
@@ -414,7 +431,6 @@ function init_gear_sets()
     sets.precast.WS['Insurgency'] = set_combine(sets.precast.WS['Cross Reaper'], {
         ammo = "Knobkierrie",
         head = "Heath. Bur. +3",
-        -- body = "Ignominy Cuirass +3",
         body = {
             name = "Nyame Mail",
             augments = {'Path: B'}
@@ -434,7 +450,6 @@ function init_gear_sets()
             name = "Moonshade Earring",
             augments = {'Accuracy+4', 'TP Bonus +250'}
         },
-        -- right_ear = "Thrud Earring",
         right_ear = {
             name = "Heath. Earring +1",
             augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+13', 'Mag. Acc.+13', 'Weapon skill damage +2%'}

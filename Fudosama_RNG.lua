@@ -335,18 +335,27 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
 
     sets.precast.WS = {
-        head = "Orion Beret +3",
+        head = {
+            name = "Nyame Helm",
+            augments = {'Path: B'}
+        },
         body = {
-            name = "Herculean Vest",
-            augments = {'Pet: STR+1', 'Pet: DEX+7', 'Weapon skill damage +9%', 'Accuracy+20 Attack+20',
-                        'Mag. Acc.+16 "Mag.Atk.Bns."+16'}
+            name = "Nyame Mail",
+            augments = {'Path: B'}
         },
-        hands = "Meg. Gloves +2",
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
         legs = {
-            name = "Arc. Braccae +3",
-            augments = {'Enhances "Eagle Eye Shot" effect'}
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
         },
-        feet = "Amini Bottillons +3",
+        -- feet = "Amini Bottillons +3",
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
         neck = "Fotia Gorget",
         waist = "Fotia Belt",
         left_ear = "Ishvara Earring",
@@ -355,7 +364,7 @@ function init_gear_sets()
             augments = {'Accuracy+4', 'TP Bonus +250'}
         },
         left_ring = "Regal Ring",
-        right_ring = "Dingir Ring",
+        right_ring = "Cornelia's Ring",
         back = {
             name = "Belenus's Cape",
             augments = {'AGI+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'AGI+10', 'Weapon skill damage +10%'}
@@ -442,9 +451,52 @@ function init_gear_sets()
             name = "Nyame Flanchard",
             augments = {'Path: B'}
         },
-        feet = "Amini Bottillons +3",
+        -- feet = "Amini Bottillons +3",
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
         neck = "Fotia Gorget",
-        waist = "Eschan Stone",
+        -- waist = "Eschan Stone",
+        waist = "Orpheus's Sash",
+        left_ear = {
+            name = "Moonshade Earring",
+            augments = {'Accuracy+4', 'TP Bonus +250'}
+        },
+        right_ear = "Friomisi Earring",
+        left_ring = "Dingir Ring",
+        right_ring = "Cornelia's Ring",
+        back = {
+            name = "Belenus's Cape",
+            augments = {'AGI+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'AGI+10', 'Weapon skill damage +10%'}
+        }
+    }
+
+    sets.precast.WS["Hot Shot"] = {
+        head = {
+            name = "Nyame Helm",
+            augments = {'Path: B'}
+        },
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
+        -- feet = "Amini Bottillons +3",
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
+        neck = "Fotia Gorget",
+        -- waist = "Eschan Stone",
+        waist = "Orpheus's Sash",
         left_ear = {
             name = "Moonshade Earring",
             augments = {'Accuracy+4', 'TP Bonus +250'}
@@ -560,7 +612,8 @@ function init_gear_sets()
             name = "Scout's Gorget +2",
             augments = {'Path: A'}
         },
-        waist = "Eschan Stone",
+        -- waist = "Eschan Stone",
+        waist = "Orpheus's Sash",
         left_ear = {
             name = "Moonshade Earring",
             augments = {'Accuracy+4', 'TP Bonus +250'}
@@ -625,7 +678,8 @@ function init_gear_sets()
             augments = {'Path: B'}
         },
         neck = "Sibyl Scarf",
-        waist = "Eschan Stone",
+        -- waist = "Eschan Stone",
+        waist = "Orpheus's Sash",
         left_ear = {
             name = "Moonshade Earring",
             augments = {'Accuracy+4', 'TP Bonus +250'}
