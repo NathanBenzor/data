@@ -375,7 +375,6 @@ function init_gear_sets()
             name = "Nyame Helm",
             augments = {'Path: B'}
         },
-        -- body = "Ignominy Cuirass +3",
         body = {
             name = "Nyame Mail",
             augments = {'Path: B'}
@@ -797,30 +796,30 @@ function init_gear_sets()
 
     sets.midcast.Stun = sets.midcast['Dark Magic']
 
-    -- sets.midcast['Stun'] = {
-    --     ammo = "Sapience Orb",
-    --     head = "Halitus Helm",
-    --     body = "Emet Harness +1",
-    --     hands = {
-    --         name = "Nyame Gauntlets",
-    --         augments = {'Path: B'}
-    --     },
-    --     legs = "Brontes Cuisses",
-    --     feet = "Eschite Greaves",
-    --     neck = {
-    --         name = "Unmoving Collar +1",
-    --         augments = {'Path: A'}
-    --     },
-    --     waist = "Plat. Mog. Belt",
-    --     left_ear = "Friomisi Earring",
-    --     right_ear = "Cryptic Earring",
-    --     left_ring = {
-    --         name = "Gelatinous Ring +1",
-    --         augments = {'Path: A'}
-    --     },
-    --     right_ring = "Defending Ring",
-    --     back = "Moonbeam Cape"
-    -- }
+    sets.midcast['Stun'] = {
+        ammo = "Sapience Orb",
+        head = "Halitus Helm",
+        body = "Emet Harness +1",
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
+        legs = "Brontes Cuisses",
+        feet = "Eschite Greaves",
+        neck = {
+            name = "Unmoving Collar +1",
+            augments = {'Path: A'}
+        },
+        waist = "Plat. Mog. Belt",
+        left_ear = "Friomisi Earring",
+        right_ear = "Cryptic Earring",
+        left_ring = {
+            name = "Gelatinous Ring +1",
+            augments = {'Path: A'}
+        },
+        right_ring = "Defending Ring",
+        back = "Moonbeam Cape"
+    }
 
     sets.midcast['Dread Spikes'] = set_combine(sets.midcast['Dark Magic'], {
         ammo = "Impatiens",
@@ -854,7 +853,7 @@ function init_gear_sets()
             augments = {'Path: A'}
         },
         head = "Hjarrandi Helm",
-        body = "Heath. Cuirass +2",
+        body = "Heath. Cuirass +3",
         hands = "Heath. Gauntlets +3",
         legs = "Heath. Flanchard +3",
         feet = {
