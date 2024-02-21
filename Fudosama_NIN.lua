@@ -493,11 +493,6 @@ function init_gear_sets()
             name = "Nyame Mail",
             augments = {'Path: B'}
         },
-        -- body = {
-        --     name = "Herculean Vest",
-        --     augments = {'Pet: STR+1', 'Pet: DEX+7', 'Weapon skill damage +9%', 'Accuracy+20 Attack+20',
-        --                 'Mag. Acc.+16 "Mag.Atk.Bns."+16'}
-        -- },
         hands = {
             name = "Nyame Gauntlets",
             augments = {'Path: B'}
@@ -512,7 +507,8 @@ function init_gear_sets()
             augments = {'Path: B'}
         },
         neck = "Fotia Gorget",
-        waist = "Fotia Belt",
+        -- waist = "Fotia Belt",
+        waist = "Orpheus's Sash",
         left_ear = {
             name = "Moonshade Earring",
             augments = {'Accuracy+4', 'TP Bonus +250'}
@@ -546,7 +542,43 @@ function init_gear_sets()
         },
         feet = "Malignance Boots",
         neck = "Fotia Gorget",
-        waist = "Fotia Belt",
+        -- waist = "Fotia Belt",
+        waist = "Orpheus's Sash",
+        left_ear = {
+            name = "Moonshade Earring",
+            augments = {'Accuracy+4', 'TP Bonus +250'}
+        },
+        right_ear = "Friomisi Earring",
+        left_ring = "Gere Ring",
+        right_ring = "Cornelia's Ring",
+        back = {
+            name = "Andartia's Mantle",
+            augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%'}
+        }
+    })
+
+    sets.precast.WS['Blade: To'] = set_combine(sets.precast.WS, {
+        ammo = "Seething Bomblet +1",
+        head = {
+            name = "Mochi. Hatsuburi +3",
+            augments = {'Enhances "Yonin" and "Innin" effect'}
+        },
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
+        legs = {
+            name = "Mochi. Hakama +3",
+            augments = {'Enhances "Mijin Gakure" effect'}
+        },
+        feet = "Malignance Boots",
+        neck = "Fotia Gorget",
+        -- waist = "Fotia Belt",
+        waist = "Orpheus's Sash",
         left_ear = {
             name = "Moonshade Earring",
             augments = {'Accuracy+4', 'TP Bonus +250'}
@@ -962,7 +994,15 @@ function init_gear_sets()
         head = "Malignance Chapeau",
         body = "Mpaca's Doublet",
         hands = "Malignance Gloves",
-        legs = "Mpaca's Hose",
+        -- legs = "Mpaca's Hose",
+        -- legs = {
+        --     name = "Tatena. Haidate +1",
+        --     augments = {'Path: A'}
+        -- },
+        legs = {
+            name = "Samnuha Tights",
+            augments = {'STR+10', 'DEX+10', '"Dbl.Atk."+3', '"Triple Atk."+3'}
+        },
         feet = "Malignance Boots",
         neck = {
             name = "Ninja Nodowa +1",
@@ -1013,7 +1053,6 @@ function init_gear_sets()
         feet = "Mpaca's Boots"
     })
 
-    
     sets.engaged.DW30MidHaste = set_combine(sets.engaged, {
         ammo = "Seki Shuriken",
         head = "Malignance Chapeau",
@@ -1030,7 +1069,7 @@ function init_gear_sets()
         back = {
             name = "Andartia's Mantle",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%'}
-        },
+        }
     })
 
     -- 15% Magic Haste (67% DW to cap)
@@ -1102,7 +1141,7 @@ function init_gear_sets()
         back = {
             name = "Andartia's Mantle",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%'}
-        },
+        }
     } -- 21%
 
     sets.engaged.LowAcc.MidHaste = set_combine(sets.engaged.MidHaste, {

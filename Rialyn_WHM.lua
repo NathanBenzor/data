@@ -76,7 +76,7 @@ function job_setup()
     no_swap_gear = S {"Warp Ring", "Dim. Ring (Dem)", "Dim. Ring (Holla)", "Dim. Ring (Mea)", "Trizek Ring",
                       "Echad Ring", "Facility Ring", "Capacity Ring"}
 
-    lockstyleset = 1
+    lockstyleset = 4
 
 end
 

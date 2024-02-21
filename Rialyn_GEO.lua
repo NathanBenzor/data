@@ -73,7 +73,7 @@ function job_setup()
         ['Aspirs'] = {'Aspir', 'Aspir II', 'Aspir III'}
     }
 
-    lockstyleset = 2
+    lockstyleset = 4
 
 end
 
