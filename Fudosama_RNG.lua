@@ -753,10 +753,13 @@ function init_gear_sets()
     sets.midcast.RA = {
         head = "Arcadian Beret +3",
         body = "Ikenga's Vest",
-        hands = "Malignance Gloves",
+        hands = "Amini Glove. +3",
         legs = "Amini Bragues +3",
-        feet = "Malignance Boots",
-        neck = "Scout's Gorget +2",
+        feet = "Ikenga's Clogs",
+        neck = {
+            name = "Scout's Gorget +2",
+            augments = {'Path: A'}
+        },
         waist = "Yemaya Belt",
         left_ear = "Dedition Earring",
         right_ear = "Telos Earring",
@@ -809,7 +812,7 @@ function init_gear_sets()
     })
 
     sets.midcast.RA.STP = set_combine(sets.midcast.RA, {
-        neck = "Iskur Gorget",
+        -- neck = "Iskur Gorget",
         ear1 = "Dedition Earring",
         ring1 = {
             name = "Chirich Ring +1",
@@ -973,21 +976,16 @@ function init_gear_sets()
 
     sets.engaged = {
         head = "Malignance Chapeau",
-        -- body = {
-        --     name = "Adhemar Jacket +1",
-        --     augments = {'DEX+12', 'AGI+12', 'Accuracy+20'}
-        -- },
         body = "Malignance Tabard",
-        -- body = "Nyame Mail",
         hands = "Malignance Gloves",
-        -- legs = {
-        --     name = "Samnuha Tights",
-        --     augments = {'STR+10', 'DEX+10', '"Dbl.Atk."+3', '"Triple Atk."+3'}
-        -- },
         legs = {
-            name = "Tatena. Haidate +1",
-            augments = {'Path: A'}
+            name = "Samnuha Tights",
+            augments = {'STR+10', 'DEX+10', '"Dbl.Atk."+3', '"Triple Atk."+3'}
         },
+        -- legs = {
+        --     name = "Tatena. Haidate +1",
+        --     augments = {'Path: A'}
+        -- },
         feet = "Malignance Boots",
         neck = {
             name = "Scout's Gorget +2",
@@ -997,9 +995,9 @@ function init_gear_sets()
             name = "Sailfi Belt +1",
             augments = {'Path: A'}
         },
-        -- left_ear = "Sherida Earring",
+        left_ear = "Sherida Earring",
         -- left_ear = "Cessance Earring",
-        left_ear = "Eabani Earring",
+        -- left_ear = "Eabani Earring",
         -- right_ear = "Telos Earring",
         right_ear = "Suppanomimi",
         left_ring = "Defending Ring",

@@ -501,7 +501,6 @@ function init_gear_sets()
             name = "Mochi. Hakama +3",
             augments = {'Enhances "Mijin Gakure" effect'}
         },
-        -- feet = "Malignance Boots",
         feet = {
             name = "Nyame Sollerets",
             augments = {'Path: B'}
@@ -630,7 +629,7 @@ function init_gear_sets()
     })
 
     sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
-        ammo = "Seething Bomblet +1",
+        ammo = "Ghastly Tathlum +1",
         head = {
             name = "Mochi. Hatsuburi +3",
             augments = {'Enhances "Yonin" and "Innin" effect'}
@@ -644,15 +643,15 @@ function init_gear_sets()
             augments = {'Path: B'}
         },
         legs = {
-            name = "Mochi. Hakama +3",
-            augments = {'Enhances "Mijin Gakure" effect'}
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
         },
         feet = {
-            name = "Herculean Boots",
-            augments = {'Attack+2', 'Weapon skill damage +5%', 'Accuracy+6'}
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
         },
-        neck = "Fotia Gorget",
-        waist = "Fotia Belt",
+        neck = "Baetyl Pendant",
+        waist = "Orpheus's Sash",
         left_ear = {
             name = "Moonshade Earring",
             augments = {'Accuracy+4', 'TP Bonus +250'}
@@ -943,7 +942,11 @@ function init_gear_sets()
         head = "Malignance Chapeau",
         body = "Malignance Tabard",
         hands = "Malignance Gloves",
-        legs = "Mpaca's Hose",
+        -- legs = "Mpaca's Hose",
+        legs = {
+            name = "Tatena. Haidate +1",
+            augments = {'Path: A'}
+        },
         feet = "Malignance Boots",
         neck = {
             name = "Loricate Torque +1",
