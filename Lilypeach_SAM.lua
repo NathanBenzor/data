@@ -737,7 +737,7 @@ function init_gear_sets()
         left_ear = "Digni. Earring",
         right_ear = {
             name = "Kasuga Earring",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+8', 'Mag. Acc.+8'}
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+10', 'Mag. Acc.+10'}
         },
         left_ring = {
             name = "Metamor. Ring +1",
@@ -776,8 +776,8 @@ function init_gear_sets()
         waist = "Orpheus's Sash",
         left_ear = "Thrud Earring",
         right_ear = "Friomisi Earring",
-        right_ring = "Niqmaddu Ring",
-        left_ring = "Cornelia's Ring",
+        left_ring = "Karieyh Ring",
+        right_ring = "Cornelia's Ring",
         back = {
             name = "Smertrios's Mantle",
             augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%', 'Phys. dmg. taken-10%'}
@@ -880,11 +880,11 @@ function init_gear_sets()
             name = "Sam. Nodowa +2",
             augments = {'Path: A'}
         },
-        waist = "Flume Belt +1",
+        waist = "Sweordfaetels +1",
         left_ear = "Genmei Earring",
         right_ear = "Sanare Earring",
-        left_ring = "Defending Ring",
-        right_ring = "Archon Ring",
+        -- left_ring = "Defending Ring",
+        left_ring = "Shneddick Ring",
         back = {
             name = "Smertrios's Mantle",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Phys. dmg. taken-10%'}
@@ -921,15 +921,11 @@ function init_gear_sets()
             name = "Sam. Nodowa +2",
             augments = {'Path: A'}
         },
-        -- waist = {
-        --     name = "Sailfi Belt +1",
-        --     augments = {'Path: A'}
-        -- },
-                waist = "Sweordfaetels +1",
+        waist = "Sweordfaetels +1",
         left_ear = "Dedition Earring",
         right_ear = {
             name = "Kasuga Earring",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+8', 'Mag. Acc.+8'}
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+10', 'Mag. Acc.+10'}
         },
         left_ring = "Chirich Ring +1",
         right_ring = "Niqmaddu Ring",
@@ -1000,8 +996,8 @@ function init_gear_sets()
             augments = {'Path: A'}
         },
         right_ear = {
-            name = "Kasuga Earring +1",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+14', 'Mag. Acc.+14', 'Weapon skill damage +3%'}
+            name = "Kasuga Earring",
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+10', 'Mag. Acc.+10'}
         },
         left_ring = "Niqmaddu Ring",
         right_ring = "Chirich Ring +1",
@@ -1028,6 +1024,37 @@ function init_gear_sets()
 
     sets.engaged.DT = set_combine(sets.engaged, sets.engaged.Hybrid)
     sets.engaged.Acc.DT = set_combine(sets.engaged.Acc, sets.engaged.Hybrid)
+
+    sets.idle.Town = set_combine(sets.idle, {
+        ammo = {
+            name = "Coiste Bodhar",
+            augments = {'Path: A'}
+        },
+        head = "Kasuga Kabuto +3",
+        body = "Kasuga Domaru +3",
+        hands = "Kasuga Kote +3",
+        legs = "Kasuga Haidate +3",
+        feet = {
+            name = "Ryuo Sune-Ate +1",
+            augments = {'HP+65', '"Store TP"+5', '"Subtle Blow"+8'}
+        },
+        neck = {
+            name = "Sam. Nodowa +2",
+            augments = {'Path: A'}
+        },
+        waist = "Sweordfaetels +1",
+        left_ear = "Dedition Earring",
+        right_ear = {
+            name = "Schere Earring",
+            augments = {'Path: A'}
+        },
+        left_ring = "Shneddick Ring",
+        right_ring = "Niqmaddu Ring",
+        back = {
+            name = "Smertrios's Mantle",
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Phys. dmg. taken-10%'}
+        }
+    })
 
     ------------------------------------------------------------------------------------------------
     ---------------------------------------- Special Sets ------------------------------------------

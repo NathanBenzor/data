@@ -342,7 +342,7 @@ function init_gear_sets()
         },
         waist = "Acerbic Sash +1",
         left_ear = "Mendi. Earring",
-        right_ear = "Nourish. Earring +1",
+        right_ear = "Glorious Earring",
         left_ring = "Kuchekula Ring",
         right_ring = "Lebeche Ring",
         back = {
@@ -366,7 +366,7 @@ function init_gear_sets()
         },
         waist = "Acerbic Sash +1",
         left_ear = "Mendi. Earring",
-        right_ear = "Nourish. Earring +1",
+        right_ear = "Glorious Earring",
         left_ring = "Kuchekula Ring",
         right_ring = "Lebeche Ring",
         back = {
@@ -390,7 +390,7 @@ function init_gear_sets()
         },
         waist = "Acerbic Sash +1",
         left_ear = "Mendi. Earring",
-        right_ear = "Nourish. Earring +1",
+        right_ear = "Glorious Earring",
         left_ring = "Kuchekula Ring",
         right_ring = "Lebeche Ring",
         back = {
@@ -420,7 +420,7 @@ function init_gear_sets()
         },
         waist = "Acerbic Sash +1",
         left_ear = "Mendi. Earring",
-        right_ear = "Nourish. Earring +1",
+        right_ear = "Glorious Earring",
         left_ring = "Kuchekula Ring",
         right_ring = "Lebeche Ring",
         back = {
@@ -508,7 +508,7 @@ function init_gear_sets()
     }
 
     sets.midcast.Erase = set_combine(sets.midcast.StatusRemoval, {
-        neck = "Clr. Torque +2"
+        neck = "Clr. Torque +1"
     })
 
     -- 110 total Enhancing Magic Skill; caps even without Light Arts
@@ -601,7 +601,10 @@ function init_gear_sets()
         },
         hands = "Ebers Mitts +3",
         legs = "Th. Pantaloons +3",
-        feet = "Theo. Duckbills +3",
+        feet = {
+            name = "Bunzi's Sabots",
+            augments = {'Path: A'}
+        },
         neck = "Incanter's Torque",
         waist = "Embla Sash",
         left_ear = "Andoaa Earring",
@@ -623,7 +626,10 @@ function init_gear_sets()
         },
         hands = "Ebers Mitts +3",
         legs = "Th. Pant. +3",
-        feet = "Theo. Duckbills +3"
+        feet = {
+            name = "Bunzi's Sabots",
+            augments = {'Path: A'}
+        }
     })
 
     sets.midcast.Refresh = set_combine(sets.midcast.EnhancingDuration, {
@@ -843,7 +849,7 @@ function init_gear_sets()
         waist = "Rumination Sash",
         left_ear = "Etiolation Earring",
         right_ear = "Genmei Earring",
-        left_ring = "Stikini Ring +1",
+        left_ring = "Shneddick Ring",
         right_ring = "Stikini Ring +1",
         back = "Solemnity Cape"
     }
@@ -870,8 +876,8 @@ function init_gear_sets()
         waist = "Rumination Sash",
         left_ear = "Loquac. Earring",
         right_ear = "Mendi. Earring",
-        left_ring = "Defending Ring",
-        right_ring = "Stikini Ring +1",
+        -- left_ring = "Defending Ring",
+        left_ring = "Shneddick Ring",
         back = "Solemnity Cape"
     })
 
@@ -899,10 +905,11 @@ function init_gear_sets()
         head = "Kaykaus Mitra +1",
         body = "Kaykaus Bliaut +1",
         legs = "Kaykaus Tights +1",
-        ring1 = "Shneddick Ring",
+        feet = "Ebers Duckbills +3",
         neck = "Clr. Torque +2",
-        ear1 = "Glorious Earring",
-        ear2 = "Regal Earring"
+        ear2 = "Glorious Earring",
+        ear1 = "Regal Earring",
+        left_ring = "Shneddick Ring"
     })
 
     sets.precast.JA["Afflatus Solace"] = {

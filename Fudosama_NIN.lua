@@ -677,14 +677,10 @@ function init_gear_sets()
             augments = {'Path: B'}
         },
         legs = {
-            name = "Mochi. Hakama +3",
-            augments = {'Enhances "Mijin Gakure" effect'}
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
         },
-        feet = {
-            name = "Herculean Boots",
-            augments = {'Attack+2', 'Weapon skill damage +5%', 'Accuracy+6'}
-        },
-        -- neck = "Fotia Gorget",
+        feet = "Hattori Kyahan +2",
         neck = "Rep. Plat. Medal",
         waist = "Sailfi Belt",
         left_ear = {
@@ -754,8 +750,6 @@ function init_gear_sets()
     }
 
     sets.midcast.ElementalNinjutsu = {
-        -- main={ name="Heishi Shorinken", augments={'Path: A',}},
-        -- sub="Kunimitsu",
         ammo = {
             name = "Ghastly Tathlum +1",
             augments = {'Path: A'}
@@ -764,10 +758,7 @@ function init_gear_sets()
             name = "Mochi. Hatsuburi +3",
             augments = {'Enhances "Yonin" and "Innin" effect'}
         },
-        body = {
-            name = "Nyame Mail",
-            augments = {'Path: B'}
-        },
+        body = "Gyve Doublet",
         hands = {
             name = "Nyame Gauntlets",
             augments = {'Path: B'}
@@ -777,8 +768,8 @@ function init_gear_sets()
             name = "Mochi. Kyahan +3",
             augments = {'Enh. Ninj. Mag. Acc/Cast Time Red.'}
         },
-        neck = "Sanctity Necklace",
-        waist = "Eschan Stone",
+        neck = "Sibyl Scarf",
+        waist = "Orpheus's Sash",
         left_ear = "Hermetic Earring",
         right_ear = "Friomisi Earring",
         left_ring = {
@@ -880,6 +871,7 @@ function init_gear_sets()
             name = "Nyame Mail",
             augments = {'Path: B'}
         },
+        -- body = "Hiza. Haramaki +2",
         hands = {
             name = "Nyame Gauntlets",
             augments = {'Path: B'}
@@ -995,13 +987,8 @@ function init_gear_sets()
     sets.engaged = {
         ammo = "Seki Shuriken",
         head = "Malignance Chapeau",
-        body = "Mpaca's Doublet",
+        body = "Malignance Tabard",
         hands = "Malignance Gloves",
-        -- legs = "Mpaca's Hose",
-        -- legs = {
-        --     name = "Tatena. Haidate +1",
-        --     augments = {'Path: A'}
-        -- },
         legs = {
             name = "Samnuha Tights",
             augments = {'STR+10', 'DEX+10', '"Dbl.Atk."+3', '"Triple Atk."+3'}

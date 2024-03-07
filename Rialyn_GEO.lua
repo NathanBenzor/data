@@ -325,8 +325,8 @@ function init_gear_sets()
             name = "Azimuth Earring +1",
             augments = {'System: 1 ID: 1676 Val: 0', 'Mag. Acc.+14', 'Damage taken-5%'}
         },
-        left_ring = "Stikini Ring +1",
-        right_ring = "Stikini Ring +1",
+        left_ring = "Stikini Ring",
+        right_ring = "Stikini Ring",
         back = {
             name = "Lifestream Cape",
             augments = {'Geomancy Skill +10', 'Indi. eff. dur. +16', 'Pet: Damage taken -2%'}
@@ -358,8 +358,8 @@ function init_gear_sets()
             name = "Azimuth Earring +1",
             augments = {'System: 1 ID: 1676 Val: 0', 'Mag. Acc.+14', 'Damage taken-5%'}
         },
-        left_ring = "Stikini Ring +1",
-        right_ring = "Stikini Ring +1",
+        left_ring = "Stikini Ring",
+        right_ring = "Stikini Ring",
         back = {
             name = "Lifestream Cape",
             augments = {'Geomancy Skill +10', 'Indi. eff. dur. +16', 'Pet: Damage taken -2%'}
@@ -615,7 +615,7 @@ function init_gear_sets()
             augments = {'Mag. Acc.+9', '"Avatar perpetuation cost" -2', '"Refresh"+1', 'Accuracy+3 Attack+3',
                         'Mag. Acc.+20 "Mag.Atk.Bns."+20'}
         },
-        body = "Azimuth Coat +1",
+        body = "Azimuth Coat +2",
         hands = {
             name = "Bagua Mitaines +1",
             augments = {'Enhances "Curative Recantation" effect'}
@@ -669,7 +669,7 @@ function init_gear_sets()
         main = "Idris",
         sub = "Genmei Shield",
         head = "Azimuth Hood +1",
-        body = "Azimuth Coat +1",
+        body = "Azimuth Coat +2",
         hands = "Geo. Mitaines +2",
         legs = {
             name = "Nyame Flanchard",
@@ -724,11 +724,8 @@ function init_gear_sets()
             augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
         },
         head = "Azimuth Hood +2",
-        body = {
-            name = "Bagua Tunic +3",
-            augments = {'Enhances "Bolster" effect'}
-        },
-        hands = "Geomancy Mitaines +3",
+        body = "Azimuth Coat +2",
+        hands = "Geomancy Mitaines +2",
         legs = {
             name = "Bagua Pants +3",
             augments = {'Enhances "Mending Halation" effect'}
@@ -737,10 +734,7 @@ function init_gear_sets()
         neck = "Incanter's Torque",
         waist = "Isa Belt",
         left_ear = "Regal Earring",
-        right_ear = {
-            name = "Azimuth Earring +1",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Mag. Acc.+14', 'Damage taken-5%'}
-        },
+        right_ear = "Regal Earring",
         left_ring = "Shneddick Ring",
         right_ring = "Stikini Ring +1",
         back = {

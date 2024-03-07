@@ -1784,13 +1784,13 @@ function init_gear_sets()
     --     sub = "Fusetto +2"
     -- }
 
-    -- sets.Tauret = {
-    --     main = "Tauret",
-    --     sub = {
-    --         name = "Gleti's Knife",
-    --         augments = {'Path: A'}
-    --     }
-    -- }
+    sets.Tauret = {
+        main = "Tauret",
+        sub = {
+            name = "Gleti's Knife",
+            augments = {'Path: A'}
+        }
+    }
     -- sets.Tauret_Centovente = {
     --     main = "Tauret",
     --     sub = "Fusetto +2"
