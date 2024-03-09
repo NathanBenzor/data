@@ -19,3 +19,11 @@
 - `//lua load gearswap`: Load the GearSwap Lua script.
 - `//lua unload gearswap`: Unload the GearSwap Lua script.
 - `//exec init`: Execute the GearSwap initialization script.
+
+## GearSwap Input Commands
+
+- `^`: Ctrl
+- `!`: Alt
+- `@`: Win
+- `#`: Apps
+- `~`: Shift
