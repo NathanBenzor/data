@@ -654,7 +654,7 @@ function init_gear_sets()
     })
 
     sets.midcast.Auspice = set_combine(sets.midcast.EnhancingDuration, {
-        feet = "Ebers Duckbills +1"
+        feet = "Ebers Duckbills +2"
     })
 
     sets.midcast.BarElement = set_combine(sets.midcast.EnhancingDuration, {
@@ -662,7 +662,7 @@ function init_gear_sets()
         body = "Ebers Bliaut +2",
         hands = "Ebers Mitts +2",
         legs = "Piety Pantaln. +3",
-        feet = "Ebers Duckbills +1"
+        feet = "Ebers Duckbills +2"
     })
 
     sets.midcast.BarStatus = set_combine(sets.midcast.EnhancingDuration, {
@@ -670,7 +670,7 @@ function init_gear_sets()
         body = "Ebers Bliaut +2",
         hands = "Ebers Mitts +2",
         legs = "Piety Pantaln. +3",
-        feet = "Ebers Duckbills +1"
+        feet = "Ebers Duckbills +2"
     })
 
     -- sets.midcast.BoostStat = set_combine(sets.midcast['Enhancing Magic'], {
