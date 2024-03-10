@@ -660,7 +660,7 @@ function init_gear_sets()
         feet = "Theo. Duckbills +3",
         neck = "Nodens Gorget",
         waist = "Siegel Sash",
-        left_ear = "Andoaa Earring",
+        left_ear = "Earthcry Earring",
         right_ear = "Mimir Earring",
         left_ring = "Stikini Ring +1",
         right_ring = "Stikini Ring +1",
