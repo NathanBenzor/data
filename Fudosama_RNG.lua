@@ -60,7 +60,7 @@ function job_setup()
                       "Echad Ring", "Facility Ring", "Capacity Ring", "Era. Bul. Pouch", "Dev. Bul. Pouch",
                       "Chr. Bul. Pouch", "Quelling B. Quiver", "Yoichi's Quiver", "Artemis's Quiver", "Chrono Quiver"}
 
-    lockstyleset = 119
+    lockstyleset = 116
 end
 
 -------------------------------------------------------------------------------------------------------------------
