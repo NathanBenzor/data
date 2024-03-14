@@ -793,7 +793,7 @@ function precastequip(spell)
             info('Nitro Mode')
             -- Song Count for Dummy Songs
             if SongCount:contains(spell.name) then
-                info('[' .. spell.english .. '] Set (Song Count - Daurdabla)')
+                info('[' .. spell.english .. '] Set (Song Count - Terpander)')
                 equipSet = set_combine(sets.Midcast.DummySongs, {
                     range = Instrument.Count
                 })
@@ -804,7 +804,7 @@ function precastequip(spell)
                 })
                 -- Equip Harp
             elseif spell.name:contains('Horde') then
-                info('[' .. spell.english .. '] Set (AOE Sleep - Daurdabla)')
+                info('[' .. spell.english .. '] Set (AOE Sleep - Terpander)')
                 equipSet = set_combine(sets.Midcast, sets.Midcast.Enfeebling, equip_song_gear(spell), {
                     range = Instrument.AOE_Sleep
                 })
@@ -1142,7 +1142,7 @@ function midcastequip(spell)
             info('[' .. spell.english .. '] Set')
             -- Song Count
         elseif SongCount:contains(spell.name) then
-            info('[' .. spell.english .. '] Set (Song Count - Daurdabla)')
+            info('[' .. spell.english .. '] Set (Song Count - Terpander)')
             equipSet = set_combine(equipSet, sets.Midcast.DummySongs, {
                 range = Instrument.Count
             })
@@ -1153,7 +1153,7 @@ function midcastequip(spell)
             })
             -- AoE Sleep
         elseif spell.name:contains('Horde') then
-            info('[' .. spell.english .. '] Set (AOE Sleep - Daurdabla)')
+            info('[' .. spell.english .. '] Set (AOE Sleep - Terpendar)')
             equipSet = set_combine(equipSet, sets.Midcast.Enfeebling, equip_song_gear(spell), {
                 range = Instrument.AOE_Sleep
             })
