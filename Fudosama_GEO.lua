@@ -212,7 +212,7 @@ function init_gear_sets()
         hands = {
             name = "Bagua Mitaines +2",
             augments = {'Enhances "Curative Recantation" effect'}
-        },
+        }
     })
 
     sets.precast.FC.Cure = set_combine(sets.precast.FC, {
@@ -320,7 +320,7 @@ function init_gear_sets()
             name = "Bagua Pants +3",
             augments = {'Enhances "Mending Halation" effect'}
         },
-        feet = "Bagua Sandals +2",
+        feet = "Bagua Sandals +3",
         neck = "Incanter's Torque",
         waist = "Austerity Belt +1",
         left_ear = "Malignance Earring",
@@ -471,7 +471,7 @@ function init_gear_sets()
     sets.midcast.Stoneskin = set_combine(sets.midcast.EnhancingDuration, {
         neck = "Nodens Gorget",
         waist = "Siegel Sash",
-        legs="Querkening Brais",
+        legs = "Querkening Brais"
     })
 
     sets.midcast.Aquaveil = set_combine(sets.midcast.EnhancingDuration, {
@@ -631,7 +631,7 @@ function init_gear_sets()
         },
         legs = "Assid. Pants +1",
         feet = {
-            name = "Bagua Sandals +2",
+            name = "Bagua Sandals +3",
             augments = {'Enhances "Radial Arcana" effect'}
         },
         neck = {
@@ -705,7 +705,7 @@ function init_gear_sets()
             augments = {'Path: B'}
         },
         feet = {
-            name = "Bagua Sandals +2",
+            name = "Bagua Sandals +3",
             augments = {'Enhances "Radial Arcana" effect'}
         },
         neck = {
@@ -839,7 +839,7 @@ function init_gear_sets()
         body = "Ea Houppe. +1", -- 9/(9)
         hands = "Ea Cuffs +1", -- 6/(6)
         legs = "Ea Slops +1", -- 8/(8)
-        feet = "Bagua Sandals +2",
+        feet = "Bagua Sandals +3",
         neck = "Mizu. Kubikazari", -- 10
         ring2 = "Mujin Band" -- (5)
     }

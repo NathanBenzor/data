@@ -400,29 +400,33 @@ function init_gear_sets()
     -- Great Axe
     sets.precast.WS['Upheaval'] = {
         ammo = "Knobkierrie",
-        head = {
-            name = "Agoge Mask +3",
-            augments = {'Enhances "Savagery" effect'}
-        },
-        body = {
-            name = "Nyame Mail",
+        -- head = {
+        --     name = "Agoge Mask +3",
+        --     augments = {'Enhances "Savagery" effect'}
+        -- },
+        head = "Sakpata's Helm",
+        -- body = {
+        --     name = "Nyame Mail",
+        --     augments = {'Path: B'}
+        -- },
+        body = "Sakpata's Breastplate",
+        hands = "Sakpata's Gauntlets",
+        -- hands = "Boii Mufflers +3",
+        legs = "Boii Cuisses +3",
+        feet = {
+            name = "Nyame Sollerets",
             augments = {'Path: B'}
         },
-        -- body = "Pumm. Lorica +3",
-        -- hands = "Sakpata's Gauntlets",
-        hands = "Boii Mufflers +3",
-        -- "Sakpata's Gauntlets
-        legs = "Boii Cuisses +3",
-        -- feet = "Sulev. Leggings +2",
-        feet = "Sakpata's Leggings",
         neck = {
             name = "War. Beads +2",
             augments = {'Path: A'}
         },
-        waist = "Ioskeha Belt +1",
+        -- waist = "Ioskeha Belt +1",
+        waist = "Sailfi Belt +1",
         left_ear = "Thrud Earring",
         right_ear = "Moonshade Earring",
-        left_ring = "Regal Ring",
+        -- left_ring = "Regal Ring",
+        left_ring = "Sroda Ring",
         right_ring = "Niqmaddu Ring",
         back = {
             name = "Cichol's Mantle",
