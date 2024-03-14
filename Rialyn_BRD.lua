@@ -109,7 +109,8 @@ function get_sets()
     -- Instruments to use
     Instrument = {}
     Instrument.Count = {
-        name = "Daurdabla"
+        name = "Terpander",
+        augments = {'HP+30', 'Mag. Acc.+10', 'Damage Taken -3%'}
     }
     Instrument.Potency = {
         name = "Gjallarhorn"
@@ -118,7 +119,8 @@ function get_sets()
         name = "Marsyas"
     }
     Instrument.AOE_Sleep = {
-        name = "Daurdabla"
+        name = "Terpander",
+        augments = {'HP+30', 'Mag. Acc.+10', 'Damage Taken -3%'}
     }
     Instrument.Idle = {
         name = "Linos",
@@ -151,7 +153,10 @@ function get_sets()
     -- Standard Idle set
     sets.Idle = {
         sub = "Genmei Shield",
-        --	range="Daurdabla",
+        range = {
+            name = "Terpander",
+            augments = {'HP+30', 'Mag. Acc.+10', 'Damage Taken -3%'}
+        },
         head = "Nyame Helm",
         body = "Fili Hongreline +1",
         hands = "Nyame Gauntlets",
