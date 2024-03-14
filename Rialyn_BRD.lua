@@ -87,8 +87,10 @@ function get_sets()
 
     sets.Weapons.Songs = {
         main = {
-            name = "Carnwenhan",
-            augments = {'Path: A'}
+            name = "Kali",
+            augments = {'Mag. Acc.+15', 'String instrument skill +10', 'Wind instrument skill +10'}
+            -- name = "Carnwenhan",
+            -- augments = {'Path: A'}
         },
         sub = {
             name = "Kali",
@@ -148,29 +150,26 @@ function get_sets()
 
     -- Standard Idle set
     sets.Idle = {
-        range = Instrument.Idle, -- 4/0
-        head = "Fili Calot +1", -- 11/11
-        body = "Bunzi's Robe", -- 10/10
-        hands = "Bunzi's Gloves", -- 8/8 
-        legs = "Fili Rhingrave +1", -- 13/13
-        feet = "Bunzi's Sabots", -- 6/6
-        neck = "Loricate Torque +1", -- 6/6
-        waist = "Carrier's Sash",
-        left_ear = {
-            name = "Odnowa Earring +1",
+        sub = "Genmei Shield",
+        --	range="Daurdabla",
+        head = "Nyame Helm",
+        body = "Fili Hongreline +1",
+        hands = "Nyame Gauntlets",
+        legs = "Nyame Flanchard",
+        feet = "Fili Cothurnes +1",
+        neck = {
+            name = "Loricate Torque +1",
             augments = {'Path: A'}
-        }, -- 3/3
-        right_ear = "Sanare Earring",
-        left_ring = {
-            name = "Moonlight ring",
-            bag = "wardrobe2",
-            priority = 2
-        }, -- 5/5 (over capped due to movement gear)
-        right_ring = "Shadow Ring",
-        back = {
-            name = "Intarabus's Cape",
-            augments = {'MND+20', 'Eva.+20 /Mag. Eva.+20', 'Mag. Evasion+10', 'Mag. Evasion+15'}
-        }
+        },
+        waist = "Carrier's Sash",
+        right_ear = {
+            name = "Fili Earring",
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+10', 'Mag. Acc.+10'}
+        },
+        left_ear = "Etiolation Earring",
+        left_ring = "Defending Ring",
+        right_ring = "Stikini Ring +1",
+        back = "Moonlight Cape"
     } -- PDT 60%%, MDT 56%
 
     -- Used to swap into movement gear when the player is detected movement when not engaged
@@ -313,11 +312,15 @@ function get_sets()
 
     -- Default song duration / strength
     sets.Midcast = set_combine(sets.Idle, {
-        head = "Fili Calot +3",
-        body = "Fili Hongreline +3",
-        hands = "Fili Manchettes +3",
+        -- main = {
+        --     name = "Kali",
+        --     augments = {'Mag. Acc.+15', 'String instrument skill +10', 'Wind instrument skill +10'}
+        -- },
+        head = "Fili Calot +1",
+        body = "Fili Hongreline +1",
+        hands = "Fili Manchettes +1",
         legs = "Inyanga Shalwar +2",
-        feet = "Brioso Slippers +3",
+        feet = "Brioso Slippers +1",
         neck = "Moonbow Whistle",
         waist = "Flume Belt +1",
         left_ear = {
