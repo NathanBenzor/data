@@ -50,7 +50,7 @@ function job_setup()
     -- Display and Random Lockstyle Generator options
     DisplayPetBuffTimers = 'false'
     DisplayModeInfo = 'false'
-    RandomLockstyleGenerator = 'false'
+    -- RandomLockstyleGenerator = 'false'
 
     PetName = 'None';
     PetJob = 'None';
@@ -88,7 +88,7 @@ function job_setup()
 
     -- List of Equipment Sets created for Random Lockstyle Generator
     -- (If you want to have the same Lockstyle every time, reduce the list to a single Equipset #)
-    random_lockstyle_list = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13}
+    -- random_lockstyle_list = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13}
 
     state.Buff['Aftermath: Lv.3'] = buffactive['Aftermath: Lv.3'] or false
     state.Buff['Killer Instinct'] = buffactive['Killer Instinct'] or false
@@ -99,6 +99,8 @@ function job_setup()
 
     get_combat_form()
     get_melee_groups()
+
+    lockstyleset = 136
 end
 
 function user_setup()
@@ -226,12 +228,13 @@ function user_setup()
                            'Souleater', 'Vallation', 'Swordplay'}
 
     -- Random Lockstyle generator.
-    if RandomLockstyleGenerator == 'true' then
-        local randomLockstyle = random_lockstyle_list[math.random(1, #random_lockstyle_list)]
-        send_command('@wait 5;input /lockstyleset ' .. randomLockstyle)
-    end
+    -- if RandomLockstyleGenerator == 'true' then
+    --     local randomLockstyle = random_lockstyle_list[math.random(1, #random_lockstyle_list)]
+    --     send_command('@wait 5;input /lockstyleset ' .. randomLockstyle)
+    -- end
 
     display_mode_info()
+    set_lockstyle()
 end
 
 function file_unload()
@@ -1199,13 +1202,9 @@ function init_gear_sets()
         ring1 = "Defending Ring",
         ring2 = "Shneddick Ring",
         -- back = PDT_back,
-        -- back = {
-        --     name = "Artio's Mantle",
-        --     augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Phys. dmg. taken-10%'}
-        -- },
         back = {
-            name = "Mecisto. Mantle",
-            augments = {'Cap. Point+48%', 'DEF+5'}
+            name = "Artio's Mantle",
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Phys. dmg. taken-10%'}
         },
         waist = "Flume Belt +1",
         legs = {
@@ -3711,4 +3710,8 @@ function get_combat_form()
     else
         state.CombatForm:reset()
     end
+end
+
+function set_lockstyle()
+    send_command('wait 2; input /lockstyleset ' .. lockstyleset)
 end
