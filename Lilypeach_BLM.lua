@@ -124,7 +124,10 @@ function get_sets()
     sets.Idle.Standard = {
         ammo = "Staunch Tathlum +1",
         head = "Nyame Helm",
-        neck = "Sibyl Scarf",
+        neck = {
+            name = "Src. Stole +2",
+            augments = {'Path: A'}
+        },
         ear1 = "Regal Earring",
         ear2 = "Etiolation Earring",
         body = "Shamash Robe",
