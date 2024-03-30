@@ -108,7 +108,7 @@ function user_setup()
     state.WeaponskillMode:options('Normal', 'WSMedAcc', 'WSHighAcc')
     state.HybridMode:options('Normal', 'SubtleBlow')
     state.CastingMode:options('Normal')
-    state.IdleMode:options('Normal', 'Reraise', 'Refresh', 'Regain')
+    state.IdleMode:options('Normal', 'Reraise', 'Refresh', 'Regain', 'PetRegen', 'PetDT', 'PetMDT', 'PetPDT')
     state.RestingMode:options('Normal')
     state.PhysicalDefenseMode:options('PDT', 'PetPDT')
     state.MagicalDefenseMode:options('MDT', 'PetMDT')
@@ -125,7 +125,11 @@ function user_setup()
         'Bubbly Broth',
         'Windy Greens',
         'Trans. Broth',
-        'Venomous Broth'
+        'Venomous Broth',
+        'Feculent Broth',
+        'Putrescent Broth',
+        'C. Plasma Broth',
+        'Spumante Broth'
 
     }
     send_command('bind !f8 gs c cycle JugMode')
@@ -138,6 +142,10 @@ function user_setup()
         'Favorable'
     }
     send_command('bind !f11 gs c cycle CorrelationMode')
+    send_command('bind ~f1 gs c Ready one')
+    send_command('bind ~f2 gs c Ready two')
+    send_command('bind ~f3 gs c Ready three')
+    send_command('bind ~f4 gs c Ready four')
 
     -- Set up Axe Swapping Modes and keybind alt+=
     state.AxeMode = M {
@@ -183,16 +191,17 @@ function user_setup()
 
     magic_atk_ready_moves = S {'Dust Cloud', 'Cursed Sphere', 'Venom', 'Toxic Spit', 'Bubble Shower', 'Drainkiss',
                                'Silence Gas', 'Dark Spore', 'Fireball', 'Plague Breath', 'Snow Cloud',
-                               'Charged Whisker', 'Corrosive Ooze', 'Aqua Breath', 'Stink Bomb', 'Nectarous Deluge',
-                               'Nepenthic Plunge', 'Pestilent Plume', 'Foul Waters', 'Acid Spray', 'Infected Leech',
-                               'Gloom Spray', 'Venom Shower'}
+                               'Charged Whisker', 'Aqua Breath', 'Stink Bomb', 'Nectarous Deluge', 'Nepenthic Plunge',
+                               'Pestilent Plume', 'Foul Waters', 'Acid Spray', 'Infected Leech', 'Gloom Spray',
+                               'Venom Shower'}
 
     magic_acc_ready_moves = S {'Sheep Song', 'Scream', 'Dream Flower', 'Roar', 'Predatory Glare', 'Gloeosuccus',
                                'Palsy Pollen', 'Soporific', 'Geist Wall', 'Toxic Spit', 'Numbing Noise', 'Spoil',
                                'Hi-Freq Field', 'Sandpit', 'Sandblast', 'Venom Spray', 'Filamented Hold',
                                'Queasyshroom', 'Numbshroom', 'Spore', 'Shakeshroom', 'Infrasonics', 'Chaotic Eye',
                                'Blaster', 'Purulent Ooze', 'Intimidate', 'Noisome Powder', 'Acid Mist', 'Choke Breath',
-                               'Jettatura', 'Nihility Song', 'Molting Plumage', 'Swooping Frenzy', 'Spider Web'}
+                               'Jettatura', 'Nihility Song', 'Molting Plumage', 'Swooping Frenzy', 'Spider Web',
+                               'Corrosive Ooze'}
 
     multi_hit_ready_moves = S {'Pentapeck', 'Tickling Tendrils', 'Sweeping Gouge', 'Chomp Rush', 'Wing Slap',
                                'Pecking Flurry'}
@@ -912,13 +921,13 @@ function init_gear_sets()
         body = "Nukumi Gausape +3",
         hands = "Nukumi Manoplas +2",
         legs = "Nukumi Quijotes +2",
-        feet = "Nukumi Ocreae +2",
+        feet = "Gleti's Boots",
         neck = "Bst. Collar +2",
         waist = "Flume Belt +1",
         left_ear = "Kyrene's Earring",
         right_ear = "Crep. Earring",
         left_ring = "Tali'ah Ring",
-        right_ring = "Shneddick Ring",
+        right_ring = "C. Palug Ring",
         back = {
             name = "Artio's Mantle",
             augments = {'Pet: M.Acc.+20 Pet: M.Dmg.+20', 'Pet: Mag. Acc.+10'}
@@ -1258,32 +1267,46 @@ function init_gear_sets()
 
     sets.idle.Pet = set_combine(sets.idle, {
         back = Pet_Regen_back
+        -- right_ring = "C. Palug Ring"
     })
 
     -- sets.idle.PetRegen = set_combine(sets.idle.Pet, {neck="Empath Necklace",feet=Pet_Regen_feet})
 
     sets.idle.Pet.Engaged = {
         ammo = {
-            name = "Coiste Bodhar",
+            name = "Hesperiidae",
             augments = {'Path: A'}
         },
-        head = "Malignance Chapeau",
-        body = "Malignance Tabard",
-        hands = "Malignance Gloves",
-        legs = "Meg. Chausses +2",
-        feet = "Malignance Boots",
-        neck = "Anu Torque",
+        head = {
+            name = "Nyame Helm",
+            augments = {'Path: B', 'STR+10', 'Attack+15', 'Phys. dmg. taken-2'}
+        },
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B', 'STR+10', 'Attack+15', 'Phys. dmg. taken-2'}
+        },
+        hands = "Gleti's Gauntlets",
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B', 'STR+10', 'Attack+15', 'Phys. dmg. taken-2'}
+        },
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B', 'STR+10', 'Attack+15', 'Phys. dmg. taken-2'}
+        },
+        neck = "Beastmaster Collar +2",
         waist = {
             name = "Sailfi Belt +1",
             augments = {'Path: A'}
         },
-        left_ear = "Eabani Earring",
-        right_ear = "Dedition Earring",
-        left_ring = "Chirich Ring +1",
-        right_ring = "Moonlight Ring",
+        left_ear = "Domesticator's Earring",
+        right_ear = "Rimeice Earring",
+        left_ring = "Varar Ring +1",
+        right_ring = "C. Palug Ring",
         back = {
             name = "Artio's Mantle",
-            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Phys. dmg. taken-10%'}
+            augments = {'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20', 'Pet: Accuracy+10 Pet: Rng. Acc.+10',
+                        'Pet: Haste+10', 'Pet: Damage taken -5%'}
         }
     }
 
@@ -1315,7 +1338,7 @@ function init_gear_sets()
         hands = "Nukumi Manoplas +2",
         legs = "Nukumi Quijotes +2",
         feet = "Nukumi Ocreae +2",
-        ring1 = "Defending Ring",
+        ring1 = "C. Palug Ring",
         ring2 = "Shneddick Ring",
         waist = "Flume Belt +1",
         -- back = PDT_back,
@@ -2244,10 +2267,7 @@ function init_gear_sets()
             name = "Nyame Helm",
             augments = {'Path: B'}
         },
-        body = {
-            name = "Nyame Mail",
-            augments = {'Path: B'}
-        },
+        body = "Nukumi Gausape +3",
         hands = {
             name = "Nyame Gauntlets",
             augments = {'Path: B'}
@@ -2260,11 +2280,13 @@ function init_gear_sets()
             name = "Nyame Sollerets",
             augments = {'Path: B'}
         },
-        neck = "Fotia Gorget",
-        waist = {
-            name = "Sailfi Belt +1",
-            augments = {'Path: A'}
-        },
+        -- neck = "Fotia Gorget",
+        neck = "Beastmaster Collar +2",
+        waist = "Fotia Belt",
+        -- waist = {
+        --     name = "Sailfi Belt +1",
+        --     augments = {'Path: A'}
+        -- },
         left_ear = "Thrud Earring",
         right_ear = "Sherida Earring",
         left_ring = "Sroda Ring",
@@ -2346,23 +2368,48 @@ function init_gear_sets()
     }
 
     sets.precast.WS['Primal Rend'].HighAcc = {
-        ammo = "Pemphredo Tathlum",
-        head = MAcc_head,
-        neck = "Sanctity Necklace",
-        ear1 = "Hermetic Earring",
-        ear2 = "Dignitary's Earring",
-        body = MAcc_body,
-        hands = MAcc_hands,
+        ammo = "Oshasha's Treatise",
+        head = {
+            name = "Nyame Helm",
+            augments = {'Path: B'}
+        },
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
+        neck = "Baetyl Pendant",
+        ear1 = "Friomisi Earring",
+        ear2 = {
+            name = "Moonshade Earring",
+            augments = {'Accuracy+4', 'TP Bonus +250'}
+        },
         ring1 = "Sangoma Ring",
-        ring2 = "Rufescent Ring",
-        back = MAcc_back,
-        waist = "Eschan Stone",
-        legs = MAcc_legs,
-        feet = MAcc_feet
+        ring2 = "Cornelia's Ring",
+        -- waist = "Eschan Stone",
+        waist = "Orpheus's Sash",
+        back = {
+            name = "Artio's Mantle",
+            augments = {'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'Weapon skill damage +10%'}
+        }
     }
 
     sets.precast.WS['Cloudsplitter'] = set_combine(sets.precast.WS['Primal Rend'], {
-        back = Cloud_back
+        back = {
+            name = "Artio's Mantle",
+            augments = {'STR+20', 'Accuracy+20 Attack+20', 'Weapon skill damage +10%', 'Damage taken-5%'}
+        }
     })
 
     -- DAGGER WSs --
@@ -3606,9 +3653,9 @@ function pet_info_update()
             PetInfo = "Leech, Amorph";
             PetJob = 'Warrior';
             ReadyMoveOne = 'Suction';
-            ReadyMoveTwo = 'TP Drainkiss';
-            ReadyMoveThree = 'Drainkiss';
-            ReadyMoveFour = 'Acid Mist'
+            ReadyMoveTwo = 'Drainkiss';
+            ReadyMoveThree = 'Acid Mist';
+            ReadyMoveFour = 'TP Drainkiss'
         elseif pet.name == 'Hip.Familiar' or pet.name == 'DaringRoland' or pet.name == 'FaithfulFalcorr' then
             PetInfo = "Hippogryph, Bird";
             PetJob = 'Thief';
