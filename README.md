@@ -20,6 +20,11 @@
 - `//lua unload gearswap`: Unload the GearSwap Lua script.
 - `//exec init`: Execute the GearSwap initialization script.
 
+- `//gs disable sub`: Disable sub job in GearSwap.
+- `//gs disable main`: Disable main job in GearSwap.
+- `//gs enable sub`: Enable sub job in GearSwap.
+- `//gs enable main`: Enable main job in GearSwap.
+
 ## GearSwap Input Commands
 
 - `^`: Ctrl

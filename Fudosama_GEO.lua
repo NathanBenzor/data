@@ -693,12 +693,12 @@ function init_gear_sets()
         -- Pet: -DT (37.5% to cap) / Pet: Regen  -DT cap -87.5%
         main = "Idris",
         sub = "Genmei Shield",
-        -- head = {
-        --     name = "Telchine Cap",
-        --     augments = {'Pet: Damage taken -3%'}
-        -- },
         head = "Azimuth Hood +3",
-        body = "Jhakri Robe +2",
+        -- body = "Jhakri Robe +2",
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
         hands = "Geo. Mitaines +3",
         legs = {
             name = "Nyame Flanchard",
@@ -721,10 +721,6 @@ function init_gear_sets()
             name = "Nantosuelta's Cape",
             augments = {'VIT+20', 'Eva.+20 /Mag. Eva.+20', 'Pet: "Regen"+10', 'Pet: "Regen"+5'}
         }
-        -- back = {
-        --     name = "Mecisto. Mantle",
-        --     augments = {'Cap. Point+48%', 'DEF+5'}
-        -- }
     })
 
     sets.idle.DT.Pet = set_combine(sets.idle.Pet, {
