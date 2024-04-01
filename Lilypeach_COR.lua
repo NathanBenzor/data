@@ -262,7 +262,7 @@ function init_gear_sets()
 
     head={ name="Lanun Tricorne +2", augments={'Enhances "Winning Streak" effect',}},
     body="Malignance Tabard",
-    hands="Chasseur's Gants +3",
+    hands="Chasseur's Gants +2",
     legs="Carmine Cuisses +1",
     feet="Malignance Boots",
     neck="Regal Necklace",

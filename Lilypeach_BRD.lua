@@ -1010,7 +1010,7 @@ function init_gear_sets()
         body = "Ashera Harness",
         hands = "Brioso Cuffs +3",
         legs = "Brioso Cannions +3",
-        feet = "Fili Cothurnes +1",
+        feet = "Fili Cothurnes +2",
         neck = "Mnbw. Whistle +1",
         waist = "Orpheus's Sash",
         left_ear = "Regal Earring",
@@ -1066,7 +1066,7 @@ function init_gear_sets()
 
         main = "Naegling",
         sub = {
-            name = "Fusetto +2",
+            name = "Centovente",
             augments = {'TP Bonus +1000'}
         },
         ammo = {

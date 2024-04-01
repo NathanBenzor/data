@@ -1,786 +1,280 @@
------------------------------------
----------PLEASE NOTE----------
-----------------------------------
--- I have been slapping this together from my time gearing up and playing BLM
----As far as I have seen so far everything works, but I generally don't change weapons on BLM to see if there is any unexpected bug.
-------------------------------------------------
----What Should I know?---
-------------------------------------------------
-------Death Mode is automatically on or off based on being in the death idle.
--------Manawall feet are automatic based on the ability being on, and overwrite everything in all sets at all times.
---------Burst mode is Cntrl + ~
----------Occult Acumen superceeds burst mode, and is Cntrl + Spacebar
-----------DT Mode automatically switches your nuke sets to a DT based one. Use an idle DT set and not DT mode if you don't want this. Macc changes based on your underlying set index.
------------E.g. If you are in Ind 1 or 2 (MAB or Macc) then it picks the first set. Ind 3 "maxmacc" automatically uses the DT Macc nuke set.  Can change this to be ind 2 and 3 if you wanted.
-------------F11 for toggling AF Coat on or off.
--- Weapon Swapping is not complete yet. Toggles work, but the rules aren't built in and thus does nothing.
---------------------------------
--- Windows Key and F9 toggles weapon swapping, default is off. Doesnt change until the next action or buff change in case its accidentally hit and would have otherwise wiped TP immediately.
--- Windurst Key and F10 toggles the weapon to swap.
--- Windurst Key and F11 toggles the grip to swap.
-------------------------------------------------------------------------------------------------------------------------------------------
----Thanks to various sources such as LS members, BlueGartr, and Thefoxiestdanger for the help building this GearSwap.
--------------------------------------
----------                   ---------
-------                         ------
----         Start of Gear         ---
-------                         ------
----------                   ---------
-------------------------------------- 
+-- Original: Motenten / Modified: Arislan
+-------------------------------------------------------------------------------------------------------------------
+--  Keybinds
+-------------------------------------------------------------------------------------------------------------------
+--  Modes:      [ F10 ]             Emergency -PDT Mode
+--              [ ALT+F10 ]         Toggle Kiting Mode
+--              [ F11 ]             Emergency -MDT Mode
+--              [ CTRL+F11 ]        Cycle Casting Modes
+--              [ F12 ]             Update Current Gear / Report Current Status
+--              [ CTRL+F12 ]        Cycle Idle Modes
+--              [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
+--              [ ALT+` ]           Toggle Magic Burst Mode
+--              [ WIN+D ]           Toggle Death Casting Mode Toggle
+--              [ WIN+C ]           Toggle Capacity Points Mode
+--
+--  Spells:     [ CTRL+` ]          Stun
+--              [ ALT+P ]           Shock Spikes
+--
+--  Weapons:    [ CTRL+W ]          Toggles Weapon Lock
+--
+--  WS:         [ CTRL+Numpad0 ]    Myrkr
+--
+--
+--              (Global-Binds.lua contains additional non-job-related keybinds)
+-------------------------------------------------------------------------------------------------------------------
+-- Setup functions for this job.  Generally should not be modified.
+-------------------------------------------------------------------------------------------------------------------
+-- Initialization function for this job file.
 function get_sets()
-    maps()
+    mote_include_version = 2
 
-    MerlinicBody = {}
-    MerlinicBody.FC = {
-        name = "Merlinic Jubbah",
-        augments = {'"Fast Cast"+6', 'Mag. Acc.+12', '"Mag.Atk.Bns."+14'}
-    }
-    MerlinicBody.Phalanx = {
-        name = "Merlinic Jubbah",
-        augments = {'DEX+7', 'Crit.hit rate+3', 'Phalanx +4', 'Accuracy+10 Attack+10'}
-    }
+    -- Load and initialize the include file.
+    include('Mote-Include.lua')
+end
 
-    MerlinicHands = {}
-    MerlinicHands.OA = {
-        name = "Merlinic Dastanas",
-        augments = {'Mag. Acc.+23', '"Occult Acumen"+11', '"Mag.Atk.Bns."+13'}
-    }
-    MerlinicHands.Phalanx = {
-        name = "Merlinic Dastanas",
-        augments = {'Attack+1', '"Waltz" potency +3%', 'Phalanx +4', 'Mag. Acc.+5 "Mag.Atk.Bns."+5'}
+-- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
+function job_setup()
+
+    -- state.CP = M(false, "Capacity Points Mode")
+
+    no_swap_gear = S {"Warp Ring", "Dim. Ring (Dem)", "Dim. Ring (Holla)", "Dim. Ring (Mea)", "Trizek Ring",
+                      "Echad Ring", "Facility Ring", "Capacity Ring"}
+
+    degrade_array = {
+        ['Aspirs'] = {'Aspir', 'Aspir II', 'Aspir III'}
     }
 
-    MerlinicLegs = {}
+    lockstyleset = 58
 
-    MerlinicFeet = {}
-    MerlinicFeet.OA = {
-        name = "Merlinic Crackows",
-        augments = {'"Occult Acumen"+11', 'CHR+5', 'Mag. Acc.+8', '"Mag.Atk.Bns."+12'}
-    }
-    MerlinicFeet.FC = {
-        name = "Merlinic Crackows",
-        augments = {'"Fast Cast"+6', 'Mag. Acc.+2', '"Mag.Atk.Bns."+13'}
-    }
-    MerlinicFeet.Refresh = {
-        name = "Merlinic Crackows",
-        augments = {'Pet: "Dbl. Atk."+2', '"Conserve MP"+1', '"Refresh"+1'}
-    }
-    MerlinicFeet.Phalanx = {
-        name = "Merlinic Crackows",
-        augments = {'Rng.Acc.+29', 'Attack+7', 'Phalanx +5', 'Accuracy+13 Attack+13'}
+end
+
+-------------------------------------------------------------------------------------------------------------------
+-- User setup functions for this job.  Recommend that these be overridden in a sidecar file.
+-------------------------------------------------------------------------------------------------------------------
+
+-- Setup vars that are user-dependent.  Can override this function in a sidecar file.
+function user_setup()
+    state.CastingMode:options('Normal', 'Resistant', 'Spaekona')
+    state.IdleMode:options('Normal', 'DT')
+
+    state.WeaponLock = M(false, 'Weapon Lock')
+    state.MagicBurst = M(false, 'Magic Burst')
+    state.DeathMode = M(false, 'Death Mode')
+    state.CP = M(false, "Capacity Points Mode")
+
+    lowTierNukes = S {'Stone', 'Water', 'Aero', 'Fire', 'Blizzard', 'Thunder'}
+
+    -- Additional local binds
+    -- include('Global-Binds.lua') -- OK to remove this line
+    -- include('Global-GEO-Binds.lua') -- OK to remove this line
+
+    send_command('bind ^` input /ma Stun <t>')
+    send_command('bind !` gs c toggle MagicBurst')
+    send_command('bind !w input /ma "Aspir III" <t>')
+    send_command('bind !p input /ma "Shock Spikes" <me>')
+    send_command('bind @d gs c toggle DeathMode')
+    -- send_command('bind @c gs c toggle CP')
+    send_command('bind @w gs c toggle WeaponLock')
+    send_command('bind ^numpad0 input /Myrkr')
+
+    select_default_macro_book()
+    set_lockstyle()
+
+    state.Auto_Kite = M(false, 'Auto_Kite')
+    moving = false
+end
+
+-- Called when this job file is unloaded (eg: job change)
+function user_unload()
+    send_command('unbind ^`')
+    send_command('unbind !`')
+    send_command('unbind !w')
+    send_command('unbind !p')
+    send_command('unbind ^,')
+    send_command('unbind !.')
+    send_command('unbind @d')
+    -- send_command('unbind @c')
+    send_command('unbind @w')
+    send_command('unbind ^numpad0')
+
+    send_command('unbind #`')
+    send_command('unbind #1')
+    send_command('unbind #2')
+    send_command('unbind #3')
+    send_command('unbind #4')
+    send_command('unbind #5')
+    send_command('unbind #6')
+    send_command('unbind #7')
+    send_command('unbind #8')
+    send_command('unbind #9')
+    send_command('unbind #0')
+end
+
+-- Define sets and vars used by this job file.
+function init_gear_sets()
+    --------------------------------------
+    -- Start defining the sets
+    --------------------------------------
+
+    ---- Precast Sets ----
+
+    -- Precast sets to enhance JAs
+    sets.precast.JA['Mana Wall'] = {
+        feet = "Wicce Sabots +3",
+        back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}},
     }
 
-    Taranus = {}
-    Taranus.MAB = {
-        name = "Taranus's Cape",
-        augments = {'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'INT+10', '"Mag.Atk.Bns."+10', 'Damage taken-5%'}
-    }
-    Taranus.STP = {
-        name = "Taranus's Cape",
-        augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Damage taken-5%'}
-    }
-    Taranus.FC = {
-        name = "Taranus's Cape",
-        augments = {'MP+60', 'Mag. Acc+20 /Mag. Dmg.+20', 'MP+20', '"Fast Cast"+10', 'Phys. dmg. taken-10%'}
-    }
-    Taranus.Cure = {
-        name = "Taranus's Cape",
-        augments = {'MND+20', 'Eva.+20 /Mag. Eva.+20', 'MND+10', '"Cure" potency +10%', 'Phys. dmg. taken-10%'}
+    sets.precast.JA.Manafont = {
+        body = "Arch. Coat +1"
     }
 
-    sets.Weapon = {}
-    sets.Weapon.index = {'Laevateinn', 'Khatvanga', 'Hvergelmir'}
-    Weapon_ind = 1
-
-    sets.Weapon.Laevateinn = {
-        main = "Laevateinn"
-    }
-    sets.Weapon.Khatvanga = {
-        main = "Khatvanga"
-    }
-    sets.Weapon.Hvergelmir = {
-        main = "Hvergelmir"
-    }
-
-    sets.Sub = {}
-    sets.Sub.Index = {'Enki', 'RainingBlood', 'Khonsu'}
-    Sub_ind = 1
-
-    sets.Sub.Enki = {
-        sub = "Enki Strap"
-    }
-    sets.Sub.RainingBlood = {
-        sub = "Bloodrain Strap"
-    }
-    sets.Sub.Khonsu = {
-        sub = "Khonsu"
-    }
-    -- You would add ammurapi shield here, just add it to the sub. index too.
-
-    sets.Idle = {}
-    -- Idle Sets--
-    sets.Idle.index = {'Standard', 'DT', 'Death'}
-    Idle_ind = 1
-    sets.Idle.Standard = {
-        ammo = "Staunch Tathlum +1",
-        head = "Nyame Helm",
+    -- Fast cast sets for spells
+    sets.precast.FC = {
+        --    /RDM --15
+        ammo = "Impatiens",
+        head = {
+            name = "Amalric Coif +1",
+            augments = {'MP+80', 'Mag. Acc.+20', '"Mag.Atk.Bns."+20'}
+        },
+        body = "Agwu's Robe",
+        hands = {
+            name = "Agwu's Gages",
+            augments = {'Path: A'}
+        },
+        legs = "Agwu's Slops",
+        feet = "Regal Pumps +1",
         neck = {
             name = "Src. Stole +2",
             augments = {'Path: A'}
         },
-        ear1 = "Regal Earring",
-        ear2 = "Etiolation Earring",
-        body = "Shamash Robe",
-        hands = "Nyame Gauntlets",
-        ring1 = "Stikini Ring +1",
-        ring2 = "Shneddick Ring",
-        back = Taranus.MAB,
-        waist = "Carrier's Sash",
-        legs = "Agwu's Slops",
-        feet = "Wicce Sabots +3"
+        waist = "Witful Belt",
+        left_ear = "Malignance Earring",
+        right_ear = "Etiolation Earring",
+        left_ring = "Kishar Ring",
+        right_ring = "Rahab Ring",
+        back = {
+            name = "Taranus's Cape",
+            augments = {'MP+60', 'Mag. Acc+20 /Mag. Dmg.+20', '"Fast Cast"+10'}
+        }
     }
 
-    sets.Idle.DT = {
-        ammo = "Staunch Tathlum +1",
-        head = "Nyame Helm",
-        neck = "Warder's Charm +1",
-        ear1 = "Brachyura Earring",
-        ear2 = "Etiolation Earring",
-        body = "Shamash Robe",
-        hands = "Nyame Gauntlets",
-        ring1 = "Defending Ring",
-        ring2 = "Shneddick Ring +1",
-        back = Taranus.MAB,
-        waist = "Carrier's Sash",
-        legs = "Agwu's Slops",
-        feet = "Nyame Sollerets"
-    }
+    sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
+        waist = "Siegel Sash",
+        back = "Perimede Cape"
+    })
 
-    sets.Idle.Death = {
+    sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, {})
+
+    sets.precast.FC.Cure = set_combine(sets.precast.FC, {
+        ear1 = "Mendi. Earring", -- 5
+        ring1 = "Lebeche Ring" -- (2)
+    })
+
+    sets.precast.FC.Curaga = sets.precast.FC.Cure
+    sets.precast.FC.Impact = set_combine(sets.precast.FC, {
+        head = empty,
+        body = "Twilight Cloak",
+        waist = "Shinjutsu-no-Obi +1"
+    })
+    sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {
+        main = "Daybreak",
+        sub = "Ammurapi Shield",
+        waist = "Shinjutsu-no-Obi +1"
+    })
+    sets.precast.Storm = set_combine(sets.precast.FC, {
+        ring2 = {
+            name = "Stikini Ring +1",
+            bag = "wardrobe4"
+        }
+    })
+
+    sets.precast.FC.DeathMode = {
         ammo = "Ghastly Tathlum +1",
-        head = "Wicce Petasos +3",
-        neck = "Warder's Charm +1",
-        ear1 = "Loquacious Earring",
-        ear2 = "Etiolation Earring",
-        body = "Rosette Jaseran +1",
-        hands = "Wicce Gloves +3",
+        head = "Amalric Coif +1", -- 11
+        body = "Amalric Doublet +1",
+        hands = "Merlinic Dastanas", -- 6
+        legs = "Volte Brais", -- 8
+        feet = "Volte Gaiters", -- 6
+        neck = "Orunmila's Torque", -- 5
+        ear1 = "Etiolation Earring", -- 1
+        ear2 = "Loquacious Earring", -- 2
         ring1 = "Mephitas's Ring +1",
-        ring2 = "Shneddick Ring +1",
-        back = Taranus.FC,
-        waist = "Shinjutsu-no-Obi +1",
-        legs = "Wicce Chausses +3",
-        feet = "Wicce Sabots +3"
+        ring2 = "Weather. Ring +1", -- 5
+        back = "Bane Cape", -- 4
+        waist = "Embla Sash"
     }
 
-    sets.Idle.Sublimation = {
-        ammo = "Staunch Tathlum +1",
-        head = "Nyame Helm",
-        neck = "Warder's Charm +1",
-        ear1 = "Brachyura Earring",
-        ear2 = "Etiolation Earring",
-        body = "Shamash Robe",
-        hands = "Nyame Gauntlets",
-        ring1 = "Stikini Ring +1",
-        ring2 = "Shneddick Ring +1",
-        back = Taranus.MAB,
-        waist = "Embla Sash",
-        legs = "Agwu's Slops",
-        feet = "Wicce Sabots +3"
-    }
-
-    sets.Idle.Town = set_combine(sets.Idle.Standard, {
-        ring1 = "Matrimony ring"
+    sets.precast.FC.Impact.DeathMode = set_combine(sets.precast.FC.DeathMode, {
+        head = empty,
+        body = "Twilight Cloak",
+        waist = "Shinjutsu-no-Obi +1"
     })
 
-    sets.IdleWeapon = {}
-    -- Idle Sets--
-    sets.IdleWeapon.index = {'Standard', 'DT', 'Death'}
-    IdleWeapon_ind = 1
+    -- Weaponskill sets
 
-    sets.IdleWeapon.Standard = set_combine(sets.Idle.Standard, {
-        main = "Mpaca's Staff",
-        sub = "Khonsu"
-    })
-
-    sets.IdleWeapon.DT = set_combine(sets.Idle.DT, {
-        main = "Mpaca's Staff",
-        sub = "Khonsu"
-        --  	main = "Daybreak",
-        --		sub = "Ammurapi Shield"
-    })
-
-    sets.IdleWeapon.Death = set_combine(sets.Idle.Death, {
-        main = "Mpaca's Staff",
-        sub = "Khonsu"
-    })
-
-    sets.IdleWeapon.Sublimation = set_combine(sets.Idle.Sublimation, {
-        main = "Mpaca's Staff",
-        sub = "Khonsu"
-    })
-
-    -- TP Sets--
-    sets.TP = {}
-    sets.TP.index = {'TP', 'Accuracy'}
-    TP_ind = 1 -- Default set,  is Capped Haste, 2, AccLite, etc
-
-    -- +11 DW for capping with DW3 and capped magic haste--    
-    sets.TP.TP = {
-        ammo = "Amar Cluster",
-        head = "Nyame Helm",
-        neck = "Combatant's Torque",
-        ear1 = "Telos Earring",
-        ear2 = "Crepuscular Earring",
-        body = "Nyame Mail",
-        hands = "Gazu Bracelets +1",
-        ring1 = "Chirich Ring +1",
-        ring2 = "Chirich Ring +1",
-        back = Taranus.STP,
-        waist = "Windbuffet Belt +1",
-        legs = "Nyame Flanchard",
-        feet = "Nyame Sollerets"
+    -- Default set for any weaponskill that isn't any more specifically defined
+    sets.precast.WS = {
+        -- ammo="Floestone",
+        head = "Jhakri Coronal +2",
+        body = "Jhakri Robe +2",
+        hands = "Jhakri Cuffs +2",
+        legs = gear.Telchine_ENH_legs,
+        feet = "Jhakri Pigaches +2",
+        neck = "Fotia Gorget",
+        ear1 = "Moonshade Earring",
+        ear2 = "Telos Earring",
+        ring1 = "Epaminondas's Ring",
+        ring2 = "Shukuyu Ring",
+        back = "Relucent Cape",
+        waist = "Fotia Belt"
     }
 
-    sets.TP.Accuracy = {
-        ammo = "Amar Cluster",
-        head = "Wicce Petasos +3",
-        neck = "Combatant's Torque",
-        ear1 = "Telos Earring",
-        ear2 = "Crepuscular Earring",
-        body = "Wicce Coat +3",
-        hands = "Gazu Bracelets +1",
-        ring1 = "Chirich Ring +1",
-        ring2 = "Chirich Ring +1",
-        back = Taranus.STP,
-        waist = "Windbuffet Belt +1",
-        legs = "Wicce Chausses +3",
-        feet = "Wicce Sabots +3"
-    }
+    -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
 
-    -- DW Sets--
-    sets.DW = {}
-    sets.DW.index = {'Low', 'High'}
-    DW_ind = 1
+    sets.precast.WS['Vidohunir'] = {
+        ammo = "Ghastly Tathlum +1",
+        head = "Pixie Hairpin +1",
+        body = "Amalric Doublet +1",
+        hands = "Amalric Gages +1",
+        legs = "Merlinic Shalwar",
+        feet = "Merlinic Crackows",
+        neck = "Baetyl Pendant",
+        ear1 = "Malignance Earring",
+        ear2 = "Moonshade Earring",
+        ring1 = "Epaminondas's Ring",
+        ring2 = "Archon Ring",
+        back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}},
+        waist = "Acuity Belt +1"
+    } -- INT
 
-    -- DW III with Haste II, +31 DW needed to cap with only Flutter on--
-
-    sets.DW.Low = {
-        ear1 = "Suppanomimi",
-        --		body = ,
-        back = Taranus.DW,
-        waist = "Reiki Yotai"
-        --        feet = 
-    }
-    -- Essentially for being slowed, weakened, etc
-    sets.DW.High = {
-        ear1 = "Suppanomimi",
-        ear2 = "Eabani Earring",
-        --        body = ,
-        back = Taranus.DW,
-        waist = "Reiki Yotai"
-        --        feet = 
-    }
-
-    -- DT Sets--
-    sets.DT = {}
-    sets.DT.index = {'DT', 'MDT'}
-    DT_ind = 1
-
-    sets.DT.DT = {
-        ammo = "Amar Cluster",
-        head = "Wicce Petasos +3",
-        neck = "Warder's Charm +1",
-        ear1 = "Telos Earring",
-        ear2 = "Crepuscular Earring",
-        body = "Nyame Mail",
-        hands = "Wicce Gloves +3",
-        ring1 = "Shadow Ring",
-        ring2 = "Chirich Ring +1",
-        back = Taranus.STP,
-        waist = "Cornelia's Belt",
-        legs = "Agwu's Slops",
-        feet = "Wicce Sabots +3"
-    }
-
-    -- Shell V on. Need 21% MDT, 19% with sheltered.
-    sets.DT.MDT = {
-        ammo = "Staunch Tathlum +1",
-        head = "Wicce Petasos +3",
-        neck = "Warder's Charm +1",
-        ear1 = "Telos Earring",
-        ear2 = "Crepuscular Earring",
-        body = "Wicce Coat +3",
-        hands = "Wicce Gloves +3",
-        ring1 = "Shadow Ring",
-        ring2 = "Purity Ring",
-        back = Taranus.Cure,
-        waist = "Platinum Moogle Belt",
-        legs = "Agwu's Slops",
-        feet = "Wicce Sabots +3"
-    }
-
-    -- Weaponskill Sets--
-    sets.WS = {}
-
-    ------------
-    -- Staves--
-    ------------
-    sets.Myrkr = {
+    sets.precast.WS['Myrkr'] = {
         ammo = "Ghastly Tathlum +1",
         head = "Amalric Coif +1",
         neck = "Sanctity Necklace",
         ear1 = "Loquacious Earring",
         ear2 = "Etiolation Earring",
         body = "Rosette Jaseran +1",
-        hands = "Spaekona's Gloves +3",
+        hands = "Spaekona's Gloves +2",
         ring1 = "Metamorph Ring +1",
         ring2 = "Mephitas's Ring +1",
-        back = Taranus.FC,
+        back = {
+            name = "Taranus's Cape",
+            augments = {'MP+60', 'Mag. Acc+20 /Mag. Dmg.+20', '"Fast Cast"+10'}
+        },
         waist = "Shinjutsu-no-Obi +1",
         legs = "Spaekona's Tonban +3",
-        feet = "Amalric Nails +1"
-    }
+        feet = "Merlinic Crackows"
+    } -- Max MP
 
-    sets.FullSwing = {
-        ammo = "Crepuscular Pebble",
-        head = "Nyame Helm",
-        neck = "Fotia Gorget",
-        ear1 = "Moonshade Earring",
-        ear2 = "Regal Earring",
-        body = "Nyame Mail",
-        hands = "Nyame Gauntlets",
-        ring1 = "Epaminondas's Ring",
-        ring2 = "Chirich Ring +1",
-        back = Taranus.STP,
-        waist = "Fotia Belt",
-        legs = "Nyame Flanchard",
-        feet = "Nyame Sollerets"
-    }
+    ---- Midcast Sets ----
 
-    sets.ShellCrusher = {
-        ammo = "Pemphredo Tathlum",
-        head = "Wicce Petasos +3",
-        neck = "Sanctity Necklace",
-        ear1 = "Moonshade Earring",
-        ear2 = "Regal Earring",
-        body = "Wicce Coat +3",
-        hands = "Wicce Gloves +3",
-        ring1 = "Chirich Ring +1",
-        ring2 = "Medada's Ring",
-        back = "Aurist's Cape +1",
-        waist = "Eschan Stone",
-        legs = "Wicce Chausses +3",
-        feet = "Wicce Sabots +3"
-    }
+    sets.midcast.FastRecast = sets.precast.FC
 
-    sets.Shattersoul = {
-        ammo = "Ghastly Tathlum +1",
-        head = "Nyame Helm",
-        neck = "Fotia Gorget",
-        ear1 = "Moonshade Earring",
-        ear2 = "Regal Earring",
-        body = "Nyame Mail",
-        hands = "Nyame Gauntlets",
-        ring1 = "Metamorph Ring +1",
-        ring2 = "Freke Ring",
-        back = "Aurist's Cape +1",
-        waist = "Fotia Belt",
-        legs = "Nyame Flanchard",
-        feet = "Nyame Sollerets"
-    }
-
-    sets.Vidohunir = {
-        ammo = "Pemphredo Tathlum",
-        head = "Pixie Hairpin +1",
-        neck = "Sibyl Scarf",
-        ear1 = "Malignance Earring",
-        ear2 = "Regal Earring",
-        body = "Nyame Mail",
-        hands = "Nyame Gauntlets",
-        ring1 = "Archon Ring",
-        ring2 = "Medada's Ring",
-        back = Taranus.MAB,
-        waist = "Sacro Cord",
-        legs = "Nyame Flanchard",
-        feet = "Nyame Sollerets"
-    }
-
-    sets.EarthCrusher = {
-        ammo = "Pemphredo Tathlum",
-        head = "Nyame Helm",
-        neck = "Quanpur Necklace",
-        ear1 = "Moonshade Earring",
-        ear2 = "Regal Earring",
-        body = "Nyame Mail",
-        hands = "Nyame Gauntlets",
-        ring1 = "Freke Ring",
-        ring2 = "Medada's Ring",
-        back = Taranus.MAB,
-        waist = "Sacro Cord",
-        legs = "Nyame Flanchard",
-        feet = "Nyame Sollerets"
-    }
-
-    -----------
-    -- Clubs-- These indexs probably will never need to be toggled, so they arent
-    ----------- but they exist anyway
-    sets.Judgment = set_combine(sets.BlackHalo, {})
-
-    sets.BlackHalo = {
-        ammo = "Aurgelmir Orb +1",
-        head = "Nyame Helm",
-        neck = "Mirage Stole +2",
-        ear1 = "Moonshade Earring",
-        ear2 = "Regal Earring",
-        body = "Nyame Mail",
-        hands = "Nyame Gauntlets",
-        ring1 = "Rufescent Ring",
-        ring2 = "Epaminondas's Ring",
-        back = Taranus.WSD,
-        waist = "Sailfi Belt +1",
-        legs = "Nyame Flanchard",
-        feet = "Nyame Sollerets"
-    }
-
-    sets.FlashNova = {
-        ammo = "Pemphredo Tathlum",
-        head = "Nyame Helm",
-        neck = "Sibyl Scarf",
-        ear1 = "Regal Earring",
-        ear2 = "Friomisi Earring",
-        body = "Nyame Mail",
-        hands = "Nyame Gauntlets",
-        ring1 = "Freke Ring",
-        ring2 = "Medada's Ring",
-        back = Taranus.Nuke,
-        waist = "Sacro Cord",
-        legs = "Nyame Flanchard"
-        --        feet = "Nyame Sollerets"
-    }
-
-    --------------------------------------------------
-    --   Nuking Sets
-    --------------------------------------------------
-    sets.Nukes = {}
-    sets.Nukes.index = {"MAB", "MACC", "MaxAcc"}
-    Nukes_ind = 1
-
-    sets.Nukes.MAB = {
-        ammo = "Ghastly Tathlum +1",
-        head = "Agwu's Cap",
-        neck = "Sorcerer's Stole +2",
-        ear1 = "Malignance Earring",
-        ear2 = "Regal Earring",
-        body = "Wicce Coat +3",
-        hands = "Wicce Gloves +3",
-        ring1 = "Freke Ring",
-        ring2 = "Medada's Ring",
-        back = Taranus.MAB,
-        waist = "Sacro Cord",
-        legs = "Agwu's Slops",
-        feet = "Agwu's Pigaches"
-    }
-
-    sets.Nukes.MACC = {
-        ammo = "Pemphredo Tathlum",
-        head = "Wicce Petasos +3",
-        neck = "Sorcerer's Stole +2",
-        ear1 = "Malignance Earring",
-        ear2 = "Regal Earring",
-        body = "Wicce Coat +3",
-        hands = "Wicce Gloves +3",
-        ring1 = "Metamorph Ring +1",
-        ring2 = "Medada's Ring",
-        back = Taranus.MAB,
-        waist = "Sacro Cord",
-        legs = "Agwu's Slops",
-        feet = "Agwu's Pigaches"
-    }
-
-    sets.Nukes.MaxAcc = {
-        ammo = "Pemphredo Tathlum",
-        head = "Wicce Petasos +3",
-        neck = "Sorcerer's Stole +2",
-        ear1 = "Malignance Earring",
-        ear2 = "Regal Earring",
-        body = "Wicce Coat +3",
-        hands = "Wicce Gloves +3",
-        ring1 = "Metamorph Ring +1",
-        ring2 = "Medada's Ring",
-        back = Taranus.MAB,
-        waist = "Acuity Belt +1",
-        legs = "Wicce Chausses +3",
-        feet = "Wicce Sabots +3"
-    }
-
-    sets.DTNukes = {
-        ammo = "Ghastly Tathlum +1",
-        head = "Wicce Petasos +3",
-        neck = "Sorcerer's Stole +2",
-        ear1 = "Malignance Earring",
-        ear2 = "Regal Earring",
-        body = "Wicce Coat +3",
-        hands = "Wicce Gloves +3",
-        ring1 = "Freke Ring",
-        ring2 = "Medada's Ring",
-        back = Taranus.MAB,
-        waist = "Acuity Belt +1",
-        legs = "Agwu's Slops",
-        feet = "Wicce Sabots +3"
-    }
-
-    sets.DTNukesManawalll = set_combine(sets.DTNukes, {
-        body = "Spaekona's Coat +3"
-    })
-
-    sets.DTNukesMacc = {
-        ammo = "Pemphredo Tathlum",
-        head = "Wicce Petasos +3",
-        neck = "Sorcerer's Stole +2",
-        ear1 = "Malignance Earring",
-        ear2 = "Regal Earring",
-        body = "Wicce Coat +3",
-        hands = "Wicce Gloves +3",
-        ring1 = "Metamorph Ring +1",
-        ring2 = "Medada's Ring",
-        back = Taranus.MAB,
-        waist = "Acuity Belt +1",
-        legs = "Agwu's Slops",
-        feet = "Wicce Sabots +3"
-    }
-
-    sets.Bursts = {}
-    sets.Bursts.index = {"MAB", "MACC", "MaxAcc"}
-    Bursts_ind = 1
-
-    sets.Bursts.MAB = {
-        ammo = "Ghastly Tathlum +1",
-        head = "Ea Hat +1",
-        neck = "Sorcerer's Stole +2",
-        ear1 = "Malignance Earring",
-        ear2 = "Regal Earring",
-        body = "Wicce Coat +3",
-        hands = "Agwu's Gages",
-        ring1 = "Freke Ring",
-        ring2 = "Medada's Ring",
-        back = Taranus.MAB,
-        waist = "Sacro Cord",
-        legs = "Agwu's Slops",
-        feet = "Agwu's Pigaches"
-    }
-
-    sets.Bursts.MACC = {
-        ammo = "Ghastly Tathlum +1",
-        head = "Wicce Petasos +3",
-        neck = "Sorcerer's Stole +2",
-        ear1 = "Malignance Earring",
-        ear2 = "Regal Earring",
-        body = "Wicce Coat +3",
-        hands = "Agwu's Gages",
-        ring1 = "Metamorph Ring +1",
-        ring2 = "Medada's Ring",
-        back = Taranus.MAB,
-        waist = "Acuity Belt +1",
-        legs = "Agwu's Slops",
-        feet = "Wicce Sabots +3"
-    }
-
-    sets.Bursts.MaxAcc = {
-        ammo = "Pemphredo Tathlum",
-        head = "Wicce Petasos +3",
-        neck = "Sorcerer's Stole +2",
-        ear1 = "Malignance Earring",
-        ear2 = "Regal Earring",
-        body = "Wicce Coat +3",
-        hands = "Wicce Gloves +3",
-        ring1 = "Metamorph Ring +1",
-        ring2 = "Medada's Ring",
-        back = Taranus.MAB,
-        waist = "Acuity Belt +1",
-        legs = "Wicce Chausses +3",
-        feet = "Spaekona's Sabots +3"
-    }
-
-    sets.DTBursts = {
-        ammo = "Ghastly Tathlum +1",
-        head = "Wicce Petasos +3",
-        neck = "Sorcerer's Stole +2",
-        ear1 = "Malignance Earring",
-        ear2 = "Regal Earring",
-        body = "Wicce Coat +3",
-        hands = "Agwu's Gages",
-        ring1 = "Defending Ring",
-        ring2 = "Medada's Ring",
-        back = Taranus.MAB,
-        waist = "Acuity Belt +1",
-        legs = "Agwu's Slops",
-        feet = "Wicce Sabots +3"
-    }
-
-    sets.DTBurstsManawalll = set_combine(sets.DTBursts, {
-        body = "Spaekona's Coat +3"
-    })
-
-    sets.DTBurstsMacc = {
-        ammo = "Pemphredo Tathlum",
-        head = "Wicce Petasos +3",
-        neck = "Sorcerer's Stole +2",
-        ear1 = "Malignance Earring",
-        ear2 = "Regal Earring",
-        body = "Wicce Coat +3",
-        hands = "Wicce Gloves +3",
-        ring1 = "Defending Ring",
-        ring2 = "Medada's Ring",
-        back = Taranus.MAB,
-        waist = "Acuity Belt +1",
-        legs = "Wicce Chausses +3",
-        feet = "Wicce Sabots +3"
-    }
-    --------------------------------------------------
-    --   Occult Acumen
-    --------------------------------------------------
-    sets.OccultAcumen = {
-        ammo = "Seraphic Ampulla",
-        head = "Mallquis Chapeau +2",
-        neck = "Combatant's Torque",
-        ear1 = "Dedition Earring",
-        ear2 = "Crepuscular Earring",
-        body = "Spaekona's Coat +3",
-        hands = MerlinicHands.OA,
-        ring1 = "Chirich Ring +1",
-        ring2 = "Crepuscular Ring",
-        back = Taranus.STP,
-        waist = "Oneiros Rope",
-        legs = "Perdition Slops",
-        feet = MerlinicFeet.OA
-    }
-
-    sets.DTOccultAcumen = {
-        ammo = "Seraphic Ampulla",
-        head = "Wicce Petasos +3", -- 11
-        neck = "Combatant's Torque",
-        ear1 = "Dedition Earring",
-        ear2 = "Crepuscular Earring",
-        body = "Spaekona's Coat +3",
-        hands = "Wicce Gloves +3", -- 13
-        ring1 = "Defending Ring", -- 10
-        ring2 = "Crepuscular Ring",
-        back = Taranus.STP, -- 5
-        waist = "Oneiros Rope",
-        legs = "Perdition Slops",
-        feet = "Wicce Sabots +3" -- 12
-    }
-    --------------------------------------------------
-    --   Dark Magic Sets
-    --------------------------------------------------
-
-    sets.DarkMagic = {}
-
-    sets.DarkMagic.DrainAspir = {
-        ammo = "Pemphredo Tathlum",
-        head = "Agwu's Cap",
-        neck = "Erra Pendant",
-        ear1 = "Malignance Earring",
-        ear2 = "Regal Earring",
-        body = "Wicce Coat +3",
-        hands = "Archmage's Gloves +3",
-        ring1 = "Archon Ring",
-        ring2 = "Metamorph Ring +1",
-        back = "Aurist's Cape +1",
-        waist = "Fucho-no-obi",
-        legs = "Spaekona's Tonban +3",
-        feet = "Agwu's Pigaches"
-    }
-
-    sets.DarkMagic.Stun = {
-        ammo = "Pemphredo Tathlum",
-        head = "Amalric Coif +1",
-        neck = "Erra Pendant",
-        ear1 = "Malignance Earring",
-        ear2 = "Regal Earring",
-        body = "Agwu's Robe",
-        hands = "Agwu's Gages",
-        ring1 = "Kishar Ring",
-        ring2 = "Stikini Ring +1",
-        back = Taranus.FC,
-        waist = "Acuity Belt +1",
-        legs = "Agwu's Slops",
-        feet = "Agwu's Pigaches"
-    }
-
-    sets.DarkMagic.Absorb = {
-        ammo = "Pemphredo Tathlum",
-        head = "Amalric Coif +1",
-        neck = "Erra Pendant",
-        ear1 = "Malignance Earring",
-        ear2 = "Regal Earring",
-        body = "Agwu's Robe",
-        hands = "Agwu's Gages",
-        ring1 = "Kishar Ring",
-        ring2 = "Stikini Ring +1",
-        back = Taranus.FC,
-        waist = "Acuity Belt +1",
-        legs = "Spaekona's Tonban +3",
-        feet = "Wicce Sabots +3"
-    }
-
-    sets.DarkMagic.Death = {
-        ammo = "Ghastly Tathlum +1",
-        head = "Amalric Coif +1",
-        neck = "Sanctity Necklace",
-        ear1 = "Barkarole Earring",
-        ear2 = "Regal Earring",
-        body = "Wicce Coat +3",
-        hands = "Spaekona's Gloves +3",
-        ring1 = "Metamorph Ring +1",
-        ring2 = "Archon Ring",
-        back = Taranus.FC,
-        waist = "Shinjutsu-no-Obi +1",
-        legs = "Spaekona's Tonban +3",
-        feet = "Wicce Sabots +3"
-    }
-
-    sets.DarkMagic.DeathBurst = {
-        ammo = "Ghastly Tathlum +1",
-        head = "Amalric Coif +1",
-        neck = "Sorcerer's Stole +2",
-        ear1 = "Barkarole Earring",
-        ear2 = "Regal Earring",
-        body = "Wicce Coat +3",
-        hands = "Spaekona's Gloves +3",
-        ring1 = "Metamorph Ring +1",
-        ring2 = "Archon Ring",
-        back = Taranus.FC,
-        waist = "Acuity Belt +1",
-        legs = "Wicce Chausses +3",
-        feet = "Spaekona's Sabots +3"
-    }
-
-    --------------------------------------------------
-    --   Enfeebling Magic Sets
-    --------------------------------------------------
-
-    sets.Enfeebling = {
-        ammo = "Pemphredo Tathlum",
-        head = "Wicce Petasos +3",
-        neck = "Sorcerer's Stole +2",
-        ear1 = "Regal Earring",
-        ear2 = "Malignance Earring",
-        body = "Spaekona's Coat +3",
-        hands = "Agwu's Gages",
-        ring1 = "Kishar Ring",
-        ring2 = "Metamorph Ring +1",
-        back = "Aurist's Cape +1",
-        waist = "Acuity Belt +1",
-        legs = "Spaekona's Tonban +3",
-        feet = "Agwu's Pigaches"
-    }
-
-    -----------------------------------------
-
-    -- CP cap 50%, CP Received cap 30%--
-    sets.Cures = {
-        ammo = "Staunch Tathlum +1",
+    sets.midcast.Cure = {
+        main = "Raetic Rod", -- 30
+        sub = "Sors Shield", -- 3/(-5)
+        ammo = "Staunch Tathlum",
         head = "Vanya Hood", -- 10
         neck = "Incanter's Torque",
         ear1 = "Mendicant's Earring", -- 5
@@ -789,1972 +283,824 @@ function get_sets()
         hands = "Wicce Gloves +3",
         ring1 = "Menelaus's Ring", -- 5
         ring2 = "Defending Ring",
-        back = Taranus.Cure, -- 10
+        back = "Solemnity Cape", -- 10
         waist = "Luminary Sash",
-        legs = "Agwu's Slops",
+        legs = "Doyen Pants",
         feet = "Vanya Clogs" -- 5
     }
 
-    sets.SelfCures = {
-        ammo = "Staunch Tathlum +1",
-        head = "Vanya Hood", -- 10
-        neck = "Phalaina Locket", -- 4/4
-        ear1 = "Mendicant's Earring", -- 5
-        ear2 = "Magnetic Earring",
-        body = "Vrikodara Jupon", -- 13
-        hands = "Agwu's Gloves", -- /10
-        ring1 = "Kunaji Ring", -- /5
-        ring2 = "Menelaus's Ring", -- 5
-        back = Taranus.Cure, -- 10
-        waist = "Gishdubar Sash", -- /10
-        legs = "Agwu's Slops",
-        feet = "Vanya Clogs" -- 5
-    }
-
-    sets.CuresWeapon = {
-        main = "Raetic Rod +1",
-        sub = "Ammurapi Shield",
-        ammo = "Staunch Tathlum +1",
-        head = "Vanya Hood",
-        neck = "Incanter's Torque", -- 4
-        ear1 = "Mendicant's Earring", -- 5
-        ear2 = "Magnetic Earring",
-        body = "Vrikodara Jupon", -- 13
-        hands = "Wicce Gloves +3",
-        ring1 = "Menelaus's Ring",
-        ring2 = "Defending Ring",
-        back = Taranus.Cure, -- 10
-        waist = "Luminary Sash",
-        legs = "Gyve Trousers",
-        feet = "Vanya Clogs" -- 11
-    }
-
-    sets.SelfCuresWeapon = { -- Need to update this, but im going to publish this lua first.
-        main = "Raetic Rod +1",
-        sub = "Ammurapi Shield",
-        ammo = "Staunch Tathlum +1",
-        head = "Carmine Mask +1",
-        neck = "Phalaina Locket",
-        ear1 = "Mendicant's Earring",
-        ear2 = "Regal Earring",
-        body = "Vrikodara Jupon",
-        hands = "Telchine Gloves",
-        ring1 = "Kunaji Ring",
-        ring2 = "Menelaus's Ring",
-        back = Taranus.Cure,
-        waist = "Gishdubar Sash",
-        legs = "Telchine Braconi",
-        feet = "Vanya Clogs"
-    }
-
-    -- Enhancing Sets--
-
-    sets.Enhancing = {
-        ammo = "Pemphredo Tathlum",
-        head = "Telchine Cap",
-        neck = "Incanter's Torque",
-        ear1 = "Andoaa Earring",
-        body = "Telchine Chasuble",
-        hands = "Telchine Gloves",
-        back = "Fi Follet Cape +1",
-        waist = "Embla Sash",
-        ring1 = "Defending Ring",
-        ring2 = "Stikini Ring +1",
-        legs = "Telchine Braconi",
-        feet = "Telchine Pigaches"
-    }
-
-    sets.Enhancing.Bar = set_combine(sets.Enhancing, {
-        neck = "Incanter's Torque",
-        ear1 = "Andoaa Earring",
-        legs = "Shedir Seraweels"
-    })
-    ---Have this gear, but never bothered putting it in yet.  UPDATE THIS.
-    sets.Enhancing.Phalanx = {
-        head = "Merlinic Hood",
-        neck = "Incanter's Torque",
-        ear1 = "Andoaa Earring",
-        body = MerlinicBody.Phalanx,
-        hands = MerlinicHands.Phalanx,
-        ring2 = {
-            "Stikini Ring +1",
-            priortiy = 2
+    sets.midcast.Curaga = set_combine(sets.midcast.Cure, {
+        neck = "Nuna Gorget +1",
+        ring1 = {
+            name = "Stikini Ring +1",
+            bag = "wardrobe3"
         },
+        ring2 = "Metamor. Ring +1",
+        waist = "Luminary Sash"
+    })
+
+    sets.midcast.Cursna = set_combine(sets.midcast.Cure, {
+        main = gear.Gada_ENH,
+        sub = "Genmei Shield",
+        head = "Vanya Hood",
+        body = "Vanya Robe",
+        hands = "Hieros Mittens",
+        feet = "Vanya Clogs",
+        neck = "Debilis Medallion",
+        ear1 = "Beatific Earring",
+        ear2 = "Meili Earring",
+        ring1 = "Menelaus's Ring",
+        ring2 = "Haoma's Ring"
+    })
+
+    sets.midcast['Enhancing Magic'] = {
+        main = {
+            name = "Gada",
+            augments = {'Enh. Mag. eff. dur. +5', 'VIT+2'}
+        },
+        sub = "Ammurapi Shield",
+        head={ name="Telchine Cap", augments={'Enh. Mag. eff. dur. +9',}},
+        body={ name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +9',}},
+        hands={ name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +8',}},
+        legs = "Agwu's Slops",
+        feet = "Wicce Sabots +3",
+        neck = "Incanter's Torque",
+        ear1 = "Mimir Earring",
+        ear2 = "Andoaa Earring",
+        left_ring = "Stikini Ring +1",
+        right_ring = "Stikini Ring +1",
         back = "Fi Follet Cape +1",
-        legs = "Merlinic Shalwar",
-        feet = MerlinicFeet.Phalanx
+        waist = "Olympus Sash"
     }
 
-    sets.Enhancing.Refresh = set_combine(sets.Enhancing, {
-        head = "Amalric Coif +1",
-        neck = "Loricate Torque +1",
-        waist = "Gishdubar Sash"
+    sets.midcast.EnhancingDuration = {
+        main = {
+            name = "Gada",
+            augments = {'Enh. Mag. eff. dur. +5', 'VIT+2'}
+        },
+        sub = "Ammurapi Shield",
+        head={ name="Telchine Cap", augments={'Enh. Mag. eff. dur. +9',}},
+        body={ name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +9',}},
+        hands={ name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +8',}},
+        legs = "Agwu's Slops",
+        feet = "Wicce Sabots +3",
+        neck = "Incanter's Torque",
+        ear1 = "Mimir Earring",
+        ear2 = "Andoaa Earring",
+        left_ring = "Stikini Ring +1",
+        right_ring = "Stikini Ring +1",
+        back = "Fi Follet Cape +1",
+        waist = "Olympus Sash"
+    }
+
+    sets.midcast.Regen = set_combine(sets.midcast.EnhancingDuration, {
+        main = "Bolelabunga",
+        sub = "Ammurapi Shield",
+        head = gear.Telchine_ENH_head,
+        body = gear.Telchine_ENH_body,
+        hands = gear.Telchine_ENH_hands,
+        legs = gear.Telchine_ENH_legs,
+        feet = gear.Telchine_ENH_feet
     })
 
-    sets.Enhancing.Aquaveil = set_combine(sets.Enhancing, {
+    sets.midcast.Refresh = set_combine(sets.midcast.EnhancingDuration, {
         head = "Amalric Coif +1",
-        neck = "Loricate Torque +1",
+        -- feet="Inspirited Boots",
+        waist = "Gishdubar Sash",
+        back = "Grapevine Cape"
+    })
+
+    sets.midcast.Stoneskin = set_combine(sets.midcast.EnhancingDuration, {
+        neck = "Nodens Gorget",
+        waist = "Siegel Sash",
+        left_ear = "Earthcry Earring",
+        legs = "Doyen Pants"
+    })
+
+    sets.midcast.Aquaveil = set_combine(sets.midcast.EnhancingDuration, {
+        main = "Vadose Rod",
+        sub = "Ammurapi Shield",
+        ammo = "Staunch Tathlum",
+        head = "Amalric Coif +1",
         hands = "Regal Cuffs",
-        waist = "Emphatikos Rope",
-        legs = "Shedir Seraweels"
+        ear1 = "Halasz Earring",
+        ring1 = "Freke Ring",
+        ring2 = "Evanescence Ring",
+        waist = "Emphatikos Rope"
     })
 
-    sets.ElementalDebuffs = {
+    sets.midcast.Protect = set_combine(sets.midcast.EnhancingDuration, {
+        ring1 = "Sheltered Ring"
+    })
+    sets.midcast.Protectra = sets.midcast.Protect
+    sets.midcast.Shell = sets.midcast.Protect
+    sets.midcast.Shellra = sets.midcast.Protect
+
+    sets.midcast.MndEnfeebles = {
+        main={ name="Contemplator +1", augments={'Path: A',}},
+        sub="Enki Strap",
         ammo = "Pemphredo Tathlum",
         head = "Wicce Petasos +3",
-        body = "Spaekona's Coat +3",
         neck = "Sorcerer's Stole +2",
-        ear1 = "Malignance Earring",
-        ear2 = "Regal Earring",
-        hands = "Spaekona's Gloves +3",
-        ring1 = "Stikini Ring +1",
+        ear1 = "Regal Earring",
+        ear2 = "Malignance Earring",
+        body = "Spaekona's Coat +2",
+        hands = "Agwu's Gages",
+        ring1 = "Kishar Ring",
         ring2 = "Metamorph Ring +1",
         back = "Aurist's Cape +1",
-        legs = "Archmage's Tonban +3",
         waist = "Acuity Belt +1",
-        feet = "Archmage's Sabots +3"
-    }
+        legs = "Spaekona's Tonban +3",
+        feet = "Agwu's Pigaches"
+    } -- MND/Magic accuracy
 
-    sets.Impact = {
-        ammo = "Ghastly Tathlum +1",
-        neck = "Sorcerer's Stole +2",
+    sets.midcast.IntEnfeebles = set_combine(sets.midcast.MndEnfeebles, {
+        main = "Maxentius",
+        sub = "Ammurapi Shield",
+        waist = "Acuity Belt +1"
+    }) -- INT/Magic accuracy
+
+    sets.midcast.ElementalEnfeeble = set_combine(sets.midcast.MndEnfeebles, {
+        legs = "Archmage's Tonban +3",
+        feet = "Archmage's Sabots +3",
+    })
+    
+    sets.midcast.Dispelga = set_combine(sets.midcast.IntEnfeebles, {
+        main = "Daybreak",
+        sub = "Ammurapi Shield",
+        waist = "Shinjutsu-no-Obi +1"
+    })
+
+    sets.midcast['Dark Magic'] = {
+        main = "Rubicundity",
+        sub = "Ammurapi Shield",
+        ammo = "Pemphredo Tathlum",
+        head = "Agwu's Cap",
+        body = "Wicce Coat +3",
+        hands = "Archmage's Gloves +2",
+        legs = "Spaekona's Tonban +3",
+        feet = "Agwu's Pigaches",
+        neck = "Erra Pendant",
         ear1 = "Malignance Earring",
         ear2 = "Regal Earring",
-        body = "Twilight Cloak",
-        hands = "Agwu's Gages",
-        ring1 = "Metamorph Ring +1",
-        ring2 = "Archon Ring",
-        back = Taranus.MAB,
-        waist = "Hachirin-no-Obi",
-        legs = "Wicce Chausses +3",
+        left_ring = "Stikini Ring +1",
+        right_ring = "Stikini Ring +1",
+        back = {
+            name = "Taranus's Cape",
+            augments = {'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'INT+10', '"Mag.Atk.Bns."+10', 'Damage taken-5%'}
+        },
+        waist = "Fucho-no-obi",
+    }
+
+    sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'], {
+        ammo = "Pemphredo Tathlum",
+        head = "Agwu's Cap",
+        neck = "Erra Pendant",
+        ear1 = "Malignance Earring",
+        ear2 = "Regal Earring",
+        body = "Wicce Coat +3",
+        hands = "Archmage's Gloves +2",
+        ring1 = "Archon Ring",
+        ring2 = "Metamorph Ring +1",
+        back = "Aurist's Cape +1",
+        waist = "Fucho-no-obi",
+        legs = "Spaekona's Tonban +3",
         feet = "Agwu's Pigaches"
-    }
-    --		ammo = "Pemphredo Tathlum",
-    --		body = "Twilight Cloak",
-    --		neck = "Incanter's Torque",
-    --		ear1 = "Malignance Earring",
-    --		ear2 = "Regal Earring",
-    --		hands = "Archmage's Gloves +3",
-    --        ring1 = "Stikini Ring +1",
-    --        ring2 = "Metamorph Ring +1",
-    --		back = "Aurist's Cape +1",
-    --		legs = "Archmage's Tonban +3",
-    --		waist = "Acuity Belt +1",
-    --		feet = "Archmage's Sabots +3"
-    --	}
-    ----------------
-    -- Utility Sets--
-    ----------------
-    -- These sets are either called in rules (like TH or Herp-a-Derp DT) or locked in manually
-    -- Manual locking macro
-    -- /console gs equip sets.  <name>
-    -- /console gs c LockGearIndex
-    -- Hit it again to take it off
-    sets.Utility = {}
+    })
 
-    sets.Utility.TH = {
-        ammo = "Perfect Lucky Egg",
-        waist = "Chaac Belt"
+    sets.midcast.Aspir = sets.midcast.Drain
+
+    sets.midcast.Stun = {
+        ammo = "Pemphredo Tathlum",
+        head = "Amalric Coif +1",
+        neck = "Erra Pendant",
+        ear1 = "Malignance Earring",
+        ear2 = "Regal Earring",
+        body = "Agwu's Robe",
+        hands = "Agwu's Gages",
+        ring1 = "Kishar Ring",
+        ring2 = "Stikini Ring +1",
+        back = {
+            name = "Taranus's Cape",
+            augments = {'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'INT+10', '"Mag.Atk.Bns."+10', 'Damage taken-5%'}
+        },
+        waist = "Acuity Belt +1",
+        legs = "Agwu's Slops",
+        feet = "Agwu's Pigaches"
+    }    
+
+    sets.midcast.Death = {
+        main = {
+            name = "Lathi",
+            augments = {'MP+80', 'INT+20', '"Mag.Atk.Bns."+20'}
+        },
+        sub = "Enki Strap",
+        ammo = "Sapience Orb",
+        head = "Amalric Coif +1",
+        neck = "Sanctity Necklace",
+        ear2 = "Etiolation Earring",
+        ear1 = "Loquac. Earring",
+        body = "Rosette Jaseran +1", -- 5
+        hands = "Agwu's Gages",
+        ring1 = "Mephitas's Ring +1",
+        ring2 = "Medada's Ring",
+        back = {
+            name = "Taranus's Cape",
+            augments = {'MP+60', 'Mag. Acc+20 /Mag. Dmg.+20', '"Fast Cast"+10'}
+        },
+        waist = "Shinjutsu-no-Obi +1", -- 5,
+        legs = "Agwu's Slops",
+        feet = "Amalric Nails +1"
     }
-    -- Comes on when slept, terrored, stunned, and petrified--
-    -- Capped DT and -42% MDT, assumes shell etc may be gone after being unable to act--
-    sets.Utility.DerpDT = {
-        ammo = "Staunch Tathlum +1",
+
+    sets.midcast.Death.Resistant = set_combine(sets.midcast.Death, {
+        main = gear.Grioavolr_MB,
+        sub = "Enki Strap",
+        head = "Amalric Coif +1",
+        waist = "Acuity Belt +1"
+    })
+
+    -- Elemental Magic sets
+
+    sets.midcast['Elemental Magic'] = {
+        main = {
+            name = "Lathi",
+            augments = {'MP+80', 'INT+20', '"Mag.Atk.Bns."+20'}
+        },
+        sub = "Enki Strap",
+        ammo = "Pemphredo Tathlum",
         head = "Wicce Petasos +3",
-        neck = "Warder's Charm +1",
-        ear1 = "Eabani Earring",
-        ear2 = "Etiolation Earring",
-        body = "Nyame Mail",
+        body = "Wicce Coat +3",
         hands = "Wicce Gloves +3",
-        ring1 = "Shadow Ring",
-        ring2 = "Purity Ring",
-        back = Taranus.MagicEva,
-        waist = "Flume Belt",
-        legs = "Nyame Flanchard",
-        feet = "Wicce Sabots +3"
+        legs = "Wicce Chausses +3",
+        feet = "Wicce Sabots +3",
+        neck = {
+            name = "Src. Stole +2",
+            augments = {'Path: A'}
+        },
+        waist = {
+            name = "Acuity Belt +1",
+            augments = {'Path: A'}
+        },
+        left_ear = "Regal Earring",
+        right_ear = "Malignance Earring",
+        left_ring = {
+            name = "Metamor. Ring +1",
+            augments = {'Path: A'}
+        },
+        right_ring = "Freke Ring",
+        back = {
+            name = "Taranus's Cape",
+            augments = {'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'INT+10', '"Mag.Atk.Bns."+10', 'Damage taken-5%'}
+        }
     }
 
-    sets.Utility.Doom = {
-        neck = "Nicander's Necklace",
-        ring2 = "Saida Ring",
-        ring1 = "Purity Ring",
-        waist = "Gishdubar Sash"
-    }
+    sets.midcast['Elemental Magic'].DeathMode = set_combine(sets.midcast['Elemental Magic'], {
+        main = gear.Grioavolr_MB,
+        sub = "Enki Strap",
+        ammo = "Ghastly Tathlum +1",
+        legs = "Amalric Slops +1",
+        feet = "Merlinic Crackows",
+        back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}},
+    })
 
-    sets.Utility.ConserveMP = {
-
-        ring1 = "Mephitas's Ring +1"
-    }
-
-    sets.JA = {}
-    sets.JA.ManaWall = {
-        feet = "Wicce Sabots +3"
-    }
-
-    -- Precast Sets--
-    ---These can be anything to hit the FC, and balance HP/MP. Unless you drop packets you don't get caught in them---
-    ----Packet drop is why you make these hardier
-    sets.precast = {}
-
-    sets.precast.FC = {}
-
-    ----------------
-    ---Standard---
-    ----------------
-    -- 80% FC Needed--
-    sets.precast.FC.Standard = {
-        ammo = "Impatiens",
-        head = "Amalric Coif +1", -- 11
-        neck = "Baetyl Pendant", -- 4
-        ear1 = "Malignance Earring", -- 4
-        ear2 = "Loquac. Earring", -- 2
-        body = MerlinicBody.FC, -- 12
-        hands = "Agwu's Gages", -- 6
-        ring1 = "Lebeche Ring",
-        ring2 = "Medada's Ring", -- 10
-        back = Taranus.FC, -- 10
-        waist = "Witful Belt", -- 3
-        legs = "Agwu's Slops", -- 7
-        feet = MerlinicFeet.FC -- 11 =80/7
-    }
-
-    sets.precast.FC.StandardWeapon = {
-        ammo = "Sapience Orb",
-        head = "Amalric Coif +1", -- 1
-        neck = "Baetyl Pendant", -- 4
-        ear1 = "Malignance Earring", -- 4
-        ear2 = "Loquac. Earring", -- 2
-        body = MerlinicBody.FC, -- 12
-        hands = "Agwu's Gages", -- 6
-        ring1 = "Rahab Ring", -- 2
-        ring2 = "Medada's Ring", -- 10
-        back = Taranus.FC, -- 10
-        waist = "Witful Belt", -- 3
-        legs = "Agwu's Slops", -- 7
-        feet = MerlinicFeet.FC -- 11
-    }
-
-    sets.precast.FC.DeathStandard = {
-        ammo = "Sapience Orb",
-        head = "Amalric Coif +1",
+    sets.midcast['Elemental Magic'].Resistant = set_combine(sets.midcast['Elemental Magic'], {
+        sub = "Khonsu",
+        ammo = "Pemphredo Tathlum",
+        legs = "Merlinic Shalwar",
         neck = "Sanctity Necklace",
-        ear2 = "Etiolation Earring",
-        ear1 = "Loquac. Earring",
-        body = "Rosette Jaseran +1", -- 5
-        hands = "Agwu's Gages",
-        ring1 = "Mephitas's Ring +1",
-        ring2 = "Medada's Ring",
-        back = Taranus.FC,
-        waist = "Shinjutsu-no-Obi +1", -- 5,
-        legs = "Agwu's Slops",
-        feet = "Amalric Nails +1"
+        waist = "Sacro Cord"
+    })
+
+    sets.midcast['Elemental Magic'].Spaekona = set_combine(sets.midcast['Elemental Magic'], {
+        sub = "Khonsu",
+        ammo = "Pemphredo Tathlum",
+        body = "Spaekona's Coat +2",
+        legs = "Merlinic Shalwar",
+        feet = "Merlinic Crackows",
+        neck = "Erra Pendant"
+    })
+
+    sets.midcast.Impact = set_combine(sets.midcast['Elemental Magic'], {
+        head = empty,
+        body = "Twilight Cloak",
+        ring2 = "Archon Ring"
+    })
+
+    sets.midcast.Impact.Resistant = set_combine(sets.midcast['Elemental Magic'].Resistant, {
+        sub = "Khonsu",
+        head = empty,
+        body = "Twilight Cloak"
+    })
+
+    -- Initializes trusts at iLvl 119
+    sets.midcast.Trust = sets.precast.FC
+
+    sets.resting = {
+        main = "Chatoyant Staff",
+        waist = "Shinjutsu-no-Obi +1"
     }
 
-    sets.precast.FC.DeathStandardWeapon = {
-        ammo = "Sapience Orb",
-        head = "Amalric Coif +1",
+    -- Idle sets
+
+    sets.idle = {
+        -- main="Xoanon",
+        -- sub="Khonsu",
+        ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
+        head="Wicce Petasos +3",
+        body="Wicce Coat +3",
+        hands="Wicce Gloves +3",
+        legs={ name="Nyame Flanchard", augments={'Path: B',}},
+        feet="Wicce Sabots +3",
+        neck={ name="Src. Stole +2", augments={'Path: A',}},
+        waist={ name="Acuity Belt +1", augments={'Path: A',}},
+        left_ear="Regal Earring",
+        right_ear="Etiolation Earring",
+        left_ring="Stikini Ring +1",
+        right_ring="Shneddick Ring",
+        back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}},
+    }
+
+    sets.idle.DT = set_combine(sets.idle, {
+        main = "Daybreak",
+        sub = "Genmei Shield", -- 10/0
+        ammo = "Staunch Tathlum +1", -- 3/3
+        head = "Volte Beret",
+        body = "Mallquis Saio +2", -- 8/8
+        hands = "Raetic Bangles +1",
+        feet = "Volte Gaiters",
+        neck = "Loricate Torque +1", -- 6/6
+        ear1 = "Sanare Earring",
+        ear2 = "Lugalbanda Earring",
+        ring1 = "Gelatinous Ring +1", -- 7/(-1)
+        ring2 = "Defending Ring", -- 10/10
+        back = "Moonlight Cape", -- 6/6
+        waist = "Carrier's Sash"
+    })
+
+    sets.idle.ManaWall = {
+        feet = "Wicce Sabots +1",
+        back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}},
+    }
+
+    sets.idle.DeathMode = {
+        main = gear.Lathi_MAB,
+        sub = "Khonsu",
+        ammo = "Ghastly Tathlum +1",
+        head = "Pixie Hairpin +1",
+        body = "Amalric Doublet +1",
+        hands = "Amalric Gages",
+        legs = "Amalric Slops +1",
+        feet = "Merlinic Crackows",
         neck = "Sanctity Necklace",
-        ear2 = "Etiolation Earring",
-        ear1 = "Loquac. Earring",
-        body = "Rosette Jaseran +1", -- 5
-        hands = "Agwu's Gages",
+        ear1 = "Malignance Earring",
+        ear2 = "Regal Earring",
         ring1 = "Mephitas's Ring +1",
-        ring2 = "Medada's Ring",
-        back = Taranus.FC,
-        waist = "Shinjutsu-no-Obi +1", -- 5,
-        legs = "Agwu's Slops",
-        feet = "Amalric Nails +1"
+        ring2 = "Mephitas's Ring",
+        back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}},
+        waist = "Shinjutsu-no-Obi +1"
     }
 
-    -----------------
-    ---Elemental---
-    -----------------
-    -- 42% FC needed--
-    sets.precast.FC.Elemental = {
-        ammo = "Impatiens", -- /2
-        head = "Wicce Petasos +3", -- 18
-        neck = "Baetyl Pendant", -- 4
-        ear1 = "Malignance Earring", -- 4
-        ear2 = "Etiolation Earring", -- 1
-        body = "Rosette Jaseran +1", -- 4
-        hands = "Nyame Gauntlets",
-        ring1 = "Lebeche Ring", -- /2
-        ring2 = "Medada's Ring", -- 10
-        back = Taranus.FC, -- 10
-        waist = "Witful Belt", -- 3/3
-        legs = "Agwu's Slops", -- 7 = 61/7
-        feet = "Nyame Sollerets"
+    sets.idle.Town = set_combine(sets.idle, {
+        main = {
+            name = "Lathi",
+            augments = {'MP+80', 'INT+20', '"Mag.Atk.Bns."+20'}
+        },
+        sub = "Enki Strap",
+        ammo = "Pemphredo Tathlum",
+        head = "Wicce Petasos +3",
+        body = "Wicce Coat +3",
+        hands = "Wicce Gloves +3",
+        legs = "Wicce Chausses +3",
+        feet = "Wicce Sabots +3",
+        neck = {
+            name = "Src. Stole +2",
+            augments = {'Path: A'}
+        },
+        waist = {
+            name = "Acuity Belt +1",
+            augments = {'Path: A'}
+        },
+        left_ear = "Regal Earring",
+        right_ear = "Malignance Earring",
+        left_ring = "Shneddick Ring",
+        right_ring = "Stikini Ring +1",
+        back = {
+            name = "Taranus's Cape",
+            augments = {'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'INT+10', '"Mag.Atk.Bns."+10', 'Damage taken-5%'}
+        }
+    })
+
+    -- Defense sets
+
+    sets.defense.PDT = sets.idle.DT
+    sets.defense.MDT = sets.idle.DT
+
+    sets.Kiting = {
+        feet = "Herald's Gaiters"
     }
-    sets.precast.FC.ElementalNoQuickMagic = { -- Removes instant cast so you dont prematurely ejaculate and ruin a burst
-        ammo = "Staunch Tathlum +1",
-        head = "Wicce Petasos +3", -- 18
-        neck = "Baetyl Pendant", -- 4
-        ear1 = "Malignance Earring", -- 4
-        ear2 = "Etiolation Earring", -- 1
-        body = "Rosette Jaseran +1", -- 4
-        hands = "Nyame Gauntlets",
-        ring1 = "Rahab Ring", -- 2
-        ring2 = "Medada's Ring", -- 10
-        back = Taranus.FC, -- 10
-        waist = "Carrier's Sash",
-        legs = "Agwu's Slops", -- 7 = 54
-        feet = "Nyame Sollerets"
+    sets.latent_refresh = {
+        waist = "Fucho-no-obi"
     }
-    -- 92% FC needed--
-    sets.precast.FC.ElementalHasso = {
-        ammo = "Sapience Orb", -- 2
-        head = "Wicce Petasos +3", -- 18
-        neck = "Baetyl Pendant", -- 4
-        ear1 = "Malignance Earring", -- 4
-        ear2 = "Barkarole Earring", -- 3
-        body = MerlinicBody.FC, -- 12
-        hands = "Agwu's Gages", -- 6
-        ring1 = "Medada's Ring", -- 10
-        ring2 = "Rahab Ring", -- 2
-        back = Taranus.FC, -- 10
-        waist = "Shinjutsu-no-Obi +1", -- 5
-        legs = "Agwu's Slops", -- 7
-        feet = MerlinicFeet.FC -- 11 =94
+    sets.latent_dt = {
+        ear2 = "Sorcerer's Earring"
     }
 
-    sets.precast.FC.ElementalWeapon = {
-        main = "Hvergelmir",
-        sub = "Khonsu",
-        ammo = "Impatiens", -- 2
-        head = "Amalric Coif +1", -- 11
-        neck = "Baetyl Pendant", -- 4
-        ear1 = "Malignance Earring", -- 4
-        ear2 = "Loquac. Earring", -- 2
-        body = "Nyame Mail",
-        hands = "Nyame Gauntlets",
-        ring1 = "Defending Ring",
-        ring2 = "Gelatinous Ring +1",
-        back = Taranus.FC, -- 10
-        waist = "Witful Belt", -- 3
-        legs = "Agwu's Slops", -- 7 = 43
-        feet = "Nyame Sollerets"
+    sets.magic_burst = {
+        head = "Ea Hat +1", -- 7/(7)
+        body = "Ea Houppe. +1", -- 9/(9)
+        hands = {
+            name = "Agwu's Gages",
+            augments = {'Path: A'}
+        },
+        legs = "Wicce Chausses +3",
+        feet = "Wicce Sabots +3",
+        neck = "Sybil Scarf", -- 10
+        ring2 = "Mujin Band", -- (5)
+        back = {
+            name = "Taranus's Cape",
+            augments = {'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'INT+10', '"Mag.Atk.Bns."+10', 'Damage taken-5%'}
+        }
     }
 
-    sets.precast.FC.ElementalWeaponNoQuickMagic = {
-        main = "Hvergelmir",
-        sub = "Khonsu",
-        ammo = "Sapience Orb", -- 2
-        head = "Amalric Coif +1", -- 11
-        neck = "Baetyl Pendant", -- 4
-        ear1 = "Malignance Earring", -- 4
-        ear2 = "Loquac. Earring", -- 2
-        body = "Nyame Mail",
-        hands = "Nyame Gauntlets",
-        ring1 = "Defending Ring",
-        ring2 = "Gelatinous Ring +1",
-        back = Taranus.FC, -- 10
-        waist = "Shinjutsu-no-Obi +1", -- 5
-        legs = "Agwu's Slops", -- 7 = 45
-        feet = "Nyame Sollerets"
+    sets.magic_burst.Resistant = {
+        feet = "Merlinic Crackows", -- 11
+        neck = "Sanctity Necklace"
     }
 
-    sets.precast.FC.DeathElemental = {
-        ammo = "Sapience Orb", -- 2
-        head = "Amalric Coif +1", -- 11
-        neck = "Baetyl Pendant", -- 4
-        ear2 = "Etiolation Earring", -- 4
-        ear1 = "Barkarole Earring", -- 3
-        body = "Rosette Jaseran +1", -- 5
-        hands = "Nyame Gauntlets",
-        ring1 = "Mephitas's Ring +1",
-        ring2 = "Rahab Ring",
-        back = Taranus.FC, -- 10
-        waist = "Shinjutsu-no-Obi +1", -- 5
-        legs = "Agwu's Slops", -- 7 
-        feet = "Amalric Nails +1" -- 6 = 
-    }
+    -- Engaged sets
 
-    sets.precast.FC.DeathElementalWeapon = {
-        main = "Hvergelmir",
-        sub = "Khonsu",
-        ammo = "Sapience Orb", -- 2
-        head = "Amalric Coif +1", -- 11
-        neck = "Baetyl Pendant", -- 4
-        ear2 = "Etiolation Earring", -- 4
-        ear1 = "Barkarole Earring", -- 3
-        body = "Rosette Jaseran +1", -- 5
-        hands = "Nyame Gauntlets",
-        ring1 = "Mephitas's Ring +1",
-        ring2 = "Rahab Ring",
-        back = Taranus.FC, -- 10
-        waist = "Shinjutsu-no-Obi +1", -- 5
-        legs = "Agwu's Slops", -- 7 
-        feet = "Amalric Nails +1" -- 6 = 
-    }
+    -- Variations for TP weapon and (optional) offense/defense modes.  Code will fall back on previous
+    -- sets if more refined versions aren't defined.
+    -- If you create a set with both offense and defense modes, the offense mode should be first.
+    -- EG: sets.engaged.Dagger.Accuracy.Evasion
 
-    --------------
-    ---Impact---
-    --------------
-    -- 42% FC needed--
-    sets.precast.FC.Impact = {
-        ammo = "Sapience Orb", -- 2
-        neck = "Baetyl Pendant", -- 4
-        ear1 = "Malignance Earring", -- 4
-        ear2 = "Loquac. Earring", -- 2
-        body = "Twilight Cloak",
-        hands = "Nyame Gauntlets",
-        ring1 = "Defending Ring",
-        ring2 = "Gelatinous Ring +1",
-        back = Taranus.FC, -- 10
-        waist = "Witful Belt", -- 3
-        legs = "Agwu's Slops", -- 7 
-        feet = MerlinicFeet.FC -- 11 =43
-    }
+    -- Normal melee group
 
-    sets.precast.FC.ImpactWeapon = {
-        main = "Hvergelmir",
-        sub = "Khonsu",
-        ammo = "Sapience Orb", -- 2
-        neck = "Baetyl Pendant", -- 4
-        ear1 = "Malignance Earring", -- 4
-        ear2 = "Loquac. Earring", -- 2
-        body = "Twilight Cloak",
-        hands = "Nyame Gauntlets",
-        ring1 = "Defending Ring",
-        ring2 = "Gelatinous Ring +1",
-        back = Taranus.FC, -- 10
-        waist = "Witful Belt", -- 3
-        legs = "Agwu's Slops", -- 7 
-        feet = MerlinicFeet.FC -- 11 =43
-    }
-
-    sets.precast.FC.DeathImpact = {
-        ammo = "Sapience Orb", -- 2
-        neck = "Baetyl Pendant", -- 4
-        ear2 = "Etiolation Earring", -- 4
-        ear1 = "Loquac. Earring", -- 2
-        body = "Twilight Cloak",
-        hands = "Nyame Gauntlets",
-        ring1 = "Mephitas's Ring +1",
-        ring2 = "Gelatinous Ring +1",
-        back = Taranus.FC, -- 10
-        waist = "Shinjutsu-no-Obi +1", -- 5
-        legs = "Agwu's Slops", -- 7 
-        feet = "Amalric Nails +1" -- 6 =
-    }
-
-    sets.precast.FC.DeathImpactWeapon = {
-        main = "Hvergelmir",
-        sub = "Khonsu",
-        ammo = "Sapience Orb", -- 2
-        neck = "Baetyl Pendant", -- 4
-        ear2 = "Etiolation Earring", -- 4
-        ear1 = "Loquac. Earring", -- 2
-        body = "Twilight Cloak",
-        hands = "Nyame Gauntlets",
-        ring1 = "Mephitas's Ring +1",
-        ring2 = "Gelatinous Ring +1",
-        back = Taranus.FC, -- 10
-        waist = "Shinjutsu-no-Obi +1", -- 5
-        legs = "Agwu's Slops", -- 7 
-        feet = "Amalric Nails +1" -- 6 =
-    }
-
-end
-
----End of Gear---------------------------------------------------------------------------------------------------------------------------------------------------------
-
--------------------------------------
----------                   ---------
-------                         ------
----         Start of Maps         ---
-------                         ------
----------                   ---------
-------------------------------------- 
-
-function maps()
-
-    Elemental_Debuffs = S {'Shock', 'Rasp', 'Choke', 'Frost', 'Burn', 'Drown'}
-
-    Elemental_Earth = S {'Stone', 'Stone II', 'Stone III', 'Stone IV', 'Stone V', 'Stone VI', 'Stonega', 'Stonega II',
-                         'Stonega III', 'Stoneja', 'Quake', 'Quake II'}
-
-    Elemental_Water = S {'Water', 'Water II', 'Water III', 'Water IV', 'Water V', 'Water VI', 'Waterga', 'Waterga II',
-                         'Waterga III', 'Waterja', 'Flood', 'Flood II'}
-
-    Elemental_Wind = S {'Aero', 'Aero II', 'Aero III', 'Aero IV', 'Aero V', 'Aero VI', 'Aeroga', 'Aeroga II',
-                        'Aeroga III', 'Aeroja', 'Tornado', 'Tornado II'}
-
-    Elemental_IceIceBaby = S {'Blizzard', 'Blizzard II', 'Blizzard III', 'Blizzard IV', 'Blizzard V', 'Blizzard VI',
-                              'Blizzaga', 'Blizzaga II', 'Blizzaga III', 'Blizzaja', 'Freeze', 'Freeze II'}
-
-    Elemental_Lightning = S {'Thunder', 'Thunder II', 'Thunder III', 'Thunder IV', 'Thunder V', 'Thunder VI',
-                             'Thundaga', 'Thundaga II', 'Thundaga III', 'Thundaja', 'Burst', 'Burst II'}
-
-    Elemental_Dark = S {'Comet', 'Death'}
-
-    Elemental_Aja = S {'Stoneja', 'Waterja', 'Aeroja', 'Firaja', 'Blizzaja', 'Thundaja', 'Comet'}
-
-    Dark_Aspir = S {'Aspir', 'Aspir II', 'Aspir III'}
-
-    Mana_Wall_Staves = S {"Archmage's Staff", "Kaumodaki"}
-
-end
-
-------------------------
---   Town Gear List   --
------------------------- 
-
-Town = S {"Ru'Lude Gardens", "Upper Jeuno", "Lower Jeuno", "Port Jeuno", "Port Windurst", "Windurst Waters",
-          "Windurst Woods", "Windurst Walls", "Heavens Tower", "Port San d'Oria", "Northern San d'Oria",
-          "Southern San d'Oria", "Chateau d'Oraguille", "Port Bastok", "Bastok Markets", "Bastok Mines", "Metalworks",
-          "Aht Urhgan Whitegate", "Nashmau", "Rabao", "Selbina", "Mhaura", "Norg", "Kazham", "Tavanazian Safehold",
-          "Eastern Adoulin", "Western Adoulin", "Celennia Memorial Library"}
-
----End of Maps----------------------------------------------------------------------------------------------------------------------------------------------------------
-
---------------------------------------
----------                    ---------
-------                          ------
----         Start of Rules         ---
-------                          ------
----------                    ---------
--------------------------------------- 
-
-----------------------------------------------
---   Macro and Style Change on Job Change   --
-----------------------------------------------
-function set_macros(sheet, book)
-    if book then
-        send_command('@input /macro book ' .. tostring(book) .. ';wait .1;input /macro set ' .. tostring(sheet))
-        return
-    end
-    send_command('@input /macro set ' .. tostring(sheet))
-end
-
-function set_style(sheet)
-    send_command('@input ;wait 5.0;input /lockstyleset ' .. sheet)
-    add_to_chat(21, 'Your Lockstyle looks like shit, and you should feel bad')
-    add_to_chat(55, 'You are on ' .. ('BLM '):color(5) .. '' .. ('btw. '):color(55) .. '' .. ('Macros set!'):color(121))
-    add_to_chat(60, 'Blow shit up')
-end
-
--- Page, Book--
-set_macros(1, 2)
--- Use the Lockstyle Number-- 
-set_style(58)
--------------------------------
---         Variables         --
--------------------------------
-SetLocked = false -- Used to Check if set is locked before changing equipment
-LockedEquipSet = {} -- Placeholder to store desired lock set
-LockGearSet = {}
-equipSet = {} -- Currently Equiped Gearset
-LockGearIndex = false
-TargetDistance = 0
-TH = false
-DT = false
-DW = false
-AutoDW = false
-SIR = false
-DeathMode = false
-BurstMode = false
-OccultAcumen = false
-Aja_Duration_Boost = false
-Aja_Table = {} -- Holds the queue of -ja debuffed mobs
-Aja_Table_ind = 0 -- used to create "uniqueness" for each mob in queue
-Aja_Current_Boost = "" -- Stores current cumulative magic effect -- I took these three lines and logic from TheFoxDanger after telling him I suck at trying to create it.
-Manawall = true
-Coat = false
-WeaponSwap = false
-Sublimation = false
-BurstTimer = {}
-BurstTimer[0] = 0
-BurstTimer[1] = 0
-
--- TH rule description--
--- TH in this GS works as follows. alt T or macro the command in to turn it on and off
--- It will equip when engaging, and after an action is performed by you it comes off until you re-engage or toggle it on and off.
----You can change this, but I found it silly to full time it.
--- If you are idle, and cast either physical blue spells or offensive magical blue spells it will equip on top of your sets.
----Diaga and stuff don't apply. Feel free to add it.
--- When you return to being strictly idle, it doesn't equip either, becuase that would be pointless.
-
--- So basically, TH gear (add yours in where applicable) comes on when engaging unti a new action is performed, and while idle using physical or offensive magical nukes.
-
-------------------------------------
---         Windower Hooks         --
-------------------------------------
-
-function buff_change(n, gain, buff_table)
-    local name
-    name = string.lower(n)
-    if S {"terror", "petrification", "sleep", "stun"}:contains(name) then
-        if gain then
-            ChangeGear(sets.Utility.DerpDT)
-        elseif not has_any_buff_of({"terror", "petrification", "sleep", "stun"}) then
-            if player.status == 'Engaged' then
-                if LockGearIndex then
-                    ChangeGear(LockGearSet)
-                elseif not LockGearIndex then
-                    if DT == true then
-                        ChangeGear(sets.DT[sets.DT.index[DT_ind]])
-                    elseif DW == true then
-                        ChangeGear(set_combine(sets.TP[sets.TP.index[TP_ind]], sets.DW[sets.DW.index[DW_ind]]))
-                    else
-                        ChangeGear(sets.TP[sets.TP.index[TP_ind]])
-                    end
-                end
-            elseif player.status == 'Idle' then
-                if LockGearIndex then
-                    ChangeGear(LockGearSet)
-                elseif not LockGearIndex then
-                    ChangeGear(sets.Idle[sets.Idle.index[Idle_ind]])
-                end
-            end
-        end
-    elseif name == "doom" then
-        if gain then
-            ChangeGear(sets.Utility.Doom)
-            send_command('@input /p Doomed {~o~:} !')
-            disable('neck', 'ring1', 'ring2', 'waist')
-        else
-            if player.status == 'Engaged' then
-                if LockGearIndex then
-                    send_command('@input /p Doom is off {^_^}')
-                    enable('neck', 'ring1', 'ring2', 'waist')
-                    ChangeGear(LockGearSet)
-                else
-                    send_command('@input /p Doom is off {^_^}')
-                    enable('neck', 'ring1', 'ring2', 'waist')
-                    if DT == true then
-                        ChangeGear(sets.DT[sets.DT.index[DT_ind]])
-                    elseif DW == true then
-                        ChangeGear(set_combine(sets.TP[sets.TP.index[TP_ind]], sets.DW[sets.DW.index[DW_ind]]))
-                    else
-                        ChangeGear(sets.TP[sets.TP.index[TP_ind]])
-                    end
-                end
-            elseif player.status == 'Idle' then
-                if LockGearIndex then
-                    send_command('@input /p Doom is off {^_^}')
-                    enable('neck', 'ring1', 'ring2', 'waist')
-                    ChangeGear(LockGearSet)
-                else
-                    send_command('@input /p Doom is off {^_^}')
-                    enable('neck', 'ring1', 'ring2', 'waist')
-                    ChangeGear(sets.Idle[sets.Idle.index[Idle_ind]])
-                end
-            end
-        end
-    elseif name == "charm" then
-        if gain then
-            send_command('@input /p Charmed {<3_<3:} !')
-        else
-            send_command('@input /p Charm is off {~_^}')
-        end
-    elseif name == "weakness" then
-        if gain then
-            enable('neck', 'ring1', 'ring2', 'waist')
-        end
-    end
-
-    if name == "manawall" then
-        if gain then
-            Manawall = true
-        else
-            Manawall = false
-        end
-    end
-
-    if name == "sublimation: activated" then
-        if gain then
-            Sublimation = true
-        else
-            Sublimation = false
-        end
-    end
-
-end
-
-function has_any_buff_of(buff_set) -- returns true if you have any of the buffs given
-    for i, v in pairs(buff_set) do
-        if buffactive[v] ~= nil then
-            return true
-        end
-    end
-end
-
-counter = 0
-windower.raw_register_event('prerender', function() -- yoinked from Thefoxdanger
-    counter = counter + 1;
-    if counter > 15 then -- limit the frequency at which this updates (make the value larger if you want it to be less responsive, DO NOT MAKE IT 0)
-        if not Mana_Wall_Staves:contains(player.equipment.main) and buffactive['Mana Wall'] then
-            send_command('gs equip sets.JA.ManaWall')
-        end
-        counter = 0
-    end
-end)
----------------------------
---         Binds         --
----------------------------
-send_command('bind f9 gs c toggle TP set') -- This means if you hit f9 it toggles the sets
-send_command('bind f10 gs c toggle WS sets')
-send_command('bind f11 gs c toggle  Coat') -- Nuke in AF body or not
-send_command('bind f12 gs c toggle Idle set')
-send_command('bind @f6 gs c toggle DW set') -- Toggle which DW set you are in. Used if manual is on.
-send_command('bind @f7 gs c toggle AutoDW') -- @ means windows key, you may change this to whatever you want.  --Overrides TP set.
-send_command('bind @f8 gs c toggle DW Mode') -- Manually turns DW on or off. Not needed if AutoDW is on.
-send_command('bind @f9 gs c toggle WeaponSwap') -- Chooses if a weapon will be swapable or not
-send_command('bind @f10 gs c toggle Weapon') -- Changes default weapon
-send_command('bind @f11 gs c toggle Sub') -- Changes default grip
-send_command('bind ^` gs c toggle BurstMode') -- cntrl tilde
-send_command('bind ^space gs c toggle OccultAcumen') -- cntrl spacebar
-send_command('bind ^f7 gs c toggle SIR')
-send_command('bind ^f8 input /ws "Cataclysm" <t>')
-send_command('bind ^f9 input /ws "Shatter Soul" <t>') -- ^ means cntrl, so hit cntrl + f9
-send_command('bind ^f10 input /ws "Vidohunir" <t>')
-send_command('bind ^f11 input /ws "Earth Crusher" <t>')
-send_command('bind ^f12 input /ws "Myrkr" <me>')
-send_command('bind !f7 gs c toggle DT set') -- ! stands for the Alt key. this exists only for toggling outside of this mode being active, otherwise f9
-send_command('bind !f8 gs c toggle DT') -- DT on or off
-send_command('bind !f9 gs c toggle backwards')
-send_command('bind !f10 gs c toggle Magic Set') -- Toggles macc and mab nuke sets
-send_command('bind !f11 gs c toggle Death Mode')
-send_command('bind !f12 gs c LockGearIndex') -- Locks gear on
-
-send_command('bind !e input /item "Echo Drops" <me>')
-send_command('bind !r input /item "Remedy" <me>')
-send_command('bind !p input /item "Panacea" <me>')
-send_command('bind !h input /item "Holy Water" <me>')
-send_command('bind !w input /equip ring2 "Warp Ring"; /echo Warping; wait 11; input /item "Warp Ring" <me>;')
-send_command(
-    'bind !q input /equip ring2 "Dim. Ring (Holla)"; /echo Reisenjima; wait 11; input /item "Dim. Ring (Holla)" <me>;')
-send_command('bind !t gs c toggle TH') -- alt + t toggles TH mode
-
--- Unload Binds
-function file_unload()
-    send_command('unbind ^f8')
-    send_command('unbind ^f9')
-    send_command('unbind ^f10')
-    send_command('unbind ^f11')
-    send_command('unbind ^f12')
-    send_command('unbind ^`')
-    send_command('unbind ^space')
-    send_command('unbind @f8')
-    send_command('unbind @f9')
-    send_command('unbind !@')
-    send_command('unbind !f8')
-    send_command('unbind !f9')
-    send_command('unbind !f10')
-    send_command('unbind !f11')
-    send_command('unbind !f12')
-    send_command('unbind f9')
-    send_command('unbind f10')
-    send_command('unbind f11')
-    send_command('unbind f12')
-
-    send_command('unbind !e')
-    send_command('unbind !r')
-    send_command('unbind !p')
-    send_command('unbind !h')
-    send_command('unbind !w')
-    send_command('unbind !q')
-    send_command('unbind !t')
-end
---------------------------------------
---         Console Commands         --
---------------------------------------
-function self_command(command)
-    if command == 'togglelock' then
-        if SetLocked == false then
-            SetLocked = true
-            msg("Equipment Set LOCKED !!!")
-        else
-            SetLocked = false
-            msg("Equipment Set UNLOCKED!")
-        end
-    elseif command == 'LockGearIndex' then
-        if LockGearIndex == false then
-            LockGearIndex = true
-            LockGearSet = {
-                ammo = player.equipment.ammo,
-                head = player.equipment.head,
-                neck = player.equipment.neck,
-                ear1 = player.equipment.left_ear,
-                ear2 = player.equipment.right_ear,
-                body = player.equipment.body,
-                hands = player.equipment.hands,
-                ring1 = player.equipment.left_ring,
-                ring2 = player.equipment.right_ring,
-                back = player.equipment.back,
-                waist = player.equipment.waist,
-                legs = player.equipment.legs
-                --        feet = player.equipment.feet
-            }
-            msg("Gear Index Locked")
-        else
-            LockGearIndex = false
-            msg("Gear Index Unlocked")
-            if player.status == 'Engaged' then
-                if DT == true then
-                    ChangeGear(sets.DT[sets.DT.index[DT_ind]])
-                elseif DW == true then
-                    ChangeGear(set_combine(sets.TP[sets.TP.index[TP_ind]], sets.DW[sets.DW.index[DW_ind]]))
-                else
-                    ChangeGear(sets.TP[sets.TP.index[TP_ind]])
-                end
-            else
-                ChangeGear(sets.Idle[sets.Idle.index[Idle_ind]])
-            end
-        end
-    end
-    if command == 'toggle TP set' then
-        if DT == true then
-            DT_ind = DT_ind + 1
-            if DT_ind > #sets.DT.index then
-                DT_ind = 1
-            end
-            send_command('@input /echo <----- DT Set changed to ' .. sets.DT.index[DT_ind] .. '  ----->')
-            if not LockGearIndex then
-                ChangeGear(sets.DT[sets.DT.index[DT_ind]])
-            else
-                send_command('@input /echo <----- LockGear is on, not equiping ----->')
-            end
-        elseif DT == false then
-            TP_ind = TP_ind + 1
-            if TP_ind > #sets.TP.index then
-                TP_ind = 1
-            end
-            send_command('@input /echo <----- TP Set changed to ' .. sets.TP.index[TP_ind] .. ' ----->')
-            if player.status == 'Engaged' then
-                if DW == true then
-                    ChangeGear(set_combine(sets.TP[sets.TP.index[TP_ind]], sets.DW[sets.DW.index[DW_ind]]))
-                else
-                    ChangeGear(sets.TP[sets.TP.index[TP_ind]])
-                end
-            end
-        end
-    elseif command == 'toggle DW set' then
-        DW_ind = DW_ind + 1
-        if DW_ind > #sets.DW.index then
-            DW_ind = 1
-        end
-        send_command('@input /echo <----- Dual Wield Set changed to ' .. sets.DW.index[DW_ind] .. ' ----->')
-        if player.status == 'Engaged' then
-            if DW == true and DT == false then
-                ChangeGear(set_combine(sets.TP[sets.TP.index[TP_ind]], sets.DW[sets.DW.index[DW_ind]]))
-            end
-        end
-    elseif command == 'toggle Idle set' then
-        Idle_ind = Idle_ind + 1
-        IdleWeapon_ind = IdleWeapon_ind + 1
-        if Idle_ind > #sets.Idle.index then
-            Idle_ind = 1
-        end
-        if IdleWeapon_ind > #sets.Idle.index then
-            IdleWeapon_ind = 1
-        end
-        send_command('@input /echo <----- Idle Set changed to ' .. sets.Idle.index[Idle_ind] .. ' ----->')
-        if Idle_ind == 3 then
-            DeathMode = true
-        else
-            DeathMode = false
-        end
-        if player.status == 'Idle' then
-            if WeaponSwap == true then
-                ChangeGear(sets.IdleWeapon[sets.IdleWeapon.index[IdleWeapon_ind]])
-            else
-                ChangeGear(sets.Idle[sets.Idle.index[Idle_ind]])
-            end
-        end
-    elseif command == 'toggle WeaponSwap' then -- Toggling weapon swap deliberately doesnt change weapons immediately in case it was hit accidentally. It can just change after the next action.
-        if WeaponSwap == true then
-            WeaponSwap = false
-            send_command('@input /echo <----- Weapon Swaping: [Off] ----->')
-        else
-            WeaponSwap = true
-            send_command('@input /echo <----- Weapon Swaping: [On] ----->')
-        end
-    elseif command == 'toggle Weapon' then
-        Weapon_ind = Weapon_ind + 1
-        if Weapon_ind > #sets.Weapon.index then
-            Weapon_ind = 1
-        end
-        send_command('@input /echo <----- Weapon Choice changed to ' .. sets.Weapon.index[Weapon_ind] .. ' ----->')
-        status_change(player.status)
-    elseif command == 'toggle Sub' then
-        Sub_ind = Sub_ind + 1
-        if Sub_ind > #sets.Sub.index then
-            Sub_ind = 1
-        end
-        send_command('@input /echo <----- Grip Choice changed to ' .. sets.Sub.index[Sub_ind] .. ' ----->')
-        status_change(player.status)
-    elseif command == 'toggle WS sets' then
-        --		BlackHalo_ind = BlackHalo_ind + 1
-        --        Judgment_ind = Judgment_ind + 1
-        --		if BlackHalo_ind > #sets.BlackHalo.index then BlackHalo_ind = 1 end
-        --        if Judgment_ind > #sets.Judgment.index then Judgment_ind = 1 end
-        --        send_command('@input /echo <----- WS Sets changed to ' .. sets.CDC.index[CDC_ind] .. ' ----->')
-    elseif command == 'toggle DT set' then
-        DT_ind = DT_ind + 1
-        if DT_ind > #sets.DT.index then
-            DT_ind = 1
-        end
-        send_command('@input /echo <----- DT Set changed to ' .. sets.DT.index[DT_ind] .. '  ----->')
-        if DT == true and LockGearIndex == false then
-            ChangeGear(sets.DT[sets.DT.index[DT_ind]])
-        end
-    elseif command == 'toggle DT' then
-        if DT == true then
-            DT = false
-            send_command('@input /echo <----- DT TP: [Off] ----->')
-        else
-            DT = true
-            send_command('@input /echo <----- DT TP: [On] ----->')
-        end
-        status_change(player.status)
-    elseif command == 'toggle AutoDW' then
-        if AutoDW == true then
-            AutoDW = false
-            send_command('@input /echo <----- AUTOMATIC Dual Wield: [Off] ----->')
-        else
-            AutoDW = true
-            send_command('@input /echo <----- AUTOMATIC Dual Wield: [On] ----->')
-        end
-        status_change(player.status)
-    elseif command == 'toggle DW Mode' then
-        if DW == true then
-            DW = false
-            send_command('@input /echo <----- Dual Wield TP: [Off] ----->')
-        else
-            DW = true
-            send_command('@input /echo <----- Dual Wield TP: [On] ----->')
-        end
-        status_change(player.status)
-    elseif command == 'toggle SIR' then
-        if SIR == true then
-            SIR = false
-            send_command('@input /echo <----- Spell Interruption Rate: [Off] ----->')
-        else
-            SIR = true
-            send_command('@input /echo <----- Spell Interruption Rate: [On] ----->')
-        end
-    elseif command == 'toggle BurstMode' then
-        if BurstMode == true then
-            BurstMode = false
-            send_command('@input /echo <----- Magic Burst Mode: [Off] ----->')
-        else
-            BurstMode = true
-            send_command('@input /echo <----- Magic Burst Mode: [On] ----->')
-        end
-    elseif command == 'toggle OccultAcumen' then
-        if OccultAcumen == true then
-            OccultAcumen = false
-            send_command('@input /echo <----- Occult Acumen: [Off] ----->')
-        else
-            OccultAcumen = true
-            send_command('@input /echo <----- Occult Acumen: [On] ----->')
-        end
-    elseif command == 'toggle TH' then
-        if TH == true then
-            TH = false
-            send_command('@input /echo <----- Treasure Hunter TP: [Off] ----->')
-        else
-            TH = true
-            send_command('@input /echo <----- Treasure Hunter TP: [On] ----->')
-        end
-    elseif command == 'toggle Coat' then
-        if Coat == true then
-            Coat = false
-            send_command('@input /echo <----- Spaekona\'s Coat: [Off] ----->')
-        else
-            Coat = true
-            send_command('@input /echo <----- Spaekona\'s Coat: [On] ----->')
-        end
-    elseif command == "reset Aja_Duration Timer" then
-        send_command("@input /echo <----- " .. Aja_Table[1] .. ": Cumulative Magic Effect Has Worn Off ----->")
-        table.remove(Aja_Table, 1)
-        Aja_Table_ind = Aja_Table_ind - 1
-        if Aja_Table[1] == nil then
-            Aja_Duration_Boost = false
-            send_command("@input /echo <----- All Cumulative Magic Duration Effects Have Expired ----->")
-        end
-    elseif command == 'toggle backwards' then
-        if DT == true then
-            DT_ind = DT_ind - 1
-            if DT_ind == 0 then
-                DT_ind = #sets.DT.index
-            end
-            send_command('@input /echo <----- DT Set changed to ' .. sets.DT.index[DT_ind] .. '  ----->')
-            if not LockGearIndex then
-                ChangeGear(sets.DT[sets.DT.index[DT_ind]])
-            end
-        elseif DT == false then
-            TP_ind = TP_ind - 1
-            if TP_ind == 0 then
-                TP_ind = #sets.TP.index
-            end
-            send_command('@input /echo <----- TP Set changed to ' .. sets.TP.index[TP_ind] .. ' ----->')
-            if player.status == 'Engaged' then
-                if DW == true then
-                    ChangeGear(set_combine(sets.TP[sets.TP.index[TP_ind]], sets.DW[sets.DW.index[DW_ind]]))
-                else
-                    ChangeGear(sets.TP[sets.TP.index[TP_ind]])
-                end
-            end
-        end
-    elseif command == 'ZoneChange' then
-        IdleState()
-    elseif command == 'toggle Magic Set' then
-        Nukes_ind = Nukes_ind + 1
-        Bursts_ind = Bursts_ind + 1
-        if Nukes_ind > #sets.Nukes.index then
-            Nukes_ind = 1
-        end
-        if Bursts_ind > #sets.Bursts.index then
-            Bursts_ind = 1
-        end
-        send_command('@input /echo <----- Nuke Type Changed To: ' .. sets.Nukes.index[Nukes_ind] .. '----->')
-    elseif string.sub(command, 0, 4) == '-cd ' then -- If the first 4 characters of the command are '-cd '
-        add_to_chat(30, string.sub(command, 5, string.len(command))) -- add everything after '-cd ' to a message in the chat
-    end
-
-end
-
---------------------------------------
---         Character States         --
---------------------------------------
-function IdleState()
-    if LockGearIndex then
-        ChangeGear(LockGearSet)
-    elseif Idle_ind == 1 and Sublimation == true then
-        if WeaponSwap == true then
-            ChangeGear(sets.IdleWeapon.Sublimation)
-        else
-            ChangeGear(sets.Idle.Sublimation)
-        end
-    elseif WeaponSwap == true then
-        ChangeGear(sets.IdleWeapon[sets.IdleWeapon.index[IdleWeapon_ind]])
-    else
-        ChangeGear(sets.Idle[sets.Idle.index[Idle_ind]])
-    end
-
-    -- if Idle_ind == 1 and player.status == 'Idle' then   --tiered refresh idle rule
-    -- if player.mpp <= 50 then
-    -- ChangeGear({})
-    -- elseif player.mpp <= 75 then
-    --	ChangeGear({})
-    -- end
-    -- end
-
-    if Idle_ind == 1 and buffactive['Protect'] and buffactive['Shell'] then
-        ChangeGear({
-            ear1 = "Infused Earring"
-        })
-    end
-
-    if buffactive['Sublimation: Activated'] then
-        Sublimation = true
-    end
-
-    if Town:contains(world.area) then
-        ChangeGear(sets.Idle.Town)
-    end
-end
-
-windower.raw_register_event('zone change', function()
-    windower.send_command('@wait 9; input //gs c ZoneChange')
-end)
-
-function RestingState()
-
-end
-
-function EngagedState()
-    if LockGearIndex then
-        ChangeGear(LockGearSet)
-    elseif not LockGearIndex then
-        if DT == true then
-            ChangeGear(sets.DT[sets.DT.index[DT_ind]])
-        elseif DW == true then
-            ChangeGear(set_combine(sets.TP[sets.TP.index[TP_ind]], sets.DW[sets.DW.index[DW_ind]]))
-        else
-            ChangeGear(sets.TP[sets.TP.index[TP_ind]])
-        end
-    end
-
-end
-
------------------------------
---      Spell control      --
------------------------------
-unusable_buff = {
-    spell = {'Charm', 'Mute', 'Omerta', 'Petrification', 'Silence', 'Sleep', 'Stun', 'Terror'},
-    ability = {'Amnesia', 'Charm', 'Impairment', 'Petrification', 'Sleep', 'Stun', 'Terror'}
+    sets.engaged = {
+        main = "Maxentius",
+        sub = "Ammurapi Shield",
+        ammo="Oshasha's Treatise",
+        head={ name="Nyame Helm", augments={'Path: B',}},
+        body={ name="Nyame Mail", augments={'Path: B',}},
+        hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+        legs={ name="Nyame Flanchard", augments={'Path: B',}},
+        feet={ name="Nyame Sollerets", augments={'Path: B',}},
+        neck = "Combatant's Torque",
+        waist="Olseni Belt",
+        left_ear="Telos Earring",
+        right_ear="Cessance Earring",
+        left_ring="Chirich Ring +1",
+        right_ring="Petrov Ring",
+        back={ name="Taranus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Damage taken-5%',}},
 }
--- check_recast('ability',spell.recast_id)  check_recast('spell',spell.recast_id)
-function check_recast(typ, id) -- if spell can be cast(not in recast) return true
-    local recasts = windower.ffxi['get_' .. typ .. '_recasts']()
-    if id and recasts[id] and recasts[id] == 0 then
-        return true
-    else
-        return false
-    end
-end
--- return true if spell/ability is unable to be used at this time
-function spell_control(spell)
-    if spell.type == "Item" then
-        return false
-        -- Stops spell if you do not have a target
-    elseif spell.target.name == nil and not spell.target.raw:contains("st") then
-        return true
-        -- Stops spell if a blocking buff is active
-    elseif spell.action_type == 'Ability' and spell.type ~= 'WeaponSkill' and spell.type ~= 'Scholar' and
-        (has_any_buff_of(unusable_buff.ability) or not check_recast('ability', spell.recast_id)) then
-        return true
-    elseif spell.type == 'WeaponSkill' and player.tp < 1000 then
-        return true
-    elseif spell.type == 'WeaponSkill' and (has_any_buff_of(unusable_buff.ability)) then
-        msg("Weapon Skill Canceled, Can't")
-        return true
-    elseif spell.action_type == 'Magic' and
-        (has_any_buff_of(unusable_buff.spell) or not check_recast('spell', spell.recast_id)) then
-        return true
-        -- Stops spell if you do not have enuf mp/tp to use
-    elseif spell.mp_cost and spell.mp_cost > player.mp and not has_any_buff_of({'Manawell', 'Manafont'}) then
-        msg("Spell Canceled, Not Enough MP")
-        return true
-    end
-    -- Calculate how many finishing moves your char has up to 6
-    local fm_count = 0
-    for i, v in pairs(buffactive) do
-        if tostring(i):startswith('finishing move') or tostring(i):startswith('?????????') then
-            fm_count = tonumber(string.match(i, '%d+')) or 1
-        end
-    end
-    -- Stops flourishes if you do not have enough finishing moves
-    local min_fm_for_flourishes = {
-        ['Animated Flourish'] = 1,
-        ['Desperate Flourish'] = 1,
-        ['Violent Flourish'] = 1,
-        ['Reverse Flourish'] = 1,
-        ['Building Flourish'] = 1,
-        ['Wild Flourish'] = 2,
-        ['Climactic Flourish'] = 1,
-        ['Striking Flourish'] = 2,
-        ['Ternary Flourish'] = 3
+    sets.buff.Doom = {
+        neck = "Nicander's Necklace", -- 20
+        ring1 = {
+            name = "Eshmun's Ring",
+            bag = "wardrobe3"
+        }, -- 20
+        ring2 = {
+            name = "Eshmun's Ring",
+            bag = "wardrobe4"
+        }, -- 20
+        waist = "Gishdubar Sash" -- 10
     }
-    if min_fm_for_flourishes[spell.en] then
-        if min_fm_for_flourishes[spell.en] > fm_count and not buffactive[507] then
-            return true
+
+    sets.DarkAffinity = {
+        head = "Pixie Hairpin +1",
+        ring2 = "Archon Ring"
+    }
+    sets.Obi = {
+        waist = "Hachirin-no-Obi"
+    }
+    -- sets.CP = {back="Mecisto. Mantle"}
+
+end
+
+-------------------------------------------------------------------------------------------------------------------
+-- Job-specific hooks for standard casting events.
+-------------------------------------------------------------------------------------------------------------------
+-- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
+-- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
+function job_precast(spell, action, spellMap, eventArgs)
+    if spell.action_type == 'Magic' and state.DeathMode.value then
+        eventArgs.handled = true
+        equip(sets.precast.FC.DeathMode)
+        if spell.english == "Impact" then
+            equip(sets.precast.FC.Impact.DeathMode)
         end
     end
-    -- Removes Sneak when casting Spectral Jig
-    if spell.english == 'Spectral Jig' then
-        send_command('cancel 71')
+    if spell.name:startswith('Aspir') then
+        refine_various_spells(spell, action, spellMap, eventArgs)
     end
-    if player.tp >= 1000 and player.target and player.target.distance and player.target.distance > 7 and spell.type ==
-        'WeaponSkill' then
-        msg("Weapon Skill Canceled  Target Out of Range")
-        return true
-    end
-
-end
------------------------------
---         Precast         --
------------------------------
-function pc_JA(spell, act)
-    if spell.english == 'Manafont' then
-        ChangeGear({
-            body = "Archmage's Coat"
-        })
-    end
-
-    IgnoreWS = S {"Starlight", "Moonlight", "Flash Nova", "Myrkr", "Vidohunir", "Shattersoul"} -- Excluded from Moonshade TP override rule.
-    MalignanceWS = S {"Shining Strike", "Seraph Strike", "Realmrazer", "Rock Crusher", 'Earth Crusher', "Full Swing",
-                      "Retribution", "Cataclysm"} -- Puts on Malignance Earring instead of Ishvara
-
-    if spell.type == 'WeaponSkill' then
-        if spell.english == 'Black Halo' then
-            ChangeGear(sets.BlackHalo)
-        elseif spell.english == 'Realmrazer' then
-            ChangeGear(sets.Realmrazer)
-        elseif spell.english == 'Shining Strike' or spell.english == 'Seraph Strike' then
-            ChangeGear(sets.SeraphStrike)
-        elseif spell.english == 'Full Swing' then
-            ChangeGear(sets.FullSwing)
-        elseif spell.english == 'Myrkr' or spell.english == 'Starlight' or spell.english == 'Moonlight' then
-            ChangeGear(sets.Myrkr)
-        elseif spell.english == "Shell Crusher" or spell.english == "Spirit Taker" then
-            ChangeGear(sets.ShellCrusher)
-        elseif spell.english == 'Shattersoul' then
-            ChangeGear(sets.Shattersoul)
-        elseif spell.english == 'Vidohunir' or spell.english == 'Cataclysm' then
-            if world.day_element == 'Dark' or world.weather_element == 'Dark' then
-                ChangeGear(set_combine(sets.Vidohunir, {
-                    waist = 'Hachirin-no-Obi'
-                }))
-            else
-                ChangeGear(sets.Vidohunir)
-            end
-        elseif spell.english == 'Rock Crusher' or spell.english == 'Earth Crusher' then
-            if world.day_element == 'Earth' or world.weather_element == 'Earth' then
-                ChangeGear(set_combine(sets.EarthCrusher, {
-                    waist = 'Hachirin-no-Obi'
-                }))
-            else
-                ChangeGear(sets.EarthCrusher)
-            end
-        end
-
-        -- WS TP Rules, so you dont use moonshade when you have TP overflow--
-        if player.tp > 2025 and player.equipment.main == 'Khatvanga' and buffactive['TP Bonus'] then
-            if IgnoreWS:contains(spell.english) then
-                return
-            elseif MalignanceWS:contains(spell.english) then
-                equip(set_combine(equipSet, {
-                    ear1 = "Malignance Earring"
-                }))
-                msg("Malignance Earring equiped !!!!")
-            else
-                equip(set_combine(equipSet, {
-                    ear1 = "Ishvara Earring"
-                }))
-                msg("Ishvara Earring equiped !!!!")
-            end
-        elseif player.tp > 2275 and player.equipment.main == 'Khatvanga' then
-            if IgnoreWS:contains(spell.english) then
-                return
-            elseif MalignanceWS:contains(spell.english) then
-                equip(set_combine(equipSet, {
-                    ear1 = "Malignance Earring"
-                }))
-                msg("Malignance Earring equiped !!!!")
-            else
-                equip(set_combine(equipSet, {
-                    ear1 = "Ishvara Earring"
-                }))
-                msg("Ishvara Earring equiped !!!!")
-            end
-        elseif player.tp > 2525 and buffactive['TP Bonus'] then
-            if IgnoreWS:contains(spell.english) then
-                return
-            elseif MalignanceWS:contains(spell.english) then
-                equip(set_combine(equipSet, {
-                    ear1 = "Malignance Earring"
-                }))
-                msg("Malignance Earring equiped !!!!")
-            else
-                equip(set_combine(equipSet, {
-                    ear1 = "Ishvara Earring"
-                }))
-                msg("Ishvara Earring equiped !!!!")
-            end
-        elseif player.tp > 2775 then
-            if IgnoreWS:contains(spell.english) then
-                return
-            elseif MalignanceWS:contains(spell.english) then
-                equip(set_combine(equipSet, {
-                    ear1 = "Malignance Earring"
-                }))
-                msg("Malignance Earring equiped !!!!")
-            else
-                equip(set_combine(equipSet, {
-                    ear1 = "Ishvara Earring"
-                }))
-                msg("Ishvara Earring equiped !!!!")
-            end
-        end
-    end
-
-end
-
-function pretarget(spell) -- Keeps you from changing your gear while casting a spell and hitting another macro or the same macro twice. Works with macros only.
-    if midaction() then
-        cancel_spell()
+    if buffactive['Mana Wall'] then
+        equip(sets.precast.JA['Mana Wall'])
     end
 end
 
-function pc_Magic(spell, act)
-
-    if spell.action_type == 'Magic' then
-        if DeathMode == true then
-            if spell.skill == 'Elemental Magic' then
-                if spell.english == 'Impact' then
-                    if WeaponSwap == true then
-                        ChangeGear(sets.precast.FC.DeathImpactWeapon)
-                    else
-                        ChangeGear(sets.precast.FC.DeathImpact)
-                    end
-                elseif WeaponSwap == true then
-                    ChangeGear(sets.precast.FC.DeathElementalWeapon)
-                else
-                    ChangeGear(sets.precast.FC.DeathElemental)
-                end
-            elseif WeaponSwap == true then
-                ChangeGear(sets.precast.FC.DeathStandardWeapon)
-            else
-                ChangeGear(sets.precast.FC.DeathStandard)
-            end
-
-        elseif DeathMode == false and spell.skill == 'Elemental Magic' then
-            if spell.english == 'Impact' then
-                if WeaponSwap == true then
-                    ChangeGear(sets.precast.FC.ImpactWeapon)
-                else
-                    ChangeGear(sets.precast.FC.Impact)
-                end
-
-            elseif WeaponSwap == true then
-                if BurstMode == true and OccultAcumen == false then
-                    process_QM_timer()
-                    if check_QM() then -- handle QM precast sets here
-                        ChangeGear(sets.precast.FC.ElementalWeapon)
-                    else -- handle non-QM precast sets here
-                        ChangeGear(sets.precast.FC.ElementalWeaponNoQuickMagic)
-                    end
-                else
-                    ChangeGear(sets.precast.FC.Elemental)
-                end
-
-            else
-                if buffactive['Hasso'] or buffactive['Seigan'] then
-                    ChangeGear(sets.precast.FC.ElementalHasso)
-                else
-                    if BurstMode == true and OccultAcumen == false then
-                        process_QM_timer()
-                        if check_QM() == true then -- handle QM precast sets here
-                            ChangeGear(sets.precast.FC.Elemental)
-                        else -- handle non-QM precast sets here
-                            ChangeGear(sets.precast.FC.ElementalNoQuickMagic)
-                        end
-                    else
-                        ChangeGear(sets.precast.FC.Elemental)
-                    end
-                end
-            end
-
-        elseif WeaponSwap == true then
-            ChangeGear(sets.precast.FC.StandardWeapon)
-        else
-            ChangeGear(sets.precast.FC.Standard)
-        end
+function job_post_precast(spell, action, spellMap, eventArgs)
+    if spell.name == 'Impact' then
+        equip(sets.precast.FC.Impact)
     end
-
 end
 
-function pc_Item(spell, act)
-end
-
------------------------------
---         Midcast         --
------------------------------
-function mc_JA(spell, act)
-end
-
-function mc_Magic(spell, act)
-
-    if WeaponSwap == true then
+-- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
+function job_midcast(spell, action, spellMap, eventArgs)
+    if spell.action_type == 'Magic' and state.DeathMode.value then
+        eventArgs.handled = true
         if spell.skill == 'Elemental Magic' then
-            ChangeGear(set_combine(equipSet, sets.Weapon[sets.Weapon.index[Weapon_ind]],
-                sets.Sub[sets.Sub.index[Sub_ind]]))
-        elseif spell.skill == 'Enhancing Magic' then
-            ChangeGear(set_combine(equipSet, {
-                main = "Gada",
-                sub = "Ammurapi Shield"
-            }))
-        elseif spell.skill == 'Dark Magic' then
-            ChangeGear(set_combine(equipSet, {
-                main = "Hvergelmir",
-                sub = "Khonsu"
-            }))
-        elseif spell.skill == 'Healing Magic' then
-            if string.find(spell.english, 'Raise') or string.find(spell.english, 'Reraise') then
-                ChangeGear(set_combine(equipSet, {
-                    main = "Hvergelmir",
-                    sub = "Khonsu"
-                }))
-            elseif spell.target and spell.target.type == 'SELF' then
-                ChangeGear(sets.SelfCuresWeapon)
-            else
-                ChangeGear(sets.CuresWeapon)
-            end
+            equip(sets.midcast['Elemental Magic'].DeathMode)
         else
-            ChangeGear(set_combine(equipSet, {
-                main = "Hvergelmir",
-                sub = "Khonsu"
-            }))
+            if state.CastingMode.value == "Resistant" then
+                equip(sets.midcast.Death.Resistant)
+            else
+                equip(sets.midcast.Death)
+            end
         end
     end
 
-    if spell.skill == 'Healing Magic' then
-        if spell.target and spell.target.type == 'SELF' then
-            ChangeGear(sets.SelfCures)
-        else
-            ChangeGear(sets.Cures)
+    if buffactive['Mana Wall'] then
+        equip(sets.precast.JA['Mana Wall'])
+    end
+end
+
+function job_post_midcast(spell, action, spellMap, eventArgs)
+    if spell.skill == 'Enhancing Magic' and classes.NoSkillSpells:contains(spell.english) and not state.DeathMode.value then
+        equip(sets.midcast.EnhancingDuration)
+        if spellMap == 'Refresh' then
+            equip(sets.midcast.Refresh)
         end
     end
-    if spell.skill == 'Enhancing Magic' then
-        if string.find(spell.english, 'Shell') or string.find(spell.english, 'Protect') then
-            ChangeGear(set_combine(sets.Enhancing, {
-                ear1 = "Brachyura Earring"
-            }))
-        elseif spell.english == "Phalanx" then
-            ChangeGear(sets.Enhancing.Phalanx)
-        elseif spell.english == "Haste" then
-            ChangeGear(sets.Enhancing)
-        elseif string.find(spell.english, 'storm') then
-            ChangeGear(sets.Enhancing)
-        elseif spell.english == "Aquaveil" or "Stoneskin" then
-            ChangeGear(sets.Enhancing.Aquaveil)
-        elseif string.find(spell.english, 'Bar') then
-            ChangeGear(sets.Enhancing.Bar)
-        elseif spell.english == 'Refresh' then
-            ChangeGear(sets.Enhancing.Refresh)
-        else
-            ChangeGear(sets.Enhancing)
-        end
-    end
-    if spell.skill == 'Enfeebling Magic' then
-        ChangeGear(sets.Enfeebling)
-    end
-    if spell.skill == 'Dark Magic' then
-        if string.find(spell.english, 'Aspir') or string.find(spell.english, 'Drain') then
-            ChangeGear(sets.DarkMagic.DrainAspir)
-        elseif spell.english == 'Stun' then
-            ChangeGear(sets.DarkMagic.Stun)
-        elseif spell.english == 'Death' then
-            if BurstMode == true then
-                ChangeGear(sets.DarkMagic.DeathBurst) -- Death generally caps dmg if unreisted on bursts, no need for an array of sets
-            else
-                ChangeGear(sets.DarkMagic.Death)
-            end
-        elseif string.find(spell.english, 'Absorb') then
-            ChangeGear(sets.DarkMagic.Absorb)
-        elseif string.find(spell.english, 'Bio') or spell.english == 'Tractor' then
-            ChangeGear(sets.Utility.ConserveMP) -- update needed. Need to make this set
-        end
+    if spell.skill == 'Elemental Magic' and spell.english == "Comet" then
+        equip(sets.DarkAffinity)
     end
     if spell.skill == 'Elemental Magic' then
-        if spell.english == 'Impact' then
-            ChangeGear(sets.Impact)
-        elseif DT == true then
-            if OccultAcumen == true then
-                ChangeGear(sets.DTOccultAcumen)
-            elseif BurstMode == true then
-                if Manawall == true then
-                    ChangeGear(sets.DTBurstsManawalll)
-                elseif Bursts_ind == 1 or Bursts_ind == 2 then
-                    ChangeGear(sets.DTBursts)
-                elseif Bursts_ind == 3 then
-                    ChangeGear(sets.DTBurstsMacc)
-                end
-            else
-                if Manawall == true then
-                    ChangeGear(sets.DTNukesManawalll)
-                elseif Nukes_ind == 1 or Nukes_ind == 2 then
-                    ChangeGear(sets.DTNukes)
-                elseif Nukes_ind == 3 then
-                    ChangeGear(sets.DTNukesMacc)
-                end
+        if state.MagicBurst.value and spell.english ~= 'Death' then
+            -- if state.CastingMode.value == "Resistant" then
+            -- equip(sets.magic_burst.Resistant)
+            -- else
+            equip(sets.magic_burst)
+            -- end
+            if spell.english == "Impact" then
+                equip(sets.midcast.Impact)
             end
-        elseif Elemental_Debuffs:contains(spell.english) then
-            ChangeGear(sets.ElementalDebuffs)
-        elseif OccultAcumen == true then
-            ChangeGear(sets.OccultAcumen)
-        elseif BurstMode == true then
-            if (Elemental_Aja:contains(spell.english) and
-                (Aja_Duration_Boost == false or Aja_Current_Boost ~= spell.english)) then -- applies Wicce duration boost
-                if spell.english == 'Comet' then
-                    if Nukes_ind == 1 then
-                        ChangeGear(set_combine(sets.Bursts[sets.Bursts.index[Bursts_ind]], {
-                            head = "Pixie Hairpin +1",
-                            legs = "Wicce Chausses +3",
-                            ring1 = "Archon Ring"
-                        }))
-                    elseif Bursts_ind == 2 or Bursts_ind == 3 then
-                        ChangeGear(set_combine(sets.Bursts[sets.Bursts.index[Bursts_ind]], {
-                            legs = "Wicce Chausses +3"
-                        }))
-                    end
-                else
-                    ChangeGear(set_combine(sets.Bursts[sets.Bursts.index[Bursts_ind]], {
-                        legs = "Wicce Chausses +3"
-                    }))
-                end
-            elseif Elemental_Dark:contains(spell.english) then
-                ChangeGear(set_combine(sets.Bursts[sets.Bursts.index[Bursts_ind]], {
-                    head = "Pixie Hairpin +1",
-                    ring1 = "Metamorph Ring +1",
-                    ring2 = "Archon Ring"
-                }))
-            else
-                ChangeGear(sets.Bursts[sets.Bursts.index[Bursts_ind]])
-            end
-        elseif (Elemental_Aja:contains(spell.english) and
-            (Aja_Duration_Boost == false or Aja_Current_Boost ~= spell.english)) then -- applies Wicce duration boost
-            if spell.english == 'Comet' then
-                if Nukes_ind == 1 then
-                    ChangeGear(set_combine(sets.Nukes[sets.Nukes.index[Nukes_ind]], {
-                        head = "Pixie Hairpin +1",
-                        legs = "Wicce Chausses +3",
-                        ring1 = "Archon Ring"
-                    }))
-                elseif Nukes_ind == 2 or Nukes_ind == 3 then
-                    ChangeGear(set_combine(sets.Nukes[sets.Nukes.index[Nukes_ind]], {
-                        legs = "Wicce Chausses +3"
-                    }))
-                end
-            else
-                ChangeGear(set_combine(sets.Nukes[sets.Nukes.index[Nukes_ind]], {
-                    legs = "Wicce Chausses +3"
-                }))
-            end
-        elseif Elemental_Earth:contains(spell.english) then
-            ChangeGear(set_combine(sets.Nukes[sets.Nukes.index[Nukes_ind]], {
-                neck = "Quanpur Necklace"
-            }))
-        elseif Elemental_Dark:contains(spell.english) then
-            ChangeGear(set_combine(sets.Nukes[sets.Nukes.index[Nukes_ind]], {
-                head = "Pixie Hairpin +1",
-                ring1 = "Metamorph Ring +1",
-                ring2 = "Archon Ring"
-            }))
-        else
-            ChangeGear(sets.Nukes[sets.Nukes.index[Nukes_ind]])
+        end
+        if (spell.element == world.day_element or spell.element == world.weather_element) then
+            equip(sets.Obi)
         end
     end
-    -- Obi rule--
-    if world.day_element == spell.element or world.weather_element == spell.element and spell.english ~= 'Impact' then
-        if spell.skill == 'Elemental Magic' and OccultAcumen == false then
-            ChangeGear({
-                waist = 'Hachirin-no-Obi'
-            })
-        end
-    end
-
-    if Coat == true and spell.skill == 'Elemental Magic' and spell.english ~= 'Impact' then
-        equip(set_combine(equipSet, {
-            body = "Spaekona's Coat +3"
-        }))
-    end
-
-end
-
-function mc_Item(spell, act)
-end
-
-------------------------------------------
--- After Cast               --
-------------------------------------------
-function ac_JA(spell)
-end
-
-function ac_Magic(spell)
-end
-
-function ac_Item(spell)
-end
-
-function ac_Global()
-    if LockGearIndex == true then
-        ChangeGear(LockGearSet)
-        msg("Lock Gear is ON -- Swapping Gear")
-    else
-        if player.status == 'Engaged' then
-            EngagedState()
-        else
-            IdleState()
-        end
+    if buffactive['Mana Wall'] then
+        equip(sets.precast.JA['Mana Wall'])
     end
 end
 
-------------------------------------------
--- Framework Core            --
-------------------------------------------
-function status_change(new, old)
-    if new == 'Idle' then
-        IdleState()
-    elseif new == 'Resting' then
-        RestingState()
-    elseif new == 'Engaged' then
-        EngagedState()
-    end
-
-    if player.status == 'Engaged' and TH == true then
-        ChangeGear(set_combine(equipSet, sets.Utility.TH))
-    end
-
-end
-
-IgnoreSIRSpell = S {"Placeholder"}
-
--- helper function
--- updates the table value witht he current held time for the burst window
-function process_QM_timer()
-    -- determine values
-    -- handle multistepping
-    local CURRENT_TIME = os.time()
-    if BurstTimer[0] > 0 or BurstTimer[1] > 0 then
-        BurstTimer[1] = CURRENT_TIME
-    end
-
-    -- handle if its actually a candidate for opening MB
-    if (BurstTimer[0] == 0 or (CURRENT_TIME - BurstTimer[0] > 7)) and BurstTimer[1] == 0 then
-        BurstTimer[0] = CURRENT_TIME
-    end
-end
-
--- controls if QM should be swapped for precast during MBs
-function check_QM()
-    -- hold local timers for comparison
-    local ORIGIN_TIMER = os.time() - BurstTimer[0]
-    local MULTISTEP_TIMER = os.time() - BurstTimer[1]
-
-    -- reset the original timer if it has elapsed
-    if ORIGIN_TIMER > 10 then
-        BurstTimer[0] = os.time()
-    end
-    if MULTISTEP_TIMER > 6 then
-        BurstTimer[1] = os.time()
-    end
-
-    -- if not the the "first nuke" of an open window allow QM precast sets
-    if (MULTISTEP_TIMER > 0 and MULTISTEP_TIMER < 7) then
-        return true
-    end
-
-    if (ORIGIN_TIMER > 0 and ORIGIN_TIMER < 11) then
-        return true
-    end
-
-    return false
-end
-
-function precast(spell, act, spellMap, eventArgs)
-
-    if change_spell(spell) then
-        return
-    end
-
-    if spell_control(spell) then
-        cancel_spell()
-        return
-    end
-
-    if spell.action_type == 'Ability' then
-        pc_JA(spell, act)
-    elseif spell.action_type == 'Magic' then
-        pc_Magic(spell, act)
-    else
-        pc_Item(spell, act)
-    end
-
-end
-
-function midcast(spell, act)
-
-    if spell.action_type == 'Ability' then
-        mc_JA(spell, act)
-    elseif spell.action_type == 'Magic' then
-        if SIR == true then
-            if IgnoreSIRSpell:contains(spell.english) then
-                mc_Magic(spell, act)
-            else
-                ChangeGear(sets.SIR)
-            end
-        elseif TH == true and player.status == 'Idle' then
-            if spell.skill == 'Enhancing Magic' or spell.skill == 'Healing Magic' then
-                mc_Magic(spell, act)
-            elseif spell.skill == 'Elemental Magic' then
-                if Elemental_Earth:contains(spell.english) then
-                    ChangeGear(set_combine(sets.Nukes[sets.Nukes.index[Nukes_ind]], sets.Utility.TH, {
-                        neck = "Quanpur Necklace"
-                    }))
-                end
-            elseif Elemental_Dark:contains(spell.english) then
-                if Nukes_ind == 1 then
-                    ChangeGear(set_combine(sets.Nukes[sets.Nukes.index[Nukes_ind]], sets.Utility.TH, {
-                        head = "Pixie Hairpin +1",
-                        ring1 = "Archon Ring"
-                    }))
-                elseif Nukes_ind == 2 or Nukes_ind == 3 then
-                    ChangeGear(set_combine(sets.Nukes[sets.Nukes.index[Nukes_ind]], sets.Utility.TH))
-                end
-            end
-        else
-            mc_Magic(spell, act)
-        end
-    else
-        mc_Item(spell, act)
-
-    end
-
-end
-
-function aftercast(spell, act, spellMap, eventArgs)
-    if spell.action_type == 'Ability' then
-        ac_JA(spell)
-    elseif spell.action_type == 'Magic' then
-        if Elemental_Aja:contains(spell.english) then
-            if (Aja_Duration_Boost == false or Aja_Current_Boost ~= spell.english) then
-                Aja_Current_Boost = spell.english
-                Aja_Table_ind = Aja_Table_ind + 1
-                table.insert(Aja_Table, tostring(spell.target.name .. " #" .. Aja_Table_ind))
-                send_command('timers create "' .. spell.english .. ': ' .. Aja_Table[Aja_Table_ind] ..
-                                 '" 105 down spells/01015.png')
-                Aja_Duration_Boost = true
-                send_command('wait 105;input //gs c reset Aja_Duration Timer')
-            end
-        else
-            ac_Magic(spell)
-        end
-    else
-        ac_Item(spell)
-    end
-    ac_Global()
-
-    -- Countdowns--
+function job_aftercast(spell, action, spellMap, eventArgs)
     if not spell.interrupted then
-        if spell.english == "Sleep" then
-            send_command(
-                'wait 50;gs c -cd ' .. spell.name .. ': [Off In 10 Seconds!];wait 10;gs c -cd ' .. spell.name ..
-                    ': [Off!]')
-            send_command('timers create "S1 ' .. tostring(spell.target.name) .. ' " 60 down spells/00235.png')
-        elseif spell.english == "Sleepga" then
-            send_command(
-                'wait 50;gs c -cd ' .. spell.name .. ': [Off In 10 Seconds!];wait 10;gs c -cd ' .. spell.name ..
-                    ': [Off!]')
-            send_command('timers create "S2 ' .. tostring(spell.target.name) .. ' " 60 down spells/00273.png')
-        elseif spell.english == "Sleep II" then
-            send_command(
-                'wait 80;gs c -cd ' .. spell.name .. ': [Off In 10 Seconds!];wait 10;gs c -cd ' .. spell.name ..
-                    ': [Off!]')
-            send_command('timers create "Sga ' .. tostring(spell.target.name) .. ' " 90 down spells/00259.png')
-        elseif spell.english == "Sleepga II" then
-            send_command(
-                'wait 80;gs c -cd ' .. spell.name .. ': [Off In 10 Seconds!];wait 10;gs c -cd ' .. spell.name ..
-                    ': [Off!]')
-            send_command('timers create "Sga 2 ' .. tostring(spell.target.name) .. ' " 90 down spells/00274.png')
-        elseif spell.english == 'Impact' then
-            send_command('timers create "Impact ' .. tostring(spell.target.name) .. ' " 180 down spells/00502.png')
-        elseif Elemental_Debuffs:contains(spell.english) then
-            if spell.english == 'Burn' then
-                send_command('timers create "Burn ' .. tostring(spell.target.name) .. ' " 180 down spells/00235.png')
-            elseif spell.english == 'Choke' then
-                send_command('timers create "Choke ' .. tostring(spell.target.name) .. ' " 180 down spells/00237.png')
-            elseif spell.english == 'Shock' then
-                send_command('timers create "Shock ' .. tostring(spell.target.name) .. ' " 180 down spells/00239.png')
-            elseif spell.english == 'Frost' then
-                send_command('timers create "Frost ' .. tostring(spell.target.name) .. ' " 180 down spells/00236.png')
-            elseif spell.english == 'Drown' then
-                send_command('timers create "Drown ' .. tostring(spell.target.name) .. ' " 180 down spells/00240.png')
-            elseif spell.english == 'Rasp' then
-                send_command('timers create "Rasp ' .. tostring(spell.target.name) .. ' " 180 down spells/00238.png')
+        if spell.english == "Sleep II" or spell.english == "Sleepga II" then
+            send_command('@timers c "Sleep II [' .. spell.target.name .. ']" 90 down spells/00259.png')
+        elseif spell.english == "Sleep" or spell.english == "Sleepga" then -- Sleep & Sleepga Countdown --
+            send_command('@timers c "Sleep [' .. spell.target.name .. ']" 60 down spells/00253.png')
+        elseif spell.english == "Break" or spell.english == "Breakga" then
+            send_command('@timers c "Break [' .. spell.target.name .. ']" 30 down spells/00255.png')
+        end
+    end
+end
+
+-------------------------------------------------------------------------------------------------------------------
+-- Job-specific hooks for non-casting events.
+-------------------------------------------------------------------------------------------------------------------
+
+-- Called when a player gains or loses a buff.
+-- buff == buff gained or lost
+-- gain == true if the buff was gained, false if it was lost.
+function job_buff_change(buff, gain)
+    -- Unlock armor when Mana Wall buff is lost.
+    if buff == "Mana Wall" then
+        if gain then
+            -- send_command('gs enable all')
+            equip(sets.precast.JA['Mana Wall'])
+            -- send_command('gs disable all')
+        else
+            -- send_command('gs enable all')
+            handle_equipping_gear(player.status)
+        end
+    end
+
+    if buff == "doom" then
+        if gain then
+            equip(sets.buff.Doom)
+            send_command('@input /p Doomed.')
+            disable('ring1', 'ring2', 'waist')
+        else
+            enable('ring1', 'ring2', 'waist')
+            handle_equipping_gear(player.status)
+        end
+    end
+
+end
+
+-- Handle notifications of general user state change.
+function job_state_change(stateField, newValue, oldValue)
+    if state.WeaponLock.value == true then
+        disable('main', 'sub')
+    else
+        enable('main', 'sub')
+    end
+end
+
+-- latent DT set auto equip on HP% change
+windower.register_event('hpp change', function(new, old)
+    if new <= 25 then
+        equip(sets.latent_dt)
+    end
+end)
+
+-------------------------------------------------------------------------------------------------------------------
+-- User code that supplements standard library decisions.
+-------------------------------------------------------------------------------------------------------------------
+
+function job_handle_equipping_gear(playerStatus, eventArgs)
+    check_gear()
+    check_moving()
+end
+
+function job_update(cmdParams, eventArgs)
+    handle_equipping_gear(player.status)
+end
+
+-- Custom spell mapping.
+function job_get_spell_map(spell, default_spell_map)
+    if spell.action_type == 'Magic' then
+        if spell.skill == "Enfeebling Magic" then
+            if spell.type == "WhiteMagic" then
+                return "MndEnfeebles"
+            else
+                return "IntEnfeebles"
             end
-        elseif spell.english == "Bind" then
-            send_command('timers create "Bind" 60 down spells/00258.png')
-        elseif spell.english == "Break" then
-            send_command('timers create "Break Petrification" 33 down spells/00255.png')
-        elseif spell.english == "Breakga" then
-            send_command('timers create "Breakga Petrification" 33 down spells/00365.png')
         end
     end
-
 end
 
-function ChangeGear(GearSet)
-    equipSet = GearSet
-    equip(GearSet)
-end
-
-function LockGearSet(GearSet)
-    LockedEquipSet = GearSet
-    equip(GearSet)
-    SetLocked = true
-end
-
-function UnlockGearSet()
-    locked = false
-    equip(equipSet)
-end
-
-function msg(str)
-    send_command('@input /echo <----- ' .. str .. ' ----->')
-end
-
--- Scales down nukes when on recast
-function change_spell(spell)
-    -- If we're not targeting a monster, gtfo
-    if spell.target.type ~= 'MONSTER' then
-        return
+-- Modify the default idle set after it was constructed.
+function customize_idle_set(idleSet)
+    if state.DeathMode.value then
+        idleSet = sets.idle.DeathMode
+    end
+    if player.mpp < 51 then
+        idleSet = set_combine(idleSet, sets.latent_refresh)
+    end
+    if player.hpp <= 25 then
+        idleSet = set_combine(idleSet, sets.latent_dt)
+    end
+    -- if state.CP.current == 'on' then
+    --     equip(sets.CP)
+    --     disable('back')
+    -- else
+    --     enable('back')
+    -- end
+    if buffactive['Mana Wall'] then
+        idleSet = set_combine(idleSet, sets.precast.JA['Mana Wall'])
+    end
+    if state.Auto_Kite.value == true then
+        idleSet = set_combine(idleSet, sets.Kiting)
     end
 
-    -- Define the table of spell names
-    local nukes = {
-        ['Earth'] = {{
-            name = 'Stone VI',
-            recast_id = 852
-        }, {
-            name = 'Stone V',
-            recast_id = 163
-        }, {
-            name = 'Quake II',
-            recast_id = 211
-        }, {
-            name = 'Stone IV',
-            recast_id = 162
-        }, {
-            name = 'Stone III',
-            recast_id = 161
-        }, {
-            name = 'Stone II',
-            recast_id = 160
-        }, {
-            name = 'Stone',
-            recast_id = 159
-        }},
-        ['Water'] = {{
-            name = 'Water VI',
-            recast_id = 854
-        }, {
-            name = 'Water V',
-            recast_id = 173
-        }, {
-            name = 'Flood II',
-            recast_id = 215
-        }, {
-            name = 'Water IV',
-            recast_id = 172
-        }, {
-            name = 'Water III',
-            recast_id = 171
-        }, {
-            name = 'Water II',
-            recast_id = 170
-        }, {
-            name = 'Water',
-            recast_id = 169
-        }},
-        ['Wind'] = {{
-            name = 'Aero VI',
-            recast_id = 851
-        }, {
-            name = 'Aero V',
-            recast_id = 158
-        }, {
-            name = 'Tornado II',
-            recast_id = 209
-        }, {
-            name = 'Aero IV',
-            recast_id = 1157
-        }, {
-            name = 'Aero III',
-            recast_id = 156
-        }, {
-            name = 'Aero II',
-            recast_id = 155
-        }, {
-            name = 'Aero',
-            recast_id = 154
-        }},
-        ['Fire'] = {{
-            name = 'Fire VI',
-            recast_id = 849
-        }, {
-            name = 'Fire V',
-            recast_id = 148
-        }, {
-            name = 'Flare II',
-            recast_id = 205
-        }, {
-            name = 'Fire IV',
-            recast_id = 147
-        }, {
-            name = 'Fire III',
-            recast_id = 146
-        }, {
-            name = 'Fire II',
-            recast_id = 145
-        }, {
-            name = 'Fire',
-            recast_id = 144
-        }},
-        ['Ice'] = {{
-            name = 'Blizzard VI',
-            recast_id = 850
-        }, {
-            name = 'Blizzard V',
-            recast_id = 153
-        }, {
-            name = 'Freeze II',
-            recast_id = 207
-        }, {
-            name = 'Blizzard IV',
-            recast_id = 152
-        }, {
-            name = 'Bliizard III',
-            recast_id = 151
-        }, {
-            name = 'Blizzard II',
-            recast_id = 150
-        }, {
-            name = 'Blizzard',
-            recast_id = 149
-        }},
-        ['Lightning'] = {{
-            name = 'Thunder VI',
-            recast_id = 853
-        }, {
-            name = 'Thunder V',
-            recast_id = 168
-        }, {
-            name = 'Burst II',
-            recast_id = 213
-        }, {
-            name = 'Thunder IV',
-            recast_id = 167
-        }, {
-            name = 'Thunder III',
-            recast_id = 166
-        }, {
-            name = 'Thunder II',
-            recast_id = 165
-        }, {
-            name = 'Thunder',
-            recast_id = 164
-        }}
-    }
-    -- Make sure we handle the element
-    if not nukes[spell.element] then
-        return
+    return idleSet
+end
+
+-- Modify the default melee set after it was constructed.
+function customize_melee_set(meleeSet)
+    if buffactive['Mana Wall'] then
+        meleeSet = set_combine(meleeSet, sets.precast.JA['Mana Wall'])
     end
 
-    -- Make sure this is a spell we support changing
-    local supported = false
-    local startIndex = 1
-    for i, v in ipairs(nukes[spell.element]) do
-        if v.name == spell.english then
-            supported = true
-            startIndex = i
-            break
-        end
-    end
-    if not supported then
-        return
+    return meleeSet
+end
+
+function customize_defense_set(defenseSet)
+    if buffactive['Mana Wall'] then
+        defenseSet = set_combine(defenseSet, sets.precast.JA['Mana Wall'])
     end
 
+    return defenseSet
+end
+
+-- Function to display the current relevant user state when doing an update.
+-- Return true if display was handled, and you don't want the default info shown.
+function display_current_job_state(eventArgs)
+
+    local c_msg = state.CastingMode.value
+
+    local d_msg = 'None'
+    if state.DefenseMode.value ~= 'None' then
+        d_msg = state.DefenseMode.value .. state[state.DefenseMode.value .. 'DefenseMode'].value
+    end
+
+    local i_msg = state.IdleMode.value
+
+    local msg = ''
+    if state.MagicBurst.value then
+        msg = ' Burst: On |'
+    end
+    if state.DeathMode.value then
+        msg = msg .. ' Death: On |'
+    end
+    if state.Kiting.value then
+        msg = msg .. ' Kiting: On |'
+    end
+
+    add_to_chat(060,
+        '| Magic: ' .. string.char(31, 001) .. c_msg .. string.char(31, 002) .. ' |' .. string.char(31, 004) ..
+            ' Defense: ' .. string.char(31, 001) .. d_msg .. string.char(31, 002) .. ' |' .. string.char(31, 008) ..
+            ' Idle: ' .. string.char(31, 001) .. i_msg .. string.char(31, 002) .. ' |' .. string.char(31, 002) .. msg)
+
+    eventArgs.handled = true
+end
+
+function refine_various_spells(spell, action, spellMap, eventArgs)
+    local aspirs = S {'Aspir', 'Aspir II', 'Aspir III'}
+
+    local newSpell = spell.english
     local spell_recasts = windower.ffxi.get_spell_recasts()
+    local cancelling = 'All ' .. spell.english .. ' are on cooldown. Cancelling.'
 
-    -- If the spell we just hit is on cooldown, find the next best available spell and cast that instead
-    if spell_recasts[spell.recast_id] and spell_recasts[spell.recast_id] > 60 then
-        -- Loop over the spell names and cast the next spell if its recast time has passed
-        for i = startIndex, #nukes[spell.element] do
-            local nuke = nukes[spell.element][i]
+    local spell_index
 
-            -- If the recast time has passed, cast the spell and break out of the loop
-            if spell_recasts[nuke.recast_id] and spell_recasts[nuke.recast_id] <= 60 then
-                cancel_spell()
-                windower.send_command('input /ma "' .. nuke.name .. '" ' .. spell.target.raw)
-                return
+    if spell_recasts[spell.recast_id] > 0 then
+        if aspirs:contains(spell.name) then
+            spell_index = table.find(degrade_array['Aspirs'], spell.name)
+            if spell_index > 1 then
+                newSpell = degrade_array['Aspirs'][spell_index - 1]
+                send_command('@input /ma ' .. newSpell .. ' ' .. tostring(spell.target.raw))
+                eventArgs.cancel = true
             end
         end
     end
 end
----End of Rules---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------------
+-- Utility functions specific to this job.
+-------------------------------------------------------------------------------------------------------------------
+
+function job_self_command(cmdParams, eventArgs)
+    gearinfo(cmdParams, eventArgs)
+end
+
+function gearinfo(cmdParams, eventArgs)
+    if cmdParams[1] == 'gearinfo' then
+        if type(cmdParams[4]) == 'string' then
+            if cmdParams[4] == 'true' then
+                moving = true
+            elseif cmdParams[4] == 'false' then
+                moving = false
+            end
+        end
+        if not midaction() then
+            job_update()
+        end
+    end
+end
+
+function check_moving()
+    if state.DefenseMode.value == 'None' and state.Kiting.value == false then
+        if state.Auto_Kite.value == false and moving then
+            state.Auto_Kite:set(true)
+        elseif state.Auto_Kite.value == true and moving == false then
+            state.Auto_Kite:set(false)
+        end
+    end
+end
+
+function check_gear()
+    if no_swap_gear:contains(player.equipment.left_ring) then
+        disable("ring1")
+    else
+        enable("ring1")
+    end
+    if no_swap_gear:contains(player.equipment.right_ring) then
+        disable("ring2")
+    else
+        enable("ring2")
+    end
+end
+
+windower.register_event('zone change', function()
+    if no_swap_gear:contains(player.equipment.left_ring) then
+        enable("ring1")
+        equip(sets.idle)
+    end
+    if no_swap_gear:contains(player.equipment.right_ring) then
+        enable("ring2")
+        equip(sets.idle)
+    end
+end)
+
+-- Select default macro book on initial load or subjob change.
+function select_default_macro_book()
+    set_macro_page(1, 5)
+end
+
+function set_lockstyle()
+    send_command('wait 2; input /lockstyleset ' .. lockstyleset)
+end
