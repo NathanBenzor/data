@@ -778,10 +778,13 @@ function init_gear_sets()
             augments = {'Path: A'}
         },
         waist = "Orpheus's Sash",
-        left_ear = "Thrud Earring",
+        left_ear = {
+            name = "Moonshade Earring",
+            augments = {'Accuracy+4', 'TP Bonus +250'}
+        },
         right_ear = "Friomisi Earring",
-        left_ring = "Karieyh Ring",
-        right_ring = "Cornelia's Ring",
+        left_ring = "Cornelia's Ring",
+        right_ring = "Niqmaddu Ring",
         back = {
             name = "Smertrios's Mantle",
             augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%', 'Phys. dmg. taken-10%'}

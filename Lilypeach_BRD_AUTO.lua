@@ -3,7 +3,7 @@
 include('Lilypeach-Include')
 
 -- Set to ingame lockstyle and Macro Book/Set
-LockStylePallet = "180"
+LockStylePallet = "146"
 MacroBook = "9"
 MacroSet = "1"
 

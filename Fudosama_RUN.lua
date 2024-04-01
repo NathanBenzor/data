@@ -550,7 +550,8 @@ function init_gear_sets()
             name = "Moonshade Earring",
             augments = {'Accuracy+4', 'TP Bonus +250'}
         },
-        right_ear = "Sherida Earring",
+        -- right_ear = "Sherida Earring",
+        right_ear = "Odr Earring",
         left_ring = "Cornelia's Ring",
         right_ring = "Niqmaddu Ring",
         back = {
@@ -671,7 +672,7 @@ function init_gear_sets()
             augments = {'Path: B'}
         },
         neck = "Moonbeam Necklace",
-        waist="Audumbla Sash",
+        waist = "Audumbla Sash",
         left_ear = "Halasz Earring",
         right_ear = "Tuisto Earring",
         left_ring = "Evanescence Ring",

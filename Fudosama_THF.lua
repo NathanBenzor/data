@@ -1029,7 +1029,7 @@ function init_gear_sets()
             augments = {'Accuracy+4', 'TP Bonus +250'}
         },
         right_ear = "Ishvara Earring",
-        left_ring = "Epaminondas's Ring",
+        left_ring = "Cornelia's Ring",
         right_ring = "Sroda Ring",
         back = {
             name = "Toutatis's Cape",
