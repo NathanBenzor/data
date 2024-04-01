@@ -397,6 +397,10 @@ function init_gear_sets()
             augments = {'Enhances "Blade Bash" effect'}
         }
     }
+    sets.precast.JA.Hasso = {
+        hands="Wakido Kote +3",
+        legs="Kasuga Haidate +3",
+    }
 
     -- Waltz set (chr and vit)
 
@@ -439,7 +443,7 @@ function init_gear_sets()
             augments = {'Accuracy+4', 'TP Bonus +250'}
         },
         left_ring = "Cornelia's Ring",
-        right_ring = "Karieyh Ring",
+        right_ring = "Sroda Ring",
         back = {
             name = "Smertrios's Mantle",
             augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%', 'Phys. dmg. taken-10%'}
@@ -469,7 +473,7 @@ function init_gear_sets()
             name = "Moonshade Earring",
             augments = {'Accuracy+4', 'TP Bonus +250'}
         },
-        left_ring = "Karieyh Ring",
+        left_ring = "Sroda Ring",
         right_ring = "Cornelia's Ring",
         back = {
             name = "Smertrios's Mantle",
@@ -513,7 +517,7 @@ function init_gear_sets()
             name = "Moonshade Earring",
             augments = {'Accuracy+4', 'TP Bonus +250'}
         },
-        left_ring = "Karieyh Ring",
+        left_ring = "Sroda Ring",
         right_ring = "Cornelia's Ring",
         back = {
             name = "Smertrios's Mantle",
@@ -611,7 +615,7 @@ function init_gear_sets()
             name = "Moonshade Earring",
             augments = {'Accuracy+4', 'TP Bonus +250'}
         },
-        left_ring = "Karieyh Ring",
+        left_ring = "Sroda Ring",
         right_ring = "Cornelia's Ring",
         back = {
             name = "Smertrios's Mantle",

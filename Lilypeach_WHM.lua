@@ -671,10 +671,7 @@ function init_gear_sets()
     }
 
     sets.midcast.Aquaveil = set_combine(sets.midcast.EnhancingDuration, {
-        main = {
-            name = "Gada",
-            augments = {'Enh. Mag. eff. dur. +5', 'VIT+2'}
-        },
+        main = "Vadose Rod",        
         sub = "Ammurapi Shield",
         ammo = "Staunch Tathlum +1",
         head = "Chironic Hat",

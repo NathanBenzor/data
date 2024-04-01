@@ -972,7 +972,10 @@ function init_gear_sets()
             name = "Nyame Helm",
             augments = {'Path: B'}
         },
-        body = "Skulker's Vest +2",
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },    
         hands = {
             name = "Nyame Gauntlets",
             augments = {'Path: B'}
@@ -995,8 +998,8 @@ function init_gear_sets()
             augments = {'Accuracy+4', 'TP Bonus +250'}
         },
         right_ear = "Ishvara Earring",
-        left_ring = "Epaminondas's Ring",
-        right_ring = "Sroda Ring",
+        left_ring = "Cornelia's Ring",
+        right_ring = "Beithir Ring",
         back = {
             name = "Toutatis's Cape",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'DEX+10', 'Weapon skill damage +10%'}
@@ -1767,14 +1770,11 @@ function init_gear_sets()
 
     sets.Naegling = {
         main = "Naegling",
-        {
-            name = "Gleti's Knife",
-            augments = {'Path: A'}
-        }
+        sub = "Centovente"
     }
     sets.Naegling_Centovente = {
         main = "Naegling",
-        sub = "Fusetto +2"
+        sub = "Centovente"
     }
 
     sets.Karambit = {
