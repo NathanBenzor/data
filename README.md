@@ -20,10 +20,20 @@
 - `//lua unload gearswap`: Unload the GearSwap Lua script.
 - `//exec init`: Execute the GearSwap initialization script.
 
-- `//gs disable sub`: Disable sub job in GearSwap.
-- `//gs disable main`: Disable main job in GearSwap.
-- `//gs enable sub`: Enable sub job in GearSwap.
-- `//gs enable main`: Enable main job in GearSwap.
+- `//gs disable sub`: Disable sub weapon in GearSwap.
+- `//gs disable main`: Disable main weapon in GearSwap.
+- `//gs enable sub`: Enable sub weapon in GearSwap.
+- `//gs enable main`: Enable main weapon in GearSwap.
+
+## GearSwap Additional Commands
+
+- `//lua u gearswap`: Update the GearSwap Lua script.
+- `//lua l gearswap`: Load the GearSwap Lua script.
+- `//gs r`: Reload the GearSwap addon.
+- `//gs export`: Export your current GearSwap settings.
+- `//gs disable ring1`: Disable ring1 in GearSwap.
+- `//gs enable ring1`: Enable ring1 in GearSwap.
+- `//gs equip sets.name`: Equip the gear set named "name".
 
 ## GearSwap Input Commands
 

@@ -762,18 +762,21 @@ function init_gear_sets()
     })
 
     sets.precast.JA.Reward = {
-        head = "Stout Bonnet",
+        head = "Brave's Warbonnet",
         neck = "Aife's Medal",
         ear1 = "Lifestorm Earring",
         ear2 = "Neptune's Pearl",
-        body = "Totemic Jackcoat +1",
+        body = "Totemic Jackcoat +3",
         hands = "Malignance Gloves",
-        ring1 = "Leviathan Ring +1",
-        ring2 = "Leviathan Ring +1",
-        back = Reward_back,
-        waist = "Engraved Belt",
+        feet = "Ankusa Gaiters +3",
         legs = "Ankusa Trousers +1",
-        feet = "Ankusa Gaiters +3"
+        ring1 = "Leviathan Ring +1",
+        ring2 = "Metamorph Ring +1",
+        waist = "Engraved Belt",
+        back = {
+            name = "Artio's Mantle",
+            augments = {'MND+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'MND+10', 'Weapon skill damage +10%', 'Damage taken-5%'}
+        }
     }
     sets.precast.JA.RewardNE = set_combine(sets.precast.JA.Reward, {
         main = Reward_Axe,
@@ -814,7 +817,7 @@ function init_gear_sets()
         legs = "Gleti's Greaves"
     }
     sets.midcast.Pet.TPBonus = {
-        hands = "Nukumi Manoplas +2"
+        hands = "Nukumi Manoplas +3"
     }
     sets.midcast.Pet.Neutral = {
         head = Ready_Atk_head
@@ -919,11 +922,11 @@ function init_gear_sets()
         ammo = "Voluspa Tathlum",
         head = "Nuk. Cabasset +2",
         body = "Nukumi Gausape +3",
-        hands = "Nukumi Manoplas +2",
+        hands = "Nukumi Manoplas +3",
         legs = "Nukumi Quijotes +2",
         feet = "Gleti's Boots",
         neck = "Bst. Collar +2",
-        waist = "Flume Belt +1",
+        waist = "Incarnation Sash",
         left_ear = "Kyrene's Earring",
         right_ear = "Crep. Earring",
         left_ring = "Tali'ah Ring",
@@ -1223,7 +1226,7 @@ function init_gear_sets()
             name = "Artio's Mantle",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Phys. dmg. taken-10%'}
         },
-        waist = "Flume Belt +1",
+        waist = "Plat. Mog. Belt",
         legs = {
             name = "Nyame Flanchard",
             augments = {'Path: B', 'STR+10', 'Attack+15', 'Phys. dmg. taken-2'}
@@ -1335,16 +1338,16 @@ function init_gear_sets()
         ear1 = "Tuisto Earring",
         ear2 = "Odnowa Earring +1",
         body = "Nukumi Gausape +3",
-        hands = "Nukumi Manoplas +2",
+        hands = "Nukumi Manoplas +3",
         legs = "Nukumi Quijotes +2",
         feet = "Nukumi Ocreae +2",
         ring1 = "C. Palug Ring",
         ring2 = "Shneddick Ring",
-        waist = "Flume Belt +1",
+        waist = "Plat. Mog. Belt",
         -- back = PDT_back,
         back = {
             name = "Artio's Mantle",
-            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Phys. dmg. taken-10%'}
+            augments = {'Eva.+20 /Mag. Eva.+20', 'Pet: "Regen"+10', 'Pet: Damage taken -5%'}
         }
     }
 
@@ -2027,7 +2030,7 @@ function init_gear_sets()
         ear1 = "Sherida Earring",
         ear2 = "Moonshade Earring",
         body = "Nukumi Gausape +3",
-        hands = "Nukumi Manoplas +2",
+        hands = "Nukumi Manoplas +3",
         ring1 = "Gere Ring",
         ring2 = "Epona's Ring",
         back = STP_back,
@@ -2408,7 +2411,7 @@ function init_gear_sets()
     sets.precast.WS['Cloudsplitter'] = set_combine(sets.precast.WS['Primal Rend'], {
         back = {
             name = "Artio's Mantle",
-            augments = {'STR+20', 'Accuracy+20 Attack+20', 'Weapon skill damage +10%', 'Damage taken-5%'}
+            augments = {'MND+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'MND+10', 'Weapon skill damage +10%', 'Damage taken-5%'}
         }
     })
 
