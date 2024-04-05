@@ -321,7 +321,11 @@ function init_gear_sets()
             augments = {'Enhances "Mending Halation" effect'}
         },
         feet = "Bagua Sandals +3",
-        neck = "Incanter's Torque",
+        -- neck = "Incanter's Torque",
+        neck = {
+            name = "Bagua Charm +1",
+            augments = {'Path: A'}
+        },
         waist = "Austerity Belt +1",
         left_ear = "Malignance Earring",
         right_ear = {
@@ -497,7 +501,10 @@ function init_gear_sets()
         hands = "Geo. Mitaines +3",
         legs = "Geomancy Pants +1",
         feet = "Bagua Sandals +2",
-        neck = "Bagua Charm +1",
+        neck = {
+            name = "Bagua Charm +1",
+            augments = {'Path: A'}
+        },
         left_ear = "Malignance Earring",
         right_ear = "Regal Earring",
         ring1 = "Kishar Ring",
@@ -613,7 +620,7 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
 
     sets.idle = {
-        -- main = "Bolelabunga",
+        main = "Bolelabunga",
         sub = "Genmei Shield",
         range = {
             name = "Dunna",
@@ -756,7 +763,10 @@ function init_gear_sets()
             augments = {'Enhances "Mending Halation" effect'}
         },
         feet = "Azimuth Gaiters +3",
-        neck = "Incanter's Torque",
+        neck = {
+            name = "Bagua Charm +1",
+            augments = {'Path: A'}
+        },
         waist = "Isa Belt",
         left_ear = "Regal Earring",
         right_ear = {

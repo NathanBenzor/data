@@ -51,6 +51,7 @@ function job_setup()
     state.Buff['Unlimited Shot'] = buffactive['Unlimited Shot'] or false
     state.Buff['Velocity Shot'] = buffactive['Velocity Shot'] or false
     state.Buff['Double Shot'] = buffactive['Double Shot'] or false
+    state.Buff['Aftermath: Lv.3'] = buffactive['Aftermath: Lv.3'] or false
 
     -- Whether a warning has been given for low ammo
     state.warned = M(false)
@@ -91,7 +92,7 @@ function user_setup()
         ['Gandiva'] = "Chrono Arrow",
         ['Fail-Not'] = "Chrono Arrow",
         ['Annihilator'] = "Chrono Bullet",
-        ['Armageddon'] = "Devastating Bullet",
+        ['Armageddon'] = "Chrono Bullet",
         ['Gastraphetes'] = "Quelling Bolt",
         ['Fomalhaut'] = "Chrono Bullet",
         ['Holliday'] = "Eminent Bullet"
@@ -124,7 +125,7 @@ function user_setup()
         ['Gandiva'] = "Chrono Arrow",
         ['Fail-Not'] = "Chrono Arrow",
         ['Annihilator'] = "Devastating Bullet",
-        ['Armageddon'] = "Devastating Bullet",
+        -- ['Armageddon'] = "Devastating Bullet",
         ['Gastraphetes'] = "Quelling Bolt",
         ['Fomalhaut'] = "Devastating Bullet",
         ['Holliday'] = "Eminent Bullet"
@@ -240,10 +241,10 @@ function init_gear_sets()
         feet = "Orion Socks +3"
     }
     sets.precast.JA['Shadowbind'] = {
-        hands = "Orion Bracers +3"
+        hands = "Orion Bracers +2"
     }
     sets.precast.JA['Sharpshot'] = {
-        legs = "Orion Braccae +3"
+        legs = "Orion Braccae +2"
     }
 
     -- Fast cast sets for spells
@@ -790,7 +791,7 @@ function init_gear_sets()
             augments = {'Path: A'}
         },
         body = "Nisroch Jerkin",
-        hands = "Amini Glove. +3",
+        hands = "Mummu Wrists +2",
         legs = "Amini Bragues +3",
         feet = {
             name = "Arcadian Socks +3",
@@ -803,8 +804,8 @@ function init_gear_sets()
         waist = "K. Kachina Belt +1",
         left_ear = "Odr Earring",
         right_ear = "Telos Earring",
-        left_ring = "Regal Ring",
-        right_ring = "Ilabrat Ring",
+        left_ring = "Begrudging Ring",
+        right_ring = "Mummu Ring",
         back = {
             name = "Belenus's Cape",
             augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'Rng.Acc.+10', 'Crit.hit rate+10', 'Damage taken-5%'}
@@ -825,16 +826,88 @@ function init_gear_sets()
     })
 
     sets.DoubleShot = {
-        head = "Arcadian Beret +3",
-        body = "Arcadian Jerkin +2",
-        hands = "Oshosi Gloves", -- 5
-        legs = "Osh. Trousers", -- 7
-        feet = "Osh. Leggings" -- 4
+        -- head = "Arcadian Beret +3",
+        -- body = "Arcadian Jerkin +2",
+        -- hands = "Oshosi Gloves", -- 5
+        -- legs = "Osh. Trousers", -- 7
+        -- feet = "Osh. Leggings" -- 4
+
+        head = {
+            name = "Blistering Sallet +1",
+            augments = {'Path: A'}
+        },
+        body = "Nisroch Jerkin",
+        hands = "Mummu Wrists +2",
+        legs = "Amini Bragues +3",
+        feet = {
+            name = "Arcadian Socks +3",
+            augments = {'Enhances "Stealth Shot" effect'}
+        },
+        neck = {
+            name = "Scout's Gorget +2",
+            augments = {'Path: A'}
+        },
+        waist = "K. Kachina Belt +1",
+        left_ear = "Odr Earring",
+        right_ear = "Telos Earring",
+        left_ring = "Begrudging Ring",
+        right_ring = "Mummu Ring",
+        back = {
+            name = "Belenus's Cape",
+            augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'Rng.Acc.+10', 'Crit.hit rate+10', 'Damage taken-5%'}
+        }
     } -- 25
 
     sets.DoubleShot.Critical = {
-        head = "Meghanada Visor +2",
-        waist = "K. Kachina Belt +1"
+        head = {
+            name = "Blistering Sallet +1",
+            augments = {'Path: A'}
+        },
+        body = "Nisroch Jerkin",
+        hands = "Mummu Wrists +2",
+        legs = "Amini Bragues +3",
+        feet = {
+            name = "Arcadian Socks +3",
+            augments = {'Enhances "Stealth Shot" effect'}
+        },
+        neck = {
+            name = "Scout's Gorget +2",
+            augments = {'Path: A'}
+        },
+        waist = "K. Kachina Belt +1",
+        left_ear = "Odr Earring",
+        right_ear = "Telos Earring",
+        left_ring = "Begrudging Ring",
+        right_ring = "Mummu Ring",
+        back = {
+            name = "Belenus's Cape",
+            augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'Rng.Acc.+10', 'Crit.hit rate+10', 'Damage taken-5%'}
+        }
+
+        -- head = {
+        --     name = "Blistering Sallet +1",
+        --     augments = {'Path: A'}
+        -- },
+        -- body = "Nisroch Jerkin",
+        -- hands = "Amini Glove. +3",
+        -- legs = "Amini Bragues +3",
+        -- feet = {
+        --     name = "Arcadian Socks +3",
+        --     augments = {'Enhances "Stealth Shot" effect'}
+        -- },
+        -- neck = {
+        --     name = "Scout's Gorget +2",
+        --     augments = {'Path: A'}
+        -- },
+        -- waist = "K. Kachina Belt +1",
+        -- left_ear = "Odr Earring",
+        -- right_ear = "Telos Earring",
+        -- left_ring = "Regal Ring",
+        -- right_ring = "Ilabrat Ring",
+        -- back = {
+        --     name = "Belenus's Cape",
+        --     augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'Rng.Acc.+10', 'Crit.hit rate+10', 'Damage taken-5%'}
+        -- }
     }
 
     sets.TrueShot = {
@@ -975,18 +1048,34 @@ function init_gear_sets()
     -- EG: sets.engaged.Dagger.Accuracy.Evasion
 
     sets.engaged = {
-        head = "Malignance Chapeau",
-        body = "Malignance Tabard",
-        hands = "Malignance Gloves",
-        legs = {
-            name = "Samnuha Tights",
-            augments = {'STR+10', 'DEX+10', '"Dbl.Atk."+3', '"Triple Atk."+3'}
+        -- head = "Malignance Chapeau",
+        head = {
+            name = "Nyame Helm",
+            augments = {'Path: B'}
+        },
+        -- body = "Malignance Tabard",
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
+        -- hands = "Malignance Gloves",
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
         },
         -- legs = {
-        --     name = "Tatena. Haidate +1",
-        --     augments = {'Path: A'}
+        --     name = "Samnuha Tights",
+        --     augments = {'STR+10', 'DEX+10', '"Dbl.Atk."+3', '"Triple Atk."+3'}
         -- },
-        feet = "Malignance Boots",
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
+        -- feet = "Malignance Boots",
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
         neck = {
             name = "Scout's Gorget +2",
             augments = {'Path: A'}
@@ -1000,8 +1089,8 @@ function init_gear_sets()
         -- left_ear = "Eabani Earring",
         -- right_ear = "Telos Earring",
         right_ear = "Suppanomimi",
-        left_ring = "Defending Ring",
-        right_ring = "Epona's Ring",
+        right_ring = "Defending Ring",
+        left_ring = "Epona's Ring",
         back = {
             name = "Belenus's Cape",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%'}
@@ -1654,6 +1743,16 @@ function job_buff_change(buff, gain)
         else
             enable('ring1', 'ring2', 'waist')
             handle_equipping_gear(player.status)
+        end
+    end
+
+    if buff == "Aftermath: Lv.3" then -- AM3 Timer/Countdown --
+        if gain then
+            send_command(
+                'timers create "Aftermath: Lv.3" 180 down;wait 150;input /echo ----- Aftermath: Lv.3 [WEARING OFF IN 30 SEC.] -----;wait 15;input /echo ----- Aftermath: Lv.3 [WEARING OFF IN 15 SEC.] -----;wait  5;input /echo ----- Aftermath: Lv.3 [WEARING OFF IN 10 SEC.] -----;wait  5;input /echo ----- Aftermath: Lv.3 [WEARING OFF IN 5 SEC.] -----;wait  5;input /echo ----- AFTERMATH: Lv.3 [OFF!!!][OFF!!!][OFF!!!] -----')
+        else
+            send_command('timers delete "Aftermath: Lv.3"')
+            add_to_chat(123, 'AM3: [OFF]')
         end
     end
 

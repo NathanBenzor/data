@@ -711,7 +711,10 @@ function init_gear_sets()
     -- 3. NEDW (Not engaged; Dual-wield) - Axe swaps included, for use with Pet Only mode.
 
     sets.precast.JA.Familiar = {
-        legs = "Ankusa Trousers +3"
+        legs = {
+            name = "Ankusa Trousers +3",
+            augments = {'Enhances "Familiar" effect'}
+        }
     }
     sets.precast.JA['Call Beast'] = {
         head = CB_head,
@@ -764,12 +767,18 @@ function init_gear_sets()
     sets.precast.JA.Reward = {
         head = "Brave's Warbonnet",
         neck = "Aife's Medal",
-        ear1 = "Lifestorm Earring",
-        ear2 = "Neptune's Pearl",
         body = "Totemic Jackcoat +3",
         hands = "Malignance Gloves",
-        feet = "Ankusa Gaiters +3",
-        legs = "Ankusa Trousers +1",
+        legs = {
+            name = "Ankusa Trousers +3",
+            augments = {'Enhances "Familiar" effect'}
+        },
+        feet = {
+            name = "Ankusa Gaiters +3",
+            augments = {'Enhances "Beast Healer" effect'}
+        },
+        ear1 = "Lifestorm Earring",
+        ear2 = "Neptune's Pearl",
         ring1 = "Leviathan Ring +1",
         ring2 = "Metamorph Ring +1",
         waist = "Engraved Belt",
@@ -798,8 +807,14 @@ function init_gear_sets()
         ring2 = "Dawnsoul Ring",
         back = Primal_back,
         waist = "Aristo Belt",
-        legs = "Ankusa Trousers +1",
-        feet = "Ankusa Gaiters +3"
+        legs = {
+            name = "Ankusa Trousers +3",
+            augments = {'Enhances "Familiar" effect'}
+        },
+        feet = {
+            name = "Ankusa Gaiters +3",
+            augments = {'Enhances "Beast Healer" effect'}
+        }
     }
     sets.precast.JA.CharmNE = set_combine(sets.precast.JA.Charm, {
         main = "Buramgh +1",
@@ -1339,8 +1354,14 @@ function init_gear_sets()
         ear2 = "Odnowa Earring +1",
         body = "Nukumi Gausape +3",
         hands = "Nukumi Manoplas +3",
-        legs = "Nukumi Quijotes +2",
-        feet = "Nukumi Ocreae +2",
+        legs = {
+            name = "Ankusa Trousers +3",
+            augments = {'Enhances "Familiar" effect'}
+        },
+        feet = {
+            name = "Ankusa Gaiters +3",
+            augments = {'Enhances "Beast Healer" effect'}
+        },
         ring1 = "C. Palug Ring",
         ring2 = "Shneddick Ring",
         waist = "Plat. Mog. Belt",
@@ -2514,8 +2535,14 @@ function init_gear_sets()
         ring2 = "Ilabrat Ring",
         back = STR_WS_back,
         waist = "Sailfi Belt +1",
-        legs = "Ankusa Trousers +3",
-        feet = "Ankusa Gaiters +3"
+        legs = {
+            name = "Ankusa Trousers +3",
+            augments = {'Enhances "Familiar" effect'}
+        },
+        feet = {
+            name = "Ankusa Gaiters +3",
+            augments = {'Enhances "Beast Healer" effect'}
+        }
     }
 
     sets.precast.WS['Cross Reaper'] = {
@@ -2530,8 +2557,14 @@ function init_gear_sets()
         ring2 = "Ilabrat Ring",
         back = STR_WS_back,
         waist = "Sailfi Belt +1",
-        legs = "Ankusa Trousers +3",
-        feet = "Ankusa Gaiters +3"
+        legs = {
+            name = "Ankusa Trousers +3",
+            augments = {'Enhances "Familiar" effect'}
+        },
+        feet = {
+            name = "Ankusa Gaiters +3",
+            augments = {'Enhances "Beast Healer" effect'}
+        }
     }
 
     sets.precast.WS['Entropy'] = {
