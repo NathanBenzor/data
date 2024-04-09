@@ -230,23 +230,25 @@ function init_gear_sets()
         },
         sub = "Sors Shield",
         ammo = "Impatiens",
-        head = {
-            name = "Vanya Hood",
-            augments = {'MP+50', '"Fast Cast"+10', 'Haste+2%'}
-        },
+        -- head = {
+        --     name = "Vanya Hood",
+        --     augments = {'MP+50', '"Fast Cast"+10', 'Haste+2%'}
+        -- },
+        head = "Ebers Cap +2",
         body = "Inyanga Jubbah +1",
-        hands = "Theophany Mitts +2",
-        legs = "Aya. Cosciales +1",
-        feet = "Merlinic Crackows",
-        neck = {
-            name = "Clr. Torque +1",
-            augments = {'Path: A'}
+        hands = {
+            name = "Gendewitha Gages",
+            augments = {'Phys. dmg. taken -3%', '"Cure" spellcasting time -4%'}
         },
+        legs = "Aya. Cosciales +2",
+        feet = "Regal Pumps +1",
+        neck = "Orison Locket",
         waist = "Embla Sash",
-        left_ear = "Malignance Earring",
+        -- left_ear = "Malignance Earring",
+        left_ear = "Loquac. Earring",
         right_ear = "Etiolation Earring",
         left_ring = "Kishar Ring",
-        right_ring = "Rahab Ring",
+        right_ring = "Lebeche Ring",
         back = {
             name = "Alaunus's Cape",
             augments = {'MND+20', 'Mag. Acc+20 /Mag. Dmg.+20', '"Fast Cast"+10'}
@@ -334,7 +336,7 @@ function init_gear_sets()
         },
         sub = "Sors Shield",
         ammo = "Impatiens",
-        head = "Ebers Cap +1",
+        head = "Ebers Cap +2",
         body = "Ebers Bliaut +2",
         hands = "Theophany Mitts +2",
         legs = "Ebers Pant. +2",
@@ -355,7 +357,7 @@ function init_gear_sets()
         },
         sub = "Sors Shield",
         ammo = "Impatiens",
-        head = "Ebers Cap +1",
+        head = "Ebers Cap +2",
         body = "Ebers Bliaut +2",
         hands = "Theophany Mitts +2",
         legs = "Ebers Pant. +2",
@@ -377,7 +379,7 @@ function init_gear_sets()
         },
         sub = "Sors Shield",
         ammo = "Impatiens",
-        head = "Ebers Cap +1",
+        head = "Ebers Cap +2",
         body = "Ebers Bliaut +2",
         hands = "Theophany Mitts +2",
         legs = "Ebers Pant. +2",
@@ -398,7 +400,7 @@ function init_gear_sets()
         },
         sub = "Sors Shield",
         ammo = "Impatiens",
-        head = "Ebers Cap +1",
+        head = "Ebers Cap +2",
         body = "Ebers Bliaut +2",
         hands = {
             name = "Vanya Cuffs",
@@ -437,7 +439,7 @@ function init_gear_sets()
         main = "Yagrush",
         sub = "Sors Shield",
         ammo = "Hydrocera",
-        head = "Ebers Cap +1",
+        head = "Ebers Cap +2",
         body = "Ebers Bliaut +2",
         hands = "Theophany Mitts +2",
         legs = {
@@ -473,7 +475,7 @@ function init_gear_sets()
         },
         sub = "Sors Shield",
         ammo = "Pemphredo Tathlum",
-        head = "Ebers Cap +1",
+        head = "Ebers Cap +2",
         body = "Ebers Bliaut +2",
         hands = {
             name = "Fanatic Gloves",
@@ -550,7 +552,7 @@ function init_gear_sets()
         },
         sub = "Genmei Shield",
         ammo = "Impatiens",
-        head = "Ebers Cap +1",
+        head = "Ebers Cap +2",
         body = "Ebers Bliaut +2",
         hands = "Ebers Mitts +2",
         legs = "Ebers Pant. +2",
@@ -658,7 +660,7 @@ function init_gear_sets()
     })
 
     sets.midcast.BarElement = set_combine(sets.midcast.EnhancingDuration, {
-        head = "Ebers Cap +1",
+        head = "Ebers Cap +2",
         body = "Ebers Bliaut +2",
         hands = "Ebers Mitts +2",
         legs = "Piety Pantaln. +3",
@@ -666,7 +668,7 @@ function init_gear_sets()
     })
 
     sets.midcast.BarStatus = set_combine(sets.midcast.EnhancingDuration, {
-        head = "Ebers Cap +1",
+        head = "Ebers Cap +2",
         body = "Ebers Bliaut +2",
         hands = "Ebers Mitts +2",
         legs = "Piety Pantaln. +3",
@@ -888,9 +890,11 @@ function init_gear_sets()
     sets.idle.Town = set_combine(sets.idle, {
         main = "Yagrush",
         sub = "Genmei Shield",
-        -- head = "Kaykaus Mitra +1",
-        -- body = "Kaykaus Bliaut +1",
-        -- legs = "Kaykaus Tights +1",
+        head = "Ebers Cap +2",
+        body = "Ebers Bliaut +2",
+        hands = "Ebers Mitts +2",
+        legs = "Ebers Pant. +2",
+        feet = "Ebers Duckbills +2",
         neck = "Clr. Torque +1",
         ear1 = "Etiolation Earring",
         ear2 = "Regal Earring",

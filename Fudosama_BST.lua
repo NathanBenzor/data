@@ -761,7 +761,10 @@ function init_gear_sets()
     -- sets.precast.JA['Feral Howl'] = set_combine(sets.Enmity, {body="Ankusa Jackcoat +3"})
 
     sets.precast.JA['Killer Instinct'] = set_combine(sets.Enmity, {
-        head = "Ankusa Helm +1"
+        head = {
+            name = "Ankusa Helm +3",
+            augments = {'Enhances "Killer Instinct" effect'}
+        }
     })
 
     sets.precast.JA.Reward = {
@@ -1284,8 +1287,32 @@ function init_gear_sets()
     })
 
     sets.idle.Pet = set_combine(sets.idle, {
-        back = Pet_Regen_back
-        -- right_ring = "C. Palug Ring"
+        back = {
+            name = "Artio's Mantle",
+            augments = {'Eva.+20 /Mag. Eva.+20', 'Pet: "Regen"+10', 'Pet: Damage taken -5%'}
+        },
+        right_ring = "C. Palug Ring"
+    })
+
+    sets.idle.PetDT = set_combine(sets.idle, {
+        head = "Nuk. Cabasset +2",
+        body = "Tot. Jackcoat +3",
+        hands = "Gleti's Gauntlets",
+        legs = "Nukumi Quijotes +2",
+        feet = {
+            name = "Ankusa Gaiters +3",
+            augments = {'Enhances "Beast Healer" effect'}
+        },
+        neck = "Empath Necklace",
+        waist = "Isa Belt",
+        left_ear = "Handler's Earring",
+        right_ear = "Handler's Earring +1",
+        left_ring = "Defending Ring",
+        right_ring = "C. Palug Ring",
+        back = {
+            name = "Artio's Mantle",
+            augments = {'Eva.+20 /Mag. Eva.+20', 'Pet: "Regen"+10', 'Pet: Damage taken -5%'}
+        }
     })
 
     -- sets.idle.PetRegen = set_combine(sets.idle.Pet, {neck="Empath Necklace",feet=Pet_Regen_feet})
@@ -1345,7 +1372,10 @@ function init_gear_sets()
 
     sets.idle.Town = {
         ammo = "Staunch Tathlum +1",
-        head = "Nukumi Cabasset +2",
+        head = {
+            name = "Ankusa Helm +3",
+            augments = {'Enhances "Killer Instinct" effect'}
+        },
         neck = {
             name = "Bst. Collar +2",
             augments = {'Path: A'}
@@ -1483,7 +1513,10 @@ function init_gear_sets()
 
     sets.defense.Killer = {
         ammo = "Staunch Tathlum +1",
-        head = "Ankusa Helm +1",
+        head = {
+            name = "Ankusa Helm +3",
+            augments = {'Enhances "Killer Instinct" effect'}
+        },
         neck = "Loricate Torque +1",
         ear1 = "Beast Earring",
         ear2 = "Odnowa Earring +1",
@@ -1605,7 +1638,10 @@ function init_gear_sets()
         main = "Pangu",
         sub = "Kaidate",
         ammo = "Iron Gobbet",
-        head = "Ankusa Helm +1",
+        head = {
+            name = "Ankusa Helm +3",
+            augments = {'Enhances "Killer Instinct" effect'}
+        },
         neck = "Loricate Torque +1",
         ear1 = "Tuisto Earring",
         ear2 = "Odnowa Earring +1",
@@ -1758,8 +1794,10 @@ function init_gear_sets()
     sets.defense.DWNE.Killer = {
         main = "Pangu",
         sub = "Arktoi",
-        ammo = "Iron Gobbet",
-        head = "Ankusa Helm +3",
+        head = {
+            name = "Ankusa Helm +3",
+            augments = {'Enhances "Killer Instinct" effect'}
+        },
         neck = "Loricate Torque +1",
         ear1 = "Tuisto Earring",
         ear2 = "Odnowa Earring +1",
@@ -2252,7 +2290,10 @@ function init_gear_sets()
 
     sets.precast.WS['Calamity'] = {
         ammo = "Aurgelmir Orb +1",
-        head = "Ankusa Helm +3",
+        head = {
+            name = "Ankusa Helm +3",
+            augments = {'Enhances "Killer Instinct" effect'}
+        },
         neck = "Beastmaster Collar +2",
         ear1 = "Moonshade Earring",
         ear2 = "Thrud Earring",
@@ -2326,7 +2367,10 @@ function init_gear_sets()
 
     sets.precast.WS['Bora Axe'] = {
         ammo = "Aurgelmir Orb +1",
-        head = "Ankusa Helm +3",
+        head = {
+            name = "Ankusa Helm +3",
+            augments = {'Enhances "Killer Instinct" effect'}
+        },
         neck = "Beastmaster Collar +2",
         ear1 = "Sherida Earring",
         ear2 = "Telos Earring",
@@ -2361,7 +2405,10 @@ function init_gear_sets()
 
     sets.precast.WS['Onslaught'] = {
         ammo = "Aurgelmir Orb +1",
-        head = "Ankusa Helm +3",
+        head = {
+            name = "Ankusa Helm +3",
+            augments = {'Enhances "Killer Instinct" effect'}
+        },
         neck = "Caro Necklace",
         ear1 = "Ishvara Earring",
         ear2 = "Thrud Earring",
@@ -2525,7 +2572,10 @@ function init_gear_sets()
     -- SCYTHE WSs --
     sets.precast.WS['Spiral Hell'] = {
         ammo = "Aurgelmir Orb +1",
-        head = "Ankusa Helm +3",
+        head = {
+            name = "Ankusa Helm +3",
+            augments = {'Enhances "Killer Instinct" effect'}
+        },
         neck = "Caro Necklace",
         ear1 = "Moonshade Earring",
         ear2 = "Thrud Earring",
@@ -2547,7 +2597,10 @@ function init_gear_sets()
 
     sets.precast.WS['Cross Reaper'] = {
         ammo = "Aurgelmir Orb +1",
-        head = "Ankusa Helm +3",
+        head = {
+            name = "Ankusa Helm +3",
+            augments = {'Enhances "Killer Instinct" effect'}
+        },
         neck = "Caro Necklace",
         ear1 = "Moonshade Earring",
         ear2 = "Thrud Earring",
