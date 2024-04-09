@@ -109,8 +109,7 @@ function get_sets()
     -- Instruments to use
     Instrument = {}
     Instrument.Count = {
-        name = "Terpander",
-        augments = {'HP+30', 'Mag. Acc.+10', 'Damage Taken -3%'}
+        name = "Blurred Harp +1"
     }
     Instrument.Potency = {
         name = "Gjallarhorn"
@@ -119,8 +118,7 @@ function get_sets()
         name = "Marsyas"
     }
     Instrument.AOE_Sleep = {
-        name = "Terpander",
-        augments = {'HP+30', 'Mag. Acc.+10', 'Damage Taken -3%'}
+        name = "Blurred Harp +1"
     }
     Instrument.Idle = {
         name = "Linos",
@@ -153,10 +151,7 @@ function get_sets()
     -- Standard Idle set
     sets.Idle = {
         sub = "Genmei Shield",
-        range = {
-            name = "Terpander",
-            augments = {'HP+30', 'Mag. Acc.+10', 'Damage Taken -3%'}
-        },
+        range = "Blurred Harp +1",
         head = "Nyame Helm",
         body = "Fili Hongreline +1",
         hands = "Nyame Gauntlets",
@@ -167,10 +162,7 @@ function get_sets()
             augments = {'Path: A'}
         },
         waist = "Carrier's Sash",
-        right_ear = {
-            name = "Fili Earring",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+10', 'Mag. Acc.+10'}
-        },
+        right_ear = "Genmei Earring",
         left_ear = "Etiolation Earring",
         left_ring = "Defending Ring",
         right_ring = "Stikini Ring +1",

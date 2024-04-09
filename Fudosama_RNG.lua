@@ -1680,6 +1680,25 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
                 equip(sets.TrueShot)
             end
         end
+
+        -- Testing midcast sets for Gandiva AM3 , double shot and crit build
+        if buffactive['Double Shot'] then
+            equip(sets.DoubleShot)
+            if buffactive['Aftermath: Lv.3'] and player.equipment.ranged == "Gandiva" then
+                equip(sets.DoubleShotCritical)
+                if (spell.target.distance < (7 + spell.target.model_size)) and
+                    (spell.target.distance > (5 + spell.target.model_size)) then
+                    equip(sets.TrueShot)
+                end
+            end
+        elseif buffactive['Aftermath: Lv.3'] and player.equipment.ranged == "Gandiva" then
+            equip(sets.midcast.RA.Critical)
+            if (spell.target.distance < (7 + spell.target.model_size)) and
+                (spell.target.distance > (5 + spell.target.model_size)) then
+                equip(sets.TrueShot)
+            end
+        end
+
         if state.Buff.Barrage then
             equip(sets.buff.Barrage)
         end

@@ -32,7 +32,7 @@ function get_sets()
     mote_include_version = 2
 
     -- Load and initialize the include file.
-    include('Mote-Include.lua')
+    -- include('Mote-Include.lua')
 end
 
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
@@ -183,9 +183,8 @@ function init_gear_sets()
 
     sets.precast.FC = {
         head = {
-            name = "Merlinic Hood",
-            augments = {'Mag. Acc.+9', '"Avatar perpetuation cost" -2', '"Refresh"+1', 'Accuracy+3 Attack+3',
-                        'Mag. Acc.+20 "Mag.Atk.Bns."+20'}
+            name = "Amalric Coif",
+            augments = {'MP+60', 'Mag. Acc.+15', '"Mag.Atk.Bns."+15'}
         },
         body = "Agwu's Robe",
         hands = "Agwu's Gages",
@@ -432,21 +431,33 @@ function init_gear_sets()
     sets.midcast['Enhancing Magic'] = {
         main = gear.Gada_ENH,
         sub = "Ammurapi Shield",
-        head = "Befouled Crown",
-        body = "Telchine Chas.",
-        hands = "Telchine Gloves",
-        legs = "Telchine Braconi",
-        feet = "Telchine Pigaches",
+        head = {
+            name = "Telchine Cap",
+            augments = {'Enh. Mag. eff. dur. +7'}
+        },
+        body = {
+            name = "Telchine Chas.",
+            augments = {'Enh. Mag. eff. dur. +8'}
+        },
+        hands = {
+            name = "Telchine Gloves",
+            augments = {'Enh. Mag. eff. dur. +6'}
+        },
+        legs = {
+            name = "Telchine Braconi",
+            augments = {'Enh. Mag. eff. dur. +8'}
+        },
+        feet = {
+            name = "Telchine Pigaches",
+            augments = {'Enh. Mag. eff. dur. +9'}
+        },
         neck = "Incanter's Torque",
         ear1 = "Mimir Earring",
         ear2 = "Andoaa Earring",
-        ring1 = {
-            name = "Stikini Ring +1",
-            bag = "wardrobe3"
-        },
-        ring2 = {
-            name = "Stikini Ring +1",
-            bag = "wardrobe4"
+        ring1 = "Stikini Ring +1",
+        right_ring = {
+            name = "Gelatinous Ring +1",
+            augments = {'Path: A'}
         },
         back = "Fi Follet Cape +1",
         waist = "Olympus Sash"
@@ -455,12 +466,37 @@ function init_gear_sets()
     sets.midcast.EnhancingDuration = {
         main = gear.Gada_ENH,
         sub = "Ammurapi Shield",
-        head = "Telchine Cap",
-        body = "Telchine Chas.",
-        hands = "Telchine Gloves",
-        legs = "Telchine Braconi",
-        feet = "Telchine Pigaches",
-        waist = "Embla Sash"
+        head = {
+            name = "Telchine Cap",
+            augments = {'Enh. Mag. eff. dur. +7'}
+        },
+        body = {
+            name = "Telchine Chas.",
+            augments = {'Enh. Mag. eff. dur. +8'}
+        },
+        hands = {
+            name = "Telchine Gloves",
+            augments = {'Enh. Mag. eff. dur. +6'}
+        },
+        legs = {
+            name = "Telchine Braconi",
+            augments = {'Enh. Mag. eff. dur. +8'}
+        },
+        feet = {
+            name = "Telchine Pigaches",
+            augments = {'Enh. Mag. eff. dur. +9'}
+        },
+        neck = "Incanter's Torque",
+        ear1 = "Mimir Earring",
+        ear2 = "Andoaa Earring",
+        ring1 = "Stikini Ring +1",
+        right_ring = {
+            name = "Gelatinous Ring +1",
+            augments = {'Path: A'}
+        },
+        back = "Fi Follet Cape +1",
+        -- waist = = "Embla Sash",
+        waist = "Olympus Sash"
     }
 
     sets.midcast.Regen = set_combine(sets.midcast.EnhancingDuration, {
@@ -500,14 +536,14 @@ function init_gear_sets()
         body = "Jhakri Robe +2",
         hands = "Geo. Mitaines +3",
         legs = "Geomancy Pants +1",
-        feet = "Bagua Sandals +2",
+        feet = "Bagua Sandals +3",
         neck = {
             name = "Bagua Charm +1",
             augments = {'Path: A'}
         },
         left_ear = "Malignance Earring",
         right_ear = "Regal Earring",
-        ring1 = "Kishar Ring",
+        ring1 = "Stinki Ring +1",
         ring2 = "Stikini Ring +1",
         back = "Aurist's Cape +1"
         -- waist = "Luminary Sash"
@@ -577,7 +613,10 @@ function init_gear_sets()
         ear2 = "Regal Earring",
         ring1 = "Freke Ring",
         ring2 = "Metamor. Ring +1",
-        waist = "Eschan Stone",
+        waist = {
+            name = "Acuity Belt +1",
+            augments = {'Path: A'}
+        },
         back = {
             name = "Nantosuelta's Cape",
             augments = {'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', '"Mag.Atk.Bns."+10'}
@@ -620,7 +659,7 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
 
     sets.idle = {
-        main = "Bolelabunga",
+        -- main = "Bolelabunga",
         sub = "Genmei Shield",
         range = {
             name = "Dunna",
@@ -647,7 +686,10 @@ function init_gear_sets()
         },
         waist = "Fucho-no-Obi",
         left_ear = "Infused Earring",
-        right_ear = "Genmei Earring",
+        right_ear = {
+            name = "Azimuth Earring +1",
+            augments = {'System: 1 ID: 1676 Val: 0', 'Mag. Acc.+14', 'Damage taken-5%'}
+        },
         left_ring = "Shneddick Ring",
         right_ring = "Stikini Ring +1",
         back = {
@@ -684,8 +726,11 @@ function init_gear_sets()
             name = "Nyame Sollerets",
             augments = {'Path: B'}
         },
-        ear1 = "Genmei Earring", -- 2/0
-        -- ear2 = "Odnowa Earring +1", -- 3/3
+        left_ear = "Etiolation Earring", -- 0/0
+        right_ear = {
+            name = "Azimuth Earring +1",
+            augments = {'System: 1 ID: 1676 Val: 0', 'Mag. Acc.+14', 'Damage taken-5%'}
+        },
         ring1 = "Gelatinous Ring +1", -- 7/(-1)
         ring2 = "Defending Ring", -- 10/10
         back = {
@@ -696,12 +741,11 @@ function init_gear_sets()
     })
 
     -- .Pet sets are for when Luopan is present.
-    sets.idle.Pet = set_combine(sets.idle, {
+    sets.idle.Pet = {
         -- Pet: -DT (37.5% to cap) / Pet: Regen  -DT cap -87.5%
         main = "Idris",
         sub = "Genmei Shield",
         head = "Azimuth Hood +3",
-        -- body = "Jhakri Robe +2",
         body = {
             name = "Nyame Mail",
             augments = {'Path: B'}
@@ -716,19 +760,22 @@ function init_gear_sets()
             augments = {'Enhances "Radial Arcana" effect'}
         },
         neck = {
-            name = "Loricate Torque +1",
+            name = "Bagua Charm +1",
             augments = {'Path: A'}
         },
         waist = "Isa Belt",
         left_ear = "Etiolation Earring",
-        right_ear = "Genmei Earring",
+        right_ear = {
+            name = "Azimuth Earring +1",
+            augments = {'System: 1 ID: 1676 Val: 0', 'Mag. Acc.+14', 'Damage taken-5%'}
+        },
         left_ring = "Defending Ring",
         right_ring = "Stikini Ring +1",
         back = {
             name = "Nantosuelta's Cape",
             augments = {'VIT+20', 'Eva.+20 /Mag. Eva.+20', 'Pet: "Regen"+10', 'Pet: "Regen"+5'}
         }
-    })
+    }
 
     sets.idle.DT.Pet = set_combine(sets.idle.Pet, {
         body = "Mallquis Saio +2", -- 8/8
