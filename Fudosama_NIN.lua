@@ -935,10 +935,7 @@ function init_gear_sets()
         body = "Malignance Tabard",
         hands = "Malignance Gloves",
         -- legs = "Mpaca's Hose",
-        legs = {
-            name = "Tatena. Haidate +1",
-            augments = {'Path: A'}
-        },
+        legs = "Samnuha Tights",
         feet = "Malignance Boots",
         neck = {
             name = "Loricate Torque +1",

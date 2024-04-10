@@ -230,19 +230,18 @@ function init_gear_sets()
         },
         sub = "Sors Shield",
         ammo = "Impatiens",
-        -- head = {
-        --     name = "Vanya Hood",
-        --     augments = {'MP+50', '"Fast Cast"+10', 'Haste+2%'}
-        -- },
         head = "Ebers Cap +2",
-        body = "Inyanga Jubbah +1",
+        body = "Inyanga Jubbah +2",
         hands = {
             name = "Gendewitha Gages",
             augments = {'Phys. dmg. taken -3%', '"Cure" spellcasting time -4%'}
         },
         legs = "Aya. Cosciales +2",
         feet = "Regal Pumps +1",
-        neck = "Orison Locket",
+        neck = {
+            name = "Clr. Torque +1",
+            augments = {'Path: A'}
+        },
         waist = "Embla Sash",
         -- left_ear = "Malignance Earring",
         left_ear = "Loquac. Earring",
