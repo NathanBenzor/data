@@ -237,7 +237,7 @@ function init_gear_sets()
             augments = {'MP+5', '"Fast Cast"+7'}
         },
         legs = "Aya. Cosciales +2",
-        feet = "Merlinic Crackows",
+        feet = "Regal Pumps +1",
         neck = {
             name = "Clr. Torque +1",
             augments = {'Path: A'}
@@ -671,7 +671,7 @@ function init_gear_sets()
     }
 
     sets.midcast.Aquaveil = set_combine(sets.midcast.EnhancingDuration, {
-        main = "Vadose Rod",        
+        main = "Vadose Rod",
         sub = "Ammurapi Shield",
         ammo = "Staunch Tathlum +1",
         head = "Chironic Hat",
