@@ -1035,24 +1035,27 @@ function init_gear_sets()
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 
     sets.idle = {
-        ammo = {
-            name = "Coiste Bodhar",
-            augments = {'Path: A'}
+        ammo = "Staunch Tathlum +1",
+        head = {
+            name = "Nyame Helm",
+            augments = {'Path: B'}
         },
-        head = "Malignance Chapeau",
         body = "Hashishin Mintan +2",
-        hands = "Malignance Gloves",
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
         legs = {
             name = "Carmine Cuisses +1",
             augments = {'Accuracy+20', 'Attack+12', '"Dual Wield"+6'}
         },
-        feet = "Malignance Boots",
-        neck = "Bathy Choker +1",
-        waist = {
-            name = "Sailfi Belt +1",
-            augments = {'Path: A'}
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
         },
-        left_ear = "Suppanomimi",
+        neck = "Bathy Choker +1",
+        waist = "Plat. Mog. Belt",
+        left_ear = "Genmei Earring",
         right_ear = "Infused Earring",
         left_ring = "Stikini Ring +1",
         right_ring = "Stikini Ring +1",

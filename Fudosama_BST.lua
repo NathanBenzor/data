@@ -946,7 +946,7 @@ function init_gear_sets()
         neck = "Bst. Collar +2",
         waist = "Incarnation Sash",
         left_ear = "Kyrene's Earring",
-        right_ear = "Crep. Earring",
+        right_ear = "Enmerkar Earring",
         left_ring = "Tali'ah Ring",
         right_ring = "C. Palug Ring",
         back = {
@@ -1227,8 +1227,10 @@ function init_gear_sets()
             augments = {'Path: B', 'STR+10', 'Attack+15', 'Phys. dmg. taken-2'}
         },
         neck = "Bathy Choker +1",
-        ear1 = "Tuisto Earring",
-        ear2 = "Odnowa Earring +1",
+        -- ear1 = "Tuisto Earring",
+        -- ear2 = "Odnowa Earring +1",
+        left_ear = "Eabani Earring",
+        right_ear = "Genmei Earring",
         body = {
             name = "Nyame Mail",
             augments = {'Path: B', 'STR+10', 'Attack+15', 'Phys. dmg. taken-2'}
@@ -2113,10 +2115,7 @@ function init_gear_sets()
         legs = "Meg. Chausses +2",
         feet = "Malignance Boots",
         neck = "Anu Torque",
-        waist = {
-            name = "Sailfi Belt +1",
-            augments = {'Path: A'}
-        },
+        waist = "Reiki Yotai",
         left_ear = "Eabani Earring",
         right_ear = "Dedition Earring",
         left_ring = "Chirich Ring +1",

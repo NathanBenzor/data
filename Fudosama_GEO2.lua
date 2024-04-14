@@ -496,7 +496,6 @@ function get_sets()
             augments = {'Enhances "Mending Halation" effect'}
         },
         feet = "Bagua Sandals +3",
-        -- neck = "Incanter's Torque",
         neck = {
             name = "Bagua Charm +1",
             augments = {'Path: A'}
