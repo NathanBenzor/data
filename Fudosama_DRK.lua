@@ -14,6 +14,7 @@ function job_setup()
     state.Buff.Hasso = buffactive.Hasso or false
     state.Buff.Souleater = buffactive.souleater or false
     state.Buff['Last Resort'] = buffactive['Last Resort'] or false
+    state.Buff['Aftermath: Lv.3'] = buffactive['Aftermath: Lv.3'] or false
 
     weapon_list = S {"Apocalypse", "Caladbolg", "Liberator"}
     no_swap_gear = S {"Warp Ring", "Dim. Ring (Dem)", "Dim. Ring (Holla)", "Dim. Ring (Mea)", "Trizek Ring",
@@ -427,24 +428,40 @@ function init_gear_sets()
 
     sets.precast.WS['Entropy'].Acc = set_combine(sets.precast.WS['Entropy'], {})
 
-    sets.precast.WS['Insurgency'] = set_combine(sets.precast.WS['Cross Reaper'], {
+    sets.precast.WS['Insurgency'] = {
         ammo = "Knobkierrie",
-        head = "Heath. Bur. +3",
+        -- head = "Heath. Bur. +3",
+        head = {
+            name = "Nyame Helm",
+            augments = {'Path: B'}
+        },
         body = {
             name = "Nyame Mail",
             augments = {'Path: B'}
         },
-        hands = "Sakpata's Gauntlets",
+        hands = {
+            name = "Sakpata's Gauntlets",
+            augments = {'Path: A'}
+        },
         legs = {
             name = "Fall. Flanchard +3",
             augments = {'Enhances "Muted Soul" effect'}
         },
-        feet = "Heath. Sollerets +3",
+        -- legs = "Sakpata's Cuisses",
+        -- feet = "Heath. Sollerets +3",
+        -- feet = {
+        --     name = "Nyame Sollerets",
+        --     augments = {'Path: B'}
+        -- },
         neck = {
             name = "Abyssal Beads +2",
             augments = {'Path: A'}
         },
-        waist = "Fotia Belt",
+        -- waist = "Fotia Belt",
+        waist = {
+            name = "Sailfi Belt +1",
+            augments = {'Path: A'}
+        },
         left_ear = {
             name = "Moonshade Earring",
             augments = {'Accuracy+4', 'TP Bonus +250'}
@@ -459,9 +476,43 @@ function init_gear_sets()
             name = "Ankou's Mantle",
             augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%'}
         }
-    })
+    }
 
     sets.precast.WS['Insurgency'].Acc = set_combine(sets.precast.WS['Insurgency'], {})
+
+    sets.precast.WS['Insurgency'].PDL = {
+        ammo = "Crepuscular Pebble",
+        head = "Heath. Bur. +3",
+        body = "Sakpata's Plate",
+        hands = {
+            name = "Sakpata's Gauntlets",
+            augments = {'Path: A'}
+        },
+        legs = "Sakpata's Cuisses",
+        feet = "Heath. Sollerets +3",
+        neck = {
+            name = "Abyssal Beads +2",
+            augments = {'Path: A'}
+        },
+        waist = {
+            name = "Sailfi Belt +1",
+            augments = {'Path: A'}
+        },
+        left_ear = {
+            name = "Moonshade Earring",
+            augments = {'Accuracy+4', 'TP Bonus +250'}
+        },
+        right_ear = {
+            name = "Heath. Earring +1",
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+13', 'Mag. Acc.+13', 'Weapon skill damage +2%'}
+        },
+        left_ring = "Sroda Ring",
+        right_ring = "Niqmaddu Ring",
+        back = {
+            name = "Ankou's Mantle",
+            augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%'}
+        }
+    }
 
     sets.precast.WS['Quietus'] = set_combine(sets.precast.WS['Cross Reaper'], {
         ring1 = "Epaminondas's Ring",
@@ -512,25 +563,34 @@ function init_gear_sets()
 
     sets.precast.WS['Judgement'] = set_combine(sets.precast.WS, {
         ammo = "Knobkierrie",
-        head = "Sakpata's Helm",
-        body = "Ignominy Cuirass +3",
-        hands = "Sakpata's Gauntlets",
+        head = {
+            name = "Nyame Helm",
+            augments = {'Path: B'}
+        },
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
         legs = {
-            name = "Fall. Flanchard +3",
-            augments = {'Enhances "Muted Soul" effect'}
+            name = "Nya. Flanchard",
+            augments = {'Path: B'}
         },
         feet = "Heathen's Sollerets +3",
         neck = {
             name = "Abyssal Beads +2",
             augments = {'Path: A'}
         },
-        waist = "Fotia Belt",
+        waist = "Sailfi Belt +1",
         left_ear = "Thrud Earring",
         right_ear = {
             name = "Moonshade Earring",
             augments = {'Accuracy+4', 'TP Bonus +250'}
         },
-        left_ring = "Corneilia's Ring",
+        left_ring = "Cornelia's Ring",
         right_ring = "Niqmaddu Ring",
         back = {
             name = "Ankou's Mantle",
@@ -1027,6 +1087,33 @@ function init_gear_sets()
         }
     })
 
+    sets.engaged.Liberator.Aftermath = {
+        head = "Flamma Zucchetto +2",
+        body = "Sakpata's Plate",
+        hands = "Sakpata's Gauntlets",
+        legs = "Ig. Flanchard +3",
+        feet = "Flam. Gambieras +2",
+        neck = {
+            name = "Vim Torque +1",
+            augments = {'Path: A'}
+        },
+        waist = {
+            name = "Sailfi Belt +1",
+            augments = {'Path: A'}
+        },
+        left_ear = {
+            name = "Schere Earring",
+            augments = {'Path: A'}
+        },
+        right_ear = "Dedition Earring",
+        left_ring = "Niqmaddu Ring",
+        right_ring = "Chirich Ring +1",
+        back = {
+            name = "Ankou's Mantle",
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'DEX+10', 'Weapon skill damage +10%'}
+        }
+    }
+
     ------------------------------------------------------------------------------------------------
     ---------------------------------------- Hybrid Sets -------------------------------------------
     ------------------------------------------------------------------------------------------------
@@ -1214,6 +1301,9 @@ function customize_melee_set(meleeSet)
     if buffactive['Aftermath: Lv.3'] and player.equipment.main == "Caladbolg" and state.Critical.value then
 
         meleeSet = set_combine(meleeSet, sets.engaged.Caladbolg.Aftermath)
+    end
+    if buffactive['Aftermath: Lv.3'] and player.equipment.main == "Liberator" then
+        meleeSet = set_combine(meleeSet, sets.engaged.Liberator.Aftermath)
     end
 
     return meleeSet

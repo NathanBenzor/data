@@ -372,7 +372,7 @@ function init_gear_sets()
         right_ring = "Moonlight Ring",
         back = {
             name = "Ogma's Cape",
-            augments = {'HP+60', 'Eva.+20 /Mag. Eva.+20', 'Enmity+10', 'Phys. dmg. taken-10%'}
+            augments = {'HP+60', '"Fast Cast"+10', 'Phys. dmg. taken-10%'}
         }
     }
 

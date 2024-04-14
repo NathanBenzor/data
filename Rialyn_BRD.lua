@@ -153,7 +153,7 @@ function get_sets()
         sub = "Genmei Shield",
         range = "Blurred Harp +1",
         head = "Nyame Helm",
-        body = "Fili Hongreline +1",
+        body = "Fili Hongreline +2",
         hands = "Nyame Gauntlets",
         legs = "Nyame Flanchard",
         feet = "Fili Cothurnes +1",
@@ -168,6 +168,26 @@ function get_sets()
         right_ring = "Stikini Ring +1",
         back = "Moonlight Cape"
     } -- PDT 60%%, MDT 56%
+
+    sets.Idle.town = {
+        sub = "Genmei Shield",
+        range = "Blurred Harp +1",
+        head = "Fili Calot +2",
+        body = "Fili Hongreline +2",
+        hands = "Nyame Gauntlets",
+        legs = "Nyame Flanchard",
+        feet = "Fili Cothurnes +1",
+        neck = {
+            name = "Loricate Torque +1",
+            augments = {'Path: A'}
+        },
+        waist = "Carrier's Sash",
+        right_ear = "Genmei Earring",
+        left_ear = "Etiolation Earring",
+        left_ring = "Defending Ring",
+        right_ring = "Stikini Ring +1",
+        back = "Moonlight Cape"
+    }
 
     -- Used to swap into movement gear when the player is detected movement when not engaged
     sets.Movement = {
@@ -270,7 +290,7 @@ function get_sets()
             augments = {'Accuracy+15', 'Mag. Acc.+15', '"Mag.Atk.Bns."+15', '"Fast Cast"+3'}
         }, -- 8
         legs = "Volte Brais", -- 8
-        feet = "Fili Cothurnes +3", -- 13
+        feet = "Fili Cothurnes +1", -- 13
         neck = {
             name = "Unmoving Collar +1",
             augments = {'Path: A'},
@@ -313,8 +333,8 @@ function get_sets()
         --     name = "Kali",
         --     augments = {'Mag. Acc.+15', 'String instrument skill +10', 'Wind instrument skill +10'}
         -- },
-        head = "Fili Calot +1",
-        body = "Fili Hongreline +1",
+        head = "Fili Calot +2",
+        body = "Fili Hongreline +2",
         hands = "Fili Manchettes +1",
         legs = "Inyanga Shalwar +2",
         feet = "Brioso Slippers +1",
