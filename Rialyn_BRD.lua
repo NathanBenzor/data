@@ -153,10 +153,10 @@ function get_sets()
         sub = "Genmei Shield",
         range = "Blurred Harp +1",
         head = "Nyame Helm",
-        body = "Fili Hongreline +2",
+        body = "Nyame Mail",
         hands = "Nyame Gauntlets",
         legs = "Nyame Flanchard",
-        feet = "Fili Cothurnes +1",
+        feet = "Nyame Sollerets",
         neck = {
             name = "Loricate Torque +1",
             augments = {'Path: A'}
@@ -176,7 +176,7 @@ function get_sets()
         body = "Fili Hongreline +2",
         hands = "Nyame Gauntlets",
         legs = "Nyame Flanchard",
-        feet = "Fili Cothurnes +1",
+        feet = "Brioso Slippers +3",
         neck = {
             name = "Loricate Torque +1",
             augments = {'Path: A'}
@@ -337,7 +337,7 @@ function get_sets()
         body = "Fili Hongreline +2",
         hands = "Fili Manchettes +1",
         legs = "Inyanga Shalwar +2",
-        feet = "Brioso Slippers +1",
+        feet = "Brioso Slippers +2",
         neck = "Moonbow Whistle",
         waist = "Flume Belt +1",
         left_ear = {

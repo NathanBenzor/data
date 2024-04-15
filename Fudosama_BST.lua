@@ -100,7 +100,7 @@ function job_setup()
     get_combat_form()
     get_melee_groups()
 
-    lockstyleset = 137
+    lockstyleset = 135
 end
 
 function user_setup()
@@ -1373,17 +1373,14 @@ function init_gear_sets()
     })
 
     sets.idle.Town = {
-        ammo = "Staunch Tathlum +1",
+        ammo = {
+            name = "Hesperiidae",
+            augments = {'Path: A'}
+        },
         head = {
             name = "Ankusa Helm +3",
             augments = {'Enhances "Killer Instinct" effect'}
         },
-        neck = {
-            name = "Bst. Collar +2",
-            augments = {'Path: A'}
-        },
-        ear1 = "Tuisto Earring",
-        ear2 = "Odnowa Earring +1",
         body = "Nukumi Gausape +3",
         hands = "Nukumi Manoplas +3",
         legs = {
@@ -1394,14 +1391,20 @@ function init_gear_sets()
             name = "Ankusa Gaiters +3",
             augments = {'Enhances "Beast Healer" effect'}
         },
-        ring1 = "C. Palug Ring",
-        ring2 = "Shneddick Ring",
-        waist = "Plat. Mog. Belt",
-        -- back = PDT_back,
+        neck = {
+            name = "Bst. Collar +2",
+            augments = {'Path: A'}
+        },
+        waist = "Incarnation Sash",
+        left_ear = "Enmerkar Earring",
+        right_ear = "Crep. Earring",
+        left_ring = "C. Palug Ring",
+        right_ring = "Shneddick Ring",
         back = {
             name = "Artio's Mantle",
             augments = {'Eva.+20 /Mag. Eva.+20', 'Pet: "Regen"+10', 'Pet: Damage taken -5%'}
         }
+        -- back = PDT_back,
     }
 
     sets.resting = {}

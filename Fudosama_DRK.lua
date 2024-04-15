@@ -154,8 +154,8 @@ function init_gear_sets()
     sets.precast.FC = {
         ammo = "Sapience Orb",
         head = {
-            name = "Odyssean Helm",
-            augments = {'Mag. Acc.+25', '"Fast Cast"+4', 'MND+3'}
+            name = "Carmine Mask +1",
+            augments = {'Accuracy+20', 'Mag. Acc.+12', '"Fast Cast"+4'}
         },
         body = "Sacro Breastplate",
         hands = {
@@ -164,19 +164,15 @@ function init_gear_sets()
         },
         legs = {
             name = "Odyssean Cuisses",
-            augments = {'"Fast Cast"+3', 'STR+7'}
+            augments = {'Accuracy+10', '"Fast Cast"+5', 'INT+3', 'Mag. Acc.+13'}
         },
         feet = {
             name = "Odyssean Greaves",
-            augments = {'Accuracy+25', '"Fast Cast"+3'}
+            augments = {'"Mag.Atk.Bns."+16', '"Fast Cast"+4'}
         },
-        neck = {
-            name = "Loricate Torque +1",
-            augments = {'Path: A'}
-        },
-        waist = "Austerity Belt +1",
+        waist = "Plat. Mog. Belt",
         left_ear = "Malignance Earring",
-        right_ear = "Halasz Earring",
+        right_ear = "Loquac. Earring",
         left_ring = "Prolix Ring",
         right_ring = "Kishar Ring",
         back = "Moonbeam Cape"
@@ -728,6 +724,31 @@ function init_gear_sets()
             augments = {'Attack+13', 'Dark magic skill +10', '"Drain" and "Aspir" potency +24'}
         }
     })
+
+    sets.midcast.Endark = {
+        ammo = "Pemphredo Tathlum",
+        head = "Ig. Burgeonet +3",
+        body = {
+            name = "Carm. Scale Mail",
+            augments = {'HP+60', 'STR+10', 'INT+10'}
+        },
+        hands = {
+            name = "Fall. Fin. Gaunt. +2",
+            augments = {'Enhances "Diabolic Eye" effect'}
+        },
+        legs = "Heath. Flanchard +3",
+        feet = "Ratri Sollerets",
+        neck = "Incanter's Torque",
+        waist = "Austerity Belt +1",
+        left_ear = "Hirudinea Earring",
+        right_ear = "Mani Earring",
+        left_ring = "Evanescence Ring",
+        right_ring = "Stikini Ring +1",
+        back = {
+            name = "Niht Mantle",
+            augments = {'Attack+13', 'Dark magic skill +10', '"Drain" and "Aspir" potency +24'}
+        }
+    }
 
     sets.midcast.Aspir = sets.midcast.Drain
 

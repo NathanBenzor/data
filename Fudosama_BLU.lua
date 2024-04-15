@@ -377,8 +377,8 @@ function init_gear_sets()
     sets.precast.FC = {
         ammo = "Sapience Orb",
         head = {
-            name = "Herculean Helm",
-            augments = {'"Fast Cast"+4', 'Haste+1', 'Accuracy+15 Attack+15'}
+            name = "Carmine Mask +1",
+            augments = {'Accuracy+20', 'Mag. Acc.+12', '"Fast Cast"+4'}
         },
         body = {
             name = "Taeon Tabard",
@@ -396,7 +396,7 @@ function init_gear_sets()
         neck = "Orunmila's Torque",
         waist = "Witful Belt",
         left_ear = "Halasz Earring",
-        right_ear = "Genmei Earring",
+        right_ear = "Loquac. Earring",
         left_ring = "Kishar Ring",
         right_ring = "Prolix Ring",
         back = {
