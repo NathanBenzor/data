@@ -1226,7 +1226,11 @@ function init_gear_sets()
             name = "Nyame Helm",
             augments = {'Path: B', 'STR+10', 'Attack+15', 'Phys. dmg. taken-2'}
         },
-        neck = "Bathy Choker +1",
+        -- neck = "Bathy Choker +1",
+        neck = {
+            name = "Bst. Collar +2",
+            augments = {'Path: A'}
+        },
         -- ear1 = "Tuisto Earring",
         -- ear2 = "Odnowa Earring +1",
         left_ear = "Eabani Earring",
@@ -2008,7 +2012,10 @@ function init_gear_sets()
         hands = "Malignance Gloves",
         legs = "Meg. Chausses +2",
         feet = "Malignance Boots",
-        neck = "Anu Torque",
+        neck = {
+            name = "Bst. Collar +2",
+            augments = {'Path: A'}
+        },
         waist = {
             name = "Sailfi Belt +1",
             augments = {'Path: A'}
@@ -2042,7 +2049,11 @@ function init_gear_sets()
     sets.engaged.Hybrid = {
         ammo = "Staunch Tathlum +1",
         head = "Malignance Chapeau",
-        neck = "Anu Torque",
+        -- neck = "Anu Torque",
+        neck = {
+            name = "Bst. Collar +2",
+            augments = {'Path: A'}
+        },
         ear1 = "Sherida Earring",
         ear2 = "Brutal Earring",
         body = "Tali'ah Manteel +2",
@@ -2117,7 +2128,11 @@ function init_gear_sets()
         hands = "Malignance Gloves",
         legs = "Meg. Chausses +2",
         feet = "Malignance Boots",
-        neck = "Anu Torque",
+        -- neck = "Anu Torque",
+        neck = {
+            name = "Bst. Collar +2",
+            augments = {'Path: A'}
+        },
         waist = "Reiki Yotai",
         left_ear = "Eabani Earring",
         right_ear = "Dedition Earring",

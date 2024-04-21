@@ -478,7 +478,7 @@ function init_gear_sets()
         body = "Ebers Bliaut +2",
         hands = {
             name = "Fanatic Gloves",
-            augments = {'MP+5', '"Fast Cast"+7'}
+            augments = {'MP+35', 'Healing magic skill +10'}
         },
         legs = "Th. Pant. +2",
         feet = {
@@ -496,7 +496,7 @@ function init_gear_sets()
         right_ring = "Haoma's Ring",
         back = {
             name = "Alaunus's Cape",
-            augments = {'MND+20', 'Mag. Acc+20 /Mag. Dmg.+20', '"Cure" potency +10%'}
+            augments = {'MND+20', 'Mag. Acc+20 /Mag. Dmg.+20', '"Fast Cast"+10'}
         }
     }
 

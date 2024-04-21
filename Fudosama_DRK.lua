@@ -175,7 +175,10 @@ function init_gear_sets()
         right_ear = "Loquac. Earring",
         left_ring = "Prolix Ring",
         right_ring = "Kishar Ring",
-        back = "Moonbeam Cape"
+        back = {
+            name = "Ankou's Mantle",
+            augments = {'"Fast Cast"+10'}
+        }
     }
 
     sets.precast.FC['Dark Magic'] = set_combine(sets.precast.FC, {
@@ -671,14 +674,20 @@ function init_gear_sets()
     sets.midcast['Enfeebling Magic'] = {
         ammo = "Pemphredo Tathlum",
         head = "Carmine Mask +1",
-        body = "Hjarrandi Breast.",
-        hands = "Ratri Gadlings",
+        body = "Ignominy Breastplate +3",
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
         legs = "Ratri Cuisses",
-        feet = "Ig. Sollerets +3",
-        neck = "Erra Pendant",
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
+        neck = "Incanter's Torque",
         ear1 = "Digni. Earring",
         ear2 = "Malignance Earring",
-        ring1 = "Stikini Ring +1",
+        ring1 = "Kishae Ring",
         ring2 = "Stikini Ring +1",
         back = gear.DRK_FC_Cape,
         waist = "Plat. Mog. Belt"

@@ -133,7 +133,7 @@ function job_setup()
 
     define_roll_values()
 
-    lockstyleset = 200
+    lockstyleset = 117
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -293,16 +293,13 @@ function init_gear_sets()
             name = "Rostam",
             augments = {'Path: C'}
         },
-        range = {
-            name = "Compensator",
-            augments = {'DMG:+15', 'AGI+15', 'Rng.Acc.+15'}
-        },
+        range = "Compensator",
         head = {
             name = "Lanun Tricorne +3",
             augments = {'Enhances "Winning Streak" effect'}
         },
         body = "Malignance Tabard",
-        hands = "Chasseur's Gants +3",
+        hands = "Chasseur's Gants +2",
         legs = {
             name = "Desultor Tassets",
             augments = {'"Phantom Roll" ability delay -5', 'Phys. dmg. taken -4%'}
@@ -314,10 +311,11 @@ function init_gear_sets()
         right_ear = "Genmei Earring",
         right_ring = "Defending Ring",
         left_ring = "Luzaf's Ring",
-        back = {
-            name = "Camulus's Mantle",
-            augments = {'INT+20', 'Eva.+20 /Mag. Eva.+20', '"Snapshot"+10', 'Damage taken -5%'}
-        }
+        back = "Gunslinger's Cape"
+        -- back = {
+        --     name = "Camulus's Mantle",
+        --     augments = {'INT+20', 'Eva.+20 /Mag. Eva.+20', '"Snapshot"+10', 'Damage taken -5%'}
+        -- }
     }
 
     -- sets.precast.CorsairRoll.Duration = {main="Rostam", range="Compensator", neck="Regal Necklace",}
