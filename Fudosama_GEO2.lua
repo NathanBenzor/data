@@ -375,30 +375,21 @@ function get_sets()
     }
     -- Free Nuke
     sets.Midcast.Nuke = {
-        main = {
-            name = "Idris",
-            augments = {'Path: A'}
-        },
+        main = "Bunzi's Rod",
         sub = "Ammurapi Shield",
-        ammo = {
-            name = "Ghastly Tathlum +1",
-            augments = {'Path: A'}
-        },
-        head = "Ea Hat +1",
-        body = "Ea Houppe. +1",
-        hands = "Azimuth Gloves +3",
-        legs = "Azimuth Tights +3",
-        feet = "Azimuth Gaiters +3",
+        ammo = "Ghastly Tathlum +1", -- 8/8
+        head = "Azi. Hood +3",
+        body = "Azi. Coat +3",
+        hands = "Bagua Mitaines +2",
+        legs = "Agwu's Slops",
+        feet = "Azi. Gaiters +3",
         neck = "Mizu. Kubikazari",
+        ear1 = "Malignance Earring",
+        ear2 = "Regal Earring",
+        ring1 = "Freke Ring",
+        ring2 = "Metamor. Ring +1",
         waist = {
             name = "Acuity Belt +1",
-            augments = {'Path: A'}
-        },
-        left_ear = "Regal Earring",
-        right_ear = "Malignance Earring",
-        left_ring = "Freke Ring",
-        right_ring = {
-            name = "Metamor. Ring +1",
             augments = {'Path: A'}
         },
         back = {

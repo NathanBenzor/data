@@ -361,10 +361,7 @@ function init_gear_sets()
         neck = "Orunmila's Torque",
         waist = "Siegel Sash",
         left_ear = "Etiolation Earring",
-        right_ear = {
-            name = "Odnowa Earring +1",
-            augments = {'Path: A'}
-        },
+        right_ear = "Loquac. Earring",
         left_ring = {
             name = "Gelatinous Ring +1",
             augments = {'Path: A'}
@@ -462,6 +459,7 @@ function init_gear_sets()
     })
 
     sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, {
+        sub = "Utu Grip",
         ammo = {
             name = "Coiste Bodhar",
             augments = {'Path: A'}
@@ -523,6 +521,7 @@ function init_gear_sets()
     })
 
     sets.precast.WS['Dimidiation'] = set_combine(sets.precast.WS, {
+        sub = "Utu Grip",
         ammo = "Knobkierrie",
         head = {
             name = "Nyame Helm",

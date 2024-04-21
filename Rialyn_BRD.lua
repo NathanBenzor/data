@@ -150,7 +150,7 @@ function get_sets()
 
     -- Standard Idle set
     sets.Idle = {
-        sub = "Genmei Shield",
+        -- sub = "Genmei Shield",
         range = "Blurred Harp +1",
         head = "Nyame Helm",
         body = "Nyame Mail",
@@ -158,9 +158,13 @@ function get_sets()
         legs = "Nyame Flanchard",
         feet = "Nyame Sollerets",
         neck = {
-            name = "Loricate Torque +1",
+            name = "Bard's Charm +1",
             augments = {'Path: A'}
         },
+        -- neck = {
+        --     name = "Loricate Torque +1",
+        --     augments = {'Path: A'}
+        -- },
         waist = "Carrier's Sash",
         right_ear = "Genmei Earring",
         left_ear = "Etiolation Earring",
@@ -170,7 +174,7 @@ function get_sets()
     } -- PDT 60%%, MDT 56%
 
     sets.Idle.town = {
-        sub = "Genmei Shield",
+        -- sub = "Genmei Shield",
         range = "Blurred Harp +1",
         head = "Fili Calot +2",
         body = "Fili Hongreline +2",
