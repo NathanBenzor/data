@@ -414,6 +414,7 @@ function init_gear_sets()
             name = "Plun. Bonnet +3",
             augments = {'Enhances "Aura Steal" effect'}
         },
+        neck = "Pentalagus Charm",
         hands = "Pillager's Armlets +1",
         feet = "Pill. Poulaines +3"
     }
@@ -563,7 +564,7 @@ function init_gear_sets()
         },
         right_ear = "Odr Earring",
         left_ring = "Cornelia's Ring",
-        right_ring = "Karieyh Ring",
+        right_ring = "Sroda Ring",
         back = {
             name = "Toutatis's Cape",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'DEX+10', 'Weapon skill damage +10%'}
@@ -667,7 +668,7 @@ function init_gear_sets()
             augments = {'Path: B'}
         },
         neck = {
-            name = "Asn. Gorget +2",
+            name = "Asn. Gorget +1",
             augments = {'Path: A'}
         },
         waist = {
@@ -680,7 +681,7 @@ function init_gear_sets()
         },
         right_ear = "Odr Earring",
         left_ring = "Cornelia's Ring",
-        right_ring = "Karieyh Ring",
+        right_ring = "Sroda Ring",
         back = {
             name = "Toutatis's Cape",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'DEX+10', 'Weapon skill damage +10%'}
@@ -952,7 +953,7 @@ function init_gear_sets()
         },
         right_ear = "Friomisi Earring",
         left_ring = "Dingir Ring",
-        right_ring = "Epaminondas's Ring",
+        right_ring = "Cornellia's Ring",
         back = {
             name = "Toutatis's Cape",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'DEX+10', 'Weapon skill damage +10%'}
@@ -999,7 +1000,7 @@ function init_gear_sets()
         },
         right_ear = "Ishvara Earring",
         left_ring = "Cornelia's Ring",
-        right_ring = "Beithir Ring",
+        right_ring = "Sroda Ring",
         back = {
             name = "Toutatis's Cape",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'DEX+10', 'Weapon skill damage +10%'}
@@ -1088,7 +1089,7 @@ function init_gear_sets()
         body = {
             name = "Nyame Mail",
             augments = {'Path: B'}
-        },
+        },  
         hands = "Skulk. Armlets +2",
         legs = {
             name = "Nyame Flanchard",
@@ -1735,12 +1736,12 @@ function init_gear_sets()
             name = "Gleti's Knife",
             augments = {'Path: A'}
         },
-        sub = "Fusetto +2"
+        sub = "Centovente"
     }
 
     sets.Mandau = {
         main = {
-            name = "Mandau",
+            name = "Aeneas",
             augments = {'Path: A'}
         },
         sub = {
@@ -1750,10 +1751,10 @@ function init_gear_sets()
     }
     sets.Mandau_Centovente = {
         main = {
-            name = "Mandau",
+            name = "Aeneas",
             augments = {'Path: A'}
         },
-        sub = "Fusetto +2"
+        sub = "Centovente"
     }
 
     sets.Tauret = {
@@ -1763,9 +1764,9 @@ function init_gear_sets()
             augments = {'Path: A'}
         }
     }
-    sets.Tauret_Centovente = {
-        main = "Tauret",
-        sub = "Fusetto +2"
+    sets.Aeneas_Centovente = {
+        main = "Aeneas",
+        sub = "Centovente"
     }
 
     sets.Naegling = {

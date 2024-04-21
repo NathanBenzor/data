@@ -386,7 +386,10 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
 
     sets.precast.WS = {
-        ammo = "Oshasha's Treatise",
+        ammo = {
+            name = "Coiste Bodhar",
+            augments = {'Path: A'}
+        },
         head = {
             name = "Nyame Helm",
             augments = {'Path: B'}
@@ -412,12 +415,12 @@ function init_gear_sets()
             name = "Sailfi Belt +1",
             augments = {'Path: A'}
         },
-        left_ear = "Ishvara Earring",
+        left_ear = "Sherida Earring",
         right_ear = {
             name = "Moonshade Earring",
             augments = {'Accuracy+4', 'TP Bonus +250'}
         },
-        left_ring = "Karieyh Ring",
+        left_ring = "Sroda Ring",
         right_ring = "Cornelia's Ring",
         back = {
             name = "Sucellos's Cape",
@@ -531,7 +534,8 @@ function init_gear_sets()
     sets.precast.WS['Seraph Blade'] = set_combine(sets.precast.WS['Sanguine Blade'], {
         head = "Leth. Chappel +3",
         ear2 = "Moonshade Earring",
-        left_ring = "Freke Ring"
+        left_ring = "Freke Ring",
+        waist = "Orpheus's Sash"
     })
 
     sets.precast.WS['Aeolian Edge'] = {
@@ -1255,10 +1259,7 @@ function init_gear_sets()
             name = "Chironic Gloves",
             augments = {'Pet: MND+4', 'Attack+5', '"Refresh"+2', 'Accuracy+2 Attack+2'}
         },
-        legs = {
-            name = "Carmine Cuisses +1",
-            augments = {'HP+80', 'STR+12', 'INT+12'}
-        },
+        legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}},
         feet = {
             name = "Nyame Sollerets",
             augments = {'Path: B'}
@@ -1270,12 +1271,9 @@ function init_gear_sets()
         waist = "Plat. Mog. Belt",
         right_ear = "Regal Earring",
         left_ear = "Etiolation Earring",
-        left_ring = {
-            name = "Metamor. Ring +1",
-            augments = {'Path: A'}
-        },
+        left_ring="Defending Ring",
         right_ring = "Stikini Ring +1",
-        back = "Solemnity Cape"
+        back={ name="Sucellos's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Damage taken-5%',}},
     }
 
     sets.idle.DT = set_combine(sets.idle, {
