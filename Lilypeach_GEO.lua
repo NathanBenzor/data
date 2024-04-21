@@ -183,9 +183,8 @@ function init_gear_sets()
 
     sets.precast.FC = {
         head = {
-            name = "Merlinic Hood",
-            augments = {'Mag. Acc.+9', '"Avatar perpetuation cost" -2', '"Refresh"+1', 'Accuracy+3 Attack+3',
-                        'Mag. Acc.+20 "Mag.Atk.Bns."+20'}
+            name = "Amalric Coif +1",
+            augments = {'MP+80', 'Mag. Acc.+20', '"Mag.Atk.Bns."+20'}
         },
         body = "Agwu's Robe",
         hands = "Agwu's Gages",
@@ -315,7 +314,7 @@ function init_gear_sets()
             augments = {'Enhances "Mending Halation" effect'}
         },
         feet = "Azimuth Gaiters +3",
-        neck = "Incanter's Torque",
+        neck={ name="Bagua Charm +1", augments={'Path: A',}},
         waist = "Austerity Belt +1",
         left_ear = "Malignance Earring",
         right_ear={ name="Azimuth Earring +1", augments={'System: 1 ID: 1676 Val: 0','Mag. Acc.+15','Damage taken-5%',}},
@@ -563,9 +562,8 @@ function init_gear_sets()
             augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
         },
         head = {
-            name = "Merlinic Hood",
-            augments = {'Mag. Acc.+9', '"Avatar perpetuation cost" -2', '"Refresh"+1', 'Accuracy+3 Attack+3',
-                        'Mag. Acc.+20 "Mag.Atk.Bns."+20'}
+            name = "Nyame Helm",
+            augments = {'Path: B'}
         },
         body = "Shamash Robe",
         hands = {
@@ -583,7 +581,7 @@ function init_gear_sets()
         },
         waist = "Fucho-no-Obi",
         left_ear = "Infused Earring",
-        right_ear = "Genmei Earring",
+        right_ear={ name="Azimuth Earring +1", augments={'System: 1 ID: 1676 Val: 0','Mag. Acc.+15','Damage taken-5%',}},
         left_ring = "Shneddick Ring",
         right_ring = "Stikini Ring +1",
         back={ name="Nantosuelta's Cape", augments={'VIT+20','Eva.+20 /Mag. Eva.+20','Pet: "Regen"+10','Pet: Damage taken -5%',}},
@@ -602,7 +600,7 @@ function init_gear_sets()
             augments = {'Path: A'}
         },
         ear1 = "Genmei Earring", -- 2/0
-        ear2 = "Odnowa Earring +1", -- 3/3
+        right_ear={ name="Azimuth Earring +1", augments={'System: 1 ID: 1676 Val: 0','Mag. Acc.+15','Damage taken-5%',}},
         ring1 = "Gelatinous Ring +1", -- 7/(-1)
         ring2 = "Defending Ring", -- 10/10
         back = {
@@ -638,7 +636,7 @@ function init_gear_sets()
         },
         waist = "Isa Belt",
         left_ear = "Etiolation Earring",
-        right_ear = "Genmei Earring",
+        right_ear={ name="Azimuth Earring +1", augments={'System: 1 ID: 1676 Val: 0','Mag. Acc.+15','Damage taken-5%',}},
         left_ring = "Defending Ring",
         right_ring = "Stikini Ring +1",
         -- back = {
@@ -750,13 +748,20 @@ function init_gear_sets()
     --------------------------------------
 
     sets.magic_burst = {
+        ammo = {
+            name = "Ghastly Tathlum +1",
+            augments = {'Path: A'}
+        },
         main="Bunzi's Rod",
         sub="Ammurapi Shield",
         head = "Ea Hat +1", -- 7/(7)
-        body = "Ea Houppe. +1", -- 9/(9)
-        hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-        legs = "Ea Slops +1", -- 8/(8)
-        feet = "Bagua Sandals +3",
+        body = "Azimuth Coat +3", -- 9/(9)
+        hands = {
+            name = "Agwu's Gages",
+            augments = {'Path: A'}
+        },
+        legs = "Azimuth Tights +2", -- 8/(8)
+        feet = "Agwu's Pigaches",
         neck = "Sybil Scarf",
         left_ear="Regal Earring",
         right_ear="Malignance Earring",
