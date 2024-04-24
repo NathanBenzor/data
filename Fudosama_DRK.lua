@@ -1060,7 +1060,10 @@ function init_gear_sets()
         },
         head = "Sakpata's Helm",
         body = "Dagon Breast.",
-        hands = "Sakpata's Gauntlets",
+        hands = {
+            name = "Sakpata's Gauntlets",
+            augments = {'Path: A'}
+        },
         legs = "Sakpata's Cuisses",
         feet = {
             name = "Sakpata's Leggings",

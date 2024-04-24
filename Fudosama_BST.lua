@@ -129,7 +129,8 @@ function user_setup()
         'Feculent Broth',
         'Putrescent Broth',
         'C. Plasma Broth',
-        'Spumante Broth'
+        'Spumante Broth',
+        'Spicy Broth'
 
     }
     send_command('bind !f8 gs c cycle JugMode')
@@ -832,7 +833,7 @@ function init_gear_sets()
     ---------------------------
 
     sets.ReadyRecast = {
-        legs = "Gleti's Greaves"
+        legs = "Gleti's Breeches"
     }
     sets.midcast.Pet.TPBonus = {
         hands = "Nukumi Manoplas +3"
@@ -1311,7 +1312,7 @@ function init_gear_sets()
         },
         neck = "Empath Necklace",
         waist = "Isa Belt",
-        left_ear = "Handler's Earring",
+        left_ear = "Enmerkar Earring",
         right_ear = "Handler's Earring +1",
         left_ring = "Defending Ring",
         right_ring = "C. Palug Ring",
@@ -2364,11 +2365,11 @@ function init_gear_sets()
         },
         -- neck = "Fotia Gorget",
         neck = "Beastmaster Collar +2",
-        waist = "Fotia Belt",
-        -- waist = {
-        --     name = "Sailfi Belt +1",
-        --     augments = {'Path: A'}
-        -- },
+        -- waist = "Fotia Belt",
+        waist = {
+            name = "Sailfi Belt +1",
+            augments = {'Path: A'}
+        },
         left_ear = "Thrud Earring",
         right_ear = "Sherida Earring",
         left_ring = "Sroda Ring",

@@ -886,9 +886,7 @@ function init_gear_sets()
     --     waist="Carrier's Sash",
     --     })
 
-    sets.idle.Town = set_combine(sets.idle, {
-        main = "Yagrush",
-        sub = "Genmei Shield",
+    sets.idle.Town = {
         head = "Ebers Cap +2",
         body = "Ebers Bliaut +2",
         hands = "Ebers Mitts +2",
@@ -899,7 +897,7 @@ function init_gear_sets()
         ear2 = "Regal Earring",
         ring1 = "Shneddick Ring",
         ring2 = "Stikini Ring"
-    })
+    }
 
     sets.precast.JA["Afflatus Solace"] = {
         body = "Ebers Bliaut +2"

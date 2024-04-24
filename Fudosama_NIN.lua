@@ -986,6 +986,10 @@ function init_gear_sets()
         head = "Malignance Chapeau",
         body = "Malignance Tabard",
         hands = "Malignance Gloves",
+        -- hands = {
+        --     name = "Adhemar Wristbands",
+        --     augments = {'DEX+10', 'AGI+10', 'Accuracy+15'}
+        -- },
         legs = {
             name = "Samnuha Tights",
             augments = {'STR+10', 'DEX+10', '"Dbl.Atk."+3', '"Triple Atk."+3'}
@@ -995,10 +999,14 @@ function init_gear_sets()
             name = "Ninja Nodowa +1",
             augments = {'Path: A'}
         },
-        waist = "Windbuffet Belt +1",
+        -- waist = "Windbuffet Belt +1",
+        waist = {
+            name = "Sailfi Belt +1",
+            augments = {'Path: A'}
+        },
         left_ear = "Telos Earring",
-        right_ear = "Cessance Earring",
-        left_ring = "Defending Ring",
+        right_ear = "Dedition Earring",
+        left_ring = "Epona's Ring",
         right_ring = "Gere Ring",
         back = {
             name = "Andartia's Mantle",
