@@ -311,29 +311,28 @@ function init_gear_sets()
         right_ear = "Genmei Earring",
         right_ring = "Defending Ring",
         left_ring = "Luzaf's Ring",
-        back = "Gunslinger's Cape"
-        -- back = {
-        --     name = "Camulus's Mantle",
-        --     augments = {'INT+20', 'Eva.+20 /Mag. Eva.+20', '"Snapshot"+10', 'Damage taken -5%'}
-        -- }
+        back = {
+            name = "Gunslinger's Cape",
+            augments = {'Enmity-1', '"Mag.Atk.Bns."+1', '"Phantom Roll" ability delay -3'}
+        }
     }
 
     -- sets.precast.CorsairRoll.Duration = {main="Rostam", range="Compensator", neck="Regal Necklace",}
     -- sets.precast.CorsairRoll.LowerDelay = {back="Gunslinger's Cape"}
     sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {
-        legs = "Chas. Culottes +3"
+        legs = "Chas. Culottes +2"
     })
     sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {
-        feet = "Chass. Bottes +3"
+        feet = "Chass. Bottes +2"
     })
     sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {
-        head = "Chass. Tricorne +3"
+        head = "Chass. Tricorne +2"
     })
     sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {
-        body = "Chasseur's Frac +3"
+        body = "Chasseur's Frac +2"
     })
     sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {
-        hands = "Chasseur's Gants +3"
+        hands = "Chasseur's Gants +2"
     })
 
     sets.precast.LuzafRing = {
@@ -706,11 +705,10 @@ function init_gear_sets()
     -- sets.idle.Refresh = set_combine()
 
     sets.idle.Town = set_combine(sets.idle, {
-        ammo = gear.MAbullet,
         head = "Malignance Chapeau",
         body = "Malignance Tabard",
         hands = "Malignance Gloves",
-        legs = "Chas. Culottes +3",
+        legs = "Chas. Culottes +2",
         feet = "Malignance Boots",
         neck = "Loricate Torque +1",
         waist = "Plat. Mog. Belt",
@@ -722,9 +720,13 @@ function init_gear_sets()
         left_ring = "Defending Ring",
         right_ring = "Shneddick Ring",
         back = {
-            name = "Camulus's Mantle",
-            augments = {'INT+20', 'Eva.+20 /Mag. Eva.+20', '"Snapshot"+10', 'Damage taken -5%'}
+            name = "Gunslinger's Cape",
+            augments = {'Enmity-1', '"Mag.Atk.Bns."+1', '"Phantom Roll" ability delay -3'}
         }
+        -- back = {
+        --     name = "Camulus's Mantle",
+        --     augments = {'INT+20', 'Eva.+20 /Mag. Eva.+20', '"Snapshot"+10', 'Damage taken -5%'}
+        -- }
     })
 
     ------------------------------------------------------------------------------------------------

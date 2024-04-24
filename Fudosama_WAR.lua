@@ -244,18 +244,12 @@ function init_gear_sets()
         ammo = "Knobkierrie",
         head = "Agoge Mask +3",
         body = "Sakpata's Plate",
-        -- body = {
-        --     name = "Nyame Mail",
-        --     augments = {'Path: B'}
-        -- },
-        -- hands = "Sakpata's Gauntlets",
         hands = "Boii Mufflers +3",
         legs = "Boii Cuisses +3",
-        feet = "Sakpata's Leggings",
-        -- feet = {
-        --     name = "Nyame Sollerets",
-        --     augments = {'Path: B'}
-        -- },
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
         neck = "Warrior's Bead Necklace +2",
         waist = "Sailfi Belt +1",
         left_ear = "Thrud Earring",
@@ -827,13 +821,22 @@ function init_gear_sets()
             augments = {'Path: B'}
         },
         hands = "Boii Mufflers +3",
-        legs = "Boii Cuisses +3",
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
         feet = {
             name = "Nyame Sollerets",
             augments = {'Path: B'}
         },
-        neck = "Warrior's Bead Necklace +2",
-        waist = "Sailfi Belt +1",
+        neck = {
+            name = "War. Beads +2",
+            augments = {'Path: A'}
+        },
+        waist = {
+            name = "Sailfi Belt +1",
+            augments = {'Path: A'}
+        },
         left_ear = "Thrud Earring",
         right_ear = "Moonshade Earring",
         left_ring = "Regal Ring",

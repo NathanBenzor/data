@@ -236,7 +236,7 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
 
     sets.Enmity = {
-        ammo = "Sapience Orb",
+        ammo = "Aqreqaq Bomblet",
         head = "Halitus Helm",
         body = "Emet Harness +1",
         hands = "Kurys Gloves",
@@ -247,6 +247,7 @@ function init_gear_sets()
             augments = {'Path: A'}
         },
         waist = "Plat. Mog. Belt",
+        -- left_ear = "Cryptic Earring",
         left_ear = "Tuisto Earring",
         right_ear = {
             name = "Odnowa Earring +1",
@@ -254,7 +255,11 @@ function init_gear_sets()
         },
         left_ring = "Supershear Ring",
         right_ring = "Moonlight Ring",
-        back = "Moonbeam Cape"
+        -- back = "Moonbeam Cape"
+        back = {
+            name = "Ogma's Cape",
+            augments = {'HP+60', 'Eva.+20 /Mag. Eva.+20', 'HP+20', 'Enmity+10', 'Phys. dmg. taken-10%'}
+        }
     }
 
     sets.precast.JA['Vallation'] = set_combine(sets.Enmity, {
@@ -359,7 +364,7 @@ function init_gear_sets()
             augments = {'MP+60', 'INT+10', 'MND+10'}
         },
         neck = "Orunmila's Torque",
-        waist = "Siegel Sash",
+        waist = "Plat. Mog. Belt",
         left_ear = "Etiolation Earring",
         right_ear = "Loquac. Earring",
         left_ring = {
@@ -369,7 +374,7 @@ function init_gear_sets()
         right_ring = "Moonlight Ring",
         back = {
             name = "Ogma's Cape",
-            augments = {'HP+60', '"Fast Cast"+10', 'Phys. dmg. taken-10%'}
+            augments = {'HP+60', 'HP+20', '"Fast Cast"+10', 'Phys. dmg. taken-10%'}
         }
     }
 
