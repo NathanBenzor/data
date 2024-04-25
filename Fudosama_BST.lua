@@ -2441,7 +2441,7 @@ function init_gear_sets()
     }
 
     sets.precast.WS['Primal Rend'] = {
-        ammo = "Pemphredo Tathlum",
+        ammo = "Oshasha's Treatise",
         head = MAB_head,
         neck = "Baetyl Pendant",
         ear1 = "Moonshade Earring",
