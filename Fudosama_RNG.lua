@@ -169,7 +169,7 @@ function user_setup()
     send_command('bind ^numpad2 input /ws "Sniper Shot" <t>')
     send_command('bind ^numpad3 input /ws "Numbing Shot" <t>')
 
-    send_command('bind numpad0 input /ra <t>')
+    -- send_command('bind numpad0 input /ra <t>')
 
     select_default_macro_book()
     set_lockstyle()
@@ -786,17 +786,60 @@ function init_gear_sets()
     })
 
     sets.midcast.RA.Critical = set_combine(sets.midcast.RA, {
-        head = {
-            name = "Blistering Sallet +1",
-            augments = {'Path: A'}
-        }, -- 10%
+        -- head = {
+        --     name = "Blistering Sallet +1",
+        --     augments = {'Path: A'}
+        -- }, -- 10% Use for Arebati V20, V25
+        head = "Meghanada Visor +2",
         body = "Nisroch Jerkin", -- 10%
         hands = "Mummu Wrists +2", -- 6%
         legs = "Amini Bragues +3", -- 6%
-        feet = {
-            name = "Arcadian Socks +3",
-            augments = {'Enhances "Stealth Shot" effect'}
-        }, -- 8%
+        feet = "Osh. Leggings +1", -- 10%
+        neck = {
+            name = "Scout's Gorget +2",
+            augments = {'Path: A'}
+        },
+        waist = "K. Kachina Belt +1", -- 5%
+        left_ear = "Odr Earring", -- 5%   
+        right_ear = "Telos Earring",
+        left_ring = "Begrudging Ring", -- 5%
+        right_ring = "Mummu Ring", -- 3%
+        back = {
+            name = "Belenus's Cape",
+            augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'AGI+10', 'Crit.hit rate+10', 'Damage taken-5%'}
+        } -- 10%
+    }) -- 58%
+
+    sets.midcast.RA.DoubleShotCritical = {
+        -- head = {
+        --     name = "Blistering Sallet +1",
+        --     augments = {'Path: A'}
+        -- },
+        -- body = "Nisroch Jerkin",
+        -- hands = "Oshosi Gloves",
+        -- feet = "Osh. Leggings +1",
+        -- neck = {
+        --     name = "Scout's Gorget +2",
+        --     augments = {'Path: A'}
+        -- },
+        -- waist = "K. Kachina Belt +1",
+        -- left_ear = "Odr Earring",
+        -- right_ear = "Telos Earring",
+        -- left_ring = "Begrudging Ring",
+        -- right_ring = "Mummu Ring",
+        -- back = {
+        --     name = "Belenus's Cape",
+        --     augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'Rng.Acc.+10', 'Crit.hit rate+10', 'Damage taken-5%'}
+        -- }
+        -- head = {
+        --     name = "Blistering Sallet +1",
+        --     augments = {'Path: A'}
+        -- }, -- 10%
+        head = "Meghanada Visor +2",
+        body = "Nisroch Jerkin", -- 10%
+        hands = "Mummu Wrists +2", -- 6%
+        legs = "Amini Bragues +3", -- 6%
+        feet = "Osh. Leggings +1",
         neck = {
             name = "Scout's Gorget +2",
             augments = {'Path: A'}
@@ -810,7 +853,7 @@ function init_gear_sets()
             name = "Belenus's Cape",
             augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'Rng.Acc.+10', 'Crit.hit rate+10', 'Damage taken-5%'}
         } -- 10%
-    }) -- 58%
+    }
 
     sets.midcast.RA.STP = set_combine(sets.midcast.RA, {
         -- neck = "Iskur Gorget",
@@ -829,20 +872,8 @@ function init_gear_sets()
         head = "Arcadian Beret +3",
         body = "Arcadian Jerkin +3",
         hands = "Oshosi Gloves", -- 5
-        legs = "Osh. Trousers", -- 7
-        feet = "Osh. Leggings", -- 4
-
-        -- head = {
-        --     name = "Blistering Sallet +1",
-        --     augments = {'Path: A'}
-        -- },
-        -- body = "Nisroch Jerkin",
-        -- hands = "Mummu Wrists +2",
-        -- legs = "Amini Bragues +3",
-        -- feet = {
-        --     name = "Arcadian Socks +3",
-        --     augments = {'Enhances "Stealth Shot" effect'}
-        -- },
+        legs = "Oshosi Trousers", -- 7
+        feet = "Osh. Leggings +1",
         neck = {
             name = "Scout's Gorget +2",
             augments = {'Path: A'}
@@ -857,33 +888,6 @@ function init_gear_sets()
             augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'Rng.Acc.+10', '"Store TP"+10', 'Phys. dmg. taken-10%'}
         }
     } -- 25
-
-    sets.DoubleShot.Critical = {
-        head = {
-            name = "Blistering Sallet +1",
-            augments = {'Path: A'}
-        },
-        body = "Nisroch Jerkin",
-        hands = "Mummu Wrists +2",
-        legs = "Amini Bragues +3",
-        feet = {
-            name = "Arcadian Socks +3",
-            augments = {'Enhances "Stealth Shot" effect'}
-        },
-        neck = {
-            name = "Scout's Gorget +2",
-            augments = {'Path: A'}
-        },
-        waist = "K. Kachina Belt +1",
-        left_ear = "Odr Earring",
-        right_ear = "Telos Earring",
-        left_ring = "Begrudging Ring",
-        right_ring = "Mummu Ring",
-        back = {
-            name = "Belenus's Cape",
-            augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'Rng.Acc.+10', 'Crit.hit rate+10', 'Damage taken-5%'}
-        }
-    }
 
     sets.TrueShot = {
         body = "Nisroch Jerkin",
@@ -1023,21 +1027,21 @@ function init_gear_sets()
     -- EG: sets.engaged.Dagger.Accuracy.Evasion
 
     sets.engaged = {
-        -- head = "Malignance Chapeau",
-        head = {
-            name = "Nyame Helm",
-            augments = {'Path: B'}
-        },
-        -- body = "Malignance Tabard",
-        body = {
-            name = "Nyame Mail",
-            augments = {'Path: B'}
-        },
-        -- hands = "Malignance Gloves",
-        hands = {
-            name = "Nyame Gauntlets",
-            augments = {'Path: B'}
-        },
+        head = "Malignance Chapeau",
+        -- head = {
+        --     name = "Nyame Helm",
+        --     augments = {'Path: B'}
+        -- },
+        body = "Malignance Tabard",
+        -- body = {
+        --     name = "Nyame Mail",
+        --     augments = {'Path: B'}
+        -- },
+        hands = "Malignance Gloves",
+        -- hands = {
+        --     name = "Nyame Gauntlets",
+        --     augments = {'Path: B'}
+        -- },
         -- legs = {
         --     name = "Samnuha Tights",
         --     augments = {'STR+10', 'DEX+10', '"Dbl.Atk."+3', '"Triple Atk."+3'}
@@ -1046,11 +1050,11 @@ function init_gear_sets()
             name = "Nyame Flanchard",
             augments = {'Path: B'}
         },
-        -- feet = "Malignance Boots",
-        feet = {
-            name = "Nyame Sollerets",
-            augments = {'Path: B'}
-        },
+        feet = "Malignance Boots",
+        -- feet = {
+        --     name = "Nyame Sollerets",
+        --     augments = {'Path: B'}
+        -- },
         neck = {
             name = "Scout's Gorget +2",
             augments = {'Path: A'}
@@ -1481,11 +1485,31 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
 
     sets.buff.Barrage = {
-        hands = "Orion Bracers +3"
+        head = {
+            name = "Arcadian Beret +3",
+            augments = {'Enhances "Recycle" effect'}
+        }, -- 10%
+        body = "Nisroch Jerkin", -- 10%
+        hands = "Orion Bracers +3",
+        legs = "Amini Bragues +3", -- 6%
+        feet = "Osh. Leggings +1",
+        neck = {
+            name = "Scout's Gorget +2",
+            augments = {'Path: A'}
+        },
+        waist = "K. Kachina Belt +1", -- 5%
+        left_ear = "Odr Earring", -- 5%   
+        right_ear = "Telos Earring",
+        left_ring = "Begrudging Ring", -- 5%
+        right_ring = "Mummu Ring", -- 3%
+        back = {
+            name = "Belenus's Cape",
+            augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'Rng.Acc.+10', 'Crit.hit rate+10', 'Damage taken-5%'}
+        } -- 10%
     }
     sets.buff['Velocity Shot'] = set_combine(sets.midcast.RA, {
-        body = "Amini Caban +3",
-        back = gear.RNG_TP_Cape
+        body = "Amini Caban +3"
+        -- back = gear.RNG_TP_Cape
     })
     sets.buff.Camouflage = {
         body = "Orion Jerkin +1"
@@ -1639,59 +1663,30 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_post_midcast(spell, action, spellMap, eventArgs)
     if spell.action_type == 'Ranged Attack' then
-        if buffactive['Double Shot'] then
-            equip(sets.DoubleShot)
-            if buffactive['Aftermath: Lv.3'] and player.equipment.ranged == "Armageddon" then
-                equip(sets.DoubleShotCritical)
-                if (spell.target.distance < (7 + spell.target.model_size)) and
-                    (spell.target.distance > (5 + spell.target.model_size)) then
-                    equip(sets.TrueShot)
-                end
-            end
-        elseif buffactive['Aftermath: Lv.3'] and player.equipment.ranged == "Armageddon" then
-            equip(sets.midcast.RA.Critical)
-            if (spell.target.distance < (7 + spell.target.model_size)) and
-                (spell.target.distance > (5 + spell.target.model_size)) then
-                equip(sets.TrueShot)
-            end
-        end
-
-        -- Testing midcast sets for Gandiva AM3 , double shot and crit build
-        if buffactive['Double Shot'] then
-            equip(sets.DoubleShot)
-            if buffactive['Aftermath: Lv.3'] and player.equipment.ranged == "Gandiva" then
-                equip(sets.DoubleShotCritical)
-                if (spell.target.distance < (7 + spell.target.model_size)) and
-                    (spell.target.distance > (5 + spell.target.model_size)) then
-                    equip(sets.TrueShot)
-                end
-            end
-        elseif buffactive['Aftermath: Lv.3'] and player.equipment.ranged == "Gandiva" then
-            equip(sets.midcast.RA.Critical)
-            if (spell.target.distance < (7 + spell.target.model_size)) and
-                (spell.target.distance > (5 + spell.target.model_size)) then
-                equip(sets.TrueShot)
-            end
-        end
-
-        -- Midcast sets for Annihilator AM3 , double shot and crit build
-        -- USED FOR AREBATI V20 FIGHT ==> DISABLE FOR NORMAL USE
         -- if buffactive['Double Shot'] then
         --     equip(sets.DoubleShot)
-        --     if buffactive['Aftermath: Lv.3'] and player.equipment.ranged == "Annihilator" then
-        --         equip(sets.DoubleShotCritical)
+        --     if buffactive['Aftermath: Lv.3'] and player.equipment.ranged == "Armageddon" then
+        --         equip(sets.midcast.RA.DoubleShotCritical)
         --         if (spell.target.distance < (7 + spell.target.model_size)) and
         --             (spell.target.distance > (5 + spell.target.model_size)) then
         --             equip(sets.TrueShot)
         --         end
         --     end
-        -- elseif buffactive['Aftermath: Lv.3'] and player.equipment.ranged == "Annihilator" then
+        -- elseif buffactive['Aftermath: Lv.3'] and player.equipment.ranged == "Armageddon" then
         --     equip(sets.midcast.RA.Critical)
         --     if (spell.target.distance < (7 + spell.target.model_size)) and
         --         (spell.target.distance > (5 + spell.target.model_size)) then
         --         equip(sets.TrueShot)
         --     end
         -- end
+
+        if buffactive['Aftermath: Lv.3'] and player.equipment.ranged == "Armageddon" then
+            equip(sets.midcast.RA.Critical)
+        end
+
+        if buffactive['Aftermath: Lv.3'] and player.equipment.ranged == "Gandiva" then
+            equip(sets.midcast.RA.Critical)
+        end
 
         if state.Buff.Barrage then
             equip(sets.buff.Barrage)

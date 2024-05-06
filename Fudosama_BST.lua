@@ -130,7 +130,8 @@ function user_setup()
         'Putrescent Broth',
         'C. Plasma Broth',
         'Spumante Broth',
-        'Spicy Broth'
+        'Spicy Broth',
+        'Furious Broth'
 
     }
     send_command('bind !f8 gs c cycle JugMode')
@@ -718,11 +719,16 @@ function init_gear_sets()
         }
     }
     sets.precast.JA['Call Beast'] = {
-        head = CB_head,
-        body = CB_body,
-        hands = CB_hands,
-        legs = CB_legs,
-        feet = CB_feet
+        head = {
+            name = "Acro Helm",
+            augments = {'"Call Beast" ability delay -4'}
+        },
+        body = "Totemic Jackcoat +3",
+        hands = "Ankusa Gloves +3",
+        feet = {
+            name = "Acro Leggings",
+            augments = {'"Call Beast" ability delay -4'}
+        }
     }
     sets.precast.JA['Bestial Loyalty'] = sets.precast.JA['Call Beast']
 
@@ -806,7 +812,7 @@ function init_gear_sets()
         ear1 = "Enchanter's Earring",
         ear2 = "Enchanter Earring +1",
         body = "Ankusa Jackcoat +2",
-        hands = "Ankusa Gloves +1",
+        hands = "Ankusa Gloves +3",
         ring1 = "Dawnsoul Ring",
         ring2 = "Dawnsoul Ring",
         back = Primal_back,

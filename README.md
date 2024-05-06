@@ -46,3 +46,4 @@
 ## Misc. commands
 
 - //gs disable sub, //gs disable main, //gs enable sub, //gs enable main
+- //sm save
