@@ -311,10 +311,7 @@ function init_gear_sets()
         right_ear = "Genmei Earring",
         right_ring = "Defending Ring",
         left_ring = "Luzaf's Ring",
-        back = {
-            name = "Gunslinger's Cape",
-            augments = {'Enmity-1', '"Mag.Atk.Bns."+1', '"Phantom Roll" ability delay -3'}
-        }
+        back = "Camulus's Mantle"
     }
 
     -- sets.precast.CorsairRoll.Duration = {main="Rostam", range="Compensator", neck="Regal Necklace",}

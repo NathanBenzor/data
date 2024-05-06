@@ -1762,6 +1762,17 @@ windower.register_event('zone change', function()
     end
 end)
 
+-- Function added to automatically equip ParryDT set once Battuta is used
+function job_buff_change(buff, gain)
+    if buff == 'Battuta' then
+        if gain then
+            equip(sets.defense.ParryDT)
+        else
+            handle_equipping_gear(player.status)
+        end
+    end
+end
+
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
     -- Default macro set/book: (set, book)

@@ -177,7 +177,7 @@ function init_gear_sets()
         right_ring = "Kishar Ring",
         back = {
             name = "Ankou's Mantle",
-            augments = {'"Fast Cast"+10'}
+            augments = {'HP+60', 'Mag. Acc+20 /Mag. Dmg.+20', '"Fast Cast"+10', 'Damage taken-5%'}
         }
     }
 
@@ -255,7 +255,7 @@ function init_gear_sets()
         },
         right_ear = {
             name = "Heath. Earring +1",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+13', 'Mag. Acc.+13', 'Weapon skill damage +2%'}
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+14', 'Mag. Acc.+14', 'Weapon skill damage +3%'}
         },
         left_ring = "Sroda Ring",
         right_ring = "Cornelia's Ring",
@@ -290,7 +290,7 @@ function init_gear_sets()
         },
         right_ear = {
             name = "Heath. Earring +1",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+13', 'Mag. Acc.+13', 'Weapon skill damage +2%'}
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+14', 'Mag. Acc.+14', 'Weapon skill damage +3%'}
         },
         -- right_ear = {
         --     name = "Schere Earring",
@@ -340,7 +340,7 @@ function init_gear_sets()
         },
         right_ear = {
             name = "Heath. Earring +1",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+13', 'Mag. Acc.+13', 'Weapon skill damage +2%'}
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+14', 'Mag. Acc.+14', 'Weapon skill damage +3%'}
         },
         left_ring = "Regal Ring",
         right_ring = "Niqmaddu Ring",
@@ -400,7 +400,7 @@ function init_gear_sets()
         },
         right_ear = {
             name = "Heath. Earring +1",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+13', 'Mag. Acc.+13', 'Weapon skill damage +2%'}
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+14', 'Mag. Acc.+14', 'Weapon skill damage +3%'}
         },
         left_ear = {
             name = "Moonshade Earring",
@@ -467,7 +467,7 @@ function init_gear_sets()
         },
         right_ear = {
             name = "Heath. Earring +1",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+13', 'Mag. Acc.+13', 'Weapon skill damage +2%'}
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+14', 'Mag. Acc.+14', 'Weapon skill damage +3%'}
         },
         left_ring = "Regal Ring",
         right_ring = "Niqmaddu Ring",
@@ -503,7 +503,7 @@ function init_gear_sets()
         },
         right_ear = {
             name = "Heath. Earring +1",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+13', 'Mag. Acc.+13', 'Weapon skill damage +2%'}
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+14', 'Mag. Acc.+14', 'Weapon skill damage +3%'}
         },
         left_ring = "Sroda Ring",
         right_ring = "Niqmaddu Ring",
@@ -763,21 +763,28 @@ function init_gear_sets()
 
     sets.midcast.Absorb = set_combine(sets.midcast['Dark Magic'], {
         ammo = "Pemphredo Tathlum",
-        head = "Ig. Burgeonet +3",
-        body = {
-            name = "Carm. Scale Mail",
-            augments = {'HP+60', 'STR+10', 'INT+10'}
-        },
-        hands = "Pavor Gauntlets",
+        head = "Heath. Bur. +3",
+        body = "Heath. Cuirass +3",
+        hands = "Heath. Gauntlets +3",
         legs = "Heath. Flanchard +3",
-        feet = "Ratri Sollerets",
+        feet = "Heath. Sollerets +3",
         neck = "Erra Pendant",
         waist = "Eschan Stone",
         left_ear = "Malignance Earring",
-        right_ear = "Mani Earring",
+
+        right_ear = {
+            name = "Heath. Earring +1",
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+14', 'Mag. Acc.+14', 'Weapon skill damage +3%'}
+        },
         left_ring = "Stikini Ring +1",
-        right_ring = "Kishar Ring",
-        back = "Chuparrosa Mantle"
+        right_ring = {
+            name = "Metamor. Ring +1",
+            augments = {'Path: A'}
+        },
+        back = {
+            name = "Ankou's Mantle",
+            augments = {'HP+60', 'Mag. Acc+20 /Mag. Dmg.+20', '"Fast Cast"+10', 'Damage taken-5%'}
+        }
     })
 
     sets.midcast['Absorb-TP'] = set_combine(sets.midcast.Absorb, {
@@ -994,7 +1001,7 @@ function init_gear_sets()
         -- right_ear = "Telos Earring",
         right_ear = {
             name = "Heath. Earring +1",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+13', 'Mag. Acc.+13', 'Weapon skill damage +2%'}
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+14', 'Mag. Acc.+14', 'Weapon skill damage +3%'}
         },
         left_ring = "Regal Ring",
         right_ring = "Shneddick Ring",
@@ -1028,19 +1035,26 @@ function init_gear_sets()
             name = "Coiste Bodhar",
             augments = {'Path: A'}
         },
-        head = "Hjarrandi Helm",
+        -- head = "Hjarrandi Helm",
+        head = "Flam. Zucchetto +2",
         body = "Sakpata's Plate",
         hands = "Sakpata's Gauntlets",
         legs = "Ig. Flanchard +3",
-        feet = "Sakpata's Leggings",
+        -- feet = "Sakpata's Leggings",
+        feet = "Flam. Gambieras +2",
         neck = {
             name = "Abyssal Beads +2",
             augments = {'Path: A'}
         },
-        waist = "Ioskeha Belt +1",
-        left_ear = "Cessance Earring",
+        -- waist = "Ioskeha Belt +1",
+        waist = {
+            name = "Sailfi Belt +1",
+            augments = {'Path: A'}
+        },
+        left_ear = "Dedition Earring",
         right_ear = "Telos Earring",
-        left_ring = "Moonlight Ring",
+        -- left_ring = "Moonlight Ring",
+        left_ring = "Chirich Ring +1",
         right_ring = "Niqmaddu Ring",
         back = {
             name = "Ankou's Mantle",

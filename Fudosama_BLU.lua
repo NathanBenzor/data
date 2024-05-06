@@ -682,8 +682,8 @@ function init_gear_sets()
         },
         left_ear = "Halasz Earring",
         right_ear = {
-            name = "Hashishin Earring",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+6', 'Mag. Acc.+6'}
+            name = "Hashi. Earring +1",
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+13', 'Mag. Acc.+13', '"Dbl.Atk."+4'}
         },
         left_ring = "Stikini Ring +1",
         right_ring = "Stikini Ring +1",
@@ -1114,8 +1114,11 @@ function init_gear_sets()
             name = "Sailfi Belt +1",
             augments = {'Path: A'}
         },
-        left_ear = "Suppanomimi",
-        right_ear = "Infused Earring",
+        left_ear = "Infused Earring",
+        right_ear = {
+            name = "Hashi. Earring +1",
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+13', 'Mag. Acc.+13', '"Dbl.Atk."+4'}
+        },
         left_ring = "Stikini Ring +1",
         right_ring = "Stikini Ring +1",
         back = {

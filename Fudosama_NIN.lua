@@ -424,7 +424,10 @@ function init_gear_sets()
             name = "Coiste Bodhar",
             augments = {'Path: A'}
         },
-        head = "Mpaca's Cap",
+        head = {
+            name = "Mpaca's Cap",
+            augments = {'Path: A'}
+        },
         body = "Mpaca's Doublet",
         hands = {
             name = "Adhemar Wristbands",
@@ -461,7 +464,10 @@ function init_gear_sets()
 
     sets.precast.WS['Blade: Kamu'] = set_combine(sets.precast.WS, {
         ammo = "Crepuscular Pebble",
-        head = "Mpaca's Cap",
+        head = {
+            name = "Mpaca's Cap",
+            augments = {'Path: A'}
+        },
         legs = "Mpaca's Hose"
     })
 
@@ -667,7 +673,10 @@ function init_gear_sets()
 
     sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
         ammo = "Seething Bomblet +1",
-        head = "Mpaca's Cap",
+        head = {
+            name = "Mpaca's Cap",
+            augments = {'Path: A'}
+        },
         body = {
             name = "Nyame Mail",
             augments = {'Path: B'}
@@ -680,7 +689,7 @@ function init_gear_sets()
             name = "Nyame Flanchard",
             augments = {'Path: B'}
         },
-        feet = "Hattori Kyahan +2",
+        feet = "Hattori Kyahan +3",
         neck = "Rep. Plat. Medal",
         waist = "Sailfi Belt",
         left_ear = {
@@ -736,7 +745,7 @@ function init_gear_sets()
             name = "Rawhide Trousers",
             augments = {'MP+50', '"Fast Cast"+5', '"Refresh"+1'}
         },
-        feet = "Ahosi Leggings",
+        feet = "Hattori Kyahan +3",
         neck = "Magoraga Beads",
         waist = "Flume Belt +1",
         left_ear = "Trux Earring",
@@ -1040,7 +1049,10 @@ function init_gear_sets()
     })
 
     sets.engaged.Crit = set_combine(sets.engaged, {
-        head = "Mpaca's Cap",
+        head = {
+            name = "Mpaca's Cap",
+            augments = {'Path: A'}
+        },
         -- body = "Mpaca's Doublet",
         body = "Ken. Samue +1",
         hands = "Mpaca's Gloves",
