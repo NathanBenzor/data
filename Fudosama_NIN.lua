@@ -943,8 +943,7 @@ function init_gear_sets()
         head = "Malignance Chapeau",
         body = "Malignance Tabard",
         hands = "Malignance Gloves",
-        -- legs = "Mpaca's Hose",
-        legs = "Samnuha Tights",
+        legs = "Malignance Tights",
         feet = "Malignance Boots",
         neck = {
             name = "Loricate Torque +1",
@@ -999,10 +998,7 @@ function init_gear_sets()
         --     name = "Adhemar Wristbands",
         --     augments = {'DEX+10', 'AGI+10', 'Accuracy+15'}
         -- },
-        legs = {
-            name = "Samnuha Tights",
-            augments = {'STR+10', 'DEX+10', '"Dbl.Atk."+3', '"Triple Atk."+3'}
-        },
+        legs = "Malignance Tights",
         feet = "Malignance Boots",
         neck = {
             name = "Ninja Nodowa +1",

@@ -487,7 +487,7 @@ function get_sets()
         sub = "Ammurapi Shield",
         range = "Gjallarhorn",
         head = "Brioso Roundlet +3",
-        body = "Fili Hongreline +2",
+        body = "Fili Hongreline +3",
         hands = "Brioso Cuffs +3",
         legs = "Bihu Cannions +3",
         feet = "Brioso Slippers +3",
@@ -516,7 +516,7 @@ function get_sets()
     -- Max duration
     sets.Midcast.Lullaby = set_combine(sets.Midcast.Enfeebling, {
         range = Instrument.Honor,
-        body = "Fili Hongreline +2",
+        body = "Fili Hongreline +3",
         hands = "Brioso Cuffs +3",
         legs = "Inyanga Shalwar +2"
     })
@@ -525,13 +525,13 @@ function get_sets()
     sets.Midcast.Elegy = {}
     sets.Midcast.Prelude = {}
     sets.Midcast.Madrigal = {
-        head = "Fili Calot +2"
+        head = "Fili Calot +3"
     }
     sets.Midcast.Minuet = {
-        body = "Fili Hongreline +2"
+        body = "Fili Hongreline +3"
     }
     sets.Midcast.March = {
-        hands = "Fili Manchettes +2"
+        hands = "Fili Manchettes +3"
     }
     sets.Midcast.Ballad = {
         legs = "Fili Rhingrave +2"

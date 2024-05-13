@@ -120,7 +120,7 @@ function init_gear_sets()
     }
     sets.precast.JA['Retaliation'] = {
         hands = "Pummeler's Mufflers +2",
-        feet = "Boii Calligae +1"
+        feet = "Boii Calligae +3"
     }
     sets.precast.JA['Aggressor'] = {
         body = "Agoge Lorica +3",
@@ -184,35 +184,6 @@ function init_gear_sets()
 
     -- General WS set
     sets.precast.WS = {
-        -- ammo = "Knobkierrie",
-        -- head = {
-        --     name = "Agoge Mask +3",
-        --     augments = {'Enhances "Savagery" effect'}
-        -- },
-        -- body = "Sakpata's Breastplate",
-        -- hands = "Sakpata's Gauntlets",
-        -- legs = "Sakpata's Cuisses",
-        -- -- legs = "Boii Cuisses +3",
-        -- feet = "Sulev. Leggings +2",
-        -- neck = {
-        --     name = "War. Beads +2",
-        --     augments = {'Path: A'}
-        -- },
-        -- waist = {
-        --     name = "Sailfi Belt +1",
-        --     augments = {'Path: A'}
-        -- },
-        -- left_ear = "Thrud Earring",
-        -- right_ear = {
-        --     name = "Moonshade Earring",
-        --     augments = {'Accuracy+4', 'TP Bonus +250'}
-        -- },
-        -- left_ring = "Regal Ring",
-        -- right_ring = "Cornelia's Ring",
-        -- back = {
-        --     name = "Cichol's Mantle",
-        --     augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%'}
-        -- }
         ammo = "Knobkierrie",
         head = "Agoge Mask +3",
         body = "Sakpata's Breastplate",
@@ -394,19 +365,22 @@ function init_gear_sets()
     -- Great Axe
     sets.precast.WS['Upheaval'] = {
         ammo = "Knobkierrie",
-        -- head = {
-        --     name = "Agoge Mask +3",
-        --     augments = {'Enhances "Savagery" effect'}
-        -- },
-        head = "Sakpata's Helm",
-        -- body = {
-        --     name = "Nyame Mail",
-        --     augments = {'Path: B'}
-        -- },
-        body = "Sakpata's Breastplate",
-        hands = "Sakpata's Gauntlets",
-        -- hands = "Boii Mufflers +3",
-        legs = "Boii Cuisses +3",
+        head = {
+            name = "Agoge Mask +3",
+            augments = {'Enhances "Savagery" effect'}
+        },
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
+        legs = {
+            name = "Nyame Flanchard",
+            augments = "Path: B"
+        },
         feet = {
             name = "Nyame Sollerets",
             augments = {'Path: B'}
@@ -415,18 +389,53 @@ function init_gear_sets()
             name = "War. Beads +2",
             augments = {'Path: A'}
         },
-        -- waist = "Ioskeha Belt +1",
         waist = "Sailfi Belt +1",
         left_ear = "Thrud Earring",
         right_ear = "Moonshade Earring",
-        -- left_ring = "Regal Ring",
-        left_ring = "Sroda Ring",
+        left_ring = {
+            name = "Gelatinous Ring +1",
+            augments = {'Path: A'}
+        },
         right_ring = "Niqmaddu Ring",
         back = {
             name = "Cichol's Mantle",
-            augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%'}
+            augments = {'VIT+20', 'Accuracy+20 Attack+20', 'Weapon skill damage +10%', 'Damage taken-5%'}
         }
     }
+
+    sets.precast.WS['Upheaval'].PDL = set_combine(sets.precast.WS['Upheaval'], {
+        ammo = "Knobkierrie",
+        head = {
+            name = "Agoge Mask +3",
+            augments = {'Enhances "Savagery" effect'}
+        },
+        body = "Sakpata's Plate",
+        hands = {
+            name = "Sakpata's Gauntlets",
+            augments = {'Path: A'}
+        },
+        legs = "Nyame Flanchard",
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
+        neck = {
+            name = "War. Beads +2",
+            augments = {'Path: A'}
+        },
+        waist = "Sailfi Belt +1",
+        left_ear = "Thrud Earring",
+        right_ear = "Moonshade Earring",
+        left_ring = {
+            name = "Gelatinous Ring +1",
+            augments = {'Path: A'}
+        },
+        right_ring = "Niqmaddu Ring",
+        back = {
+            name = "Cichol's Mantle",
+            augments = {'VIT+20', 'Accuracy+20 Attack+20', 'Weapon skill damage +10%', 'Damage taken-5%'}
+        }
+    })
 
     -- sets.precast.WS['Upheaval'].Mid = set_combine(sets.precast.WS['Upheaval'], {
     -- legs="Pumm. Cuisses +3",
@@ -438,18 +447,12 @@ function init_gear_sets()
     -- })
 
     sets.precast.WS["Ukko's Fury"] = {
-        ammo = {
-            name = "Seeth. Bomblet +1",
-            augments = {'Path: A'}
-        },
-        head = "Sakpata's Helm",
-        body = "Sakpata's Plate",
-        hands = {
-            name = "Sakpata's Gauntlets",
-            augments = {'Path: A'}
-        },
-        legs = "Pumm. Cuisses +3",
-        feet = "Pumm. Calligae +3",
+        ammo = "Yetshila +1",
+        head = "Boii Mask +3",
+        body = "Hjarrandi Breastplate",
+        hands = "Flamma Manopolas +2",
+        legs = "Boii Cuisses +3",
+        feet = "Boii Calligae +3",
         neck = {
             name = "War. Beads +2",
             augments = {'Path: A'}
@@ -458,8 +461,14 @@ function init_gear_sets()
             name = "Sailfi Belt +1",
             augments = {'Path: A'}
         },
-        left_ear = "Genmei Earring",
-        right_ear = "Thrud Earring",
+        left_ear = {
+            name = "Moonshade Earring",
+            augments = {'Accuracy+4', 'TP Bonus +250'}
+        },
+        right_ear = {
+            name = "Boii Earring +1",
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+11', 'Mag. Acc.+11', 'Crit.hit rate+3'}
+        },
         left_ring = "Regal Ring",
         right_ring = "Niqmaddu Ring",
         back = {
@@ -922,18 +931,17 @@ function init_gear_sets()
 
     sets.MSWSMA = set_combine(sets.MultiAtk, {
         ammo = "Yetshila +1",
-        -- body=ValorousBody.CDMG,
-        feet = "Boii Calligae +1"
+        feet = "Boii Calligae +3"
     })
 
     sets.MSWSD = set_combine(sets.WSD, {
         ammo = "Yetshila +1",
-        feet = "Boii Calligae +1"
+        feet = "Boii Calligae +3"
     })
 
     sets.MSUP = set_combine(sets.precast.WS['Upheaval'], {
         ammo = "Yetshila +1",
-        feet = "Boii Calligae +1"
+        feet = "Boii Calligae +3"
     })
 
     -- Idle Sets
@@ -955,13 +963,11 @@ function init_gear_sets()
             name = "War. Beads +2",
             augments = {'Path: A'}
         },
-        -- waist = "Ioskeha Belt +1",
         waist = "Plat. Mog. Belt",
         left_ear = {
             name = "Schere Earring",
             augments = {'Path: A'}
         },
-        -- right_ear = "Telos Earring",
         right_ear = {
             name = "Boii Earring +1",
             augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+11', 'Mag. Acc.+11', 'Crit.hit rate+3'}
@@ -983,12 +989,11 @@ function init_gear_sets()
         body = "Boii Lorica +3",
         hands = "Boii Mufflers +3",
         legs = "Boii Cuisses +3",
-        feet = "Pumm. Calligae +3",
+        feet = "Boii Calligae +3",
         neck = {
             name = "War. Beads +2",
             augments = {'Path: A'}
         },
-        -- waist = "Ioskeha Belt +1",
         waist = {
             name = "Sailfi Belt +1",
             augments = {'Path: A'}
@@ -1211,7 +1216,6 @@ function init_gear_sets()
             name = "War. Beads +2",
             augments = {'Path: A'}
         },
-        -- waist = "Ioskeha Belt +1",
         waist = {
             name = "Sailfi Belt +1",
             augments = {'Path: A'}

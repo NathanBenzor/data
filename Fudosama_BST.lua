@@ -100,7 +100,7 @@ function job_setup()
     get_combat_form()
     get_melee_groups()
 
-    lockstyleset = 135
+    lockstyleset = 137
 end
 
 function user_setup()
@@ -1321,6 +1321,7 @@ function init_gear_sets()
         left_ear = "Enmerkar Earring",
         right_ear = "Handler's Earring +1",
         left_ring = "Defending Ring",
+        -- left_ring = "Shneddick Ring",
         right_ring = "C. Palug Ring",
         back = {
             name = "Artio's Mantle",
@@ -2017,7 +2018,7 @@ function init_gear_sets()
         head = "Malignance Chapeau",
         body = "Malignance Tabard",
         hands = "Malignance Gloves",
-        legs = "Meg. Chausses +2",
+        legs = "Malignance Tights",
         feet = "Malignance Boots",
         neck = {
             name = "Bst. Collar +2",

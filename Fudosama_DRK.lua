@@ -312,37 +312,44 @@ function init_gear_sets()
             name = "Nyame Helm",
             augments = {'Path: B'}
         },
-        body = {
-            name = "Nyame Mail",
-            augments = {'Path: B'}
-        },
+        -- body = {
+        --     name = "Nyame Mail",
+        --     augments = {'Path: B'}
+        -- },
+        body = "Ignominy Cuirass +3",
         hands = {
             name = "Nyame Gauntlets",
             augments = {'Path: B'}
         },
+        -- legs = {
+        --     name = "Nyame Flanchard",
+        --     augments = {'Path: B'}
+        -- },
         legs = {
-            name = "Nyame Flanchard",
-            augments = {'Path: B'}
+            name = "Fall. Flanchard +3",
+            augments = {'Enhances "Muted Soul" effect'}
         },
         feet = "Heathen's Sollerets +3",
         neck = {
             name = "Abyssal Beads +2",
             augments = {'Path: A'}
         },
-        waist = "Fotia Belt",
-        -- waist = {
-        --     name = "Sailfi Belt +1",
-        --     augments = {'Path: A'}
-        -- },
+        -- waist = "Fotia Belt",
+        waist = {
+            name = "Sailfi Belt +1",
+            augments = {'Path: A'}
+        },
         left_ear = {
             name = "Moonshade Earring",
             augments = {'Accuracy+4', 'TP Bonus +250'}
         },
-        right_ear = {
-            name = "Heath. Earring +1",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+14', 'Mag. Acc.+14', 'Weapon skill damage +3%'}
-        },
-        left_ring = "Regal Ring",
+        -- right_ear = {
+        --     name = "Heath. Earring +1",
+        --     augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+14', 'Mag. Acc.+14', 'Weapon skill damage +3%'}
+        -- },
+        right_ear = "Thrud Earring",
+        -- left_ring = "Regal Ring",
+        left_ring = "Cornelia's Ring",
         right_ring = "Niqmaddu Ring",
         back = {
             name = "Ankou's Mantle",
