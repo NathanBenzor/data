@@ -1046,10 +1046,11 @@ function init_gear_sets()
         --     name = "Samnuha Tights",
         --     augments = {'STR+10', 'DEX+10', '"Dbl.Atk."+3', '"Triple Atk."+3'}
         -- },
-        legs = {
-            name = "Nyame Flanchard",
-            augments = {'Path: B'}
-        },
+        -- legs = {
+        --     name = "Nyame Flanchard",
+        --     augments = {'Path: B'}
+        -- },
+        legs = "Malignance Tights",
         feet = "Malignance Boots",
         -- feet = {
         --     name = "Nyame Sollerets",
