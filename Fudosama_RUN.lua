@@ -861,6 +861,10 @@ function init_gear_sets()
         legs = "Erilaz Leg Guards +3",
         feet = "Erilaz Greaves +3",
         neck = "Warder's Charm +1",
+        -- neck = {
+        --     name = "Futhark Torque +2",
+        --     augments = {'Path: A'}
+        -- },
         waist = "Plat. Mog. Belt",
         left_ear = "Tuisto Earring",
         right_ear = {
@@ -890,7 +894,7 @@ function init_gear_sets()
         legs = "Eri. Leg Guards +3",
         feet = "Erilaz Greaves +3",
         neck = {
-            name = "Futhark Torque +1",
+            name = "Futhark Torque +2",
             augments = {'Path: A'}
         },
         waist = "Engraved Belt",
@@ -953,7 +957,7 @@ function init_gear_sets()
         },
         feet = "Turms Leggings +1",
         neck = {
-            name = "Futhark Torque +1",
+            name = "Futhark Torque +2",
             augments = {'Path: A'}
         },
         waist = "Plat. Mog. Belt",
@@ -980,7 +984,10 @@ function init_gear_sets()
         hands = "Regal Gauntlets",
         legs = "Erilaz Leg Guards +3",
         feet = "Erilaz Greaves +3",
-        neck = "Futhark Torque +1",
+        neck = {
+            name = "Futhark Torque +2",
+            augments = {'Path: A'}
+        },
         waist = "Plat. Mog. Belt",
         left_ear = "Tuisto Earring",
         right_ear = {
@@ -1171,7 +1178,11 @@ function init_gear_sets()
         -- hands = "Turms Mittens +1",
         legs = "Eri. Leg Guards +3",
         feet = "Erilaz Greaves +3",
-        neck = "Warder's Charm +1",
+        -- neck = "Warder's Charm +1",
+        neck = {
+            name = "Futhark Torque +2",
+            augments = {'Path: A'}
+        },
         -- waist = "Engraved Belt",
         wait = "Flume Belt +1",
         left_ear = "Tuisto Earring",
@@ -1283,7 +1294,7 @@ function init_gear_sets()
         legs = "Nyame Flanchard",
         feet = "Erilaz Greaves +3",
         neck = {
-            name = "Futhark Torque +1",
+            name = "Futhark Torque +2",
             augments = {'Path: A'}
         },
         waist = "Ioskeha Belt +1",
