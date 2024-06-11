@@ -61,7 +61,7 @@ function job_setup()
                       "Echad Ring", "Facility Ring", "Capacity Ring", "Era. Bul. Pouch", "Dev. Bul. Pouch",
                       "Chr. Bul. Pouch", "Quelling B. Quiver", "Yoichi's Quiver", "Artemis's Quiver", "Chrono Quiver"}
 
-    lockstyleset = 116
+    lockstyleset = 118
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -92,7 +92,8 @@ function user_setup()
         ['Gandiva'] = "Chrono Arrow",
         ['Fail-Not'] = "Chrono Arrow",
         ['Annihilator'] = "Chrono Bullet",
-        ['Armageddon'] = "Chrono Bullet",
+        -- ['Armageddon'] = "Chrono Bullet",
+        ['Armageddon'] = "Devastating Bullet",
         ['Gastraphetes'] = "Quelling Bolt",
         ['Fomalhaut'] = "Chrono Bullet",
         ['Holliday'] = "Eminent Bullet"
@@ -125,7 +126,7 @@ function user_setup()
         ['Gandiva'] = "Chrono Arrow",
         ['Fail-Not'] = "Chrono Arrow",
         ['Annihilator'] = "Devastating Bullet",
-        -- ['Armageddon'] = "Devastating Bullet",
+        ['Armageddon'] = "Devastating Bullet",
         ['Gastraphetes'] = "Quelling Bolt",
         ['Fomalhaut'] = "Devastating Bullet",
         ['Holliday'] = "Eminent Bullet"
@@ -679,7 +680,6 @@ function init_gear_sets()
             augments = {'Path: B'}
         },
         neck = "Sibyl Scarf",
-        -- waist = "Eschan Stone",
         waist = "Orpheus's Sash",
         left_ear = {
             name = "Moonshade Earring",

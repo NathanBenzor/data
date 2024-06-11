@@ -329,7 +329,7 @@ function init_gear_sets()
         ear2 = "Telos Earring"
     })
 
-    sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, {
+    sets.precast.WS['Blade: Hi'] = {
         ammo = "Date Shuriken",
         head = {
             name = "Nyame Helm",
@@ -368,7 +368,7 @@ function init_gear_sets()
             name = "Andartia's Mantle",
             augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%'}
         }
-    })
+    }
 
     sets.precast.WS['Blade: Hi'].Acc = set_combine(sets.precast.WS['Blade: Hi'], {})
 
@@ -383,7 +383,7 @@ function init_gear_sets()
 
     sets.precast.WS['Blade: Metsu'].Acc = set_combine(sets.precast.WS['Blade: Metsu'], {})
 
-    sets.precast.WS['Blade: Ten'] = set_combine(sets.precast.WS, {
+    sets.precast.WS['Blade: Ten'] = {
         ammo = "Date Shuriken",
         head = {
             name = "Herculean Helm",
@@ -412,18 +412,18 @@ function init_gear_sets()
             name = "Andartia's Mantle",
             augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%'}
         }
-    })
+    }
 
     sets.precast.WS['Blade: Ten'].Acc = set_combine(sets.precast.WS['Blade: Ten'], {
         ammo = "Voluspa Tathlum",
         ear2 = "Telos Earring"
     })
 
-    sets.precast.WS['Blade: Shun'] = set_combine(sets.precast.WS, {
-        ammo = {
-            name = "Coiste Bodhar",
-            augments = {'Path: A'}
-        },
+    sets.precast.WS['Blade: Shun'] = {
+        -- ammo = {
+        --     name = "Coiste Bodhar",
+        --     augments = {'Path: A'}
+        -- },
         head = {
             name = "Mpaca's Cap",
             augments = {'Path: A'}
@@ -451,7 +451,7 @@ function init_gear_sets()
             name = "Andartia's Mantle",
             augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%'}
         }
-    })
+    }
 
     -- sets.precast.WS['Blade: Shun'].Acc = set_combine(sets.precast.WS['Blade: Shun'], {
     --     ammo="Voluspa Tathlum",
@@ -462,17 +462,17 @@ function init_gear_sets()
 
     sets.precast.WS['Blade: Ku'].Acc = set_combine(sets.precast.WS['Blade: Ku'], {})
 
-    sets.precast.WS['Blade: Kamu'] = set_combine(sets.precast.WS, {
+    sets.precast.WS['Blade: Kamu'] = {
         ammo = "Crepuscular Pebble",
         head = {
             name = "Mpaca's Cap",
             augments = {'Path: A'}
         },
         legs = "Mpaca's Hose"
-    })
+    }
 
-    sets.precast.WS['Blade: Yu'] = set_combine(sets.precast.WS, {
-        -- ammo="Seeth. Bomblet +1",
+    sets.precast.WS['Blade: Yu'] = {
+        ammo = "Seeth. Bomblet +1",
         head = "Hachiya Hatsu. +3",
         body = "Samnuha Coat",
         hands = {
@@ -487,9 +487,9 @@ function init_gear_sets()
         ring1 = "Dingir Ring",
         back = gear.NIN_MAB_Cape,
         waist = "Eschan Stone"
-    })
+    }
 
-    sets.precast.WS['Blade: Chi'] = set_combine(sets.precast.WS, {
+    sets.precast.WS['Blade: Chi'] = {
         ammo = "Seething Bomblet +1",
         head = {
             name = "Mochi. Hatsuburi +3",
@@ -525,9 +525,9 @@ function init_gear_sets()
             name = "Andartia's Mantle",
             augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%'}
         }
-    })
+    }
 
-    sets.precast.WS['Blade: Teki'] = set_combine(sets.precast.WS, {
+    sets.precast.WS['Blade: Teki'] = {
         ammo = "Seething Bomblet +1",
         head = {
             name = "Mochi. Hatsuburi +3",
@@ -560,9 +560,9 @@ function init_gear_sets()
             name = "Andartia's Mantle",
             augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%'}
         }
-    })
+    }
 
-    sets.precast.WS['Blade: To'] = set_combine(sets.precast.WS, {
+    sets.precast.WS['Blade: To'] = {
         ammo = "Seething Bomblet +1",
         head = {
             name = "Mochi. Hatsuburi +3",
@@ -595,10 +595,10 @@ function init_gear_sets()
             name = "Andartia's Mantle",
             augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%'}
         }
-    })
+    }
 
-    sets.precast.WS['Tachi: Jinpu'] = set_combine(sets.precast.WS, {
-        ammo = "Seething Bomblet +1",
+    sets.precast.WS['Tachi: Jinpu'] = {
+        -- ammo = "Seething Bomblet +1",
         head = {
             name = "Nyame Helm",
             augments = {'Path: B'}
@@ -632,9 +632,9 @@ function init_gear_sets()
             name = "Andartia's Mantle",
             augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%'}
         }
-    })
+    }
 
-    sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
+    sets.precast.WS['Aeolian Edge'] = {
         ammo = "Ghastly Tathlum +1",
         head = {
             name = "Mochi. Hatsuburi +3",
@@ -669,9 +669,9 @@ function init_gear_sets()
             name = "Andartia's Mantle",
             augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%'}
         }
-    })
+    }
 
-    sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
+    sets.precast.WS['Savage Blade'] = {
         ammo = "Seething Bomblet +1",
         head = {
             name = "Mpaca's Cap",
@@ -703,7 +703,7 @@ function init_gear_sets()
             name = "Andartia's Mantle",
             augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%'}
         }
-    })
+    }
 
     --------------------------------------
     -- Midcast sets
@@ -951,7 +951,7 @@ function init_gear_sets()
         },
         waist = "Plat. Mog. Belt",
         left_ear = "Telos Earring",
-        right_ear = "Cessance Earring",
+        right_ear = "Dedition Earring",
         left_ring = "Shneddick Ring",
         right_ring = "Regal Ring",
         back = {
@@ -1015,7 +1015,7 @@ function init_gear_sets()
         right_ring = "Gere Ring",
         back = {
             name = "Andartia's Mantle",
-            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%'}
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Damage taken-5%'}
         }
     } -- 38%
 
