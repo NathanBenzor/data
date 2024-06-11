@@ -242,8 +242,12 @@ function init_gear_sets()
         hands = "Kurys Gloves",
         legs = "Eri. Leg Guards +3",
         feet = "Erilaz Greaves +3",
+        -- neck = {
+        --     name = "Unmoving Collar +1",
+        --     augments = {'Path: A'}
+        -- },
         neck = {
-            name = "Unmoving Collar +1",
+            name = "Futhark Torque +2",
             augments = {'Path: A'}
         },
         waist = "Plat. Mog. Belt",
@@ -860,11 +864,11 @@ function init_gear_sets()
         hands = "Erilaz Gauntlets +3",
         legs = "Erilaz Leg Guards +3",
         feet = "Erilaz Greaves +3",
-        neck = "Warder's Charm +1",
-        -- neck = {
-        --     name = "Futhark Torque +2",
-        --     augments = {'Path: A'}
-        -- },
+        -- neck = "Warder's Charm +1",
+        neck = {
+            name = "Futhark Torque +2",
+            augments = {'Path: A'}
+        },
         waist = "Plat. Mog. Belt",
         left_ear = "Tuisto Earring",
         right_ear = {
@@ -1172,9 +1176,17 @@ function init_gear_sets()
 
     sets.engaged = {
         ammo = "Staunch Tathlum +1",
-        head = "Erilaz Galea +3",
+        -- head = "Erilaz Galea +3",
+        head = {
+            name = "Nyame Helm",
+            augments = {'Path: B'}
+        },
         body = "Erilaz Surcoat +3",
-        hands = "Erilaz Gauntlets +3",
+        -- hands = "Erilaz Gauntlets +3",
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
         -- hands = "Turms Mittens +1",
         legs = "Eri. Leg Guards +3",
         feet = "Erilaz Greaves +3",

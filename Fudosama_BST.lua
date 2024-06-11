@@ -100,7 +100,7 @@ function job_setup()
     get_combat_form()
     get_melee_groups()
 
-    lockstyleset = 137
+    lockstyleset = 135
 end
 
 function user_setup()
@@ -130,6 +130,7 @@ function user_setup()
         'Putrescent Broth',
         'C. Plasma Broth',
         'Spumante Broth',
+        'Pungent Broth',
         'Spicy Broth',
         'Furious Broth'
 

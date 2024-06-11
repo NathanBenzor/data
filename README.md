@@ -45,5 +45,9 @@
 
 ## Misc. commands
 
-- //gs disable sub, //gs disable main, //gs enable sub, //gs enable main
-- //sm save
+- `//gs disable sub`, `//gs disable main`, `//gs enable sub`, `//gs enable main`
+- `//sm save`
+- //put this in windower/scripts folder and then in game type //exec seal
+- `//send @all input /item \"Abdhaljs Seal\" <me>`
+
+- `//gs equip sets.precast.RA`

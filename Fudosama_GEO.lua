@@ -73,7 +73,7 @@ function get_sets()
         },
         body = "Azimuth Coat +3",
         hands = {
-            name = "Bagua Mitaines +2",
+            name = "Bagua Mitaines +3",
             augments = {'Enhances "Curative Recantation" effect'}
         },
         legs = "Assid. Pants +1",
@@ -100,7 +100,6 @@ function get_sets()
     } -- 50 PDT / 52 MDT (including shield)
 
     sets.Idle.town = {
-        -- main = "Bolelabunga",
         sub = "Ammurapi Shield",
         range = {
             name = "Dunna",
@@ -109,7 +108,7 @@ function get_sets()
         head = "Azimuth Hood +3",
         body = "Azimuth Coat +3",
         hands = {
-            name = "Bagua Mitaines +2",
+            name = "Bagua Mitaines +3",
             augments = {'Enhances "Curative Recantation" effect'}
         },
         legs = {
@@ -144,10 +143,11 @@ function get_sets()
         main = "Idris",
         sub = "Genmei Shield",
         head = "Azimuth Hood +3",
-        body = {
-            name = "Nyame Mail",
-            augments = {'Path: B'}
-        },
+        -- body = {
+        --     name = "Nyame Mail",
+        --     augments = {'Path: B'}
+        -- },
+        body = "Azimuth Coat +3",
         hands = "Geo. Mitaines +3",
         legs = {
             name = "Nyame Flanchard",
@@ -168,10 +168,11 @@ function get_sets()
             augments = {'System: 1 ID: 1676 Val: 0', 'Mag. Acc.+14', 'Damage taken-5%'}
         },
         left_ring = "Defending Ring",
+        -- left_ring = "Stikini Ring +1",
         right_ring = "Stikini Ring +1",
         back = {
             name = "Nantosuelta's Cape",
-            augments = {'VIT+20', 'Eva.+20 /Mag. Eva.+20', 'Pet: "Regen"+10', 'Pet: "Regen"+5'}
+            augments = {'VIT+20', 'Eva.+20 /Mag. Eva.+20', 'Evasion+10', 'Pet: "Regen"+10', 'Pet: "Regen"+5'}
         }
     }) -- 54 PDT / 45 MDT (with shield)
 
@@ -296,8 +297,8 @@ function get_sets()
         },
         back = {
             name = "Nantosuelta's Cape",
-            augments = {'HP+60', 'HP+20', '"Fast Cast"+10'}
-        } -- 10
+            augments = {'MND+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'MND+10', '"Fast Cast"+10', 'Phys. dmg. taken-10%'}
+        }
     } -- 87
 
     -- Base set for midcast - if not defined will notify and use your idle set for surviability
@@ -340,7 +341,10 @@ function get_sets()
         right_ear = "Mendi. Earring",
         left_ring = "Stikini Ring +1",
         right_ring = "Stikini Ring +1",
-        back = "Altruistic Cape"
+        back = {
+            name = "Nantosuelta's Cape",
+            augments = {'MND+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'MND+10', '"Fast Cast"+10', 'Phys. dmg. taken-10%'}
+        }
     }
     -- Enhancing Skill
     sets.Midcast.Enhancing = {
@@ -387,7 +391,7 @@ function get_sets()
         },
         back = {
             name = "Nantosuelta's Cape",
-            augments = {'HP+60', 'Eva.+20 /Mag. Eva.+20', 'Mag. Evasion+10', 'Pet: "Regen"+10', 'Damage taken-5%'}
+            augments = {'MND+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'MND+10', '"Fast Cast"+10', 'Phys. dmg. taken-10%'}
         }
     }
     sets.Midcast.Enhancing.Others = set_combine(sets.Midcast.Enhancing, {});
@@ -395,7 +399,7 @@ function get_sets()
     sets.Midcast.Enfeebling = {
         main = "Daybreak",
         sub = "Ammurapi shield",
-        ammo = "Pemphredo Tathlum",
+        -- ammo = "Pemphredo Tathlum",
         head = "Geo. Galero +1",
         body = "Jhakri Robe +2",
         hands = "Geo. Mitaines +3",
@@ -419,21 +423,23 @@ function get_sets()
         ammo = "Ghastly Tathlum +1", -- 8/8
         head = "Azi. Hood +3",
         body = "Azi. Coat +3",
-        hands = "Bagua Mitaines +2",
-        legs = "Agwu's Slops",
+        hands = "Azi. Gloves +2",
+        -- legs = "Agwu's Slops",
+        legs = "Azi. Tights +2",
         feet = "Azi. Gaiters +3",
         neck = "Mizu. Kubikazari",
         ear1 = "Malignance Earring",
         ear2 = "Regal Earring",
         ring1 = "Freke Ring",
         ring2 = "Metamor. Ring +1",
-        waist = {
-            name = "Acuity Belt +1",
-            augments = {'Path: A'}
-        },
+        waist = "Sacro Cord",
+        -- waist = {
+        --     name = "Acuity Belt +1",
+        --     augments = {'Path: A'}
+        -- },
         back = {
             name = "Nantosuelta's Cape",
-            augments = {'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', '"Mag.Atk.Bns."+10'}
+            augments = {'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'INT+10', '"Mag.Atk.Bns."+10', 'Phys. dmg. taken-10%'}
         }
     }
     -- Used for Burst Mode

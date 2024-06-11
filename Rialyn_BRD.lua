@@ -170,13 +170,15 @@ function get_sets()
         left_ear = "Etiolation Earring",
         left_ring = "Defending Ring",
         right_ring = "Stikini Ring +1",
-        back = "Moonlight Cape"
+        -- back = "Moonlight Cape"
+        back = "Aptitude Mantle +1"
     } -- PDT 60%%, MDT 56%
 
     sets.Idle.town = {
         -- sub = "Genmei Shield",
         range = "Blurred Harp +1",
-        head = "Fili Calot +2",
+        -- head = "Fili Calot +2",
+        head = "Lilac Corsage",
         body = "Fili Hongreline +2",
         hands = "Nyame Gauntlets",
         legs = "Nyame Flanchard",
