@@ -224,11 +224,8 @@ function init_gear_sets()
     -- Fast cast sets for spells
 
     sets.precast.FC = {
-        main = {
-            name = "Queller Rod",
-            augments = {'Healing magic skill +15', '"Cure" potency +10%', '"Cure" spellcasting time -7%'}
-        },
-        sub = "Sors Shield",
+        main={ name="Gada", augments={'"Fast Cast"+5','STR+9','"Mag.Atk.Bns."+17','DMG:+6',}},
+        sub = "Chanter's Shield",
         ammo = "Impatiens",
         head = "Ebers Cap +3",
         body = "Inyanga Jubbah +2",
@@ -239,7 +236,7 @@ function init_gear_sets()
         legs = "Aya. Cosciales +2",
         feet = "Regal Pumps +1",
         neck = {
-            name = "Clr. Torque +1",
+            name = "Clr. Torque +2",
             augments = {'Path: A'}
         },
         waist = "Witful Belt",
@@ -247,10 +244,7 @@ function init_gear_sets()
         right_ear = "Loquac. Earring",
         left_ring = "Kishar Ring",
         right_ring = "Lebeche Ring",
-        back = {
-            name = "Alaunus's Cape",
-            augments = {'MP+60', 'Eva.+20 /Mag. Eva.+20', '"Fast Cast"+10'}
-        }
+        back = "Perimede cape",
     }
 
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
@@ -277,18 +271,19 @@ function init_gear_sets()
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
         -- ammo="Floestone",
-        head = "Piety Cap +3",
-        body = "Piety Briault +3",
-        hands = "Piety Mitts +3",
-        legs = "Piety Pantaln. +3",
-        feet = "Piety Duckbills +2",
-        neck = "Fotia Gorget",
-        ear1 = "Moonshade Earring",
-        ear2 = "Ishvara Earring",
-        ring1 = "Epaminondas's Ring",
-        ring2 = "Shukuyu Ring",
-        back = gear.WHM_WS_Cape,
-        waist = "Fotia Belt"
+        ammo="Oshasha's Treatise",
+        head={ name="Nyame Helm", augments={'Path: B',}},
+        body={ name="Nyame Mail", augments={'Path: B',}},
+        hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+        legs={ name="Nyame Flanchard", augments={'Path: B',}},
+        feet={ name="Nyame Sollerets", augments={'Path: B',}},
+        neck = "Rep. Plat. Medal",
+        waist="Olseni Belt",
+        left_ear="Moonshade Earring",
+        right_ear="Cessance Earring",
+        left_ring="Chirich Ring +1",
+        right_ring="Petrov Ring",
+        -- back = gear.WHM_WS_Cape,
     }
 
     sets.precast.WS['Black Halo'] = set_combine(sets.precast.WS, {
@@ -337,10 +332,10 @@ function init_gear_sets()
         legs = "Ebers Pant. +3",
         feet = "Hygieia Clogs +1",
         neck = {
-            name = "Clr. Torque +1",
+            name = "Clr. Torque +2",
             augments = {'Path: A'}
         },
-        waist = "Acerbic Sash +1",
+        waist="Acerbic Sash +1",
         left_ear = "Mendi. Earring",
         right_ear = "Glorious Earring",
         left_ring = "Kuchekula Ring",
@@ -361,10 +356,10 @@ function init_gear_sets()
         legs = "Ebers Pant. +3",
         feet = "Hygieia Clogs +1",
         neck = {
-            name = "Clr. Torque +1",
+            name = "Clr. Torque +2",
             augments = {'Path: A'}
         },
-        waist = "Acerbic Sash +1",
+        waist="Hachirin-no-Obi",
         left_ear = "Mendi. Earring",
         right_ear = "Glorious Earring",
         left_ring = "Kuchekula Ring",
@@ -385,10 +380,10 @@ function init_gear_sets()
         legs = "Ebers Pant. +3",
         feet = "Hygieia Clogs +1",
         neck = {
-            name = "Clr. Torque +1",
+            name = "Clr. Torque +2",
             augments = {'Path: A'}
         },
-        waist = "Acerbic Sash +1",
+        waist="Acerbic Sash +1",
         left_ear = "Mendi. Earring",
         right_ear = "Glorious Earring",
         left_ring = "Kuchekula Ring",
@@ -415,10 +410,10 @@ function init_gear_sets()
             augments = {'Healing magic skill +20', '"Cure" spellcasting time -7%', 'Magic dmg. taken -3'}
         },
         neck = {
-            name = "Clr. Torque +1",
+            name = "Clr. Torque +2",
             augments = {'Path: A'}
         },
-        waist = "Acerbic Sash +1",
+        waist="Hachirin-no-Obi",
         left_ear = "Mendi. Earring",
         right_ear = "Glorious Earring",
         left_ring = "Kuchekula Ring",
@@ -481,7 +476,7 @@ function init_gear_sets()
         main = "Yagrush",
         sub = "Sors Shield",
         ammo = "Pemphredo Tathlum",
-        head = "Ebers Cap +3",
+        head={ name="Vanya Hood", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
         body = "Ebers Bliaut +3",
         hands = {
             name = "Fanatic Gloves",
@@ -508,7 +503,7 @@ function init_gear_sets()
     }
 
     sets.midcast.Erase = set_combine(sets.midcast.StatusRemoval, {
-        neck = "Clr. Torque +1"
+        neck = "Clr. Torque +2"
     })
 
     -- 110 total Enhancing Magic Skill; caps even without Light Arts
@@ -531,13 +526,10 @@ function init_gear_sets()
             name = "Telchine Gloves",
             augments = {'Enh. Mag. eff. dur. +8'}
         },
-        legs = {
-            name = "Piety Pantaln. +3",
-            augments = {'Enhances "Afflatus Misery" effect'}
-        },
+        legs={ name="Telchine Braconi", augments={'Enh. Mag. eff. dur. +9',}},
         feet = "Theo. Duckbills +3",
         neck = {
-            name = "Clr. Torque +1",
+            name = "Clr. Torque +2",
             augments = {'Path: A'}
         },
         waist = "Embla Sash",
@@ -570,15 +562,9 @@ function init_gear_sets()
             name = "Telchine Gloves",
             augments = {'Enh. Mag. eff. dur. +8'}
         },
-        legs = {
-            name = "Piety Pantaln. +3",
-            augments = {'Enhances "Afflatus Misery" effect'}
-        },
+        legs={ name="Telchine Braconi", augments={'Enh. Mag. eff. dur. +9',}},
         feet = "Theo. Duckbills +3",
-        neck = {
-            name = "Clr. Torque +1",
-            augments = {'Path: A'}
-        },
+        neck = "Incanter's Torque",
         waist = "Embla Sash",
         left_ear = "Andoaa Earring",
         right_ear = "Mimir Earring",
@@ -688,6 +674,7 @@ function init_gear_sets()
     })
 
     sets.midcast.BarElement = set_combine(sets.midcast.EnhancingDuration, {
+        main = "Beneficus",
         head = "Ebers Cap +3",
         body = "Ebers Bliaut +3",
         hands = "Ebers Mitts +3",
@@ -696,6 +683,7 @@ function init_gear_sets()
     })
 
     sets.midcast.BarStatus = set_combine(sets.midcast.EnhancingDuration, {
+        main = "Beneficus",
         head = "Ebers Cap +3",
         body = "Ebers Bliaut +3",
         hands = "Ebers Mitts +3",
@@ -840,10 +828,7 @@ function init_gear_sets()
             name = "Nyame Sollerets",
             augments = {'Path: B'}
         },
-        neck = {
-            name = "Loricate Torque +1",
-            augments = {'Path: A'}
-        },
+        neck={ name="Clr. Torque +2", augments={'Path: A',}},
         waist = "Rumination Sash",
         left_ear = "Etiolation Earring",
         right_ear = "Genmei Earring",
@@ -867,10 +852,7 @@ function init_gear_sets()
             name = "Nyame Sollerets",
             augments = {'Path: B'}
         },
-        neck = {
-            name = "Loricate Torque +1",
-            augments = {'Path: A'}
-        },
+        neck={ name="Clr. Torque +2", augments={'Path: A',}},
         waist = "Rumination Sash",
         left_ear = "Loquac. Earring",
         right_ear = "Mendi. Earring",
@@ -900,14 +882,17 @@ function init_gear_sets()
     sets.idle.Town = set_combine(sets.idle, {
         main = "Yagrush",
         sub = "Ammurapi Shield",
-        head = "Kaykaus Mitra +1",
-        body = "Kaykaus Bliaut +1",
-        legs = "Kaykaus Tights +1",
+        head = "Nyame Helm",
+        body = "Ebers Bliaut +3",
+        hands = "Ebers Mitts +3",
+        legs = "Ebers Pant. +3",
         feet = "Ebers Duckbills +3",
         neck = "Clr. Torque +2",
         ear2 = "Glorious Earring",
         ear1 = "Regal Earring",
-        left_ring = "Shneddick Ring"
+        left_ring = "Shneddick Ring",
+        right_ring = "Stikini Ring +1",
+        back={ name="Alaunus's Cape", augments={'MP+60','Eva.+20 /Mag. Eva.+20','"Fast Cast"+10',}},
     })
 
     sets.precast.JA["Afflatus Solace"] = {
@@ -933,19 +918,19 @@ function init_gear_sets()
     sets.engaged = {
         main = "Maxentius",
         sub = "Genmei Shield",
-        ammo = "Pemphredo Tathlum",
-        head = "Aya. Zucchetto +2",
-        body = "Ayanmo Corazza +2",
-        hands = "Aya. Manopolas +2",
-        legs = "Aya. Cosciales +2",
-        feet = "Aya. Gambieras +2",
-        neck = "Sanctity Necklace",
-        waist = "Olseni Belt",
-        left_ear = "Cessance Earring",
-        right_ear = "Telos Earring",
-        left_ring = "Chirich Ring +1",
-        right_ring = "Ilabrat Ring",
-        back = "Penetrating Cape"
+        ammo="Oshasha's Treatise",
+        head={ name="Nyame Helm", augments={'Path: B',}},
+        body={ name="Nyame Mail", augments={'Path: B',}},
+        hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+        legs={ name="Nyame Flanchard", augments={'Path: B',}},
+        feet={ name="Nyame Sollerets", augments={'Path: B',}},
+        neck = "Combatant's Torque",
+        waist="Olseni Belt",
+        left_ear="Telos Earring",
+        right_ear="Cessance Earring",
+        left_ring="Chirich Ring +1",
+        right_ring="Petrov Ring",
+        back = "Penetrating Cape",
     }
 
     sets.engaged.Acc = set_combine(sets.engaged, {

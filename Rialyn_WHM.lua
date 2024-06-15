@@ -346,7 +346,10 @@ function init_gear_sets()
         right_ear = "Glorious Earring",
         left_ring = "Stikini Ring",
         right_ring = "Mephitas's Ring +1",
-        back = "Solemnity Cape"
+        back = {
+            name = "Alaunus's Cape",
+            augments = {'MND+20', 'Mag. Acc+20 /Mag. Dmg.+20', '"Fast Cast"+10'}
+        }
     }
 
     sets.midcast.CureSolaceWeather = set_combine(sets.midcast.CureSolace, {
@@ -362,13 +365,15 @@ function init_gear_sets()
         legs = "Ebers Pant. +2",
         feet = "Hygieia Clogs +1",
         neck = "Clr. Torque +1",
-        waist = "Shinjutsu-no-Obi +1",
+        waist="Hachirin-no-Obi",
         left_ear = "Glorious Earring",
         right_ear = "Nourish. Earring +1",
         left_ring = "Stikini Ring",
         right_ring = "Mephitas's Ring +1",
-        back = "Solemnity Cape"
-
+        back = {
+            name = "Alaunus's Cape",
+            augments = {'MND+20', 'Mag. Acc+20 /Mag. Dmg.+20', '"Fast Cast"+10'}
+        }
     })
 
     sets.midcast.CureNormal = set_combine(sets.midcast.CureSolace, {
@@ -408,7 +413,7 @@ function init_gear_sets()
         legs = "Ebers Pant. +2",
         feet = "Hygieia Clogs +1",
         neck = "Clr. Torque +1",
-        waist = "Shinjutsu-no-Obi +1",
+        waist="Hachirin-no-Obi",
         left_ear = "Glorious Earring",
         right_ear = "Nourish. Earring +1",
         left_ring = "Stikini Ring",
@@ -435,7 +440,10 @@ function init_gear_sets()
     sets.midcast.CureMelee = sets.midcast.CureSolace
 
     sets.midcast.StatusRemoval = {
-        main = "Yagrush",
+        main = {
+            name = "Queller Rod",
+            augments = {'Healing magic skill +15', '"Cure" potency +10%', '"Cure" spellcasting time -7%'}
+        },
         sub = "Sors Shield",
         ammo = "Hydrocera",
         head = "Ebers Cap +2",
@@ -506,15 +514,12 @@ function init_gear_sets()
 
     -- 110 total Enhancing Magic Skill; caps even without Light Arts
     sets.midcast['Enhancing Magic'] = {
-        main = {
-            name = "Gada",
-            augments = {'Enh. Mag. eff. dur. +5', 'VIT+2'}
-        },
+        main={ name="Grioavolr", augments={'Enh. Mag. eff. dur. +8','INT+10','Mag. Acc.+23','"Mag.Atk.Bns."+3',}},
         sub = "Ammurapi Shield",
         ammo = "Pemphredo Tathlum",
         head = {
             name = "Telchine Cap",
-            augments = {'Enh. Mag. eff. dur. +9'}
+            augments = {'Enh. Mag. eff. dur. +8'}
         },
         body = {
             name = "Telchine Chas.",
@@ -522,13 +527,10 @@ function init_gear_sets()
         },
         hands = {
             name = "Telchine Gloves",
-            augments = {'Enh. Mag. eff. dur. +8'}
+            augments = {'Enh. Mag. eff. dur. +10'}
         },
-        legs = {
-            name = "Piety Pantaln. +3",
-            augments = {'Enhances "Afflatus Misery" effect'}
-        },
-        feet = "Theo. Duckbills +2",
+        legs={ name="Telchine Braconi", augments={'Enh. Mag. eff. dur. +10',}},
+        feet = "Theo. Duckbills +3",
         neck = {
             name = "Clr. Torque +1",
             augments = {'Path: A'}
@@ -545,19 +547,16 @@ function init_gear_sets()
     }
 
     sets.midcast.EnhancingDuration = {
-        main = {
-            name = "Queller Rod",
-            augments = {'Healing magic skill +15', '"Cure" potency +10%', '"Cure" spellcasting time -7%'}
-        },
-        sub = "Genmei Shield",
+        main={ name="Grioavolr", augments={'Enh. Mag. eff. dur. +8','INT+10','Mag. Acc.+23','"Mag.Atk.Bns."+3',}},
+        -- sub = "Genmei Shield",
         ammo = "Impatiens",
-        head = "Ebers Cap +2",
+        head={ name="Telchine Cap", augments={'Enh. Mag. eff. dur. +8',}},
         body = "Ebers Bliaut +2",
-        hands = "Ebers Mitts +2",
-        legs = "Ebers Pant. +2",
-        feet = "Regal Pumps +1",
+        hands={ name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +10',}},
+        legs={ name="Telchine Braconi", augments={'Enh. Mag. eff. dur. +10',}},
+        feet = "Theo. Duckbills +3",
         neck = "Clr. Torque +1",
-        waist = "Olympus Sash",
+        waist = "Embla Sash",
         left_ear = "Etiolation Earring",
         right_ear = "Glorious Earring",
         left_ring = "Stikini Ring",
@@ -579,7 +578,7 @@ function init_gear_sets()
         },
         hands = "Ebers Mitts +2",
         legs = "Th. Pantaloons +2",
-        feet = "Theo. Duckbills +2",
+        feet = "Theo. Duckbills +3",
         neck = "Incanter's Torque",
         waist = "Embla Sash",
         left_ear = "Andoaa Earring",
@@ -601,7 +600,7 @@ function init_gear_sets()
         },
         hands = "Ebers Mitts +2",
         legs = "Th. Pantaloons +2",
-        feet = "Theo. Duckbills +2"
+        feet = "Theo. Duckbills +3"
     })
 
     sets.midcast.Refresh = set_combine(sets.midcast.EnhancingDuration, {
@@ -629,7 +628,7 @@ function init_gear_sets()
             name = "Piety Pantaln. +3",
             augments = {'Enhances "Afflatus Misery" effect'}
         },
-        feet = "Theo. Duckbills +2",
+        feet = "Theo. Duckbills +3",
         neck = "Nodens Gorget",
         waist = "Siegel Sash",
         left_ear = "Andoaa Earring",
@@ -753,7 +752,7 @@ function init_gear_sets()
             name = "Chironic Hose",
             augments = {'Mag. Acc.+25 "Mag.Atk.Bns."+25', 'MND+13', 'Mag. Acc.+9', '"Mag.Atk.Bns."+15'}
         },
-        feet = "Theo. Duckbills +2",
+        feet = "Theo. Duckbills +3",
         neck = "Incanter's Torque",
         waist = "Rumination Sash",
         left_ear = "Vor Earring",
