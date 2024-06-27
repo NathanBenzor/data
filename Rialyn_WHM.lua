@@ -832,10 +832,8 @@ function init_gear_sets()
         -- left_ring = "Stikini Ring +1",
         -- right_ring = "Stikini Ring +1",
         -- back = "Solemnity Cape"
-        main = {
-            name = "Queller Rod",
-            augments = {'Healing magic skill +15', '"Cure" potency +10%', '"Cure" spellcasting time -7%'}
-        },
+
+        main = "Yagrush",
         sub = "Genmei Shield",
         ammo = "Homiliary",
         head = "Nyame Helm",
