@@ -1,0 +1,16 @@
+sets.exported={
+    main={ name="Grioavolr", augments={'Enh. Mag. eff. dur. +8','INT+10','Mag. Acc.+23','"Mag.Atk.Bns."+3',}},
+    ammo="Homiliary",
+    head="Ebers Cap +2",
+    body="Ebers Bliaut +3",
+    hands="Ebers Mitts +2",
+    legs="Ebers Pant. +3",
+    feet="Ebers Duckbills +2",
+    neck={ name="Clr. Torque +1", augments={'Path: A',}},
+    waist="Embla Sash",
+    left_ear="Loquac. Earring",
+    right_ear="Regal Earring",
+    left_ring="Shneddick Ring",
+    right_ring="Stikini Ring",
+    back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Phys. dmg. taken-10%',}},
+}

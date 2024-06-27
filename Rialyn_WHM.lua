@@ -551,7 +551,7 @@ function init_gear_sets()
             name = "Grioavolr",
             augments = {'Enh. Mag. eff. dur. +8', 'INT+10', 'Mag. Acc.+23', '"Mag.Atk.Bns."+3'}
         },
-        -- sub = "Genmei Shield",
+        sub = "Benthos Grip",
         ammo = "Impatiens",
         head = {
             name = "Telchine Cap",
