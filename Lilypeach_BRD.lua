@@ -234,17 +234,11 @@ function init_gear_sets()
             augments = {'Mag. Acc.+15', 'String instrument skill +10', 'Wind instrument skill +10'}
         }, -- 7
         sub = "Genmei Shield",
-        head = {
-            name = "Vanya Hood",
-            augments = {'MP+50', '"Fast Cast"+10', 'Haste+2%'}
-        }, -- 10
+        head="Fili Calot +3",
         body = "Inyanga Jubbah +2", -- 14
-        hands = {
-            name = "Leyline Gloves",
-            augments = {'Accuracy+14', 'Mag. Acc.+13', '"Mag.Atk.Bns."+13', '"Fast Cast"+2'}
-        }, -- 7
+        hands={ name="Leyline Gloves", augments={'Accuracy+15','Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+3',}},
         legs = "Aya. Cosciales +2", -- 6
-        feet = "Merlinic Crackows", -- 5
+        feet = "Bihu Slippers +3", -- 5
         neck = "Baetyl Pendant", -- 4
         waist = "Embla Sash", -- 5
         right_ear = "Loquac. Earring", -- 2
@@ -269,7 +263,7 @@ function init_gear_sets()
 
     sets.precast.FC.BardSong = set_combine(sets.precast.FC, {
         main = "Carnwenhan",
-        head = "Fili Calot +1", -- 14
+        head = "Fili Calot +3", -- 14
         body = "Inyanga Jubbah +2",
         feet = "Bihu Slippers +3", -- 9
         neck = "Moonbow Whistle +1",
@@ -351,12 +345,9 @@ function init_gear_sets()
             name = "Moonshade Earring",
             augments = {'Accuracy+4', 'TP Bonus +250'}
         },
-        left_ring = "Karieyh Ring",
+        left_ring = "Sroda Ring",
         right_ring = "Cornelia's Ring",
-        back = {
-            name = "Intarabus's Cape",
-            augments = {'STR+20', 'Accuracy+20 Attack+20', 'Weapon skill damage +10%', 'Phys. dmg. taken-10%'}
-        }
+        back={ name="Intarabus's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}},
     }
 
     sets.precast.WS.Acc = set_combine(sets.precast.WS, {})
@@ -445,7 +436,7 @@ function init_gear_sets()
         },
         back = {
             name = "Intarabus's Cape",
-            augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+5', 'Weapon skill damage +10%'}
+            augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%'}
         }
     })
 
@@ -488,7 +479,7 @@ function init_gear_sets()
         right_ring = "Cornelia's Ring",
         back = {
             name = "Intarabus's Cape",
-            augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+5', 'Weapon skill damage +10%'}
+            augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%'}
         }
     })
 
@@ -531,11 +522,8 @@ function init_gear_sets()
         },
         right_ear = "Ishvara Earring",
         left_ring = "Cornelia's Ring",
-        right_ring = "Shukuyu Ring",
-        back = {
-            name = "Intarabus's Cape",
-            augments = {'STR+20', 'Accuracy+20 Attack+20', 'Weapon skill damage +10%', 'Phys. dmg. taken-10%'}
-        }
+        right_ring = "Sroda Ring",
+        back={ name="Intarabus's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}},
     })
 
     sets.precast.WS['Savage Blade'].Acc = set_combine(sets.precast.WS['Savage Blade'], {})
@@ -563,10 +551,7 @@ function init_gear_sets()
             augments = {'Path: B'}
         },
         neck = "Sibyl Scarf",
-        waist = {
-            name = "Acuity Belt +1",
-            augments = {'Path: A'}
-        },
+        waist = "Orpheus's Sash",
         left_ear = "Friomisi Earring",
         right_ear = {
             name = "Moonshade Earring",
@@ -595,27 +580,27 @@ function init_gear_sets()
     }
     sets.midcast.HonorMarch = {
         range = "Marsyas",
-        hands = "Fili Manchettes +2"
+        hands = "Fili Manchettes +3"
     }
     sets.midcast.Lullaby = {
         hands = "Brioso Cuffs +3"
     }
     sets.midcast.Madrigal = {
-        head = "Fili Calot +2"
+        head = "Fili Calot +3"
     }
     -- sets.midcast.Mambo = {feet="Mousai Crackows +1"}
     sets.midcast.March = {
-        hands = "Fili Manchettes +2"
+        hands = "Fili Manchettes +3"
     }
     -- sets.midcast.Minne = {legs="Mousai Seraweels +1"}
     sets.midcast.Minuet = {
-        body = "Fili Hongreline +2"
+        body = "Fili Hongreline +3"
     }
     sets.midcast.Paeon = {
         head = "Brioso Roundlet +3"
     }
     sets.midcast.Threnody = {
-        body = "File Hongreline +2"
+        body = "File Hongreline +3"
     }
     sets.midcast['Adventurer\'s Dirge'] = {
         range = "Marsyas"
@@ -630,6 +615,23 @@ function init_gear_sets()
     sets.midcast["Chocobo Mazurka"] = {
         range = "Marsyas"
     }
+    sets.midcast.Requiem = {
+        main="Mafic Cudgel",
+        sub="Genmei Shield",
+        range="Gjallarhorn",
+        head="Halitus Helm",
+        body="Emet Harness +1",
+        hands="Fili Manchettes +3",
+        legs="Zoar Subligar +1",
+        feet={ name="Nyame Sollerets", augments={'Path: B',}},
+        neck="Unmoving Collar +1",
+        waist="Trance Belt",
+        left_ear="Etiolation Earring",
+        right_ear="Cryptic Earring",
+        left_ring="Provocare Ring",
+        right_ring="Supershear Ring",
+        back={ name="Intarabus's Cape", augments={'VIT+20','Eva.+20 /Mag. Eva.+20','Enmity+10','Phys. dmg. taken-10%',}},
+    }
 
     -- For song buffs (duration and AF3 set bonus)
     sets.midcast.SongEnhancing = {
@@ -639,9 +641,9 @@ function init_gear_sets()
             augments = {'Mag. Acc.+15', 'String instrument skill +10', 'Wind instrument skill +10'}
         },
         range = "Gjallarhorn",
-        head = "Fili Calot +2",
-        body = "Fili Hongreline +2",
-        hands = "Fili Manchettes +2",
+        head = "Fili Calot +3",
+        body = "Fili Hongreline +3",
+        hands = "Fili Manchettes +3",
         legs = "Inyanga Shalwar +2",
         feet = "Brioso Slippers +3",
         neck = "Moonbow Whistle +1",
@@ -668,7 +670,7 @@ function init_gear_sets()
         sub = "Ammurapi Shield",
         range = "Gjallarhorn",
         head = "Brioso Roundlet +3",
-        body = "Fili Hongreline +2",
+        body = "Fili Hongreline +3",
         hands = "Brioso Cuffs +3",
         legs = "Bihu Cannions +3",
         feet = "Brioso Slippers +3",
@@ -705,7 +707,7 @@ function init_gear_sets()
         sub = "Ammurapi Shield",
         range = "Daurdabla",
         head = "Brioso Roundlet +3",
-        body = "Fili Hongreline +2",
+        body = "Fili Hongreline +3",
         hands = "Inyan. Dastanas +2",
         legs = "Inyanga Shalwar +2",
         feet = {
@@ -911,31 +913,21 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
 
     sets.idle = {
-        main = {
-            name = "Carnwenhan",
-            augments = {'Path: A'}
-        },
-        range = "Gjallarhorn",
-        sub = "Genmei Shield",
-        --	range="Daurdabla",
-        head = "Bunzi's Hat",
-        body = "Fili Hongreline +2",
-        hands = "Bunzi's Gloves",
-        legs = "Bihu Cannions +3",
-        feet = "Fili Cothurnes +2",
-        neck = {
-            name = "Loricate Torque +1",
-            augments = {'Path: A'}
-        },
-        waist = "Carrier's Sash",
-        right_ear = {
-            name = "Fili Earring",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+10', 'Mag. Acc.+10'}
-        },
-        left_ear = "Etiolation Earring",
-        left_ring = "Defending Ring",
-        right_ring = "Stikini Ring +1",
-        back = "Moonlight Cape"
+        main={ name="Carnwenhan", augments={'Path: A',}},
+        sub="Genmei Shield",
+        range="Gjallarhorn",
+        head="Fili Calot +3",
+        body="Fili Hongreline +3",
+        hands = "Fili Manchettes +3",
+        legs="Fili Rhingrave +2",
+        feet="Fili Cothurnes +2",
+        neck={ name="Loricate Torque +1", augments={'Path: A',}},
+        waist="Plat. Mog. Belt",
+        left_ear="Regal Earring",
+        right_ear={ name="Fili Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+12','Mag. Acc.+12','Damage taken-4%',}},
+        left_ring="Defending Ring",
+        right_ring="Shneddick Ring",
+        back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','Phys. dmg. taken-10%',}},
     }
 
     sets.idle.DT = {
@@ -1006,18 +998,15 @@ function init_gear_sets()
         },
         sub = "Genmei Shield",
         range = "Daurdabla",
-        head = "Bunzi's Hat",
-        body = "Ashera Harness",
-        hands = "Brioso Cuffs +3",
-        legs = "Brioso Cannions +3",
+        head = "Fili Calot +3",
+        body="Fili Hongreline +3",
+        hands="Fili Manchettes +3",
+        legs = "Bihu Cannions +3",
         feet = "Fili Cothurnes +2",
         neck = "Mnbw. Whistle +1",
         waist = "Orpheus's Sash",
         left_ear = "Regal Earring",
-        right_ear = {
-            name = "Fili Earring +1",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+11', 'Mag. Acc.+11', 'Damage taken-3%'}
-        },
+        right_ear={ name="Fili Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+12','Mag. Acc.+12','Damage taken-4%',}},
         left_ring = "Defending Ring",
         right_ring = "Moonlight Ring",
         back = "Moonlight Cape"
@@ -1077,7 +1066,7 @@ function init_gear_sets()
             name = "Nyame Helm",
             augments = {'Path: B'}
         },
-        body = "Ayanmo Corazza +2",
+        body = "Ashera Harness",
         hands = "Bunzi's Gloves",
         legs = {
             name = "Nyame Flanchard",
@@ -1786,7 +1775,7 @@ function get_lullaby_duration(spell)
     if player.equipment.neck == "Mnbw. Whistle +1" then
         mult = mult + 0.3
     end
-    if player.equipment.body == "Fili Hongreline +2" then
+    if player.equipment.body == "Fili Hongreline +3" then
         mult = mult + 0.12
     end
     if player.equipment.legs == "Inyanga Shalwar +1" then

@@ -534,7 +534,7 @@ function get_sets()
         hands = "Fili Manchettes +3"
     }
     sets.Midcast.Ballad = {
-        legs = "Fili Rhingrave +2"
+        legs = "Inyanga Shalwar +2",
     }
     sets.Midcast.Scherzo = {
         feet = "Fili Cothurnes +2"

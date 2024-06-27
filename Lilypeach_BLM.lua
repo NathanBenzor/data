@@ -398,20 +398,20 @@ function init_gear_sets()
 
     sets.midcast.MndEnfeebles = {
         main={ name="Contemplator +1", augments={'Path: A',}},
-        sub="Enki Strap",
+        sub="Khonsu",
         ammo = "Pemphredo Tathlum",
         head = "Wicce Petasos +3",
         neck = "Sorcerer's Stole +2",
         ear1 = "Regal Earring",
         ear2 = "Malignance Earring",
         body = "Spaekona's Coat +2",
-        hands = "Agwu's Gages",
-        ring1 = "Kishar Ring",
+        hands = "Spaekona's Gloves +3",
+        ring1 = "Stikini Ring +1",
         ring2 = "Metamorph Ring +1",
         back = "Aurist's Cape +1",
         waist = "Acuity Belt +1",
         legs = "Spaekona's Tonban +3",
-        feet = "Agwu's Pigaches"
+        feet = "Archmage's Sabots +3"
     } -- MND/Magic accuracy
 
     sets.midcast.IntEnfeebles = set_combine(sets.midcast.MndEnfeebles, {
@@ -423,6 +423,7 @@ function init_gear_sets()
     sets.midcast.ElementalEnfeeble = set_combine(sets.midcast.MndEnfeebles, {
         legs = "Archmage's Tonban +3",
         feet = "Archmage's Sabots +3",
+        hands = "Spaekona's Gloves +2"
     })
     
     sets.midcast.Dispelga = set_combine(sets.midcast.IntEnfeebles, {
@@ -460,7 +461,7 @@ function init_gear_sets()
         ear2 = "Regal Earring",
         body = "Wicce Coat +3",
         hands = "Archmage's Gloves +2",
-        ring1 = "Archon Ring",
+        ring1 = "Evanescence Ring",
         ring2 = "Metamorph Ring +1",
         back = "Aurist's Cape +1",
         waist = "Fucho-no-obi",
@@ -490,10 +491,7 @@ function init_gear_sets()
     }    
 
     sets.midcast.Death = {
-        main = {
-            name = "Lathi",
-            augments = {'MP+80', 'INT+20', '"Mag.Atk.Bns."+20'}
-        },
+        main={ name="Marin Staff +1", augments={'Path: A',}},
         sub = "Enki Strap",
         ammo = "Sapience Orb",
         head = "Amalric Coif +1",
@@ -523,10 +521,7 @@ function init_gear_sets()
     -- Elemental Magic sets
 
     sets.midcast['Elemental Magic'] = {
-        main = {
-            name = "Lathi",
-            augments = {'MP+80', 'INT+20', '"Mag.Atk.Bns."+20'}
-        },
+        main={ name="Marin Staff +1", augments={'Path: A',}},
         sub = "Enki Strap",
         ammo = "Pemphredo Tathlum",
         head = "Wicce Petasos +3",
@@ -556,7 +551,7 @@ function init_gear_sets()
     }
 
     sets.midcast['Elemental Magic'].DeathMode = set_combine(sets.midcast['Elemental Magic'], {
-        main = gear.Grioavolr_MB,
+        main={ name="Marin Staff +1", augments={'Path: A',}},
         sub = "Enki Strap",
         ammo = "Ghastly Tathlum +1",
         legs = "Amalric Slops +1",
@@ -565,11 +560,21 @@ function init_gear_sets()
     })
 
     sets.midcast['Elemental Magic'].Resistant = set_combine(sets.midcast['Elemental Magic'], {
-        sub = "Khonsu",
-        ammo = "Pemphredo Tathlum",
-        legs = "Merlinic Shalwar",
-        neck = "Sanctity Necklace",
-        waist = "Sacro Cord"
+        main={ name="Marin Staff +1", augments={'Path: A',}},
+        sub="Khonsu",
+        ammo="Pemphredo Tathlum",
+        head="Wicce Petasos +3",
+        body="Wicce Coat +3",
+        hands="Wicce Gloves +3",
+        legs="Wicce Chausses +3",
+        feet="Spaekona's Sabots +3",
+        neck={ name="Src. Stole +2", augments={'Path: A',}},
+        waist={ name="Acuity Belt +1", augments={'Path: A',}},
+        left_ear="Regal Earring",
+        right_ear="Malignance Earring",
+        left_ring="Freke Ring",
+        right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
+        back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}},
     })
 
     sets.midcast['Elemental Magic'].Spaekona = set_combine(sets.midcast['Elemental Magic'], {
@@ -639,12 +644,12 @@ function init_gear_sets()
     })
 
     sets.idle.ManaWall = {
-        feet = "Wicce Sabots +1",
+        feet = "Wicce Sabots +3",
         back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}},
     }
 
     sets.idle.DeathMode = {
-        main = gear.Lathi_MAB,
+        main={ name="Marin Staff +1", augments={'Path: A',}},
         sub = "Khonsu",
         ammo = "Ghastly Tathlum +1",
         head = "Pixie Hairpin +1",
@@ -662,10 +667,7 @@ function init_gear_sets()
     }
 
     sets.idle.Town = set_combine(sets.idle, {
-        main = {
-            name = "Lathi",
-            augments = {'MP+80', 'INT+20', '"Mag.Atk.Bns."+20'}
-        },
+        main={ name="Marin Staff +1", augments={'Path: A',}},
         sub = "Enki Strap",
         ammo = "Pemphredo Tathlum",
         head = "Wicce Petasos +3",
@@ -707,20 +709,21 @@ function init_gear_sets()
     }
 
     sets.magic_burst = {
-        head = "Ea Hat +1", -- 7/(7)
-        body = "Ea Houppe. +1", -- 9/(9)
-        hands = {
-            name = "Agwu's Gages",
-            augments = {'Path: A'}
-        },
-        legs = "Wicce Chausses +3",
-        feet = "Wicce Sabots +3",
-        neck = "Sybil Scarf", -- 10
-        ring2 = "Mujin Band", -- (5)
-        back = {
-            name = "Taranus's Cape",
-            augments = {'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'INT+10', '"Mag.Atk.Bns."+10', 'Damage taken-5%'}
-        }
+        main={ name="Marin Staff +1", augments={'Path: A',}},
+        sub="Khonsu",
+        ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
+        head="Ea Hat +1",
+        body="Wicce Coat +3",
+        hands={ name="Agwu's Gages", augments={'Path: A',}},
+        legs="Wicce Chausses +3",
+        feet="Wicce Sabots +3",
+        neck={ name="Src. Stole +2", augments={'Path: A',}},
+        waist={ name="Acuity Belt +1", augments={'Path: A',}},
+        left_ear="Regal Earring",
+        right_ear="Malignance Earring",
+        left_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
+        right_ring="Freke Ring",
+        back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}},
     }
 
     sets.magic_burst.Resistant = {
