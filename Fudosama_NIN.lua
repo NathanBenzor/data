@@ -289,7 +289,7 @@ function init_gear_sets()
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
-        ammo = "Seeth. Bomblet +1",
+        -- ammo = "Seeth. Bomblet +1",
         head = {
             name = "Nyame Helm",
             augments = {'Path: B'}
@@ -384,7 +384,7 @@ function init_gear_sets()
     sets.precast.WS['Blade: Metsu'].Acc = set_combine(sets.precast.WS['Blade: Metsu'], {})
 
     sets.precast.WS['Blade: Ten'] = {
-        ammo = "Date Shuriken",
+        -- ammo = "Date Shuriken",
         head = {
             name = "Herculean Helm",
             augments = {'Magic dmg. taken -4%', 'Pet: Haste+1', 'Weapon skill damage +9%'}
@@ -490,7 +490,7 @@ function init_gear_sets()
     }
 
     sets.precast.WS['Blade: Chi'] = {
-        ammo = "Seething Bomblet +1",
+        -- ammo = "Seething Bomblet +1",
         head = {
             name = "Mochi. Hatsuburi +3",
             augments = {'Enhances "Yonin" and "Innin" effect'}
@@ -512,7 +512,6 @@ function init_gear_sets()
             augments = {'Path: B'}
         },
         neck = "Fotia Gorget",
-        -- waist = "Fotia Belt",
         waist = "Orpheus's Sash",
         left_ear = {
             name = "Moonshade Earring",
@@ -528,7 +527,7 @@ function init_gear_sets()
     }
 
     sets.precast.WS['Blade: Teki'] = {
-        ammo = "Seething Bomblet +1",
+        -- ammo = "Seething Bomblet +1",
         head = {
             name = "Mochi. Hatsuburi +3",
             augments = {'Enhances "Yonin" and "Innin" effect'}
@@ -545,9 +544,11 @@ function init_gear_sets()
             name = "Mochi. Hakama +3",
             augments = {'Enhances "Mijin Gakure" effect'}
         },
-        feet = "Malignance Boots",
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
         neck = "Fotia Gorget",
-        -- waist = "Fotia Belt",
         waist = "Orpheus's Sash",
         left_ear = {
             name = "Moonshade Earring",
@@ -563,7 +564,7 @@ function init_gear_sets()
     }
 
     sets.precast.WS['Blade: To'] = {
-        ammo = "Seething Bomblet +1",
+        -- ammo = "Seething Bomblet +1",
         head = {
             name = "Mochi. Hatsuburi +3",
             augments = {'Enhances "Yonin" and "Innin" effect'}
@@ -580,9 +581,11 @@ function init_gear_sets()
             name = "Mochi. Hakama +3",
             augments = {'Enhances "Mijin Gakure" effect'}
         },
-        feet = "Malignance Boots",
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
         neck = "Fotia Gorget",
-        -- waist = "Fotia Belt",
         waist = "Orpheus's Sash",
         left_ear = {
             name = "Moonshade Earring",
@@ -635,7 +638,7 @@ function init_gear_sets()
     }
 
     sets.precast.WS['Aeolian Edge'] = {
-        ammo = "Ghastly Tathlum +1",
+        -- ammo = "Ghastly Tathlum +1",
         head = {
             name = "Mochi. Hatsuburi +3",
             augments = {'Enhances "Yonin" and "Innin" effect'}
@@ -672,7 +675,7 @@ function init_gear_sets()
     }
 
     sets.precast.WS['Savage Blade'] = {
-        ammo = "Seething Bomblet +1",
+        -- ammo = "Seething Bomblet +1",
         head = {
             name = "Mpaca's Cap",
             augments = {'Path: A'}
@@ -898,8 +901,8 @@ function init_gear_sets()
             augments = {'Path: A'}
         },
         waist = "Plat. Mog. Belt",
-        left_ear = "Telos Earring",
-        right_ear = "Cessance Earring",
+        left_ear = "Eabani Earring",
+        right_ear = "Etiolation Earring",
         left_ring = "Shneddick Ring",
         right_ring = "Regal Ring",
         back = {
@@ -940,18 +943,34 @@ function init_gear_sets()
     })
 
     sets.idle.Town = set_combine(sets.idle, {
-        head = "Malignance Chapeau",
-        body = "Malignance Tabard",
-        hands = "Malignance Gloves",
-        legs = "Malignance Tights",
-        feet = "Malignance Boots",
+        -- ammo = "Staunch Tathlum +1",
+        head = {
+            name = "Nyame Helm",
+            augments = {'Path: B'}
+        },
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
         neck = {
             name = "Loricate Torque +1",
             augments = {'Path: A'}
         },
         waist = "Plat. Mog. Belt",
-        left_ear = "Telos Earring",
-        right_ear = "Dedition Earring",
+        left_ear = "Eabani Earring",
+        right_ear = "Etiolation Earring",
         left_ring = "Shneddick Ring",
         right_ring = "Regal Ring",
         back = {
@@ -992,13 +1011,18 @@ function init_gear_sets()
     sets.engaged = {
         ammo = "Seki Shuriken",
         head = "Malignance Chapeau",
-        body = "Malignance Tabard",
-        hands = "Malignance Gloves",
-        -- hands = {
-        --     name = "Adhemar Wristbands",
-        --     augments = {'DEX+10', 'AGI+10', 'Accuracy+15'}
-        -- },
-        legs = "Malignance Tights",
+        -- body = "Malignance Tabard",
+        body = {
+            name = "Adhemar Jacket +1",
+            augments = {'DEX+12', 'AGI+12', 'Accuracy+20'}
+        },
+        -- hands = "Malignance Gloves",
+        hands = {
+            name = "Adhemar Wristbands",
+            augments = {'DEX+10', 'AGI+10', 'Accuracy+15'}
+        },
+        -- legs = "Malignance Tights",
+        legs = "Samnuha Tights",
         feet = "Malignance Boots",
         neck = {
             name = "Ninja Nodowa +1",
@@ -1040,15 +1064,44 @@ function init_gear_sets()
     })
 
     sets.engaged.STP = set_combine(sets.engaged, {
-        legs = "Samnuha Tights",
-        ring1 = "Chirich Ring +1"
+        ammo = "Seki Shuriken",
+        head = "Malignance Chapeau",
+        body = "Malignance Tabard",
+        hands = "Malignance Gloves",
+        -- hands = {
+        --     name = "Adhemar Wristbands",
+        --     augments = {'DEX+10', 'AGI+10', 'Accuracy+15'}
+        -- },
+        legs = "Malignance Tights",
+        feet = "Malignance Boots",
+        neck = {
+            name = "Ninja Nodowa +1",
+            augments = {'Path: A'}
+        },
+        -- waist = "Windbuffet Belt +1",
+        waist = {
+            name = "Sailfi Belt +1",
+            augments = {'Path: A'}
+        },
+        left_ear = "Telos Earring",
+        right_ear = "Dedition Earring",
+        left_ring = "Epona's Ring",
+        right_ring = "Gere Ring",
+        back = {
+            name = "Andartia's Mantle",
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Damage taken-5%'}
+        }
     })
 
     sets.engaged.Crit = set_combine(sets.engaged, {
         head = {
-            name = "Mpaca's Cap",
+            name = "Blistering Sallet +1",
             augments = {'Path: A'}
         },
+        -- head = {
+        --     name = "Mpaca's Cap",
+        --     augments = {'Path: A'}
+        -- },
         -- body = "Mpaca's Doublet",
         body = "Ken. Samue +1",
         hands = "Mpaca's Gloves",

@@ -132,7 +132,8 @@ function user_setup()
         'Spumante Broth',
         'Pungent Broth',
         'Spicy Broth',
-        'Furious Broth'
+        'Furious Broth',
+        'FunguarFamiliar'
 
     }
     send_command('bind !f8 gs c cycle JugMode')
@@ -162,6 +163,7 @@ function user_setup()
     state.RewardMode = M {
         ['description'] = 'Reward Mode',
         'Theta',
+        'Epsilon',
         'Roborant'
     }
     send_command('bind ^= gs c cycle RewardMode')
@@ -2770,6 +2772,8 @@ function job_precast(spell, action, spellMap, eventArgs)
         RewardAmmo = ''
         if state.RewardMode.value == 'Theta' then
             RewardAmmo = 'Pet Food Theta'
+        elseif state.RewardMode.value == 'Epsilon' then
+            RewardAmmo = 'Pet Fd. Epsilon'
         elseif state.RewardMode.value == 'Roborant' then
             RewardAmmo = 'Pet Roborant'
         else

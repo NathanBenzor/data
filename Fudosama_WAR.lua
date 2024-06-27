@@ -214,8 +214,15 @@ function init_gear_sets()
     sets.precast.WS.PDL = set_combine(sets.precast.WS, {
         ammo = "Knobkierrie",
         head = "Agoge Mask +3",
-        body = "Sakpata's Plate",
-        hands = "Boii Mufflers +3",
+        body = {
+            name = "Sakpata's Plate",
+            augments = {'Path: A'}
+        },
+        -- hands = "Boii Mufflers +3",
+        hands = {
+            name = "Sakpata's Gauntlets",
+            augments = {'Path: A'}
+        },
         legs = "Boii Cuisses +3",
         feet = {
             name = "Nyame Sollerets",
@@ -260,7 +267,10 @@ function init_gear_sets()
         -- head = "Agoge Mask +3",
         -- body = "Sakpata's Breastplate",
         -- -- body = "Pumm. Lorica +3",
-        -- -- hands = "Sakpata's Gauntlets",
+        -- hands = {
+        --     name = "Sakpata's Gauntlets",
+        --     augments = {'Path: A'}
+        -- },
         -- hands = "Boii Mufflers +3",
         -- legs = "Boii Cuisses +3",
         -- -- feet = "Sulevia's Leggings +2",
@@ -278,7 +288,10 @@ function init_gear_sets()
         ammo = "Knobkierrie",
         head = "Agoge Mask +3",
         body = "Sakpata's Breastplate",
-        -- hands = "Sakpata's Gauntlets",
+        -- hands = {
+        --     name = "Sakpata's Gauntlets",
+        --     augments = {'Path: A'}
+        -- },
         hands = "Boii Mufflers +3",
         legs = "Boii Cuisses +3",
         -- feet = "Sulevia's Leggings +2",
@@ -340,7 +353,10 @@ function init_gear_sets()
         -- ammo = "Yetshila +1",
         -- head = "Flam. Zucchetto +2",
         -- body = "Tatenashi Haramaki +1",
-        -- hands = "Sakpata's Gauntlets",
+        -- hands = {
+        --     name = "Sakpata's Gauntlets",
+        --     augments = {'Path: A'}
+        -- },
         -- legs = "Sakpata's Cuisses",
         -- feet = "Boii Calligae +1",
         -- neck = "Fotia Gorget",
@@ -365,22 +381,28 @@ function init_gear_sets()
     -- Great Axe
     sets.precast.WS['Upheaval'] = {
         ammo = "Knobkierrie",
+        -- head = {
+        --     name = "Agoge Mask +3",
+        --     augments = {'Enhances "Savagery" effect'}
+        -- },
         head = {
-            name = "Agoge Mask +3",
-            augments = {'Enhances "Savagery" effect'}
+            name = "Nyame Helm",
+            augments = {'Path: B'}
         },
         body = {
             name = "Nyame Mail",
             augments = {'Path: B'}
         },
-        hands = {
-            name = "Nyame Gauntlets",
-            augments = {'Path: B'}
-        },
+        -- hands = {
+        --     name = "Nyame Gauntlets",
+        --     augments = {'Path: B'}
+        -- },
+        hands = "Boii Mufflers +3",
         legs = {
             name = "Nyame Flanchard",
             augments = "Path: B"
         },
+        -- legs = "Boii Cuisses +3",
         feet = {
             name = "Nyame Sollerets",
             augments = {'Path: B'}
@@ -392,10 +414,11 @@ function init_gear_sets()
         waist = "Sailfi Belt +1",
         left_ear = "Thrud Earring",
         right_ear = "Moonshade Earring",
-        left_ring = {
-            name = "Gelatinous Ring +1",
-            augments = {'Path: A'}
-        },
+        -- left_ring = {
+        --     name = "Gelatinous Ring +1",
+        --     augments = {'Path: A'}
+        -- },
+        left_ring = "Regal Ring",
         right_ring = "Niqmaddu Ring",
         back = {
             name = "Cichol's Mantle",
@@ -405,16 +428,23 @@ function init_gear_sets()
 
     sets.precast.WS['Upheaval'].PDL = set_combine(sets.precast.WS['Upheaval'], {
         ammo = "Knobkierrie",
+        -- head = {
+        --     name = "Agoge Mask +3",
+        --     augments = {'Enhances "Savagery" effect'}
+        -- },
         head = {
-            name = "Agoge Mask +3",
-            augments = {'Enhances "Savagery" effect'}
+            name = "Sakpata's Helm",
+            augments = {'Path: A'}
         },
-        body = "Sakpata's Plate",
+        body = {
+            name = "Sakpata's Plate",
+            augments = {'Path: A'}
+        },
         hands = {
             name = "Sakpata's Gauntlets",
             augments = {'Path: A'}
         },
-        legs = "Nyame Flanchard",
+        legs = "Boii Cuisses +3",
         feet = {
             name = "Nyame Sollerets",
             augments = {'Path: B'}
@@ -426,10 +456,11 @@ function init_gear_sets()
         waist = "Sailfi Belt +1",
         left_ear = "Thrud Earring",
         right_ear = "Moonshade Earring",
-        left_ring = {
-            name = "Gelatinous Ring +1",
-            augments = {'Path: A'}
-        },
+        -- left_ring = {
+        --     name = "Gelatinous Ring +1",
+        --     augments = {'Path: A'}
+        -- },
+        left_ring = "Regal Ring",
         right_ring = "Niqmaddu Ring",
         back = {
             name = "Cichol's Mantle",
@@ -442,7 +473,10 @@ function init_gear_sets()
     -- })
 
     -- sets.precast.WS['Upheaval'].Acc = set_combine(sets.precast.WS['Upheaval'], {
-    -- hands="Sakpata's Gauntlets",
+    -- hands = {
+    --     name = "Sakpata's Gauntlets",
+    --     augments = {'Path: A'}
+    -- },
     -- legs="Pumm. Cuisses +3",
     -- })
 
@@ -1021,7 +1055,10 @@ function init_gear_sets()
         },
         head = "Boii Mask +3",
         body = "Boii Lorica +3",
-        hands = "Sakpata's Gauntlets",
+        hands = {
+            name = "Sakpata's Gauntlets",
+            augments = {'Path: A'}
+        },
         legs = "Sakpata's Cuisses",
         feet = "Sakpata's Leggings",
         neck = "Bathy Choker +1",
@@ -1051,7 +1088,10 @@ function init_gear_sets()
         },
         head = "Hjarrandi Helm",
         body = "Sakpata's Plate",
-        hands = "Sakpata's Gauntlets",
+        hands = {
+            name = "Sakpata's Gauntlets",
+            augments = {'Path: A'}
+        },
         legs = "Sakpata's Cuisses",
         feet = {
             name = "Sakpata's Leggings",
@@ -1084,7 +1124,10 @@ function init_gear_sets()
         },
         head = "Hjarrandi Helm",
         body = "Sakpata's Plate",
-        hands = "Sakpata's Gauntlets",
+        hands = {
+            name = "Sakpata's Gauntlets",
+            augments = {'Path: A'}
+        },
         legs = "Sakpata's Cuisses",
         feet = {
             name = "Sakpata's Leggings",
@@ -1116,8 +1159,12 @@ function init_gear_sets()
             augments = {'Path: A'}
         },
         head = "Boii Mask +3",
-        body = "Hjarrandi Breastplate",
-        hands = "Sakpata's Gauntlets",
+        -- body = "Hjarrandi Breastplate",
+        body = "Boii Lorica +3",
+        hands = {
+            name = "Sakpata's Gauntlets",
+            augments = {'Path: A'}
+        },
         legs = "Pumm. Cuisses +3",
         feet = "Pumm. Calligae +3",
         neck = {
@@ -1160,8 +1207,14 @@ function init_gear_sets()
             augments = {'Path: A'}
         },
         head = "Hjarrandi Helm",
-        body = "Sakpata's Plate",
-        hands = "Sakpata's Gauntlets",
+        body = {
+            name = "Sakpata's Plate",
+            augments = {'Path: A'}
+        },
+        hands = {
+            name = "Sakpata's Gauntlets",
+            augments = {'Path: A'}
+        },
         legs = "Sakpata's Cuisses",
         feet = "Sakpata's Leggings",
         neck = {
@@ -1209,7 +1262,10 @@ function init_gear_sets()
         },
         head = "Boii Mask +3",
         body = "Boii Lorica +3",
-        hands = "Sakpata's Gauntlets",
+        hands = {
+            name = "Sakpata's Gauntlets",
+            augments = {'Path: A'}
+        },
         legs = "Pumm. Cuisses +3",
         feet = "Pumm. Calligae +3",
         neck = {
@@ -1246,8 +1302,14 @@ function init_gear_sets()
             augments = {'Path: A'}
         },
         head = "Hjarrandi Helm",
-        body = "Sakpata's Plate",
-        hands = "Sakpata's Gauntlets",
+        body = {
+            name = "Sakpata's Plate",
+            augments = {'Path: A'}
+        },
+        hands = {
+            name = "Sakpata's Gauntlets",
+            augments = {'Path: A'}
+        },
         legs = "Sakpata's Cuisses",
         feet = {
             name = "Sakpata's Leggings",
@@ -1277,10 +1339,13 @@ function init_gear_sets()
         ammo = "Coiste Bodhar",
         head = "Flam. Zucchetto +2",
         body = {
-            name = "Valorous Mail",
-            augments = {'Accuracy+22', '"Dbl.Atk."+5', 'Attack+14'}
+            name = "Sakpata's Plate",
+            augments = {'Path: A'}
         },
-        hands = "Sakpata's Gauntlets",
+        hands = {
+            name = "Sakpata's Gauntlets",
+            augments = {'Path: A'}
+        },
         legs = "Pumm. Cuisses +3",
         feet = "Pumm. Calligae +3",
         neck = "Warrior's Bead Necklace +2",
@@ -1304,8 +1369,14 @@ function init_gear_sets()
         },
         -- head = "Hjarrandi Helm",
         head = "Boii Mask +3",
-        body = "Sakpata's Plate",
-        hands = "Sakpata's Gauntlets",
+        body = {
+            name = "Sakpata's Plate",
+            augments = {'Path: A'}
+        },
+        hands = {
+            name = "Sakpata's Gauntlets",
+            augments = {'Path: A'}
+        },
         legs = "Sakpata's Cuisses",
         feet = {
             name = "Sakpata's Leggings",
@@ -1345,7 +1416,10 @@ function init_gear_sets()
         },
         head = "Hjarrandi Helm",
         body = "Sakpata's Breastplate",
-        hands = "Sakpata's Gauntlets",
+        hands = {
+            name = "Sakpata's Gauntlets",
+            augments = {'Path: A'}
+        },
         legs = "Sakpata's Cuisses",
         feet = {
             name = "Sakpata's Leggings",
@@ -1376,8 +1450,14 @@ function init_gear_sets()
             augments = {'Path: A'}
         },
         head = "Hjarrandi Helm",
-        body = "Sakpata's Plate",
-        hands = "Sakpata's Gauntlets",
+        body = {
+            name = "Sakpata's Plate",
+            augments = {'Path: A'}
+        },
+        hands = {
+            name = "Sakpata's Gauntlets",
+            augments = {'Path: A'}
+        },
         legs = "Sakpata's Cuisses",
         feet = {
             name = "Sakpata's Leggings",
@@ -1414,10 +1494,13 @@ function init_gear_sets()
         },
         -- head = "Hjarrandi Helm",
         head = "Boii Mask +3",
-        -- body = "Sakpata's Plate",
-        -- body = "Hjarrandi Breastplate",
-        body = "Boii Lorica +3",
-        hands = "Sakpata's Gauntlets",
+        -- body={ name="Sakpata's Plate", augments={'Path: A',}},
+        body = "Hjarrandi Breastplate",
+        -- body = "Boii Lorica +3",
+        hands = {
+            name = "Sakpata's Gauntlets",
+            augments = {'Path: A'}
+        },
         legs = "Sakpata's Cuisses",
         -- feet = {
         --     name = "Sakpata's Leggings",
@@ -1465,8 +1548,14 @@ function init_gear_sets()
             augments = {'Path: A'}
         },
         head = "Hjarrandi Helm",
-        body = "Sakpata's Plate",
-        hands = "Sakpata's Gauntlets",
+        body = {
+            name = "Sakpata's Plate",
+            augments = {'Path: A'}
+        },
+        hands = {
+            name = "Sakpata's Gauntlets",
+            augments = {'Path: A'}
+        },
         legs = "Sakpata's Cuisses",
         feet = {
             name = "Sakpata's Leggings",
@@ -1498,8 +1587,14 @@ function init_gear_sets()
         },
         -- head = "Hjarrandi Helm",
         head = "Boii Mask +3",
-        body = "Sakpata's Plate",
-        hands = "Sakpata's Gauntlets",
+        body = {
+            name = "Sakpata's Plate",
+            augments = {'Path: A'}
+        },
+        hands = {
+            name = "Sakpata's Gauntlets",
+            augments = {'Path: A'}
+        },
         legs = "Sakpata's Cuisses",
         feet = {
             name = "Sakpata's Leggings",
@@ -1536,7 +1631,7 @@ function init_gear_sets()
         --     augments = {'Path: A'}
         -- },
         -- head = "Hjarrandi Helm",
-        -- body = "Sakpata's Plate",
+        -- body={ name="Sakpata's Plate", augments={'Path: A',}},
         -- hands = "Sakpata's Gauntlets",
         -- legs = "Sakpata's Cuisses",
         -- feet = {
@@ -1565,7 +1660,7 @@ function init_gear_sets()
         },
         -- head = "Hjarrandi Helm",
         head = "Boii Mask +3",
-        -- body = "Sakpata's Plate",
+        -- body={ name="Sakpata's Plate", augments={'Path: A',}},
         -- body = "Hjarrandi Breastplate",
         body = "Boii Lorica +3",
         hands = {
@@ -1651,10 +1746,13 @@ function init_gear_sets()
             name = "Blistering Sallet +1",
             augments = {'Path: A'}
         },
-        -- body = "Sakpata's Plate",
+        -- body={ name="Sakpata's Plate", augments={'Path: A',}},
         body = "Hjarrandi Breastplate",
         -- body = "Boii Lorica +3",
-        hands = "Sakpata's Gauntlets",
+        hands = {
+            name = "Sakpata's Gauntlets",
+            augments = {'Path: A'}
+        },
         legs = "Sakpata's Cuisses",
         -- feet = {
         --     name = "Sakpata's Leggings",

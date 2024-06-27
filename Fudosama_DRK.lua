@@ -272,8 +272,14 @@ function init_gear_sets()
             augments = {'Path: A'}
         },
         head = "Heath. Bur. +3",
-        body = "Sakpata's Plate",
-        hands = "Sakpata's Gauntlets",
+        body = {
+            name = "Sakpata's Plate",
+            augments = {'Path: A'}
+        },
+        hands = {
+            name = "Sakpata's Gauntlets",
+            augments = {'Path: A'}
+        },
         legs = "Sakpata's Cuisses",
         feet = "Sakpata's Leggings",
         neck = {
@@ -489,7 +495,10 @@ function init_gear_sets()
     sets.precast.WS['Insurgency'].PDL = {
         ammo = "Crepuscular Pebble",
         head = "Heath. Bur. +3",
-        body = "Sakpata's Plate",
+        body = {
+            name = "Sakpata's Plate",
+            augments = {'Path: A'}
+        },
         hands = {
             name = "Sakpata's Gauntlets",
             augments = {'Path: A'}
@@ -608,7 +617,10 @@ function init_gear_sets()
         ammo = "Knobkierrie",
         head = "Sakpata's Helm",
         body = "Ignominy Cuirass +3",
-        hands = "Sakpata's Gauntlets",
+        hands = {
+            name = "Sakpata's Gauntlets",
+            augments = {'Path: A'}
+        },
         legs = {
             name = "Fall. Flanchard +3",
             augments = {'Enhances "Muted Soul" effect'}
@@ -1044,8 +1056,14 @@ function init_gear_sets()
         },
         -- head = "Hjarrandi Helm",
         head = "Flam. Zucchetto +2",
-        body = "Sakpata's Plate",
-        hands = "Sakpata's Gauntlets",
+        body = {
+            name = "Sakpata's Plate",
+            augments = {'Path: A'}
+        },
+        hands = {
+            name = "Sakpata's Gauntlets",
+            augments = {'Path: A'}
+        },
         legs = "Ig. Flanchard +3",
         -- feet = "Sakpata's Leggings",
         feet = "Flam. Gambieras +2",
@@ -1121,8 +1139,14 @@ function init_gear_sets()
             augments = {'Path: A'}
         },
         head = "Heath. Bur. +3",
-        body = "Sakpata's Plate",
-        hands = "Sakpata's Gauntlets",
+        body = {
+            name = "Sakpata's Plate",
+            augments = {'Path: A'}
+        },
+        hands = {
+            name = "Sakpata's Gauntlets",
+            augments = {'Path: A'}
+        },
         legs = "Ig. Flanchard +3",
         feet = "Sakpata's Leggings",
         neck = {
@@ -1143,8 +1167,14 @@ function init_gear_sets()
 
     sets.engaged.Liberator.Aftermath = {
         head = "Flamma Zucchetto +2",
-        body = "Sakpata's Plate",
-        hands = "Sakpata's Gauntlets",
+        body = {
+            name = "Sakpata's Plate",
+            augments = {'Path: A'}
+        },
+        hands = {
+            name = "Sakpata's Gauntlets",
+            augments = {'Path: A'}
+        },
         legs = "Ig. Flanchard +3",
         feet = "Flam. Gambieras +2",
         neck = {
