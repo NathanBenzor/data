@@ -150,12 +150,12 @@ function user_setup()
     -- Command to show global binds in game[ CTRL + numpad- ]
     send_command([[bind ^numpad- 
             input /echo -----Item_Binds-----;
-            input /echo [ Shift + Numpad1 ]	Echo Drop;
-            input /echo [ Shift + Numpad2 ]	Holy Water;
-            input /echo [ Shift + Numpad3 ]	Remedy;
-            input /echo [ Shift + Numpad4 ]	Panacea;
-            input /echo [ Shift + Numpad7 ]	Silent Oil;
-            input /echo [ Shift + Numpad9 ]	Prism Powder;
+            -- input /echo [ Shift + Numpad1 ]	Echo Drop;
+            -- input /echo [ Shift + Numpad2 ]	Holy Water;
+            -- input /echo [ Shift + Numpad3 ]	Remedy;
+            -- input /echo [ Shift + Numpad4 ]	Panacea;
+            -- input /echo [ Shift + Numpad7 ]	Silent Oil;
+            -- input /echo [ Shift + Numpad9 ]	Prism Powder;
             input /echo -----Food_Binds-----;
             input /echo [ Windows + Numpad1 ]	Sublime Sushi;
             input /echo [ Windows + Numpad2 ]	Grape Daifuku;

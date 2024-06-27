@@ -1,6 +1,6 @@
 -- Colonnello
 -- Load and initialize the include file.
-include('Fudosama-Include')
+include('Daiitoku-Include')
 
 -- Set to ingame lockstyle and Macro Book/Set
 LockStylePallet = "196"
@@ -111,7 +111,10 @@ function get_sets()
             name = "Bagua Mitaines +3",
             augments = {'Enhances "Curative Recantation" effect'}
         },
-        legs = "Azi. Tights +3",
+        legs = {
+            name = "Bagua Pants +3",
+            augments = {'Enhances "Mending Halation" effect'}
+        },
         feet = {
             name = "Bagua Sandals +3",
             augments = {'Enhances "Radial Arcana" effect'}
@@ -418,12 +421,12 @@ function get_sets()
         main = "Bunzi's Rod",
         sub = "Ammurapi Shield",
         ammo = "Ghastly Tathlum +1", -- 8/8
-        head = "Azimuth Hood +3", -- 10/10
-        body = "Azimuth Coat +3", -- 10/10
-        hands = "Azimuth Gloves +3", -- 10/10
+        head = "Azi. Hood +3",
+        body = "Azi. Coat +3",
+        hands = "Azi. Gloves +2",
         -- legs = "Agwu's Slops",
-        legs = "Azimuth Tights +3", -- 10/10
-        feet = "Azimuth Gaiters +3", -- 10/10
+        legs = "Azi. Tights +2",
+        feet = "Azi. Gaiters +3",
         neck = "Mizu. Kubikazari",
         ear1 = "Malignance Earring",
         ear2 = "Regal Earring",

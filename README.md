@@ -51,3 +51,8 @@
 - `//send @all input /item \"Abdhaljs Seal\" <me>`
 
 - `//gs equip sets.precast.RA`
+
+## Macro Send commands
+
+- `/console send Rialyn /item 'PoisonPotion' <me>` : Tell character to do something from a Macro
+- `send @all input /item 'Item' <me>` : all characters to use item
