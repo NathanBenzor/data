@@ -4,7 +4,7 @@ include('Rialyn-Include')
 
 -- Set to ingame lockstyle and Macro Book/Set
 LockStylePallet = "4"
-MacroBook = "11"
+MacroBook = "1"
 MacroSet = "1"
 
 -- Use "gs c food" to use the specified food item 
@@ -69,12 +69,13 @@ function get_sets()
             name = "Queller Rod",
             augments = {'Healing magic skill +15', '"Cure" potency +10%', '"Cure" spellcasting time -7%'}
         },
+        -- main = "Yagrush",
         sub = "Genmei Shield",
-        ammo = "Impatiens",
+        ammo = "Homiliary",
         head = "Nyame Helm",
-        body = "Ebers Bliaut +2",
+        body = "Ebers Bliaut +3",
         hands = "Nyame Gauntlets",
-        legs = "Ebers Pant. +2",
+        legs = "Ebers Pant. +3",
         feet = "Nyame Sollerets",
         neck = {
             name = "Clr. Torque +1",
@@ -85,7 +86,10 @@ function get_sets()
         right_ear = "Genmei Earring",
         left_ring = "Defending Ring",
         right_ring = "Shneddick Ring",
-        back = "Solemnity Cape"
+        back = {
+            name = "Alaunus's Cape",
+            augments = {'MND+20', 'Eva.+20 /Mag. Eva.+20', 'Phys. dmg. taken-10%'}
+        }
     }
 
     -- Set is only applied when sublimation is charging
@@ -106,7 +110,7 @@ function get_sets()
             name = "Queller Rod",
             augments = {'Healing magic skill +15', '"Cure" potency +10%', '"Cure" spellcasting time -7%'}
         },
-        sub = "Sors Shield",
+        sub = "Genmei Shield",
         ammo = "Pemphredo Tathlum",
         head = "Nyame Helm",
         body = "Nyame Mail",
@@ -121,21 +125,8 @@ function get_sets()
         left_ear = "Loquac. Earring",
         right_ear = "Mendi. Earring",
         left_ring = "Defending Ring",
-        right_ring = "Stikini Ring +1",
+        right_ring = "Stikini Ring",
         back = "Solemnity Cape"
-    }
-
-    sets.Idle.Town = {
-        head = "Ebers Cap +2",
-        body = "Ebers Bliaut +2",
-        hands = "Ebers Mitts +2",
-        legs = "Ebers Pant. +2",
-        feet = "Ebers Duckbills +2",
-        neck = "Clr. Torque +1",
-        ear1 = "Etiolation Earring",
-        ear2 = "Regal Earring",
-        ring1 = "Stikini Ring",
-        ring2 = "Stikini Ring"
     }
 
     -- Movement Gear
@@ -319,12 +310,9 @@ function get_sets()
     sets.Midcast.Enhancing = {
         main = {
             name = "Gada",
-            augments = {'Enh. Mag. eff. dur. +5', 'MND+5', 'Mag. Acc.+3', '"Mag.Atk.Bns."+20'}
+            augments = {'Enh. Mag. eff. dur. +6', 'VIT+3', 'Mag. Acc.+5', '"Mag.Atk.Bns."+9', 'DMG:+5'}
         },
-        sub = {
-            name = "Ammurapi Shield",
-            priority = 3
-        },
+        sub = "Ammurapi Shield",
         ammo = "Hydrocera",
         head = {
             name = "Telchine Cap",
@@ -527,7 +515,7 @@ function get_sets()
     sets.Midcast["Stoneskin"] = {
         main = {
             name = "Gada",
-            augments = {'Enh. Mag. eff. dur. +5', 'VIT+2'}
+            augments = {'Enh. Mag. eff. dur. +6', 'VIT+3', 'Mag. Acc.+5', '"Mag.Atk.Bns."+9', 'DMG:+5'}
         },
         sub = "Ammurapi Shield",
         ammo = "Pemphredo Tathlum",
