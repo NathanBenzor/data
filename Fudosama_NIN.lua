@@ -983,6 +983,25 @@ function init_gear_sets()
     sets.defense.PDT = sets.idle.DT
     sets.defense.MDT = sets.idle.DT
 
+    sets.defense.Evasion = {
+        ammo = "Yamarang",
+        head = "Malignance Chapeau",
+        body = "Malignance Tabard",
+        hands = "Malignance Gloves",
+        legs = "Malignance Tights",
+        feet = "Malignance Boots",
+        neck = "Bathy Choker +1",
+        waist = "Trance Belt",
+        left_ear = "Eabani Earring",
+        right_ear = "Infused Earring",
+        left_ring = "Defending Ring",
+        right_ring = {
+            name = "Gelatinous Ring +1",
+            augments = {'Path: A'}
+        },
+        back = "Agema Cape"
+    }
+
     sets.Kiting = {
         feet = "Danzo sune-ate"
     }

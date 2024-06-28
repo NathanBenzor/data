@@ -433,14 +433,18 @@ function init_gear_sets()
     sets.precast.WS['Detonator'] = set_combine(sets.precast.WS['Last Stand'], {})
 
     sets.precast.WS['Wildfire'] = {
-        ammo = gear.MAbullet,
+        -- ammo = gear.MAbullet,
         head = {
             name = "Nyame Helm",
             augments = {'Path: B'}
         },
+        -- body = {
+        --     name = "Lanun Frac +3",
+        --     augments = {'Enhances "Loaded Deck" effect'}
+        -- },
         body = {
-            name = "Lanun Frac +3",
-            augments = {'Enhances "Loaded Deck" effect'}
+            name = "Nyame Mail",
+            augments = {'Path: B'}
         },
         hands = {
             name = "Nyame Gauntlets",
@@ -450,9 +454,13 @@ function init_gear_sets()
             name = "Nyame Flanchard",
             augments = {'Path: B'}
         },
+        -- feet = {
+        --     name = "Lanun Bottes +3",
+        --     augments = {'Enhances "Wild Card" effect'}
+        -- },
         feet = {
-            name = "Lanun Bottes +3",
-            augments = {'Enhances "Wild Card" effect'}
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
         },
         neck = {
             name = "Comm. Charm +1",

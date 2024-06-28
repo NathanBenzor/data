@@ -724,13 +724,27 @@ function init_gear_sets()
     sets.precast.JA['Call Beast'] = {
         head = {
             name = "Acro Helm",
-            augments = {'"Call Beast" ability delay -4'}
+            augments = {'"Call Beast" ability delay -5'}
         },
-        body = "Totemic Jackcoat +3",
-        hands = "Ankusa Gloves +3",
+        body = {
+            name = "Acro Surcoat",
+            augments = {'"Call Beast" ability delay -5'}
+        },
+        hands = {
+            name = "Ankusa Gloves +3",
+            augments = {'Enhances "Beast Affinity" effect'}
+        },
+        legs = {
+            name = "Acro Breeches",
+            augments = {'"Call Beast" ability delay -5'}
+        },
         feet = {
             name = "Acro Leggings",
-            augments = {'"Call Beast" ability delay -4'}
+            augments = {'"Call Beast" ability delay -5'}
+        },
+        neck = {
+            name = "Bst. Collar +2",
+            augments = {'Path: A'}
         }
     }
     sets.precast.JA['Bestial Loyalty'] = sets.precast.JA['Call Beast']
@@ -855,18 +869,45 @@ function init_gear_sets()
     }
 
     sets.midcast.Pet.Normal = {
-        ammo = "Hesperiidae",
-        neck = "Shulmanu Collar",
-        ear1 = "Ruby Earring",
-        ear2 = "Hija Earring",
-        body = Ready_Atk_body,
-        hands = Ready_Atk_hands,
-        ring1 = "Thurandaut Ring +1",
-        ring2 = "Cath Palug Ring",
-        back = Ready_Atk_back,
+        -- ammo = "Hesperiidae",
+        -- neck = "Shulmanu Collar",
+        -- ear1 = "Ruby Earring",
+        -- ear2 = "Hija Earring",
+        -- body = Ready_Atk_body,
+        -- hands = Ready_Atk_hands,
+        -- ring1 = "Thurandaut Ring +1",
+        -- ring2 = "Cath Palug Ring",
+        -- back = Ready_Atk_back,
+        -- waist = "Incarnation Sash",
+        -- legs = Ready_Atk_legs,
+        -- feet = Ready_Atk_feet
+
+        ammo = {
+            name = "Hesperiidae",
+            augments = {'Path: A'}
+        },
+        head = "Nuk. Cabasset +2",
+        body = "Nukumi Gausape +3",
+        hands = "Nukumi Manoplas +3",
+        legs = "Nukumi Quijotes +2",
+        feet = "Gleti's Boots",
+        neck = {
+            name = "Bst. Collar +2",
+            augments = {'Path: A'}
+        },
         waist = "Incarnation Sash",
-        legs = Ready_Atk_legs,
-        feet = Ready_Atk_feet
+        left_ear = "Sroda Earring",
+        right_ear = {
+            name = "Nukumi Earring",
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+8', 'Mag. Acc.+8'}
+        },
+        left_ring = "Tali'ah Ring",
+        right_ring = "C. Palug Ring",
+        back = {
+            name = "Artio's Mantle",
+            augments = {'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20', 'Pet: Accuracy+10 Pet: Rng. Acc.+10',
+                        'Pet: Haste+10', 'Pet: Damage taken -5%'}
+        }
     }
 
     sets.midcast.Pet.MedAcc = set_combine(sets.midcast.Pet.Normal, {
@@ -2356,31 +2397,19 @@ function init_gear_sets()
             name = "Coiste Bodhar",
             augments = {'Path: A'}
         },
-        head = {
-            name = "Nyame Helm",
-            augments = {'Path: B'}
-        },
-        body = "Nukumi Gausape +3",
-        hands = {
-            name = "Nyame Gauntlets",
-            augments = {'Path: B'}
-        },
-        legs = {
-            name = "Nyame Flanchard",
-            augments = {'Path: B'}
-        },
-        feet = {
-            name = "Nyame Sollerets",
-            augments = {'Path: B'}
-        },
-        -- neck = "Fotia Gorget",
+        head = "Gleti's Mask",
+        body = "Gleti's Cuirass",
+        hands = "Gleti's Gauntlets",
+        legs = "Gleti's Breeches",
+        feet = "Nukumi Ocreae +2",
         neck = "Beastmaster Collar +2",
-        -- waist = "Fotia Belt",
-        waist = {
-            name = "Sailfi Belt +1",
-            augments = {'Path: A'}
-        },
-        left_ear = "Thrud Earring",
+        waist = "Fotia Belt",
+        -- waist = {
+        --     name = "Sailfi Belt +1",
+        --     augments = {'Path: A'}
+        -- },
+        -- left_ear = "Thrud Earring",
+        left_ear = "Sroda Earring",
         right_ear = "Sherida Earring",
         left_ring = "Sroda Ring",
         right_ring = "Gere Ring",
