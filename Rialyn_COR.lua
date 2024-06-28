@@ -3,8 +3,8 @@
 include('Rialyn-Include')
 
 -- Set to ingame lockstyle and Macro Book/Set
-LockStylePallet = "19"
-MacroBook = "18" -- Sub Job macro pallets can be defined in the sub_job_change_custom function below
+LockStylePallet = "16"
+MacroBook = "1" -- Sub Job macro pallets can be defined in the sub_job_change_custom function below
 MacroSet = "1"
 
 -- Use "gs c food" to use the specified food item 
@@ -227,28 +227,24 @@ function get_sets()
 
     -- Base TP set to build off when melee'n
     sets.OffenseMode.TP = {
-        ammo = Ammo.Bullet.RA,
-        head = "Malignance Chapeau",
-        body = "Malignance Tabard",
-        hands = "Malignance Gloves",
-        legs = {
-            name = "Samnuha Tights",
-            augments = {'STR+10', 'DEX+10', '"Dbl.Atk."+3', '"Triple Atk."+3'}
+        head = "Nyame Helm",
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
         },
-        feet = "Malignance Boots",
-        neck = "Iskur Gorget",
-        waist = {
-            name = "Sailfi Belt +1",
+        hands = "Nyame Gauntlets",
+        legs = "Nyame Flanchard",
+        feet = "Nyame Sollerets",
+        neck = {
+            name = "Loricate Torque +1",
             augments = {'Path: A'}
         },
-        left_ear = "Telos Earring",
-        right_ear = "Crep. Earring",
-        left_ring = "Chirich Ring +1",
-        right_ring = "Epona's Ring",
-        back = {
-            name = "Camulus's Mantle",
-            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
-        }
+        waist = "Sailfi Belt +1",
+        left_ear = "Neritic Earring",
+        right_ear = "Cessance Earring",
+        left_ring = "Chirich Ring",
+        right_ring = "Petrov Ring",
+        back = "Lupine Cape"
     }
 
     -- This set is used when OffenseMode is DT and Enaged

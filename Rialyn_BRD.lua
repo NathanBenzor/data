@@ -169,9 +169,9 @@ function get_sets()
         right_ear = "Genmei Earring",
         left_ear = "Etiolation Earring",
         left_ring = "Defending Ring",
-        right_ring = "Stikini Ring +1",
+        right_ring = "Stikini Ring +1"
         -- back = "Moonlight Cape"
-        back = "Aptitude Mantle +1"
+        -- back = "Aptitude Mantle +1"
     } -- PDT 60%%, MDT 56%
 
     sets.Idle.town = {

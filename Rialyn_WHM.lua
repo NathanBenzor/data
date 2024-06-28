@@ -440,11 +440,13 @@ function init_gear_sets()
     sets.midcast.CureMelee = sets.midcast.CureSolace
 
     sets.midcast.StatusRemoval = {
-        main = {
-            name = "Queller Rod",
-            augments = {'Healing magic skill +15', '"Cure" potency +10%', '"Cure" spellcasting time -7%'}
-        },
-        sub = "Sors Shield",
+        -- main = {
+        --     name = "Queller Rod",
+        --     augments = {'Healing magic skill +15', '"Cure" potency +10%', '"Cure" spellcasting time -7%'}
+        -- },
+        main = "Yagrush",
+        -- sub = "Sors Shield",
+        sub = "Ammurapi Shield",
         ammo = "Hydrocera",
         head = "Ebers Cap +2",
         body = "Ebers Bliaut +3",
@@ -512,10 +514,10 @@ function init_gear_sets()
     -- 110 total Enhancing Magic Skill; caps even without Light Arts
     sets.midcast['Enhancing Magic'] = {
         main = {
-            name = "Grioavolr",
-            augments = {'Enh. Mag. eff. dur. +8', 'INT+10', 'Mag. Acc.+23', '"Mag.Atk.Bns."+3'}
+            name = "Gada",
+            augments = {'Enh. Mag. eff. dur. +6', 'VIT+3', 'Mag. Acc.+5', '"Mag.Atk.Bns."+9', 'DMG:+5'}
         },
-        sub = "Benthos Grip",
+        sub = "Ammurapi Shield",
         ammo = "Pemphredo Tathlum",
         head = {
             name = "Telchine Cap",
@@ -548,10 +550,10 @@ function init_gear_sets()
 
     sets.midcast.EnhancingDuration = {
         main = {
-            name = "Grioavolr",
-            augments = {'Enh. Mag. eff. dur. +8', 'INT+10', 'Mag. Acc.+23', '"Mag.Atk.Bns."+3'}
+            name = "Gada",
+            augments = {'Enh. Mag. eff. dur. +6', 'VIT+3', 'Mag. Acc.+5', '"Mag.Atk.Bns."+9', 'DMG:+5'}
         },
-        sub = "Benthos Grip",
+        sub = "Ammurapi Shield",
         ammo = "Impatiens",
         head = {
             name = "Telchine Cap",
@@ -623,7 +625,7 @@ function init_gear_sets()
     sets.midcast.Stoneskin = {
         main = {
             name = "Gada",
-            augments = {'Enh. Mag. eff. dur. +5', 'VIT+2'}
+            augments = {'Enh. Mag. eff. dur. +6', 'VIT+3', 'Mag. Acc.+5', '"Mag.Atk.Bns."+9', 'DMG:+5'}
         },
         sub = "Ammurapi Shield",
         ammo = "Pemphredo Tathlum",
@@ -808,31 +810,6 @@ function init_gear_sets()
 
     -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
     sets.idle = {
-        -- main = "Yagrush",
-        -- sub = "Ammurapi Shield",
-        -- ammo = "Pemphredo Tathlum",
-        -- head = "Nyame Helm",
-        -- body = "Shamash Robe",
-        -- hands = {
-        --     name = "Chironic Gloves",
-        --     augments = {'Pet: MND+4', 'Attack+5', '"Refresh"+2', 'Accuracy+2 Attack+2'}
-        -- },
-        -- legs = "Nyame Flanchard",
-        -- feet = {
-        --     name = "Nyame Sollerets",
-        --     augments = {'Path: B'}
-        -- },
-        -- neck = {
-        --     name = "Loricate Torque +1",
-        --     augments = {'Path: A'}
-        -- },
-        -- waist = "Rumination Sash",
-        -- left_ear = "Loquac. Earring",
-        -- right_ear = "Genmei Earring",
-        -- left_ring = "Stikini Ring +1",
-        -- right_ring = "Stikini Ring +1",
-        -- back = "Solemnity Cape"
-
         main = "Yagrush",
         sub = "Genmei Shield",
         ammo = "Homiliary",
@@ -861,7 +838,7 @@ function init_gear_sets()
             name = "Queller Rod",
             augments = {'Healing magic skill +15', '"Cure" potency +10%', '"Cure" spellcasting time -7%'}
         },
-        sub = "Sors Shield",
+        sub = "Genmei Shield",
         ammo = "Pemphredo Tathlum",
         head = "Nyame Helm",
         body = "Nyame Mail",
@@ -876,7 +853,7 @@ function init_gear_sets()
         left_ear = "Loquac. Earring",
         right_ear = "Mendi. Earring",
         left_ring = "Defending Ring",
-        right_ring = "Stikini Ring +1",
+        right_ring = "Stikini Ring",
         back = {
             name = "Alaunus's Cape",
             augments = {'MND+20', 'Eva.+20 /Mag. Eva.+20', 'Phys. dmg. taken-10%'}
@@ -903,6 +880,7 @@ function init_gear_sets()
 
     sets.idle.Town = {
         main = "Yagrush",
+        sub = "Ammurapi Shield",
         ammo = "Homiliary",
         head = "Ebers Cap +2",
         body = "Ebers Bliaut +3",

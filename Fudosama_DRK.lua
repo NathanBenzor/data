@@ -22,7 +22,7 @@ function job_setup()
     elemental_ws = S {'Dark Harvest', 'Shadow of Death', 'Infernal Scythe', 'Frostbite', 'Freezebite', 'Burning Blade',
                       'Red Lotus Blade', 'Shining Blade', 'Seraph Blade', 'Sanguine Blade'}
 
-    lockstyleset = 18
+    lockstyleset = 194
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -238,17 +238,26 @@ function init_gear_sets()
         ammo = "Knobkierrie",
         head = "Heath. Bur. +3",
         body = {
-            name = "Nyame Mail",
-            augments = {'Path: B'}
+            name = "Sakpata's Plate",
+            augments = {'Path: A'}
         },
         hands = {
             name = "Nyame Gauntlets",
             augments = {'Path: B'}
         },
-        legs = "Sakpata's Cuisses",
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
         feet = "Heath. Sollerets +3",
-        neck = "Warrior's Bead Necklace +2",
-        waist = "Sailfi Belt +1",
+        neck = {
+            name = "Abyssal Beads +2",
+            augments = {'Path: A'}
+        },
+        waist = {
+            name = "Sailfi Belt +1",
+            augments = {'Path: A'}
+        },
         left_ear = {
             name = "Moonshade Earring",
             augments = {'Accuracy+4', 'TP Bonus +250'}
@@ -258,7 +267,7 @@ function init_gear_sets()
             augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+14', 'Mag. Acc.+14', 'Weapon skill damage +3%'}
         },
         left_ring = "Sroda Ring",
-        right_ring = "Cornelia's Ring",
+        right_ring = "Niqmaddu Ring",
         back = {
             name = "Ankou's Mantle",
             augments = {'VIT+20', 'Accuracy+20 Attack+20', 'VIT+10', 'Weapon skill damage +10%', 'Damage taken-5%'}
@@ -318,44 +327,44 @@ function init_gear_sets()
             name = "Nyame Helm",
             augments = {'Path: B'}
         },
-        -- body = {
-        --     name = "Nyame Mail",
-        --     augments = {'Path: B'}
-        -- },
-        body = "Ignominy Cuirass +3",
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
+        -- body = "Ignominy Cuirass +3",
         hands = {
             name = "Nyame Gauntlets",
             augments = {'Path: B'}
         },
-        -- legs = {
-        --     name = "Nyame Flanchard",
-        --     augments = {'Path: B'}
-        -- },
         legs = {
-            name = "Fall. Flanchard +3",
-            augments = {'Enhances "Muted Soul" effect'}
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
         },
+        -- legs = {
+        --     name = "Fall. Flanchard +3",
+        --     augments = {'Enhances "Muted Soul" effect'}
+        -- },
         feet = "Heathen's Sollerets +3",
         neck = {
             name = "Abyssal Beads +2",
             augments = {'Path: A'}
         },
-        -- waist = "Fotia Belt",
-        waist = {
-            name = "Sailfi Belt +1",
-            augments = {'Path: A'}
-        },
+        waist = "Fotia Belt",
+        -- waist = {
+        --     name = "Sailfi Belt +1",
+        --     augments = {'Path: A'}
+        -- },
         left_ear = {
             name = "Moonshade Earring",
             augments = {'Accuracy+4', 'TP Bonus +250'}
         },
-        -- right_ear = {
-        --     name = "Heath. Earring +1",
-        --     augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+14', 'Mag. Acc.+14', 'Weapon skill damage +3%'}
-        -- },
-        right_ear = "Thrud Earring",
-        -- left_ring = "Regal Ring",
-        left_ring = "Cornelia's Ring",
+        right_ear = {
+            name = "Heath. Earring +1",
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+14', 'Mag. Acc.+14', 'Weapon skill damage +3%'}
+        },
+        -- right_ear = "Thrud Earring",
+        left_ring = "Regal Ring",
+        -- left_ring = "Cornelia's Ring",
         right_ring = "Niqmaddu Ring",
         back = {
             name = "Ankou's Mantle",
@@ -1049,6 +1058,49 @@ function init_gear_sets()
     -- EG: sets.engaged.Dagger.Accuracy.Evasion
 
     sets.engaged = {
+        ammo = {
+            name = "Coiste Bodhar",
+            augments = {'Path: A'}
+        },
+        head = "Hjarrandi Helm",
+        body = {
+            name = "Sakpata's Plate",
+            augments = {'Path: A'}
+        },
+        hands = {
+            name = "Sakpata's Gauntlets",
+            augments = {'Path: A'}
+        },
+        -- legs = "Sakpata's Cuisses",
+        legs = "Ig. Flanchard +3",
+        -- feet = "Flam. Gambieras +2",
+        feet = {
+            name = "Sakpata's Leggings",
+            augments = {'Path: A'}
+        },
+        neck = {
+            name = "Abyssal Beads +2",
+            augments = {'Path: A'}
+        },
+        waist = {
+            name = "Sailfi Belt +1",
+            augments = {'Path: A'}
+        },
+        left_ear = "Dedition Earring",
+        right_ear = "Telos Earring",
+        left_ring = "Moonlight Ring",
+        right_ring = "Niqmaddu Ring",
+        back = {
+            name = "Ankou's Mantle",
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
+        }
+    }
+
+    sets.engaged.LowAcc = set_combine(sets.engaged, {})
+    sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {})
+    sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {})
+
+    sets.engaged.STP = set_combine(sets.engaged, {
         sub = "Utu Grip",
         ammo = {
             name = "Coiste Bodhar",
@@ -1085,12 +1137,7 @@ function init_gear_sets()
             name = "Ankou's Mantle",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
         }
-    }
-
-    sets.engaged.LowAcc = set_combine(sets.engaged, {})
-    sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {})
-    sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {})
-    sets.engaged.STP = set_combine(sets.engaged, {})
+    })
 
     sets.engaged.SubtleBlow = set_combine(sets.engaged, {
         ammo = {
@@ -1124,7 +1171,41 @@ function init_gear_sets()
     -- sets.engaged.Caladbolg.LowAcc = set_combine(sets.engaged.Apocalypse, {})
     -- sets.engaged.Caladbolg.MidAcc = set_combine(sets.engaged.Apocalypse, {})
     -- sets.engaged.Caladbolg.HighAcc = set_combine(sets.engaged.Apocalypse, {})
-    -- sets.engaged.Caladbolg.Aftermath = {}
+
+    sets.engaged.Caladbolg.Aftermath = {
+        ammo = {
+            name = "Coiste Bodhar",
+            augments = {'Path: A'}
+        },
+        head = "Flamma Zucchetto +2",
+        body = "Dagon Breast.",
+        hands = {
+            name = "Sakpata's Gauntlets",
+            augments = {'Path: A'}
+        },
+        legs = "Ignominy Flanchard +3",
+        feet = "Flam. Gambieras +2",
+        neck = {
+            name = "Abyssal Beads +2",
+            augments = {'Path: A'}
+        },
+        waist = {
+            name = "Sailfi Belt +1",
+            augments = {'Path: A'}
+        },
+        left_ear = {
+            name = "Schere Earring",
+            augments = {'Path: A'}
+        },
+        right_ear = "Brutal Earring",
+        left_ring = "Niqmaddu Ring",
+        -- right_ring = "Hetairoi Ring",
+        right_ring = "Petrov Ring",
+        back = {
+            name = "Ankou's Mantle",
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
+        }
+    }
 
     -- sets.engaged.Apocalypse = set_combine(sets.engaged, {})
 
