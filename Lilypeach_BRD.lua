@@ -1085,9 +1085,9 @@ function init_gear_sets()
             augments = {'Path: A'}
         },
         left_ear = "Telos Earring",
-        right_ear = "Cessance Earring",
+        right_ear = "Dedition Earring",
         left_ring = "Chirich Ring +1",
-        right_ring = "Ilabrat Ring",
+        right_ring = "Chirich Ring +1",
         back = {
             name = "Intarabus's Cape",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', '"Store TP"+10', 'Phys. dmg. taken-10%'}

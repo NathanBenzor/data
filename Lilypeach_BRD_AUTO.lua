@@ -194,10 +194,17 @@ function get_sets()
         waist = "Gishdubar Sash"
     }
 
+    sets.PhantomRoll = {}
+
     sets.OffenseMode = {}
 
     -- Base TP set to build off
     sets.OffenseMode.TP = {
+        main = "Naegling",
+        sub = {
+            name = "Centovente",
+            augments = {'TP Bonus +1000'}
+        },
         ammo = {
             name = "Coiste Bodhar",
             augments = {'Path: A'}
@@ -206,7 +213,7 @@ function get_sets()
             name = "Nyame Helm",
             augments = {'Path: B'}
         },
-        body = "Ayanmo Corazza +2",
+        body = "Ashera Harness",
         hands = "Bunzi's Gloves",
         legs = {
             name = "Nyame Flanchard",
@@ -225,9 +232,9 @@ function get_sets()
             augments = {'Path: A'}
         },
         left_ear = "Telos Earring",
-        right_ear = "Cessance Earring",
+        right_ear = "Dedition Earring",
         left_ring = "Chirich Ring +1",
-        right_ring = "Ilabrat Ring",
+        right_ring = "Chirich Ring +1",
         back = {
             name = "Intarabus's Cape",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', '"Store TP"+10', 'Phys. dmg. taken-10%'}
@@ -750,11 +757,8 @@ function get_sets()
         },
         right_ear = "Ishvara Earring",
         left_ring = "Cornelia's Ring",
-        right_ring = "Shukuyu Ring",
-        back = {
-            name = "Intarabus's Cape",
-            augments = {'STR+20', 'Accuracy+20 Attack+20', 'Weapon skill damage +10%', 'Phys. dmg. taken-10%'}
-        }
+        right_ring = "Sroda Ring",
+        back={ name="Intarabus's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}},
     })
 
     sets.WS["Mordant Rime"] = set_combine(sets.WS, {

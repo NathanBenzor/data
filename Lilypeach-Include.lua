@@ -2176,6 +2176,7 @@ function jobsetup(LockStylePallet, MacroBook, MacroSet)
     send_command('bind f9 gs c WeaponMode')
     send_command('bind ^f12 gs c jobmode')
     send_command('bind ^f11 gs c jobmode2')
+    send_command('bind !` gs c burstmode')
     
 
     local maxWidth = 40
