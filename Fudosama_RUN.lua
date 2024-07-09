@@ -362,7 +362,7 @@ function init_gear_sets()
             name = "Leyline Gloves",
             augments = {'Accuracy+14', 'Mag. Acc.+13', '"Mag.Atk.Bns."+13', '"Fast Cast"+2'}
         },
-        legs = "Futhark Trousers +2",
+        legs = "Aya. Cosciales +2",
         feet = {
             name = "Carmine Greaves",
             augments = {'MP+60', 'INT+10', 'MND+10'}

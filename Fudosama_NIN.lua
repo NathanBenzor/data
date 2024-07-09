@@ -995,10 +995,7 @@ function init_gear_sets()
         left_ear = "Eabani Earring",
         right_ear = "Infused Earring",
         left_ring = "Defending Ring",
-        right_ring = {
-            name = "Gelatinous Ring +1",
-            augments = {'Path: A'}
-        },
+        right_ring = "Vengeful Ring",
         back = "Agema Cape"
     }
 
