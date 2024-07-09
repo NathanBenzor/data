@@ -3,7 +3,7 @@
 include('Fudosama-Include')
 
 -- Set to ingame lockstyle and Macro Book/Set
-LockStylePallet = "196"
+LockStylePallet = "19"
 MacroBook = "31"
 MacroSet = "1"
 
@@ -91,7 +91,7 @@ function get_sets()
             name = "Azimuth Earring +1",
             augments = {'System: 1 ID: 1676 Val: 0', 'Mag. Acc.+14', 'Damage taken-5%'}
         },
-        left_ring = "Shneddick Ring",
+        left_ring = "Defending Ring",
         right_ring = "Stikini Ring +1",
         back = {
             name = "Nantosuelta's Cape",
@@ -220,10 +220,10 @@ function get_sets()
         },
         neck = "Clotharius Torque",
         waist = "Windbuffet Belt +1",
-        left_ear = "Cessance Earring",
-        right_ear = "Brutal Earring",
+        left_ear = "Telos Earring",
+        right_ear = "Crep. Earring",
         left_ring = "Petrov Ring",
-        right_ring = "Stikini Ring +1",
+        right_ring = "Chirich Ring +1",
         back = "Penetrating Cape"
     }
     -- Base TP set
@@ -266,6 +266,10 @@ function get_sets()
     sets.Precast = {}
     -- Used for Magic Spells
     sets.Precast.FastCast = {
+        main = {
+            name = "Gada",
+            augments = {'"Fast Cast"+5', 'STR+2', 'Mag. Acc.+20', '"Mag.Atk.Bns."+5'}
+        },
         range = {
             name = "Dunna",
             augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
@@ -274,15 +278,17 @@ function get_sets()
             name = "Amalric Coif",
             augments = {'MP+60', 'Mag. Acc.+15', '"Mag.Atk.Bns."+15'}
         },
-        body = "Agwu's Robe",
+        body = {
+            name = "Merlinic Jubbah",
+            augments = {'"Fast Cast"+5', 'VIT+9', '"Mag.Atk.Bns."+1'}
+        },
         hands = "Agwu's Gages",
-        legs = "Geomancy Pants +1", -- 15
+        legs = "Geomancy Pants +2", -- 15
         feet = {
             name = "Merlinic Crackows",
             augments = {'Pet: "Regen"+4', '"Fast Cast"+2', 'Accuracy+18 Attack+18'}
         },
         neck = "Orunmila's Torque",
-        -- neck = "Voltsurge Torque",
         -- waist = "Embla Sash", -- 5
         waist = "Witful Belt",
         left_ear = "Etiolation Earring", -- 1
@@ -400,7 +406,7 @@ function get_sets()
         head = "Geo. Galero +1",
         body = "Jhakri Robe +2",
         hands = "Geo. Mitaines +3",
-        legs = "Geomancy Pants +1",
+        legs = "Geomancy Pants +2",
         feet = "Bagua Sandals +3",
         neck = {
             name = "Bagua Charm +1",
@@ -415,20 +421,22 @@ function get_sets()
     }
     -- Free Nuke
     sets.Midcast.Nuke = {
-        main = "Bunzi's Rod",
+        main = {
+            name = "Bunzi's Rod",
+            augments = {'Path: A'}
+        },
         sub = "Ammurapi Shield",
         ammo = "Ghastly Tathlum +1", -- 8/8
         head = "Azimuth Hood +3", -- 10/10
         body = "Azimuth Coat +3", -- 10/10
         hands = "Azimuth Gloves +3", -- 10/10
-        -- legs = "Agwu's Slops",
         legs = "Azimuth Tights +3", -- 10/10
         feet = "Azimuth Gaiters +3", -- 10/10
         neck = "Mizu. Kubikazari",
         ear1 = "Malignance Earring",
         ear2 = "Regal Earring",
         ring1 = "Freke Ring",
-        ring2 = "Metamor. Ring +1",
+        ring2 = "Shiva Ring +1",
         waist = "Sacro Cord",
         -- waist = {
         --     name = "Acuity Belt +1",
@@ -440,7 +448,10 @@ function get_sets()
         }
     }
     -- Used for Burst Mode
-    sets.Midcast.Burst = set_combine(sets.Midcast.Nuke, {})
+    sets.Midcast.Burst = set_combine(sets.Midcast.Nuke, {
+        ring2 = "Mujin Band"
+    })
+
     -- CuragaSet
     sets.Midcast.Curaga = set_combine(sets.Midcast.Cure, {})
 
@@ -472,9 +483,79 @@ function get_sets()
     -- Refresh Set
     sets.Midcast.Refresh = set_combine(sets.Midcast.Enhancing, {})
     -- Aspir Set
-    sets.Midcast.Aspir = {}
+    sets.Midcast.Aspir = {
+        main = {
+            name = "Rubicundity",
+            augments = {'Mag. Acc.+6', '"Mag.Atk.Bns."+6', 'Dark magic skill +6', '"Conserve MP"+2'}
+        },
+        sub = "Ammurapi Shield",
+        range = {
+            name = "Dunna",
+            augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
+        },
+        head = {
+            name = "Bagua Galero +2",
+            augments = {'Enhances "Primeval Zeal" effect'}
+        },
+        -- body = "Azimuth Coat +3",
+        body = {
+            name = "Merlinic Jubbah",
+            augments = {'"Mag.Atk.Bns."+29', '"Drain" and "Aspir" potency +11', 'Mag. Acc.+3'}
+        },
+        hands = "Azimuth Gloves +3",
+        legs = "Azimuth Tights +3",
+        feet = "Agwu's Pigaches",
+        neck = "Erra Pendant",
+        waist = "Fucho-no-Obi",
+        left_ear = "Malignance Earring",
+        right_ear = "Regal Earring",
+        left_ring = {
+            name = "Metamor. Ring +1",
+            augments = {'Path: A'}
+        },
+        right_ring = "Evanescence Ring",
+        back = {
+            name = "Nantosuelta's Cape",
+            augments = {'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'INT+10', '"Mag.Atk.Bns."+10', 'Phys. dmg. taken-10%'}
+        }
+    }
     -- Drain Set
-    sets.Midcast.Drain = {}
+    sets.Midcast.Drain = {
+        main = {
+            name = "Rubicundity",
+            augments = {'Mag. Acc.+6', '"Mag.Atk.Bns."+6', 'Dark magic skill +6', '"Conserve MP"+2'}
+        },
+        sub = "Ammurapi Shield",
+        range = {
+            name = "Dunna",
+            augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
+        },
+        head = {
+            name = "Bagua Galero +2",
+            augments = {'Enhances "Primeval Zeal" effect'}
+        },
+        -- body = "Azimuth Coat +3",
+        body = {
+            name = "Merlinic Jubbah",
+            augments = {'"Mag.Atk.Bns."+29', '"Drain" and "Aspir" potency +11', 'Mag. Acc.+3'}
+        },
+        hands = "Azimuth Gloves +3",
+        legs = "Azimuth Tights +3",
+        feet = "Agwu's Pigaches",
+        neck = "Erra Pendant",
+        waist = "Fucho-no-Obi",
+        left_ear = "Malignance Earring",
+        right_ear = "Regal Earring",
+        left_ring = {
+            name = "Metamor. Ring +1",
+            augments = {'Path: A'}
+        },
+        right_ring = "Evanescence Ring",
+        back = {
+            name = "Nantosuelta's Cape",
+            augments = {'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'INT+10', '"Mag.Atk.Bns."+10', 'Phys. dmg. taken-10%'}
+        }
+    }
     -- Indi Duration
     sets.Geomancy = {}
     sets.Geomancy.Indi = {
@@ -552,7 +633,7 @@ function get_sets()
     -- Will be used to keep max HP of Luopan when casting spells but switches when below 70% to the Idle.Pet set.
     sets.Luopan = {
         head = {
-            name = "Bagua Galero +3",
+            name = "Bagua Galero +2",
             augments = {'Enhances "Primeval Zeal" effect'}
         }
     }
@@ -577,7 +658,7 @@ function get_sets()
     sets.JA["Lasting Emanation"] = {}
     sets.JA["Ecliptic Attrition"] = {}
     sets.JA["Life Cycle"] = {
-        body = "Geomancy Tunic +3",
+        body = "Geomancy Tunic +2",
         back = {
             name = "Nantosuelta's Cape",
             augments = {'HP+60', 'Eva.+20 /Mag. Eva.+20', 'Mag. Evasion+10', 'Pet: "Regen"+10', 'Damage taken-5%'}

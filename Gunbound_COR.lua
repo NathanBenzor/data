@@ -695,6 +695,7 @@ function init_gear_sets()
             name = "Camulus's Mantle",
             augments = {'INT+20', 'Eva.+20 /Mag. Eva.+20', '"Snapshot"+10', 'Damage taken -5%'}
         }
+        -- back = "Aptitude Mantle"
     }
 
     -- sets.idle.DT = set_combine(sets.idle, {})

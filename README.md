@@ -52,6 +52,9 @@
 
 - `//gs equip sets.precast.RA`
 
+- `//gs c burstmode`
+- `/console gs c burstmode` : Put this in a macro
+
 ## Macro Send commands
 
 - `/console send Rialyn /item 'PoisonPotion' <me>` : Tell character to do something from a Macro
