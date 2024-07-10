@@ -301,7 +301,7 @@ function init_gear_sets()
     } -- Haste
 
     sets.midcast.Geomancy = {
-        main = "Idris",
+        main = "Solstice",
         sub = "Genmei Shield",
         range = {
             name = "Dunna",
@@ -334,7 +334,7 @@ function init_gear_sets()
     }
 
     sets.midcast.Geomancy.Indi = set_combine(sets.midcast.Geomancy, {
-        main = "Idris",
+        main = "Solstice",
         sub = "Genmei Shield",
         range = {
             name = "Dunna",
@@ -666,7 +666,7 @@ function init_gear_sets()
     -- .Pet sets are for when Luopan is present.
     sets.idle.Pet = set_combine(sets.idle, {
         -- Pet: -DT (37.5% to cap) / Pet: Regen  -DT cap -87.5%
-        main = "Idris",
+        main = "Solstice",
         sub = "Genmei Shield",
         head = "Azimuth Hood +1",
         body = "Azimuth Coat +2",
