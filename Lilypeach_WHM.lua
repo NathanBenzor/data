@@ -524,7 +524,7 @@ function init_gear_sets()
         },
         hands = {
             name = "Telchine Gloves",
-            augments = {'Enh. Mag. eff. dur. +8'}
+            augments = {'Enh. Mag. eff. dur. +10'}
         },
         legs={ name="Telchine Braconi", augments={'Enh. Mag. eff. dur. +9',}},
         feet = "Theo. Duckbills +3",
@@ -560,7 +560,7 @@ function init_gear_sets()
         },
         hands = {
             name = "Telchine Gloves",
-            augments = {'Enh. Mag. eff. dur. +8'}
+            augments = {'Enh. Mag. eff. dur. +10'}
         },
         legs={ name="Telchine Braconi", augments={'Enh. Mag. eff. dur. +9',}},
         feet = "Theo. Duckbills +3",
@@ -639,10 +639,7 @@ function init_gear_sets()
             augments = {'Enhances "Benediction" effect'}
         },
         hands = "Inyan. Dastanas +2",
-        legs = {
-            name = "Piety Pantaln. +3",
-            augments = {'Enhances "Afflatus Misery" effect'}
-        },
+        legs="Shedir Seraweels",
         feet = "Theo. Duckbills +3",
         neck = "Nodens Gorget",
         waist = "Siegel Sash",
@@ -662,6 +659,7 @@ function init_gear_sets()
         ammo = "Staunch Tathlum +1",
         head = "Chironic Hat",
         hands = "Regal Cuffs",
+        legs="Shedir Seraweels",
         ear1 = "Halasz Earring",
         ear2 = "Magnetic Earring",
         ring1 = "Freke Ring",

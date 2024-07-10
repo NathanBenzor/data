@@ -329,7 +329,7 @@ function init_gear_sets()
         ear2 = "Andoaa Earring",
         left_ring = "Stikini Ring +1",
         right_ring = "Stikini Ring +1",
-        back = "Fi Follet Cape +1",
+        back = "Perimede Cape",
         waist = "Olympus Sash"
     }
 
@@ -342,15 +342,15 @@ function init_gear_sets()
         head={ name="Telchine Cap", augments={'Enh. Mag. eff. dur. +9',}},
         body={ name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +9',}},
         hands={ name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +8',}},
-        legs = "Agwu's Slops",
-        feet = "Wicce Sabots +3",
+        legs={ name="Telchine Braconi", augments={'Enh. Mag. eff. dur. +9',}},
+        feet={ name="Telchine Pigaches", augments={'Enh. Mag. eff. dur. +5',}},
         neck = "Incanter's Torque",
         ear1 = "Mimir Earring",
         ear2 = "Andoaa Earring",
         left_ring = "Stikini Ring +1",
         right_ring = "Stikini Ring +1",
-        back = "Fi Follet Cape +1",
-        waist = "Olympus Sash"
+        back = "Perimede Cape",
+        waist = "Embla Sash"
     }
 
     sets.midcast.Regen = set_combine(sets.midcast.EnhancingDuration, {
@@ -374,7 +374,7 @@ function init_gear_sets()
         neck = "Nodens Gorget",
         waist = "Siegel Sash",
         left_ear = "Earthcry Earring",
-        legs = "Doyen Pants"
+        legs="Shedir Seraweels",
     })
 
     sets.midcast.Aquaveil = set_combine(sets.midcast.EnhancingDuration, {
@@ -383,6 +383,7 @@ function init_gear_sets()
         ammo = "Staunch Tathlum",
         head = "Amalric Coif +1",
         hands = "Regal Cuffs",
+        legs="Shedir Seraweels",
         ear1 = "Halasz Earring",
         ring1 = "Freke Ring",
         ring2 = "Evanescence Ring",
@@ -710,7 +711,7 @@ function init_gear_sets()
 
     sets.magic_burst = {
         main={ name="Marin Staff +1", augments={'Path: A',}},
-        sub="Khonsu",
+        sub="Enki Strap",
         ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
         head="Ea Hat +1",
         body="Wicce Coat +3",
