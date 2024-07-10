@@ -386,24 +386,16 @@ function init_gear_sets()
             name = "Agoge Mask +3",
             augments = {'Enhances "Savagery" effect'}
         },
-        -- head = {
-        --     name = "Nyame Helm",
-        --     augments = {'Path: B'}
-        -- },
         body = {
             name = "Nyame Mail",
             augments = {'Path: B'}
         },
-        -- hands = {
-        --     name = "Nyame Gauntlets",
-        --     augments = {'Path: B'}
-        -- },
         hands = "Boii Mufflers +3",
-        -- legs = {
-        --     name = "Nyame Flanchard",
-        --     augments = "Path: B"
-        -- },
-        legs = "Boii Cuisses +3",
+        legs = {
+            name = "Nyame Flanchard",
+            augments = "Path: B"
+        },
+        -- legs = "Boii Cuisses +3",
         feet = {
             name = "Nyame Sollerets",
             augments = {'Path: B'}
@@ -549,13 +541,19 @@ function init_gear_sets()
             name = "Agoge Mask +3",
             augments = {'Enhances "Savagery" effect'}
         },
-        body = "Pumm. Lorica +3",
-        hands = {
-            name = "Sakpata's Gauntlets",
-            augments = {'Path: A'}
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
         },
-        legs = "Sakpata's Cuisses",
-        feet = "Sulev. Leggings +2",
+        hands = "Boii Mufflers +3",
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
         neck = {
             name = "War. Beads +2",
             augments = {'Path: A'}
@@ -570,7 +568,7 @@ function init_gear_sets()
             augments = {'Accuracy+4', 'TP Bonus +250'}
         },
         left_ring = "Regal Ring",
-        right_ring = "Beithir Ring",
+        right_ring = "Cornelia's Ring",
         back = {
             name = "Cichol's Mantle",
             augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%'}
@@ -1352,7 +1350,10 @@ function init_gear_sets()
             name = "Sakpata's Gauntlets",
             augments = {'Path: A'}
         },
-        legs = "Pumm. Cuisses +3",
+        legs = {
+            name = "Sakpata's Cuisses",
+            augments = {'Path: A'}
+        },
         feet = "Pumm. Calligae +3",
         neck = {
             name = "War. Beads +2",
@@ -1432,7 +1433,10 @@ function init_gear_sets()
             name = "Sakpata's Gauntlets",
             augments = {'Path: A'}
         },
-        legs = "Pumm. Cuisses +3",
+        legs = {
+            name = "Sakpata's Cuisses",
+            augments = {'Path: A'}
+        },
         feet = "Pumm. Calligae +3",
         neck = "Warrior's Bead Necklace +2",
         waist = "Ioskeha Belt +1",
@@ -1590,7 +1594,10 @@ function init_gear_sets()
             name = "Sakpata's Gauntlets",
             augments = {'Path: A'}
         },
-        legs = "Sakpata's Cuisses",
+        legs = {
+            name = "Sakpata's Cuisses",
+            augments = {'Path: A'}
+        },
         -- feet = {
         --     name = "Sakpata's Leggings",
         --     augments = {'Path: A'}
