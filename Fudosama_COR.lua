@@ -691,7 +691,7 @@ function init_gear_sets()
         legs = "Malignance Tights",
         feet = "Malignance Boots",
         neck = "Loricate Torque +1",
-        waist = "Carrier's Sash",
+        waist = "Platinum Mog. Belt",
         left_ear = "Eabani Earring",
         right_ear = {
             name = "Odnowa Earring +1",
@@ -763,20 +763,15 @@ function init_gear_sets()
         legs = "Chas. Culottes +3",
         feet = "Malignance Boots",
         neck = "Iskur Gorget",
-        waist = {
-            name = "Sailfi Belt +1",
-            augments = {'Path: A'}
-        },
-        left_ear = "Telos Earring",
-        right_ear = "Cessance Earring",
-        left_ring = {
-            name = "Chirich Ring +1",
-            bag = "wardrobe2"
-        },
-        right_ring = {
-            name = "Chirich Ring +1",
-            bag = "wardrobe4"
-        },
+        -- waist = {
+        --     name = "Sailfi Belt +1",
+        --     augments = {'Path: A'}
+        -- },
+        waist = "Reiki Yotai",
+        left_ear = "Eabani Earring",
+        right_ear = "Dedition Earring",
+        left_ring = "Defending Ring",
+        right_ring = "Chirich Ring +1",
         back = {
             name = "Camulus's Mantle",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dual Wield"+10', 'Damage taken-5%'}

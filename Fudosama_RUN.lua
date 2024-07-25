@@ -985,7 +985,7 @@ function init_gear_sets()
         ammo = "Staunch Tathlum +1",
         head = "Erilaz Galea +3",
         body = "Erilaz Surcoat +3",
-        hands = "Regal Gauntlets",
+        hands = "Erilaz Gauntlets +3",
         legs = "Erilaz Leg Guards +3",
         feet = "Erilaz Greaves +3",
         neck = {
