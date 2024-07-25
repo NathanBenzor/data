@@ -100,7 +100,7 @@ function job_setup()
     get_combat_form()
     get_melee_groups()
 
-    lockstyleset = 135
+    lockstyleset = 137
 end
 
 function user_setup()

@@ -463,7 +463,7 @@ function init_gear_sets()
     sets.precast.WS['Blade: Ku'].Acc = set_combine(sets.precast.WS['Blade: Ku'], {})
 
     sets.precast.WS['Blade: Kamu'] = {
-        ammo = "Crepuscular Pebble",
+        -- ammo = "Crepuscular Pebble",
         head = {
             name = "Mpaca's Cap",
             augments = {'Path: A'}
@@ -762,10 +762,10 @@ function init_gear_sets()
     }
 
     sets.midcast.ElementalNinjutsu = {
-        ammo = {
-            name = "Ghastly Tathlum +1",
-            augments = {'Path: A'}
-        },
+        -- ammo = {
+        --     name = "Ghastly Tathlum +1",
+        --     augments = {'Path: A'}
+        -- },
         head = {
             name = "Mochi. Hatsuburi +3",
             augments = {'Enhances "Yonin" and "Innin" effect'}

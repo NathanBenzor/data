@@ -227,7 +227,41 @@ function get_sets()
         back = "Penetrating Cape"
     }
     -- Base TP set
-    sets.OffenseMode.TP = {}
+    sets.OffenseMode.TP = {
+        main = "Idris",
+        sub = "Genmei Shield",
+        ammo = {
+            name = "Dunna",
+            augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
+        },
+        head = {
+            name = "Nyame Helm",
+            augments = {'Path: B'}
+        },
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
+        neck = "Clotharius Torque",
+        waist = "Windbuffet Belt +1",
+        left_ear = "Telos Earring",
+        right_ear = "Crep. Earring",
+        left_ring = "Petrov Ring",
+        right_ring = "Chirich Ring +1",
+        back = "Penetrating Cape"
+    }
     -- Set to use when Dual Wielding
     sets.OffenseMode.TP.DW = {}
     -- TP set when in -Damage Taken mode
@@ -426,13 +460,16 @@ function get_sets()
             augments = {'Path: A'}
         },
         sub = "Ammurapi Shield",
-        ammo = "Ghastly Tathlum +1", -- 8/8
+        -- ammo = {
+        --     name = "Ghastly Tathlum +1",
+        --     augments = {'Path: A'}
+        -- }, -- 8/8
         head = "Azimuth Hood +3", -- 10/10
         body = "Azimuth Coat +3", -- 10/10
         hands = "Azimuth Gloves +3", -- 10/10
         legs = "Azimuth Tights +3", -- 10/10
         feet = "Azimuth Gaiters +3", -- 10/10
-        neck = "Mizu. Kubikazari",
+        neck = "Sibyl Scarf", -- 5/5
         ear1 = "Malignance Earring",
         ear2 = "Regal Earring",
         ring1 = "Freke Ring",
@@ -449,7 +486,33 @@ function get_sets()
     }
     -- Used for Burst Mode
     sets.Midcast.Burst = set_combine(sets.Midcast.Nuke, {
-        ring2 = "Mujin Band"
+        main = {
+            name = "Bunzi's Rod",
+            augments = {'Path: A'}
+        },
+        sub = "Ammurapi Shield",
+        -- ammo = {
+        --     name = "Ghastly Tathlum +1",
+        --     augments = {'Path: A'}
+        -- },
+        head = "Agwu's Cap",
+        body = "Azimuth Coat +3",
+        hands = {
+            name = "Agwu's Gages",
+            augments = {'Path: A'}
+        },
+        legs = "Azimuth Tights +3",
+        feet = "Agwu's Pigaches",
+        neck = "Mizu. Kubikazari",
+        waist = "Sacro Cord",
+        left_ear = "Malignance Earring",
+        right_ear = "Regal Earring",
+        left_ring = "Freke Ring",
+        right_ring = "Mujin Band",
+        back = {
+            name = "Nantosuelta's Cape",
+            augments = {'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'INT+10', '"Mag.Atk.Bns."+10', 'Phys. dmg. taken-10%'}
+        }
     })
 
     -- CuragaSet
@@ -560,7 +623,7 @@ function get_sets()
     sets.Geomancy = {}
     sets.Geomancy.Indi = {
         main = "Idris",
-        sub = "Genmei Shield",
+        sub = "Ammurapi Shield",
         range = {
             name = "Dunna",
             augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
@@ -576,7 +639,10 @@ function get_sets()
             augments = {'Enhances "Mending Halation" effect'}
         },
         feet = "Azimuth Gaiters +3",
-        neck = "Incanter's Torque",
+        neck = {
+            name = "Bagua Charm +1",
+            augments = {'Path: A'}
+        },
         waist = "Austerity Belt +1",
         left_ear = "Malignance Earring",
         right_ear = {
@@ -594,7 +660,7 @@ function get_sets()
     -- Geo Potency
     sets.Geomancy.Geo = set_combine(sets.Geomancy.Indi, {
         main = "Idris",
-        sub = "Genmei Shield",
+        sub = "Ammurapi Shield",
         range = {
             name = "Dunna",
             augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
@@ -609,7 +675,10 @@ function get_sets()
             name = "Bagua Pants +3",
             augments = {'Enhances "Mending Halation" effect'}
         },
-        feet = "Bagua Sandals +3",
+        feet = {
+            name = "Bagua Sandals +3",
+            augments = {'Enhances "Radial Arcana" effect'}
+        },
         neck = {
             name = "Bagua Charm +1",
             augments = {'Path: A'}
@@ -709,8 +778,8 @@ function get_sets()
             name = "Nyame Sollerets",
             augments = {'Path: B'}
         },
-        neck = "Warder's Charm +1",
-        waist = "Carrier's Sash",
+        neck = "Fotia Gorget",
+        waist = "Fotia Belt",
         left_ear = {
             name = "Moonshade Earring",
             augments = {'Accuracy+4', 'TP Bonus +250'}
