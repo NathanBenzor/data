@@ -255,7 +255,7 @@ function init_gear_sets()
         ear1 = "Loquacious Earring",
         ear2 = "Etiolation Earring",
         body = "Rosette Jaseran +1",
-        hands = "Spaekona's Gloves +2",
+        hands = "Spaekona's Gloves +3",
         ring1 = "Metamorph Ring +1",
         ring2 = "Mephitas's Ring +1",
         back = {
@@ -424,7 +424,7 @@ function init_gear_sets()
     sets.midcast.ElementalEnfeeble = set_combine(sets.midcast.MndEnfeebles, {
         legs = "Archmage's Tonban +3",
         feet = "Archmage's Sabots +3",
-        hands = "Spaekona's Gloves +2"
+        hands = "Spaekona's Gloves +3"
     })
     
     sets.midcast.Dispelga = set_combine(sets.midcast.IntEnfeebles, {
@@ -584,7 +584,8 @@ function init_gear_sets()
         body = "Spaekona's Coat +2",
         legs = "Merlinic Shalwar",
         feet = "Merlinic Crackows",
-        neck = "Erra Pendant"
+        neck = "Erra Pendant",
+        right_ear={ name="Wicce Earring +1", augments={'System: 1 ID: 1676 Val: 0','Mag. Acc.+15','Enmity-5',}},
     })
 
     sets.midcast.Impact = set_combine(sets.midcast['Elemental Magic'], {

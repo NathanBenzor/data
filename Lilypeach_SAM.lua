@@ -930,10 +930,7 @@ function init_gear_sets()
         },
         waist = "Sweordfaetels +1",
         left_ear = "Dedition Earring",
-        right_ear = {
-            name = "Kasuga Earring",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+10', 'Mag. Acc.+10'}
-        },
+        right_ear={ name="Kasuga Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+11','Mag. Acc.+11','Weapon skill damage +2%',}},
         left_ring = "Chirich Ring +1",
         right_ring = "Niqmaddu Ring",
         back = {

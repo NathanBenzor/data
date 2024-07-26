@@ -431,10 +431,7 @@ function get_sets()
             name = "Metamor. Ring +1",
             augments = {'Path: A'}
         },
-        Waist = {
-            name = "Acuity Belt +1",
-            augments = {'Path: A'}
-        },
+        waist={ name="Obstin. Sash", augments={'Path: A',}},
         back = {
             name = "Aurist's Cape +1",
             augments = {'Path: A'}
