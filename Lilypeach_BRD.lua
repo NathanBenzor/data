@@ -582,6 +582,10 @@ function init_gear_sets()
         range = "Marsyas",
         hands = "Fili Manchettes +3"
     }
+    sets.midcast.AriaOfPassion = {
+        Range = "Loughnashade",
+        hands = "Fili Manchettes +3"
+    }
     sets.midcast.Lullaby = {
         hands = "Brioso Cuffs +3"
     }
@@ -640,7 +644,7 @@ function init_gear_sets()
             name = "Kali",
             augments = {'Mag. Acc.+15', 'String instrument skill +10', 'Wind instrument skill +10'}
         },
-        range = "Gjallarhorn",
+        -- range = "Gjallarhorn",
         head = "Fili Calot +3",
         body = "Fili Hongreline +3",
         hands = "Fili Manchettes +3",
@@ -1282,6 +1286,11 @@ function job_precast(spell, action, spellMap, eventArgs)
         if spell.name == 'Honor March' then
             equip({
                 range = "Marsyas"
+            })
+        end
+        if spell.name == 'Aria of Passion' then
+            equip({
+                range = "Loughnashade"
             })
         end
         if spell.name == 'Valor Minuet' then

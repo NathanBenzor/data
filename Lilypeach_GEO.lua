@@ -188,7 +188,7 @@ function init_gear_sets()
         },
         body = "Agwu's Robe",
         hands = "Agwu's Gages",
-        legs = "Geo. Pants +1",
+        legs = "Geo. Pants +2",
         feet = "Agwu's Pigaches",
         neck = "Orunmila's Torque",
         waist = "Witful Belt",
@@ -205,7 +205,7 @@ function init_gear_sets()
     })
 
     sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, {
-        hands = "Bagua Mitaines +2"
+        hands = "Bagua Mitaines +3"
     })
 
     sets.precast.FC.Cure = set_combine(sets.precast.FC, {
@@ -297,7 +297,7 @@ function init_gear_sets()
     } -- Haste
 
     sets.midcast.Geomancy = {
-        main={ name="Solstice", augments={'Mag. Acc.+20','Pet: Damage taken -4%','"Fast Cast"+5',}},
+        main = "Idris",
         sub = "genmei's Shield",
         range = {
             name = "Dunna",
@@ -324,7 +324,7 @@ function init_gear_sets()
     }
 
     sets.midcast.Geomancy.Indi = set_combine(sets.midcast.Geomancy, {
-        main="Solstice",
+        main = "Idris",
         sub="Ammurapi Shield",
         range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},
         head="Azimuth Hood +3",
@@ -373,7 +373,10 @@ function init_gear_sets()
     })
 
     sets.midcast['Enhancing Magic'] = {
-        main = gear.Gada_ENH,
+        main = {
+            name = "Gada",
+            augments = {'Enh. Mag. eff. dur. +5', 'VIT+2'}
+        },
         sub = "Ammurapi Shield",
         head = "Befouled Crown",
         body = "Telchine Chas.",
@@ -396,7 +399,10 @@ function init_gear_sets()
     }
 
     sets.midcast.EnhancingDuration = {
-        main = gear.Gada_ENH,
+        main = {
+            name = "Gada",
+            augments = {'Enh. Mag. eff. dur. +5', 'VIT+2'}
+        },
         sub = "Ammurapi Shield",
         head = "Telchine Cap",
         body = "Telchine Chas.",
@@ -419,14 +425,17 @@ function init_gear_sets()
         neck = "Nodens Gorget",
         waist = "Siegel Sash",
         left_ear="Earthcry Earring",
-        legs="Doyen Pants",
+        legs="Shedir Seraweels",
     })
 
     sets.midcast.Aquaveil = set_combine(sets.midcast.EnhancingDuration, {
         main = "Vadose Rod",
         sub = "Ammurapi Shield",
-        head = "Amalric Coif +1",
-        ear2 = "Magnetic Earring"
+        ear2 = "Magnetic Earring",
+        head={ name="Amalric Coif +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+        hands="Regal Cuffs",
+        legs="Shedir Seraweels",
+        waist="Emphatikos Rope",
     })
 
     sets.midcast.Protect = set_combine(sets.midcast.EnhancingDuration, {
@@ -437,20 +446,21 @@ function init_gear_sets()
     sets.midcast.Shellra = sets.midcast.Protect
 
     sets.midcast.MndEnfeebles = {
-        -- main = "Daybreak",
-        -- sub = "Culminus",
-        head = "Geo. Galero +1",
-        body = "Jhakri Robe +2",
-        hands = "Geo. Mitaines +3",
-        legs = "Geomancy Pants +1",
-        feet = "Bagua Sandals +3",
+        main="Daybreak",
+        sub="Ammurapi Shield",
+        range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},
+        head="Geo. Galero +1",
+        body="Geomancy Tunic +2",
+        hands="Regal Cuffs",
+        legs="Geo. Pants +2",
+        feet="Geo. Sandals +2",
         neck={ name="Bagua Charm +1", augments={'Path: A',}},
-        left_ear = "Malignance Earring",
-        right_ear = "Regal Earring",
-        ring1 = "Kishar Ring",
-        ring2 = "Stikini Ring +1",
+        waist="Luminary Sash",
+        left_ear="Malignance Earring",
+        right_ear="Regal Earring",
+        left_ring="Kishar Ring",
+        right_ring="Stikini Ring +1",
         back = "Aurist's Cape +1",
-        waist = "Luminary Sash",
     } -- MND/Magic accuracy
 
     sets.midcast.IntEnfeebles = set_combine(sets.midcast.MndEnfeebles, {
@@ -507,25 +517,26 @@ function init_gear_sets()
         ammo = "Ghastly Tathlum +1", -- 8/8
         main="Bunzi's Rod",
         sub="Ammurapi Shield",
-        range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},
+        -- range={ name="Dunna", augments={'MP+20','Mag. Acc.+10','"Fast Cast"+3',}},
         head="Azimuth Hood +3",
         body="Azimuth Coat +3",
         hands="Azimuth Gloves +2",
         legs="Azimuth Tights +2",
         feet="Azimuth Gaiters +3",
         neck="Sibyl Scarf",
-        waist={ name="Acuity Belt +1", augments={'Path: A',}},
-        left_ear="Malignance Earring",
-        right_ear="Regal Earring",
+        waist="Sacro Cord",
+        left_ear="Regal Earring",
+        right_ear="Malignance Earring",
         left_ring="Freke Ring",
+        -- right_Ring="Shiva Ring +1",
         right_ring={ name="Metamor. Ring +1", augments={'Path: A',}},
         back={ name="Nantosuelta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Magic Damage +10','"Fast Cast"+10',}},
     }
 
     sets.midcast['Elemental Magic'].Resistant = set_combine(sets.midcast['Elemental Magic'], {
-        main={ name="Solstice", augments={'Mag. Acc.+20','Pet: Damage taken -4%','"Fast Cast"+5',}},
+        main = "Idris",
         sub = "Ammurapi Shield",
-        hands = "Bagua Mitaines +2",
+        hands = "Bagua Mitaines +3",
         legs = gear.Merl_MAB_legs,
         feet = gear.Merl_MAB_feet,
         neck = "Sanctity Necklace",
@@ -567,7 +578,7 @@ function init_gear_sets()
         },
         body = "Shamash Robe",
         hands = {
-            name = "Bagua Mitaines +2",
+            name = "Bagua Mitaines +3",
             augments = {'Enhances "Curative Recantation" effect'}
         },
         legs = "Assid. Pants +1",
@@ -576,9 +587,13 @@ function init_gear_sets()
             augments = {'Enhances "Radial Arcana" effect'}
         },
         neck = {
-            name = "Loricate Torque +1",
+            name = "Bagua Charm +1",
             augments = {'Path: A'}
         },
+        -- neck = {
+        --     name = "Loricate Torque +1",
+        --     augments = {'Path: A'}
+        -- },
         waist = "Fucho-no-Obi",
         left_ear = "Infused Earring",
         right_ear={ name="Azimuth Earring +1", augments={'System: 1 ID: 1676 Val: 0','Mag. Acc.+15','Damage taken-5%',}},
@@ -596,9 +611,13 @@ function init_gear_sets()
         body = "Shamash Robe", -- 8/8
         hands = "Geo. Mitaines +3", -- 3/0
         neck = {
-            name = "Loricate Torque +1",
+            name = "Bagua Charm +1",
             augments = {'Path: A'}
         },
+        -- neck = {
+        --     name = "Loricate Torque +1",
+        --     augments = {'Path: A'}
+        -- },
         ear1 = "Genmei Earring", -- 2/0
         right_ear={ name="Azimuth Earring +1", augments={'System: 1 ID: 1676 Val: 0','Mag. Acc.+15','Damage taken-5%',}},
         ring1 = "Gelatinous Ring +1", -- 7/(-1)
@@ -613,7 +632,7 @@ function init_gear_sets()
     -- .Pet sets are for when Luopan is present.
     sets.idle.Pet = set_combine(sets.idle, {
         -- Pet: -DT (37.5% to cap) / Pet: Regen  -DT cap -87.5%
-        main={ name="Solstice", augments={'Mag. Acc.+20','Pet: Damage taken -4%','"Fast Cast"+5',}},
+        main = "Idris",
         sub = "Genmei Shield",
         -- head = {
         --     name = "Telchine Cap",
@@ -631,7 +650,7 @@ function init_gear_sets()
             augments = {'Enhances "Radial Arcana" effect'}
         },
         neck = {
-            name = "Loricate Torque +1",
+            name = "Bagua Charm +1",
             augments = {'Path: A'}
         },
         waist = "Isa Belt",
@@ -665,8 +684,8 @@ function init_gear_sets()
     sets.idle.DT.Pet.Indi = set_combine(sets.idle.DT.Pet, {})
 
     sets.idle.Town = set_combine(sets.idle, {
-        main={ name="Solstice", augments={'Mag. Acc.+20','Pet: Damage taken -4%','"Fast Cast"+5',}},
-        sub = "Genmei's Shield",
+        main = "Idris",
+        sub = "Ammurapi Shield",
         range = {
             name = "Dunna",
             augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
@@ -694,7 +713,7 @@ function init_gear_sets()
     sets.defense.MDT = sets.idle.DT
 
     sets.Kiting = {
-        feet = "Geo. Sandals +1"
+        feet = "Geo. Sandals +2"
     }
 
     sets.latent_refresh = {
@@ -712,7 +731,7 @@ function init_gear_sets()
 
     -- Normal melee group
     sets.engaged = {
-        main={ name="Solstice", augments={'Mag. Acc.+20','Pet: Damage taken -4%','"Fast Cast"+5',}},
+        main = "Idris",
         sub = "Genmei Shield",
         head = {
             name = "Nyame Helm",
