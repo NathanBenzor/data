@@ -494,7 +494,7 @@ function init_gear_sets()
         },
         right_ear = {
             name = "Boii Earring +1",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+11', 'Mag. Acc.+11', 'Crit.hit rate+3'}
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+15', 'Mag. Acc.+15', 'Crit.hit rate+5'}
         },
         left_ring = "Regal Ring",
         right_ring = "Niqmaddu Ring",
@@ -678,7 +678,7 @@ function init_gear_sets()
         },
         right_ear = {
             name = "Boii Earring +1",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+11', 'Mag. Acc.+11', 'Crit.hit rate+3'}
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+15', 'Mag. Acc.+15', 'Crit.hit rate+5'}
         },
         left_ring = "Niqmaddu Ring",
         right_ring = "Begrudging Ring",
@@ -1044,7 +1044,7 @@ function init_gear_sets()
         },
         right_ear = {
             name = "Boii Earring +1",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+11', 'Mag. Acc.+11', 'Crit.hit rate+3'}
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+15', 'Mag. Acc.+15', 'Crit.hit rate+5'}
         },
         left_ring = "Moonlight Ring",
         right_ring = "Shneddick Ring",
@@ -1078,7 +1078,7 @@ function init_gear_sets()
         },
         right_ear = {
             name = "Boii Earring +1",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+11', 'Mag. Acc.+11', 'Crit.hit rate+3'}
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+15', 'Mag. Acc.+15', 'Crit.hit rate+5'}
         },
         left_ring = "Regal Ring",
         right_ring = "Shneddick Ring",
@@ -1109,7 +1109,7 @@ function init_gear_sets()
         },
         right_ear = {
             name = "Boii Earring +1",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+11', 'Mag. Acc.+11', 'Crit.hit rate+3'}
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+15', 'Mag. Acc.+15', 'Crit.hit rate+5'}
         },
         left_ring = "Moonlight Ring",
         right_ring = "Shneddick Ring",
@@ -1221,7 +1221,7 @@ function init_gear_sets()
         -- },
         -- right_ear = {
         --     name = "Boii Earring +1",
-        --     augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+11', 'Mag. Acc.+11', 'Crit.hit rate+3'}
+        --     augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+15', 'Mag. Acc.+15', 'Crit.hit rate+5'}
         -- },
         -- left_ring = "Moonlight Ring",
         -- right_ring = "Niqmaddu Ring",
@@ -1265,7 +1265,7 @@ function init_gear_sets()
         },
         right_ear = {
             name = "Boii Earring +1",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+11', 'Mag. Acc.+11', 'Crit.hit rate+3'}
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+15', 'Mag. Acc.+15', 'Crit.hit rate+5'}
         },
         left_ring = "Moonlight Ring",
         right_ring = "Niqmaddu Ring",
@@ -1369,7 +1369,7 @@ function init_gear_sets()
         },
         right_ear = {
             name = "Boii Earring +1",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+11', 'Mag. Acc.+11', 'Crit.hit rate+3'}
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+15', 'Mag. Acc.+15', 'Crit.hit rate+5'}
         },
         left_ring = "Moonlight Ring",
         right_ring = "Niqmaddu Ring",
@@ -1618,7 +1618,7 @@ function init_gear_sets()
         },
         right_ear = {
             name = "Boii Earring +1",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+11', 'Mag. Acc.+11', 'Crit.hit rate+3'}
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+15', 'Mag. Acc.+15', 'Crit.hit rate+5'}
         },
         left_ring = "Moonlight Ring",
         right_ring = "Niqmaddu Ring",
@@ -1763,7 +1763,7 @@ function init_gear_sets()
         },
         right_ear = {
             name = "Boii Earring +1",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+11', 'Mag. Acc.+11', 'Crit.hit rate+3'}
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+15', 'Mag. Acc.+15', 'Crit.hit rate+5'}
         },
         left_ring = "Moonlight Ring",
         right_ring = "Niqmaddu Ring",
@@ -1849,7 +1849,7 @@ function init_gear_sets()
         },
         right_ear = {
             name = "Boii Earring +1",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+11', 'Mag. Acc.+11', 'Crit.hit rate+3'}
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+15', 'Mag. Acc.+15', 'Crit.hit rate+5'}
         },
         left_ring = "Moonlight Ring",
         right_ring = "Niqmaddu Ring",
