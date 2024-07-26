@@ -590,7 +590,7 @@ function init_gear_sets()
             name = "Piety Bliaut +3",
             augments = {'Enhances "Benediction" effect'}
         },
-        hands = "Ebers Mitts +2",
+        hands = "Ebers Mitts +3",
         legs = "Th. Pantaloons +2",
         feet = "Theo. Duckbills +3",
         neck = "Incanter's Torque",
@@ -612,7 +612,7 @@ function init_gear_sets()
             name = "Piety Bliaut +3",
             augments = {'Enhances "Benediction" effect'}
         },
-        hands = "Ebers Mitts +2",
+        hands = "Ebers Mitts +3",
         legs = "Th. Pantaloons +2",
         feet = "Theo. Duckbills +2"
     })
@@ -674,7 +674,7 @@ function init_gear_sets()
     sets.midcast.BarElement = set_combine(sets.midcast.EnhancingDuration, {
         head = "Ebers Cap +2",
         body = "Ebers Bliaut +3",
-        hands = "Ebers Mitts +2",
+        hands = "Ebers Mitts +3",
         legs = "Piety Pantaln. +3",
         feet = "Ebers Duckbills +2"
     })
@@ -682,7 +682,7 @@ function init_gear_sets()
     sets.midcast.BarStatus = set_combine(sets.midcast.EnhancingDuration, {
         head = "Ebers Cap +2",
         body = "Ebers Bliaut +3",
-        hands = "Ebers Mitts +2",
+        hands = "Ebers Mitts +3",
         legs = "Piety Pantaln. +3",
         feet = "Ebers Duckbills +2"
     })
@@ -884,7 +884,7 @@ function init_gear_sets()
         ammo = "Homiliary",
         head = "Ebers Cap +2",
         body = "Ebers Bliaut +3",
-        hands = "Ebers Mitts +2",
+        hands = "Ebers Mitts +3",
         legs = "Ebers Pant. +3",
         feet = "Ebers Duckbills +2",
         neck = "Clr. Torque +1",
@@ -976,7 +976,7 @@ function init_gear_sets()
     --     }
 
     -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
-    -- sets.buff['Divine Caress'] = {hands="Ebers Mitts +1", back="Mending Cape"}
+    -- sets.buff['Divine Caress'] = {hands="Ebers Mitts +3", back="Mending Cape"}
     -- sets.buff['Devotion'] = {head="Piety Cap +3"}
     -- sets.buff.Sublimation = {waist="Embla Sash"}
 
