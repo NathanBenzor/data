@@ -725,6 +725,7 @@ function init_gear_sets()
     })
 
     sets.midcast['Phalanx'] = set_combine(sets.midcast['Enhancing Magic'], {
+        ammo = "Staunch Tathlum +1",
         head = {
             name = "Fu. Bandeau +2",
             augments = {'Enhances "Battuta" effect'}
@@ -744,7 +745,8 @@ function init_gear_sets()
             augments = {'Magic dmg. taken -3%', 'Attack+12', 'Phalanx +4', 'Mag. Acc.+17 "Mag.Atk.Bns."+17'}
         },
         neck = "Incanter's Torque",
-        waist = "Olympus Sash",
+        -- waist = "Olympus Sash",
+        waist = "Plat. Mog. Belt",
         left_ear = "Tuisto Earring",
         right_ear = {
             name = "Odnowa Earring +1",
@@ -797,6 +799,7 @@ function init_gear_sets()
     })
     sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {
         waist = "Siegel Sash"
+        -- legs = "Doyen Pants"
     })
     sets.midcast.Protect = set_combine(sets.midcast['Enhancing Magic'], {
         ring2 = "Sheltered Ring"

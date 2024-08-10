@@ -40,6 +40,7 @@ function user_setup()
     state.WeaponSet = M {
         ['description'] = 'Weapon Set',
         'Caladbolg',
+        'Foenaria',
         'Liberator',
         'Anguta',
         'Apocalypse',
@@ -279,7 +280,7 @@ function init_gear_sets()
     })
 
     sets.precast.WS['Resolution'] = {
-        sub = "Utu Grip",
+        -- sub = "Utu Grip",
         -- ammo = {
         --     name = "Seeth. Bomblet +1",
         --     augments = {'Path: A'}
@@ -601,16 +602,17 @@ function init_gear_sets()
         right_ring = "Regal Ring",
         back = {
             name = "Ankou's Mantle",
-            augments = {'VIT+20', 'Accuracy+20 Attack+20', 'VIT+10', 'Weapon skill damage +10%', 'Damage taken-5%'}
+            augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%'}
         }
     }
 
     sets.precast.WS['Origin'].PDL = {
         ammo = "Knobkierrie",
-        head = {
-            name = "Nyame Helm",
-            augments = {'Path: B'}
-        },
+        -- head = {
+        --     name = "Nyame Helm",
+        --     augments = {'Path: B'}
+        -- },
+        head = "Heath. Bur. +3",
         body = {
             name = "Nyame Mail",
             augments = {'Path: B'}
@@ -644,7 +646,7 @@ function init_gear_sets()
         right_ring = "Sroda Ring",
         back = {
             name = "Ankou's Mantle",
-            augments = {'VIT+20', 'Accuracy+20 Attack+20', 'VIT+10', 'Weapon skill damage +10%', 'Damage taken-5%'}
+            augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%'}
         }
     }
 
@@ -1201,29 +1203,38 @@ function init_gear_sets()
             name = "Nyame Helm",
             augments = {'Path: B'}
         },
-        body = "Heath. Cuirass +3",
+        body = {
+            name = "Sakpata's Plate",
+            augments = {'Path: A'}
+        },
         hands = {
             name = "Nyame Gauntlets",
             augments = {'Path: B'}
         },
-        legs = "Heath. Flanchard +3",
+        legs = {
+            name = "Sakpata's Cuisses",
+            augments = {'Path: A'}
+        },
         feet = {
             name = "Nyame Sollerets",
             augments = {'Path: B'}
         },
         neck = "Bathy Choker +1",
         waist = "Plat. Mog. Belt",
-        left_ear = "Etiolation Earring",
-        right_ear = {
-            name = "Odnowa Earring +1",
-            augments = {'Path: A'}
-        },
+        -- left_ear = "Etiolation Earring",
+        -- right_ear = {
+        --     name = "Odnowa Earring +1",
+        --     augments = {'Path: A'}
+        -- },
+        left_ear = "Infused Earring",
+        right_ear = "Eabani Earring",
         left_ring = "Moonlight Ring",
         right_ring = "Shneddick Ring",
-        back = {
-            name = "Ankou's Mantle",
-            augments = {'HP+60', 'Mag. Acc+20 /Mag. Dmg.+20', '"Fast Cast"+10', 'Damage taken-5%'}
-        }
+        -- back = {
+        --     name = "Ankou's Mantle",
+        --     augments = {'HP+60', 'Mag. Acc+20 /Mag. Dmg.+20', '"Fast Cast"+10', 'Damage taken-5%'}
+        -- }
+        back = "Moonbeam Cape"
     }
 
     sets.idle.DT = set_combine(sets.idle, {
@@ -1480,12 +1491,13 @@ function init_gear_sets()
         }
     }
 
-    sets.engaged.Fonaria = {
+    sets.engaged.Foenaria = {
         ammo = {
             name = "Coiste Bodhar",
             augments = {'Path: A'}
         },
-        head = "Heath. Bur. +3",
+        -- head = "Heath. Bur. +3",
+        head = "Flam. Zucchetto +2",
         body = {
             name = "Sakpata's Plate",
             augments = {'Path: A'}
@@ -1498,9 +1510,13 @@ function init_gear_sets()
             name = "Sakpata's Cuisses",
             augments = {'Path: A'}
         },
+        -- feet = {
+        --     name = "Sakpata's Leggings",
+        --     augments = {'Path: A'}
+        -- },
         feet = {
-            name = "Sakpata's Leggings",
-            augments = {'Path: A'}
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
         },
         neck = {
             name = "Abyssal Beads +2",
@@ -1514,9 +1530,11 @@ function init_gear_sets()
             name = "Schere Earring",
             augments = {'Path: A'}
         },
-        right_ear = "Telos Earring",
+        -- right_ear = "Telos Earring",
+        right_ear = "Cessance Earring",
         left_ring = "Moonlight Ring",
-        right_ring = "Niqmaddu Ring",
+        -- right_ring = "Niqmaddu Ring",
+        right_ring = "Chirich Ring +1",
         back = {
             name = "Ankou's Mantle",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%'}
@@ -1548,7 +1566,6 @@ function init_gear_sets()
             augments = {'Path: A'}
         },
         waist = "Ioskeha Belt +1",
-        -- left_ear = "Schere Earring",
         left_ear = "Cessance Earring",
         right_ear = "Telos Earring",
         left_ring = "Moonlight Ring",
@@ -1674,8 +1691,8 @@ function init_gear_sets()
             augments = {'Path: A'}
         },
         waist = "Ioskeha Belt +1",
-        left_ear = "Schere Earring",
-        -- left_ear = "Cessance Earring",
+        -- left_ear = "Schere Earring",
+        left_ear = "Cessance Earring",
         right_ear = "Telos Earring",
         left_ring = "Moonlight Ring",
         right_ring = "Niqmaddu Ring",
@@ -1858,6 +1875,12 @@ function init_gear_sets()
         main = "Caladbolg",
         sub = "Utu Grip"
     }
+
+    sets.Foenaria = {
+        main = "Foenaria",
+        sub = "Utu Grip"
+    }
+
     sets.Apocalypse = {
         main = "Apocalypse",
         sub = "Utu Grip"
@@ -1865,8 +1888,7 @@ function init_gear_sets()
 
     sets.Liberator = {
         main = "Liberator",
-        sub = "Utu Grip",
-        left_ear = "Schere Earring"
+        sub = "Utu Grip"
     }
     sets.Anguta = {
         main = "Anguta",

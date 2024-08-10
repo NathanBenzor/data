@@ -984,7 +984,7 @@ function init_gear_sets()
     sets.defense.MDT = sets.idle.DT
 
     sets.defense.Evasion = {
-        ammo = "Yamarang",
+        -- ammo = "Yamarang",
         head = "Malignance Chapeau",
         body = "Malignance Tabard",
         hands = "Malignance Gloves",

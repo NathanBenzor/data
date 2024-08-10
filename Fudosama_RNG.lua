@@ -61,7 +61,7 @@ function job_setup()
                       "Echad Ring", "Facility Ring", "Capacity Ring", "Era. Bul. Pouch", "Dev. Bul. Pouch",
                       "Chr. Bul. Pouch", "Quelling B. Quiver", "Yoichi's Quiver", "Artemis's Quiver", "Chrono Quiver"}
 
-    lockstyleset = 118
+    lockstyleset = 116
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -81,9 +81,9 @@ function user_setup()
         'Annihilator',
         'Fomalhaut',
         'Armageddon',
-        'Holliday',
         'Gandiva',
-        'Gastraphetes'
+        'Gastraphetes',
+        'Accipiter'
     }
     -- state.CP = M(false, "Capacity Points Mode")
 
@@ -96,7 +96,7 @@ function user_setup()
         ['Armageddon'] = "Devastating Bullet",
         ['Gastraphetes'] = "Quelling Bolt",
         ['Fomalhaut'] = "Chrono Bullet",
-        ['Holliday'] = "Eminent Bullet"
+        ['Accipiter'] = "Chrono Arrow"
     }
 
     AccAmmo = {
@@ -107,7 +107,7 @@ function user_setup()
         ['Armageddon'] = "Eradicating Bullet",
         ['Gastraphetes'] = "Quelling Bolt",
         ['Fomalhaut'] = "Devastating Bullet",
-        ['Holliday'] = "Eminent Bullet"
+        ['Accipiter'] = "Artemis's Arrow"
     }
 
     WSAmmo = {
@@ -118,7 +118,7 @@ function user_setup()
         ['Armageddon'] = "Chrono Bullet",
         ['Gastraphetes'] = "Quelling Bolt",
         ['Fomalhaut'] = "Chrono Bullet",
-        ['Holliday'] = "Eminent Bullet"
+        ['Accipiter'] = "Chrono Arrow"
     }
 
     MagicAmmo = {
@@ -128,8 +128,7 @@ function user_setup()
         ['Annihilator'] = "Devastating Bullet",
         ['Armageddon'] = "Devastating Bullet",
         ['Gastraphetes'] = "Quelling Bolt",
-        ['Fomalhaut'] = "Devastating Bullet",
-        ['Holliday'] = "Eminent Bullet"
+        ['Fomalhaut'] = "Devastating Bullet"
     }
 
     -- Additional local binds
@@ -236,7 +235,7 @@ function init_gear_sets()
         hands = "Amini Glove. +3"
     }
     sets.precast.JA['Camouflage'] = {
-        body = "Orion Jerkin +3"
+        body = "Orion Jerkin +2"
     }
     sets.precast.JA['Scavenge'] = {
         feet = "Orion Socks +3"
@@ -695,6 +694,7 @@ function init_gear_sets()
     }
 
     sets.precast.WS["Savage Blade"] = {
+        -- ammo = "Hauksbok Bullet",
         head = {
             name = "Nyame Helm",
             augments = {'Path: B'}
@@ -780,7 +780,7 @@ function init_gear_sets()
 
     sets.midcast.RA.HighAcc = set_combine(sets.midcast.RA.Acc, {
         head = "Orion Beret +3",
-        body = "Orion Jerkin +3",
+        body = "Orion Jerkin +2",
         hands = "Orion Bracers +3",
         waist = "K. Kachina Belt +1"
     })
@@ -1513,7 +1513,7 @@ function init_gear_sets()
         -- back = gear.RNG_TP_Cape
     })
     sets.buff.Camouflage = {
-        body = "Orion Jerkin +1"
+        body = "Orion Jerkin +2"
     }
 
     sets.buff.Doom = {
@@ -1538,30 +1538,61 @@ function init_gear_sets()
     -- sets.Reive = {neck="Ygnas's Resolve +1"}
     -- sets.CP = {back="Mecisto. Mantle"}
 
-    -- sets.Annihilator = {
-    --     main = "Perun +1",
-    --     sub = "Blurred Knife +1",
-    --     ranged = "Annihilator"
-    -- }
-    -- sets.Fomalhaut = {
-    --     main = "Perun +1",
-    --     sub = "Blurred Knife +1",
-    --     ranged = "Fomalhaut"
-    -- }
-    -- sets.Armageddon = {
-    --     main = "Perun +1",
-    --     sub = "Malevolence",
-    --     ranged = "Armageddon"
-    -- }
-    -- sets.Holliday = {
-    --     main = "Malevolance",
-    --     sub = "Malevolence",
-    --     ranged = "Holliday"
-    -- }
+    sets.Annihilator = {
+        -- main = "Perun +1",
+        -- sub = "Blurred Knife +1",
+        range = {
+            name = "Annihilator",
+            augments = {'Path: A'}
+        }
+    }
+
+    sets.Fomalhaut = {
+        -- main = "Perun +1",
+        -- sub = "Blurred Knife +1",
+        range = {
+            name = "Fomalhaut",
+            augments = {'Path: A'}
+        }
+    }
+
+    sets.Armageddon = {
+        -- main = "Perun +1",
+        -- sub = "Malevolence",
+        range = {
+            name = "Armageddon",
+            augments = {'Path: A'}
+        }
+    }
+
     sets.Gastraphetes = {
-        main = "Malevolence",
-        sub = "Malevolence",
-        ranged = "Gastraphetes"
+        main = {
+            name = "Malevolence",
+            augments = {'INT+6', 'Mag. Acc.+7', '"Mag.Atk.Bns."+4', '"Fast Cast"+3'}
+        },
+        sub = {
+            name = "Malevolence",
+            augments = {'INT+10', 'Mag. Acc.+10', '"Mag.Atk.Bns."+10', '"Fast Cast"+5'}
+        },
+        range = {
+            name = "Gastraphetes",
+            augments = {'Path: A'}
+        }
+    }
+
+    sets.Accipiter = {
+        -- main = {
+        --     name = "Malevolence",
+        --     augments = {'INT+6', 'Mag. Acc.+7', '"Mag.Atk.Bns."+4', '"Fast Cast"+3'}
+        -- },
+        -- sub = {
+        --     name = "Malevolence",
+        --     augments = {'INT+10', 'Mag. Acc.+10', '"Mag.Atk.Bns."+10', '"Fast Cast"+5'}
+        -- },
+        range = {
+            name = "Accipiter",
+            augments = {'TP Bonus +1000'}
+        }
     }
 
     sets.DefaultShield = {
