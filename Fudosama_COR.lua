@@ -154,7 +154,10 @@ function user_setup()
         'DeathPenalty_R',
         'Fomalhaut_M',
         'Fomalhaut_R',
-        'Ataktos'
+        'Armageddon_M',
+        'Armageddon_R',
+        'Ataktos_R',
+        'Ataktos_M'
     }
     state.CP = M(false, "Capacity Points Mode")
     state.WeaponLock = M(false, 'Weapon Lock')
@@ -162,8 +165,10 @@ function user_setup()
     gear.RAbullet = "Chrono Bullet"
     gear.RAccbullet = "Chrono Bullet"
     gear.WSbullet = "Chrono Bullet"
-    gear.MAbullet = "Living Bullet"
-    gear.QDbullet = "Living Bullet"
+    -- gear.MAbullet = "Living Bullet"
+    -- gear.QDbullet = "Living Bullet"
+    gear.MAbullet = "Devastating Bullet"
+    gear.QDbullet = "Devastating Bullet"
     options.ammo_warning_limit = 10
 
     -- Additional local binds
@@ -174,7 +179,7 @@ function user_setup()
     send_command('bind ^` input /ja "Double-up" <me>')
     send_command('bind ^c input /ja "Crooked Cards" <me>')
     send_command('bind ^s input /ja "Snake Eye" <me>')
-    -- send_command('bind ^f input /ja "Fold" <me>')
+    send_command('bind ^f input /ja "Fold" <me>')
     send_command('bind !` input /ja "Bolter\'s Roll" <me>')
     send_command('bind @` gs c toggle LuzafRing')
 
@@ -226,7 +231,7 @@ function user_unload()
     send_command('unbind ^`')
     send_command('unbind ^c')
     send_command('unbind ^s')
-    -- send_command('unbind ^f')
+    send_command('unbind ^f')
     send_command('unbind !`')
     send_command('unbind @t')
     send_command('unbind @`')
@@ -289,8 +294,12 @@ function init_gear_sets()
 
     sets.precast.CorsairRoll = {
 
+        -- main = {
+        --     name = "Rostam",
+        --     augments = {'Path: C'}
+        -- },
         main = {
-            name = "Rostam",
+            name = "Lanun Knife",
             augments = {'Path: C'}
         },
         range = "Compensator",
@@ -358,11 +367,15 @@ function init_gear_sets()
 
     -- (10% Snapshot from JP Gifts)
     sets.precast.RA = {
-        head = "Chass. Tricorne +3",
-        body = "Laksa. Frac +3",
+        head = "Chass. Tricorne +2",
+        -- body = "Laksa. Frac +3",
+        -- hands = {
+        --     name = "Lanun Gants +3",
+        --     augments = {'Enhances "Fold" effect'}
+        -- },
         hands = {
-            name = "Lanun Gants +3",
-            augments = {'Enhances "Fold" effect'}
+            name = "Carmine Fin. Ga. +1",
+            augments = {'Rng.Atk.+20', 'Rng.Acc.+12', 'Snapshot+12'}
         },
         legs = {
             name = "Adhemar Kecks +1",
@@ -374,10 +387,11 @@ function init_gear_sets()
             augments = {'Path: A'}
         },
         waist = "Yemaya Belt",
-        left_ring = "Crepuscular Ring",
+        left_ring = "Regal Ring",
+        right_ring = "Ilabrat Ring",
         back = {
             name = "Camulus's Mantle",
-            augments = {'INT+20', 'Eva.+20 /Mag. Eva.+20', '"Snapshot"+10', 'Damage taken-5%'}
+            augments = {'"Snapshot"+10', 'Damage taken-5%'}
         }
     }
 
@@ -397,12 +411,15 @@ function init_gear_sets()
     sets.precast.WS.Acc = set_combine()
 
     sets.precast.WS['Last Stand'] = {
-        ammo = gear.RAccbullet,
+        -- head = {
+        --     name = "Lanun Tricorne +3",
+        --     augments = {'Enhances "Winning Streak" effect'}
+        -- },
         head = {
-            name = "Lanun Tricorne +3",
-            augments = {'Enhances "Winning Streak" effect'}
+            name = "Nyame Helm",
+            augments = {'Path: B'}
         },
-        body = "Laksa. Frac +3",
+        body = "Ikenga's Vest",
         hands = "Chasseur's Gants +3",
         legs = {
             name = "Nyame Flanchard",
@@ -412,7 +429,11 @@ function init_gear_sets()
             name = "Lanun Bottes +3",
             augments = {'Enhances "Wild Card" effect'}
         },
-        neck = "Fotia Gorget",
+        -- neck = "Fotia Gorget",
+        neck = {
+            name = "Comm. Charm +1",
+            augments = {'Path: A'}
+        },
         waist = "Fotia Belt",
         left_ear = {
             name = "Moonshade Earring",
@@ -433,15 +454,10 @@ function init_gear_sets()
     sets.precast.WS['Detonator'] = set_combine(sets.precast.WS['Last Stand'], {})
 
     sets.precast.WS['Wildfire'] = {
-        -- ammo = gear.MAbullet,
         head = {
             name = "Nyame Helm",
             augments = {'Path: B'}
         },
-        -- body = {
-        --     name = "Lanun Frac +3",
-        --     augments = {'Enhances "Loaded Deck" effect'}
-        -- },
         body = {
             name = "Nyame Mail",
             augments = {'Path: B'}
@@ -454,14 +470,11 @@ function init_gear_sets()
             name = "Nyame Flanchard",
             augments = {'Path: B'}
         },
-        -- feet = {
-        --     name = "Lanun Bottes +3",
-        --     augments = {'Enhances "Wild Card" effect'}
-        -- },
         feet = {
             name = "Nyame Sollerets",
             augments = {'Path: B'}
         },
+        -- neck = "Sibyl Scarf",
         neck = {
             name = "Comm. Charm +1",
             augments = {'Path: A'}
@@ -476,7 +489,7 @@ function init_gear_sets()
         right_ring = "Dingir Ring",
         back = {
             name = "Camulus's Mantle",
-            augments = {'AGI+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'AGI+10', 'Weapon skill damage +10%'}
+            augments = {'AGI+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'AGI+10', 'Weapon skill damage +10%', 'Damage taken-5%'}
         }
     }
 
@@ -490,11 +503,15 @@ function init_gear_sets()
             name = "Nyame Flanchard",
             augments = {'Path: B'}
         },
-        neck = "Fotia Gorget"
+        -- neck = "Fotia Gorget"
+        neck = {
+            name = "Comm. Charm +1",
+            augments = {'Path: A'}
+        }
     })
     sets.precast.WS['Split Shot'] = sets.precast.WS['Wildfire']
     sets.precast.WS['Leaden Salute'] = set_combine(sets.precast.WS['Wildfire'], {
-
+        -- ammo = "Devastating Bullet",
         head = "Pixie Hairpin +1",
         ring2 = "Archon Ring"
     })
@@ -512,7 +529,7 @@ function init_gear_sets()
     sets.precast.WS['Evisceration'].Acc = set_combine()
 
     sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
-
+        ammo = "Hauksbok Bullet",
         head = {
             name = "Nyame Helm",
             augments = {'Path: B'}
@@ -533,6 +550,7 @@ function init_gear_sets()
             name = "Nyame Sollerets",
             augments = {'Path: B'}
         },
+        -- neck = "Rep. Plat. Medal",
         neck = {
             name = "Comm. Charm +1",
             augments = {'Path: A'}
@@ -547,7 +565,7 @@ function init_gear_sets()
         },
         right_ear = "Ishvara Earring",
         left_ring = "Cornelia's Ring",
-        right_ring = "Sroda Ring",
+        right_ring = "Regal Ring",
         back = {
             name = "Camulus's Mantle",
             augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%'}
@@ -565,7 +583,7 @@ function init_gear_sets()
     sets.precast.WS['Requiescat'].Acc = set_combine()
 
     sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS['Wildfire'], {
-        ammo = gear.QDbullet,
+        ammo = "Hauksbok Bullet",
         ear2 = "Moonshade Earring"
     })
 
@@ -647,25 +665,42 @@ function init_gear_sets()
 
     -- Ranged gear
     sets.midcast.RA = {
-        ammo = gear.RAccbullet,
-        head = "Chass. Tricorne +3",
-        body = "Chasseur's Frac +3",
-        hands = "Chasseur's Gants +3",
-        legs = "Chas. Culottes +3",
-        feet = "Chass. Bottes +3",
-        neck = "Iskur Gorget",
-        waist = "K. Kachina Belt +1",
+        -- ammo = gear.RAccbullet,
+        -- main = {
+        --     name = "Lanun Knife",
+        --     augments = {'Path: A'}
+        -- },
+        head = "Ikenga's Hat",
+        body = "Ikenga's Vest",
+        hands = "Ikenga's Gloves",
+        legs = "Chas. Culottes +2",
+        feet = "Ikenga's Clogs",
+        -- neck = "Iskur Gorget",
+        neck = {
+            name = "Comm. Charm +1",
+            augments = {'Path: A'}
+        },
+        waist = "Yemaya Belt",
         left_ear = "Telos Earring",
-        right_ear = "Beyla Earring",
-        left_ring = "Crepuscular Ring",
-        right_ring = "Hajduk Ring +1",
+        right_ear = "Crep. Earring",
+        left_ring = "Regal Ring",
+        right_ring = "Ilabrat Ring",
+        -- back = {
+        --     name = "Camulus's Mantle",
+        --     augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'Rng.Acc.+10', '"Store TP"+10'}
+        -- }
         back = {
             name = "Camulus's Mantle",
-            augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'Rng.Acc.+10', '"Store TP"+10'}
+            augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', '"Store TP"+10'}
         }
     }
 
-    sets.midcast.RA.Acc = set_combine()
+    sets.midcast.RA.Acc = {
+        main = {
+            name = "Lanun Knife",
+            augments = {'Path: A'}
+        }
+    }
 
     sets.midcast.RA.HighAcc = set_combine()
 
@@ -690,7 +725,11 @@ function init_gear_sets()
         hands = "Malignance Gloves",
         legs = "Malignance Tights",
         feet = "Malignance Boots",
-        neck = "Loricate Torque +1",
+        -- neck = "Loricate Torque +1",
+        neck = {
+            name = "Comm. Charm +1",
+            augments = {'Path: A'}
+        },
         waist = "Platinum Mog. Belt",
         left_ear = "Eabani Earring",
         right_ear = {
@@ -701,7 +740,7 @@ function init_gear_sets()
         right_ring = "Shneddick Ring",
         back = {
             name = "Camulus's Mantle",
-            augments = {'INT+20', 'Eva.+20 /Mag. Eva.+20', '"Snapshot"+10', 'Damage taken -5%'}
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dual Wield"+10', 'Damage taken-5%'}
         }
     }
 
@@ -724,14 +763,14 @@ function init_gear_sets()
         },
         left_ring = "Defending Ring",
         right_ring = "Shneddick Ring",
-        back = {
-            name = "Gunslinger's Cape",
-            augments = {'Enmity-1', '"Mag.Atk.Bns."+1', '"Phantom Roll" ability delay -3'}
-        }
         -- back = {
-        --     name = "Camulus's Mantle",
-        --     augments = {'INT+20', 'Eva.+20 /Mag. Eva.+20', '"Snapshot"+10', 'Damage taken -5%'}
+        --     name = "Gunslinger's Cape",
+        --     augments = {'Enmity-1', '"Mag.Atk.Bns."+1', '"Phantom Roll" ability delay -3'}
         -- }
+        back = {
+            name = "Camulus's Mantle",
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dual Wield"+10', 'Damage taken-5%'}
+        }
     })
 
     ------------------------------------------------------------------------------------------------
@@ -762,7 +801,11 @@ function init_gear_sets()
         hands = "Malignance Gloves",
         legs = "Chas. Culottes +3",
         feet = "Malignance Boots",
-        neck = "Iskur Gorget",
+        neck = {
+            name = "Comm. Charm +1",
+            augments = {'Path: A'}
+        },
+        -- neck = "Iskur Gorget",
         -- waist = {
         --     name = "Sailfi Belt +1",
         --     augments = {'Path: A'}
@@ -797,7 +840,11 @@ function init_gear_sets()
         hands = "Malignance Gloves",
         legs = "Chas. Culottes +3",
         feet = "Malignance Boots",
-        neck = "Iskur Gorget",
+        neck = {
+            name = "Comm. Charm +1",
+            augments = {'Path: A'}
+        },
+        -- neck = "Iskur Gorget",
         waist = {
             name = "Sailfi Belt +1",
             augments = {'Path: A'}
@@ -1000,42 +1047,99 @@ function init_gear_sets()
     }
     -- sets.DeathPenalty_R.Acc = {main="Lanun Knife", sub={name="Rostam", bag="wardrobe"}, ranged="Death Penalty"}
     sets.Armageddon_M = {
-        main = "Naegling",
-        sub = "Tauret",
-        ranged = "Death Penalty"
+        -- main = "Naegling",
+        -- sub = "Tauret",
+        main = {
+            name = "Lanun Knife",
+            augments = {'Path: A'}
+        },
+        sub = {
+            name = "Lanun Knife",
+            augments = {'Path: C'}
+        },
+        ranged = "Armageddon",
+        ammo = "Devastating Bullet"
     }
     -- sets.Armageddon_M.Acc = {main="Naegling", sub="Tauret", ranged="Death Penalty"}
     sets.Armageddon_R = {
-        main = "Lanun Knife",
-        sub = "Rostam",
-        ranged = "Fomalhaut"
+        -- main = "Lanun Knife",
+        -- sub = "Rostam",
+        main = {
+            name = "Lanun Knife",
+            augments = {'Path: A'}
+        },
+        sub = {
+            name = "Lanun Knife",
+            augments = {'Path: C'}
+        },
+        ranged = "Armageddon"
     }
     -- sets.Armageddon_R.Acc = sets.Armageddon_R
     sets.Fomalhaut_M = {
+        -- main = {
+        --     name = "Rostam",
+        --     bag = "wardrobe"
+        -- },
+        -- sub = "Gleti's Knife",
         main = {
-            name = "Rostam",
-            bag = "wardrobe"
+            name = "Lanun Knife",
+            augments = {'Path: A'}
         },
-        sub = "Gleti's Knife",
+        sub = {
+            name = "Lanun Knife",
+            augments = {'Path: C'}
+        },
         ranged = "Fomalhaut"
     }
     -- sets.Fomalhaut_M.Acc = {main="Naegling", sub="Gleti's Knife", ranged="Fomalhaut"}
     sets.Fomalhaut_R = {
+        -- main = {
+        --     name = "Rostam",
+        --     bag = "wardrobe"
+        -- },
+        -- sub = {
+        --     name = "Rostam",
+        --     bag = "wardrobe2"
+        -- },
         main = {
-            name = "Rostam",
-            bag = "wardrobe"
+            name = "Lanun Knife",
+            augments = {'Path: A'}
         },
         sub = {
-            name = "Rostam",
-            bag = "wardrobe2"
+            name = "Lanun Knife",
+            augments = {'Path: C'}
         },
         ranged = "Fomalhaut"
     }
     -- sets.Fomalhaut_R.Acc = {main="Lanun Knife", sub="Rostam", ranged="Fomalhaut"}
-    sets.Ataktos = {
-        main = "Naegling",
-        sub = "Gleti's Knife",
-        ranged = "Anarchy +2"
+    sets.Ataktos_M = {
+        -- main = "Naegling",
+        -- sub = "Gleti's Knife",
+        main = {
+            name = "Lanun Knife",
+            augments = {'Path: A'}
+        },
+        sub = {
+            name = "Lanun Knife",
+            augments = {'Path: C'}
+        },
+        ranged = "Ataktos"
+        -- ammo = "Devastating Bullet"
+    }
+
+    sets.Ataktos_R = {
+        -- main = "Lanun Knife",
+        -- sub = "Rostam",
+        main = {
+            name = "Lanun Knife",
+            augments = {'Path: A'}
+        },
+        sub = {
+            name = "Lanun Knife",
+            augments = {'Path: C'}
+        },
+        ranged = "Ataktos"
+        -- ammo = "Chrono Bullet"
     }
     -- sets.Ataktos_Acc = {main="Tauret", sub="Gleti's Knife", ranged="Anarchy +2"}
 
@@ -1777,9 +1881,9 @@ end)
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
     if player.sub_job == 'NIN' then
-        set_macro_page(1, 1)
+        set_macro_page(1, 40)
     else
-        set_macro_page(1, 1)
+        set_macro_page(1, 40)
     end
 end
 

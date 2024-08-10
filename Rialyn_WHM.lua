@@ -230,7 +230,7 @@ function init_gear_sets()
         },
         sub = "Sors Shield",
         ammo = "Impatiens",
-        head = "Ebers Cap +2",
+        head = "Ebers Cap +3",
         body = "Inyanga Jubbah +2",
         hands = {
             name = "Gendewitha Gages",
@@ -335,7 +335,7 @@ function init_gear_sets()
         },
         sub = "Sors Shield",
         ammo = "Impatiens",
-        head = "Ebers Cap +2",
+        head = "Ebers Cap +3",
         body = "Ebers Bliaut +3",
         hands = "Theophany Mitts +2",
         legs = "Ebers Pant. +3",
@@ -359,7 +359,7 @@ function init_gear_sets()
         },
         sub = "Sors Shield",
         ammo = "Impatiens",
-        head = "Ebers Cap +2",
+        head = "Ebers Cap +3",
         body = "Ebers Bliaut +3",
         hands = "Theophany Mitts +2",
         legs = "Ebers Pant. +3",
@@ -383,7 +383,7 @@ function init_gear_sets()
         },
         sub = "Sors Shield",
         ammo = "Impatiens",
-        head = "Ebers Cap +2",
+        head = "Ebers Cap +3",
         body = "Ebers Bliaut +3",
         hands = "Theophany Mitts +2",
         legs = "Ebers Pant. +3",
@@ -404,7 +404,7 @@ function init_gear_sets()
         },
         sub = "Sors Shield",
         ammo = "Impatiens",
-        head = "Ebers Cap +2",
+        head = "Ebers Cap +3",
         body = "Ebers Bliaut +3",
         hands = {
             name = "Vanya Cuffs",
@@ -448,7 +448,7 @@ function init_gear_sets()
         -- sub = "Sors Shield",
         sub = "Ammurapi Shield",
         ammo = "Hydrocera",
-        head = "Ebers Cap +2",
+        head = "Ebers Cap +3",
         body = "Ebers Bliaut +3",
         hands = "Theophany Mitts +2",
         legs = {
@@ -481,7 +481,7 @@ function init_gear_sets()
         main = "Yagrush",
         sub = "Sors Shield",
         ammo = "Pemphredo Tathlum",
-        head = "Ebers Cap +2",
+        head = "Ebers Cap +3",
         body = "Ebers Bliaut +3",
         hands = {
             name = "Fanatic Gloves",
@@ -672,7 +672,7 @@ function init_gear_sets()
     })
 
     sets.midcast.BarElement = set_combine(sets.midcast.EnhancingDuration, {
-        head = "Ebers Cap +2",
+        head = "Ebers Cap +3",
         body = "Ebers Bliaut +3",
         hands = "Ebers Mitts +3",
         legs = "Piety Pantaln. +3",
@@ -680,7 +680,7 @@ function init_gear_sets()
     })
 
     sets.midcast.BarStatus = set_combine(sets.midcast.EnhancingDuration, {
-        head = "Ebers Cap +2",
+        head = "Ebers Cap +3",
         body = "Ebers Bliaut +3",
         hands = "Ebers Mitts +3",
         legs = "Piety Pantaln. +3",
@@ -882,7 +882,7 @@ function init_gear_sets()
         main = "Yagrush",
         sub = "Ammurapi Shield",
         ammo = "Homiliary",
-        head = "Ebers Cap +2",
+        head = "Ebers Cap +3",
         body = "Ebers Bliaut +3",
         hands = "Ebers Mitts +3",
         legs = "Ebers Pant. +3",
