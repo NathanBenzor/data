@@ -1,0 +1,16 @@
+sets.exported={
+    main={ name="Crocea Mors", augments={'Path: C',}},
+    sub={ name="Bunzi's Rod", augments={'Path: A',}},
+    head={ name="Viti. Chapeau +3", augments={'Enfeebling Magic duration','Magic Accuracy',}},
+    body="Lethargy Sayon +3",
+    hands="Leth. Ganth. +3",
+    legs="Malignance Tights",
+    feet="Malignance Boots",
+    neck={ name="Loricate Torque +1", augments={'Path: A',}},
+    waist="Orpheus's Sash",
+    left_ear="Odnowa Earring +1",
+    right_ear="Etiolation Earring",
+    left_ring="Stikini Ring +1",
+    right_ring="Stikini Ring +1",
+    back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dual Wield"+10','Damage taken-5%',}},
+}

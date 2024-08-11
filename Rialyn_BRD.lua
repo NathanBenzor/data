@@ -475,6 +475,8 @@ function get_sets()
         waist = "Bishop's Sash"
     })
 
+    sets.PhantomRoll = {}
+
     -- Used for elemental Bar Magic Spells
     sets.Midcast.Enhancing.Elemental = {}
 

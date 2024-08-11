@@ -234,18 +234,21 @@ function init_gear_sets()
 
     sets.precast.WS['Vidohunir'] = {
         ammo = "Ghastly Tathlum +1",
-        head = "Pixie Hairpin +1",
-        body = "Amalric Doublet +1",
-        hands = "Amalric Gages +1",
-        legs = "Merlinic Shalwar",
-        feet = "Merlinic Crackows",
-        neck = "Baetyl Pendant",
+        head={ name="Nyame Helm", augments={'Path: B',}},
+        body={ name="Nyame Mail", augments={'Path: B',}},
+        hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+        legs={ name="Nyame Flanchard", augments={'Path: B',}},
+        feet={ name="Nyame Sollerets", augments={'Path: B',}},
+        neck = {
+            name = "Src. Stole +2",
+            augments = {'Path: A'}
+        },
         ear1 = "Malignance Earring",
         ear2 = "Moonshade Earring",
-        ring1 = "Epaminondas's Ring",
-        ring2 = "Archon Ring",
+        ring1 = "Cornelia's Ring",
+        ring2 = "Freke Ring",
         back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}},
-        waist = "Acuity Belt +1"
+        waist = "Orpheus's Sash"
     } -- INT
 
     sets.precast.WS['Myrkr'] = {
