@@ -282,7 +282,7 @@ function init_gear_sets()
         body = "Piety Briault +3",
         hands = "Piety Mitts +3",
         legs = "Piety Pantaln. +3",
-        feet = "Piety Duckbills +2",
+        feet = "Piety Duckbills +3",
         neck = "Fotia Gorget",
         ear1 = "Moonshade Earring",
         ear2 = "Ishvara Earring",
@@ -614,7 +614,7 @@ function init_gear_sets()
         },
         hands = "Ebers Mitts +3",
         legs = "Th. Pantaloons +2",
-        feet = "Theo. Duckbills +2"
+        feet = "Theo. Duckbills +3"
     })
 
     sets.midcast.Refresh = set_combine(sets.midcast.EnhancingDuration, {
@@ -659,6 +659,7 @@ function init_gear_sets()
         main = "Vadose Rod",
         sub = "Ammurapi Shield",
         ammo = "Staunch Tathlum +1",
+        head={ name="Chironic Hat", augments={'"Mag.Atk.Bns."+19','DEX+9','"Refresh"+2','Accuracy+5 Attack+5','Mag. Acc.+5 "Mag.Atk.Bns."+5',}},
         hands = "Regal Cuffs",
         ear1 = "Halasz Earring",
         ear2 = "Magnetic Earring",
@@ -668,15 +669,16 @@ function init_gear_sets()
     })
 
     sets.midcast.Auspice = set_combine(sets.midcast.EnhancingDuration, {
-        feet = "Ebers Duckbills +2"
+        feet = "Ebers Duckbills +3"
     })
 
     sets.midcast.BarElement = set_combine(sets.midcast.EnhancingDuration, {
+        main = "Beneficus",
         head = "Ebers Cap +3",
         body = "Ebers Bliaut +3",
         hands = "Ebers Mitts +3",
         legs = "Piety Pantaln. +3",
-        feet = "Ebers Duckbills +2"
+        feet = "Ebers Duckbills +3"
     })
 
     sets.midcast.BarStatus = set_combine(sets.midcast.EnhancingDuration, {
@@ -684,7 +686,7 @@ function init_gear_sets()
         body = "Ebers Bliaut +3",
         hands = "Ebers Mitts +3",
         legs = "Piety Pantaln. +3",
-        feet = "Ebers Duckbills +2"
+        feet = "Ebers Duckbills +3"
     })
 
     -- sets.midcast.BoostStat = set_combine(sets.midcast['Enhancing Magic'], {
@@ -753,7 +755,7 @@ function init_gear_sets()
 
     -- Custom spell classes
     sets.midcast.MndEnfeebles = {
-        main = "Bunzi's Rod",
+        main = "Daybreak",
         sub = "Ammurapi Shield",
         ammo = "Pemphredo Tathlum",
         head = "Befouled Crown",
@@ -886,7 +888,7 @@ function init_gear_sets()
         body = "Ebers Bliaut +3",
         hands = "Ebers Mitts +3",
         legs = "Ebers Pant. +3",
-        feet = "Ebers Duckbills +2",
+        feet = "Ebers Duckbills +3",
         neck = "Clr. Torque +1",
         ear1 = "Etiolation Earring",
         ear2 = "Regal Earring",

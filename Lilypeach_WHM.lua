@@ -460,10 +460,7 @@ function init_gear_sets()
         neck = "Incanter's Torque",
         waist = "Demonry Sash",
         left_ear = "Meili Earring",
-        right_ear = {
-            name = "Ebers Earring",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+8', 'Mag. Acc.+8'}
-        },
+        right_ear={ name="Ebers Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+11','Mag. Acc.+11','Damage taken-3%',}},
         left_ring = "Menelaus's Ring",
         right_ring = "Haoma's Ring",
         back = {
@@ -490,10 +487,7 @@ function init_gear_sets()
         neck = "Debilis Medallion",
         waist = "Gishdubar Sash",
         left_ear = "Meili Earring",
-        right_ear = {
-            name = "Ebers Earring",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+8', 'Mag. Acc.+8'}
-        },
+        right_ear={ name="Ebers Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+11','Mag. Acc.+11','Damage taken-3%',}},
         left_ring = "Menelaus's Ring",
         right_ring = "Haoma's Ring",
         back = {

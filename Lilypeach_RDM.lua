@@ -359,6 +359,7 @@ function get_sets()
 		head="Leth. Chappel +3",
 		body="Lethargy Sayon +3",
 		legs="Leth. Fuseau +3",
+		-- hands="Leth. Ganth. +3",
 	})
 
 	-- Regen
@@ -469,19 +470,20 @@ function get_sets()
         -- main={ name="Crocea Mors", augments={'Path: C',}},
 		-- sub={ name="Demers. Degen +1", augments={'Path: A',}},
 		ammo="Sroda Tathlum",
+		-- head="Malignance Chapeau",
 		head="Umuthi Hat",
-		body="Ayanmo Corazza +2",
+		body="Malignance Tabard",
 		hands="Aya. Manopolas +2",
 		legs="Malignance Tights",
 		feet="Malignance Boots",
 		neck={ name="Dls. Torque +2", augments={'Path: A',}},
 		waist="Orpheus's Sash",
 		left_ear="Eabani Earring",
-		right_ear="Halasz Earring",
+		right_ear="Dignitary's Earring",
 		left_ring="Resonance Ring",
 		right_ring="Chirich Ring +1",
-		back={ name="Ghostfyre Cape", augments={'Enfb.mag. skill +2','Enha.mag. skill +8','Mag. Acc.+3','Enh. Mag. eff. dur. +20',}},
-		-- back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dual Wield"+10','Damage taken-5%',}},
+		-- back={ name="Ghostfyre Cape", augments={'Enfb.mag. skill +2','Enha.mag. skill +8','Mag. Acc.+3','Enh. Mag. eff. dur. +20',}},
+		back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dual Wield"+10','Damage taken-5%',}},
 }
 	sets.Saboteur = {hands="Leth. Ganth. +3",}
 
@@ -605,7 +607,7 @@ function get_sets()
 	sets.JA["Composure"] = {
         head = "Leth. Chappel +3",
         body = "Lethargy Sayon +3",
-        hands = "Atrophy Gloves +3",
+        hands = "Leth. Ganth. +3",
         legs = "Leth. Fuseau +3",
         feet = "Leth. Houseaux +3"
     }

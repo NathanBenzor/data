@@ -586,14 +586,14 @@ function init_gear_sets()
             name = "Bagua Sandals +3",
             augments = {'Enhances "Radial Arcana" effect'}
         },
-        neck = {
-            name = "Bagua Charm +1",
-            augments = {'Path: A'}
-        },
         -- neck = {
-        --     name = "Loricate Torque +1",
+        --     name = "Bagua Charm +1",
         --     augments = {'Path: A'}
         -- },
+        neck = {
+            name = "Loricate Torque +1",
+            augments = {'Path: A'}
+        },
         waist = "Fucho-no-Obi",
         left_ear = "Infused Earring",
         right_ear={ name="Azimuth Earring +1", augments={'System: 1 ID: 1676 Val: 0','Mag. Acc.+15','Damage taken-5%',}},
@@ -610,14 +610,14 @@ function init_gear_sets()
         sub = "Genmei Shield", -- 10/0
         body = "Shamash Robe", -- 8/8
         hands = "Geo. Mitaines +3", -- 3/0
-        neck = {
-            name = "Bagua Charm +1",
-            augments = {'Path: A'}
-        },
         -- neck = {
-        --     name = "Loricate Torque +1",
+        --     name = "Bagua Charm +1",
         --     augments = {'Path: A'}
         -- },
+        neck = {
+            name = "Loricate Torque +1",
+            augments = {'Path: A'}
+        },
         ear1 = "Genmei Earring", -- 2/0
         right_ear={ name="Azimuth Earring +1", augments={'System: 1 ID: 1676 Val: 0','Mag. Acc.+15','Damage taken-5%',}},
         ring1 = "Gelatinous Ring +1", -- 7/(-1)
