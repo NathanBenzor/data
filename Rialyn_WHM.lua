@@ -682,7 +682,6 @@ function init_gear_sets()
     })
 
     sets.midcast.BarStatus = set_combine(sets.midcast.EnhancingDuration, {
-        main = "Beneficus",
         head = "Ebers Cap +3",
         body = "Ebers Bliaut +3",
         hands = "Ebers Mitts +3",

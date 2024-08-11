@@ -78,7 +78,10 @@ function init_gear_sets()
         },
         hands = "Pumm. Mufflers +2",
         legs = "Brontes Cuisses",
-        feet = "Eschite Greaves",
+        feet = {
+            name = "Eschite Greaves",
+            augments = {'HP+80', 'Enmity+7', 'Phys. dmg. taken -4'}
+        },
         neck = {
             name = "Unmoving Collar +1",
             augments = {'Path: A'}
