@@ -16,7 +16,8 @@ function job_setup()
     state.Buff['Last Resort'] = buffactive['Last Resort'] or false
     state.Buff['Aftermath: Lv.3'] = buffactive['Aftermath: Lv.3'] or false
 
-    weapon_list = S {"Caladbolg", "Liberator", "Anguta", "Apocalypse", "Naegling", "LoxoticMace", "Lycurgos"}
+    weapon_list =
+        S {"Caladbolg", "Foenaria", "Liberator", "Anguta", "Apocalypse", "Naegling", "LoxoticMace", "Lycurgos"}
     no_swap_gear = S {"Warp Ring", "Dim. Ring (Dem)", "Dim. Ring (Holla)", "Dim. Ring (Mea)", "Trizek Ring",
                       "Echad Ring", "Facility Ring", "Capacity Ring"}
     elemental_ws = S {'Dark Harvest', 'Shadow of Death', 'Infernal Scythe', 'Frostbite', 'Freezebite', 'Burning Blade',
@@ -197,7 +198,10 @@ function init_gear_sets()
     sets.precast.WS = {
         sub = "Utu Grip",
         ammo = "Knobkierrie",
-        head = "Sakpata's Helm",
+        head = {
+            name = "Sakpata's Helm",
+            augments = {'Path: A'}
+        },
         body = "Ignominy Cuirass +3",
         hands = {
             name = "Nyame Gauntlets",
@@ -867,7 +871,10 @@ function init_gear_sets()
 
     sets.precast.WS['Fell Cleave'] = set_combine(sets.precast.WS, {
         ammo = "Knobkierrie",
-        head = "Sakpata's Helm",
+        head = {
+            name = "Sakpata's Helm",
+            augments = {'Path: A'}
+        },
         body = "Ignominy Cuirass +3",
         hands = {
             name = "Sakpata's Gauntlets",
@@ -1295,7 +1302,7 @@ function init_gear_sets()
         neck = "Loricate Torque +1", -- 6/6
         ear1 = "Odnowa Earring +1", -- 3/5
         ring1 = "Defending Ring", -- 10/10
-        back = "Moonlight Cape" -- 6/6
+        back = "Moonbeam Cape" -- 6/6
     })
 
     sets.idle.Town = set_combine(sets.idle, {
@@ -1327,7 +1334,9 @@ function init_gear_sets()
         }
     })
 
-    sets.idle.Weak = set_combine(sets.idle, {})
+    sets.idle.Weak = set_combine(sets.idle, {
+        body = "Sacro Breastplate"
+    })
 
     ------------------------------------------------------------------------------------------------
     ---------------------------------------- Defense Sets ------------------------------------------
@@ -1351,7 +1360,7 @@ function init_gear_sets()
             augments = {'Path: A'}
         },
         head = {
-            name = "Sakpatas's Helm",
+            name = "Sakpata's Helm",
             augments = {'Path: A'}
         },
         body = {
@@ -1362,7 +1371,10 @@ function init_gear_sets()
             name = "Sakpata's Gauntlets",
             augments = {'Path: A'}
         },
-        legs = "Sakpata's Cuisses",
+        legs = {
+            name = "Sakpata's Cuisses",
+            augments = {'Path: A'}
+        },
         -- legs = "Ig. Flanchard +3",
         feet = {
             name = "Sakpata's Leggings",
