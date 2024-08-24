@@ -419,6 +419,57 @@ function init_gear_sets()
         }
     }
 
+    sets.precast.WS['Freezebite'] = {
+        ammo = "Knobkierrie",
+        -- ammo = {
+        --     name = "Ghastly Tathlum +1",
+        --     augments = {'Path: A'}
+        -- },
+        head = {
+            name = "Nyame Helm",
+            augments = {'Path: B'}
+        },
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
+        feet = "Heathen's Sollerets +3",
+        -- neck = {
+        --     name = "Abyssal Beads +2",
+        --     augments = {'Path: A'}
+        -- },
+        neck = "Sibyl Scarf",
+        -- waist = {
+        --     name = "Sailfi Belt +1",
+        --     augments = {'Path: A'}
+        -- },
+        -- waist = "Fotia Belt",
+        waist = "Orpheus's Sash",
+        left_ear = {
+            name = "Moonshade Earring",
+            augments = {'Accuracy+4', 'TP Bonus +250'}
+        },
+        -- right_ear = {
+        --     name = "Heath. Earring +1",
+        --     augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+14', 'Mag. Acc.+14', 'Weapon skill damage +3%'}
+        -- },
+        right_ear = "Friomisi Earring",
+        left_ring = "Cornelia's Ring",
+        right_ring = "Shiva Ring +1",
+        back = {
+            name = "Ankou's Mantle",
+            augments = {'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'Weapon skill damage +10%', 'Phys. dmg. taken-10%'}
+        }
+    }
+
     sets.precast.WS['Catastrophe'] = set_combine(sets.precast.WS['Torcleaver'], {
         legs = "Ratri Cuisses +1",
         ear1 = "Lugra Earring +1",
@@ -665,6 +716,58 @@ function init_gear_sets()
     sets.precast.WS['Quietus'].Acc = set_combine(sets.precast.WS['Quietus'], {})
 
     sets.precast.WS['Shadow of Death'] = {
+        ammo = "Knobkierrie",
+        -- ammo = {
+        --     name = "Ghastly Tathlum +1",
+        --     augments = {'Path: A'}
+        -- },
+        -- head = {
+        --     name = "Nyame Helm",
+        --     augments = {'Path: B'}
+        -- },
+        head = "Pixie Hairpin +1",
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
+        feet = "Heathen's Sollerets +3",
+        -- neck = {
+        --     name = "Abyssal Beads +2",
+        --     augments = {'Path: A'}
+        -- },
+        neck = "Sibyl Scarf",
+        -- waist = {
+        --     name = "Sailfi Belt +1",
+        --     augments = {'Path: A'}
+        -- },
+        -- waist = "Fotia Belt",
+        waist = "Orpheus's Sash",
+        left_ear = {
+            name = "Moonshade Earring",
+            augments = {'Accuracy+4', 'TP Bonus +250'}
+        },
+        -- right_ear = {
+        --     name = "Heath. Earring +1",
+        --     augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+14', 'Mag. Acc.+14', 'Weapon skill damage +3%'}
+        -- },
+        right_ear = "Friomisi Earring",
+        left_ring = "Cornelia's Ring",
+        right_ring = "Shiva Ring +1",
+        back = {
+            name = "Ankou's Mantle",
+            augments = {'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'Weapon skill damage +10%', 'Phys. dmg. taken-10%'}
+        }
+    }
+
+    sets.precast.WS['Infernal Scythe'] = {
         -- ammo = "Knobkierrie",
         ammo = {
             name = "Ghastly Tathlum +1",
@@ -697,7 +800,8 @@ function init_gear_sets()
         --     name = "Sailfi Belt +1",
         --     augments = {'Path: A'}
         -- },
-        waist = "Fotia Belt",
+        -- waist = "Fotia Belt",
+        waist = "Orpheus's Sash",
         left_ear = {
             name = "Moonshade Earring",
             augments = {'Accuracy+4', 'TP Bonus +250'}
@@ -711,7 +815,7 @@ function init_gear_sets()
         right_ring = "Shiva Ring +1",
         back = {
             name = "Ankou's Mantle",
-            augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%'}
+            augments = {'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'Weapon skill damage +10%', 'Phys. dmg. taken-10%'}
         }
     }
 
@@ -1550,7 +1654,7 @@ function init_gear_sets()
         right_ring = "Petrov Ring",
         back = {
             name = "Ankou's Mantle",
-            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%'}
         }
     }
 
@@ -1635,7 +1739,7 @@ function init_gear_sets()
         right_ring = "Niqmaddu Ring",
         back = {
             name = "Ankou's Mantle",
-            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%'}
         }
     }
 
@@ -1679,7 +1783,7 @@ function init_gear_sets()
         right_ring = "Niqmaddu Ring",
         back = {
             name = "Ankou's Mantle",
-            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%'}
         }
     }
 
@@ -1722,7 +1826,7 @@ function init_gear_sets()
         right_ring = "Moonlight Ring",
         back = {
             name = "Ankou's Mantle",
-            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'DEX+10', 'Weapon skill damage +10%'}
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', '"Store TP"+10', 'Phys. dmg. taken-10%'}
         }
     }
 
@@ -1761,7 +1865,7 @@ function init_gear_sets()
         right_ring = "Niqmaddu Ring",
         back = {
             name = "Ankou's Mantle",
-            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%'}
         }
     }
 
