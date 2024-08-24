@@ -406,7 +406,10 @@ function init_gear_sets()
             augments = {'Path: A'}
         },
         left_ear = "Sherida Earring",
-        right_ear = "Telos Earring",
+        right_ear = {
+            name = "Skulk. Earring +1",
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+11', 'Mag. Acc.+11', '"Store TP"+3'}
+        },
         left_ring = "Gere Ring",
         right_ring = "Regal Ring",
         back = {
@@ -1279,7 +1282,10 @@ function init_gear_sets()
             augments = {'Path: A'}
         },
         left_ear = "Sherida Earring",
-        right_ear = "Telos Earring",
+        right_ear = {
+            name = "Skulk. Earring +1",
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+11', 'Mag. Acc.+11', '"Store TP"+3'}
+        },
         left_ring = "Gere Ring",
         right_ring = "Regal Ring",
         back = {
