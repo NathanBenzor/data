@@ -1434,8 +1434,9 @@ function init_gear_sets()
         right_ring = "Shneddick Ring",
         back = {
             name = "Ankou's Mantle",
-            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
+            augments = {'HP+60', 'Mag. Acc+20 /Mag. Dmg.+20', '"Fast Cast"+10', 'Damage taken-5%'}
         }
+
     })
 
     sets.idle.Weak = set_combine(sets.idle, {
