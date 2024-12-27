@@ -1613,12 +1613,6 @@ function init_gear_sets()
     }
 
     sets.Accipiter = {
-        main = {
-            name = ""
-        },
-        sub = {
-            name = ""
-        },
         range = {
             name = "Accipiter",
             augments = {'TP Bonus +1000'}
