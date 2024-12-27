@@ -81,54 +81,56 @@ function user_setup()
         'Annihilator',
         'Fomalhaut',
         'Armageddon',
-        'Gandiva',
         'Gastraphetes',
+        'Gandiva',
+        'FailNot',
         'Accipiter'
     }
     -- state.CP = M(false, "Capacity Points Mode")
 
     DefaultAmmo = {
-        ['Yoichinoyumi'] = "Chrono Arrow",
+        ['Annihilator'] = "Chrono Bullet",
+        ['Fomalhaut'] = "Chrono Bullet",
+        ['Armageddon'] = "Devastating Bullet",
+        -- ['Armageddon'] = "Chrono Bullet",
+        ['Gastraphetes'] = "Quelling Bolt",
         ['Gandiva'] = "Chrono Arrow",
         ['Fail-Not'] = "Chrono Arrow",
-        ['Annihilator'] = "Chrono Bullet",
-        -- ['Armageddon'] = "Chrono Bullet",
-        ['Armageddon'] = "Devastating Bullet",
-        ['Gastraphetes'] = "Quelling Bolt",
-        ['Fomalhaut'] = "Chrono Bullet",
         ['Accipiter'] = "Chrono Arrow"
+        -- ['Yoichinoyumi'] = "Chrono Arrow",
     }
 
     AccAmmo = {
-        ['Yoichinoyumi'] = "Yoichi's Arrow",
-        ['Gandiva'] = "Yoichi's Arrow",
-        ['Fail-Not'] = "Yoichi's Arrow",
         ['Annihilator'] = "Eradicating Bullet",
+        ['Fomalhaut'] = "Devastating Bullet",
         ['Armageddon'] = "Eradicating Bullet",
         ['Gastraphetes'] = "Quelling Bolt",
-        ['Fomalhaut'] = "Devastating Bullet",
+        ['Gandiva'] = "Yoichi's Arrow",
+        ['Fai-lNot'] = "Yoichi's Arrow",
         ['Accipiter'] = "Artemis's Arrow"
+        -- ['Yoichinoyumi'] = "Yoichi's Arrow",
     }
 
     WSAmmo = {
-        ['Yoichinoyumi'] = "Chrono Arrow",
-        ['Gandiva'] = "Chrono Arrow",
-        ['Fail-Not'] = "Chrono Arrow",
         ['Annihilator'] = "Chrono Bullet",
         ['Armageddon'] = "Chrono Bullet",
         ['Gastraphetes'] = "Quelling Bolt",
         ['Fomalhaut'] = "Chrono Bullet",
+        ['Gandiva'] = "Chrono Arrow",
+        ['Fail-Not'] = "Chrono Arrow",
         ['Accipiter'] = "Chrono Arrow"
+        -- ['Yoichinoyumi'] = "Chrono Arrow",
     }
 
     MagicAmmo = {
-        ['Yoichinoyumi'] = "Chrono Arrow",
-        ['Gandiva'] = "Chrono Arrow",
-        ['Fail-Not'] = "Chrono Arrow",
         ['Annihilator'] = "Devastating Bullet",
+        ['Fomalhaut'] = "Devastating Bullet",
         ['Armageddon'] = "Devastating Bullet",
         ['Gastraphetes'] = "Quelling Bolt",
-        ['Fomalhaut'] = "Devastating Bullet"
+        ['Gandiva'] = "Chrono Arrow",
+        ['Fail-Not'] = "Chrono Arrow",
+        ['Accipiter'] = "Chrono Arrow"
+        -- ['Yoichinoyumi'] = "Chrono Arrow",
     }
 
     -- Additional local binds
@@ -1580,7 +1582,7 @@ function init_gear_sets()
         }
     }
 
-    sets.Accipiter = {
+    sets.Gandiva = {
         -- main = {
         --     name = "Malevolence",
         --     augments = {'INT+6', 'Mag. Acc.+7', '"Mag.Atk.Bns."+4', '"Fast Cast"+3'}
@@ -1589,6 +1591,34 @@ function init_gear_sets()
         --     name = "Malevolence",
         --     augments = {'INT+10', 'Mag. Acc.+10', '"Mag.Atk.Bns."+10', '"Fast Cast"+5'}
         -- },
+        range = {
+            name = "Gandiva",
+            augments = {'Path: A'}
+        }
+    }
+
+    sets.FailNot = {
+        -- main = {
+        --     name = "Malevolence",
+        --     augments = {'INT+6', 'Mag. Acc.+7', '"Mag.Atk.Bns."+4', '"Fast Cast"+3'}
+        -- },
+        -- sub = {
+        --     name = "Malevolence",
+        --     augments = {'INT+10', 'Mag. Acc.+10', '"Mag.Atk.Bns."+10', '"Fast Cast"+5'}
+        -- },
+        range = {
+            name = "Fail-Not",
+            augments = {'Path: A'}
+        }
+    }
+
+    sets.Accipiter = {
+        main = {
+            name = ""
+        },
+        sub = {
+            name = ""
+        },
         range = {
             name = "Accipiter",
             augments = {'TP Bonus +1000'}
