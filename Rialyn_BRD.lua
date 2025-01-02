@@ -109,7 +109,7 @@ function get_sets()
     -- Instruments to use
     Instrument = {}
     Instrument.Count = {
-        name = "Blurred Harp +1"
+        range = "Daurdabla"
     }
     Instrument.Potency = {
         name = "Gjallarhorn"
@@ -118,7 +118,7 @@ function get_sets()
         name = "Marsyas"
     }
     Instrument.AOE_Sleep = {
-        name = "Blurred Harp +1"
+        range = "Daurdabla"
     }
     Instrument.Idle = {
         name = "Linos",
@@ -151,7 +151,7 @@ function get_sets()
     -- Standard Idle set
     sets.Idle = {
         -- sub = "Genmei Shield",
-        range = "Blurred Harp +1",
+        range = "Daurdabla",
         head = "Nyame Helm",
         body = "Nyame Mail",
         hands = "Nyame Gauntlets",
@@ -176,10 +176,10 @@ function get_sets()
 
     sets.Idle.town = {
         -- sub = "Genmei Shield",
-        range = "Blurred Harp +1",
+        range = "Daurdabla",
         -- head = "Fili Calot +2",
         head = "Lilac Corsage",
-        body = "Fili Hongreline +2",
+        body = "Fili Hongreline +3",
         hands = "Nyame Gauntlets",
         legs = "Nyame Flanchard",
         feet = "Brioso Slippers +3",
@@ -340,7 +340,7 @@ function get_sets()
         --     augments = {'Mag. Acc.+15', 'String instrument skill +10', 'Wind instrument skill +10'}
         -- },
         head = "Fili Calot +2",
-        body = "Fili Hongreline +2",
+        body = "Fili Hongreline +3",
         hands = "Fili Manchettes +1",
         legs = "Inyanga Shalwar +2",
         feet = "Brioso Slippers +2",
@@ -515,7 +515,7 @@ function get_sets()
         sub = "Ammurapi Shield",
         range = "Gjallarhorn",
         head = "Brioso Roundlet +3",
-        body = "Fili Hongreline +2",
+        body = "Fili Hongreline +3",
         hands = "Brioso Cuffs +3",
         legs = "Bihu Cannions +3",
         feet = "Brioso Slippers +3",
@@ -544,7 +544,7 @@ function get_sets()
     -- Max duration
     sets.Midcast.Lullaby = set_combine(sets.Midcast.Enfeebling, {
         range = Instrument.Honor,
-        body = "Fili Hongreline +2",
+        body = "Fili Hongreline +3",
         hands = "Brioso Cuffs +3",
         legs = "Inyanga Shalwar +2"
     })
@@ -556,7 +556,7 @@ function get_sets()
         head = "Fili Calot +2"
     }
     sets.Midcast.Minuet = {
-        body = "Fili Hongreline +2"
+        body = "Fili Hongreline +3"
     }
     sets.Midcast.March = {
         hands = "Fili Manchettes +2"
