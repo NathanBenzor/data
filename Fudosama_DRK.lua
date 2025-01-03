@@ -1577,7 +1577,7 @@ function init_gear_sets()
         }
     })
 
-    sets.engaged.Caladbolg = set_combine(sets.engaged, {
+    sets.engaged.Caladbolg = {
         ammo = {
             name = "Coiste Bodhar",
             augments = {'Path: A'}
@@ -1618,7 +1618,7 @@ function init_gear_sets()
             name = "Ankou's Mantle",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%'}
         }
-    })
+    }
     -- sets.engaged.Caladbolg.LowAcc = set_combine(sets.engaged.Apocalypse, {})
     -- sets.engaged.Caladbolg.MidAcc = set_combine(sets.engaged.Apocalypse, {})
     -- sets.engaged.Caladbolg.HighAcc = set_combine(sets.engaged.Apocalypse, {})

@@ -344,7 +344,7 @@ function get_sets()
         hands = "Fili Manchettes +1",
         legs = "Inyanga Shalwar +2",
         feet = "Brioso Slippers +2",
-        neck = "Moonbow Whistle",
+        neck = "Mnbw. Whistle +1",
         waist = "Flume Belt +1",
         left_ear = {
             name = "Odnowa Earring +1",
@@ -519,7 +519,7 @@ function get_sets()
         hands = "Brioso Cuffs +3",
         legs = "Bihu Cannions +3",
         feet = "Brioso Slippers +3",
-        neck = "Moonbow Whistle",
+        neck = "Mnbw. Whistle +1",
         waist = {
             name = "Acuity Belt +1",
             augments = {'Path: A'}
