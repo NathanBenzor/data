@@ -168,7 +168,7 @@ function init_gear_sets()
         }
     }
     sets.precast.JA['Full Circle'] = {
-        head = "Azimuth Hood +2"
+        head = "Azimuth Hood +3"
     }
     sets.precast.JA['Life Cycle'] = {
         head = "Bagua Galero +1",
@@ -307,7 +307,7 @@ function init_gear_sets()
             name = "Dunna",
             augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
         },
-        head = "Azimuth Hood +2",
+        head = "Azimuth Hood +3",
         body = {
             name = "Bagua Tunic +3",
             augments = {'Enhances "Bolster" effect'}
@@ -340,7 +340,7 @@ function init_gear_sets()
             name = "Dunna",
             augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
         },
-        head = "Azimuth Hood +2",
+        head = "Azimuth Hood +3",
         body = {
             name = "Bagua Tunic +3",
             augments = {'Enhances "Bolster" effect'}
@@ -474,6 +474,13 @@ function init_gear_sets()
         sub = "Ammurapi Shield",
         head = "Amalric Coif +1",
         ear2 = "Magnetic Earring"
+    })
+
+    sets.midcast.Phalanx = set_combine(sets.midcast.EnhancingDuration, {
+        head = {
+            name = "Merlinic Hood",
+            augments = {'Accuracy+2 Attack+2', 'Pet: AGI+10', 'Phalanx +4'}
+        }
     })
 
     sets.midcast.Protect = set_combine(sets.midcast.EnhancingDuration, {
@@ -610,11 +617,7 @@ function init_gear_sets()
             name = "Dunna",
             augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
         },
-        head = {
-            name = "Merlinic Hood",
-            augments = {'Mag. Acc.+9', '"Avatar perpetuation cost" -2', '"Refresh"+1', 'Accuracy+3 Attack+3',
-                        'Mag. Acc.+20 "Mag.Atk.Bns."+20'}
-        },
+        head = "Befouled Crown",
         body = "Azimuth Coat +2",
         hands = {
             name = "Bagua Mitaines +1",
@@ -668,7 +671,7 @@ function init_gear_sets()
         -- Pet: -DT (37.5% to cap) / Pet: Regen  -DT cap -87.5%
         main = "Solstice",
         sub = "Genmei Shield",
-        head = "Azimuth Hood +1",
+        head = "Azimuth Hood +3",
         body = "Azimuth Coat +2",
         hands = "Geo. Mitaines +2",
         legs = {
@@ -723,7 +726,7 @@ function init_gear_sets()
             name = "Dunna",
             augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
         },
-        head = "Azimuth Hood +2",
+        head = "Azimuth Hood +3",
         body = "Azimuth Coat +2",
         hands = "Geomancy Mitaines +2",
         legs = {

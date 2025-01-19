@@ -4,7 +4,7 @@ include('Fudosama-Include')
 
 -- Set to ingame lockstyle and Macro Book/Set
 LockStylePallet = "117"
-MacroBook = "18" -- Sub Job macro pallets can be defined in the sub_job_change_custom function below
+MacroBook = "40" -- Sub Job macro pallets can be defined in the sub_job_change_custom function below
 MacroSet = "1"
 
 -- Use "gs c food" to use the specified food item 
@@ -27,7 +27,7 @@ state.OffenseMode:options('TP', 'ACC', 'DT', 'PDL', 'CRIT')
 state.OffenseMode:set('TP')
 
 -- Modes for specific to Corsair
-state.WeaponMode:options('Fomalhaut', 'Death Penalty', 'Savage Blade', 'Aeolian Edge', 'Evisceration')
+state.WeaponMode:options('Fomalhaut', 'Armageddon', 'Death Penalty', 'Savage Blade', 'Aeolian Edge', 'Evisceration')
 state.WeaponMode:set('Death Penalty')
 
 -- Enable JobMode for UI.
@@ -63,7 +63,7 @@ function get_sets()
             augments = {'Path: A'}
         },
         range = {
-            name = "Anarchy +2",
+            name = "Ataktos",
             augments = {'Delay:+60', 'TP Bonus +1000'}
         }
     }
@@ -72,7 +72,7 @@ function get_sets()
         main = "Tauret",
         sub = "Crepuscular Knife",
         range = {
-            name = "Anarchy +2",
+            name = "Ataktos",
             augments = {'Delay:+60', 'TP Bonus +1000'}
         }
     }
@@ -94,6 +94,20 @@ function get_sets()
         }
     }
 
+    sets.Weapons['Armageddon'] = {
+        -- main = "Lanun Knife",
+        -- sub = "Rostam",
+        -- main = {
+        --     name = "Lanun Knife",
+        --     augments = {'Path: A'}
+        -- },
+        -- sub = {
+        --     name = "Lanun Knife",
+        --     augments = {'Path: C'}
+        -- },
+        ranged = "Armageddon"
+    }
+
     sets.Weapons['Death Penalty'] = {
         main = {
             name = "Rostam",
@@ -108,15 +122,14 @@ function get_sets()
     }
 
     sets.Weapons['Aeolian Edge'] = {
-        ammo = Ammo.Bullet.MAG_WS,
-        main = {
-            name = "Rostam",
-            augments = {'Path: A'},
-            bag = "Wardrobe 4"
+        -- ammo = Ammo.Bullet.MAG_WS,
+        main = "Tauret",
+        sub = {
+            name = "Gleti's Knife",
+            augments = {'Path: A'}
         },
-        sub = "Tauret",
         range = {
-            name = "Anarchy +2",
+            name = "Ataktos",
             augments = {'Delay:+60', 'TP Bonus +1000'}
         }
     }

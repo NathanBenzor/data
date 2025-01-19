@@ -177,7 +177,7 @@ function get_sets()
     sets.Idle.town = {
         -- sub = "Genmei Shield",
         range = "Daurdabla",
-        -- head = "Fili Calot +2",
+        -- head = "Fili Calot +3",
         head = "Lilac Corsage",
         body = "Fili Hongreline +3",
         hands = "Nyame Gauntlets",
@@ -339,7 +339,7 @@ function get_sets()
         --     name = "Kali",
         --     augments = {'Mag. Acc.+15', 'String instrument skill +10', 'Wind instrument skill +10'}
         -- },
-        head = "Fili Calot +2",
+        head = "Fili Calot +3",
         body = "Fili Hongreline +3",
         hands = "Fili Manchettes +1",
         legs = "Inyanga Shalwar +2",
@@ -553,7 +553,7 @@ function get_sets()
     sets.Midcast.Elegy = {}
     sets.Midcast.Prelude = {}
     sets.Midcast.Madrigal = {
-        head = "Fili Calot +2"
+        head = "Fili Calot +3"
     }
     sets.Midcast.Minuet = {
         body = "Fili Hongreline +3"

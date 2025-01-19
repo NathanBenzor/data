@@ -65,11 +65,7 @@ function get_sets()
 
     -- Standard Idle set with -DT,Refresh,Regen and movement gear
     sets.Idle = {
-        main = {
-            name = "Queller Rod",
-            augments = {'Healing magic skill +15', '"Cure" potency +10%', '"Cure" spellcasting time -7%'}
-        },
-        -- main = "Yagrush",
+        main = "Yagrush",
         sub = "Genmei Shield",
         ammo = "Homiliary",
         head = "Nyame Helm",

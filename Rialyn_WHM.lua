@@ -76,7 +76,7 @@ function job_setup()
     no_swap_gear = S {"Warp Ring", "Dim. Ring (Dem)", "Dim. Ring (Holla)", "Dim. Ring (Mea)", "Trizek Ring",
                       "Echad Ring", "Facility Ring", "Capacity Ring"}
 
-    lockstyleset = 4
+    lockstyleset = 1
 
 end
 
@@ -659,7 +659,11 @@ function init_gear_sets()
         main = "Vadose Rod",
         sub = "Ammurapi Shield",
         ammo = "Staunch Tathlum +1",
-        head={ name="Chironic Hat", augments={'"Mag.Atk.Bns."+19','DEX+9','"Refresh"+2','Accuracy+5 Attack+5','Mag. Acc.+5 "Mag.Atk.Bns."+5',}},
+        head = {
+            name = "Chironic Hat",
+            augments = {'"Mag.Atk.Bns."+19', 'DEX+9', '"Refresh"+2', 'Accuracy+5 Attack+5',
+                        'Mag. Acc.+5 "Mag.Atk.Bns."+5'}
+        },
         hands = "Regal Cuffs",
         ear1 = "Halasz Earring",
         ear2 = "Magnetic Earring",

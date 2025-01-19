@@ -61,7 +61,7 @@ function job_setup()
                       "Echad Ring", "Facility Ring", "Capacity Ring", "Era. Bul. Pouch", "Dev. Bul. Pouch",
                       "Chr. Bul. Pouch", "Quelling B. Quiver", "Yoichi's Quiver", "Artemis's Quiver", "Chrono Quiver"}
 
-    lockstyleset = 116
+    lockstyleset = 118
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -728,6 +728,33 @@ function init_gear_sets()
             augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'AGI+10', 'Weapon skill damage +10%'}
         }
     }
+
+    sets.precast.WS["Empyreal Arrow"] = set_combine(sets.precast.WS, {
+        head = "Orion Beret +3",
+        body = "Amini Caban +3",
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
+        feet = "Amini Bottillons +3",
+        neck = "Fotia Gorget",
+        waist = "Fotia Belt",
+        left_ear = {
+            name = "Moonshade Earring",
+            augments = {'Accuracy+4', 'TP Bonus +250'}
+        },
+        right_ear = "Ishvara Earring",
+        left_ring = "Regal Ring",
+        right_ring = "Dingir Ring",
+        back = {
+            name = "Belenus's Cape",
+            augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'AGI+10', 'Weapon skill damage +10%'}
+        }
+    })
 
     ------------------------------------------------------------------------------------------------
     ---------------------------------------- Midcast Sets ------------------------------------------
@@ -1552,6 +1579,11 @@ function init_gear_sets()
     sets.Fomalhaut = {
         -- main = "Perun +1",
         -- sub = "Blurred Knife +1",
+        main = {
+            name = "Perun +1",
+            augments = {'Path: A'}
+        },
+        sub = "Nusku Shield",
         range = {
             name = "Fomalhaut",
             augments = {'Path: A'}
@@ -1606,6 +1638,11 @@ function init_gear_sets()
         --     name = "Malevolence",
         --     augments = {'INT+10', 'Mag. Acc.+10', '"Mag.Atk.Bns."+10', '"Fast Cast"+5'}
         -- },
+        main = {
+            name = "Perun +1",
+            augments = {'Path: A'}
+        },
+        sub = "Nusku Shield",
         range = {
             name = "Fail-Not",
             augments = {'Path: A'}
