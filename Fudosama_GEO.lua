@@ -439,7 +439,7 @@ function get_sets()
         -- ammo = "Pemphredo Tathlum",
         head = "Geo. Galero +1",
         body = "Jhakri Robe +2",
-        hands = "Geo. Mitaines +3",
+        hands = "Regal Cuffs",
         legs = "Geomancy Pants +2",
         feet = "Bagua Sandals +3",
         neck = {

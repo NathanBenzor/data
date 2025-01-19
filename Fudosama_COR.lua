@@ -304,7 +304,7 @@ function init_gear_sets()
         },
         range = "Compensator",
         head = {
-            name = "Lanun Tricorne +3",
+            name = "Lanun Tricorne +1",
             augments = {'Enhances "Winning Streak" effect'}
         },
         body = "Malignance Tabard",
@@ -320,7 +320,10 @@ function init_gear_sets()
         right_ear = "Genmei Earring",
         right_ring = "Defending Ring",
         left_ring = "Luzaf's Ring",
-        back = "Camulus's Mantle"
+        back = {
+            name = "Camulus's Mantle",
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dual Wield"+10', 'Damage taken-5%'}
+        }
     }
 
     -- sets.precast.CorsairRoll.Duration = {main="Rostam", range="Compensator", neck="Regal Necklace",}
@@ -1026,37 +1029,37 @@ function init_gear_sets()
     }
 
     sets.DeathPenalty_M = {
-        main = {
-            name = "Rostam",
-            bag = "wardrobe"
-        },
-        sub = "Tauret",
+        -- main = {
+        --     name = "Rostam",
+        --     bag = "wardrobe"
+        -- },
+        -- sub = "Tauret",
         ranged = "Death Penalty"
     }
     -- sets.DeathPenalty_M.Acc = {main="Naegling", sub="Gleti's Knife", ranged="Death Penalty"}
     sets.DeathPenalty_R = {
-        main = {
-            name = "Rostam",
-            bag = "wardrobe"
-        },
-        sub = {
-            name = "Rostam",
-            bag = "wardrobe2"
-        },
+        -- main = {
+        --     name = "Rostam",
+        --     bag = "wardrobe"
+        -- },
+        -- sub = {
+        --     name = "Rostam",
+        --     bag = "wardrobe2"
+        -- },
         ranged = "Death Penalty"
     }
     -- sets.DeathPenalty_R.Acc = {main="Lanun Knife", sub={name="Rostam", bag="wardrobe"}, ranged="Death Penalty"}
     sets.Armageddon_M = {
         -- main = "Naegling",
         -- sub = "Tauret",
-        main = {
-            name = "Lanun Knife",
-            augments = {'Path: A'}
-        },
-        sub = {
-            name = "Lanun Knife",
-            augments = {'Path: C'}
-        },
+        -- main = {
+        --     name = "Lanun Knife",
+        --     augments = {'Path: A'}
+        -- },
+        -- sub = {
+        --     name = "Lanun Knife",
+        --     augments = {'Path: C'}
+        -- },
         ranged = "Armageddon",
         ammo = "Devastating Bullet"
     }
@@ -1064,15 +1067,18 @@ function init_gear_sets()
     sets.Armageddon_R = {
         -- main = "Lanun Knife",
         -- sub = "Rostam",
-        main = {
-            name = "Lanun Knife",
-            augments = {'Path: A'}
-        },
-        sub = {
-            name = "Lanun Knife",
-            augments = {'Path: C'}
-        },
-        ranged = "Armageddon"
+        -- main = {
+        --     name = "Lanun Knife",
+        --     augments = {'Path: A'}
+        -- },
+        -- sub = {
+        --     name = "Lanun Knife",
+        --     augments = {'Path: C'}
+        -- },
+        main = "Naegling",
+        sub = "Tauret",
+        ranged = "Armageddon",
+        ammo = "Chrono Bullet"
     }
     -- sets.Armageddon_R.Acc = sets.Armageddon_R
     sets.Fomalhaut_M = {
@@ -1081,14 +1087,14 @@ function init_gear_sets()
         --     bag = "wardrobe"
         -- },
         -- sub = "Gleti's Knife",
-        main = {
-            name = "Lanun Knife",
-            augments = {'Path: A'}
-        },
-        sub = {
-            name = "Lanun Knife",
-            augments = {'Path: C'}
-        },
+        -- main = {
+        --     name = "Lanun Knife",
+        --     augments = {'Path: A'}
+        -- },
+        -- sub = {
+        --     name = "Lanun Knife",
+        --     augments = {'Path: C'}
+        -- },
         ranged = "Fomalhaut"
     }
     -- sets.Fomalhaut_M.Acc = {main="Naegling", sub="Gleti's Knife", ranged="Fomalhaut"}
@@ -1101,28 +1107,30 @@ function init_gear_sets()
         --     name = "Rostam",
         --     bag = "wardrobe2"
         -- },
-        main = {
-            name = "Lanun Knife",
-            augments = {'Path: A'}
-        },
-        sub = {
-            name = "Lanun Knife",
-            augments = {'Path: C'}
-        },
+        -- main = {
+        --     name = "Lanun Knife",
+        --     augments = {'Path: A'}
+        -- },
+        -- sub = {
+        --     name = "Lanun Knife",
+        --     augments = {'Path: C'}
+        -- },
+        -- main = "Naegling",
+        -- sub = "Tauret",
         ranged = "Fomalhaut"
     }
     -- sets.Fomalhaut_R.Acc = {main="Lanun Knife", sub="Rostam", ranged="Fomalhaut"}
     sets.Ataktos_M = {
         -- main = "Naegling",
         -- sub = "Gleti's Knife",
-        main = {
-            name = "Lanun Knife",
-            augments = {'Path: A'}
-        },
-        sub = {
-            name = "Lanun Knife",
-            augments = {'Path: C'}
-        },
+        -- main = {
+        --     name = "Lanun Knife",
+        --     augments = {'Path: A'}
+        -- },
+        -- sub = {
+        --     name = "Lanun Knife",
+        --     augments = {'Path: C'}
+        -- },
         ranged = "Ataktos"
         -- ammo = "Devastating Bullet"
     }
@@ -1130,14 +1138,16 @@ function init_gear_sets()
     sets.Ataktos_R = {
         -- main = "Lanun Knife",
         -- sub = "Rostam",
-        main = {
-            name = "Lanun Knife",
-            augments = {'Path: A'}
-        },
-        sub = {
-            name = "Lanun Knife",
-            augments = {'Path: C'}
-        },
+        -- main = {
+        --     name = "Lanun Knife",
+        --     augments = {'Path: A'}
+        -- },
+        -- sub = {
+        --     name = "Lanun Knife",
+        --     augments = {'Path: C'}
+        -- },
+        -- main = "Naegling",
+        -- sub = "Tauret",
         ranged = "Ataktos"
         -- ammo = "Chrono Bullet"
     }

@@ -278,7 +278,7 @@ function init_gear_sets()
         feet = "Runeist's Bottes +1"
     })
     sets.precast.JA['Battuta'] = set_combine(sets.Enmity, {
-        head = "Fu. Bandeau +2"
+        head = "Fu. Bandeau +3"
     })
     sets.precast.JA['Liement'] = set_combine(sets.Enmity, {
         body = "Futhark Coat +3"
@@ -675,23 +675,20 @@ function init_gear_sets()
             name = "Carmine Cuisses +1",
             augments = {'Accuracy+20', 'Attack+12', '"Dual Wield"+6'}
         },
-        feet = {
-            name = "Nyame Sollerets",
-            augments = {'Path: B'}
-        },
+        feet = "Erilaz Greaves +3",
         neck = "Moonbeam Necklace",
         waist = "Audumbla Sash",
         left_ear = "Halasz Earring",
-        right_ear = "Tuisto Earring",
+        right_ear = "Tuisto Earring", -- magnetic earring would go here
         left_ring = "Evanescence Ring",
         right_ring = "Moonlight Ring",
-        back = "Moonbeam Cape"
+        back = "Moonbeam Cape" -- need to change to JSE ambu cape with Sird
     } -- +10% from merit points
 
     sets.midcast.Utsusemi = sets.midcast.SpellInterrupt
 
     sets.midcast.Cure = {
-        ammo = "Sapience Orb",
+        ammo = "Staunch Tathlum +1",
         head = {
             name = "Nyame Helm",
             augments = {'Path: B'}
@@ -704,7 +701,7 @@ function init_gear_sets()
         legs = "Erilaz Leg Guards +3",
         feet = "Erilaz Greaves +3",
         neck = "Sacro Gorget", -- 10
-        ear1 = "Cryptic Earring", -- 4
+        ear1 = "Tuisto Earring", -- 4
         ear2 = "Mendi. Earring", -- 5
         left_ring = {
             name = "Gelatinous Ring +1",
@@ -727,7 +724,7 @@ function init_gear_sets()
     sets.midcast['Phalanx'] = set_combine(sets.midcast['Enhancing Magic'], {
         ammo = "Staunch Tathlum +1",
         head = {
-            name = "Fu. Bandeau +2",
+            name = "Fu. Bandeau +3",
             augments = {'Enhances "Battuta" effect'}
         },
         body = {
@@ -747,7 +744,7 @@ function init_gear_sets()
         neck = "Incanter's Torque",
         -- waist = "Olympus Sash",
         waist = "Plat. Mog. Belt",
-        left_ear = "Tuisto Earring",
+        left_ear = "Mimir Earring",
         right_ear = {
             name = "Odnowa Earring +1",
             augments = {'Path: A'}
