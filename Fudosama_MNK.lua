@@ -3,7 +3,7 @@
 include('Fudosama-Include')
 
 -- Set to ingame lockstyle and Macro Book/Set
-LockStylePallet = "130"
+LockStylePallet = "128"
 MacroBook = "12"
 MacroSet = "1"
 
@@ -23,7 +23,7 @@ Lockstyle_List = {1, 2, 6, 12}
 state.OffenseMode:options('TP', 'ACC', 'DT', 'PDL', 'SB', 'MEVA') -- ACC effects WS and TP modes
 
 -- Set Mode to Damage Taken as Default
-state.OffenseMode:set('TP')
+state.OffenseMode:set('DT')
 
 -- Modes for specific to Ninja
 state.WeaponMode:options('Verethragna', 'Karambit', 'MalignancePole', 'Xoanon', 'Club')
@@ -92,6 +92,10 @@ function get_sets()
             augments = {'Path: B'}
         },
         neck = "Warder's Charm +1",
+        -- neck = {
+        --     name = "Mnk. Nodowa +2",
+        --     augments = {'Path: A'}
+        -- },
         waist = "Engraved Belt",
         right_ear = {
             name = "Odnowa Earring +1",
@@ -103,11 +107,7 @@ function get_sets()
             augments = {'Path: A'}
         },
         left_ring = "Defending Ring",
-        -- back = "Moonbeam Cape"
-        back = {
-            name = "Mecisto. Mantle",
-            augments = {'Cap. Point+48%', 'DEF+5'}
-        }
+        back = "Moonbeam Cape"
     }
     -- Used to swap into movement gear when the player is detected movement when not engaged
     sets.Movement = {
@@ -138,9 +138,13 @@ function get_sets()
             name = "Coiste Bodhar",
             augments = {'Path: A'}
         },
+        -- head = {
+        --     name = "Mpaca's Cap",
+        --     augments = {'Path: A'}
+        -- },
         head = {
-            name = "Mpaca's Cap",
-            augments = {'Path: A'}
+            name = "Adhemar Bonnet +1",
+            augments = {'STR+12', 'DEX+12', 'Attack+20'}
         },
         body = "Mpaca's Doublet",
         hands = {
@@ -148,12 +152,12 @@ function get_sets()
             augments = {'DEX+12', 'AGI+12', 'Accuracy+20'}
         },
         legs = "Bhikku Hose +2",
-        feet = "Anch. Gaiters +2",
+        feet = "Anch. Gaiters +3",
         neck = {
             name = "Mnk. Nodowa +2",
             augments = {'Path: A'}
         },
-        waist = "Windbuffet Belt +1",
+        waist = "Moonbow Belt +1",
         left_ear = "Sherida Earring",
         right_ear = {
             name = "Schere Earring",
@@ -162,23 +166,18 @@ function get_sets()
         left_ring = "Niqmaddu Ring",
         right_ring = "Gere Ring",
         back = {
-            name = "Mecisto. Mantle",
-            augments = {'Cap. Point+48%', 'DEF+5'}
+            name = "Segomo's Mantle",
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
         }
-        -- back = {
-        --     name = "Segomo's Mantle",
-        --     augments = {'DEX+20', 'Accuracy+20 Attack+20', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
-        -- }
     }
 
     -- This set is used when OffenseMode is DT and Enaged (Augments the TP base set)
     sets.OffenseMode.DT = set_combine(sets.OffenseMode.TP, {
-        head = {
-            name = "Mpaca's Cap",
-            augments = {'Path: A'}
-        },
-        hands = {
-            name = "Mpaca's Gloves",
+        head = "Bhikku Crown +2",
+        hands = "Mpaca's Gloves",
+        feet = "Mpaca's Boots",
+        neck = {
+            name = "Mnk. Nodowa +2",
             augments = {'Path: A'}
         }
     })
@@ -189,7 +188,11 @@ function get_sets()
         body = "Ken. Samue +1",
         hands = "Ken. Tekko +1",
         legs = "Ken. Hakama +1",
-        feet = "Ken. Sune-Ate +1"
+        feet = "Ken. Sune-Ate +1",
+        neck = {
+            name = "Mnk. Nodowa +2",
+            augments = {'Path: A'}
+        }
     })
 
     sets.OffenseMode.PDL = set_combine(sets.OffenseMode.DT, {
@@ -373,7 +376,11 @@ function get_sets()
         hands = "Mpaca's Gloves",
         legs = "Mpaca's Hose",
         feet = "Mpaca's Boots",
-        neck = "Fotia Gorget",
+        -- neck = "Fotia Gorget",
+        neck = {
+            name = "Mnk. Nodowa +2",
+            augments = {'Path: A'}
+        },
         waist = "Moonbow Belt +1",
         left_ear = "Sherida Earring",
         right_ear = {
@@ -456,14 +463,20 @@ function get_sets()
     sets.WS["Backhand Blow"] = set_combine(sets.WS, {})
 
     sets.WS["Raging Fists"] = set_combine(sets.WS, {
-        neck = "Mnk. Nodowa +2",
+        neck = {
+            name = "Mnk. Nodowa +2",
+            augments = {'Path: A'}
+        },
         feet = "Ken. Sune-Ate +1"
     })
 
     sets.WS["Spinning Attack"] = set_combine(sets.WS, {})
 
     sets.WS["Howling Fist"] = set_combine(sets.WS, {
-        neck = "Mnk. Nodowa +2",
+        neck = {
+            name = "Mnk. Nodowa +2",
+            augments = {'Path: A'}
+        },
         feet = "Ken. Sune-Ate +1"
     })
 
@@ -486,8 +499,12 @@ function get_sets()
         hands = "Bhikku Gloves +2",
         legs = "Mpaca's Hose",
         feet = "Mpaca's Boots",
-        neck = "Fotia Gorget",
-        waist = "Fotia Belt",
+        -- neck = "Fotia Gorget",
+        neck = {
+            name = "Mnk. Nodowa +2",
+            augments = {'Path: A'}
+        },
+        waist = "Moonbow Belt +1",
         left_ear = "Sherida Earring",
         right_ear = {
             name = "Schere Earring",
@@ -496,13 +513,9 @@ function get_sets()
         left_ring = "Gere Ring",
         right_ring = "Niqmaddu Ring",
         back = {
-            name = "Mecisto. Mantle",
-            augments = {'Cap. Point+48%', 'DEF+5'}
+            name = "Segomo's Mantle",
+            augments = {'STR+20', 'Accuracy+20 Attack+20', 'Crit.hit rate+10', 'Phys. dmg. taken-10%'}
         }
-        -- back = {
-        --     name = "Segomo's Mantle",
-        --     augments = {'STR+20', 'Accuracy+20 Attack+20', 'Crit.hit rate+10', 'Phys. dmg. taken-10%'}
-        -- }
     })
 
     sets.WS["Shijin Spiral"] = set_combine(sets.WS, {
@@ -521,7 +534,11 @@ function get_sets()
             augments = {'Path: B'}
         },
         feet = "Mpaca's Boots",
-        neck = "Fotia Gorget",
+        -- neck = "Fotia Gorget",
+        neck = {
+            name = "Mnk. Nodowa +2",
+            augments = {'Path: A'}
+        },
         waist = "Fotia Belt",
         left_ear = {
             name = "Schere Earring",
@@ -533,6 +550,40 @@ function get_sets()
         back = {
             name = "Segomo's Mantle",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', '"Dbl.Atk."+10', 'Damage taken-5%'}
+        }
+    })
+
+    sets.WS["Cataclysm"] = set_combine(sets.WS, {
+        ammo = "Pemphredo Tathlum",
+        head = "Pixie Hairpin +1",
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
+        neck = "Sibyl Scarf",
+        waist = "Orpheus's Sash",
+        left_ear = "Friomisi Earring",
+        right_ear = "Moonshade Earring",
+        left_ring = "Shiva Ring +1",
+        right_ring = {
+            name = "Metamor. Ring +1",
+            augments = {'Path: A'}
+        },
+        back = {
+            name = "Segomo's Mantle",
+            augments = {'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'Weapon skill damage +10%', 'Phys. dmg. taken-10%'}
         }
     })
 

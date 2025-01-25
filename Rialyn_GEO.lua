@@ -618,7 +618,7 @@ function init_gear_sets()
             augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
         },
         head = "Befouled Crown",
-        body = "Azimuth Coat +2",
+        body = "Azimuth Coat +3",
         hands = {
             name = "Bagua Mitaines +1",
             augments = {'Enhances "Curative Recantation" effect'}
@@ -672,7 +672,7 @@ function init_gear_sets()
         main = "Solstice",
         sub = "Genmei Shield",
         head = "Azimuth Hood +3",
-        body = "Azimuth Coat +2",
+        body = "Azimuth Coat +3",
         hands = "Geo. Mitaines +2",
         legs = {
             name = "Nyame Flanchard",
@@ -727,7 +727,7 @@ function init_gear_sets()
             augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
         },
         head = "Azimuth Hood +3",
-        body = "Azimuth Coat +2",
+        body = "Azimuth Coat +3",
         hands = "Geomancy Mitaines +2",
         legs = {
             name = "Bagua Pants +3",

@@ -70,7 +70,7 @@ function job_setup()
 
     lugra_ws = S {'Blade: Kamu', 'Blade: Shun', 'Blade: Ten'}
 
-    lockstyleset = 100
+    lockstyleset = 133
 end
 
 -------------------------------------------------------------------------------------------------------------------
