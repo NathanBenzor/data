@@ -449,18 +449,9 @@ function init_gear_sets()
 
     sets.precast.FC = {
         ammo = "Sapience Orb",
-        head = {
-            name = "Herculean Helm",
-            augments = {'Mag. Acc.+6', '"Fast Cast"+6', 'INT+6', '"Mag.Atk.Bns."+2'}
-        },
-        body = {
-            name = "Adhemar Jacket +1",
-            augments = {'HP+105', '"Fast Cast"+10', 'Magic dmg. taken -4'}
-        },
-        hands = {
-            name = "Leyline Gloves",
-            augments = {'Accuracy+14', 'Mag. Acc.+13', '"Mag.Atk.Bns."+13', '"Fast Cast"+2'}
-        },
+        head = "Herculean Helm",
+        body = "Foppish tunica",
+        hands = "Leyline Gloves",
         legs = {
             name = "Rawhide Trousers",
             augments = {'MP+50', '"Fast Cast"+5', '"Refresh"+1'}
@@ -469,11 +460,11 @@ function init_gear_sets()
             name = "Herculean Boots",
             augments = {'"Fast Cast"+6', 'MND+5'}
         },
-        neck = "Orunmila's Torque",
+        neck = "Baetyl Pendant",
         waist = "Flume Belt +1",
         left_ear = "Etiolation Earring",
         right_ear = "Loquac. Earring",
-        left_ring = "Prolix Ring",
+        left_ring = "Rahab Ring",
         right_ring = "Defending Ring",
         back = {
             name = "Toutatis's Cape",
@@ -542,29 +533,23 @@ function init_gear_sets()
             name = "Nyame Gauntlets",
             augments = {'Path: B'}
         },
-        legs = {
-            name = "Plun. Culottes +3",
-            augments = {'Enhances "Feint" effect'}
-        },
+        legs={ name="Nyame Flanchard", augments={'Path: B',}},
         feet = {
             name = "Nyame Sollerets",
             augments = {'Path: B'}
         },
         neck = {
-            name = "Asn. Gorget +2",
+            name = "Asn. Gorget +1",
             augments = {'Path: A'}
         },
-        waist = {
-            name = "Kentarch Belt +1",
-            augments = {'Path: A'}
-        },
+        waist={ name="Sailfi Belt +1", augments={'Path: A',}},
         left_ear = {
             name = "Moonshade Earring",
             augments = {'Accuracy+4', 'TP Bonus +250'}
         },
         right_ear = "Odr Earring",
         left_ring = "Cornelia's Ring",
-        right_ring = "Sroda Ring",
+        right_ring = "Regal Ring",
         back = {
             name = "Toutatis's Cape",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'DEX+10', 'Weapon skill damage +10%'}
@@ -672,7 +657,7 @@ function init_gear_sets()
             augments = {'Path: A'}
         },
         waist = {
-            name = "Kentarch Belt +1",
+            name = "Sailfi Belt +1",
             augments = {'Path: A'}
         },
         left_ear = {
@@ -681,7 +666,7 @@ function init_gear_sets()
         },
         right_ear = "Odr Earring",
         left_ring = "Cornelia's Ring",
-        right_ring = "Sroda Ring",
+        right_ring = "Regal Ring",
         back = {
             name = "Toutatis's Cape",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'DEX+10', 'Weapon skill damage +10%'}
@@ -1000,7 +985,7 @@ function init_gear_sets()
         },
         right_ear = "Ishvara Earring",
         left_ring = "Cornelia's Ring",
-        right_ring = "Sroda Ring",
+        right_ring = "Regal Ring",
         back = {
             name = "Toutatis's Cape",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'DEX+10', 'Weapon skill damage +10%'}
@@ -1033,7 +1018,7 @@ function init_gear_sets()
             augments = {'Accuracy+4', 'TP Bonus +250'}
         },
         right_ear = "Ishvara Earring",
-        left_ring = "Epaminondas's Ring",
+        left_ring = "Cornelia's Ring",
         right_ring = "Sroda Ring",
         back = {
             name = "Toutatis's Cape",
@@ -1191,10 +1176,7 @@ function init_gear_sets()
             name = "Nyame Helm",
             augments = {'Path: B'}
         },
-        body = {
-            name = "Nyame Mail",
-            augments = {'Path: B'}
-        },
+        body = "Ashera Harness",
         hands = {
             name = "Nyame Gauntlets",
             augments = {'Path: B'}
@@ -1263,36 +1245,27 @@ function init_gear_sets()
     }
 
     sets.engaged.Acc = {
-        ammo = "Aurgelmir Orb +1",
-        head = "Skulker's Bonnet +2",
-        body = "Pillager's Vest +3",
-        hands = {
-            name = "Gleti's Gauntlets",
-            augments = {'Path: A'}
-        },
-        legs = {
-            name = "Gleti's Breeches",
-            augments = {'Path: A'}
-        },
-        feet = {
-            name = "Plun. Poulaines +3",
-            augments = {'Enhances "Assassin\'s Charge" effect'}
-        },
+        ammo = "Seething Bomblet +1",
+        head = "Malignance Chapeau",
+        body = "Malignance Tabard",
+        hands = "Malignance Gloves",
+        legs = "Malignance Tights",
+        feet = "Malignance Boots",
         neck = {
-            name = "Asn. Gorget +2",
+            name = "Asn. Gorget +1",
             augments = {'Path: A'}
         },
         waist = "Reiki Yotai",
-        left_ear = "Dedition Earring",
+        left_ear = "Telos Earring",
         right_ear = {
             name = "Skulk. Earring +1",
             augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+13', 'Mag. Acc.+13', '"Store TP"+4'}
         },
-        left_ring = "Gere Ring",
-        right_ring = "Hetairoi Ring",
+        left_ring = "Chirich Ring +1",
+        right_ring = "Chirich Ring+1",
         back = {
             name = "Toutatis's Cape",
-            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Phys. dmg. taken-10%'}
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', '"Dbl.Atk."+10'}
         }
     }
     -- * DNC Native DW Trait: 30% DW
@@ -1334,33 +1307,27 @@ function init_gear_sets()
     } -- 30% JA + 27% Gear = 57%
 
     sets.engaged.DW.Acc = {
-        ammo = "Aurgelmir Orb +1",
-        head = "Skulker's Bonnet +2",
-        body = {
-            name = "Adhemar Jacket +1",
-            augments = {'DEX+12', 'AGI+12', 'Accuracy+20'}
-        }, -- 6%
+        ammo = "Seething Bomblet +1",
+        head = "Malignance Chapeau",
+        body = "Malignance Tabard",
         hands = {
-            name = "Floral Gauntlets",
-            augments = {'Rng.Acc.+15', 'Accuracy+15', '"Triple Atk."+3', 'Magic dmg. taken -4%'}
-        }, -- 5%
-        legs = {
-            name = "Gleti's Breeches",
+            name = "Gleti's Gauntlets",
             augments = {'Path: A'}
         },
-        feet = {
-            name = "Plun. Poulaines +3",
-            augments = {'Enhances "Assassin\'s Charge" effect'}
-        },
+        legs = "Malignance Tights",
+        feet = "Malignance Boots",
         neck = {
             name = "Asn. Gorget +2",
             augments = {'Path: A'}
         },
-        waist = "Reiki Yotai", -- 7%
-        left_ear = "Suppanomimi", -- 5%
-        right_ear = "Eabani Earring", -- 4%
-        left_ring = "Gere Ring",
-        right_ring = "Hetairoi Ring",
+        waist = "Reiki Yotai",
+        left_ear = "Telos Earring",
+        right_ear = {
+            name = "Skulk. Earring +1",
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+13', 'Mag. Acc.+13', '"Store TP"+4'}
+        },
+        left_ring = "Chirich Ring +1",
+        right_ring = "Chirich Ring+1",
         back = {
             name = "Toutatis's Cape",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Phys. dmg. taken-10%'}
@@ -1779,7 +1746,8 @@ function init_gear_sets()
     }
 
     sets.Karambit = {
-        main = "Karambit"
+        main = "Gleti's Knife",
+        sub = "Voluspa Knife"
     }
 
 end
@@ -2144,7 +2112,7 @@ end)
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
 
-    set_macro_page(1, 8)
+    set_macro_page(1, 6)
 end
 
 function set_lockstyle()

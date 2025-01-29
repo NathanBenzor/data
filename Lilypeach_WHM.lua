@@ -323,7 +323,7 @@ function init_gear_sets()
     -- Cure sets
 
     sets.midcast.CureSolace = {
-        main = "Raetic Rod",
+        main = "Raetic Rod +1",
         sub = "Sors Shield",
         ammo = "Incantor Stone",
         head = "Theophany Cap +3",
@@ -347,7 +347,7 @@ function init_gear_sets()
     }
 
     sets.midcast.CureSolaceWeather = set_combine(sets.midcast.CureSolace, {
-        main = "Raetic Rod",
+        main = "Raetic Rod +1",
         sub = "Sors Shield",
         ammo = "Incantor Stone",
         head = "Theophany Cap +3",
@@ -371,7 +371,7 @@ function init_gear_sets()
     })
 
     sets.midcast.CureNormal = set_combine(sets.midcast.CureSolace, {
-        main = "Raetic Rod",
+        main = "Raetic Rod +1",
         sub = "Sors Shield",
         ammo = "Incantor Stone",
         head = "Theophany Cap +3",
@@ -395,20 +395,14 @@ function init_gear_sets()
     })
 
     sets.midcast.CureWeather = set_combine(sets.midcast.CureNormal, {
-        main = "Raetic Rod",
+        main = "Raetic Rod +1",
         sub = "Sors Shield",
         ammo = "Pemphredo Tathlum",
         head = "Theophany Cap +3",
-        body = {
-            name = "Vanya Robe",
-            augments = {'Healing magic skill +20', '"Cure" spellcasting time -7%', 'Magic dmg. taken -3'}
-        },
+        body = "Theophany Bliaut +3",
         hands = "Theophany Mitts +3",
         legs = "Ebers Pant. +3",
-        feet = {
-            name = "Vanya Clogs",
-            augments = {'Healing magic skill +20', '"Cure" spellcasting time -7%', 'Magic dmg. taken -3'}
-        },
+        feet = "Hygieia Clogs +1",
         neck = {
             name = "Clr. Torque +2",
             augments = {'Path: A'}
@@ -874,9 +868,9 @@ function init_gear_sets()
     sets.idle.Town = set_combine(sets.idle, {
         main = "Yagrush",
         sub = "Ammurapi Shield",
-        head = "Nyame Helm",
+        head = "Theophany Cap +3",
         body = "Ebers Bliaut +3",
-        hands = "Ebers Mitts +3",
+        hands = "Regal Cuffs",
         legs = "Ebers Pant. +3",
         feet = "Ebers Duckbills +3",
         neck = "Clr. Torque +2",

@@ -495,7 +495,7 @@ function init_gear_sets()
     }    
 
     sets.midcast.Death = {
-        main={ name="Marin Staff +1", augments={'Path: A',}},
+        main={ name="Laevateinn", augments={'Path: A',}},
         sub = "Enki Strap",
         ammo = "Sapience Orb",
         head = "Amalric Coif +1",
@@ -525,7 +525,7 @@ function init_gear_sets()
     -- Elemental Magic sets
 
     sets.midcast['Elemental Magic'] = {
-        main={ name="Marin Staff +1", augments={'Path: A',}},
+        main={ name="Laevateinn", augments={'Path: A',}},
         sub = "Enki Strap",
         ammo = "Pemphredo Tathlum",
         head = "Wicce Petasos +3",
@@ -555,7 +555,7 @@ function init_gear_sets()
     }
 
     sets.midcast['Elemental Magic'].DeathMode = set_combine(sets.midcast['Elemental Magic'], {
-        main={ name="Marin Staff +1", augments={'Path: A',}},
+        main={ name="Laevateinn", augments={'Path: A',}},
         sub = "Enki Strap",
         ammo = "Ghastly Tathlum +1",
         legs = "Amalric Slops +1",
@@ -564,7 +564,7 @@ function init_gear_sets()
     })
 
     sets.midcast['Elemental Magic'].Resistant = set_combine(sets.midcast['Elemental Magic'], {
-        main={ name="Marin Staff +1", augments={'Path: A',}},
+        main={ name="Laevateinn", augments={'Path: A',}},
         sub="Khonsu",
         ammo="Pemphredo Tathlum",
         head="Wicce Petasos +3",
@@ -614,8 +614,8 @@ function init_gear_sets()
     -- Idle sets
 
     sets.idle = {
-        -- main="Xoanon",
-        -- sub="Khonsu",
+        main={ name="Laevateinn", augments={'Path: A',}},
+        sub="Enki Strap",
         ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
         head="Wicce Petasos +3",
         body="Wicce Coat +3",
@@ -654,7 +654,7 @@ function init_gear_sets()
     }
 
     sets.idle.DeathMode = {
-        main={ name="Marin Staff +1", augments={'Path: A',}},
+        main={ name="Laevateinn", augments={'Path: A',}},
         sub = "Khonsu",
         ammo = "Ghastly Tathlum +1",
         head = "Pixie Hairpin +1",
@@ -672,7 +672,7 @@ function init_gear_sets()
     }
 
     sets.idle.Town = set_combine(sets.idle, {
-        main={ name="Marin Staff +1", augments={'Path: A',}},
+        main={ name="Laevateinn", augments={'Path: A',}},
         sub = "Enki Strap",
         ammo = "Pemphredo Tathlum",
         head = "Wicce Petasos +3",
@@ -714,7 +714,8 @@ function init_gear_sets()
     }
 
     sets.magic_burst = {
-        main={ name="Marin Staff +1", augments={'Path: A',}},
+        -- main={ name="Marin Staff +1", augments={'Path: A',}},
+        main={ name="Laevateinn", augments={'Path: A',}},
         sub="Enki Strap",
         ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
         head="Ea Hat +1",
