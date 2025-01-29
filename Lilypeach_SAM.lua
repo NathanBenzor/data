@@ -443,7 +443,7 @@ function init_gear_sets()
             augments = {'Accuracy+4', 'TP Bonus +250'}
         },
         left_ring = "Cornelia's Ring",
-        right_ring = "Sroda Ring",
+        right_ring = "Regal Ring",
         back = {
             name = "Smertrios's Mantle",
             augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%', 'Phys. dmg. taken-10%'}
@@ -892,6 +892,7 @@ function init_gear_sets()
         right_ear = "Sanare Earring",
         -- left_ring = "Defending Ring",
         left_ring = "Shneddick Ring",
+        right_ring = "Regal Ring",
         back = {
             name = "Smertrios's Mantle",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Phys. dmg. taken-10%'}
@@ -1053,7 +1054,7 @@ function init_gear_sets()
             augments = {'Path: A'}
         },
         left_ring = "Shneddick Ring",
-        right_ring = "Niqmaddu Ring",
+        right_ring = "Regal Ring",
         back = {
             name = "Smertrios's Mantle",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Phys. dmg. taken-10%'}

@@ -95,7 +95,7 @@ function get_sets()
 	}
 
 	sets.Weapons['Unlocked'] ={
-		main="Naegling",
+		main={ name="Crocea Mors", augments={'Path: C',}},
 		sub = "Ammurapi Shield",
 	}
 
@@ -131,7 +131,7 @@ function get_sets()
 		feet="Malignance Boots",
 		neck="Loricate Torque +1", -- 6/6
 		waist="Orpheus's Sash",
-		left_ear={ name="Odnowa Earring +1", augments={'Path: A',}, priority=2}, --3/5
+		left_ear="Regal Earring",
 		right_ear={ name="Etiolation Earring", priority=1}, -- 0/1
 		left_ring={name="Stikini Ring +1", bag="wardrobe3"}, -- +1 Refresh
 		right_ring={name="Stikini Ring +1", bag="wardrobe4"}, -- +1 Refresh

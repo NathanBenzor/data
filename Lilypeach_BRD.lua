@@ -493,8 +493,8 @@ function init_gear_sets()
             augments = {'Path: B'}
         },
         body = {
-            name = "Nyame Mail",
-            augments = {'Path: B'}
+            name = "Bihu Jstcorps. +3",
+            augments = {'Enhances "Troubadour" effect'}
         },
         hands = {
             name = "Nyame Gauntlets",
@@ -508,10 +508,7 @@ function init_gear_sets()
             name = "Nyame Sollerets",
             augments = {'Path: B'}
         },
-        neck = {
-            name = "Bard's Charm +1",
-            augments = {'Path: A'}
-        },
+        neck = "Rep. Plat. Medal",
         waist = {
             name = "Sailfi Belt +1",
             augments = {'Path: A'}
@@ -921,7 +918,7 @@ function init_gear_sets()
         sub="Genmei Shield",
         range="Gjallarhorn",
         head="Fili Calot +3",
-        body="Fili Hongreline +3",
+        body="Ashera Harness",
         hands = "Fili Manchettes +3",
         legs="Fili Rhingrave +2",
         feet="Fili Cothurnes +2",
@@ -1003,7 +1000,7 @@ function init_gear_sets()
         sub = "Genmei Shield",
         range = "Daurdabla",
         head = "Fili Calot +3",
-        body="Fili Hongreline +3",
+        body="Ashera Harness",
         hands="Fili Manchettes +3",
         legs = "Bihu Cannions +3",
         feet = "Fili Cothurnes +2",
@@ -1012,7 +1009,7 @@ function init_gear_sets()
         left_ear = "Regal Earring",
         right_ear={ name="Fili Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+12','Mag. Acc.+12','Damage taken-4%',}},
         left_ring = "Defending Ring",
-        right_ring = "Moonlight Ring",
+        right_ring = "Stikini Ring +1",
         back = "Moonlight Cape"
 
     })
