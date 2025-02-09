@@ -561,8 +561,8 @@ function init_gear_sets()
         ammo = "Ghastly Tathlum +1", -- 8/8
         main = "Bunzi's Rod",
         sub = "Culminus", -- 5/0
-        head = "Azi. Hood +2",
-        body = "Agwu's Robe",
+        head = "Azi. Hood +3",
+        body = "Azi. Coat +3",
         hands = "Agwu's Gages",
         legs = "Agwu's Slops",
         feet = "Azi. Gaiters +2",

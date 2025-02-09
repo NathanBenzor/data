@@ -26,7 +26,7 @@ state.OffenseMode:options('TP', 'ACC', 'DT', 'PDL', 'SB', 'MEVA') -- ACC effects
 state.OffenseMode:set('DT')
 
 -- Modes for specific to Ninja
-state.WeaponMode:options('Verethragna', 'Karambit', 'MalignancePole', 'Xoanon', 'Club')
+state.WeaponMode:options('Verethragna', 'Godhands', 'Karambit', 'MalignancePole', 'Xoanon', 'Club')
 state.WeaponMode:set('Verethragna')
 
 elemental_ws = S {'Cataclysm', 'Rock Crusher', 'Earth Crusher', 'Starburst', 'Sunburst'}
@@ -44,6 +44,10 @@ function get_sets()
             name = "Verethragna",
             augments = {'Path: A'}
         }
+    }
+
+    sets.Weapons['Godhands'] = {
+        main = "Godhands"
     }
 
     sets.Weapons['Karambit'] = {
@@ -92,11 +96,8 @@ function get_sets()
             augments = {'Path: B'}
         },
         neck = "Warder's Charm +1",
-        -- neck = {
-        --     name = "Mnk. Nodowa +2",
-        --     augments = {'Path: A'}
-        -- },
-        waist = "Engraved Belt",
+        -- waist = "Engraved Belt",
+        waist = "Null Belt",
         right_ear = {
             name = "Odnowa Earring +1",
             augments = {'Path: A'}
@@ -487,10 +488,11 @@ function get_sets()
     sets.WS["Tornado Kick"] = sets.WS.Kicks
 
     sets.WS["Victory Smite"] = set_combine(sets.WS, {
-        ammo = {
-            name = "Coiste Bodhar",
-            augments = {'Path: A'}
-        },
+        -- ammo = {
+        --     name = "Coiste Bodhar",
+        --     augments = {'Path: A'}
+        -- },
+        ammo = "Crepuscular Pebble",
         head = {
             name = "Adhemar Bonnet +1",
             augments = {'STR+12', 'DEX+12', 'Attack+20'}
@@ -499,11 +501,7 @@ function get_sets()
         hands = "Bhikku Gloves +2",
         legs = "Mpaca's Hose",
         feet = "Mpaca's Boots",
-        -- neck = "Fotia Gorget",
-        neck = {
-            name = "Mnk. Nodowa +2",
-            augments = {'Path: A'}
-        },
+        neck = "Fotia Gorget",
         waist = "Moonbow Belt +1",
         left_ear = "Sherida Earring",
         right_ear = {
@@ -534,11 +532,7 @@ function get_sets()
             augments = {'Path: B'}
         },
         feet = "Mpaca's Boots",
-        -- neck = "Fotia Gorget",
-        neck = {
-            name = "Mnk. Nodowa +2",
-            augments = {'Path: A'}
-        },
+        neck = "Fotia Gorget",
         waist = "Fotia Belt",
         left_ear = {
             name = "Schere Earring",
@@ -727,8 +721,8 @@ function check_buff_JA()
             buff = "Berserk"
         elseif not buffactive['Aggressor'] and ja_recasts[4] == 0 then
             buff = "Aggressor"
-        elseif not buffactive['Warcry'] and ja_recasts[2] == 0 then
-            buff = "Warcry"
+            -- elseif not buffactive['Warcry'] and ja_recasts[2] == 0 then
+            --     buff = "Warcry"
         end
     end
 
@@ -739,8 +733,8 @@ function check_buff_JA()
         buff = "Impetus"
     elseif not buffactive.Footwork and ja_recasts[21] == 0 then
         buff = "Footwork"
-    elseif not buffactive.Mantra and ja_recasts[19] == 0 then
-        buff = "Mantra"
+        -- elseif not buffactive.Mantra and ja_recasts[19] == 0 then
+        --     buff = "Mantra"
     elseif not buffactive.Dodge and ja_recasts[14] == 0 then
         buff = "Dodge"
     elseif not buffactive.Focus and ja_recasts[13] == 0 then

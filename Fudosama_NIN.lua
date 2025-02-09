@@ -70,7 +70,7 @@ function job_setup()
 
     lugra_ws = S {'Blade: Kamu', 'Blade: Shun', 'Blade: Ten'}
 
-    lockstyleset = 133
+    lockstyleset = 140
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -623,7 +623,7 @@ function init_gear_sets()
             augments = {'Path: B'}
         },
         neck = "Fotia Gorget",
-        waist = "Eschan Stone",
+        waist = "Orpheus's Sash",
         left_ear = {
             name = "Moonshade Earring",
             augments = {'Accuracy+4', 'TP Bonus +250'}
@@ -900,15 +900,16 @@ function init_gear_sets()
             name = "Loricate Torque +1",
             augments = {'Path: A'}
         },
-        waist = "Plat. Mog. Belt",
+        waist = "Null Belt",
         left_ear = "Eabani Earring",
         right_ear = "Etiolation Earring",
         left_ring = "Shneddick Ring",
-        right_ring = "Regal Ring",
-        back = {
-            name = "Andartia's Mantle",
-            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%'}
-        }
+        right_ring = "Defending Ring",
+        -- back = {
+        --     name = "Andartia's Mantle",
+        --     augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%'}
+        -- }
+        back = "Moonbeam Cape"
     }
 
     sets.idle.DT = set_combine(sets.idle, {
@@ -964,11 +965,8 @@ function init_gear_sets()
             name = "Nyame Sollerets",
             augments = {'Path: B'}
         },
-        neck = {
-            name = "Loricate Torque +1",
-            augments = {'Path: A'}
-        },
-        waist = "Plat. Mog. Belt",
+        neck = "Null Loop",
+        waist = "Null Belt",
         left_ear = "Eabani Earring",
         right_ear = "Etiolation Earring",
         left_ring = "Shneddick Ring",
@@ -1025,26 +1023,48 @@ function init_gear_sets()
 
     -- No Magic Haste (74% DW to cap)
     sets.engaged = {
-        ammo = "Seki Shuriken",
+        -- ammo = "Seki Shuriken",
+        -- head = "Malignance Chapeau",
+        -- body = {
+        --     name = "Adhemar Jacket +1",
+        --     augments = {'DEX+12', 'AGI+12', 'Accuracy+20'}
+        -- },
+        -- hands = {
+        --     name = "Adhemar Wristbands",
+        --     augments = {'DEX+10', 'AGI+10', 'Accuracy+15'}
+        -- },
+        -- legs = "Samnuha Tights",
+        -- feet = "Malignance Boots",
+        -- neck = {
+        --     name = "Ninja Nodowa +1",
+        --     augments = {'Path: A'}
+        -- },
+        -- waist = {
+        --     name = "Sailfi Belt +1",
+        --     augments = {'Path: A'}
+        -- },
+        -- left_ear = "Telos Earring",
+        -- right_ear = "Dedition Earring",
+        -- left_ring = "Epona's Ring",
+        -- right_ring = "Gere Ring",
+        -- back = {
+        --     name = "Andartia's Mantle",
+        --     augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Damage taken-5%'}
+        -- }
         head = "Malignance Chapeau",
-        -- body = "Malignance Tabard",
-        body = {
-            name = "Adhemar Jacket +1",
-            augments = {'DEX+12', 'AGI+12', 'Accuracy+20'}
-        },
-        -- hands = "Malignance Gloves",
-        hands = {
-            name = "Adhemar Wristbands",
-            augments = {'DEX+10', 'AGI+10', 'Accuracy+15'}
+        body = "Malignance Tabard",
+        hands = "Malignance Gloves",
+        legs = {
+            name = "Samnuha Tights",
+            augments = {'STR+10', 'DEX+10', '"Dbl.Atk."+3', '"Triple Atk."+3'}
         },
         -- legs = "Malignance Tights",
-        legs = "Samnuha Tights",
         feet = "Malignance Boots",
-        neck = {
-            name = "Ninja Nodowa +1",
-            augments = {'Path: A'}
-        },
-        -- waist = "Windbuffet Belt +1",
+        -- neck = {
+        --     name = "Ninja Nodowa +1",
+        --     augments = {'Path: A'}
+        -- },
+        neck = "Null Loop",
         waist = {
             name = "Sailfi Belt +1",
             augments = {'Path: A'}
@@ -1053,10 +1073,11 @@ function init_gear_sets()
         right_ear = "Dedition Earring",
         left_ring = "Epona's Ring",
         right_ring = "Gere Ring",
-        back = {
-            name = "Andartia's Mantle",
-            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Damage taken-5%'}
-        }
+        -- back = {
+        --     name = "Andartia's Mantle",
+        --     augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Damage taken-5%'}
+        -- }
+        back = "Null Shawl"
     } -- 38%
 
     sets.engaged.LowAcc = set_combine(sets.engaged, {

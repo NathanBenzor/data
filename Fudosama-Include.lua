@@ -539,32 +539,32 @@ function pretargetcheck(spell, action)
         end
     end
     -- Used to fire a script
-    if spell.name == "Poison" then
-        info('Dancing Chains')
-        if player.main_job == "RDM" then
-            send_command('exec CP/RDM')
-        elseif player.main_job == "GEO" then
-            send_command('exec CP/GEO')
-        elseif player.main_job == "SCH" then
-            send_command('exec CP/SCH')
-        elseif player.main_job == "BRD" then
-            send_command('exec CP/BRD')
-        elseif player.main_job == "RNG" then
-            send_command('exec CP/RNG')
-        elseif player.main_job == "BLM" then
-            send_command('exec CP/BLM')
-        elseif player.main_job == "DRG" then
-            send_command('exec CP/DRG')
-        elseif player.main_job == "BLU" then
-            send_command('exec CP/BLU')
-        elseif player.main_job == "WAR" then
-            send_command('exec CP/WAR')
-        elseif player.main_job == "SMN" then
-            send_command('exec CP/SMN')
-        end
-        cancel_spell()
-        return
-    end
+    -- if spell.name == "Poison" then
+    --     info('Dancing Chains')
+    --     if player.main_job == "RDM" then
+    --         send_command('exec CP/RDM')
+    --     elseif player.main_job == "GEO" then
+    --         send_command('exec CP/GEO')
+    --     elseif player.main_job == "SCH" then
+    --         send_command('exec CP/SCH')
+    --     elseif player.main_job == "BRD" then
+    --         send_command('exec CP/BRD')
+    --     elseif player.main_job == "RNG" then
+    --         send_command('exec CP/RNG')
+    --     elseif player.main_job == "BLM" then
+    --         send_command('exec CP/BLM')
+    --     elseif player.main_job == "DRG" then
+    --         send_command('exec CP/DRG')
+    --     elseif player.main_job == "BLU" then
+    --         send_command('exec CP/BLU')
+    --     elseif player.main_job == "WAR" then
+    --         send_command('exec CP/WAR')
+    --     elseif player.main_job == "SMN" then
+    --         send_command('exec CP/SMN')
+    --     end
+    --     cancel_spell()
+    --     return
+    -- end
 end
 
 -------------------------------------------------------------------------------------------------------------------
