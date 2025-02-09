@@ -301,7 +301,7 @@ function get_sets()
 
     -- DPS set for tanking
     sets.OffenseMode.TP = {
-        head = "Erilaz Galea +3",
+        -- head = "Erilaz Galea +3",
         head = {
             name = "Adhemar Bonnet +1",
             augments = {'DEX+12', 'AGI+12', 'Accuracy+20'}
