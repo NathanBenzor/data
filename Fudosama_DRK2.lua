@@ -27,8 +27,8 @@ state.OffenseMode:options('DT', 'TP', 'PDL', 'ACC', 'SB') -- ACC effects WS and 
 state.OffenseMode:set('DT')
 
 -- Weapon Modes
-state.WeaponMode:options('Scythe', 'Great Sword', 'Sword', 'Club')
-state.WeaponMode:set('Scythe')
+state.WeaponMode:options('Foenaria', 'Caladbolg', 'Liberator', 'Naegling', 'Loxotic Mace', 'Lycurgos')
+state.WeaponMode:set('Foenaria')
 
 -- Initialize Player
 jobsetup(LockStylePallet, MacroBook, MacroSet)
@@ -37,15 +37,15 @@ function get_sets()
 
     sets.Weapons = {}
 
-    sets.Weapons['Scythe'] = {
+    sets.Weapons['Foenaria'] = {
         main = {
-            name = "Liberator",
+            name = "Foenaria",
             augments = {'Path: A'}
         },
         sub = "Utu Grip"
     }
 
-    sets.Weapons['Great Sword'] = {
+    sets.Weapons['Caladbolg'] = {
         main = {
             name = "Caladbolg",
             augments = {'Path: A'}
@@ -53,12 +53,20 @@ function get_sets()
         sub = "Utu Grip"
     }
 
-    sets.Weapons['Sword'] = {
+    sets.Weapons['Liberator'] = {
+        main = {
+            name = "Liberator",
+            augments = {'Path: A'}
+        },
+        sub = "Utu Grip"
+    }
+
+    sets.Weapons['Naegling'] = {
         main = "Naegling",
         sub = "Blurred Shield +1"
     }
 
-    sets.Weapons['Club'] = {
+    sets.Weapons['Loxotic Mace'] = {
         main = {
             name = "Loxotic Mace +1",
             augments = {'Path: A'}
@@ -66,32 +74,43 @@ function get_sets()
         sub = "Blurred Shield +1"
     }
 
+    sets.Weapons['Lycurgos'] = {
+        main = "Lycurgos",
+        sub = "Utu Grip"
+    }
+
     sets.Idle = {
         ammo = "Staunch Tathlum +1",
-        head = "Sakpata's Helm",
-        body = "Sakpata's Plate",
-        hands = "Sakpata's Gauntlets",
-        legs = "Sakpata's Cuisses",
-        feet = "Sakpata's Leggings",
-        neck = {
-            name = "Loricate Torque +1",
+        head = {
+            name = "Sakpata's Helm",
             augments = {'Path: A'}
         },
-        waist = "Plat. Mog. Belt",
-        left_ear = {
-            name = "Odnowa Earring +1",
+        body = {
+            name = "Sakpata's Plate",
             augments = {'Path: A'}
         },
-        right_ear = "Etiolation Earring",
+        hands = {
+            name = "Sakpata's Gauntlets",
+            augments = {'Path: A'}
+        },
+        legs = {
+            name = "Sakpata's Cuisses",
+            augments = {'Path: A'}
+        },
+        feet = {
+            name = "Sakpata's Leggings",
+            augments = {'Path: A'}
+        },
+        neck = "Warder's Charm +1",
+        waist = "Null Belt",
+        left_ear = "Infused Earring",
+        right_ear = "Eabani Earring",
         left_ring = {
             name = "Gelatinous Ring +1",
             augments = {'Path: A'}
         },
         right_ring = "Moonlight Ring",
-        back = {
-            name = "Ankou's Mantle",
-            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
-        }
+        back = "Moonbeam Cape"
     }
 
     sets.Idle.DT = set_combine(sets.Idle, {})
@@ -148,13 +167,91 @@ function get_sets()
     }
 
     sets.OffenseMode.DT = set_combine(sets.OffenseMode.TP, {
-        head = "Nyame Helm",
-        hands = "Nyame Gauntlets",
-        legs = "Nyame Flanchard"
+        ammo = {
+            name = "Coiste Bodhar",
+            augments = {'Path: A'}
+        },
+        head = {
+            name = "Sakpata's Helm",
+            augments = {'Path: A'}
+        },
+        body = {
+            name = "Sakpata's Plate",
+            augments = {'Path: A'}
+        },
+        hands = {
+            name = "Sakpata's Gauntlets",
+            augments = {'Path: A'}
+        },
+        legs = {
+            name = "Sakpata's Cuisses",
+            augments = {'Path: A'}
+        },
+        feet = {
+            name = "Sakpata's Leggings",
+            augments = {'Path: A'}
+        },
+        neck = {
+            name = "Abyssal Beads +2",
+            augments = {'Path: A'}
+        },
+        waist = {
+            name = "Sailfi Belt +1",
+            augments = {'Path: A'}
+        },
+        left_ear = "Dedition Earring",
+        right_ear = "Telos Earring",
+        left_ring = "Niqmaddu Ring",
+        right_ring = "Moonlight Ring",
+        back = {
+            name = "Ankou's Mantle",
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%'}
+        }
     })
 
     -- Same TP set but WSD can be altered also
-    sets.OffenseMode.PDL = set_combine(sets.OffenseMode.TP, {})
+    sets.OffenseMode.PDL = set_combine(sets.OffenseMode.TP, {
+        ammo = {
+            name = "Coiste Bodhar",
+            augments = {'Path: A'}
+        },
+        head = {
+            name = "Sakpata's Helm",
+            augments = {'Path: A'}
+        },
+        body = {
+            name = "Sakpata's Plate",
+            augments = {'Path: A'}
+        },
+        hands = {
+            name = "Sakpata's Gauntlets",
+            augments = {'Path: A'}
+        },
+        legs = {
+            name = "Sakpata's Cuisses",
+            augments = {'Path: A'}
+        },
+        feet = {
+            name = "Sakpata's Leggings",
+            augments = {'Path: A'}
+        },
+        neck = {
+            name = "Abyssal Beads +2",
+            augments = {'Path: A'}
+        },
+        waist = {
+            name = "Sailfi Belt +1",
+            augments = {'Path: A'}
+        },
+        left_ear = "Schere Earring",
+        right_ear = "Telos Earring",
+        left_ring = "Niqmaddu Ring",
+        right_ring = "Moonlight Ring",
+        back = {
+            name = "Ankou's Mantle",
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%'}
+        }
+    })
 
     sets.OffenseMode.SB = set_combine(sets.OffenseMode.TP, {
         ammo = {
@@ -183,7 +280,7 @@ function get_sets()
         right_ring = "Niqmaddu Ring",
         back = {
             name = "Ankou's Mantle",
-            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%'}
         }
     })
 
@@ -282,7 +379,45 @@ function get_sets()
     -- This set is used when OffenseMode is ACC and a WS is used (Augments the WS base set)
     sets.WS.ACC = set_combine(sets.WS, {})
 
-    sets.WS.PDL = set_combine(sets.WS, {})
+    sets.WS.PDL = set_combine(sets.WS, {
+        ammo = "Knobkierrie",
+        head = "Heath. Bur. +3",
+        body = {
+            name = "Sakpata's Plate",
+            augments = {'Path: A'}
+        },
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
+        feet = "Heath. Sollerets +3",
+        neck = {
+            name = "Abyssal Beads +2",
+            augments = {'Path: A'}
+        },
+        waist = {
+            name = "Sailfi Belt +1",
+            augments = {'Path: A'}
+        },
+        left_ear = {
+            name = "Moonshade Earring",
+            augments = {'Accuracy+4', 'TP Bonus +250'}
+        },
+        right_ear = {
+            name = "Heath. Earring +1",
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+14', 'Mag. Acc.+14', 'Weapon skill damage +3%'}
+        },
+        left_ring = "Sroda Ring",
+        right_ring = "Niqmaddu Ring",
+        back = {
+            name = "Ankou's Mantle",
+            augments = {'VIT+20', 'Accuracy+20 Attack+20', 'VIT+10', 'Weapon skill damage +10%', 'Damage taken-5%'}
+        }
+    })
 
     sets.WS.WSD = set_combine(sets.WS, {})
 

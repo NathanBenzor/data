@@ -61,7 +61,7 @@ function job_setup()
                       "Echad Ring", "Facility Ring", "Capacity Ring", "Era. Bul. Pouch", "Dev. Bul. Pouch",
                       "Chr. Bul. Pouch", "Quelling B. Quiver", "Yoichi's Quiver", "Artemis's Quiver", "Chrono Quiver"}
 
-    lockstyleset = 118
+    lockstyleset = 115
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -91,8 +91,8 @@ function user_setup()
     DefaultAmmo = {
         ['Annihilator'] = "Chrono Bullet",
         ['Fomalhaut'] = "Chrono Bullet",
-        ['Armageddon'] = "Devastating Bullet",
-        -- ['Armageddon'] = "Chrono Bullet",
+        -- ['Armageddon'] = "Devastating Bullet",
+        ['Armageddon'] = "Chrono Bullet",
         ['Gastraphetes'] = "Quelling Bolt",
         ['Gandiva'] = "Chrono Arrow",
         ['Fail-Not'] = "Chrono Arrow",
@@ -951,11 +951,8 @@ function init_gear_sets()
             name = "Nyame Sollerets",
             augments = {'Path: B'}
         },
-        neck = {
-            name = "Scout's Gorget +2",
-            augments = {'Path: A'}
-        },
-        waist = "Plat. Mog. Belt",
+        neck = "Null Loop",
+        waist = "Null Belt",
         left_ear = {
             name = "Odnowa Earring +1",
             augments = {'Path: A'}
@@ -965,7 +962,7 @@ function init_gear_sets()
         right_ring = "Defending Ring",
         back = {
             name = "Belenus's Cape",
-            augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', '"Store TP"+10', 'Phys. dmg. taken-10%'}
+            augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'Rng.Acc.+10', '"Store TP"+10', 'Phys. dmg. taken-10%'}
         }
     }
 
@@ -1568,8 +1565,8 @@ function init_gear_sets()
     -- sets.CP = {back="Mecisto. Mantle"}
 
     sets.Annihilator = {
-        -- main = "Perun +1",
-        -- sub = "Blurred Knife +1",
+        main = "Perun +1",
+        sub = "Nusku Shield",
         range = {
             name = "Annihilator",
             augments = {'Path: A'}
@@ -1577,8 +1574,6 @@ function init_gear_sets()
     }
 
     sets.Fomalhaut = {
-        -- main = "Perun +1",
-        -- sub = "Blurred Knife +1",
         main = {
             name = "Perun +1",
             augments = {'Path: A'}
@@ -1591,8 +1586,11 @@ function init_gear_sets()
     }
 
     sets.Armageddon = {
-        -- main = "Perun +1",
-        -- sub = "Malevolence",
+        main = {
+            name = "Perun +1",
+            augments = {'Path: A'}
+        },
+        sub = "Nusku Shield",
         range = {
             name = "Armageddon",
             augments = {'Path: A'}
@@ -1615,14 +1613,11 @@ function init_gear_sets()
     }
 
     sets.Gandiva = {
-        -- main = {
-        --     name = "Malevolence",
-        --     augments = {'INT+6', 'Mag. Acc.+7', '"Mag.Atk.Bns."+4', '"Fast Cast"+3'}
-        -- },
-        -- sub = {
-        --     name = "Malevolence",
-        --     augments = {'INT+10', 'Mag. Acc.+10', '"Mag.Atk.Bns."+10', '"Fast Cast"+5'}
-        -- },
+        main = {
+            name = "Perun +1",
+            augments = {'Path: A'}
+        },
+        sub = "Nusku Shield",
         range = {
             name = "Gandiva",
             augments = {'Path: A'}
@@ -1630,19 +1625,14 @@ function init_gear_sets()
     }
 
     sets.FailNot = {
-        -- main = {
-        --     name = "Malevolence",
-        --     augments = {'INT+6', 'Mag. Acc.+7', '"Mag.Atk.Bns."+4', '"Fast Cast"+3'}
-        -- },
-        -- sub = {
-        --     name = "Malevolence",
-        --     augments = {'INT+10', 'Mag. Acc.+10', '"Mag.Atk.Bns."+10', '"Fast Cast"+5'}
-        -- },
         main = {
-            name = "Perun +1",
-            augments = {'Path: A'}
+            name = "Malevolence",
+            augments = {'INT+6', 'Mag. Acc.+7', '"Mag.Atk.Bns."+4', '"Fast Cast"+3'}
         },
-        sub = "Nusku Shield",
+        sub = {
+            name = "Malevolence",
+            augments = {'INT+10', 'Mag. Acc.+10', '"Mag.Atk.Bns."+10', '"Fast Cast"+5'}
+        },
         range = {
             name = "Fail-Not",
             augments = {'Path: A'}

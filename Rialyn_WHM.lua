@@ -224,10 +224,11 @@ function init_gear_sets()
     -- Fast cast sets for spells
 
     sets.precast.FC = {
-        main = {
-            name = "Queller Rod",
-            augments = {'Healing magic skill +15', '"Cure" potency +10%', '"Cure" spellcasting time -7%'}
-        },
+        -- main = {
+        --     name = "Queller Rod",
+        --     augments = {'Healing magic skill +15', '"Cure" potency +10%', '"Cure" spellcasting time -7%'}
+        -- },
+        main = "C. Palug Hammer",
         sub = "Sors Shield",
         ammo = "Impatiens",
         head = "Ebers Cap +3",
@@ -329,10 +330,11 @@ function init_gear_sets()
     -- Cure sets
 
     sets.midcast.CureSolace = {
-        main = {
-            name = "Queller Rod",
-            augments = {'Healing magic skill +15', '"Cure" potency +10%', '"Cure" spellcasting time -7%'}
-        },
+        -- main = {
+        --     name = "Queller Rod",
+        --     augments = {'Healing magic skill +15', '"Cure" potency +10%', '"Cure" spellcasting time -7%'}
+        -- },
+        main = "Raetic Rod",
         sub = "Sors Shield",
         ammo = "Impatiens",
         head = "Ebers Cap +3",
@@ -353,10 +355,11 @@ function init_gear_sets()
     }
 
     sets.midcast.CureSolaceWeather = set_combine(sets.midcast.CureSolace, {
-        main = {
-            name = "Queller Rod",
-            augments = {'Healing magic skill +15', '"Cure" potency +10%', '"Cure" spellcasting time -7%'}
-        },
+        -- main = {
+        --     name = "Queller Rod",
+        --     augments = {'Healing magic skill +15', '"Cure" potency +10%', '"Cure" spellcasting time -7%'}
+        -- },
+        main = "Raetic Rod",
         sub = "Sors Shield",
         ammo = "Impatiens",
         head = "Ebers Cap +3",
@@ -377,10 +380,11 @@ function init_gear_sets()
     })
 
     sets.midcast.CureNormal = set_combine(sets.midcast.CureSolace, {
-        main = {
-            name = "Queller Rod",
-            augments = {'Healing magic skill +15', '"Cure" potency +10%', '"Cure" spellcasting time -7%'}
-        },
+        -- main = {
+        --     name = "Queller Rod",
+        --     augments = {'Healing magic skill +15', '"Cure" potency +10%', '"Cure" spellcasting time -7%'}
+        -- },
+        main = "Raetic Rod",
         sub = "Sors Shield",
         ammo = "Impatiens",
         head = "Ebers Cap +3",
@@ -398,10 +402,11 @@ function init_gear_sets()
     })
 
     sets.midcast.CureWeather = set_combine(sets.midcast.CureNormal, {
-        main = {
-            name = "Queller Rod",
-            augments = {'Healing magic skill +15', '"Cure" potency +10%', '"Cure" spellcasting time -7%'}
-        },
+        -- main = {
+        --     name = "Queller Rod",
+        --     augments = {'Healing magic skill +15', '"Cure" potency +10%', '"Cure" spellcasting time -7%'}
+        -- },
+        main = "Raetic Rod",
         sub = "Sors Shield",
         ammo = "Impatiens",
         head = "Ebers Cap +3",
