@@ -100,7 +100,7 @@ function job_setup()
     get_combat_form()
     get_melee_groups()
 
-    lockstyleset = 137
+    lockstyleset = 135
 end
 
 function user_setup()
@@ -1273,15 +1273,12 @@ function init_gear_sets()
 
     sets.idle = {
         ammo = "Staunch Tathlum +1",
-        head = {
-            name = "Nyame Helm",
-            augments = {'Path: B', 'STR+10', 'Attack+15', 'Phys. dmg. taken-2'}
-        },
-        -- neck = "Bathy Choker +1",
-        neck = {
-            name = "Bst. Collar +2",
-            augments = {'Path: A'}
-        },
+        head = "Null Masque",
+        neck = "Bathy Choker +1",
+        -- neck = {
+        --     name = "Bst. Collar +2",
+        --     augments = {'Path: A'}
+        -- },
         -- ear1 = "Tuisto Earring",
         -- ear2 = "Odnowa Earring +1",
         left_ear = "Eabani Earring",
@@ -1301,7 +1298,8 @@ function init_gear_sets()
             name = "Artio's Mantle",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Phys. dmg. taken-10%'}
         },
-        waist = "Plat. Mog. Belt",
+        -- waist = "Plat. Mog. Belt",
+        waist = "Null Belt",
         legs = {
             name = "Nyame Flanchard",
             augments = {'Path: B', 'STR+10', 'Attack+15', 'Phys. dmg. taken-2'}

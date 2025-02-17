@@ -1683,7 +1683,7 @@ end
 
 function do_Utsu_checks(spell)
     local available_shihei = player.inventory['Shihei']
-    local shihei_warning_level = 50
+    local shihei_warning_level = 20
     if spell.name == 'Utsusemi: Ichi' or spell.name == 'Utsusemi: Ni' or spell.name == 'Utsusemi: San' then
         if available_shihei.count < shihei_warning_level then
             local msg = '*****  LOW SHIHEI WARNING: ' .. tostring(available_shihei.count) .. 'x on ' .. player.name ..

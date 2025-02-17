@@ -68,13 +68,8 @@ function get_sets()
         sub = "Centovente"
     }
 
-    -- sets.Weapons['Eviceration'] = {
-    --     main = 'Tauret',
-    --     sub = "Crepuscular Knife"
-    -- }
     sets.Weapons['Eviceration'] = {
-        -- main = 'Fusetto +2',
-        main = "Dagger of Trials",
+        main = 'Tauret',
         sub = "Ternion Dagger +1"
     }
 
@@ -87,9 +82,12 @@ function get_sets()
     }
 
     sets.Weapons['Fusetto'] = {
-        main = "Fusetto",
-        sub = "Esoteric Athame"
+        main = {
+            name = "Fusetto +3",
+            augments = {'TP Bonus +1000'}
+        },
         -- sub = "Ternion Dagger +1"
+        sub = "Esoteric Athame"
     }
 
     sets.Weapons.Songs = {
@@ -249,16 +247,17 @@ function get_sets()
         --     name = "Bard's Charm +1",
         --     augments = {'Path: A'}
         -- },
-        neck = "Defiant Collar",
-        waist = {
-            name = "Sailfi Belt +1",
-            augments = {'Path: A'}
-        },
+        neck = "Null Loop",
+        -- waist = {
+        --     name = "Sailfi Belt +1",
+        --     augments = {'Path: A'}
+        -- },
+        waist = "Kentarch Belt +1",
         -- left_ear = "Telos Earring",
         left_ear = "Digni. Earring",
         right_ear = "Cessance Earring",
-        -- left_ring = "Chirich Ring +1",
-        left_ring = "Petrov Ring",
+        left_ring = "Chirich Ring ",
+        -- left_ring = "Petrov Ring",
         right_ring = "Ilabrat Ring",
         -- back = {
         --     name = "Intarabus's Cape",

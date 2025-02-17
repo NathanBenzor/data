@@ -88,10 +88,13 @@ function user_setup()
 
     state.WeaponSet = M {
         ['description'] = 'Weapon Set',
-        'Kikoku',
+        -- 'Kikoku',
         'Heishi',
-        'Hitaki',
-        'Tanking'
+        'Naegling',
+        'AeolianEdge',
+        'Tanking',
+        'Nuking',
+        'GreatKatana'
     }
     state.WeaponLock = M(false, 'Weapon Lock')
     state.MagicBurst = M(false, 'Magic Burst')
@@ -204,10 +207,7 @@ function init_gear_sets()
         },
         body = "Emet Harness +1",
         hands = "Kurys Gloves",
-        legs = {
-            name = "Nyame Flanchard",
-            augments = {'Path: B'}
-        },
+        legs = "Zoar Subligar +1",
         feet = {
             name = "Mochi. Kyahan +3",
             augments = {'Enh. Ninj. Mag. Acc/Cast Time Red.'}
@@ -216,9 +216,9 @@ function init_gear_sets()
         waist = "Trance Belt",
         left_ear = "Trux Earring",
         right_ear = "Cryptic Earring",
-        left_ring = "Defending Ring",
+        left_ring = "Pernicious Ring",
         right_ring = "Supershear Ring",
-        back = "Agema Cape"
+        back = "Reiki Cloak"
     }
 
     sets.precast.JA['Provoke'] = sets.Enmity
@@ -229,7 +229,10 @@ function init_gear_sets()
         hands = "Hattori Tekko +1"
     }
     sets.precast.JA['Sange'] = {
-        body = "Mochi. Chainmail +3"
+        body = {
+            name = "Mochi. Chainmail +3",
+            augments = {'Enhances "Sange" effect'}
+        }
     }
     sets.precast.JA['Innin'] = {
         head = "Mochi. Hatsuburi +3"
@@ -281,7 +284,11 @@ function init_gear_sets()
     }
 
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {
-        body = "Mochi. Chainmail +3" -- 14
+        body = {
+            name = "Mochi. Chainmail +3",
+            augments = {'Enhances "Sange" effect'}
+        },
+        neck = "Magoraga Beads"
     })
 
     sets.precast.RA = {}
@@ -693,7 +700,8 @@ function init_gear_sets()
             augments = {'Path: B'}
         },
         feet = "Hattori Kyahan +3",
-        neck = "Rep. Plat. Medal",
+        -- neck = "Rep. Plat. Medal",
+        neck = "Fotia Gorget",
         waist = "Sailfi Belt",
         left_ear = {
             name = "Moonshade Earring",
@@ -731,13 +739,13 @@ function init_gear_sets()
     -- Specific spells
     -- sets.midcast.Utsusemi = set_combine(sets.midcast.SpellInterrupt, {feet="Hattori Kyahan +1", back=gear.NIN_FC_Cape,})
     sets.midcast.Utsusemi = {
-        ammo = "Seki Shuriken",
+        -- ammo = "Date Shuriken",
         head = {
             name = "Nyame Helm",
             augments = {'Path: B'}
         },
         body = {
-            name = "Mochi. Chainmail +1",
+            name = "Mochi. Chainmail +3",
             augments = {'Enhances "Sange" effect'}
         },
         hands = {
@@ -754,7 +762,7 @@ function init_gear_sets()
         left_ear = "Trux Earring",
         right_ear = "Cryptic Earring",
         left_ring = "Defending Ring",
-        right_ring = "Begrudging Ring",
+        right_ring = "Pernicious Ring",
         back = {
             name = "Andartia's Mantle",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%'}
@@ -812,40 +820,33 @@ function init_gear_sets()
     sets.midcast.EnfeeblingNinjutsu = {
         ammo = "Yamarang",
         head = "Hachiya Hatsu. +3",
-        body = "Mummu Jacket +2",
-        hands = "Mummu Wrists +2",
-        legs = "Mummu Kecks +2",
-        feet = "Hachiya Kyahan +3",
-        neck = "Sanctity Necklace",
-        ear1 = "Enchntr. Earring +1",
-        ear2 = "Digni. Earring",
-        ring1 = {
-            name = "Stikini Ring +1",
-            bag = "wardrobe3"
-        },
-        ring2 = {
-            name = "Stikini Ring +1",
-            bag = "wardrobe4"
-        },
-        back = gear.NIN_MAB_Cape,
-        waist = "Eschan Stone"
+        body = "Malignance Tabard",
+        hands = "Malignance Gloves",
+        legs = "Malignance Tights",
+        feet = "Malignance Boots",
+        neck = "Null Loop",
+        waist = "Null Belt",
+        left_ear = "Crep. Earring",
+        right_ear = "Digni. Earring",
+        left_ring = "Stikini Ring +1",
+        right_ring = "Stikini Ring +1",
+        back = "Null Shawl"
     }
 
     sets.midcast.EnhancingNinjutsu = {
-        head = "Hachiya Hatsu. +1",
-        feet = "Mochi. Kyahan +3",
-        neck = "Incanter's Torque",
-        ear1 = "Stealth Earring",
-        ring1 = {
-            name = "Stikini Ring +1",
-            bag = "wardrobe3"
-        },
-        ring2 = {
-            name = "Stikini Ring +1",
-            bag = "wardrobe4"
-        },
-        back = "Astute Cape",
-        waist = "Cimmerian Sash"
+        ammo = "Yamarang",
+        head = "Hachiya Hatsu. +3",
+        body = "Malignance Tabard",
+        hands = "Malignance Gloves",
+        legs = "Malignance Tights",
+        feet = "Malignance Boots",
+        neck = "Null Loop",
+        waist = "Null Belt",
+        left_ear = "Crep. Earring",
+        right_ear = "Digni. Earring",
+        left_ring = "Stikini Ring +1",
+        right_ring = "Stikini Ring +1",
+        back = "Null Shawl"
     }
 
     sets.midcast.Stun = sets.midcast.EnfeeblingNinjutsu
@@ -875,10 +876,11 @@ function init_gear_sets()
     -- Idle sets
     sets.idle = {
         ammo = "Seki Shuriken",
-        head = {
-            name = "Nyame Helm",
-            augments = {'Path: B'}
-        },
+        -- head = {
+        --     name = "Nyame Helm",
+        --     augments = {'Path: B'}
+        -- },
+        head = "Null Masque",
         body = {
             name = "Nyame Mail",
             augments = {'Path: B'}
@@ -896,10 +898,7 @@ function init_gear_sets()
             name = "Nyame Sollerets",
             augments = {'Path: B'}
         },
-        neck = {
-            name = "Loricate Torque +1",
-            augments = {'Path: A'}
-        },
+        neck = "Null Loop",
         waist = "Null Belt",
         left_ear = "Eabani Earring",
         right_ear = "Etiolation Earring",
@@ -914,10 +913,11 @@ function init_gear_sets()
 
     sets.idle.DT = set_combine(sets.idle, {
         ammo = "Staunch Tathlum +1",
-        head = {
-            name = "Nyame Helm",
-            augments = {'Path: B'}
-        },
+        -- head = {
+        --     name = "Nyame Helm",
+        --     augments = {'Path: B'}
+        -- },
+        head = "Null Masque",
         body = {
             name = "Nyame Mail",
             augments = {'Path: B'}
@@ -945,10 +945,11 @@ function init_gear_sets()
 
     sets.idle.Town = set_combine(sets.idle, {
         -- ammo = "Staunch Tathlum +1",
-        head = {
-            name = "Nyame Helm",
-            augments = {'Path: B'}
-        },
+        -- head = {
+        --     name = "Nyame Helm",
+        --     augments = {'Path: B'}
+        -- },
+        head = "Null Masque",
         body = {
             name = "Nyame Mail",
             augments = {'Path: B'}
@@ -971,10 +972,7 @@ function init_gear_sets()
         right_ear = "Etiolation Earring",
         left_ring = "Shneddick Ring",
         right_ring = "Regal Ring",
-        back = {
-            name = "Andartia's Mantle",
-            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%'}
-        }
+        back = "Moonbeam Cape"
     })
 
     -- Defense sets
@@ -1060,11 +1058,11 @@ function init_gear_sets()
         },
         -- legs = "Malignance Tights",
         feet = "Malignance Boots",
-        -- neck = {
-        --     name = "Ninja Nodowa +1",
-        --     augments = {'Path: A'}
-        -- },
-        neck = "Null Loop",
+        neck = {
+            name = "Ninja Nodowa +1",
+            augments = {'Path: A'}
+        },
+        -- neck = "Null Loop",
         waist = {
             name = "Sailfi Belt +1",
             augments = {'Path: A'}
@@ -1169,7 +1167,10 @@ function init_gear_sets()
     sets.engaged.LowHaste = {
         ammo = "Seki Shuriken",
         head = "Ryuo Somen +1", -- 9
-        body = "Mochi. Chainmail +3", -- 9
+        body = {
+            name = "Mochi. Chainmail +3",
+            augments = {'Enhances "Sange" effect'}
+        }, -- 9
         hands = gear.Adhemar_B_hands,
         legs = "Ken. Hakama +1",
         feet = "Ken. Sune-Ate +1",
@@ -1382,7 +1383,23 @@ function init_gear_sets()
         back = gear.NIN_WS1_Cape -- 10/0
     }
 
-    sets.engaged.DT = set_combine(sets.engaged, sets.engaged.Hybrid)
+    sets.engaged.DT = set_combine(sets.engaged, {
+        -- ammo = "Date Shuriken",
+        head = {
+            name = "Mpaca's Cap",
+            augments = {'Path: A'}
+        },
+        -- body = "Mpaca's Doublet",
+        -- hands = "Mpaca's Gloves",
+        -- legs = "Mpaca's Hose",
+        legs = "Malignance Tights",
+        -- feet = "Mpaca's Boots",
+        back = {
+            name = "Andartia's Mantle",
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Damage taken-5%'}
+        }
+    })
+
     sets.engaged.LowAcc.DT = set_combine(sets.engaged.LowAcc, sets.engaged.Hybrid)
     sets.engaged.MidAcc.DT = set_combine(sets.engaged.MidAcc, sets.engaged.Hybrid)
     sets.engaged.HighAcc.DT = set_combine(sets.engaged.HighAcc, sets.engaged.Hybrid)
@@ -1453,9 +1470,51 @@ function init_gear_sets()
     -- sets.Reive = {neck="Ygnas's Resolve +1"}
 
     -- sets.Kikoku = {main="Kikoku", sub="Ternion Dagger +1"}
-    -- sets.Heishi = {main="Heishi Shorinken", sub="Ternion Dagger +1"}
-    -- sets.Hitaki = {main="Heishi Shorinken", sub="Hitaki"}
-    -- sets.Tanking = {main="Fudo Masamune", sub="Ternion Dagger +1"}
+
+    sets.Heishi = {
+        main = "Heishi Shorinken",
+        sub = "Kunimitsu"
+    }
+
+    sets.Naegling = {
+        main = "Naegling",
+        sub = {
+            name = "Hitaki",
+            augments = {'TP Bonus +1000'}
+        }
+    }
+
+    sets.AeolianEdge = {
+        main = "Tauret",
+        sub = {
+            name = "Kunimitsu",
+            augments = {'Path: A'}
+        }
+    }
+
+    sets.Tanking = {
+        main = {
+            name = "Heishi Shorinken",
+            augments = {'Path: A'}
+        },
+        sub = {
+            name = "Tsuru",
+            augments = {'Path: A'}
+        }
+    }
+
+    sets.Nuking = {
+        main = "Gokotai",
+        sub = {
+            name = "Kunimitsu",
+            augments = {'Path: A'}
+        }
+    }
+
+    sets.GreatKatana = {
+        main = "Hachimonji",
+        sub = "Alber Strap"
+    }
 
 end
 
