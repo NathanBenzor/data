@@ -75,10 +75,11 @@ function get_sets()
     -- Standard Idle set with -DT, Refresh, Regen and movement gear
     sets.Idle = {
         ammo = "Staunch Tathlum +1",
-        head = {
-            name = "Nyame Helm",
-            augments = {'Path: B'}
-        },
+        -- head = {
+        --     name = "Nyame Helm",
+        --     augments = {'Path: B'}
+        -- },
+        head = "Null Masque",
         body = {
             name = "Nyame Mail",
             augments = {'Path: B'}
@@ -139,10 +140,6 @@ function get_sets()
             name = "Coiste Bodhar",
             augments = {'Path: A'}
         },
-        -- head = {
-        --     name = "Mpaca's Cap",
-        --     augments = {'Path: A'}
-        -- },
         head = {
             name = "Adhemar Bonnet +1",
             augments = {'STR+12', 'DEX+12', 'Attack+20'}

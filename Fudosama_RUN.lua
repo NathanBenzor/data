@@ -1195,8 +1195,8 @@ function init_gear_sets()
             name = "Futhark Torque +2",
             augments = {'Path: A'}
         },
-        -- waist = "Engraved Belt",
-        wait = "Flume Belt +1",
+        waist = "Engraved Belt",
+        -- wait = "Flume Belt +1",
         left_ear = "Tuisto Earring",
         right_ear = {
             name = "Odnowa Earring +1",
@@ -1248,7 +1248,10 @@ function init_gear_sets()
             name = "Nyame Helm",
             augments = {'Path: B'}
         },
-        body = "Ayanmo Corazza +2",
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
         hands = {
             name = "Adhemar Wrist. +1",
             augments = {'DEX+12', 'AGI+12', 'Accuracy+20'}
@@ -1257,7 +1260,10 @@ function init_gear_sets()
             name = "Samnuha Tights",
             augments = {'STR+10', 'DEX+10', '"Dbl.Atk."+3', '"Triple Atk."+3'}
         },
-        feet = "Erilaz Greaves +3",
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
         neck = "Anu Torque",
         waist = "Ioskeha Belt +1",
         left_ear = "Telos Earring",

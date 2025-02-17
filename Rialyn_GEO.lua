@@ -317,7 +317,7 @@ function init_gear_sets()
             name = "Bagua Pants +3",
             augments = {'Enhances "Mending Halation" effect'}
         },
-        feet = "Azimuth Gaiters +2",
+        feet = "Azimuth Gaiters +3",
         neck = "Incanter's Torque",
         waist = "Austerity Belt +1",
         left_ear = "Malignance Earring",
@@ -350,7 +350,7 @@ function init_gear_sets()
             name = "Bagua Pants +3",
             augments = {'Enhances "Mending Halation" effect'}
         },
-        feet = "Azimuth Gaiters +2",
+        feet = "Azimuth Gaiters +3",
         neck = "Incanter's Torque",
         waist = "Austerity Belt +1",
         left_ear = "Malignance Earring",
@@ -673,7 +673,7 @@ function init_gear_sets()
         sub = "Genmei Shield",
         head = "Azimuth Hood +3",
         body = "Azimuth Coat +3",
-        hands = "Geo. Mitaines +2",
+        hands = "Geo. Mitaines +3",
         legs = {
             name = "Nyame Flanchard",
             augments = {'Path: B'}
@@ -733,7 +733,7 @@ function init_gear_sets()
             name = "Bagua Pants +3",
             augments = {'Enhances "Mending Halation" effect'}
         },
-        feet = "Azimuth Gaiters +2",
+        feet = "Azimuth Gaiters +3",
         neck = "Incanter's Torque",
         waist = "Isa Belt",
         left_ear = "Regal Earring",

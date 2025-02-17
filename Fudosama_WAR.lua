@@ -1028,7 +1028,8 @@ function init_gear_sets()
             name = "Coiste Bodhar",
             augments = {'Path: A'}
         },
-        head = "Boii Mask +3",
+        -- head = "Boii Mask +3",
+        head = "Null Masque",
         body = "Boii Lorica +3",
         hands = {
             name = "Sakpata's Gauntlets",
@@ -1062,7 +1063,8 @@ function init_gear_sets()
             name = "Coiste Bodhar",
             augments = {'Path: A'}
         },
-        head = "Boii Mask +3",
+        -- head = "Boii Mask +3",
+        head = "Null Masque",
         body = "Boii Lorica +3",
         hands = "Boii Mufflers +3",
         legs = "Boii Cuisses +3",

@@ -61,7 +61,7 @@ function job_setup()
                       "Echad Ring", "Facility Ring", "Capacity Ring", "Era. Bul. Pouch", "Dev. Bul. Pouch",
                       "Chr. Bul. Pouch", "Quelling B. Quiver", "Yoichi's Quiver", "Artemis's Quiver", "Chrono Quiver"}
 
-    lockstyleset = 115
+    lockstyleset = 119
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -78,25 +78,27 @@ function user_setup()
 
     state.WeaponSet = M {
         ['description'] = 'Weapon Set',
+        'Gastraphetes',
         'Annihilator',
         'Fomalhaut',
         'Armageddon',
-        'Gastraphetes',
         'Gandiva',
         'FailNot',
-        'Accipiter'
+        'Accipiter',
+        'Ullr'
     }
     -- state.CP = M(false, "Capacity Points Mode")
 
     DefaultAmmo = {
         ['Annihilator'] = "Chrono Bullet",
         ['Fomalhaut'] = "Chrono Bullet",
-        -- ['Armageddon'] = "Devastating Bullet",
-        ['Armageddon'] = "Chrono Bullet",
+        ['Armageddon'] = "Devastating Bullet",
+        -- ['Armageddon'] = "Chrono Bullet",
         ['Gastraphetes'] = "Quelling Bolt",
         ['Gandiva'] = "Chrono Arrow",
         ['Fail-Not'] = "Chrono Arrow",
-        ['Accipiter'] = "Chrono Arrow"
+        ['Accipiter'] = "Chrono Arrow",
+        ['Ullr'] = "Chrono Arrow"
         -- ['Yoichinoyumi'] = "Chrono Arrow",
     }
 
@@ -107,7 +109,8 @@ function user_setup()
         ['Gastraphetes'] = "Quelling Bolt",
         ['Gandiva'] = "Yoichi's Arrow",
         ['Fai-lNot'] = "Yoichi's Arrow",
-        ['Accipiter'] = "Artemis's Arrow"
+        ['Accipiter'] = "Artemis's Arrow",
+        ['Ullr'] = "Artemis's Arrow"
         -- ['Yoichinoyumi'] = "Yoichi's Arrow",
     }
 
@@ -118,7 +121,8 @@ function user_setup()
         ['Fomalhaut'] = "Chrono Bullet",
         ['Gandiva'] = "Chrono Arrow",
         ['Fail-Not'] = "Chrono Arrow",
-        ['Accipiter'] = "Chrono Arrow"
+        ['Accipiter'] = "Chrono Arrow",
+        ['Ullr'] = "Chrono Arrow"
         -- ['Yoichinoyumi'] = "Chrono Arrow",
     }
 
@@ -129,7 +133,8 @@ function user_setup()
         ['Gastraphetes'] = "Quelling Bolt",
         ['Gandiva'] = "Chrono Arrow",
         ['Fail-Not'] = "Chrono Arrow",
-        ['Accipiter'] = "Chrono Arrow"
+        ['Accipiter'] = "Chrono Arrow",
+        ['Ullr'] = "Chrono Arrow"
         -- ['Yoichinoyumi'] = "Chrono Arrow",
     }
 
@@ -931,10 +936,11 @@ function init_gear_sets()
 
     -- Idle sets
     sets.idle = {
-        head = {
-            name = "Nyame Helm",
-            augments = {'Path: B'}
-        },
+        -- head = {
+        --     name = "Nyame Helm",
+        --     augments = {'Path: B'}
+        -- },
+        head = "Null Masque",
         body = {
             name = "Nyame Mail",
             augments = {'Path: B'}
@@ -1010,16 +1016,33 @@ function init_gear_sets()
     })
 
     sets.idle.Town = set_combine(sets.idle, {
-        head = "Amini Gapette +3",
-        body = "Amini Caban +3",
-        hands = "Amini Glove. +3",
-        legs = "Amini Bragues +3",
-        feet = "Amini Bottillons +3",
+        -- head = "Amini Gapette +3",
+        head = "Null Masque",
+        -- body = "Amini Caban +3",
+        -- hands = "Amini Glove. +3",
+        -- legs = "Amini Bragues +3",
+        -- feet = "Amini Bottillons +3",
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
         neck = {
             name = "Scout's Gorget +2",
             augments = {'Path: A'}
         },
-        waist = "Yemaya Belt",
+        waist = "Null Belt",
         left_ear = "Dedition Earring",
         right_ear = "Telos Earring",
         left_ring = "Regal Ring",
@@ -1564,39 +1587,6 @@ function init_gear_sets()
     -- sets.Reive = {neck="Ygnas's Resolve +1"}
     -- sets.CP = {back="Mecisto. Mantle"}
 
-    sets.Annihilator = {
-        main = "Perun +1",
-        sub = "Nusku Shield",
-        range = {
-            name = "Annihilator",
-            augments = {'Path: A'}
-        }
-    }
-
-    sets.Fomalhaut = {
-        main = {
-            name = "Perun +1",
-            augments = {'Path: A'}
-        },
-        sub = "Nusku Shield",
-        range = {
-            name = "Fomalhaut",
-            augments = {'Path: A'}
-        }
-    }
-
-    sets.Armageddon = {
-        main = {
-            name = "Perun +1",
-            augments = {'Path: A'}
-        },
-        sub = "Nusku Shield",
-        range = {
-            name = "Armageddon",
-            augments = {'Path: A'}
-        }
-    }
-
     sets.Gastraphetes = {
         main = {
             name = "Malevolence",
@@ -1612,12 +1602,55 @@ function init_gear_sets()
         }
     }
 
-    sets.Gandiva = {
-        main = {
-            name = "Perun +1",
-            augments = {'Path: A'}
-        },
+    sets.Annihilator = {
+        main = "Perun +1",
         sub = "Nusku Shield",
+        range = {
+            name = "Annihilator",
+            augments = {'Path: A'}
+        }
+    }
+
+    sets.Fomalhaut = {
+        -- main = {
+        --     name = "Perun +1",
+        --     augments = {'Path: A'}
+        -- },
+        -- sub = "Nusku Shield",
+        range = {
+            name = "Fomalhaut",
+            augments = {'Path: A'}
+        }
+    }
+
+    sets.Armageddon = {
+        -- Perun used for Arebati w/ AM3 and last stand
+        -- main = {
+        --     name = "Perun +1",
+        --     augments = {'Path: A'}
+        -- },
+        -- sub = "Nusku Shield",
+        main = {
+            name = "Malevolence",
+            augments = {'INT+6', 'Mag. Acc.+7', '"Mag.Atk.Bns."+4', '"Fast Cast"+3'}
+        },
+        sub = {
+            name = "Malevolence",
+            augments = {'INT+10', 'Mag. Acc.+10', '"Mag.Atk.Bns."+10', '"Fast Cast"+5'}
+        },
+        range = {
+            name = "Armageddon",
+            augments = {'Path: A'}
+        }
+    }
+
+    sets.Gandiva = {
+        -- main = {
+        --     name = "Perun +1",
+        --     augments = {'Path: A'}
+        -- },
+        main = "Oneiros Knife",
+        -- sub = "Nusku Shield",
         range = {
             name = "Gandiva",
             augments = {'Path: A'}
@@ -1644,6 +1677,15 @@ function init_gear_sets()
             name = "Accipiter",
             augments = {'TP Bonus +1000'}
         }
+    }
+
+    sets.Ullr = {
+        main = {
+            name = "Perun +1",
+            augments = {'Path: A'}
+        },
+        sub = "Nusku Shield",
+        range = "Ullr"
     }
 
     sets.DefaultShield = {
