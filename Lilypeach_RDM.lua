@@ -456,6 +456,7 @@ function get_sets()
 	sets.Midcast.Enfeebling.Duration = set_combine(sets.Midcast.Enfeebling, {
 		head={ name="Viti. Chapeau +3", augments={'Enfeebling Magic duration','Magic Accuracy',}}, -- 15s (3 seconds x 5 merits)
 		hands="Regal Cuffs", --20% swaps out with Saboteur active
+		-- hands = "Leth. Ganth. +3",
 		right_ear="Snotra Earring", -- 10%
 		left_ring="Kishar Ring", -- 10%
 		waist={ name="Obstin. Sash", augments={'Path: A',}}, -- 5%
@@ -466,6 +467,23 @@ function get_sets()
         }
 	})
 
+	-- sets.midcast['Divine Magic'] = {
+    --     main="Mafic Cudgel",
+    --     sub="Genmei Shield",
+    --     range="Gjallarhorn",
+    --     head="Halitus Helm",
+    --     body="Emet Harness +1",
+    --     hands="Fili Manchettes +3",
+    --     legs="Zoar Subligar +1",
+    --     feet={ name="Nyame Sollerets", augments={'Path: B',}},
+    --     neck="Unmoving Collar +1",
+    --     waist="Trance Belt",
+    --     left_ear="Etiolation Earring",
+    --     right_ear="Cryptic Earring",
+    --     left_ring="Provocare Ring",
+    --     right_ring="Supershear Ring",
+    --     back={ name="Intarabus's Cape", augments={'VIT+20','Eva.+20 /Mag. Eva.+20','Enmity+10','Phys. dmg. taken-10%',}},
+    -- }
 	sets.Enspell = {
         -- main={ name="Crocea Mors", augments={'Path: C',}},
 		-- sub={ name="Demers. Degen +1", augments={'Path: A',}},
@@ -542,6 +560,24 @@ function get_sets()
 		waist="Olympus Sash",
 		back="Perimede Cape",
 	}) -- Max Enhancing 613
+
+	sets.Midcast["Foil"] = set_combine(sets.Midcast.Enhancing, {
+		main="Mafic Cudgel",
+        sub="Genmei Shield",
+        range="Gjallarhorn",
+        head="Halitus Helm",
+        body="Emet Harness +1",
+        hands="Fili Manchettes +3",
+        legs="Zoar Subligar +1",
+        feet={ name="Nyame Sollerets", augments={'Path: B',}},
+        neck="Unmoving Collar +1",
+        waist="Trance Belt",
+        left_ear="Etiolation Earring",
+        right_ear="Cryptic Earring",
+        left_ring="Provocare Ring",
+        right_ring="Supershear Ring",
+        -- back={ name="Intarabus's Cape", augments={'VIT+20','Eva.+20 /Mag. Eva.+20','Enmity+10','Phys. dmg. taken-10%',}},
+	})
 
 	sets.Midcast["Diaga"] = set_combine (sets.Midcast.Enfeebling, sets.TreasureHunter)
 	sets.Midcast["Dispelga"] = set_combine (sets.Midcast.Enfeebling, sets.TreasureHunter)

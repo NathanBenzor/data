@@ -338,7 +338,7 @@ function init_gear_sets()
         waist="Acerbic Sash +1",
         left_ear = "Mendi. Earring",
         right_ear = "Glorious Earring",
-        left_ring = "Kuchekula Ring",
+        left_ring = "Naji's Loop",
         right_ring = "Lebeche Ring",
         back = {
             name = "Alaunus's Cape",
@@ -362,7 +362,7 @@ function init_gear_sets()
         waist="Hachirin-no-Obi",
         left_ear = "Mendi. Earring",
         right_ear = "Glorious Earring",
-        left_ring = "Kuchekula Ring",
+        left_ring = "Naji's Loop",
         right_ring = "Lebeche Ring",
         back = {
             name = "Alaunus's Cape",
@@ -386,7 +386,7 @@ function init_gear_sets()
         waist="Acerbic Sash +1",
         left_ear = "Mendi. Earring",
         right_ear = "Glorious Earring",
-        left_ring = "Kuchekula Ring",
+        left_ring = "Naji's Loop",
         right_ring = "Lebeche Ring",
         back = {
             name = "Alaunus's Cape",
@@ -410,7 +410,7 @@ function init_gear_sets()
         waist="Hachirin-no-Obi",
         left_ear = "Mendi. Earring",
         right_ear = "Glorious Earring",
-        left_ring = "Kuchekula Ring",
+        left_ring = "Naji's Loop",
         right_ring = "Lebeche Ring",
         back = {
             name = "Alaunus's Cape",
@@ -492,6 +492,11 @@ function init_gear_sets()
 
     sets.midcast.Erase = set_combine(sets.midcast.StatusRemoval, {
         neck = "Clr. Torque +2"
+    })
+
+    sets.midcast.Esuna = set_combine(sets.midcast.StatusRemoval, {
+        neck = "Clr. Torque +2",
+        main = "Piety Wand"
     })
 
     -- 110 total Enhancing Magic Skill; caps even without Light Arts
