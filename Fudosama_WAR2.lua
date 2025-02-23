@@ -1,10 +1,10 @@
 -- Mirdain
 -- Load and initialize the include file.
-include('Mirdain-Include')
+include('Fudosama-Include2')
 
 -- Set to ingame lockstyle and Macro Book/Set
-LockStylePallet = "8"
-MacroBook = "4"
+LockStylePallet = "198"
+MacroBook = "27"
 MacroSet = "1"
 
 -- Use "gs c food" to use the specified food item 
@@ -30,8 +30,8 @@ state.OffenseMode:options('TP', 'PDL', 'ACC', 'DT', 'PDT', 'MEVA', 'CRIT')
 state.OffenseMode:set('DT')
 
 -- Weapons options
-state.WeaponMode:options('Chango', 'Shining One', 'Naegling', 'Dolichenus', 'Ternion Dagger', 'Ukonvasara', 'Unlocked')
-state.WeaponMode:set('Chango')
+state.WeaponMode:options('Chango', 'Naegling', 'Club', 'Shining One', 'Dolichenus', 'Ternion Dagger', 'Unlocked')
+state.WeaponMode:set('Naegling')
 
 -- Initialize Player
 jobsetup(LockStylePallet, MacroBook, MacroSet)
@@ -48,14 +48,17 @@ function get_sets()
         },
         sub = "Utu Grip"
     }
+
     sets.Weapons['Shining One'] = {
         main = "Shining One",
         sub = "Utu Grip"
     }
+
     sets.Weapons['Naegling'] = {
         main = "Naegling",
-        sub = "Zantetsuken"
+        sub = "Blurred Shield +1"
     }
+
     sets.Weapons['Dolichenus'] = {
         main = "Dolichenus",
         sub = {
@@ -63,6 +66,7 @@ function get_sets()
             augments = {'"Dbl.Atk."+4', 'Accuracy+11', 'Attack+8'}
         }
     }
+
     sets.Weapons['Ternion Dagger'] = {
         main = {
             name = "Ternion Dagger +1",
@@ -70,13 +74,15 @@ function get_sets()
         },
         sub = "Naegling"
     }
-    sets.Weapons['Ukonvasara'] = {
+
+    sets.Weapons['Club'] = {
         main = {
-            name = "Chango",
+            name = "Loxotic Mace +1",
             augments = {'Path: A'}
         },
-        sub = "Utu Grip"
+        sub = "Blurred Shield +1"
     }
+
     -- This stops GS from chaning weapons (Abyssea Proc etc)
     sets.Weapons['Unlocked'] = {
         main = {
@@ -92,30 +98,43 @@ function get_sets()
 
     -- Base set for when the player is not engaged or casting.  Other sets build off this set
     sets.Idle = {
-        ammo = "Staunch Tathlum +1",
-        head = "Sakpata's Helm",
-        body = "Sakpata's Plate",
-        hands = "Sakpata's Gauntlets",
-        legs = "Sakpata's Cuisses",
-        feet = "Sakpata's Leggings",
-        neck = {
-            name = "Loricate Torque +1",
+        ammo = {
+            name = "Coiste Bodhar",
             augments = {'Path: A'}
         },
-        waist = "Plat. Mog. Belt",
-        left_ear = "Eabani Earring",
-        right_ear = {
-            name = "Odnowa Earring +1",
+        -- head = "Boii Mask +3",
+        head = "Null Masque",
+        body = {
+            name = "Sakpata's Plate",
             augments = {'Path: A'}
+        },
+        hands = {
+            name = "Sakpata's Gauntlets",
+            augments = {'Path: A'}
+        },
+        legs = {
+            name = "Sakpata's Cuisses",
+            augments = {'Path: A'}
+        },
+        feet = {
+            name = "Sakpata's Leggings",
+            augments = {'Path: A'}
+        },
+        neck = "Null Loop",
+        waist = "Null Belt",
+        left_ear = {
+            name = "Schere Earring",
+            augments = {'Path: A'}
+        },
+        right_ear = {
+            name = "Boii Earring +1",
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+15', 'Mag. Acc.+15', 'Crit.hit rate+5'}
         },
         left_ring = "Moonlight Ring",
-        right_ring = {
-            name = "Gelatinous Ring +1",
-            augments = {'Path: A'}
-        },
+        right_ring = "Regal Ring",
         back = {
             name = "Cichol's Mantle",
-            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%'}
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
         }
     }
 
@@ -154,11 +173,23 @@ function get_sets()
             name = "Coiste Bodhar",
             augments = {'Path: A'}
         },
-        head = "Flam. Zucchetto +2",
-        body = "Dagon Breast.",
-        hands = "Sakpata's Gauntlets",
-        legs = "Pumm. Cuisses +3",
-        feet = "Pumm. Calligae +3",
+        head = "Boii Mask +3",
+        body = {
+            name = "Sakpata's Plate",
+            augments = {'Path: A'}
+        },
+        hands = {
+            name = "Sakpata's Gauntlets",
+            augments = {'Path: A'}
+        },
+        legs = {
+            name = "Sakpata's Cuisses",
+            augments = {'Path: A'}
+        },
+        feet = {
+            name = "Sakpata's Leggings",
+            augments = {'Path: A'}
+        },
         neck = {
             name = "War. Beads +2",
             augments = {'Path: A'}
@@ -171,16 +202,63 @@ function get_sets()
             name = "Schere Earring",
             augments = {'Path: A'}
         },
-        right_ear = "Telos Earring",
-        left_ring = "Niqmaddu Ring",
-        right_ring = "Moonlight Ring",
+        right_ear = {
+            name = "Boii Earring +1",
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+15', 'Mag. Acc.+15', 'Crit.hit rate+5'}
+        },
+        left_ring = "Moonlight Ring",
+        right_ring = "Niqmaddu Ring",
         back = {
             name = "Cichol's Mantle",
-            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%'}
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
         }
     }
 
-    sets.OffenseMode.TP = {}
+    sets.OffenseMode.TP = {
+        ammo = {
+            name = "Coiste Bodhar",
+            augments = {'Path: A'}
+        },
+        head = "Boii Mask +3",
+        body = {
+            name = "Sakpata's Plate",
+            augments = {'Path: A'}
+        },
+        hands = {
+            name = "Sakpata's Gauntlets",
+            augments = {'Path: A'}
+        },
+        legs = {
+            name = "Sakpata's Cuisses",
+            augments = {'Path: A'}
+        },
+        feet = {
+            name = "Sakpata's Leggings",
+            augments = {'Path: A'}
+        },
+        neck = {
+            name = "War. Beads +2",
+            augments = {'Path: A'}
+        },
+        waist = {
+            name = "Sailfi Belt +1",
+            augments = {'Path: A'}
+        },
+        left_ear = {
+            name = "Schere Earring",
+            augments = {'Path: A'}
+        },
+        right_ear = {
+            name = "Boii Earring +1",
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+15', 'Mag. Acc.+15', 'Crit.hit rate+5'}
+        },
+        left_ring = "Moonlight Ring",
+        right_ring = "Niqmaddu Ring",
+        back = {
+            name = "Cichol's Mantle",
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
+        }
+    }
 
     sets.OffenseMode.DT = {
         head = "Sakpata's Helm",
@@ -191,8 +269,8 @@ function get_sets()
     }
 
     sets.OffenseMode.PDL = {
-        ammo = "Crepuscular Pebble",
-        right_ring = "Sroda Ring"
+        -- ammo = "Crepuscular Pebble",
+        -- right_ring = "Sroda Ring"
     }
 
     -- This set is used when OffenseMode is ACC and Enaged
@@ -255,32 +333,28 @@ function get_sets()
     sets.Precast.QuickMagic = {}
 
     sets.Precast.Enmity = {
-        ammo = "Sapience Orb", -- 2
-        head = {
-            name = "Souv. Schaller +1",
-            augments = {'HP+105', 'Enmity+9', 'Potency of "Cure" effect received +15%'}
-        }, -- 9
+        ammo = "Aqreqaq Bomblet",
+        head = "Pummeler's Mask +3",
         body = {
-            name = "Souv. Cuirass +1",
-            augments = {'HP+105', 'Enmity+9', 'Potency of "Cure" effect received +15%'}
-        }, -- 20
-        hands = {
-            name = "Souv. Handsch. +1",
-            augments = {'HP+105', 'Enmity+9', 'Potency of "Cure" effect received +15%'}
-        }, -- 9
-        legs = {
-            name = "Souv. Diechlings +1",
-            augments = {'HP+105', 'Enmity+9', 'Potency of "Cure" effect received +15%'}
-        }, -- 9
+            name = "Souveran Cuirass",
+            augments = {'HP+80', 'Enmity+7', 'Potency of "Cure" effect received +10%'}
+        },
+        hands = "Pumm. Mufflers +2",
+        legs = "Brontes Cuisses",
         feet = {
-            name = "Souveran Schuhs +1",
-            augments = {'HP+105', 'Enmity+9', 'Potency of "Cure" effect received +15%'}
-        }, -- 9
-        neck = "Moonlight Necklace", -- 15
-        left_ear = "Cryptic Earring", -- 4
-        right_ear = "Trux Earring", -- 5
-        left_ring = "Petrov Ring", -- 4
-        right_ring = "Eihwaz Ring" -- 5
+            name = "Eschite Greaves",
+            augments = {'HP+80', 'Enmity+7', 'Phys. dmg. taken -4'}
+        },
+        neck = {
+            name = "Unmoving Collar +1",
+            augments = {'Path: A'}
+        },
+        waist = "Trance Belt",
+        left_ear = "Cryptic Earring",
+        right_ear = "Trux Earring",
+        left_ring = "Begrudging Ring",
+        right_ring = "Supershear Ring",
+        back = "Enuma Mantle"
     } -- 91
 
     sets.Precast['Utsusemi: Ichi'] = {}
@@ -436,7 +510,31 @@ function get_sets()
     sets.WS.SB = {}
     sets.WS.SB.RA = {}
 
-    sets.WS.PDL = {}
+    sets.WS.PDL = {
+        ammo = "Knobkierrie",
+        head = "Agoge Mask +3",
+        body = {
+            name = "Sakpata's Plate",
+            augments = {'Path: A'}
+        },
+        hands = "Boii Mufflers +3",
+        legs = "Boii Cuisses +3",
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
+        neck = "Warrior's Bead Necklace +2",
+        waist = "Sailfi Belt +1",
+        left_ear = "Thrud Earring",
+        right_ear = "Moonshade Earring",
+        left_ring = "Sroda Ring",
+        right_ring = "Cornelia's Ring",
+        back = {
+            name = "Cichol's Mantle",
+            augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%'}
+        }
+    }
+
     sets.WS.PDL.RA = {}
 
     -- These set are used when a weaponskill is used with that level of aftermath with the correct weapon
@@ -489,8 +587,12 @@ function get_sets()
 
     sets.TreasureHunter = {
         ammo = "Per. Lucky Egg",
-        waist = "Chaac Belt",
-        body = "Volte Jupon"
+        body = {
+            name = "Valorous Mail",
+            augments = {'"Triple Atk."+3', 'INT+12', '"Treasure Hunter"+1', 'Accuracy+16 Attack+16',
+                        'Mag. Acc.+1 "Mag.Atk.Bns."+1'}
+        },
+        waist = "Chaac Belt"
     }
 
 end

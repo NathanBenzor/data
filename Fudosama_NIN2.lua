@@ -211,11 +211,33 @@ function get_sets()
     })
     -- This set is used when OffenseMode is ACC and Enaged (Augments the TP base set)
     sets.OffenseMode.ACC = set_combine(sets.OffenseMode.TP, {
-        head = "Ken. Jinpachi +1",
-        body = "Ken. Samue +1",
-        hands = "Ken. Tekko +1",
-        legs = "Ken. Hakama +1",
-        feet = "Ken. Sune-Ate +1"
+        -- head = "Ken. Jinpachi +1",
+        -- body = "Ken. Samue +1",
+        -- hands = "Ken. Tekko +1",
+        -- legs = "Ken. Hakama +1",
+        -- feet = "Ken. Sune-Ate +1"
+        ammo = "Seki Shuriken",
+        head = {
+            name = "Mpaca's Cap",
+            augments = {'Path: A'}
+        },
+        body = "Malignance Tabard",
+        hands = "Malignance Gloves",
+        legs = "Malignance Tights",
+        feet = "Malignance Boots",
+        neck = {
+            name = "Ninja Nodowa +1",
+            augments = {'Path: A'}
+        },
+        waist = "Windbuffet Belt +1",
+        left_ear = "Telos Earring",
+        right_ear = "Crep. Earring",
+        left_ring = "Epona's Ring",
+        right_ring = "Gere Ring",
+        back = {
+            name = "Andartia's Mantle",
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Damage taken-5%'}
+        }
     })
     sets.OffenseMode.PDL = set_combine(sets.OffenseMode.TP, {
         head = "Malignance Chapeau",
@@ -255,7 +277,8 @@ function get_sets()
             name = "Mochi. Chainmail +3",
             augments = {'Enhances "Sange" effect'}
         },
-        neck = "Magoraga Beads"
+        neck = "Magoraga Beads",
+        feet = "Hattori Kyahan +3"
     }
 
     sets.Precast.QuickMagic = {}
@@ -863,6 +886,7 @@ function get_sets()
     }
 
     sets.TreasureHunter = {
+        ammo = "Per. Lucky Egg",
         head = "Volte Cap",
         body = "Volte Jupon",
         waist = "Chaac Belt"

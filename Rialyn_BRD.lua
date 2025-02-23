@@ -4,7 +4,7 @@ include('Rialyn-Include')
 
 -- Set to ingame lockstyle and Macro Book/Set
 LockStylePallet = "5"
-MacroBook = "9"
+MacroBook = "3"
 MacroSet = "1"
 
 -- Use "gs c food" to use the specified food item 
@@ -12,7 +12,7 @@ Food = "Tropical Crepe"
 
 -- Modes for specific to bard
 state.WeaponMode:options('Mordant Rime', 'Aeolian Edge', 'Shining Strike', 'Shining Blade', 'Savage Blade',
-    'Eviceration', 'Rudra\'s Storm', 'Kraken Mode', 'Fusetto')
+    'Eviceration', 'Rudra\'s Storm', 'Kraken Mode')
 state.WeaponMode:set('Mordant Rime')
 
 elemental_ws = S {'Aeolian Edge', 'Burning Blade', 'Shining Strike', 'Shining Blade'}
@@ -38,11 +38,12 @@ function get_sets()
     }
 
     sets.Weapons['Aeolian Edge'] = {
-        main = {
-            name = "Carnwenhan",
-            augments = {'Path: A'}
-        },
-        sub = "Tauret"
+        -- main = {
+        --     name = "Carnwenhan",
+        --     augments = {'Path: A'}
+        -- },
+        main = "Tauret",
+        sub = "Centovente"
     }
 
     sets.Weapons['Shining Strike'] = {
@@ -79,15 +80,6 @@ function get_sets()
             augments = {'Path: A'}
         },
         sub = "Crepuscular Knife"
-    }
-
-    sets.Weapons['Fusetto'] = {
-        main = {
-            name = "Fusetto +3",
-            augments = {'TP Bonus +1000'}
-        },
-        -- sub = "Ternion Dagger +1"
-        sub = "Esoteric Athame"
     }
 
     sets.Weapons.Songs = {
@@ -162,43 +154,19 @@ function get_sets()
         hands = "Nyame Gauntlets",
         legs = "Nyame Flanchard",
         feet = "Nyame Sollerets",
-        neck = {
-            name = "Bard's Charm +1",
-            augments = {'Path: A'}
-        },
         -- neck = {
-        --     name = "Loricate Torque +1",
+        --     name = "Bard's Charm +1",
         --     augments = {'Path: A'}
         -- },
-        waist = "Carrier's Sash",
-        right_ear = "Genmei Earring",
-        left_ear = "Etiolation Earring",
-        left_ring = "Defending Ring",
-        right_ring = "Stikini Ring +1"
-        -- back = "Moonlight Cape"
-        -- back = "Aptitude Mantle +1"
-    } -- PDT 60%%, MDT 56%
-
-    sets.Idle.town = {
-        -- sub = "Genmei Shield",
-        range = "Daurdabla",
-        -- head = "Fili Calot +3",
-        head = "Lilac Corsage",
-        body = "Fili Hongreline +3",
-        hands = "Nyame Gauntlets",
-        legs = "Nyame Flanchard",
-        feet = "Brioso Slippers +3",
-        neck = {
-            name = "Loricate Torque +1",
-            augments = {'Path: A'}
-        },
+        neck = "Null Loop",
         waist = "Carrier's Sash",
         right_ear = "Genmei Earring",
         left_ear = "Etiolation Earring",
         left_ring = "Defending Ring",
         right_ring = "Stikini Ring +1",
-        back = "Moonlight Cape"
-    }
+        -- back = "Moonlight Cape"
+        back = "Null Shawl"
+    } -- PDT 60%%, MDT 56%
 
     -- Used to swap into movement gear when the player is detected movement when not engaged
     sets.Movement = {

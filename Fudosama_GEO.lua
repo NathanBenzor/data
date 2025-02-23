@@ -29,7 +29,7 @@ state.OffenseMode:set('DT')
 Organizer = false
 
 -- Weapons options
-state.WeaponMode:options('Idris', 'Unlocked')
+state.WeaponMode:options('Idris', 'DW', 'Unlocked')
 state.WeaponMode:set('Unlocked')
 
 -- WS to check for Obi or Orpheus Check
@@ -49,6 +49,11 @@ function get_sets()
         sub = "Genmei Shield"
     }
 
+    sets.Weapons['DW'] = {
+        main = "Idris",
+        sub = "Ternion Dagger +1"
+    }
+
     sets.Weapons['Unlocked'] = {
         main = "Idris",
         sub = "Genmei Shield"
@@ -66,11 +71,12 @@ function get_sets()
             name = "Dunna",
             augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
         },
-        head = {
-            name = "Merlinic Hood",
-            augments = {'Mag. Acc.+9', '"Avatar perpetuation cost" -2', '"Refresh"+1', 'Accuracy+3 Attack+3',
-                        'Mag. Acc.+20 "Mag.Atk.Bns."+20'}
-        },
+        -- head = {
+        --     name = "Merlinic Hood",
+        --     augments = {'Mag. Acc.+9', '"Avatar perpetuation cost" -2', '"Refresh"+1', 'Accuracy+3 Attack+3',
+        --                 'Mag. Acc.+20 "Mag.Atk.Bns."+20'}
+        -- },
+        head = "Null Masque",
         body = "Azimuth Coat +3",
         hands = {
             name = "Bagua Mitaines +3",
@@ -254,13 +260,13 @@ function get_sets()
             name = "Nyame Sollerets",
             augments = {'Path: B'}
         },
-        neck = "Clotharius Torque",
+        neck = "Null Loop",
         waist = "Windbuffet Belt +1",
         left_ear = "Telos Earring",
         right_ear = "Crep. Earring",
         left_ring = "Petrov Ring",
         right_ring = "Chirich Ring +1",
-        back = "Penetrating Cape"
+        back = "Null Shawl"
     }
     -- Set to use when Dual Wielding
     sets.OffenseMode.TP.DW = {}
