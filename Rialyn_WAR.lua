@@ -30,7 +30,8 @@ state.OffenseMode:options('TP', 'PDL', 'ACC', 'DT', 'PDT', 'MEVA', 'CRIT')
 state.OffenseMode:set('DT')
 
 -- Weapons options
-state.WeaponMode:options('Chango', 'Shining One', 'Naegling', 'Dolichenus', 'Ternion Dagger', 'Ukonvasara', 'Unlocked')
+state.WeaponMode:options('Chango', 'Shining One', 'Naegling', 'Loxotic Mace', 'Dolichenus', 'Ternion Dagger',
+    'Ukonvasara', 'Unlocked')
 state.WeaponMode:set('Chango')
 
 -- Initialize Player
@@ -54,14 +55,15 @@ function get_sets()
     }
     sets.Weapons['Naegling'] = {
         main = "Naegling",
-        sub = "Zantetsuken"
+        sub = "Blurred Shield +1"
+    }
+    sets.Weapons['Loxotic Mace'] = {
+        main = "Loxotic Mace +1",
+        sub = "Blurred Shield +1"
     }
     sets.Weapons['Dolichenus'] = {
         main = "Dolichenus",
-        sub = {
-            name = "Digirbalag",
-            augments = {'"Dbl.Atk."+4', 'Accuracy+11', 'Attack+8'}
-        }
+        sub = "Blurred Shield +1"
     }
     sets.Weapons['Ternion Dagger'] = {
         main = {
@@ -92,27 +94,18 @@ function get_sets()
 
     -- Base set for when the player is not engaged or casting.  Other sets build off this set
     sets.Idle = {
-        ammo = "Staunch Tathlum +1",
+        ammo = "Coiste Bodhar",
         head = "Sakpata's Helm",
         body = "Sakpata's Plate",
         hands = "Sakpata's Gauntlets",
         legs = "Sakpata's Cuisses",
         feet = "Sakpata's Leggings",
-        neck = {
-            name = "Loricate Torque +1",
-            augments = {'Path: A'}
-        },
-        waist = "Plat. Mog. Belt",
-        left_ear = "Eabani Earring",
-        right_ear = {
-            name = "Odnowa Earring +1",
-            augments = {'Path: A'}
-        },
-        left_ring = "Moonlight Ring",
-        right_ring = {
-            name = "Gelatinous Ring +1",
-            augments = {'Path: A'}
-        },
+        neck = "Null Loop",
+        waist = "Sailfi Belt +1",
+        left_ear = "Cessance Earring",
+        right_ear = "Odnowa Earring +1",
+        right_ring = "Defending Ring",
+        left_ring = "Niqmaddu Ring",
         back = {
             name = "Cichol's Mantle",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%'}

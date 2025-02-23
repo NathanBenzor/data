@@ -1692,7 +1692,7 @@ function init_gear_sets()
         },
         right_ear = "Cessance Earring",
         left_ring = "Moonlight Ring",
-        right_ring = "Chirich Ring +1",
+        right_ring = "Niqmaddu Ring",
         back = {
             name = "Ankou's Mantle",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%'}

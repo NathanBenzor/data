@@ -88,7 +88,6 @@ function user_setup()
 
     state.WeaponSet = M {
         ['description'] = 'Weapon Set',
-        -- 'Kikoku',
         'Heishi',
         'Naegling',
         'AeolianEdge',
@@ -222,6 +221,10 @@ function init_gear_sets()
     }
 
     sets.precast.JA['Provoke'] = sets.Enmity
+    sets.precast.JA['Warcry'] = sets.Enmity
+    sets.precast.JA['Aggressor'] = sets.Enmity
+
+    -- Precast sets to enhance JAs
     sets.precast.JA['Mijin Gakure'] = {
         legs = "Mochi. Hakama +3"
     }
@@ -737,7 +740,15 @@ function init_gear_sets()
     }
 
     -- Specific spells
-    -- sets.midcast.Utsusemi = set_combine(sets.midcast.SpellInterrupt, {feet="Hattori Kyahan +1", back=gear.NIN_FC_Cape,})
+    sets.midcast.Utsusemi = set_combine(sets.midcast.SpellInterrupt, {
+        body = {
+            name = "Mochi. Chainmail +3",
+            augments = {'Enhances "Sange" effect'}
+        },
+        feet = "Hattori Kyahan +3",
+        neck = "Magoraga Beads"
+        -- back = gear.NIN_FC_Cape
+    })
     sets.midcast.Utsusemi = {
         -- ammo = "Date Shuriken",
         head = {
@@ -1021,42 +1032,14 @@ function init_gear_sets()
 
     -- No Magic Haste (74% DW to cap)
     sets.engaged = {
-        -- ammo = "Seki Shuriken",
-        -- head = "Malignance Chapeau",
-        -- body = {
-        --     name = "Adhemar Jacket +1",
-        --     augments = {'DEX+12', 'AGI+12', 'Accuracy+20'}
-        -- },
-        -- hands = {
-        --     name = "Adhemar Wristbands",
-        --     augments = {'DEX+10', 'AGI+10', 'Accuracy+15'}
-        -- },
-        -- legs = "Samnuha Tights",
-        -- feet = "Malignance Boots",
-        -- neck = {
-        --     name = "Ninja Nodowa +1",
-        --     augments = {'Path: A'}
-        -- },
-        -- waist = {
-        --     name = "Sailfi Belt +1",
-        --     augments = {'Path: A'}
-        -- },
-        -- left_ear = "Telos Earring",
-        -- right_ear = "Dedition Earring",
-        -- left_ring = "Epona's Ring",
-        -- right_ring = "Gere Ring",
-        -- back = {
-        --     name = "Andartia's Mantle",
-        --     augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Damage taken-5%'}
-        -- }
         head = "Malignance Chapeau",
         body = "Malignance Tabard",
         hands = "Malignance Gloves",
-        legs = {
-            name = "Samnuha Tights",
-            augments = {'STR+10', 'DEX+10', '"Dbl.Atk."+3', '"Triple Atk."+3'}
-        },
-        -- legs = "Malignance Tights",
+        -- legs = {
+        --     name = "Samnuha Tights",
+        --     augments = {'STR+10', 'DEX+10', '"Dbl.Atk."+3', '"Triple Atk."+3'}
+        -- },
+        legs = "Malignance Tights",
         feet = "Malignance Boots",
         neck = {
             name = "Ninja Nodowa +1",
@@ -1071,12 +1054,12 @@ function init_gear_sets()
         right_ear = "Dedition Earring",
         left_ring = "Epona's Ring",
         right_ring = "Gere Ring",
-        -- back = {
-        --     name = "Andartia's Mantle",
-        --     augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Damage taken-5%'}
-        -- }
-        back = "Null Shawl"
-    } -- 38%
+        back = {
+            name = "Andartia's Mantle",
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Damage taken-5%'}
+        }
+        -- back = "Null Shawl"
+    }
 
     sets.engaged.LowAcc = set_combine(sets.engaged, {
         hands = gear.Adhemar_A_hands

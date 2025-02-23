@@ -104,7 +104,6 @@ function user_setup()
         ['description'] = 'Weapon Set',
         'Epeolatry',
         'Lionheart',
-        'Aettir',
         'Lycurgos'
     }
     state.AttackMode = M {
@@ -367,7 +366,7 @@ function init_gear_sets()
             name = "Carmine Greaves",
             augments = {'MP+60', 'INT+10', 'MND+10'}
         },
-        neck = "Orunmila's Torque",
+        neck = "Orunmila's Torque", -- voltsurge torque for 4% fast cast
         waist = "Plat. Mog. Belt",
         left_ear = "Etiolation Earring",
         right_ear = "Loquac. Earring",
@@ -376,7 +375,7 @@ function init_gear_sets()
             augments = {'Path: A'}
         },
         right_ring = "Moonlight Ring",
-        back = {
+        back = { -- add Sird to this cape
             name = "Ogma's Cape",
             augments = {'HP+60', 'HP+20', '"Fast Cast"+10', 'Phys. dmg. taken-10%'}
         }
@@ -417,6 +416,8 @@ function init_gear_sets()
     })
 
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
+        hands = "Regal Gauntlets",
+        neck = "Sacro Gorget",
         legs = "Futhark Trousers +2",
         waist = "Olympus Sash"
     })
@@ -468,7 +469,7 @@ function init_gear_sets()
     })
 
     sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, {
-        sub = "Utu Grip",
+        -- sub = "Utu Grip",
         ammo = {
             name = "Coiste Bodhar",
             augments = {'Path: A'}
@@ -718,6 +719,7 @@ function init_gear_sets()
     sets.midcast['Enhancing Magic'] = set_combine(sets.midcast.SpellInterrupt, {
         head = "Erilaz Galea +3",
         hands = "Regal Gauntlets",
+        neck = "Sacro Gorget",
         legs = "Futhark Trousers +2"
     })
 
@@ -783,6 +785,7 @@ function init_gear_sets()
 
     sets.midcast.Regen = set_combine(sets.midcast['Enhancing Magic'], {
         head = "Rune. Bandeau +1",
+        hands = "Regal Gauntlets",
         legs = "Futhark Trousers +2",
         neck = "Sacro Gorget",
         right_ear = {
@@ -1367,7 +1370,10 @@ function init_gear_sets()
     }
 
     sets.Embolden = set_combine(sets.midcast.EnhancingDuration, {
-        back = "Evasionist's Cape"
+        back = {
+            name = "Evasionist's Cape",
+            augments = {'Enmity+3', '"Embolden"+15'}
+        }
     })
     sets.Obi = {
         waist = "Hachirin-no-Obi"
@@ -1376,13 +1382,15 @@ function init_gear_sets()
     -- sets.Reive = {neck="Ygnas's Resolve +1"}
 
     sets.Epeolatry = {
-        main = "Epeolatry"
+        main = "Epeolatry",
+        sub = {
+            name = "Refined Grip +1",
+            augments = {'Path: A'}
+        }
     }
     sets.Lionheart = {
-        main = "Lionheart"
-    }
-    sets.Aettir = {
-        main = "Aettir"
+        main = "Lionheart",
+        sub = "Utu Grip"
     }
     sets.Lycurgos = {
         main = "Lycurgos"

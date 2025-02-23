@@ -1,6 +1,6 @@
 -- Mirdain
 -- Load and initialize the include file.
-include('Mirdain-Include')
+include('Fudosama-Include2')
 
 -- Use "gs c food" to use the specified food item 
 Food = "Miso Ramen"
@@ -34,12 +34,12 @@ Buff_Delay = 5 -- Used this to slow down auto buffing
 Tank_Delay = 5 -- delays between tanking actions (only used when auto-buffing enabled and target locked on)
 
 -- Set to ingame lockstyle and Macro Book/Set
-LockStylePallet = "12"
-MacroBook = "12"
+LockStylePallet = "197"
+MacroBook = "22"
 MacroSet = Macro_Sub_Job()
 
 -- Modes for specific to Paladin.  These are defined below in "Weapons".
-state.WeaponMode:options('Epeolatry', 'Naegling', 'Club', 'Great Axe')
+state.WeaponMode:options('Epeolatry', 'Lionheart', 'Great Axe')
 state.WeaponMode:set('Epeolatry')
 
 -- Enable JobMode for UI.
@@ -99,12 +99,19 @@ function get_sets()
     sets.Weapons = {}
 
     sets.Weapons['Epeolatry'] = {
-        main = "Epeolatry",
-        sub = "Utu Grip"
+        main = {
+            name = "Epeolatry",
+            augments = {'Path: A'}
+        },
+        sub = {
+            name = "Refined Grip +1",
+            augments = {'Path: A'}
+        }
     }
 
-    sets.Weapons['Naegling'] = {
-        main = "Naegling"
+    sets.Weapons['Lionheart'] = {
+        main = "Lionheart",
+        sub = "Utu Grip"
     }
 
     sets.Weapons['Great Axe'] = {
@@ -112,63 +119,66 @@ function get_sets()
         sub = "Utu Grip"
     }
 
-    sets.Weapons['Club'] = {
-        main = {
-            name = "Loxotic Mace +1",
-            augments = {'Path: A'}
-        }
-    }
-
     -- Standard Idle set
     sets.Idle = {
-        ammo = "Homiliary", -- 1 Refresh
-        head = {
-            name = "Nyame Helm",
-            augments = {'Path: B'}
-        }, -- 7/7
+        ammo = "Staunch Tathlum +1",
+        -- head = "Nyame Helm",
+        head = "Erilaz Galea +3",
         body = "Erilaz Surcoat +3",
-        hands = "Erilaz Gauntlets +3", -- 11/11
-        legs = "Eri. Leg Guards +3", -- 13/13
-        feet = "Erilaz Greaves +3", -- 11/11
+        hands = "Erilaz Gauntlets +3",
+        legs = "Erilaz Leg Guards +3",
+        feet = "Erilaz Greaves +3",
+        -- neck = "Warder's Charm +1",
         neck = {
             name = "Futhark Torque +2",
             augments = {'Path: A'}
-        }, -- 7/7
+        },
         waist = "Plat. Mog. Belt",
-        left_ear = {
+        left_ear = "Tuisto Earring",
+        right_ear = {
             name = "Odnowa Earring +1",
-            augments = {'Path: A'},
-            priority = 1
-        }, -- 3/5
-        right_ear = "Sanare Earring", -- Upgrade to +1/+2 Earring
-        left_ring = {
-            name = "Moonlight Ring",
-            bag = "wardrobe1",
-            priority = 4
-        },
-        right_ring = {
-            name = "Moonlight Ring",
-            bag = "wardrobe2",
-            priority = 5
-        },
-        back = {
-            name = "Ogma's Cape",
-            augments = {'HP+60', 'Eva.+20 /Mag. Eva.+20', 'Mag. Evasion+10', 'Enmity+10', 'Damage taken-5%'}
-        } -- 5/5
-    } -- 75 PDT / 58 MDT		3571 HP/ 1149 MP
-
-    sets.Idle.PDT = set_combine(sets.Idle, {
-        neck = {
-            name = "Loricate Torque +1",
             augments = {'Path: A'}
         },
-        waist = "Flume Belt +1", -- 4/0
-        left_ear = "Tuisto Earring",
         left_ring = {
             name = "Gelatinous Ring +1",
-            augments = {'Path: A'},
-            priority = 4
-        } -- 7/-1
+            augments = {'Path: A'}
+        },
+        right_ring = "Moonlight Ring",
+        back = {
+            name = "Ogma's Cape",
+            augments = {'HP+60', 'Eva.+20 /Mag. Eva.+20', 'Enmity+10', 'Phys. dmg. taken-10%'}
+        }
+    }
+
+    sets.Idle.PDT = set_combine(sets.Idle, {
+        ammo = "Staunch Tathlum +1",
+        head = {
+            name = "Nyame Helm",
+            augments = {'Path: B'}
+        },
+        body = "Erilaz Surcoat +3",
+        hands = "Turms Mittens +1",
+        legs = "Eri. Leg Guards +3",
+        feet = "Erilaz Greaves +3",
+        neck = {
+            name = "Futhark Torque +2",
+            augments = {'Path: A'}
+        },
+        waist = "Engraved Belt",
+        left_ear = "Tuisto Earring",
+        right_ear = {
+            name = "Odnowa Earring +1",
+            augments = {'Path: A'}
+        },
+        left_ring = {
+            name = "Gelatinous Ring +1",
+            augments = {'Path: A'}
+        },
+        right_ring = "Moonlight Ring",
+        back = {
+            name = "Ogma's Cape",
+            augments = {'HP+60', 'Eva.+20 /Mag. Eva.+20', 'Enmity+10', 'Phys. dmg. taken-10%'}
+        }
     })
 
     sets.Idle.MEVA = set_combine(sets.Idle, {
@@ -189,25 +199,33 @@ function get_sets()
     })
 
     sets.Idle.DT = set_combine(sets.Idle, {
-        ammo = "Yamarang",
-        head = "Erilaz Galea +3",
-        waist = {
-            name = "Plat. Mog. Belt",
-            priority = 2
+        ammo = "Staunch Tathlum +1",
+        head = {
+            name = "Nyame Helm",
+            augments = {'Path: B'}
         },
-        left_ear = {
-            name = "Tuisto Earring",
-            priority = 3
+        body = "Erilaz Surcoat +3",
+        hands = "Turms Mittens +1",
+        legs = "Eri. Leg Guards +3",
+        feet = "Erilaz Greaves +3",
+        neck = {
+            name = "Futhark Torque +2",
+            augments = {'Path: A'}
+        },
+        waist = "Engraved Belt",
+        left_ear = "Tuisto Earring",
+        right_ear = {
+            name = "Odnowa Earring +1",
+            augments = {'Path: A'}
         },
         left_ring = {
-            name = "Moonlight Ring",
-            bag = "wardrobe1",
-            priority = 4
+            name = "Gelatinous Ring +1",
+            augments = {'Path: A'}
         },
-        right_ring = {
-            name = "Moonlight Ring",
-            bag = "wardrobe2",
-            priority = 5
+        right_ring = "Moonlight Ring",
+        back = {
+            name = "Ogma's Cape",
+            augments = {'HP+60', 'Eva.+20 /Mag. Eva.+20', 'Enmity+10', 'Phys. dmg. taken-10%'}
         }
     })
 
@@ -242,20 +260,8 @@ function get_sets()
 
     -- This gear will be equiped when the player is moving and not engaged
     sets.Movement = {
-        left_ring = {
-            name = "Moonlight Ring",
-            bag = "wardrobe1"
-        },
-        right_ring = {
-            name = "Moonlight Ring",
-            bag = "wardrobe2"
-        },
-        legs = {
-            name = "Carmine Cuisses +1",
-            augments = {'HP+80', 'STR+12', 'INT+12'},
-            priority = 1
-        }
-    } -- 73 PDT / 33 MDT		3028 HP / 963 MP
+        right_ring = "Shneddick Ring"
+    }
 
     -- Set to be used if you get 
     sets.Cursna_Received = {
@@ -274,37 +280,82 @@ function get_sets()
     }
 
     sets.OffenseMode = {
-        ammo = {
-            name = "Coiste Bodhar",
-            augments = {'Path: A'}
+        -- ammo = {
+        --     name = "Coiste Bodhar",
+        --     augments = {'Path: A'}
+        -- },
+        -- head = "Erilaz Galea +3",
+        -- body = "Ashera Harness",
+        -- hands = "Erilaz Gauntlets +3",
+        -- legs = "Eri. Leg Guards +3",
+        -- feet = "Erilaz Greaves +3",
+        -- neck = {
+        --     name = "Futhark Torque +2",
+        --     augments = {'Path: A'},
+        --     priority = 1
+        -- },
+        -- waist = "Windbuffet Belt +1",
+        -- left_ear = "Sherida Earring",
+        -- right_ear = "Telos Earring",
+        -- left_ring = "Niqmaddu Ring",
+        -- right_ring = "Epona's Ring",
+        -- back = {
+        --     name = "Ogma's Cape",
+        --     augments = {'HP+60', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Damage taken-5%'}
+        -- }
+
+        ammo = "Staunch Tathlum +1",
+        -- head = "Erilaz Galea +3",
+        head = {
+            name = "Nyame Helm",
+            augments = {'Path: B'}
         },
-        head = "Erilaz Galea +3",
-        body = "Ashera Harness",
-        hands = "Erilaz Gauntlets +3",
+        body = "Erilaz Surcoat +3",
+        -- hands = "Erilaz Gauntlets +3",
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
+        -- hands = "Turms Mittens +1",
         legs = "Eri. Leg Guards +3",
         feet = "Erilaz Greaves +3",
+        -- neck = "Warder's Charm +1",
         neck = {
             name = "Futhark Torque +2",
-            augments = {'Path: A'},
-            priority = 1
+            augments = {'Path: A'}
         },
-        waist = "Windbuffet Belt +1",
-        left_ear = "Sherida Earring",
-        right_ear = "Telos Earring",
-        left_ring = "Niqmaddu Ring",
-        right_ring = "Epona's Ring",
+        waist = "Engraved Belt",
+        -- wait = "Flume Belt +1",
+        left_ear = "Tuisto Earring",
+        right_ear = {
+            name = "Odnowa Earring +1",
+            augments = {'Path: A'}
+        },
+        left_ring = {
+            name = "Gelatinous Ring +1",
+            augments = {'Path: A'}
+        },
+        right_ring = "Moonlight Ring",
         back = {
             name = "Ogma's Cape",
-            augments = {'HP+60', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Damage taken-5%'}
+            augments = {'HP+60', 'Eva.+20 /Mag. Eva.+20', 'Mag. Evasion+10', 'Enmity+10', 'Parrying rate+5%'}
         }
     }
 
     -- DPS set for tanking
     sets.OffenseMode.TP = {
-        -- head = "Erilaz Galea +3",
+        sub = "Utu Grip",
+        ammo = {
+            name = "Coiste Bodhar",
+            augments = {'Path: A'}
+        },
         head = {
-            name = "Adhemar Bonnet +1",
-            augments = {'DEX+12', 'AGI+12', 'Accuracy+20'}
+            name = "Nyame Helm",
+            augments = {'Path: B'}
+        },
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
         },
         hands = {
             name = "Adhemar Wrist. +1",
@@ -313,6 +364,20 @@ function get_sets()
         legs = {
             name = "Samnuha Tights",
             augments = {'STR+10', 'DEX+10', '"Dbl.Atk."+3', '"Triple Atk."+3'}
+        },
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
+        neck = "Anu Torque",
+        waist = "Ioskeha Belt +1",
+        left_ear = "Telos Earring",
+        right_ear = "Sherida Earring",
+        left_ring = "Niqmaddu Ring",
+        right_ring = "Moonlight Ring",
+        back = {
+            name = "Ogma's Cape",
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
         }
     } -- No fucks given
 
@@ -327,16 +392,34 @@ function get_sets()
 
     -- Standard Tanking TP set
     sets.OffenseMode.DT = set_combine(sets.Idle.DT, {
-        body = "Ashera Harness",
-        waist = {
-            name = "Sailfi Belt +1",
+        sub = "Utu Grip",
+        ammo = "Staunch Tathlum +1",
+        head = {
+            name = "Nyame Helm",
+            augments = {'Path: B'}
+        },
+        body = "Ayanmo Corazza +2",
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
+        legs = "Nyame Flanchard",
+        feet = "Erilaz Greaves +3",
+        neck = {
+            name = "Futhark Torque +2",
             augments = {'Path: A'}
         },
+        waist = "Ioskeha Belt +1",
         left_ear = "Sherida Earring",
-        right_ear = "Telos Earring",
+        right_ear = {
+            name = "Odnowa Earring +1",
+            augments = {'Path: A'}
+        },
+        left_ring = "Niqmaddu Ring",
+        right_ring = "Moonlight Ring",
         back = {
             name = "Ogma's Cape",
-            augments = {'HP+60', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Damage taken-5%'}
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
         }
     })
 
@@ -344,60 +427,71 @@ function get_sets()
 
     -- Set used for hate generation on Job abilities
     sets.Enmity = { -- 23 Epo
-        ammo = "Sapience Orb", -- 2
-        head = "Erilaz Galea +3",
-        body = "Erilaz Surcoat +3",
-        hands = "Erilaz Gauntlets +3",
-        legs = "Eri. Leg Guards +3", -- 11
-        feet = "Erilaz Greaves +3", -- 8 
+        ammo = "Aqreqaq Bomblet",
+        head = "Halitus Helm",
+        body = "Emet Harness +1",
+        hands = "Kurys Gloves",
+        legs = "Eri. Leg Guards +3",
+        feet = "Erilaz Greaves +3",
+        -- neck = {
+        --     name = "Unmoving Collar +1",
+        --     augments = {'Path: A'}
+        -- },
         neck = {
-            name = "Unmoving Collar +1",
-            augments = {'Path: A'},
-            priority = 2
-        }, -- 10
-        waist = {
-            name = "Plat. Mog. Belt",
-            priority = 1
+            name = "Futhark Torque +2",
+            augments = {'Path: A'}
         },
-        left_ear = {
-            name = "Odnowa Earring +1",
-            augments = {'Path: A'},
-            priority = 3
-        },
+        waist = "Plat. Mog. Belt",
+        -- left_ear = "Cryptic Earring",
+        left_ear = "Tuisto Earring",
         right_ear = {
-            name = "Cryptic Earring",
-            priority = 5
-        }, -- 4
-        left_ring = {
-            name = "Eihwaz Ring",
-            priority = 6
-        }, -- 5
-        right_ring = {
-            name = "Moonlight Ring",
-            bag = "wardrobe4",
-            priority = 2
+            name = "Odnowa Earring +1",
+            augments = {'Path: A'}
         },
+        left_ring = "Supershear Ring",
+        right_ring = "Moonlight Ring",
+        -- back = "Moonbeam Cape"
         back = {
             name = "Ogma's Cape",
-            augments = {'HP+60', 'Eva.+20 /Mag. Eva.+20', 'Mag. Evasion+10', 'Enmity+10', 'Damage taken-5%'}
-        } -- 10
+            augments = {'HP+60', 'Eva.+20 /Mag. Eva.+20', 'HP+20', 'Enmity+10', 'Phys. dmg. taken-10%'}
+        }
     } -- 99 Enmity 2884 HP / 840 MP
 
     -- This set is used as base as is overwrote by specific gear changes (Spell Interruption Rate Down)
     sets.SIRD = set_combine(sets.Idle.DT, {
-        ammo = "Staunch Tathlum +1", -- 11
-        head = "Erilaz Galea +3", -- 20
-        hands = "Regal Gauntlets", -- 10
+        -- ammo = "Staunch Tathlum +1", -- 11
+        -- head = "Erilaz Galea +3", -- 20
+        -- hands = "Regal Gauntlets", -- 10
+        -- legs = {
+        --     name = "Carmine Cuisses +1",
+        --     augments = {'HP+80', 'STR+12', 'INT+12'}
+        -- }, -- 20
+        -- neck = "Moonlight Necklace", -- 15
+        -- waist = "Audumbla Sash", -- 10
+        -- back = {
+        --     name = "Ogma's cape",
+        --     augments = {'HP+60', 'Eva.+20 /Mag. Eva.+20', 'HP+20', '"Fast Cast"+10', 'Spell interruption rate down-10%'}
+        -- } -- 10
+
+        ammo = "Staunch Tathlum +1",
+        head = "Erilaz Galae +3",
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
+        hands = "Regal Gauntlets",
         legs = {
             name = "Carmine Cuisses +1",
-            augments = {'HP+80', 'STR+12', 'INT+12'}
-        }, -- 20
-        neck = "Moonlight Necklace", -- 15
-        waist = "Audumbla Sash", -- 10
-        back = {
-            name = "Ogma's cape",
-            augments = {'HP+60', 'Eva.+20 /Mag. Eva.+20', 'HP+20', '"Fast Cast"+10', 'Spell interruption rate down-10%'}
-        } -- 10
+            augments = {'Accuracy+20', 'Attack+12', '"Dual Wield"+6'}
+        },
+        feet = "Erilaz Greaves +3",
+        neck = "Moonbeam Necklace",
+        waist = "Audumbla Sash",
+        left_ear = "Halasz Earring",
+        right_ear = "Tuisto Earring", -- magnetic earring would go here
+        left_ring = "Evanescence Ring",
+        right_ring = "Moonlight Ring",
+        back = "Moonbeam Cape" -- need to change to JSE ambu cape with Sird
     }) -- 104 With Merits
 
     sets.Precast = {}
