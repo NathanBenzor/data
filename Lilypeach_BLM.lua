@@ -275,7 +275,7 @@ function init_gear_sets()
     sets.midcast.FastRecast = sets.precast.FC
 
     sets.midcast.Cure = {
-        main = "Raetic Rod", -- 30
+        main = "Raetic Rod +1", -- 30
         sub = "Sors Shield", -- 3/(-5)
         ammo = "Staunch Tathlum",
         head = "Vanya Hood", -- 10
@@ -716,7 +716,8 @@ function init_gear_sets()
     sets.magic_burst = {
         -- main={ name="Marin Staff +1", augments={'Path: A',}},
         main={ name="Laevateinn", augments={'Path: A',}},
-        sub="Enki Strap",
+        -- sub="Enki Strap",
+        sub="Alber Strap",
         ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
         head="Ea Hat +1",
         body="Wicce Coat +3",

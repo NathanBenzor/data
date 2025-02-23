@@ -229,11 +229,11 @@ function init_gear_sets()
 
     -- Fast cast sets for spells
     sets.precast.FC = {
-        main = {
-            name = "Kali",
-            augments = {'Mag. Acc.+15', 'String instrument skill +10', 'Wind instrument skill +10'}
-        }, -- 7
-        sub = "Genmei Shield",
+        -- main = {
+        --     name = "Kali",
+        --     augments = {'Mag. Acc.+15', 'String instrument skill +10', 'Wind instrument skill +10'}
+        -- }, -- 7
+        -- sub = "Genmei Shield",
         head="Fili Calot +3",
         body = "Inyanga Jubbah +2", -- 14
         hands={ name="Leyline Gloves", augments={'Accuracy+15','Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+3',}},
@@ -915,7 +915,7 @@ function init_gear_sets()
 
     sets.idle = {
         main={ name="Carnwenhan", augments={'Path: A',}},
-        sub="Genmei Shield",
+        -- sub="Genmei Shield",
         range="Gjallarhorn",
         head="Fili Calot +3",
         body="Ashera Harness",

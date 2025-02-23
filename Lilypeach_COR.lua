@@ -28,7 +28,7 @@ state.OffenseMode:options('TP','ACC','DT','PDL','CRIT')
 state.OffenseMode:set('TP')
 
 --Modes for specific to Corsair
-state.WeaponMode:options('Fomalhaut','Death Penalty', 'Savage Blade', 'Aeolian Edge', 'Evisceration')
+state.WeaponMode:options('Fomalhaut','Death Penalty', 'Savage Blade', 'Aeolian Edge', 'Evisceration', 'Dynamis')
 state.WeaponMode:set('Death Penalty')
 
 --Enable JobMode for UI.
@@ -59,36 +59,37 @@ function get_sets()
 	sets.Weapons['Savage Blade'] = {
 		main="Naegling",
 		sub={ name="Gleti's Knife", augments={'Path: A',}},
-		range={ name="Anarchy +2", augments={'Delay:+60','TP Bonus +1000',}},
+		range="Ataktos"
 	}
 
 	sets.Weapons['Evisceration'] = {
 		main="Tauret",
-		sub="Crepuscular Knife",
-		range={ name="Anarchy +2", augments={'Delay:+60','TP Bonus +1000',}},
+		sub="Gleti's Knife",
+		range="Ataktos"
 	}
 
 	sets.Weapons['Fomalhaut'] = {
-		main={ name="Rostam", augments={'Path: A'}, bag="Wardrobe 4"},
-		sub={ name="Rostam", augments={'Path: C'}, bag="Wardrobe 2"},
+		main={ name="Rostam", augments={'Path: C',}},
+		-- sub={ name="Rostam", augments={'Path: C'}, bag="Wardrobe 2"},
 		range={ name="Fomalhaut", augments={'Path: A',}},
 	}
 
 	sets.Weapons['Death Penalty'] = {
-		main={ name="Rostam", augments={'Path: A'}, bag="Wardrobe 4"},
+		main={ name="Rostam", augments={'Path: C',}},
 		sub="Tauret",
-		range={ name="Death Penalty", augments={'Path: A',}},
+		range="Molybdosis"
 	}
 
 	sets.Weapons['Aeolian Edge'] = {
 		ammo=Ammo.Bullet.MAG_WS,
-		main={ name="Rostam", augments={'Path: A'}, bag="Wardrobe 4"},
+		main={ name="Rostam", augments={'Path: C',}},
 		sub="Tauret",
-		range={ name="Anarchy +2", augments={'Delay:+60','TP Bonus +1000',}},
+		range="Ataktos"
 	}
 
 	sets.Weapons.Melee = {
-		sub="Blurred Knife +1",
+		sub="Gleti's Knife",
+		range="Ataktos"
 	}
 
 	sets.Weapons.Ranged = {
@@ -103,6 +104,14 @@ function get_sets()
 		range="Earp",
 	}
 
+	sets.Weapons.Dynamis = {
+		main={ name="Rostam", augments={'Path: C',}},
+		sub="Tauret",
+		-- main={ name="Rostam", augments={'Path: C',}},
+		-- main="Qutrub Knife",
+    	-- sub="Norgish Dagger",
+		range="Anarchy +3"
+	}
 	-- Ammo Selection
 	Ammo.Bullet.RA = "Chrono Bullet"		-- TP Ammo
 	Ammo.Bullet.WS = "Chrono Bullet"		-- Physical Weaponskills
@@ -122,12 +131,13 @@ function get_sets()
 		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
 		legs={ name="Nyame Flanchard", augments={'Path: B',}},
 		feet={ name="Nyame Sollerets", augments={'Path: B',}},
-		neck={ name="Loricate Torque +1", augments={'Path: A',}},
-		waist="Carrier's Sash",
+		neck="Iskur Gorget",
+		-- neck={ name="Comm. Charm +2", augments={'Path: A',}},
+		waist="Orpheus's Sash",
 		left_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
-		right_ear="Sanare Earring",
-		left_ring={ name="Gelatinous Ring +1", augments={'Path: A',}},
-		right_ring="Shadow Ring",
+		right_ear="Etiolation Earring",
+		left_ring="Regal Ring",
+		right_ring="Defending Ring",
 		back={ name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
     }
 
@@ -154,13 +164,14 @@ function get_sets()
 		hands="Malignance Gloves",
 		legs={ name="Samnuha Tights", augments={'STR+10','DEX+10','"Dbl.Atk."+3','"Triple Atk."+3',}},
 		feet="Malignance Boots",
+		-- neck={ name="Comm. Charm +2", augments={'Path: A',}},
 		neck="Iskur Gorget",
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
 		left_ear="Telos Earring",
-		right_ear="Crep. Earring",
-		left_ring="Chirich Ring +1",
-		right_ring="Epona's Ring",
-		back={ name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
+		right_ear="Cessance Earring",
+		right_ring="Chirich Ring +1",
+		left_ring="Petrov Ring",
+		back={ name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dual Wield"+10','Damage taken-5%',}},
 	}
 
 	--This set is used when OffenseMode is DT and Enaged
@@ -198,18 +209,20 @@ function get_sets()
 	--No flurry - 60 Snapshot needed
 	sets.Precast.RA = {
 		ammo=Ammo.Bullet.RA,
-		head="Chass. Tricorne +3", -- 0/14
-		body="Oshosi Vest +1", -- 14/0
-		hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}}, -- 8/11
-		legs={ name="Adhemar Kecks +1", augments={'AGI+12','"Rapid Shot"+13','Enmity-6',}}, -- 10/13
+		head="Chass. Tricorne +2", -- 0/14
+		body="Oshosi Vest", -- 12/0
+		-- hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}}, -- 8/11
+		hands={ name="Lanun Gants +2", augments={'Enhances "Fold" effect',}},
+		-- legs={ name="Adhemar Kecks +1", augments={'AGI+12','"Rapid Shot"+13','Enmity-6',}}, -- 10/13
+		legs="Ikenga's Trousers",
 		feet="Meg. Jam. +2", -- 10/0
 		left_ear={ name="Tuisto Earring", priority=2},
 		right_ear={ name="Etiolation Earring", priority=1},
 		left_ring="Dingir Ring",
-		right_ring="Crepuscular Ring", -- 3/0
+		right_ring="Defending Ring", -- 3/0
 		neck={ name="Comm. Charm +2", augments={'Path: A',}}, -- 4/0
 		waist="Yemaya Belt", -- 0/5
-		back={ name="Camulus's Mantle", augments={'HP+60','HP+20','"Snapshot"+10',}}, -- 10/0
+		back={ name="Camulus's Mantle", augments={'"Snapshot"+10',}},
     } -- Totals 59/43
 
 	-- Flurry - 45 Snapshot Needed
@@ -248,25 +261,31 @@ function get_sets()
 	-- Ranged Attack Gear (Normal Midshot)
     sets.Midcast.RA = {
 		ammo=Ammo.Bullet.RA,
-		head="Ikenga's Hat",
-		body="Ikenga's Vest",
-		hands="Ikenga's Gloves",
-		legs="Chas. Culottes +3",
-		feet="Ikenga's Clogs",
+		-- head="Ikenga's Hat",
+		-- body="Ikenga's Vest",
+		-- hands="Ikenga's Gloves",
+		-- legs="Chas. Culottes +3",
+		-- feet="Ikenga's Clogs",
+		head="Malignance Chapeau",
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
+		legs="Chas. Culottes +2",
+		feet="Malignance Boots",
 		neck="Iskur Gorget",
 		waist="Yemaya Belt",
 		left_ear="Telos Earring",
-		right_ear="Crep. Earring",
+		right_ear="Enervating Earring",
 		left_ring="Ilabrat Ring",
-		right_ring="Crepuscular Ring",
+		right_right="Dingir Ring",
+		-- right_ring="Crepuscular Ring",
 		back={ name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Rng.Acc.+10','"Store TP"+10','Phys. dmg. taken-10%',}},
     }
 
 	-- Ranged Attack Gear (Triple Shot Midshot)
 	sets.Midcast.RA.TripleShot = set_combine(sets.Midcast.RA, {
         head="Oshosi Mask +1", -- Missing
-        body="Chasseur's Frac +3", --14
-        hands="Lanun Gants +3", -- Tripple shot becomes Quad shot
+        body="Chasseur's Frac +2", --14
+        hands="Lanun Gants +2", -- Tripple shot becomes Quad shot
         legs="Osh. Trousers +1", -- Missing
         feet="Osh. Leggings +1", --3
     }) --28
@@ -311,10 +330,10 @@ function get_sets()
 	sets.QuickDraw.DMG = {
 		ammo = Ammo.Bullet.QD,
 		head={ name="Nyame Helm", augments={'Path: B',}},
-		body={ name="Lanun Frac +3", augments={'Enhances "Loaded Deck" effect',}},
+		body={ name="Lanun Frac +2", augments={'Enhances "Loaded Deck" effect',}},
 		hands="Nyame Gauntlets",
 		legs="Nyame Flanchard",
-		feet="Chass. Bottes +3",
+		feet="Chass. Bottes +2",
 		neck={ name="Comm. Charm +2", augments={'Path: A',}},
 		waist="Orpheus's Sash",
 		left_ear="Friomisi Earring",
@@ -356,14 +375,14 @@ function get_sets()
 	-- Job Abilities
 	sets.JA = {}
 	sets.JA["Wild Card"] = {
-	    feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
+	    feet={ name="Lanun Bottes +2", augments={'Enhances "Wild Card" effect',}},
 	}
 	sets.JA["Phantom Roll"] = {}
 	sets.JA["Random Deal"] = {
-	    body={ name="Lanun Frac +3", augments={'Enhances "Loaded Deck" effect',}},
+	    body={ name="Lanun Frac +2", augments={'Enhances "Loaded Deck" effect',}},
 	}
 	sets.JA["Snake Eye"] = {
-	    legs={ name="Lanun Trews +3", augments={'Enhances "Snake Eye" effect',}},
+	    legs={ name="Lanun Trews +2", augments={'Enhances "Snake Eye" effect',}},
 	}
 	sets.JA["Fold"] = {}			-- Use gloves for bust
 	sets.JA["Triple Shot"] = {}		-- Gear to be worn during Midshot
@@ -392,8 +411,8 @@ function get_sets()
 
 	--Base Set used for all rolls
 	sets.PhantomRoll = set_combine(sets.Idle, {
-		main={ name="Rostam", augments={'Path: C'}, bag="Wardrobe 2", priority=1}, -- +8 Effect and 60 sec Duration
-		sub={ name="Nusku Shield", priority=2},
+		main={ name="Rostam", augments={'Path: C',}},
+		-- sub={ name="Nusku Shield", priority=2},
 		range="Compensator", -- 20 sec Duration
 		head={ name="Lanun Tricorne +2", augments={'Enhances "Winning Streak" effect',}}, -- 50% Job ability Bonus
 		hands="Chasseur's Gants +2", --60 sec Duration
@@ -423,15 +442,15 @@ function get_sets()
 	sets.PhantomRoll['Dancer\'s Roll'] = sets.PhantomRoll
 	sets.PhantomRoll['Scholar\'s Roll'] = sets.PhantomRoll
 	sets.PhantomRoll['Bolter\'s Roll'] = sets.PhantomRoll
-	sets.PhantomRoll["Caster\'s Roll"] = set_combine(sets.PhantomRoll, {legs="Chas. Culottes +3",})
-	sets.PhantomRoll["Tactician\'s Roll"] = set_combine(sets.PhantomRoll, {body="Chasseur's Frac +3"})
-	sets.PhantomRoll["Allies\' Roll"] = set_combine(sets.PhantomRoll, {hands="Chasseur's Gants +3"})
+	sets.PhantomRoll["Caster\'s Roll"] = set_combine(sets.PhantomRoll, {legs="Chas. Culottes +2",})
+	sets.PhantomRoll["Tactician\'s Roll"] = set_combine(sets.PhantomRoll, {body="Chasseur's Frac +2"})
+	sets.PhantomRoll["Allies\' Roll"] = set_combine(sets.PhantomRoll, {hands="Chasseur's Gants +2"})
 	sets.PhantomRoll['Miser\'s Roll'] = sets.PhantomRoll
 	sets.PhantomRoll['Companion\'s Roll'] = sets.PhantomRoll
 	sets.PhantomRoll['Avenger\'s Roll'] = sets.PhantomRoll
 	sets.PhantomRoll['Naturalist\'s Roll'] = sets.PhantomRoll
-    sets.PhantomRoll["Courser\'s Roll"] = set_combine(sets.PhantomRoll, {feet="Chass. Bottes +3"})
-    sets.PhantomRoll["Blitzer\'s Roll"] = set_combine(sets.PhantomRoll, {head="Chass. Tricorne +3"})
+    sets.PhantomRoll["Courser\'s Roll"] = set_combine(sets.PhantomRoll, {feet="Chass. Bottes +2"})
+    sets.PhantomRoll["Blitzer\'s Roll"] = set_combine(sets.PhantomRoll, {head="Chass. Tricorne +2"})
 
 	-- Melee Base set
 	sets.WS = {
@@ -445,15 +464,15 @@ function get_sets()
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
 		right_ear="Ishvara Earring",
-		left_ring="Cornelia's Ring",
-		right_ring="Epaminondas's Ring",
-		back={ name="Camulus's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Damage taken-5%',}},
+		left_ring="Regal Ring",
+		right_ring="Cornelia's Ring",
+		back={ name="Camulus's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+7','Weapon skill damage +10%','Damage taken-5%',}},
 	}
 
 	-- Ranged Base Set
 	sets.WS.RA = set_combine (sets.WS, {
 		body="Laksa. Frac +3",
-		hands="Chasseur's Gants +3",
+		hands="Chasseur's Gants +2",
 		back={ name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%','Damage taken-5%',}},
 	})
 
@@ -477,8 +496,8 @@ function get_sets()
 	sets.WS.CRIT.RA = set_combine(sets.WS.RA, { })
 
 	sets.WS.MAB = set_combine(sets.WS, {
-		ammo=Ammo.Bullet.MAB,
-		feet={ name="Lanun Bottes +3", augments={'Enhances "Wild Card" effect',}},
+		-- ammo=Ammo.Bullet.MAB,
+		feet={ name="Lanun Bottes +2", augments={'Enhances "Wild Card" effect',}},
 		waist="Eschan Stone",
 		left_ear="Friomisi Earring",
 		right_ear="Crematio Earring",
@@ -499,9 +518,11 @@ function get_sets()
 
 	sets.WS["Leaden Salute"] = set_combine(sets.WS.MAB, {
 		head="Pixie Hairpin +1",
-		right_ring="Archon Ring",
+		-- right_ring="Archon Ring",
+		right_ring="Dingir Ring",
 		right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
-		waist="Svelt. Gouriz +1",   -- Changes based off elemental function
+		waist="Eschan Stone"
+		-- waist="Svelt. Gouriz +1",   -- Changes based off elemental function
 	})
 
 	sets.WS['Aeolian Edge'] = set_combine(sets.WS.MAB, {
@@ -510,11 +531,25 @@ function get_sets()
 
 	sets.WS["Savage Blade"] = set_combine(sets.WS.WSD, {
 		left_ring="Sroda Ring",
+		neck = "Rep. Plat. Medal",
 	})
 
 	sets.WS["Last Stand"] = set_combine(sets.WS.WSD, sets.WS.RA, {
+		-- neck={ name="Comm. Charm +2", augments={'Path: A',}},
+		-- waist="Fotia Belt",
+		head={ name="Lanun Tricorne +2", augments={'Enhances "Winning Streak" effect',}},
+		body="Ikenga's Vest",
+		hands="Chasseur's Gants +2",
+		legs={ name="Nyame Flanchard", augments={'Path: B',}},
+		feet="Meg. Jam. +2",
+		-- feet="Lanun Bottes +2",
 		neck="Fotia Gorget",
 		waist="Fotia Belt",
+		left_ear="Ishvara Earring",
+		right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
+		left_ring="Cornelia's Ring",
+		right_ring="Dingir Ring",
+		back={ name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%','Damage taken-5%',}},
 	})
 
 	-- Uses Default WS set
@@ -553,7 +588,7 @@ end
 function precast_custom(spell)
 	equipSet = {}
 	if spell.english == 'Fold' then
-		equipSet = set_combine(equipSet, {hands={ name="Lanun Gants +3", augments={'Enhances "Fold" effect',}}})
+		equipSet = set_combine(equipSet, {hands={ name="Lanun Gants +2", augments={'Enhances "Fold" effect',}}})
     end
 	if spell.id == 123 or spell.type == 'CorsairRoll' then -- Double up and bypass weapon check
 		equipSet = set_combine(equipSet, sets.PhantomRoll)
@@ -565,7 +600,7 @@ end
 function midcast_custom(spell)
 	equipSet = {}
 	if spell.english == 'Fold' then
-		equipSet = set_combine(equipSet, {hands={ name="Lanun Gants +3", augments={'Enhances "Fold" effect',}}})
+		equipSet = set_combine(equipSet, {hands={ name="Lanun Gants +2", augments={'Enhances "Fold" effect',}}})
     end
 	if spell.id == 123 or spell.type == 'CorsairRoll' then -- Double up and bypass weapon check
 		equipSet = set_combine(equipSet, sets.PhantomRoll)

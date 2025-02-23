@@ -739,10 +739,9 @@ function init_gear_sets()
         neck = "Sanctity Necklace",
         waist = "Orpheus's Sash",
         left_ear = "Digni. Earring",
-        right_ear = {
-            name = "Kasuga Earring",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+10', 'Mag. Acc.+10'}
-        },
+        right_ear={
+            name="Kasuga Earring +1", 
+            augments={'System: 1 ID: 1676 Val: 0','Accuracy+11','Mag. Acc.+11','Weapon skill damage +2%',}},
         left_ring = {
             name = "Metamor. Ring +1",
             augments = {'Path: A'}
@@ -1000,10 +999,7 @@ function init_gear_sets()
             name = "Schere Earring",
             augments = {'Path: A'}
         },
-        right_ear = {
-            name = "Kasuga Earring",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+10', 'Mag. Acc.+10'}
-        },
+        right_ear={ name="Kasuga Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+11','Mag. Acc.+11','Weapon skill damage +2%',}},
         left_ring = "Niqmaddu Ring",
         right_ring = "Chirich Ring +1",
         back = {

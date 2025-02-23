@@ -4,8 +4,8 @@
 include('Lilypeach-Include')
 
 --Set to ingame lockstyle and Macro Book/Set
-LockStylePallet = "12"
-MacroBook = "20"
+LockStylePallet = "58"
+MacroBook = "15"
 MacroSet = "1"
 
 --Uses Items Automatically
@@ -40,35 +40,35 @@ function get_sets()
 	sets.Weapons = {}
 
 	sets.Weapons['Nuke'] ={
-		main={ name="Marin Staff +1", augments={'Path: A',}},
+		main={ name="Laevateinn", augments={'Path: A',}},
 		sub="Enki Strap",
 	}
 
 	sets.Weapons['Unlocked'] ={
-		main={ name="Marin Staff +1", augments={'Path: A',}},
+		main={ name="Laevateinn", augments={'Path: A',}},
 		sub="Enki Strap",
 	}
 
 	--Standard Idle set with -DT,Refresh,Regen and movement gear
 	sets.Idle = {
-		ammo="Staunch Tathlum +1",
-		head="Wicce Petasos +3", --11
-		body="Wicce Coat +3",
-		hands="Wicce Gloves +3", --13
-		legs="Wicce Chausses +3",
-		feet="Wicce Sabots +3", --11 (removed while moving)
-		neck={ name="Loricate Torque +1", augments={'Path: A',}}, --6
-		waist="Carrier's Sash",
-		left_ear="Lugalbanda Earring",
-		right_ear="Etiolation Earring",
-		left_ring="Defending Ring", --10
-		right_ring="Stikini Ring +1",
-		back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},
+		ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
+        head="Wicce Petasos +3",
+        body="Wicce Coat +3",
+        hands="Wicce Gloves +3",
+        legs={ name="Nyame Flanchard", augments={'Path: B',}},
+        feet="Wicce Sabots +3",
+        neck={ name="Src. Stole +2", augments={'Path: A',}},
+        waist={ name="Acuity Belt +1", augments={'Path: A',}},
+        left_ear="Regal Earring",
+        right_ear="Etiolation Earring",
+        left_ring="Stikini Ring +1",
+        right_ring="Shneddick Ring",
+        back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}},
     }
 
 	--Used to swap into movement gear when the player is detected movement when not engaged
 	sets.Movement = {
-		feet="Herald's Gaiters",
+		left_ring = "Shneddick Ring",
 	}
 
 	-- Set to be used if you get 
@@ -93,19 +93,31 @@ function get_sets()
 
 	-- Used for Magic Spells
 	sets.Precast.FastCast = {
-		ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
-		head={ name="Merlinic Hood", augments={'"Mag.Atk.Bns."+27','"Fast Cast"+6','INT+2','Mag. Acc.+8',}}, -- 14
-		body={ name="Merlinic Jubbah", augments={'Mag. Acc.+23','"Fast Cast"+7','"Mag.Atk.Bns."+14',}}, -- 13
-		hands={ name="Merlinic Dastanas", augments={'"Fast Cast"+7','"Mag.Atk.Bns."+5',}}, -- 7
-		legs="Agwu's Slops", -- 7
-		feet={ name="Merlinic Crackows", augments={'"Fast Cast"+7','CHR+10','Mag. Acc.+8',}}, -- 12
-		neck={ name="Unmoving Collar +1", augments={'Path: A',}}, 
-		waist="Embla Sash", -- 5
-		left_ear="Malignance Earring", -- 4
-		right_ear="Etiolation Earring", -- 1
-		left_ring="Kishar Ring", -- 4
-		right_ring="Weather. Ring", -- 5
-		back={ name="Taranus's Cape", augments={'HP+60','HP+20','"Fast Cast"+10',}}, -- 10
+		ammo = "Impatiens",
+        head = {
+            name = "Amalric Coif +1",
+            augments = {'MP+80', 'Mag. Acc.+20', '"Mag.Atk.Bns."+20'}
+        },
+        body = "Agwu's Robe",
+        hands = {
+            name = "Agwu's Gages",
+            augments = {'Path: A'}
+        },
+        legs = "Agwu's Slops",
+        feet = "Regal Pumps +1",
+        neck = {
+            name = "Src. Stole +2",
+            augments = {'Path: A'}
+        },
+        waist = "Witful Belt",
+        left_ear = "Malignance Earring",
+        right_ear = "Etiolation Earring",
+        left_ring = "Kishar Ring",
+        right_ring = "Rahab Ring",
+        back = {
+            name = "Taranus's Cape",
+            augments = {'MP+60', 'Mag. Acc+20 /Mag. Dmg.+20', '"Fast Cast"+10'}
+        }
 	} -- 80% FC
 
 	sets.Precast["Impact"] = set_combine(sets.Precast.FastCast,{
@@ -144,44 +156,60 @@ function get_sets()
 
 	-- Cure Set
 	sets.Midcast.Cure = {
-
+		main = "Raetic Rod +1", -- 30
+        sub = "Sors Shield", -- 3/(-5)
+        ammo = "Staunch Tathlum",
+        head = "Vanya Hood", -- 10
+        neck = "Incanter's Torque",
+        ear1 = "Mendicant's Earring", -- 5
+        ear2 = "Magnetic Earring",
+        body = "Vrikodara Jupon", -- 13
+        hands = "Wicce Gloves +3",
+        ring1 = "Menelaus's Ring", -- 5
+        ring2 = "Defending Ring",
+        back = "Solemnity Cape", -- 10
+        waist = "Luminary Sash",
+        legs = "Doyen Pants",
+        feet = "Vanya Clogs"
     }
 
 	-- Enhancing Skill
 	sets.Midcast.Enhancing = {
-		main="Daybreak",
-		sub="Ammurapi Shield",
-		ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
-		head={ name="Telchine Cap", augments={'Enh. Mag. eff. dur. +10',}},
-		body={ name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +10',}},
-		hands={ name="Telchine Gloves", augments={'Mag. Evasion+24','"Regen"+2','Enh. Mag. eff. dur. +10',}},
-		legs={ name="Telchine Braconi", augments={'Enh. Mag. eff. dur. +10',}},
-		feet={ name="Telchine Pigaches", augments={'Enh. Mag. eff. dur. +10',}},
-		neck="Incanter's Torque",
-		waist="Embla Sash",
-		left_ear="Mimir Earring",
-		right_ear="Etiolation Earring",
-		left_ring={ name="Gelatinous Ring +1", augments={'Path: A',}},
-		right_ring="Stikini Ring +1",
-		back="Perimede Cape",
+		main = {
+            name = "Gada",
+            augments = {'Enh. Mag. eff. dur. +5', 'VIT+2'}
+        },
+        sub = "Ammurapi Shield",
+        head={ name="Telchine Cap", augments={'Enh. Mag. eff. dur. +9',}},
+        body={ name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +9',}},
+        hands={ name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +8',}},
+        legs = "Agwu's Slops",
+        feet = "Wicce Sabots +3",
+        neck = "Incanter's Torque",
+        ear1 = "Mimir Earring",
+        ear2 = "Andoaa Earring",
+        left_ring = "Stikini Ring +1",
+        right_ring = "Stikini Ring +1",
+        back = "Perimede Cape",
+        waist = "Olympus Sash"
 	}
 	-- High MACC for landing spells
 	sets.Midcast.Enfeebling = {
-	    main="Daybreak",
-		sub="Ammurapi Shield",
-		ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
-		head="Wicce Petasos +3",
-		body="Wicce Coat +3",
-		hands="Wicce Gloves +3",
-		legs="Wicce Chausses +3",
-		feet="Wicce Sabots +3",
-		neck="Incanter's Torque",
-		waist="Luminary Sash",
-		left_ear="Malignance Earring",
-		right_ear="Wicce Earring +1",
-		left_ring="Weather. Ring",
-		right_ring="Stikini Ring +1",
-		back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},
+		main={ name="Contemplator +1", augments={'Path: A',}},
+        sub="Khonsu",
+        ammo = "Pemphredo Tathlum",
+        head = "Wicce Petasos +3",
+        neck = "Sorcerer's Stole +2",
+        ear1 = "Regal Earring",
+        ear2 = "Malignance Earring",
+        body = "Spaekona's Coat +2",
+        hands = "Spaekona's Gloves +3",
+        ring1 = "Stikini Ring +1",
+        ring2 = "Metamorph Ring +1",
+        back = "Aurist's Cape +1",
+        waist = "Acuity Belt +1",
+        legs = "Spaekona's Tonban +3",
+        feet = "Archmage's Sabots +3"
 	}
 
 	sets.Midcast.Nuke = {
