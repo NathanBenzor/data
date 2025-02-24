@@ -488,8 +488,10 @@ function get_sets()
     }
 
     sets.Utility.Doomed = {
-        waist = "Gishdubar Sash",
-        ring1 = "Eshmun's Ring"
+        neck = "Nicander's Necklace",
+        left_ring = "Eshmun's Ring",
+        right_ring = "Eshmun's Ring",
+        waist = "Gishdubar Sash"
     }
 
     -- Job Ability Sets--

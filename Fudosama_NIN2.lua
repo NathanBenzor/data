@@ -144,16 +144,8 @@ function get_sets()
     -- Set to be used if you get 
     sets.Cursna_Received = {
         neck = "Nicander's Necklace",
-        left_ring = {
-            name = "Saida Ring",
-            bag = "wardrobe3",
-            priority = 2
-        },
-        right_ring = {
-            name = "Saida Ring",
-            bag = "wardrobe4",
-            priority = 1
-        },
+        left_ring = "Eshmun's Ring",
+        right_ring = "Eshmun's Ring",
         waist = "Gishdubar Sash"
     }
 
@@ -264,21 +256,44 @@ function get_sets()
             name = "Leyline Gloves",
             augments = {'Accuracy+14', 'Mag. Acc.+13', '"Mag.Atk.Bns."+13', '"Fast Cast"+2'}
         },
+        legs = "Gyve Trousers",
         neck = "Voltsurge Torque", -- 4
         waist = "Plat. Mog. Belt",
         left_ear = "Etiolation Earring", -- 1
         right_ear = "Loquac. Earring", -- 2
         left_ring = "Kishar Ring",
-        right_ring = "Prolix Ring"
+        right_ring = "Prolix Ring",
+        back = {
+            name = "Andartia's Mantle",
+            augments = {'"Fast Cast"+10'}
+        }
     } -- 67
 
     sets.Precast.Utsusemi = {
-        body = {
-            name = "Mochi. Chainmail +3",
-            augments = {'Enhances "Sange" effect'}
+        head = {
+            name = "Herculean Helm",
+            augments = {'"Fast Cast"+4', 'Haste+1', 'Accuracy+15 Attack+15'}
         },
-        neck = "Magoraga Beads",
-        feet = "Hattori Kyahan +3"
+        body = {
+            name = "Taeon Tabard",
+            augments = {'"Fast Cast"+5'}
+        },
+        hands = {
+            name = "Leyline Gloves",
+            augments = {'Accuracy+14', 'Mag. Acc.+13', '"Mag.Atk.Bns."+13', '"Fast Cast"+2'}
+        },
+        legs = "Gyve Trousers",
+        feet = "Hattori Kyahan +3",
+        neck = "Voltsurge Torque",
+        waist = "Plat. Mog. Belt",
+        left_ear = "Etiolation Earring",
+        right_ear = "Loquac. Earring",
+        left_ring = "Kishar Ring",
+        right_ring = "Prolix Ring",
+        back = {
+            name = "Andartia's Mantle",
+            augments = {'"Fast Cast"+10'}
+        }
     }
 
     sets.Precast.QuickMagic = {}
@@ -309,11 +324,27 @@ function get_sets()
     sets.Midcast = set_combine(sets.Idle, {})
     -- Utsusemi Set
     sets.Midcast.Utsusemi = {
+        head = "Null Masque",
+        body = {
+            name = "Mochi. Chainmail +3",
+            augments = {'Enhances "Sange" effect'}
+        },
+        hands = {
+            name = "Taeon Gloves",
+            augments = {'Spell interruption rate down -9%'}
+        },
+        legs = "Gyve Trousers",
+        neck = "Magoraga Beads",
+        feet = "Hattori Kyahan +3",
+        waist = "Trance Belt",
+        left_ear = "Trux Earring",
+        right_ear = "Cryptic Earring",
+        left_ring = "Pernicious Ring",
+        right_ring = "Supershear Ring",
         back = {
             name = "Andartia's Mantle",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Damage taken-5%'}
-        },
-        feet = "Hattori Kyahan +3"
+        }
     }
     -- This set is used as base as is overwrote by specific gear changes (Spell Interruption Rate Down)
     sets.Midcast.SIRD = {}

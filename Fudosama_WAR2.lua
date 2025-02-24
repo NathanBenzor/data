@@ -30,7 +30,7 @@ state.OffenseMode:options('TP', 'PDL', 'ACC', 'DT', 'PDT', 'MEVA', 'CRIT')
 state.OffenseMode:set('DT')
 
 -- Weapons options
-state.WeaponMode:options('Chango', 'Naegling', 'Club', 'Shining One', 'Dolichenus', 'Ternion Dagger', 'Unlocked')
+state.WeaponMode:options('Naegling', 'Chango', 'Club', 'Shining One', 'Dolichenus', 'Ternion Dagger', 'Unlocked')
 state.WeaponMode:set('Naegling')
 
 -- Initialize Player
@@ -122,20 +122,14 @@ function get_sets()
         },
         neck = "Null Loop",
         waist = "Null Belt",
-        left_ear = {
-            name = "Schere Earring",
-            augments = {'Path: A'}
-        },
+        left_ear = "Infused Earring",
         right_ear = {
-            name = "Boii Earring +1",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+15', 'Mag. Acc.+15', 'Crit.hit rate+5'}
+            name = "Odnowa Earring +1",
+            augments = {'Path: A'}
         },
         left_ring = "Moonlight Ring",
         right_ring = "Regal Ring",
-        back = {
-            name = "Cichol's Mantle",
-            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
-        }
+        back = "Moonbeam Cape"
     }
 
     sets.Idle.DT = {}
@@ -150,16 +144,8 @@ function get_sets()
     -- Set to be used if you get 
     sets.Cursna_Received = {
         neck = "Nicander's Necklace",
-        left_ring = {
-            name = "Saida Ring",
-            bag = "wardrobe3",
-            priority = 2
-        },
-        right_ring = {
-            name = "Saida Ring",
-            bag = "wardrobe4",
-            priority = 1
-        },
+        left_ring = "Eshmun's Ring",
+        right_ring = "Eshmun's Ring",
         waist = "Gishdubar Sash"
     }
 
@@ -228,10 +214,7 @@ function get_sets()
             name = "Sakpata's Gauntlets",
             augments = {'Path: A'}
         },
-        legs = {
-            name = "Sakpata's Cuisses",
-            augments = {'Path: A'}
-        },
+        legs = "Boii Cuisses +3", -- testing Empy legs in place of Sakpata's Cuisses
         feet = {
             name = "Sakpata's Leggings",
             augments = {'Path: A'}
@@ -269,8 +252,46 @@ function get_sets()
     }
 
     sets.OffenseMode.PDL = {
-        -- ammo = "Crepuscular Pebble",
-        -- right_ring = "Sroda Ring"
+        ammo = {
+            name = "Coiste Bodhar",
+            augments = {'Path: A'}
+        },
+        head = "Boii Mask +3",
+        body = {
+            name = "Sakpata's Plate",
+            augments = {'Path: A'}
+        },
+        hands = {
+            name = "Sakpata's Gauntlets",
+            augments = {'Path: A'}
+        },
+        legs = "Boii Cuisses +3", -- testing Empy legs in place of Sakpata's Cuisses
+        feet = {
+            name = "Sakpata's Leggings",
+            augments = {'Path: A'}
+        },
+        neck = {
+            name = "War. Beads +2",
+            augments = {'Path: A'}
+        },
+        waist = {
+            name = "Sailfi Belt +1",
+            augments = {'Path: A'}
+        },
+        left_ear = {
+            name = "Schere Earring",
+            augments = {'Path: A'}
+        },
+        right_ear = {
+            name = "Boii Earring +1",
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+15', 'Mag. Acc.+15', 'Crit.hit rate+5'}
+        },
+        left_ring = "Moonlight Ring",
+        right_ring = "Niqmaddu Ring",
+        back = {
+            name = "Cichol's Mantle",
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
+        }
     }
 
     -- This set is used when OffenseMode is ACC and Enaged
@@ -296,10 +317,10 @@ function get_sets()
     sets.OffenseMode.AM1['Conqueror'] = {}
     sets.OffenseMode.AM2['Laphria'] = {}
 
-    sets.DualWield = {
-        waist = "Reiki Yotai",
-        right_ear = "Eabani Earring"
-    }
+    -- sets.DualWield = {
+    --     waist = "Reiki Yotai",
+    --     right_ear = "Eabani Earring"
+    -- }
 
     sets.Precast = set_combine(sets.Idle, {})
 
@@ -418,25 +439,52 @@ function get_sets()
 
     -- Job Abilities
     sets.JA = {}
-    sets.JA["Mighty Strikes"] = {}
-    sets.JA["Berserk"] = {
-        body = "Pumm. Lorica +3"
+
+    sets.JA["Mighty Strikes"] = {
+        hands = "Agoge Mufflers"
     }
+
+    sets.JA["Berserk"] = {
+        body = "Pumm. Lorica +3",
+        feet = "Agoge Calligae +2",
+        back = {
+            name = "Cichol's Mantle",
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
+        }
+    }
+
     sets.JA["Warcry"] = {
         head = {
             name = "Agoge Mask +3",
             augments = {'Enhances "Savagery" effect'}
         }
     }
+
     sets.JA["Defender"] = {}
-    sets.JA["Aggressor"] = {}
+
+    sets.JA["Aggressor"] = {
+        body = "Agoge Lorica +3",
+        head = "Pummeler's Mask +3"
+    }
+
     sets.JA["Provoke"] = sets.Precast.Enmity
+
     sets.JA["Tomahawk"] = {
-        ammo = "Thr. Tomahawk"
+        ammo = "Thr. Tomahawk",
+        feet = "Agoge Calligae +2"
     } -- Need to add feet
-    sets.JA["Retaliation"] = {}
-    sets.JA["Restraint"] = {}
-    sets.JA["Blood Rage"] = {}
+
+    sets.JA["Retaliation"] = {
+        hands = "Pummeler's Mufflers +2",
+        feet = "Boii Calligae +3"
+    }
+
+    sets.JA["Restraint"] = {
+        hands = "Boii Mufflers +3"
+    }
+    sets.JA["Blood Rage"] = {
+        body = "Boii Lorica +3"
+    }
     sets.JA["Brazen Rush"] = {}
 
     -- Default WS set base
@@ -479,24 +527,64 @@ function get_sets()
     sets.WS.RA = {}
 
     sets.WS.CRIT = {
-        ammo = "Yetshila +1",
+        -- ammo = "Yetshila +1",
+        -- head = {
+        --     name = "Blistering Sallet +1",
+        --     augments = {'Path: A'}
+        -- },
+        -- body = "Hjarrandi Breast.",
+        -- hands = "Sakpata's Gauntlets",
+        -- legs = "Sakpata's Cuisses",
+        -- feet = "Sakpata's Leggings",
+        -- left_ear = {
+        --     name = "Schere Earring",
+        --     augments = {'Path: A'}
+        -- },
+        -- left_ring = "Niqmaddu Ring",
+        -- right_ring = "Sroda Ring",
+        -- back = {
+        --     name = "Cichol's Mantle",
+        --     augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%', 'Damage taken-5%'}
+        -- }
+        ammo = {
+            name = "Coiste Bodhar",
+            augments = {'Path: A'}
+        },
         head = {
             name = "Blistering Sallet +1",
             augments = {'Path: A'}
         },
-        body = "Hjarrandi Breast.",
-        hands = "Sakpata's Gauntlets",
+        body = "Hjarrandi Breastplate",
+        hands = {
+            name = "Sakpata's Gauntlets",
+            augments = {'Path: A'}
+        },
         legs = "Sakpata's Cuisses",
-        feet = "Sakpata's Leggings",
+        feet = {
+            name = "Sakpata's Leggings",
+            augments = {'Path: A'}
+        },
+        neck = {
+            name = "War. Beads +2",
+            augments = {'Path: A'}
+        },
+        waist = {
+            name = "Sailfi Belt +1",
+            augments = {'Path: A'}
+        },
         left_ear = {
             name = "Schere Earring",
             augments = {'Path: A'}
         },
-        left_ring = "Niqmaddu Ring",
-        right_ring = "Sroda Ring",
+        right_ear = {
+            name = "Boii Earring +1",
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+15', 'Mag. Acc.+15', 'Crit.hit rate+5'}
+        },
+        left_ring = "Moonlight Ring",
+        right_ring = "Niqmaddu Ring",
         back = {
             name = "Cichol's Mantle",
-            augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%', 'Damage taken-5%'}
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
         }
     }
     sets.WS.CRIT.RA = {}
@@ -566,7 +654,34 @@ function get_sets()
     sets.WS["Mistral Axe"] = {}
     sets.WS["Decimation"] = sets.WS.CRIT
     sets.WS["Bora Axe"] = {}
-    sets.WS["Cloudsplitter"] = {}
+
+    sets.WS["Cloudsplitter"] = {
+        ammo = "Knobkierrie",
+        head = "Agoge Mask +3",
+        body = "Pumm. Lorica +3",
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
+        neck = "Sanctity Necklace",
+        waist = "Eschan Stone",
+        left_ear = "Friomisi Earring",
+        right_ear = "Moonshade Earring",
+        left_ring = "Regal Ring",
+        right_ring = "Niqmaddu Ring",
+        back = {
+            name = "Cichol's Mantle",
+            augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%'}
+        }
+    }
 
     -- Sword WS
     sets.WS["Fast Blade"] = {}
@@ -578,12 +693,645 @@ function get_sets()
     sets.WS["Circle Blade"] = {}
     sets.WS["Spirits Within"] = {}
     sets.WS["Vorpal Blade"] = {}
-    sets.WS["Savage Blade"] = sets.WS.WSD
-    sets.WS["Sanguine Blade"] = {}
+
+    sets.WS["Savage Blade"] = {
+        ammo = "Knobkierrie",
+        head = "Agoge Mask +3",
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
+        hands = "Boii Mufflers +3",
+        legs = "Boii Cuisses +3",
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
+        neck = {
+            name = "War. Beads +2",
+            augments = {'Path: A'}
+        },
+        waist = {
+            name = "Sailfi Belt +1",
+            augments = {'Path: A'}
+        },
+        left_ear = "Thrud Earring",
+        right_ear = "Moonshade Earring",
+        left_ring = "Niqmaddu Ring",
+        right_ring = "Cornelia's Ring",
+        back = {
+            name = "Cichol's Mantle",
+            augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%'}
+        }
+    }
+
+    sets.WS.PDL["Savage Blade"] = {
+        ammo = "Knobkierrie",
+        head = "Agoge Mask +3",
+        body = {
+            name = "Sakpata's Plate",
+            augments = {'Path: A'}
+        },
+        hands = "Boii Mufflers +3",
+        legs = "Boii Cuisses +3",
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
+        neck = "Warrior's Bead Necklace +2",
+        waist = "Sailfi Belt +1",
+        left_ear = "Thrud Earring",
+        right_ear = "Moonshade Earring",
+        left_ring = "Sroda Ring",
+        right_ring = "Cornelia's Ring",
+        back = {
+            name = "Cichol's Mantle",
+            augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%'}
+        }
+    }
+
+    sets.WS["Sanguine Blade"] = {
+        ammo = "Knobkierrie",
+        head = "Pixie Hairpin +1",
+        body = "Pumm. Lorica +3",
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
+        legs = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
+        neck = "Sanctity Necklace",
+        waist = "Eschan Stone",
+        left_ear = "Thrud Earring",
+        right_ear = "Friomisi Earring",
+        left_ring = "Regal Ring",
+        right_ring = "Niqmaddu Ring",
+        back = {
+            name = "Cichol's Mantle",
+            augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%'}
+        }
+    }
+
     sets.WS["Requiescat"] = {}
 
+    -- Great Axe
+    sets.WS['Upheaval'] = {
+        ammo = "Knobkierrie",
+        head = {
+            name = "Agoge Mask +3",
+            augments = {'Enhances "Savagery" effect'}
+        },
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
+        hands = "Boii Mufflers +3",
+        legs = {
+            name = "Nyame Flanchard",
+            augments = "Path: B"
+        },
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
+        neck = {
+            name = "War. Beads +2",
+            augments = {'Path: A'}
+        },
+        waist = "Sailfi Belt +1",
+        left_ear = "Thrud Earring",
+        right_ear = "Moonshade Earring",
+        left_ring = "Regal Ring",
+        right_ring = "Niqmaddu Ring",
+        back = {
+            name = "Cichol's Mantle",
+            augments = {'VIT+20', 'Accuracy+20 Attack+20', 'VIT+10', 'Weapon skill damage +10%', 'Damage taken-5%'}
+        }
+    }
+
+    sets.WS.PDL['Upheaval'] = {
+        ammo = "Knobkierrie",
+        head = {
+            name = "Sakpata's Helm",
+            augments = {'Path: A'}
+        },
+        body = {
+            name = "Sakpata's Plate",
+            augments = {'Path: A'}
+        },
+        hands = {
+            name = "Sakpata's Gauntlets",
+            augments = {'Path: A'}
+        },
+        legs = "Boii Cuisses +3",
+        feet = {
+            name = "Sakpata's Leggings",
+            augments = {'Path: A'}
+        },
+        neck = {
+            name = "War. Beads +2",
+            augments = {'Path: A'}
+        },
+        waist = "Sailfi Belt +1",
+        left_ear = "Thrud Earring",
+        right_ear = "Moonshade Earring",
+        left_ring = "Regal Ring",
+        right_ring = "Niqmaddu Ring",
+        back = {
+            name = "Cichol's Mantle",
+            augments = {'VIT+20', 'Accuracy+20 Attack+20', 'VIT+10', 'Weapon skill damage +10%', 'Damage taken-5%'}
+        }
+    }
+
+    sets.WS["Ukko's Fury"] = {
+        ammo = "Yetshila +1",
+        head = "Boii Mask +3",
+        body = "Hjarrandi Breastplate",
+        hands = "Flamma Manopolas +2",
+        legs = "Boii Cuisses +3",
+        feet = "Boii Calligae +3",
+        neck = {
+            name = "War. Beads +2",
+            augments = {'Path: A'}
+        },
+        waist = {
+            name = "Sailfi Belt +1",
+            augments = {'Path: A'}
+        },
+        left_ear = {
+            name = "Moonshade Earring",
+            augments = {'Accuracy+4', 'TP Bonus +250'}
+        },
+        right_ear = {
+            name = "Boii Earring +1",
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+15', 'Mag. Acc.+15', 'Crit.hit rate+5'}
+        },
+        left_ring = "Regal Ring",
+        right_ring = "Niqmaddu Ring",
+        back = {
+            name = "Cichol's Mantle",
+            augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%'}
+        }
+    }
+
+    sets.WS.PDL["Ukko's Fury"] = {
+        ammo = "Yetshila +1",
+        head = "Boii Mask +3",
+        body = "Hjarrandi Breastplate",
+        hands = "Flamma Manopolas +2",
+        legs = "Boii Cuisses +3",
+        feet = "Boii Calligae +3",
+        neck = {
+            name = "War. Beads +2",
+            augments = {'Path: A'}
+        },
+        waist = {
+            name = "Sailfi Belt +1",
+            augments = {'Path: A'}
+        },
+        left_ear = {
+            name = "Moonshade Earring",
+            augments = {'Accuracy+4', 'TP Bonus +250'}
+        },
+        right_ear = {
+            name = "Boii Earring +1",
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+15', 'Mag. Acc.+15', 'Crit.hit rate+5'}
+        },
+        left_ring = "Regal Ring",
+        right_ring = "Niqmaddu Ring",
+        back = {
+            name = "Cichol's Mantle",
+            augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%'}
+        }
+    }
+
+    sets.WS["Raging Rush"] = {
+        ammo = {
+            name = "Seeth. Bomblet +1",
+            augments = {'Path: A'}
+        },
+        head = "Sakpata's Helm",
+        body = "Sakpata's Plate",
+        hands = {
+            name = "Sakpata's Gauntlets",
+            augments = {'Path: A'}
+        },
+        legs = "Pumm. Cuisses +3",
+        feet = "Pumm. Calligae +3",
+        neck = {
+            name = "War. Beads +2",
+            augments = {'Path: A'}
+        },
+        waist = {
+            name = "Sailfi Belt +1",
+            augments = {'Path: A'}
+        },
+        left_ear = "Genmei Earring",
+        right_ear = "Thrud Earring",
+        left_ring = "Regal Ring",
+        right_ring = "Niqmaddu Ring",
+        back = {
+            name = "Cichol's Mantle",
+            augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%'}
+        }
+    }
+
+    sets.WS.PDL["Raging Rush"] = {
+        ammo = {
+            name = "Seeth. Bomblet +1",
+            augments = {'Path: A'}
+        },
+        head = "Sakpata's Helm",
+        body = "Sakpata's Plate",
+        hands = {
+            name = "Sakpata's Gauntlets",
+            augments = {'Path: A'}
+        },
+        legs = "Pumm. Cuisses +3",
+        feet = "Pumm. Calligae +3",
+        neck = {
+            name = "War. Beads +2",
+            augments = {'Path: A'}
+        },
+        waist = {
+            name = "Sailfi Belt +1",
+            augments = {'Path: A'}
+        },
+        left_ear = "Genmei Earring",
+        right_ear = "Thrud Earring",
+        left_ring = "Regal Ring",
+        right_ring = "Niqmaddu Ring",
+        back = {
+            name = "Cichol's Mantle",
+            augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%'}
+        }
+    }
+
+    sets.WS["King's Justice"] = {
+        ammo = "Knobkierrie",
+        head = {
+            name = "Agoge Mask +3",
+            augments = {'Enhances "Savagery" effect'}
+        },
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
+        hands = "Boii Mufflers +3",
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
+        neck = {
+            name = "War. Beads +2",
+            augments = {'Path: A'}
+        },
+        waist = {
+            name = "Sailfi Belt +1",
+            augments = {'Path: A'}
+        },
+        left_ear = "Thrud Earring",
+        right_ear = {
+            name = "Moonshade Earring",
+            augments = {'Accuracy+4', 'TP Bonus +250'}
+        },
+        left_ring = "Regal Ring",
+        right_ring = "Cornelia's Ring",
+        back = {
+            name = "Cichol's Mantle",
+            augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%'}
+        }
+    }
+
+    sets.WS.PDL["King's Justice"] = {
+        ammo = "Knobkierrie",
+        head = {
+            name = "Agoge Mask +3",
+            augments = {'Enhances "Savagery" effect'}
+        },
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
+        hands = "Boii Mufflers +3",
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
+        neck = {
+            name = "War. Beads +2",
+            augments = {'Path: A'}
+        },
+        waist = {
+            name = "Sailfi Belt +1",
+            augments = {'Path: A'}
+        },
+        left_ear = "Thrud Earring",
+        right_ear = {
+            name = "Moonshade Earring",
+            augments = {'Accuracy+4', 'TP Bonus +250'}
+        },
+        left_ring = "Regal Ring",
+        right_ring = "Cornelia's Ring",
+        back = {
+            name = "Cichol's Mantle",
+            augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%'}
+        }
+    }
+
+    sets.WS["Steel Cyclone"] = {
+        ammo = "Knobkierrie",
+        head = "Agoge Mask +3",
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
+        feet = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
+        neck = "Warrior's Bead Necklace +2",
+        waist = "Sailfi Belt +1",
+        left_ear = "Thrud Earring",
+        right_ear = "Moonshade Earring",
+        left_ring = "Regal Ring",
+        right_ring = "Cornelia's Ring",
+        back = {
+            name = "Cichol's Mantle",
+            augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%'}
+        }
+    }
+
+    sets.WS.PDL["Steel Cyclone"] = {
+        ammo = "Knobkierrie",
+        head = "Agoge Mask +3",
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
+        feet = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
+        neck = "Warrior's Bead Necklace +2",
+        waist = "Sailfi Belt +1",
+        left_ear = "Thrud Earring",
+        right_ear = "Moonshade Earring",
+        left_ring = "Regal Ring",
+        right_ring = "Cornelia's Ring",
+        back = {
+            name = "Cichol's Mantle",
+            augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%'}
+        }
+    }
+
     -- Polearm
-    sets.WS["Impulse Drive"] = sets.WS.CRIT
+    sets.WS["Impulse Drive"] = {
+        -- New set
+        ammo = {
+            name = "Coiste Bodhar",
+            augments = {'Path: A'}
+        },
+        head = {
+            name = "Blistering Sallet +1",
+            augments = {'Path: A'}
+        },
+        body = "Hjarrandi Breastplate",
+        hands = {
+            name = "Sakpata's Gauntlets",
+            augments = {'Path: A'}
+        },
+        legs = "Sakpata's Cuisses",
+        feet = {
+            name = "Sakpata's Leggings",
+            augments = {'Path: A'}
+        },
+        neck = {
+            name = "War. Beads +2",
+            augments = {'Path: A'}
+        },
+        waist = {
+            name = "Sailfi Belt +1",
+            augments = {'Path: A'}
+        },
+        left_ear = {
+            name = "Schere Earring",
+            augments = {'Path: A'}
+        },
+        right_ear = {
+            name = "Boii Earring +1",
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+15', 'Mag. Acc.+15', 'Crit.hit rate+5'}
+        },
+        left_ring = "Moonlight Ring",
+        right_ring = "Niqmaddu Ring",
+        back = {
+            name = "Cichol's Mantle",
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
+        }
+
+        -- Old set
+        -- ammo = "Yetshila +1",
+        -- head = "Agoge Mask +3",
+        -- body = {
+        --     name = "Nyame Mail",
+        --     augments = {'Path: B'}
+        -- },
+        -- hands = "Boii Mufflers +3",
+        -- legs = {
+        --     name = "Nyame Flanchard",
+        --     augments = {'Path: B'}
+        -- },
+        -- feet = "Boii Calligae +3",
+        -- neck = {
+        --     name = "War. Beads +2",
+        --     augments = {'Path: A'}
+        -- },
+        -- waist = {
+        --     name = "Sailfi Belt +1",
+        --     augments = {'Path: A'}
+        -- },
+        -- left_ear = {
+        --     name = "Moonshade Earring",
+        --     augments = {'Accuracy+4', 'TP Bonus +250'}
+        -- },
+        -- right_ear = {
+        --     name = "Boii Earring +1",
+        --     augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+15', 'Mag. Acc.+15', 'Crit.hit rate+5'}
+        -- },
+        -- left_ring = "Niqmaddu Ring",
+        -- right_ring = "Begrudging Ring",
+        -- back = {
+        --     name = "Cichol's Mantle",
+        --     augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%'}
+        -- }
+    }
+
+    sets.WS.PDL["Impulse Drive"] = {
+        -- New set
+        ammo = {
+            name = "Coiste Bodhar",
+            augments = {'Path: A'}
+        },
+        head = {
+            name = "Blistering Sallet +1",
+            augments = {'Path: A'}
+        },
+        body = "Hjarrandi Breastplate",
+        hands = {
+            name = "Sakpata's Gauntlets",
+            augments = {'Path: A'}
+        },
+        legs = "Sakpata's Cuisses",
+        feet = {
+            name = "Sakpata's Leggings",
+            augments = {'Path: A'}
+        },
+        neck = {
+            name = "War. Beads +2",
+            augments = {'Path: A'}
+        },
+        waist = {
+            name = "Sailfi Belt +1",
+            augments = {'Path: A'}
+        },
+        left_ear = {
+            name = "Schere Earring",
+            augments = {'Path: A'}
+        },
+        right_ear = {
+            name = "Boii Earring +1",
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+15', 'Mag. Acc.+15', 'Crit.hit rate+5'}
+        },
+        left_ring = "Moonlight Ring",
+        right_ring = "Niqmaddu Ring",
+        back = {
+            name = "Cichol's Mantle",
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
+        }
+
+        -- Old set
+        -- ammo = "Yetshila +1",
+        -- head = "Agoge Mask +3",
+        -- body = {
+        --     name = "Nyame Mail",
+        --     augments = {'Path: B'}
+        -- },
+        -- hands = "Boii Mufflers +3",
+        -- legs = {
+        --     name = "Nyame Flanchard",
+        --     augments = {'Path: B'}
+        -- },
+        -- feet = "Boii Calligae +3",
+        -- neck = {
+        --     name = "War. Beads +2",
+        --     augments = {'Path: A'}
+        -- },
+        -- waist = {
+        --     name = "Sailfi Belt +1",
+        --     augments = {'Path: A'}
+        -- },
+        -- left_ear = {
+        --     name = "Moonshade Earring",
+        --     augments = {'Accuracy+4', 'TP Bonus +250'}
+        -- },
+        -- right_ear = {
+        --     name = "Boii Earring +1",
+        --     augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+15', 'Mag. Acc.+15', 'Crit.hit rate+5'}
+        -- },
+        -- left_ring = "Niqmaddu Ring",
+        -- right_ring = "Begrudging Ring",
+        -- back = {
+        --     name = "Cichol's Mantle",
+        --     augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%'}
+        -- }
+    }
+
+    -- Club
+    sets.WS["Judgement"] = {
+        ammo = "Knobkierrie",
+        head = "Agoge Mask +3",
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
+        hands = "Boii Mufflers +3",
+        legs = "Boii Cuisses +3",
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
+        neck = {
+            name = "War. Beads +2",
+            augments = {'Path: A'}
+        },
+        waist = {
+            name = "Sailfi Belt +1",
+            augments = {'Path: A'}
+        },
+        left_ear = "Thrud Earring",
+        right_ear = "Moonshade Earring",
+        left_ring = "Niqmaddu Ring",
+        right_ring = "Cornelia's Ring",
+        back = {
+            name = "Cichol's Mantle",
+            augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%'}
+        }
+    }
+
+    sets.WS.PDL["Judgement"] = {
+        ammo = "Knobkierrie",
+        head = "Agoge Mask +3",
+        body = {
+            name = "Sakpata's Plate",
+            augments = {'Path: A'}
+        },
+        hands = "Boii Mufflers +3",
+        legs = "Boii Cuisses +3",
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
+        neck = "Warrior's Bead Necklace +2",
+        waist = "Sailfi Belt +1",
+        left_ear = "Thrud Earring",
+        right_ear = "Moonshade Earring",
+        left_ring = "Sroda Ring",
+        right_ring = "Cornelia's Ring",
+        back = {
+            name = "Cichol's Mantle",
+            augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%'}
+        }
+    }
 
     sets.TreasureHunter = {
         ammo = "Per. Lucky Egg",
