@@ -23,7 +23,7 @@ Lockstyle_List = {1, 2, 6, 12}
 state.OffenseMode:set('DT')
 
 -- Modes for specific to Ninja
-state.WeaponMode:options('Heishi', 'Savage Blade', 'Great Katana', 'Aeolian Edge', 'Enmity', 'Nuking', 'Abyssea')
+state.WeaponMode:options('Heishi', 'Savage Blade', 'Great Katana', 'Aeolian Edge', 'Enmity', 'Magic Damage', 'Abyssea')
 state.WeaponMode:set('Heishi')
 
 elemental_ws = S {'Aeolian Edge', 'Blade: Teki', 'Blade: To', 'Blade: Chi', 'Blade: Ei', 'Blade: Yu'}
@@ -70,7 +70,7 @@ function get_sets()
         }
     }
 
-    sets.Weapons['Nuking'] = {
+    sets.Weapons['Magic Damage'] = {
         main = "Gokotai",
         sub = {
             name = "Kunimitsu",
@@ -918,8 +918,10 @@ function get_sets()
 
     sets.TreasureHunter = {
         ammo = "Per. Lucky Egg",
-        head = "Volte Cap",
-        body = "Volte Jupon",
+        legs = {
+            name = "Herculean Trousers",
+            augments = {'CHR+3', '"Mag.Atk.Bns."+10', '"Treasure Hunter"+2'}
+        },
         waist = "Chaac Belt"
     }
 

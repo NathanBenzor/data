@@ -30,7 +30,7 @@ Organizer = false
 
 -- Weapons options
 state.WeaponMode:options('Idris', 'DW', 'Unlocked')
-state.WeaponMode:set('Unlocked')
+state.WeaponMode:set('Idris')
 
 -- WS to check for Obi or Orpheus Check
 elemental_ws = S {'Aeolian Edge', 'Cyclone'}
@@ -66,7 +66,7 @@ function get_sets()
     -- Standard Idle set with -DT,Refresh,Regen and movement gear
     sets.Idle = {
         -- main = "Bolelabunga",
-        sub = "Genmei Shield",
+        -- sub = "Genmei Shield",
         range = {
             name = "Dunna",
             augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
@@ -105,51 +105,12 @@ function get_sets()
         }
     } -- 50 PDT / 52 MDT (including shield)
 
-    sets.Idle.town = {
-        sub = "Ammurapi Shield",
-        range = {
-            name = "Dunna",
-            augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
-        },
-        head = "Azimuth Hood +3",
-        body = "Azimuth Coat +3",
-        hands = {
-            name = "Bagua Mitaines +3",
-            augments = {'Enhances "Curative Recantation" effect'}
-        },
-        legs = "Azi. Tights +3",
-        feet = {
-            name = "Bagua Sandals +3",
-            augments = {'Enhances "Radial Arcana" effect'}
-        },
-        neck = {
-            name = "Loricate Torque +1",
-            augments = {'Path: A'}
-        },
-        waist = "Fucho-no-Obi",
-        left_ear = "Infused Earring",
-        right_ear = {
-            name = "Azimuth Earring +1",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Mag. Acc.+14', 'Damage taken-5%'}
-        },
-        left_ring = "Shneddick Ring",
-        right_ring = "Stikini Ring +1",
-        back = {
-            name = "Nantosuelta's Cape",
-            augments = {'VIT+20', 'Eva.+20 /Mag. Eva.+20', 'Pet: "Regen"+10', 'Phys. dmg. taken-10%'}
-        }
-    } -- 50 PDT / 52 MDT (including shield)
-
     -- Sets for Idle when player has a pet
     sets.Idle.Pet = set_combine(sets.Idle, { -- 2278/1482
         -- Pet: -DT (37.5% to cap) / Pet: Regen  -DT cap -87.5%
         main = "Idris",
-        sub = "Genmei Shield",
+        -- sub = "Genmei Shield",
         head = "Azimuth Hood +3",
-        -- body = {
-        --     name = "Nyame Mail",
-        --     augments = {'Path: B'}
-        -- },
         body = "Azimuth Coat +3",
         hands = "Geo. Mitaines +3",
         legs = {
@@ -194,8 +155,10 @@ function get_sets()
     }
 
     sets.OffenseMode = {
-        main = "Idris",
-        sub = "Genmei Shield",
+        ammo = {
+            name = "Dunna",
+            augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
+        },
         head = {
             name = "Nyame Helm",
             augments = {'Path: B'}
@@ -226,8 +189,6 @@ function get_sets()
     }
     -- Base TP set
     sets.OffenseMode.TP = {
-        main = "Idris",
-        sub = "Genmei Shield",
         ammo = {
             name = "Dunna",
             augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
@@ -260,10 +221,65 @@ function get_sets()
         right_ring = "Chirich Ring +1",
         back = "Null Shawl"
     }
+
     -- Set to use when Dual Wielding
-    sets.OffenseMode.TP.DW = {}
+    sets.OffenseMode.TP.DW = {
+        ammo = {
+            name = "Dunna",
+            augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
+        },
+        head = "Azimuth Hood +3",
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
+        hands = "Gazu Bracelets +1",
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
+        feet = "Azimuth Gaiters +3",
+        neck = {
+            name = "Bagua Charm +1",
+            augments = {'Path: A'}
+        },
+        waist = "Isa Belt",
+        left_ear = "Digni. Earring",
+        right_ear = "Telos Earring",
+        left_ring = "Defending Ring",
+        right_ring = "Chirich Ring +1",
+        back = "Null Shawl"
+    }
+
     -- TP set when in -Damage Taken mode
-    sets.OffenseMode.DT = {}
+    sets.OffenseMode.DT = {
+        head = "Azimuth Hood +3",
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
+        -- hands = "Gazu Bracelets +1",
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
+        feet = "Azimuth Gaiters +3",
+        neck = {
+            name = "Bagua Charm +1",
+            augments = {'Path: A'}
+        },
+        waist = "Isa Belt",
+        left_ear = "Digni. Earring",
+        right_ear = "Telos Earring",
+        left_ring = "Defending Ring",
+        right_ring = "Chirich Ring +1",
+        back = "Null Shawl"
+    }
+
     -- TP set to use when mode is in accuracy
     sets.OffenseMode.ACC = {}
     -- This set is used when OffenseMode is PDL and Enaged
@@ -621,7 +637,7 @@ function get_sets()
     sets.Geomancy = {}
     sets.Geomancy.Indi = {
         main = "Idris",
-        sub = "Ammurapi Shield",
+        -- sub = "Ammurapi Shield",
         range = {
             name = "Dunna",
             augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
@@ -658,7 +674,7 @@ function get_sets()
     -- Geo Potency
     sets.Geomancy.Geo = set_combine(sets.Geomancy.Indi, {
         main = "Idris",
-        sub = "Ammurapi Shield",
+        -- sub = "Ammurapi Shield",
         range = {
             name = "Dunna",
             augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
@@ -783,15 +799,24 @@ function get_sets()
             augments = {'Accuracy+4', 'TP Bonus +250'}
         },
         right_ear = "Telos Earring",
-        left_ring = "Epaminondas's Ring",
+        left_ring = "Chirich Ring +1",
         right_ring = "Cornelia's Ring",
         back = {
             name = "Nantosuelta's Cape",
             augments = {'HP+60', 'Eva.+20 /Mag. Eva.+20', 'Mag. Evasion+10', 'Pet: "Regen"+10', 'Damage taken-5%'}
-        }
+        } -- need to make WSD cape
     }
     -- This set is used when OffenseMode is ACC and a WS is used (Augments the WS base set)
     sets.WS.ACC = {}
+
+    sets.WS["Judgement"] = set_combine(sets.WS, {
+        ammo = "Oshasha's Treatise"
+    })
+
+    sets.WS["Black Halo"] = set_combine(sets.WS, {})
+    sets.WS["Hexa Strike"] = set_combine(sets.WS, {})
+    sets.WS["Exudation"] = set_combine(sets.WS, {})
+
     -- Set to equip when charmed
     sets.Charm = {}
 

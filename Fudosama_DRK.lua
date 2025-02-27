@@ -8,7 +8,7 @@ MacroBook = "34"
 MacroSet = "1"
 
 -- Use "gs c food" to use the specified food item 
-Food = "Sublime Sushi"
+Food = "Grape Daifuku"
 
 -- Uses Items Automatically
 AutoItem = false
@@ -124,7 +124,7 @@ function get_sets()
     sets.Idle.TP = set_combine(sets.Idle, {})
 
     sets.Movement = {
-        ring1 = "Shneddick Ring"
+        left_ring = "Shneddick Ring"
     }
 
     -- Set to be used if you get 
@@ -143,10 +143,7 @@ function get_sets()
             name = "Coiste Bodhar",
             augments = {'Path: A'}
         },
-        head = {
-            name = "Sakpata's Helm",
-            augments = {'Path: A'}
-        },
+        head = "Heath. Bur. +3",
         body = {
             name = "Sakpata's Plate",
             augments = {'Path: A'}
