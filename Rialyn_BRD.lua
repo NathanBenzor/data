@@ -804,6 +804,7 @@ function get_sets()
     sets.Charm = set_combine(sets.Idle, {})
 
     sets.TreasureHunter = {
+        ammo = "Per. Lucky Egg",
         body = "Volte Jupon",
         legs = "Volte Hose",
         waist = "Chaac Belt"

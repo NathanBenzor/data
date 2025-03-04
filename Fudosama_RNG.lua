@@ -236,7 +236,10 @@ function init_gear_sets()
 
     -- Precast sets to enhance JAs
     sets.precast.JA['Eagle Eye Shot'] = {
-        legs = "Arc. Braccae +3"
+        legs = {
+            name = "Arc. Braccae +3",
+            augments = {'Enhances "Eagle Eye Shot" effect'}
+        }
     }
     sets.precast.JA['Bounty Shot'] = {
         hands = "Amini Glove. +3"
@@ -251,7 +254,7 @@ function init_gear_sets()
         hands = "Orion Bracers +2"
     }
     sets.precast.JA['Sharpshot'] = {
-        legs = "Orion Braccae +2"
+        legs = "Orion Braccae +3"
     }
 
     -- Fast cast sets for spells
@@ -318,7 +321,7 @@ function init_gear_sets()
 
     sets.precast.RA.Flurry1 = set_combine(sets.precast.RA, {
         head = "Orion Beret +3", -- 0/18
-        legs = "Orion Braccae +2"
+        legs = "Orion Braccae +3"
     }) -- 45/42
 
     sets.precast.RA.Flurry2 = set_combine(sets.precast.RA.Flurry1, {
@@ -1077,34 +1080,10 @@ function init_gear_sets()
 
     sets.engaged = {
         head = "Malignance Chapeau",
-        -- head = {
-        --     name = "Nyame Helm",
-        --     augments = {'Path: B'}
-        -- },
         body = "Malignance Tabard",
-        -- body = {
-        --     name = "Nyame Mail",
-        --     augments = {'Path: B'}
-        -- },
         hands = "Malignance Gloves",
-        -- hands = {
-        --     name = "Nyame Gauntlets",
-        --     augments = {'Path: B'}
-        -- },
-        -- legs = {
-        --     name = "Samnuha Tights",
-        --     augments = {'STR+10', 'DEX+10', '"Dbl.Atk."+3', '"Triple Atk."+3'}
-        -- },
-        -- legs = {
-        --     name = "Nyame Flanchard",
-        --     augments = {'Path: B'}
-        -- },
         legs = "Malignance Tights",
         feet = "Malignance Boots",
-        -- feet = {
-        --     name = "Nyame Sollerets",
-        --     augments = {'Path: B'}
-        -- },
         neck = {
             name = "Scout's Gorget +2",
             augments = {'Path: A'}
@@ -1114,10 +1093,7 @@ function init_gear_sets()
             augments = {'Path: A'}
         },
         left_ear = "Sherida Earring",
-        -- left_ear = "Cessance Earring",
-        -- left_ear = "Eabani Earring",
-        -- right_ear = "Telos Earring",
-        right_ear = "Suppanomimi",
+        right_ear = "Telos Earring",
         right_ring = "Defending Ring",
         left_ring = "Epona's Ring",
         back = {
