@@ -23,13 +23,13 @@ Food = "Sublime Sushi"
 Ammo_Warning_Limit = 99
 
 -- Add CRIT the base modes to allow AM3 Critical Builds
-state.OffenseMode:options('TP', 'ACC', 'DT', 'PDL', 'CRIT', 'True Shot')
+state.OffenseMode:options('TP', 'ACC', 'DT', 'PDL', 'CRIT', 'SB', 'True Shot')
 state.OffenseMode:set('TP')
 
 -- Modes for specific to Ranger
-state.WeaponMode:options('Fomalhaut', 'Annihilator', 'Gastraphetes', 'Fail-Not', 'Yoichinoyumi', 'Naegling', 'Tauret',
-    'Dolichenus')
-state.WeaponMode:set('Fomalhaut')
+state.WeaponMode:options('Gastraphetes', 'Fomalhaut', 'Annihilator', 'Armageddon', 'Gandiva', 'Fail-Not', 'Naegling',
+    'Tauret', 'Dolichenus')
+state.WeaponMode:set('Gastraphetes')
 
 -- Enable JobMode for UI.
 UI_Name = 'TP Mode'
@@ -42,7 +42,7 @@ state.JobMode:set('Standard')
 -- This allows for generic gear sets such as ammo=Ammo.RA for Midcast.RA as an example.
 Ranged_Weapons = {{
     WeaponMode = "Naegling",
-    Type = "Bullet"
+    Type = "Arrow"
 }, {
     WeaponMode = "Dolichenus",
     Type = "Arrow"
@@ -56,13 +56,16 @@ Ranged_Weapons = {{
     WeaponMode = "Fail-Not",
     Type = "Arrow"
 }, {
-    WeaponMode = "Yoichinoyumi",
-    Type = "Arrow"
-}, {
     WeaponMode = "Gastraphetes",
     Type = "Bolt"
 }, {
     WeaponMode = "Tauret",
+    Type = "Arrow"
+}, {
+    WeaponMode = "Gandiva",
+    Type = "Arrow"
+}, {
+    WeaponMode = "Armageddon",
     Type = "Bullet"
 }}
 
@@ -121,12 +124,12 @@ function get_sets()
 
     sets.Weapons['Gastraphetes'] = {
         main = {
-            name = "Perun +1",
-            augments = {'Path: A'}
+            name = "Malevolence",
+            augments = {'INT+6', 'Mag. Acc.+7', '"Mag.Atk.Bns."+4', '"Fast Cast"+3'}
         },
         sub = {
-            name = "Kustawi +1",
-            augments = {'Path: A'}
+            name = "Malevolence",
+            augments = {'INT+10', 'Mag. Acc.+10', '"Mag.Atk.Bns."+10', '"Fast Cast"+5'}
         },
         range = {
             name = "Gastraphetes",
@@ -134,7 +137,7 @@ function get_sets()
         }
     }
 
-    sets.Weapons['Fail-Not'] = {
+    sets.Weapons['Armageddon'] = {
         main = {
             name = "Perun +1",
             augments = {'Path: A'}
@@ -142,6 +145,30 @@ function get_sets()
         sub = {
             name = "Kustawi +1",
             augments = {'Path: A'}
+        },
+        range = "Armageddon"
+    }
+
+    sets.Weapons['Gandiva'] = {
+        main = {
+            name = "Perun +1",
+            augments = {'Path: A'}
+        },
+        sub = {
+            name = "Kustawi +1",
+            augments = {'Path: A'}
+        },
+        range = "Gandiva"
+    }
+
+    sets.Weapons['Fail-Not'] = {
+        main = {
+            name = "Malevolence",
+            augments = {'INT+6', 'Mag. Acc.+7', '"Mag.Atk.Bns."+4', '"Fast Cast"+3'}
+        },
+        sub = {
+            name = "Malevolence",
+            augments = {'INT+10', 'Mag. Acc.+10', '"Mag.Atk.Bns."+10', '"Fast Cast"+5'}
         },
         range = "Fail-Not"
     }
@@ -155,20 +182,8 @@ function get_sets()
         }
     }
 
-    sets.Weapons['Yoichinoyumi'] = {
-        main = {
-            name = "Perun +1",
-            augments = {'Path: A'}
-        },
-        sub = {
-            name = "Kustawi +1",
-            augments = {'Path: A'}
-        },
-        range = "Yoichinoyumi"
-    }
-
     sets.Weapons['Dolichenus'] = {
-        -- main="Dolichenus",
+        main = "Dolichenus",
         sub = "Crepuscular Knife"
     }
 
@@ -207,7 +222,7 @@ function get_sets()
     Ammo.Arrow.ACC = "Chrono Arrow" -- Accuracy Ammo
     Ammo.Arrow.CRIT = "Chrono Arrow" -- Critical Hit Mode Ammo
     Ammo.Arrow.WS = "Chrono Arrow" -- Physical Weaponskills (consumed)
-    Ammo.Arrow.WSD = "Chrono Arrow" -- Physical Weaponskills (not consumed)
+    Ammo.Arrow.WSD = "Hauksbok Arrow" -- Physical Weaponskills (not consumed)
     Ammo.Arrow.MAB = "Chrono Arrow" -- Magical Weaponskills
     Ammo.Arrow.MACC = "Chrono Arrow" -- Magic Accuracy
     Ammo.Arrow.MAG_WS = "Chrono Arrow" -- Magic Weaponskills (Not consumed)
@@ -237,21 +252,21 @@ function get_sets()
     -- Standard Idle set with -DT,Refresh,Regen with NO movement gear
     sets.Idle = {
         ammo = Ammo.RA, -- Smart_Ammo() will select from your XXXX.RA type
-        head = "Nyame Helm",
+        head = "Null Masque",
         body = "Nyame Mail",
         hands = "Nyame Gauntlets",
-        legs = "Malignance Tights",
+        legs = "Nyame Flanchard",
         feet = "Nyame Sollerets",
         neck = {
             name = "Loricate Torque +1",
             augments = {'Path: A'}
         },
-        waist = "Carrier's Sash",
+        waist = "Null Belt",
         left_ear = {
             name = "Odnowa Earring +1",
             augments = {'Path: A'}
         },
-        right_ear = "Sanare Earring",
+        right_ear = "Infused Earring",
         left_ring = {
             name = "Gelatinous Ring +1",
             augments = {'Path: A'}
@@ -259,7 +274,7 @@ function get_sets()
         right_ring = "Defending Ring",
         back = {
             name = "Belenus's Cape",
-            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dual Wield"+10', 'Damage taken-5%'}
+            augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'Rng.Acc.+10', '"Store TP"+10', 'Phys. dmg. taken-10%'}
         }
     }
 
@@ -300,11 +315,11 @@ function get_sets()
         },
         left_ear = "Telos Earring",
         right_ear = "Sherida Earring",
-        left_ring = "Lehko's Ring",
-        right_ring = "Epona's Ring",
-        back = {
+        left_ring = "Epona's Ring",
+        right_ring = "Defending Ring",
+        back = { -- look into dual wield cape
             name = "Belenus's Cape",
-            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dual Wield"+10', 'Damage taken-5%'}
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%'}
         }
     }
 
@@ -314,17 +329,15 @@ function get_sets()
         body = "Malignance Tabard",
         hands = "Amini Glove. +3",
         legs = "Amini Bragues +3",
-        feet = "Malignance Boots"
+        feet = "Malignance Boots",
+        back = { -- look into dual wield cape
+            name = "Belenus's Cape",
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%'}
+        }
     })
 
     -- This set is used when OffenseMode is set to PDL and enaged
-    sets.OffenseMode.PDL = set_combine(sets.OffenseMode.TP, {
-        head = "Malignance Chapeau",
-        body = "Amini Caban +3",
-        hands = "Malignance Gloves",
-        legs = "Malignance Tights",
-        feet = "Malignance Boots"
-    })
+    sets.OffenseMode.PDL = set_combine(sets.OffenseMode.TP, {})
 
     -- This set is used when OffenseMode is ACC and Enaged (Augments the TP base set)
     sets.OffenseMode.ACC = set_combine(sets.OffenseMode.DT, {})
@@ -370,7 +383,10 @@ function get_sets()
     -- Snapshot / Rapidshot
     sets.Precast.RA = set_combine(sets.Precast, { -- 5 Snapshot on Perun +1 Augment if used
         ammo = Ammo.RA,
-        head = "Amini Gapette +3", -- 9 (upgrade to alluvian)
+        head = {
+            name = "Taeon Chapeau",
+            augments = {'"Snapshot"+5', '"Snapshot"+5'}
+        },
         body = "Amini Caban +3", -- 11% Velocity Shot
         hands = {
             name = "Carmine Fin. Ga. +1",
@@ -385,23 +401,16 @@ function get_sets()
         waist = "Yemaya Belt", -- 0 / 5
         left_ear = {
             name = "Odnowa Earring +1",
-            augments = {'Path: A'},
-            priority = 3
+            augments = {'Path: A'}
         },
         right_ear = {
-            name = "Tuisto Earring",
-            priority = 1
+            name = "Tuisto Earring"
         },
-        left_ring = {
-            name = "Gelatinous Ring +1",
-            augments = {'Path: A'},
-            priority = 2
-        },
+        left_ring = "Chirich Ring +1",
         right_ring = "Crepuscular Ring", -- 3
         back = {
             name = "Belenus's Cape",
-            augments = {'HP+60', 'HP+20', '"Snapshot"+10'},
-            priority = 1
+            augments = {'"Snapshot"+10'}
         } -- 10 with 2% Velocity Shot
     }) -- 60 Snapshot / 29 Rapidshot / 11% Velocity Shot
 
@@ -422,8 +431,8 @@ function get_sets()
     -- Flurry II - 30 Snapshot Needed
     sets.Precast.RA.Flurry_II = set_combine(sets.Precast.RA.Flurry, {
         feet = {
-            name = "Pursuer's Gaiters",
-            augments = {'Rng.Acc.+10', '"Rapid Shot"+10', '"Recycle"+15'}
+            name = "Arcadian Socks +3",
+            augments = {'Enhances "Stealth Shot" effect'}
         }
     }) -- 35 Snapshot / 70 Rapidshot / 11% Velocity Shot
 
@@ -474,39 +483,33 @@ function get_sets()
 
     -- Ranged Attack Gear (Normal Midshot)
     sets.Midcast.RA = set_combine(sets.Midcast, {
-        head = {
-            name = "Ikenga's Hat",
-            augments = {'Path: A'}
-        },
-        -- head={ name="Arcadian Beret +3", augments={'Enhances "Recycle" effect',}},
-        body = {
-            name = "Ikenga's Vest",
-            augments = {'Path: A'}
-        },
+        head = "Arcadian Beret +3",
+        body = "Ikenga's Vest",
         hands = "Amini Glove. +3",
         legs = "Amini Bragues +3",
-        feet = {
-            name = "Ikenga's Clogs",
-            augments = {'Path: A'}
-        },
+        feet = "Ikenga's Clogs",
         neck = {
             name = "Scout's Gorget +2",
             augments = {'Path: A'}
         },
         waist = "Yemaya Belt",
-        left_ear = "Telos Earring",
-        right_ear = "Crep. Earring",
-        left_ring = "Chirich Ring +1",
-        right_ring = "Crepuscular Ring",
+        left_ear = "Dedition Earring",
+        right_ear = "Telos Earring",
+        left_ring = "Regal Ring",
+        right_ring = "Ilabrat Ring",
         back = {
             name = "Belenus's Cape",
-            augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'AGI+10', '"Store TP"+10', 'Damage taken-5%'}
+            augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', '"Store TP"+10', 'Phys. dmg. taken-10%'}
         }
     }) -- With Recycle Merits 101 Recycle for TP bonus and Ammo Save
 
     -- Ranged Attack Gear (High Accuracy Midshot)
     sets.Midcast.RA.ACC = set_combine(sets.Midcast.RA, {
-        ammo = Ammo.ACC
+        ammo = Ammo.ACC,
+        right_ear = "Crep. Earring",
+        left_ring = "Cacoethic Ring +1",
+        right_ring = "Crepuscular Ring",
+        waist = "K. Kachina Belt +1"
     })
 
     -- Ranged Attack Gear (Physical Damage Limit)
@@ -537,29 +540,24 @@ function get_sets()
     -- Ranged Attack Gear (Critical Build)
     sets.Midcast.RA.CRIT = set_combine(sets.Midcast.RA, {
         ammo = Ammo.CRIT,
-        body = {
-            name = "Ikenga's Vest",
-            augments = {'Path: A'}
-        },
-        hands = {
-            name = "Ikenga's Gloves",
-            augments = {'Path: A'}
-        },
-        legs = "Amini Bragues +3",
-        feet = "Osh. Leggings +1",
+        head = "Meghanada Visor +2",
+        body = "Nisroch Jerkin", -- 10%
+        hands = "Mummu Wrists +2", -- 6%
+        legs = "Amini Bragues +3", -- 6%
+        feet = "Osh. Leggings +1", -- 10%
         neck = {
             name = "Scout's Gorget +2",
             augments = {'Path: A'}
         },
-        waist = "K. Kachina Belt +1",
-        left_ear = "Odr Earring",
-        right_ear = "Amini Earring +1",
-        left_ring = "Lehko's Ring",
-        right_ring = "Dingir Ring",
+        waist = "K. Kachina Belt +1", -- 5%
+        left_ear = "Odr Earring", -- 5%   
+        right_ear = "Telos Earring",
+        left_ring = "Begrudging Ring", -- 5%
+        right_ring = "Mummu Ring", -- 3%
         back = {
             name = "Belenus's Cape",
             augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'AGI+10', 'Crit.hit rate+10', 'Damage taken-5%'}
-        }
+        } -- 10%
     })
 
     sets.Midcast.RA['True Shot'] = set_combine(sets.Midcast.RA.CRIT, {
@@ -577,29 +575,88 @@ function get_sets()
 
     -- Ranged Attack Gear (Double Shot Midshot)
     sets.Midcast.RA.DoubleShot = {
-        -- body={ name="Arc. Jerkin +3", augments={'Enhances "Snapshot" effect',}},
-        legs = "Osh. Trousers +1",
-        hands = "Oshosi Gloves +1",
-        feet = "Osh. Leggings +1"
+        head = "Arcadian Beret +3",
+        body = "Arcadian Jerkin +3",
+        hands = "Oshosi Gloves", -- 5
+        legs = "Oshosi Trousers", -- 7
+        feet = "Osh. Leggings +1",
+        neck = {
+            name = "Scout's Gorget +2",
+            augments = {'Path: A'}
+        },
+        waist = "K. Kachina Belt +1",
+        left_ear = "Odr Earring",
+        right_ear = "Telos Earring",
+        left_ring = "Begrudging Ring",
+        right_ring = "Mummu Ring",
+        back = {
+            name = "Belenus's Cape",
+            augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'Rng.Acc.+10', '"Store TP"+10', 'Phys. dmg. taken-10%'}
+        }
+    }
+
+    sets.Midcast.RA.CRIT.DoubleShot = {
+        head = "Arcadian Beret +3",
+        body = "Arcadian Jerkin +3",
+        hands = "Oshosi Gloves", -- 5
+        legs = "Oshosi Trousers", -- 7
+        feet = "Osh. Leggings +1",
+        neck = {
+            name = "Scout's Gorget +2",
+            augments = {'Path: A'}
+        },
+        waist = "K. Kachina Belt +1",
+        left_ear = "Odr Earring",
+        right_ear = "Telos Earring",
+        left_ring = "Begrudging Ring",
+        right_ring = "Mummu Ring",
+        back = {
+            name = "Belenus's Cape",
+            augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'Rng.Acc.+10', '"Store TP"+10', 'Phys. dmg. taken-10%'}
+        }
     }
 
     -- Ranged Attack Gear (Barrage active)
     sets.Midcast.RA.Barrage = {
-        hands = "Orion Bracers +3"
+        head = {
+            name = "Arcadian Beret +3",
+            augments = {'Enhances "Recycle" effect'}
+        }, -- 10%
+        body = "Nisroch Jerkin", -- 10%
+        hands = "Orion Bracers +2",
+        legs = "Amini Bragues +3", -- 6%
+        feet = "Osh. Leggings +1",
+        neck = {
+            name = "Scout's Gorget +2",
+            augments = {'Path: A'}
+        },
+        waist = "K. Kachina Belt +1", -- 5%
+        left_ear = "Odr Earring", -- 5%   
+        right_ear = "Telos Earring",
+        left_ring = "Begrudging Ring", -- 5%
+        right_ring = "Mummu Ring", -- 3%
+        back = {
+            name = "Belenus's Cape",
+            augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'Rng.Acc.+10', 'Crit.hit rate+10', 'Damage taken-5%'}
+        } -- 10%
     }
 
     -- Job Abilities
     sets.JA = {}
-    sets.JA["Eagle Eye Shot"] = {} -- legs={ name="Arc. Braccae +3", augments={'Enhances "Eagle Eye Shot" effect',}},}
-    sets.JA["Scavenge"] = {}
+    sets.JA["Eagle Eye Shot"] = {
+        legs = {
+            name = "Arc. Braccae +3",
+            augments = {'Enhances "Eagle Eye Shot" effect'}
+        }
+    }
+    sets.JA["Scavenge"] = {
+        feet = "Orion Socks +3"
+    }
     sets.JA["Shadowbind"] = {
-        hands = "Orion Bracers +3"
+        hands = "Orion Bracers +2"
     }
     sets.JA["Camouflage"] = {
-        body = {
-            name = "Arc. Jerkin +3",
-            augments = {'Enhances "Snapshot" effect'}
-        }
+        body = "Orion Jerkin +2"
     }
     sets.JA["Sharpshot"] = {
         legs = "Orion Braccae +3"
@@ -795,15 +852,181 @@ function get_sets()
     })
 
     -- Gun Weaponskills
-    sets.WS["Hot Shot"] = set_combine(sets.WS.MAB, {})
+    sets.WS["Hot Shot"] = set_combine(sets.WS.MAB, {
+        head = {
+            name = "Nyame Helm",
+            augments = {'Path: B'}
+        },
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
+        neck = "Fotia Gorget",
+        waist = "Fotia Belt",
+        left_ear = {
+            name = "Moonshade Earring",
+            augments = {'Accuracy+4', 'TP Bonus +250'}
+        },
+        right_ear = "Friomisi Earring",
+        left_ring = "Dingir Ring",
+        right_ring = "Cornelia's Ring",
+        back = { -- need STR/WSD/MAB cape (Belenus's Cape)
+            name = "Belenus's Cape",
+            augments = {'AGI+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'AGI+10', 'Weapon skill damage +10%'}
+        }
+    })
+
+    sets.WS.PDL["Hot Shot"] = set_combine(sets.WS.MAB, {
+        head = {
+            name = "Nyame Helm",
+            augments = {'Path: B'}
+        },
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
+        neck = "Fotia Gorget",
+        waist = "Orpheus's Sash",
+        left_ear = {
+            name = "Moonshade Earring",
+            augments = {'Accuracy+4', 'TP Bonus +250'}
+        },
+        right_ear = {
+            name = "Amini Earring +1",
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+11', 'Mag. Acc.+11', 'Crit.hit rate+3'}
+        },
+        left_ring = "Dingir Ring",
+        right_ring = "Cornelia's Ring",
+        back = {
+            name = "Belenus's Cape",
+            augments = {'AGI+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'AGI+10', 'Weapon skill damage +10%'}
+        }
+    })
+
     sets.WS["Split Shot"] = set_combine(sets.WS.RA, {})
     sets.WS["Sniper Shot"] = set_combine(sets.WS.RA, {})
     sets.WS["Blast Shot"] = set_combine(sets.WS.RA, {})
     sets.WS["Heavy Shot"] = set_combine(sets.WS.RA, {})
     sets.WS["Detonator"] = set_combine(sets.WS.RA, {})
     sets.WS["Numbing Shot"] = set_combine(sets.WS.RA, {})
-    sets.WS["Wildfire"] = set_combine(sets.WS.MAB, {}) -- Get Cremation Earring since doesn't scale with TP
-    sets.WS["Last Stand"] = set_combine(sets.WS.RA, {})
+
+    sets.WS["Wildfire"] = set_combine(sets.WS.MAB, {
+        head = {
+            name = "Nyame Helm",
+            augments = {'Path: B'}
+        },
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
+        neck = {
+            name = "Scout's Gorget +2",
+            augments = {'Path: A'}
+        },
+        waist = "Orpheus's Sash",
+        left_ear = "Crematio Earring",
+        right_ear = "Friomisi Earring",
+        left_ring = "Dingir Ring",
+        right_ring = "Cornelia's Ring",
+        back = {
+            name = "Belenus's Cape",
+            augments = {'AGI+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'AGI+10', 'Weapon skill damage +10%'}
+        }
+    })
+
+    sets.WS["Last Stand"] = set_combine(sets.WS.RA, {
+        head = "Orion Beret +3",
+        body = "Amini Caban +3",
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
+        feet = "Amini Bottillons +3",
+        neck = "Fotia Gorget",
+        waist = "Fotia Belt",
+        left_ear = {
+            name = "Moonshade Earring",
+            augments = {'Accuracy+4', 'TP Bonus +250'}
+        },
+        right_ear = "Ishvara Earring",
+        left_ring = "Regal Ring",
+        right_ring = "Dingir Ring",
+        back = {
+            name = "Belenus's Cape",
+            augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'AGI+10', 'Weapon skill damage +10%'}
+        }
+    })
+
+    sets.WS.PDL["Last Stand"] = set_combine(sets.WS.RA, {
+        head = "Orion Beret +3",
+        body = "Amini Caban +3",
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
+        feet = "Amini Bottillons +3",
+        neck = "Fotia Gorget",
+        waist = "Fotia Belt",
+        left_ear = {
+            name = "Moonshade Earring",
+            augments = {'Accuracy+4', 'TP Bonus +250'}
+        },
+        right_ear = {
+            name = "Amini Earring +1",
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+11', 'Mag. Acc.+11', 'Crit.hit rate+3'}
+        },
+        left_ring = "Sroda Ring",
+        right_ring = "Cornerlia's Ring",
+        back = {
+            name = "Belenus's Cape",
+            augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'AGI+10', 'Weapon skill damage +10%'}
+        }
+    })
+
     sets.WS["Coronach"] = set_combine(sets.WS.RA, {
         head = "Orion Beret +3",
         body = "Amini Caban +3",
@@ -819,14 +1042,45 @@ function get_sets()
         neck = "Fotia Gorget",
         waist = "Fotia Belt",
         left_ear = "Ishvara Earring",
-        right_ear = "Telos Earring",
+        right_ear = "Sherida Earring",
         left_ring = "Regal Ring",
-        right_ring = "Epaminondas's Ring",
+        right_ring = "Cornelia's Ring",
+        back = { -- need STR WSD cape
+            name = "Belenus's Cape",
+            augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'AGI+10', 'Weapon skill damage +10%', 'Damage taken-5%'}
+        }
+    })
+
+    sets.WS.PDL["Coronach"] = set_combine(sets.WS.RA, {
+        head = "Orion Beret +3",
+        body = "Amini Caban +3",
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
+        feet = "Amini Bottillons +2", -- Upgrade
+        neck = {
+            name = "Scout's Gorget +2",
+            augments = {'Path: A'}
+        },
+        waist = "Fotia Belt",
+        left_ear = "Ishvara Earring",
+        right_ear = {
+            name = "Amini Earring +1",
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+11', 'Mag. Acc.+11', 'Crit.hit rate+3'}
+        },
+        left_ring = "Sroda Ring",
+        right_ring = "Cornelia's Ring",
         back = {
             name = "Belenus's Cape",
             augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'AGI+10', 'Weapon skill damage +10%', 'Damage taken-5%'}
         }
     })
+
     sets.WS["Slug Shot"] = set_combine(sets.WS.RA, {
         head = "Orion Beret +3",
         body = "Amini Caban +3",
@@ -852,14 +1106,136 @@ function get_sets()
     })
 
     -- Archery Weaponskills
-    sets.WS["Flaming Arrow"] = set_combine(sets.WS.MAB, {})
+    sets.WS["Flaming Arrow"] = set_combine(sets.WS.MAB, {
+        head = {
+            name = "Nyame Helm",
+            augments = {'Path: B'}
+        },
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
+        neck = "Fotia Gorget",
+        waist = "Fotia Belt",
+        left_ear = {
+            name = "Moonshade Earring",
+            augments = {'Accuracy+4', 'TP Bonus +250'}
+        },
+        right_ear = "Friomisi Earring",
+        left_ring = "Dingir Ring",
+        right_ring = "Cornelia's Ring",
+        back = { -- need STR WSD cape
+            name = "Belenus's Cape",
+            augments = {'AGI+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'AGI+10', 'Weapon skill damage +10%'}
+        }
+    })
+
+    sets.WS.PDL["Flaming Arrow"] = set_combine(sets.WS.MAB, {
+        head = {
+            name = "Nyame Helm",
+            augments = {'Path: B'}
+        },
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
+        neck = "Fotia Gorget",
+        waist = "Orpheus's Sash",
+        left_ear = {
+            name = "Moonshade Earring",
+            augments = {'Accuracy+4', 'TP Bonus +250'}
+        },
+        right_ear = {
+            name = "Amini Earring +1",
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+11', 'Mag. Acc.+11', 'Crit.hit rate+3'}
+        },
+        left_ring = "Sroda Ring",
+        right_ring = "Cornelia's Ring",
+        back = { -- need STR WSD cape
+            name = "Belenus's Cape",
+            augments = {'AGI+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'AGI+10', 'Weapon skill damage +10%'}
+        }
+    })
+
     sets.WS["Piercing Arrow"] = set_combine(sets.WS.RA, {})
     sets.WS["Dulling Arrow"] = set_combine(sets.WS.RA, {})
     sets.WS["Sidewinder"] = set_combine(sets.WS.RA, {})
     sets.WS["Blast Arrow"] = set_combine(sets.WS.RA, {})
     sets.WS["Arching Arrow"] = set_combine(sets.WS.RA, {})
     sets.WS["Refulgent Arrow"] = set_combine(sets.WS.RA, {})
-    sets.WS["Jishnu's Radiance"] = set_combine(sets.WS.RA, {})
+
+    sets.WS["Jishnu's Radiance"] = set_combine(sets.WS.RA, {
+        head = "Orion Beret +3",
+        body = "Amini Caban +3",
+        hands = "Amini Glove. +3",
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
+        feet = "Amini Bottillons +3",
+        neck = "Fotia Gorget",
+        waist = "Fotia Belt",
+        left_ear = "Odr Earring",
+        right_ear = {
+            name = "Amini Earring +1",
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+11', 'Mag. Acc.+11', 'Crit.hit rate+3'}
+        },
+        left_ring = "Regal Ring",
+        right_ring = "Dingir Ring",
+        back = {
+            name = "Belenus's Cape",
+            augments = {'DEX+20', 'Rng.Acc.+20 Rng.Atk.+20', 'DEX+10', 'Crit.hit rate+10', 'Damage taken-5%'}
+        }
+    })
+
+    sets.WS.PDL["Jishnu's Radiance"] = set_combine(sets.WS.RA, {
+        head = {
+            name = "Blistering Sallet +1",
+            augments = {'Path: A'}
+        },
+        body = "Amini Caban +3",
+        hands = "Malignance Gloves",
+        legs = "Ikenga's Trousers",
+        feet = "Amini Bottillons +3",
+        neck = "Fotia Gorget",
+        waist = "Fotia Belt",
+        left_ear = "Odr Earring",
+        right_ear = {
+            name = "Amini Earring +1",
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+11', 'Mag. Acc.+11', 'Crit.hit rate+3'}
+        },
+        left_ring = "Regal Ring",
+        right_ring = "Cornelia's Ring",
+        back = {
+            name = "Belenus's Cape",
+            augments = {'DEX+20', 'Rng.Acc.+20 Rng.Atk.+20', 'DEX+10', 'Crit.hit rate+10', 'Damage taken-5%'}
+        }
+    })
+
     sets.WS["Namas Arrow"] = {
         head = "Orion Beret +3",
         body = "Amini Caban +3",
@@ -875,14 +1251,45 @@ function get_sets()
         neck = "Fotia Gorget",
         waist = "Fotia Belt",
         left_ear = "Ishvara Earring",
-        right_ear = "Telos Earring",
+        right_ear = "Sherida Earring",
         left_ring = "Regal Ring",
-        right_ring = "Epaminondas's Ring",
-        back = {
+        right_ring = "Cornelia's Ring",
+        back = { -- need STR WSD cape
             name = "Belenus's Cape",
             augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'AGI+10', 'Weapon skill damage +10%', 'Damage taken-5%'}
         }
     }
+
+    sets.WS.PDL["Namas Arrow"] = {
+        head = "Orion Beret +3",
+        body = "Amini Caban +3",
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
+        feet = "Amini Bottillons +2",
+        neck = {
+            name = "Scout's Gorget +2",
+            augments = {'Path: A'}
+        },
+        waist = "Fotia Belt",
+        left_ear = "Ishvara Earring",
+        right_ear = {
+            name = "Amini Earring +1",
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+11', 'Mag. Acc.+11', 'Crit.hit rate+3'}
+        },
+        left_ring = "Sroda Ring",
+        right_ring = "Cornelia's Ring",
+        back = { -- need STR WSD cape
+            name = "Belenus's Cape",
+            augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'AGI+10', 'Weapon skill damage +10%', 'Damage taken-5%'}
+        }
+    }
+
     sets.WS["Apex Arrow"] = set_combine(sets.WS.RA, {
         head = "Orion Beret +3",
         body = "Amini Caban +3",
@@ -894,13 +1301,40 @@ function get_sets()
             name = "Nyame Flanchard",
             augments = {'Path: B'}
         },
-        feet = "Amini Bottillons +2", -- Upgrade
+        feet = "Amini Bottillons +3",
         neck = "Fotia Gorget",
         waist = "Fotia Belt",
         left_ear = "Ishvara Earring",
-        right_ear = "Telos Earring",
+        right_ear = "Sherida Earring",
         left_ring = "Regal Ring",
-        right_ring = "Epaminondas's Ring",
+        right_ring = "Cornelia's Ring",
+        back = {
+            name = "Belenus's Cape",
+            augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'AGI+10', 'Weapon skill damage +10%', 'Damage taken-5%'}
+        }
+    })
+
+    sets.WS["Apex Arrow"] = set_combine(sets.WS.RA, {
+        head = "Orion Beret +3",
+        body = "Amini Caban +3",
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
+        feet = "Amini Bottillons +3",
+        neck = {
+            name = "Scout's Gorget +2",
+            augments = {'Path: A'}
+        },
+        waist = "Fotia Belt",
+        left_ear = "Ishvara Earring",
+        right_ear = "Sherida Earring",
+        left_ring = "Regal Ring",
+        right_ring = "Cornelia's Ring",
         back = {
             name = "Belenus's Cape",
             augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'AGI+10', 'Weapon skill damage +10%', 'Damage taken-5%'}
@@ -914,7 +1348,69 @@ function get_sets()
     sets.WS["Shining Blade"] = set_combine(sets.WS.WSD, {})
     sets.WS["Circle Blade"] = set_combine(sets.WS.WSD, {})
     sets.WS["Spirits Within"] = set_combine(sets.WS.WSD, {})
-    sets.WS["Savage Blade"] = set_combine(sets.WS.WSD, {})
+
+    sets.WS["Savage Blade"] = set_combine(sets.WS.WSD, {
+        head = {
+            name = "Nyame Helm",
+            augments = {'Path: B'}
+        },
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
+        feet = "Amini Bottillons +3",
+        neck = "Rep. Plat. Medal",
+        waist = "Sailfi Belt +1",
+        left_ear = {
+            name = "Moonshade Earring",
+            augments = {'Accuracy+4', 'TP Bonus +250'}
+        },
+        right_ear = "Sherida Earring",
+        left_ring = "Sroda Ring",
+        right_ring = "Regal Ring",
+        back = { -- need STR WSD cape
+            name = "Belenus's Cape",
+            augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'AGI+10', 'Weapon skill damage +10%'}
+        }
+    })
+
+    sets.WS.PDL["Savage Blade"] = set_combine(sets.WS.WSD, {
+        head = "Orion Beret +3",
+        body = "Ikenga's Vest",
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
+        feet = "Amini Bottillons +3",
+        neck = "Scout's Gorget +2",
+        waist = "Sailfi Belt +1",
+        left_ear = {
+            name = "Moonshade Earring",
+            augments = {'Accuracy+4', 'TP Bonus +250'}
+        },
+        right_ear = {
+            name = "Amini Earring +1",
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+11', 'Mag. Acc.+11', 'Crit.hit rate+3'}
+        },
+        left_ring = "Sroda Ring",
+        right_ring = "Cornelia's Ring",
+        back = { -- need STR WSD cape
+            name = "Belenus's Cape",
+            augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'AGI+10', 'Weapon skill damage +10%'}
+        }
+    })
 
     -- Dagger Weaponskills
     sets.WS["Wasp Sting"] = set_combine(sets.WS.WSD, {})
@@ -925,11 +1421,81 @@ function get_sets()
     sets.WS["Energy Steal"] = set_combine(sets.WS.WSD, {})
     sets.WS["Energy Drain"] = set_combine(sets.WS.WSD, {})
     sets.WS["Evisceration"] = set_combine(sets.WS.WSD, {})
-    sets.WS['Aeolian Edge'] = set_combine(sets.WS.MAB, {})
+
+    sets.WS['Aeolian Edge'] = set_combine(sets.WS.MAB, {
+        head = {
+            name = "Nyame Helm",
+            augments = {'Path: B'}
+        },
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
+        neck = "Sibyl Scarf",
+        waist = "Orpheus's Sash",
+        left_ear = {
+            name = "Moonshade Earring",
+            augments = {'Accuracy+4', 'TP Bonus +250'}
+        },
+        right_ear = "Friomisi Earring",
+        left_ring = "Dingir Ring",
+        right_ring = "Cornelia's Ring",
+        back = { -- need INT/WSD cape (Belenus's Cape)
+            name = "Belenus's Cape",
+            augments = {'DEX+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'DEX+10', 'Weapon skill damage +10%', 'Damage taken-5%'}
+        }
+    })
 
     -- Crossbow Weaponskills
     sets.WS["Trueflight"] = set_combine(sets.WS.MAB, {
-        -- right_ring="Weather. Ring",
+        head = {
+            name = "Nyame Helm",
+            augments = {'Path: B'}
+        },
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
+        neck = {
+            name = "Scout's Gorget +2",
+            augments = {'Path: A'}
+        },
+        waist = "Orpheus's Sash",
+        left_ear = {
+            name = "Moonshade Earring",
+            augments = {'Accuracy+4', 'TP Bonus +250'}
+        },
+        right_ear = "Friomisi Earring",
+        left_ring = "Dingir Ring",
+        right_ring = "Cornelia's Ring",
+        back = {
+            name = "Belenus's Cape",
+            augments = {'AGI+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'AGI+10', 'Weapon skill damage +10%'}
+        }
     })
 
     sets.Charm = {}
