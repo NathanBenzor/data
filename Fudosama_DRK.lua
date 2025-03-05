@@ -138,15 +138,12 @@ function get_sets()
     sets.OffenseMode = {}
 
     -- Base TP set to build off
-    sets.OffenseMode.TP = { -- testing set, more DA 
+    sets.OffenseMode.TP = {
         ammo = {
             name = "Coiste Bodhar",
             augments = {'Path: A'}
         },
-        head = {
-            name = "Sakpata's Helm",
-            augments = {'Path: A'}
-        },
+        head = "Flam. Zucchetto +2",
         body = {
             name = "Sakpata's Plate",
             augments = {'Path: A'}
@@ -155,22 +152,16 @@ function get_sets()
             name = "Sakpata's Gauntlets",
             augments = {'Path: A'}
         },
-        legs = {
-            name = "Sakpata's Cuisses",
-            augments = {'Path: A'}
-        },
-        feet = {
-            name = "Sakpata's Leggings",
-            augments = {'Path: A'}
-        },
+        legs = "Ignominy Flanchard +3",
+        feet = "Flam. Gambieras +2",
         neck = {
-            name = "Vim Torque +1",
+            name = "Abyssal Beads +2",
             augments = {'Path: A'}
         },
         waist = "Ioskeha Belt +1",
         left_ear = "Cessance Earring",
-        right_ear = "Telos Earring",
-        right_ring = "Petrov Ring",
+        right_ear = "Schere Earring",
+        right_ring = "Moonlight Ring",
         left_ring = "Niqmaddu Ring",
         back = {
             name = "Ankou's Mantle",
@@ -244,14 +235,14 @@ function get_sets()
             name = "Sakpata's Leggings",
             augments = {'Path: A'}
         },
-        -- neck = {
-        --     name = "Abyssal Beads +2",
-        --     augments = {'Path: A'}
-        -- },
         neck = {
-            name = "Vim Torque +1",
+            name = "Abyssal Beads +2",
             augments = {'Path: A'}
         },
+        -- neck = {
+        --     name = "Vim Torque +1",
+        --     augments = {'Path: A'}
+        -- },
         waist = {
             name = "Sailfi Belt +1",
             augments = {'Path: A'}
@@ -892,7 +883,7 @@ function get_sets()
         },
         right_ear = "Thrud Earring",
         -- left_ring = "Cornelia's Ring",
-        left_ring = "Niqmaddu Ring", -- replace with cornelias ring if needed
+        left_ring = "Niqmaddu Ring",
         right_ring = "Regal Ring",
         back = {
             name = "Ankou's Mantle",
@@ -929,8 +920,8 @@ function get_sets()
             name = "Heath. Earring +1",
             augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+14', 'Mag. Acc.+14', 'Weapon skill damage +3%'}
         },
-        left_ring = "Sroda Ring", -- replace with cornelias ring if needed
-        right_ring = "Cornelia's Ring", -- replace with Sroda if necessary
+        left_ring = "Sroda Ring",
+        right_ring = "Cornelia's Ring",
         back = {
             name = "Ankou's Mantle",
             augments = {'VIT+20', 'Accuracy+20 Attack+20', 'VIT+10', 'Weapon skill damage +10%', 'Damage taken-5%'}
