@@ -12,7 +12,7 @@ Random_Lockstyle = false
 Lockstyle_List = {1, 2, 6, 12}
 
 -- Set to ingame lockstyle and Macro Book/Set
-LockStylePallet = "119"
+LockStylePallet = "115"
 MacroBook = "20" -- Sub Job macro pallets can be defined in the sub_job_change_custom function below
 MacroSet = "1"
 
@@ -20,7 +20,7 @@ MacroSet = "1"
 Food = "Sublime Sushi"
 
 -- Threshold for Ammunition Warning
-Ammo_Warning_Limit = 99
+Ammo_Warning_Limit = 50
 
 -- Add CRIT the base modes to allow AM3 Critical Builds
 state.OffenseMode:options('TP', 'ACC', 'DT', 'PDL', 'CRIT', 'SB', 'True Shot')
@@ -28,7 +28,7 @@ state.OffenseMode:set('TP')
 
 -- Modes for specific to Ranger
 state.WeaponMode:options('Gastraphetes', 'Fomalhaut', 'Annihilator', 'Armageddon', 'Gandiva', 'Fail-Not', 'Naegling',
-    'Tauret', 'Dolichenus')
+    'Tauret')
 state.WeaponMode:set('Gastraphetes')
 
 -- Enable JobMode for UI.
@@ -42,9 +42,6 @@ state.JobMode:set('Standard')
 -- This allows for generic gear sets such as ammo=Ammo.RA for Midcast.RA as an example.
 Ranged_Weapons = {{
     WeaponMode = "Naegling",
-    Type = "Arrow"
-}, {
-    WeaponMode = "Dolichenus",
     Type = "Arrow"
 }, {
     WeaponMode = "Fomalhaut",
@@ -175,16 +172,14 @@ function get_sets()
 
     sets.Weapons['Tauret'] = {
         main = "Tauret",
-        sub = "Ternion Dagger +1",
+        sub = {
+            name = "Malevolence",
+            augments = {'INT+10', 'Mag. Acc.+10', '"Mag.Atk.Bns."+10', '"Fast Cast"+5'}
+        },
         range = {
             name = "Accipiter",
             augments = {'TP Bonus +1000'}
         }
-    }
-
-    sets.Weapons['Dolichenus'] = {
-        main = "Dolichenus",
-        sub = "Crepuscular Knife"
     }
 
     sets.Weapons.Melee = {
@@ -841,7 +836,6 @@ function get_sets()
     -- Magic Attack Bonus
     sets.WS.MAB = set_combine(sets.WS, {
         ammo = Ammo.MAB,
-        -- body={ name="Cohort Cloak +1", augments={'Path: A',}},
         waist = "Eschan Stone", -- Orpheus/Obi Swap
         left_ear = "Friomisi Earring",
         right_ear = {
@@ -853,6 +847,7 @@ function get_sets()
 
     -- Gun Weaponskills
     sets.WS["Hot Shot"] = set_combine(sets.WS.MAB, {
+        ammo = Ammo.MAB,
         head = {
             name = "Nyame Helm",
             augments = {'Path: B'}
@@ -889,6 +884,7 @@ function get_sets()
     })
 
     sets.WS.PDL["Hot Shot"] = set_combine(sets.WS.MAB, {
+        ammo = Ammo.MAB,
         head = {
             name = "Nyame Helm",
             augments = {'Path: B'}
@@ -935,6 +931,7 @@ function get_sets()
     sets.WS["Numbing Shot"] = set_combine(sets.WS.RA, {})
 
     sets.WS["Wildfire"] = set_combine(sets.WS.MAB, {
+        ammo = Ammo.MAB,
         head = {
             name = "Nyame Helm",
             augments = {'Path: B'}
@@ -1107,6 +1104,7 @@ function get_sets()
 
     -- Archery Weaponskills
     sets.WS["Flaming Arrow"] = set_combine(sets.WS.MAB, {
+        ammo = Ammo.MAB,
         head = {
             name = "Nyame Helm",
             augments = {'Path: B'}
@@ -1143,6 +1141,7 @@ function get_sets()
     })
 
     sets.WS.PDL["Flaming Arrow"] = set_combine(sets.WS.MAB, {
+        ammo = Ammo.MAB,
         head = {
             name = "Nyame Helm",
             augments = {'Path: B'}
@@ -1350,6 +1349,7 @@ function get_sets()
     sets.WS["Spirits Within"] = set_combine(sets.WS.WSD, {})
 
     sets.WS["Savage Blade"] = set_combine(sets.WS.WSD, {
+        ammo = Ammo.WSD,
         head = {
             name = "Nyame Helm",
             augments = {'Path: B'}
@@ -1423,6 +1423,7 @@ function get_sets()
     sets.WS["Evisceration"] = set_combine(sets.WS.WSD, {})
 
     sets.WS['Aeolian Edge'] = set_combine(sets.WS.MAB, {
+        ammo = Ammo.WSD,
         head = {
             name = "Nyame Helm",
             augments = {'Path: B'}
@@ -1460,6 +1461,7 @@ function get_sets()
 
     -- Crossbow Weaponskills
     sets.WS["Trueflight"] = set_combine(sets.WS.MAB, {
+        ammo = Ammo.MAB,
         head = {
             name = "Nyame Helm",
             augments = {'Path: B'}
