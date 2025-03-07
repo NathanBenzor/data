@@ -469,7 +469,6 @@ function init_gear_sets()
     })
 
     sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, {
-        -- sub = "Utu Grip",
         ammo = {
             name = "Coiste Bodhar",
             augments = {'Path: A'}
