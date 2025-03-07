@@ -1,6 +1,6 @@
 -- Colonnello
 -- Load and initialize the include file.
-include('Fudosama-Include2')
+include('Fudosama-Include')
 
 -- Set to ingame lockstyle and Macro Book/Set
 LockStylePallet = "135"

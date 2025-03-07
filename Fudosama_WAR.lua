@@ -1,6 +1,6 @@
 -- Mirdain
 -- Load and initialize the include file.
-include('Fudosama-Include2')
+include('Fudosama-Include')
 
 -- Set to ingame lockstyle and Macro Book/Set
 LockStylePallet = "198"
@@ -24,10 +24,10 @@ Elemental_WS = S {'Aeolian Edge', 'Seraph Blade', 'Shining Blade', 'Red Lotus Bl
                   'Energy Drain', 'Energy Steal', 'Cyclone', 'Gust Slash'}
 
 -- 'TP','ACC','DT' are standard Default modes.  You may add more and assigne equipsets for them ( Idle.X and OffenseMode.X )
-state.OffenseMode:options('TP', 'PDL', 'DT', 'ACC', 'PDT', 'MEVA', 'CRIT')
+state.OffenseMode:options('DT', 'PDL', 'Chango', 'TP', 'ACC', 'CRIT', 'HP')
 
 -- Set default mode (TP,ACC,DT,PDL)
-state.OffenseMode:set('TP')
+state.OffenseMode:set('DT')
 
 -- Weapons options
 state.WeaponMode:options('Naegling', 'Chango', 'Club', 'Shining One', 'Great Sword', 'Dolichenus', 'Unlocked')
@@ -89,11 +89,7 @@ function get_sets()
 
     -- Base set for when the player is not engaged or casting.  Other sets build off this set
     sets.Idle = {
-        ammo = {
-            name = "Coiste Bodhar",
-            augments = {'Path: A'}
-        },
-        -- head = "Boii Mask +3",
+        ammo = "Staunch Tathlum +1",
         head = "Null Masque",
         body = {
             name = "Sakpata's Plate",
@@ -111,7 +107,7 @@ function get_sets()
             name = "Sakpata's Leggings",
             augments = {'Path: A'}
         },
-        neck = "Null Loop",
+        neck = "Bathy Choker +1",
         waist = "Null Belt",
         left_ear = "Infused Earring",
         right_ear = {
@@ -119,17 +115,14 @@ function get_sets()
             augments = {'Path: A'}
         },
         left_ring = "Moonlight Ring",
-        right_ring = {
-            name = "Gelatinous Ring +1",
-            augments = {'Path: A'}
-        },
+        right_ring = "Defending Ring",
         back = "Moonbeam Cape"
     }
 
     sets.Idle.DT = {}
     sets.Idle.PDT = {}
     sets.Idle.MEVA = {}
-    sets.Idle.Chango = set_combine(sets.OffenseMode.TP, {}) -- Chango Idle set
+    -- sets.Idle.Chango = set_combine(sets.OffenseMode.TP, {}) -- Chango Idle set
 
     -- Used to swap into movement gear when the player is detected movement when not engaged
     sets.Movement = {
@@ -211,18 +204,66 @@ function get_sets()
             augments = {'Path: A'}
         },
         legs = "Boii Cuisses +3", -- testing Empy legs in place of Sakpata's Cuisses
-        feet = {
-            name = "Sakpata's Leggings",
+        -- feet = {
+        --     name = "Sakpata's Leggings",
+        --     augments = {'Path: A'}
+        -- },
+        feet = "Pumm. Calligae +3",
+        -- neck = {
+        --     name = "War. Beads +2",
+        --     augments = {'Path: A'}
+        -- },
+        neck = "Vim Torque +1",
+        waist = {
+            name = "Sailfi Belt +1",
             augments = {'Path: A'}
+        },
+        -- waist = "Ioskeha Belt +1",
+        left_ear = {
+            name = "Schere Earring",
+            augments = {'Path: A'}
+        },
+        right_ear = {
+            name = "Boii Earring +1",
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+15', 'Mag. Acc.+15', 'Crit.hit rate+5'}
+        },
+        -- left_ring = "Petrov Ring",
+        left_ring = "Moonlight Ring",
+        right_ring = "Niqmaddu Ring",
+        -- back = {
+        --     name = "Cichol's Mantle",
+        --     augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
+        -- }
+        back = "Null Shawl"
+    } -- 100% DA  34% DT
+
+    sets.OffenseMode.DT = {
+        ammo = {
+            name = "Coiste Bodhar",
+            augments = {'Path: A'}
+        },
+        head = "Boii Mask +3",
+        body = {
+            name = "Sakpata's Plate",
+            augments = {'Path: A'}
+        },
+        hands = {
+            name = "Sakpata's Gauntlets",
+            augments = {'Path: A'}
+        },
+        legs = {
+            name = "Sakpata's Cuisses",
+            augments = {'Path: A'}
+        },
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
         },
         neck = {
             name = "War. Beads +2",
             augments = {'Path: A'}
         },
-        waist = {
-            name = "Sailfi Belt +1",
-            augments = {'Path: A'}
-        },
+        waist = "Ioskeha Belt +1",
         left_ear = {
             name = "Schere Earring",
             augments = {'Path: A'}
@@ -233,18 +274,11 @@ function get_sets()
         },
         left_ring = "Moonlight Ring",
         right_ring = "Niqmaddu Ring",
-        back = {
-            name = "Cichol's Mantle",
-            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
-        }
-    }
-
-    sets.OffenseMode.DT = {
-        head = "Sakpata's Helm",
-        body = "Sakpata's Plate",
-        hands = "Sakpata's Gauntlets",
-        legs = "Sakpata's Cuisses",
-        feet = "Sakpata's Leggings"
+        -- back = {
+        --     name = "Cichol's Mantle",
+        --     augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
+        -- }
+        back = "Null Shawl"
     }
 
     sets.OffenseMode.PDL = {
@@ -290,6 +324,43 @@ function get_sets()
         }
     } -- 100% DA
 
+    sets.OffenseMode.HP = {
+        ammo = {
+            name = "Coiste Bodhar",
+            augments = {'Path: A'}
+        },
+        head = "Boii Mask +3",
+        body = {
+            name = "Sakpata's Plate",
+            augments = {'Path: A'}
+        },
+        hands = {
+            name = "Sakpata's Gauntlets",
+            augments = {'Path: A'}
+        },
+        legs = {
+            name = "Sakpata's Cuisses",
+            augments = {'Path: A'}
+        },
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
+        neck = "Null Loop",
+        waist = "Plat. Mog. Belt",
+        left_ear = {
+            name = "Schere Earring",
+            augments = {'Path: A'}
+        },
+        right_ear = {
+            name = "Boii Earring +1",
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+15', 'Mag. Acc.+15', 'Crit.hit rate+5'}
+        },
+        left_ring = "Moonlight Ring",
+        right_ring = "Gelatinous Ring +1",
+        back = "Moonbeam Cape"
+    }
+
     sets.OffenseMode.Chango = {
         ammo = "Coiste Bodhar",
         head = "Hjarrandi Helm",
@@ -297,17 +368,13 @@ function get_sets()
         hands = "Sakpata's Gauntlets",
         legs = "Pummeler's Cuisses +3",
         feet = "Pummeler's Calligae +3",
-        -- neck = {
-        --     name = "Vim Torque +1",
-        --     augments = {'Path: A'}
-        -- },
         neck = "Warrior's Bead Necklace +2",
         waist = {
-            name = "Sailfi Belt +1",
+            name = "Sailfi Belt +1", -- 5% DA
             augments = {'Path: A'}
         },
         left_ear = {
-            name = "Schere Earring",
+            name = "Schere Earring", -- 6% DA
             augments = {'Path: A'}
         },
         right_ear = {
@@ -327,6 +394,34 @@ function get_sets()
 
     -- This set is used when OffenseMode is CRIT and Engaged
     sets.OffenseMode.CRIT = {}
+
+    -- sets.Chango = {
+    --     ammo = "Coiste Bodhar",
+    --     head = "Hjarrandi Helm",
+    --     body = "Boii Lorica +3",
+    --     hands = "Sakpata's Gauntlets",
+    --     legs = "Pummeler's Cuisses +3",
+    --     feet = "Pummeler's Calligae +3",
+    --     neck = "Warrior's Bead Necklace +2",
+    --     waist = {
+    --         name = "Sailfi Belt +1", -- 5% DA
+    --         augments = {'Path: A'}
+    --     },
+    --     left_ear = {
+    --         name = "Schere Earring", -- 6% DA
+    --         augments = {'Path: A'}
+    --     },
+    --     right_ear = {
+    --         name = "Boii Earring +1", -- 8% DA
+    --         augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+15', 'Mag. Acc.+15', 'Crit.hit rate+5'}
+    --     },
+    --     left_ring = "Niqmaddu Ring",
+    --     right_ring = "Moonlight Ring",
+    --     back = {
+    --         name = "Cichol's Mantle", -- 10%
+    --         augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
+    --     }
+    -- }
 
     -- These base set are used when an aftermath is active and player is enaged and correct weapon type set (Augments the current OffenseMode)
     -- If you don't specify a weapon mode it will use it regardless of Mythic,Empy,Relic,Aeonic
@@ -566,7 +661,10 @@ function get_sets()
             name = "Agoge Mask +3",
             augments = {'Enhances "Savagery" effect'}
         },
-        body = "Pumm. Lorica +3",
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
         hands = {
             name = "Nyame Gauntlets",
             augments = {'Path: B'}
@@ -1669,6 +1767,16 @@ end
 function precast_custom(spell)
     equipSet = {}
 
+    if spell.type == 'WeaponSkill' then
+        if state.OffenseMode.current == 'PDL' and sets.WS.PDL[spell.english] then
+            equipSet = sets.WS.PDL[spell.english]
+        elseif sets.WS[spell.english] then
+            equipSet = sets.WS[spell.english]
+        else
+            equipSet = sets.WS
+        end
+    end
+
     return equipSet
 end
 -- Augment basic equipment sets
@@ -1681,6 +1789,9 @@ end
 function aftercast_custom(spell)
     equipSet = {}
 
+    equipSet = choose_set_custom()
+    equip(equipSet)
+
     return equipSet
 end
 -- Function is called when the player gains or loses a buff
@@ -1692,6 +1803,15 @@ end
 -- This function is called when a update request the correct equipment set
 function choose_set_custom()
     equipSet = {}
+
+    -- if player.status == "Engaged" then
+    --     if player.equipment.main == 'Chango' and state.OffenseMode == 'TP' then
+    --         equipSet = sets.Chango
+    --     else -- Use the default set
+    --         equipSet = sets.OffenseMode.TP
+    --     end
+    -- end
+
     return equipSet
 end
 -- Function is called when the player changes states

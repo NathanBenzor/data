@@ -1,6 +1,6 @@
 -- Mirdain
 -- Load and initialize the include file.
-include('Fudosama-Include2')
+include('Fudosama-Include')
 
 -- Set to ingame lockstyle and Macro Book/Set
 LockStylePallet = "133"
@@ -19,7 +19,7 @@ Random_Lockstyle = false
 -- Lockstyle sets to randomly equip
 Lockstyle_List = {1, 2, 6, 12}
 
--- Set default mode (TP,ACC,DT)
+state.OffenseMode:options('DT', 'TP', 'PDL', 'ACC', 'MagicDamage')
 state.OffenseMode:set('DT')
 
 -- Modes for specific to Ninja
@@ -71,10 +71,13 @@ function get_sets()
     }
 
     sets.Weapons['Magic Damage'] = {
-        main = "Gokotai",
-        sub = {
+        main = {
             name = "Kunimitsu",
             augments = {'Path: A'}
+        },
+        sub = {
+            name = "Hitaki",
+            augments = {'TP Bonus +1000'}
         }
     }
 
@@ -90,6 +93,44 @@ function get_sets()
         --     name = "Nyame Helm",
         --     augments = {'Path: B'}
         -- },
+        head = "Null Masque",
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
+        -- neck = {
+        --     name = "Loricate Torque +1",
+        --     augments = {'Path: A'}
+        -- },
+        neck = "Null Loop",
+        waist = "Null Belt",
+        left_ear = "Etiolation Earring",
+        right_ear = {
+            name = "Odnowa Earring +1",
+            augments = {'Path: A'}
+        },
+        left_ring = "Defending Ring",
+        right_ring = {
+            name = "Gelatinous Ring +1",
+            augments = {'Path: A'}
+        },
+        back = "Moonbeam Cape"
+    }
+
+    sets.Idle.MagicDamage = {
+        ammo = "Seething Bomblet +1",
         head = "Null Masque",
         body = {
             name = "Nyame Mail",
@@ -201,6 +242,27 @@ function get_sets()
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Damage taken-5%'}
         }
     })
+
+    sets.OffenseMode.MagicDamage = set_combine(sets.OffenseMode.TP, {
+        ammo = "Seething Bomblet +1",
+        head = {
+            name = "Mpaca's Cap",
+            augments = {'Path: A'}
+        },
+        -- body = "Mpaca's Doublet",
+        body = "Malignance Tabard",
+        -- hands = "Mpaca's Gloves",
+        hands = "Malignance Gloves",
+        -- legs = "Mpaca's Hose",
+        legs = "Malignance Tights",
+        feet = "Malignance Boots",
+        left_ring = "Defending Ring",
+        back = {
+            name = "Andartia's Mantle",
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Damage taken-5%'}
+        }
+    })
+
     -- This set is used when OffenseMode is ACC and Enaged (Augments the TP base set)
     sets.OffenseMode.ACC = set_combine(sets.OffenseMode.TP, {
         -- head = "Ken. Jinpachi +1",
@@ -653,9 +715,13 @@ function get_sets()
             name = "Nyame Gauntlets",
             augments = {'Path: B'}
         },
+        -- legs = {
+        --     name = "Mochi. Hakama +3",
+        --     augments = {'Enhances "Mijin Gakure" effect'}
+        -- },
         legs = {
-            name = "Mochi. Hakama +3",
-            augments = {'Enhances "Mijin Gakure" effect'}
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
         },
         feet = {
             name = "Nyame Sollerets",
@@ -944,6 +1010,16 @@ end
 function precast_custom(spell)
     equipSet = {}
 
+    if spell.type == 'WeaponSkill' then
+        if state.OffenseMode.current == 'PDL' and sets.WS.PDL[spell.english] then
+            equipSet = sets.WS.PDL[spell.english]
+        elseif sets.WS[spell.english] then
+            equipSet = sets.WS[spell.english]
+        else
+            equipSet = sets.WS
+        end
+    end
+
     return equipSet
 end
 -- Augment basic equipment sets
@@ -955,6 +1031,10 @@ end
 -- Augment basic equipment sets
 function aftercast_custom(spell)
     equipSet = {}
+
+    equipSet = choose_set_custom()
+    equip(equipSet)
+
     return equipSet
 end
 -- Function is called when the player gains or loses a buff

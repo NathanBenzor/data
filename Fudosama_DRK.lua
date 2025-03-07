@@ -1,6 +1,6 @@
 -- Elendnur
 -- Load and initialize the include file.
-include('Fudosama-Include2')
+include('Fudosama-Include')
 
 -- Set to ingame lockstyle and Macro Book/Set
 LockStylePallet = "194"
@@ -23,11 +23,11 @@ Lockstyle_List = {1, 2, 6, 12}
 Organizer = true
 
 -- 'TP','ACC','DT' are standard Default modes.  You may add more and assign equipsets for them
-state.OffenseMode:options('DT', 'TP', 'PDL', 'ACC', 'SB') -- ACC effects WS and TP modes
+state.OffenseMode:options('DT', 'PDL', 'TP', 'ACC', 'SB') -- ACC effects WS and TP modes
 state.OffenseMode:set('DT')
 
 -- Weapon Modes
-state.WeaponMode:options('Foenaria', 'Caladbolg', 'Anguta', 'Naegling', 'Loxotic Mace', 'Liberator', 'Lycurgos')
+state.WeaponMode:options('Foenaria', 'Anguta', 'Liberator', 'Caladbolg', 'Naegling', 'Loxotic Mace', 'Lycurgos')
 state.WeaponMode:set('Foenaria')
 
 -- Initialize Player
@@ -154,10 +154,11 @@ function get_sets()
         },
         legs = "Ignominy Flanchard +3",
         feet = "Flam. Gambieras +2",
-        neck = {
-            name = "Abyssal Beads +2",
-            augments = {'Path: A'}
-        },
+        -- neck = {
+        --     name = "Abyssal Beads +2",
+        --     augments = {'Path: A'}
+        -- },
+        neck = "Vim Torque +1",
         waist = "Ioskeha Belt +1",
         left_ear = "Cessance Earring",
         right_ear = "Schere Earring",
@@ -198,10 +199,11 @@ function get_sets()
             name = "Abyssal Beads +2",
             augments = {'Path: A'}
         },
-        waist = {
-            name = "Sailfi Belt +1",
-            augments = {'Path: A'}
-        },
+        -- waist = {
+        --     name = "Sailfi Belt +1",
+        --     augments = {'Path: A'}
+        -- },
+        waist = "Ioskeha Belt +1",
         left_ear = "Dedition Earring",
         right_ear = "Telos Earring",
         left_ring = "Niqmaddu Ring",
@@ -243,11 +245,13 @@ function get_sets()
         --     name = "Vim Torque +1",
         --     augments = {'Path: A'}
         -- },
-        waist = {
-            name = "Sailfi Belt +1",
-            augments = {'Path: A'}
-        },
-        left_ear = "Schere Earring",
+        -- waist = {
+        --     name = "Sailfi Belt +1",
+        --     augments = {'Path: A'}
+        -- },
+        waist = "Ioskeha Belt +1",
+        left_ear = "Dedition Earring",
+        -- left_ear = "Schere Earring",
         right_ear = "Telos Earring",
         left_ring = "Niqmaddu Ring",
         right_ring = "Moonlight Ring",
@@ -291,6 +295,14 @@ function get_sets()
     sets.OffenseMode.ACC = set_combine(sets.OffenseMode.TP, {})
 
     sets.DualWield = {}
+
+    sets.Schere = {
+        left_ear = "Schere Earring"
+    }
+
+    sets.Scythe = {
+        head = "Heath. Bur. +3"
+    }
 
     sets.Precast = {}
 
@@ -695,17 +707,20 @@ function get_sets()
     sets.WS = {
         ammo = "Knobkierrie",
         head = {
-            name = "Sakpata's Helm",
-            augments = {'Path: A'}
+            name = "Nyame Helm",
+            augments = {'Path: B'}
         },
-        body = "Ignominy Cuirass +3",
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
         hands = {
             name = "Nyame Gauntlets",
             augments = {'Path: B'}
         },
         legs = {
-            name = "Fall. Flanchard +3",
-            augments = {'Enhances "Muted Soul" effect'}
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
         },
         feet = "Heathen's Sollerets +3",
         neck = {
@@ -1910,6 +1925,16 @@ end
 function precast_custom(spell)
     equipSet = {}
 
+    if spell.type == 'WeaponSkill' then
+        if state.OffenseMode.current == 'PDL' and sets.WS.PDL[spell.english] then
+            equipSet = sets.WS.PDL[spell.english]
+        elseif sets.WS[spell.english] then
+            equipSet = sets.WS[spell.english]
+        else
+            equipSet = sets.WS
+        end
+    end
+
     return equipSet
 end
 -- Augment basic equipment sets
@@ -1922,6 +1947,9 @@ end
 function aftercast_custom(spell)
     equipSet = {}
 
+    equipSet = choose_set_custom()
+    equip(equipSet)
+
     return equipSet
 end
 -- Function is called when the player gains or loses a buff
@@ -1933,6 +1961,12 @@ end
 -- This function is called when a update request the correct equipment set
 function choose_set_custom()
     equipSet = {}
+
+    if player.status == "Engaged" then
+        if buffactive['Ballad'] or buffactive['Refresh'] and player.mp > 500 then
+            equipSet = sets.Schere
+        end
+    end
 
     return equipSet
 end
