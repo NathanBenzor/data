@@ -224,10 +224,6 @@ function init_gear_sets()
     -- Fast cast sets for spells
 
     sets.precast.FC = {
-        -- main = {
-        --     name = "Queller Rod",
-        --     augments = {'Healing magic skill +15', '"Cure" potency +10%', '"Cure" spellcasting time -7%'}
-        -- },
         main = "C. Palug Hammer",
         sub = "Sors Shield",
         ammo = "Impatiens",

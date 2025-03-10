@@ -106,14 +106,11 @@ function get_sets()
             name = "Sakpata's Leggings",
             augments = {'Path: A'}
         },
-        neck = "Warder's Charm +1",
+        neck = "Bathy Choker +1",
         waist = "Null Belt",
         left_ear = "Infused Earring",
         right_ear = "Eabani Earring",
-        left_ring = {
-            name = "Gelatinous Ring +1",
-            augments = {'Path: A'}
-        },
+        left_ring = "Defending Ring",
         right_ring = "Moonlight Ring",
         back = "Moonbeam Cape"
     }

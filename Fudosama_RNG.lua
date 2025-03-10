@@ -6,10 +6,10 @@ include('Fudosama-Include')
 AutoItem = false
 
 -- Upon Job change will use a random lockstyleset
-Random_Lockstyle = false
+Random_Lockstyle = true
 
 -- Lockstyle sets to randomly equip
-Lockstyle_List = {1, 2, 6, 12}
+Lockstyle_List = {115, 116, 117, 118, 119}
 
 -- Set to ingame lockstyle and Macro Book/Set
 LockStylePallet = "115"
@@ -331,7 +331,7 @@ function get_sets()
         }
     })
 
-    -- This set is used when OffenseMode is set to PDL and enaged
+    -- This set is used when OffenseMode is set to PDL and engaged
     sets.OffenseMode.PDL = set_combine(sets.OffenseMode.TP, {})
 
     -- This set is used when OffenseMode is ACC and Enaged (Augments the TP base set)
@@ -401,8 +401,8 @@ function get_sets()
         right_ear = {
             name = "Tuisto Earring"
         },
-        left_ring = "Chirich Ring +1",
-        right_ring = "Crepuscular Ring", -- 3
+        right = "Chirich Ring +1",
+        left_ring = "Crepuscular Ring", -- 3
         back = {
             name = "Belenus's Cape",
             augments = {'"Snapshot"+10'}
@@ -490,7 +490,7 @@ function get_sets()
         waist = "Yemaya Belt",
         left_ear = "Dedition Earring",
         right_ear = "Telos Earring",
-        left_ring = "Regal Ring",
+        left_ring = "Crepuscular Ring",
         right_ring = "Ilabrat Ring",
         back = {
             name = "Belenus's Cape",
@@ -508,29 +508,7 @@ function get_sets()
     })
 
     -- Ranged Attack Gear (Physical Damage Limit)
-    sets.Midcast.RA.PDL = set_combine(sets.Midcast.RA, {
-        head = {
-            name = "Ikenga's Hat",
-            augments = {'Path: A'}
-        },
-        body = {
-            name = "Ikenga's Vest",
-            augments = {'Path: A'}
-        },
-        hands = {
-            name = "Ikenga's Gloves",
-            augments = {'Path: A'}
-        },
-        legs = {
-            name = "Ikenga's Trousers",
-            augments = {'Path: A'}
-        },
-        feet = {
-            name = "Ikenga's Clogs",
-            augments = {'Path: A'}
-        },
-        left_ring = "Sroda Ring"
-    })
+    sets.Midcast.RA.PDL = set_combine(sets.Midcast.RA, {})
 
     -- Ranged Attack Gear (Critical Build)
     sets.Midcast.RA.CRIT = set_combine(sets.Midcast.RA, {
@@ -591,24 +569,42 @@ function get_sets()
     }
 
     sets.Midcast.RA.CRIT.DoubleShot = {
-        head = "Arcadian Beret +3",
-        body = "Arcadian Jerkin +3",
-        hands = "Oshosi Gloves", -- 5
-        legs = "Oshosi Trousers", -- 7
+        -- head = "Arcadian Beret +3",
+        -- body = "Arcadian Jerkin +3",
+        -- hands = "Oshosi Gloves", -- 5
+        -- legs = "Oshosi Trousers", -- 7
+        -- feet = "Osh. Leggings +1",
+        -- neck = {
+        --     name = "Scout's Gorget +2",
+        --     augments = {'Path: A'}
+        -- },
+        -- waist = "K. Kachina Belt +1",
+        -- left_ear = "Odr Earring",
+        -- right_ear = "Telos Earring",
+        -- left_ring = "Begrudging Ring",
+        -- right_ring = "Mummu Ring",
+        -- back = {
+        --     name = "Belenus's Cape",
+        --     augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'Rng.Acc.+10', '"Store TP"+10', 'Phys. dmg. taken-10%'}
+        -- }
+        head = "Meghanada Visor +2",
+        body = "Nisroch Jerkin", -- 10%
+        hands = "Mummu Wrists +2", -- 6%
+        legs = "Amini Bragues +3", -- 6%
         feet = "Osh. Leggings +1",
         neck = {
             name = "Scout's Gorget +2",
             augments = {'Path: A'}
         },
-        waist = "K. Kachina Belt +1",
-        left_ear = "Odr Earring",
+        waist = "K. Kachina Belt +1", -- 5%
+        left_ear = "Odr Earring", -- 5%   
         right_ear = "Telos Earring",
-        left_ring = "Begrudging Ring",
-        right_ring = "Mummu Ring",
+        left_ring = "Begrudging Ring", -- 5%
+        right_ring = "Mummu Ring", -- 3%
         back = {
             name = "Belenus's Cape",
-            augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'Rng.Acc.+10', '"Store TP"+10', 'Phys. dmg. taken-10%'}
-        }
+            augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'Rng.Acc.+10', 'Crit.hit rate+10', 'Damage taken-5%'}
+        } -- 10%
     }
 
     -- Ranged Attack Gear (Barrage active)
@@ -1526,6 +1522,17 @@ end
 function precast_custom(spell)
     equipSet = {}
     equipSet = Job_Mode_Check(equipSet)
+
+    if spell.type == 'WeaponSkill' then
+        if state.OffenseMode.current == 'PDL' and sets.WS.PDL[spell.english] then
+            equipSet = sets.WS.PDL[spell.english]
+        elseif sets.WS[spell.english] then
+            equipSet = sets.WS[spell.english]
+        else
+            equipSet = sets.WS
+        end
+    end
+
     return equipSet
 end
 -- Augment basic equipment sets
@@ -1541,6 +1548,10 @@ function aftercast_custom(spell)
     if state.JobMode.value == 'Ranged' and player.status == "Engaged" then
         equipSet = set_combine(equipSet, sets.OffenseMode.Ranged)
     end
+
+    equipSet = choose_set_custom()
+    equip(equipSet)
+
     return equipSet
 end
 -- Function is called when the player gains or loses a buff
