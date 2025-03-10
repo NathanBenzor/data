@@ -3,7 +3,7 @@
 include('Rialyn-Include')
 
 -- Set to ingame lockstyle and Macro Book/Set
-LockStylePallet = "4"
+LockStylePallet = "1"
 MacroBook = "1"
 MacroSet = "1"
 
@@ -194,13 +194,10 @@ function get_sets()
     sets.Precast = {}
     -- Used for Magic Spells (Cap 80%)
     sets.Precast.FastCast = {
-        main = {
-            name = "Queller Rod",
-            augments = {'Healing magic skill +15', '"Cure" potency +10%', '"Cure" spellcasting time -7%'}
-        },
+        main = "C. Palug Hammer",
         sub = "Sors Shield",
         ammo = "Impatiens",
-        head = "Ebers Cap +2",
+        head = "Ebers Cap +3",
         body = "Inyanga Jubbah +2",
         hands = {
             name = "Gendewitha Gages",
@@ -268,16 +265,13 @@ function get_sets()
     sets.Midcast.SIRD = {}
     -- Cure Set
     sets.Midcast.Cure = {
-        main = {
-            name = "Queller Rod",
-            augments = {'Healing magic skill +15', '"Cure" potency +10%', '"Cure" spellcasting time -7%'}
-        },
+        main = "Raetic Rod",
         sub = "Sors Shield",
         ammo = "Impatiens",
-        head = "Ebers Cap +2",
-        body = "Ebers Bliaut +2",
+        head = "Ebers Cap +3",
+        body = "Ebers Bliaut +3",
         hands = "Theophany Mitts +2",
-        legs = "Ebers Pant. +2",
+        legs = "Ebers Pant. +3",
         feet = "Hygieia Clogs +1",
         neck = "Clr. Torque +1",
         waist = "Acerbic Sash +1",
@@ -309,43 +303,33 @@ function get_sets()
             augments = {'Enh. Mag. eff. dur. +6', 'VIT+3', 'Mag. Acc.+5', '"Mag.Atk.Bns."+9', 'DMG:+5'}
         },
         sub = "Ammurapi Shield",
-        ammo = "Hydrocera",
+        ammo = "Pemphredo Tathlum",
         head = {
             name = "Telchine Cap",
-            augments = {'"Regen"+2', 'Enh. Mag. eff. dur. +10'}
+            augments = {'Enh. Mag. eff. dur. +8'}
         },
-        body = {
-            name = "Telchine Chas.",
-            augments = {'"Regen"+2', 'Enh. Mag. eff. dur. +10'}
-        },
+        body = "Ebers Bliaut +3",
         hands = {
             name = "Telchine Gloves",
-            augments = {'"Regen"+2', 'Enh. Mag. eff. dur. +10'}
+            augments = {'Enh. Mag. eff. dur. +10'}
         },
         legs = {
             name = "Telchine Braconi",
-            augments = {'"Regen"+2', 'Enh. Mag. eff. dur. +10'}
+            augments = {'Enh. Mag. eff. dur. +10'}
         },
         feet = "Theo. Duckbills +3",
-        neck = "Incanter's Torque",
+        neck = {
+            name = "Clr. Torque +1",
+            augments = {'Path: A'}
+        },
         waist = "Embla Sash",
-        left_ear = {
-            name = "Etiolation Earring",
-            priority = 1
-        },
+        left_ear = "Andoaa Earring",
         right_ear = "Mimir Earring",
-        left_ring = {
-            name = "Stikini Ring +1",
-            bag = "wardrobe1"
-        },
-        right_ring = {
-            name = "Gelatinous Ring +1",
-            augments = {'Path: A'},
-            priority = 2
-        },
+        left_ring = "Stikini Ring",
+        right_ring = "Stikini Ring",
         back = {
             name = "Alaunus's Cape",
-            augments = {'HP+60', 'Eva.+20 /Mag. Eva.+20', 'HP+20', 'Haste+10', 'Damage taken-5%'}
+            augments = {'MND+20', 'Mag. Acc+20 /Mag. Dmg.+20', '"Cure" potency +10%'}
         }
     }
     sets.Midcast.Enhancing.Others = set_combine(sets.Midcast.Enhancing, {});
@@ -416,33 +400,37 @@ function get_sets()
 
     sets.Midcast["Cursna"] = {
         main = "Yagrush",
-        sub = "Ammurapi Shield",
-        ammo = "Hasty Pinion +1",
-        head = {
-            name = "Kaykaus Mitra +1",
-            augments = {'MP+80', '"Cure" spellcasting time -7%', 'Enmity-6'}
-        },
+        sub = "Sors Shield",
+        ammo = "Pemphredo Tathlum",
+        head = "Ebers Cap +3",
         body = "Ebers Bliaut +3",
         hands = {
             name = "Fanatic Gloves",
-            augments = {'MP+50', 'Healing magic skill +8', '"Conserve MP"+5', '"Fast Cast"+5'}
+            augments = {'MP+35', 'Healing magic skill +10'}
         },
-        legs = "Th. Pant. +3",
-        feet = "Gende. Galosh. +1",
+        legs = "Th. Pant. +2",
+        feet = {
+            name = "Vanya Clogs",
+            augments = {'Healing magic skill +20', '"Cure" spellcasting time -7%', 'Magic dmg. taken -3'}
+        },
         neck = "Debilis Medallion",
         waist = "Bishop's Sash",
         left_ear = "Meili Earring",
-        right_ear = "Ebers Earring +1",
-        left_ring = "Haoma's Ring",
-        right_ring = "Menelaus's Ring",
+        right_ear = {
+            name = "Ebers Earring",
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+6', 'Mag. Acc.+6'}
+        },
+        left_ring = "Menelaus's Ring",
+        right_ring = "Haoma's Ring",
         back = {
             name = "Alaunus's Cape",
-            augments = {'HP+60', 'Eva.+20 /Mag. Eva.+20', 'HP+20', 'Haste+10', 'Damage taken-5%'}
+            augments = {'MND+20', 'Mag. Acc+20 /Mag. Dmg.+20', '"Fast Cast"+10'}
         }
     }
 
     sets.Midcast["Erase"] = set_combine(sets.Midcast, {
-        main = "Yagrush"
+        main = "Yagrush",
+        neck = "Clr. Torque +1"
     })
 
     sets.Midcast["Esuna"] = set_combine(sets.Midcast, {
@@ -488,14 +476,14 @@ function get_sets()
         main = "Bolelabunga",
         sub = "Ammurapi Shield",
         ammo = "Pemphredo Tathlum",
-        head = "Inyanga Tiara +1",
+        head = "Inyanga Tiara +2",
         body = {
             name = "Piety Bliaut +3",
             augments = {'Enhances "Benediction" effect'}
         },
-        hands = "Ebers Mitts +2",
+        hands = "Ebers Mitts +3",
         legs = "Th. Pantaloons +2",
-        feet = "Theo. Duckbills +2",
+        feet = "Theo. Duckbills +3",
         neck = "Incanter's Torque",
         waist = "Embla Sash",
         left_ear = "Andoaa Earring",
@@ -528,7 +516,7 @@ function get_sets()
             name = "Piety Pantaln. +3",
             augments = {'Enhances "Afflatus Misery" effect'}
         },
-        feet = "Theo. Duckbills +2",
+        feet = "Theo. Duckbills +3",
         neck = "Nodens Gorget",
         waist = "Siegel Sash",
         left_ear = "Andoaa Earring",
@@ -545,6 +533,11 @@ function get_sets()
         main = "Vadose Rod",
         sub = "Ammurapi Shield",
         ammo = "Staunch Tathlum +1",
+        head = {
+            name = "Chironic Hat",
+            augments = {'"Mag.Atk.Bns."+19', 'DEX+9', '"Refresh"+2', 'Accuracy+5 Attack+5',
+                        'Mag. Acc.+5 "Mag.Atk.Bns."+5'}
+        },
         hands = "Regal Cuffs",
         ear1 = "Halasz Earring",
         ear2 = "Magnetic Earring",

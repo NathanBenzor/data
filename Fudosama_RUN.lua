@@ -34,7 +34,7 @@ Buff_Delay = 5 -- Used this to slow down auto buffing
 Tank_Delay = 5 -- delays between tanking actions (only used when auto-buffing enabled and target locked on)
 
 -- Set to ingame lockstyle and Macro Book/Set
-LockStylePallet = "192"
+LockStylePallet = "197"
 MacroBook = "22"
 MacroSet = Macro_Sub_Job()
 
@@ -227,18 +227,15 @@ function get_sets()
         waist = "Plat. Mog. Belt",
         left_ring = {
             name = "Moonlight Ring",
-            bag = "wardrobe1",
-            priority = 4
+            bag = "wardrobe1"
         },
         right_ring = {
             name = "Moonlight Ring",
-            bag = "wardrobe2",
-            priority = 5
+            bag = "wardrobe2"
         },
         left_ear = {
             name = "Odnowa Earring +1",
-            augments = {'Path: A'},
-            priority = 1
+            augments = {'Path: A'}
         } -- 3/5
     }
 

@@ -564,8 +564,8 @@ function init_gear_sets()
         head = "Azi. Hood +3",
         body = "Azi. Coat +3",
         hands = "Agwu's Gages",
-        legs = "Agwu's Slops",
-        feet = "Azi. Gaiters +2",
+        legs = "Azi. Tights +3",
+        feet = "Azi. Gaiters +3",
         neck = "Mizu. Kubikazari",
         ear1 = "Malignance Earring",
         ear2 = "Regal Earring",
@@ -619,10 +619,7 @@ function init_gear_sets()
         },
         head = "Befouled Crown",
         body = "Azimuth Coat +3",
-        hands = {
-            name = "Bagua Mitaines +1",
-            augments = {'Enhances "Curative Recantation" effect'}
-        },
+        hands = "Azi. Gloves +3",
         legs = "Assid. Pants +1",
         feet = {
             name = "Bagua Sandals +2",
@@ -728,7 +725,7 @@ function init_gear_sets()
         },
         head = "Azimuth Hood +3",
         body = "Azimuth Coat +3",
-        hands = "Geomancy Mitaines +2",
+        hands = "Geomancy Mitaines +3",
         legs = {
             name = "Bagua Pants +3",
             augments = {'Enhances "Mending Halation" effect'}
