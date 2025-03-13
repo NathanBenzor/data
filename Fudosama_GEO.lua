@@ -3,7 +3,7 @@
 include('Fudosama-Include')
 
 -- Set to ingame lockstyle and Macro Book/Set
-LockStylePallet = "19"
+LockStylePallet = "190"
 MacroBook = "31"
 MacroSet = "1"
 
