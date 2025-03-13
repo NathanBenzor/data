@@ -9,7 +9,7 @@ AutoItem = false
 Random_Lockstyle = true
 
 -- Lockstyle sets to randomly equip
-Lockstyle_List = {115, 116, 117, 118, 119}
+Lockstyle_List = {115, 116, 118, 119}
 
 -- Set to ingame lockstyle and Macro Book/Set
 LockStylePallet = "115"
@@ -252,10 +252,7 @@ function get_sets()
         hands = "Nyame Gauntlets",
         legs = "Nyame Flanchard",
         feet = "Nyame Sollerets",
-        neck = {
-            name = "Loricate Torque +1",
-            augments = {'Path: A'}
-        },
+        neck = "Rep. Plat. Medal",
         waist = "Null Belt",
         left_ear = {
             name = "Odnowa Earring +1",
@@ -1535,6 +1532,39 @@ function precast_custom(spell)
 
     return equipSet
 end
+
+-- Testing logic for critical double shot and AM3
+-- function job_post_midcast(spell, action, spellMap, eventArgs)
+--     if spell.action_type == 'Ranged Attack' then
+--         if buffactive['Double Shot'] then
+--             equip(sets.Midcast.RA.DoubleShot)
+--             if buffactive['Aftermath: Lv.3'] and player.equipment.range == "Armageddon" then
+--                 equip(sets.Midcast.RA.CRIT.DoubleShot)
+--                 if (spell.target.distance < (7 + spell.target.model_size)) and
+--                     (spell.target.distance > (5 + spell.target.model_size)) then
+--                     equip(sets.Midcast.RA['True Shot'])
+--                 end
+--             end
+--         elseif buffactive['Aftermath: Lv.3'] and player.equipment.range == "Armageddon" then
+--             equip(sets.Midcast.RA.CRIT)
+--             if (spell.target.distance < (7 + spell.target.model_size)) and
+--                 (spell.target.distance > (5 + spell.target.model_size)) then
+--                 equip(sets.Midcast.RA['True Shot'])
+--             end
+--         elseif buffactive['Aftermath: Lv.3'] and player.equipment.range == "Gandiva" then
+--             equip(sets.Midcast.RA.CRIT)
+--             if (spell.target.distance < (7 + spell.target.model_size)) and
+--                 (spell.target.distance > (5 + spell.target.model_size)) then
+--                 equip(sets.Midcast.RA['True Shot'])
+--             end
+--         end
+
+--         if state.Buff.Barrage then
+--             equip(sets.Midcast.RA.Barrage)
+--         end
+--     end
+-- end
+
 -- Augment basic equipment sets
 function midcast_custom(spell)
     equipSet = {}

@@ -107,7 +107,7 @@ function get_sets()
             name = "Sakpata's Leggings",
             augments = {'Path: A'}
         },
-        neck = "Bathy Choker +1",
+        neck = "Rep. Plat. Medal",
         waist = "Null Belt",
         left_ear = "Infused Earring",
         right_ear = {
