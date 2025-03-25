@@ -134,8 +134,8 @@ function get_sets()
             name = "Odnowa Earring +1",
             augments = {'Path: A'}
         },
-        left_ring = "Moonlight Ring",
-        right_ring = "Defending Ring",
+        right_ring = "Moonlight Ring",
+        left_ring = "Defending Ring",
         back = {
             name = "Ogma's Cape",
             augments = {'HP+60', 'Eva.+20 /Mag. Eva.+20', 'Enmity+10', 'Phys. dmg. taken-10%'}
@@ -162,8 +162,8 @@ function get_sets()
             name = "Odnowa Earring +1",
             augments = {'Path: A'}
         },
-        left_ring = "Moonlight Ring",
-        right_ring = "Defending Ring",
+        right_ring = "Moonlight Ring",
+        left_ring = "Defending Ring",
         back = {
             name = "Ogma's Cape",
             augments = {'HP+60', 'Eva.+20 /Mag. Eva.+20', 'Enmity+10', 'Phys. dmg. taken-10%'}
@@ -201,8 +201,8 @@ function get_sets()
             name = "Odnowa Earring +1",
             augments = {'Path: A'}
         },
-        left_ring = "Moonlight Ring",
-        right_ring = "Defending Ring",
+        right_ring = "Moonlight Ring",
+        left_ring = "Defending Ring",
         back = {
             name = "Ogma's Cape",
             augments = {'HP+60', 'Eva.+20 /Mag. Eva.+20', 'Enmity+10', 'Phys. dmg. taken-10%'}
@@ -241,7 +241,7 @@ function get_sets()
 
     -- This gear will be equiped when the player is moving and not engaged
     sets.Movement = {
-        right_ring = "Shneddick Ring"
+        left_ring = "Shneddick Ring"
     }
 
     -- Set to be used if you get 
@@ -415,7 +415,7 @@ function get_sets()
 
     -- Set used for hate generation on Job abilities
     sets.Enmity = { -- 23 Epo
-        ammo = "Aqreqaq Bomblet",
+        ammo = "Sapience Orb",
         head = "Halitus Helm",
         body = "Emet Harness +1",
         hands = "Kurys Gloves",
@@ -455,8 +455,8 @@ function get_sets()
         feet = "Erilaz Greaves +3",
         neck = "Moonbeam Necklace", -- 10% SIRD
         waist = "Audumbla Sash", -- 10% SIRD
-        left_ear = "Halasz Earring", --
-        right_ear = "Tuisto Earring", -- magnetic earring would go here
+        left_ear = "Tuisto Earring", -- magnetic earring would go here
+        right_ear = "Halasz Earring", --
         left_ring = "Evanescence Ring", -- 5% SIRD
         right_ring = "Moonlight Ring",
         back = {
@@ -481,7 +481,7 @@ function get_sets()
             name = "Carmine Greaves",
             augments = {'MP+60', 'INT+10', 'MND+10'}
         },
-        neck = "Orunmila's Torque", -- voltsurge torque for 4% fast cast
+        neck = "Voltsurge Torque",
         waist = "Plat. Mog. Belt",
         left_ear = "Etiolation Earring",
         right_ear = "Loquac. Earring",

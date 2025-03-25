@@ -621,6 +621,10 @@ function get_sets()
     sets.TreasureHunter = {
         ammo = "Per. Lucky Egg",
         body = "Volte Jupon",
+        legs = {
+            name = "Herculean Trousers",
+            augments = {'CHR+3', '"Mag.Atk.Bns."+10', '"Treasure Hunter"+2'}
+        },
         waist = "Chaac Belt"
     }
 end

@@ -235,7 +235,7 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
 
     sets.Enmity = {
-        ammo = "Aqreqaq Bomblet",
+        ammo = "Sapience Orb",
         head = "Halitus Helm",
         body = "Emet Harness +1",
         hands = "Kurys Gloves",
@@ -382,7 +382,7 @@ function init_gear_sets()
     }
 
     sets.precast.FC.HP = set_combine(sets.precast.FC, {
-        ammo = "Aqreqaq Bomblet",
+        ammo = "Sapience Orb",
         head = {
             name = "Nyame Helm",
             augments = {'Path: B'}
