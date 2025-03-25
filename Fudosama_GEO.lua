@@ -3,7 +3,7 @@
 include('Fudosama-Include')
 
 -- Set to ingame lockstyle and Macro Book/Set
-LockStylePallet = "190"
+LockStylePallet = "193"
 MacroBook = "31"
 MacroSet = "1"
 
@@ -17,7 +17,7 @@ AutoItem = false
 Random_Lockstyle = true
 
 -- Lockstyle sets to randomly equip
-Lockstyle_List = {190, 193, 196, 200}
+Lockstyle_List = {193, 200}
 
 -- 'TP','ACC','DT' are standard Default modes.  You may add more and assigne equipsets for them ( Idle.X and OffenseMode.X )
 state.OffenseMode:options('TP', 'ACC', 'DT', 'PDL', 'SB', 'MEVA') -- ACC effects WS and TP modes
@@ -309,29 +309,29 @@ function get_sets()
     sets.Precast = {}
     -- Used for Magic Spells
     sets.Precast.FastCast = {
-        main = {
+        main = { -- 5
             name = "Gada",
             augments = {'"Fast Cast"+5', 'STR+2', 'Mag. Acc.+20', '"Mag.Atk.Bns."+5'}
         },
-        range = {
+        range = { -- 3
             name = "Dunna",
             augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
         }, -- 3
-        head = {
+        head = { -- 14
             name = "Amalric Coif",
             augments = {'MP+60', 'Mag. Acc.+15', '"Mag.Atk.Bns."+15'}
         },
-        body = {
+        body = { -- 13
             name = "Merlinic Jubbah",
             augments = {'"Fast Cast"+5', 'VIT+9', '"Mag.Atk.Bns."+1'}
         },
-        hands = "Agwu's Gages",
-        legs = "Geomancy Pants +2", -- 15
-        feet = {
+        hands = "Agwu's Gages", -- 4
+        legs = "Geomancy Pants +3", -- 15
+        feet = { -- 5
             name = "Merlinic Crackows",
             augments = {'Pet: "Regen"+4', '"Fast Cast"+2', 'Accuracy+18 Attack+18'}
         },
-        neck = "Orunmila's Torque",
+        neck = "Orunmila's Torque", -- 5
         -- waist = "Embla Sash", -- 5
         waist = "Witful Belt",
         left_ear = "Etiolation Earring", -- 1
@@ -341,7 +341,7 @@ function get_sets()
             name = "Gelatinous Ring +1",
             augments = {'Path: A'}
         },
-        back = {
+        back = { -- 10
             name = "Nantosuelta's Cape",
             augments = {'MND+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'MND+10', '"Fast Cast"+10', 'Phys. dmg. taken-10%'}
         }
@@ -424,7 +424,7 @@ function get_sets()
             augments = {'Enh. Mag. eff. dur. +9'}
         },
         neck = "Loricate Torque +1",
-        waist = "Olympus Sash",
+        waist = "Embla Sash",
         left_ear = {
             name = "Odnowa Earring +1",
             augments = {'Path: A'}
@@ -448,7 +448,7 @@ function get_sets()
         head = "Geo. Galero +1",
         body = "Jhakri Robe +2",
         hands = "Regal Cuffs",
-        legs = "Geomancy Pants +2",
+        legs = "Geomancy Pants +3",
         feet = "Bagua Sandals +3",
         neck = {
             name = "Bagua Charm +1",
@@ -619,6 +619,52 @@ function get_sets()
             augments = {'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'INT+10', '"Mag.Atk.Bns."+10', 'Phys. dmg. taken-10%'}
         }
     }
+
+    sets.Midcast['Absorb-TP'] = {
+        sub = "Ammurapi Shield",
+        range = {
+            name = "Dunna",
+            augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
+        },
+        head = {
+            name = "Amalric Coif",
+            augments = {'MP+60', 'Mag. Acc.+15', '"Mag.Atk.Bns."+15'}
+        },
+        body = "Agwu's Robe",
+        hands = {
+            name = "Agwu's Gages",
+            augments = {'Path: A'}
+        },
+        legs = "Geomancy Pants +3",
+        feet = "Agwu's Pigaches",
+        -- neck = {
+        --     name = "Bagua Charm +1",
+        --     augments = {'Path: A'}
+        -- },
+        neck = "Erra Pendant",
+        -- waist = {
+        --     name = "Acuity Belt +1",
+        --     augments = {'Path: A'}
+        -- },
+        waist = "Witful Belt",
+        left_ear = "Regal Earring",
+        -- right_ear = {
+        --     name = "Azimuth Earring +1",
+        --     augments = {'System: 1 ID: 1676 Val: 0', 'Mag. Acc.+14', 'Damage taken-5%'}
+        -- },
+        right_ear = "Malignance Earring",
+        left_ring = {
+            name = "Metamor. Ring +1",
+            augments = {'Path: A'}
+        },
+        -- right_ring = "Stikini Ring +1",
+        right_ring = "Kisha Ring",
+        back = {
+            name = "Nantosuelta's Cape",
+            augments = {'MND+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'MND+10', '"Fast Cast"+10', 'Phys. dmg. taken-10%'}
+        }
+    }
+
     -- Indi Duration
     sets.Geomancy = {}
     sets.Geomancy.Indi = {
@@ -811,6 +857,16 @@ function get_sets()
     sets.WS["Hexa Strike"] = set_combine(sets.WS, {})
 
     sets.WS["Exudation"] = set_combine(sets.WS, {
+        -- ammo = "Oshasha's Treatise",
+        neck = "Sibyl Scarf",
+        left_ear = "Moonshade Earring",
+        right_ear = "Regal Earring",
+        ring1 = "Freke Ring",
+        ring2 = "Cornelia's Ring",
+        waist = "Hachirin-no-Obi"
+    })
+
+    sets.WS["Moonlight"] = set_combine(sets.WS, {
         -- ammo = "Oshasha's Treatise",
         neck = "Sibyl Scarf",
         left_ear = "Moonshade Earring",

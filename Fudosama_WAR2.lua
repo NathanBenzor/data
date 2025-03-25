@@ -70,7 +70,7 @@ function init_gear_sets()
 
     -- Enmity set
     sets.Enmity = {
-        ammo = "Aqreqaq Bomblet",
+        ammo = "Sapience Orb",
         head = "Pummeler's Mask +3",
         body = {
             name = "Souveran Cuirass",

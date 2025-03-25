@@ -409,6 +409,7 @@ function init_gear_sets()
         body = "Hashishin Mintan +1"
     })
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
+        hands = "Regal Cuffs",
         waist = "Siegel Sash"
     })
     sets.precast.FC.Cure = set_combine(sets.precast.FC, {
