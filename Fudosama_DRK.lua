@@ -144,6 +144,34 @@ function get_sets()
 
     -- Base TP set to build off
     sets.OffenseMode.TP = {
+        -- ammo = {
+        --     name = "Coiste Bodhar",
+        --     augments = {'Path: A'}
+        -- },
+        -- head = "Flam. Zucchetto +2",
+        -- body = {
+        --     name = "Sakpata's Plate",
+        --     augments = {'Path: A'}
+        -- },
+        -- hands = {
+        --     name = "Sakpata's Gauntlets",
+        --     augments = {'Path: A'}
+        -- },
+        -- legs = "Ignominy Flanchard +3",
+        -- feet = "Flam. Gambieras +2",
+        -- neck = {
+        --     name = "Abyssal Beads +2",
+        --     augments = {'Path: A'}
+        -- },
+        -- waist = "Ioskeha Belt +1",
+        -- left_ear = "Cessance Earring",
+        -- right_ear = "Schere Earring",
+        -- right_ring = "Moonlight Ring",
+        -- left_ring = "Niqmaddu Ring",
+        -- back = {
+        --     name = "Ankou's Mantle",
+        --     augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%'}
+        -- }
         ammo = {
             name = "Coiste Bodhar",
             augments = {'Path: A'}
@@ -157,21 +185,29 @@ function get_sets()
             name = "Sakpata's Gauntlets",
             augments = {'Path: A'}
         },
-        legs = "Ignominy Flanchard +3",
+        legs = {
+            name = "Sakpata's Cuisses",
+            augments = {'Path: A'}
+        },
         feet = "Flam. Gambieras +2",
-        -- neck = {
-        --     name = "Abyssal Beads +2",
-        --     augments = {'Path: A'}
-        -- },
-        neck = "Vim Torque +1",
-        waist = "Ioskeha Belt +1",
-        left_ear = "Cessance Earring",
-        right_ear = "Schere Earring",
+        neck = {
+            name = "Vim Torque +1",
+            augments = {'Path: A'}
+        },
+        waist = {
+            name = "Sailfi Belt +1",
+            augments = {'Path: A'}
+        },
+        left_ear = "Dedition Earring",
+        right_ear = {
+            name = "Schere Earring",
+            augments = {'Path: A'}
+        },
+        left_ring = "Petrov Ring",
         right_ring = "Moonlight Ring",
-        left_ring = "Niqmaddu Ring",
         back = {
             name = "Ankou's Mantle",
-            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%'}
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', '"Store TP"+10', 'Phys. dmg. taken-10%'}
         }
     }
 
@@ -645,6 +681,52 @@ function get_sets()
         body = "Fall. Cuirass +1"
     }
     sets.JA["Diabolic Eye"] = {}
+
+    sets.JA["Jump"] = {
+        ammo = {
+            name = "Coiste Bodhar",
+            augments = {'Path: A'}
+        },
+        head = "Flam. Zucchetto +2",
+        body = "Volte Harness",
+        hands = "Crusher Gauntlets",
+        legs = "Flamma Dirs +2",
+        feet = "Ostro Greaves",
+        neck = {
+            name = "Vim Torque +1",
+            augments = {'Path: A'}
+        },
+        waist = "Ioskeha Belt +1",
+        left_ear = "Cessance Earring",
+        right_ear = "Brutal Earring",
+        left_ring = "Petrov Ring",
+        right_ring = "Moonlight Ring",
+        back = "Null Shawl"
+        -- back={ name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','Phys. dmg. taken-10%',}},
+    }
+
+    sets.JA["High Jump"] = {
+        ammo = {
+            name = "Coiste Bodhar",
+            augments = {'Path: A'}
+        },
+        head = "Flam. Zucchetto +2",
+        body = "Volte Harness",
+        hands = "Crusher Gauntlets",
+        legs = "Flamma Dirs +2",
+        feet = "Ostro Greaves",
+        neck = {
+            name = "Vim Torque +1",
+            augments = {'Path: A'}
+        },
+        waist = "Ioskeha Belt +1",
+        left_ear = "Cessance Earring",
+        right_ear = "Brutal Earring",
+        left_ring = "Petrov Ring",
+        right_ring = "Moonlight Ring",
+        back = "Null Shawl"
+        -- back={ name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','Phys. dmg. taken-10%',}},
+    }
 
     -- WS Sets
     sets.WS = {
