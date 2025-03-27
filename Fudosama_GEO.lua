@@ -396,7 +396,7 @@ function get_sets()
     sets.Midcast.Enhancing = {
         main = {
             name = "Gada",
-            augments = {'Enh. Mag. eff. dur. +6', '"Mag.Atk.Bns."+2', 'DMG:+1'}
+            augments = {'"Fast Cast"+5', 'STR+2', 'Mag. Acc.+20', '"Mag.Atk.Bns."+5'}
         },
         sub = "Ammurapi Shield",
         range = {
