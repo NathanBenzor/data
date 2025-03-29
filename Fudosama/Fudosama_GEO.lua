@@ -313,6 +313,7 @@ function get_sets()
             name = "Gada",
             augments = {'"Fast Cast"+5', 'STR+2', 'Mag. Acc.+20', '"Mag.Atk.Bns."+5'}
         },
+        sub = "Chanter's Shield", -- 3
         range = { -- 3
             name = "Dunna",
             augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
@@ -345,7 +346,7 @@ function get_sets()
             name = "Nantosuelta's Cape",
             augments = {'MND+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'MND+10', '"Fast Cast"+10', 'Phys. dmg. taken-10%'}
         }
-    } -- 87
+    } -- 90
 
     -- Base set for midcast - if not defined will notify and use your idle set for surviability
     sets.Midcast = set_combine(sets.Idle, {})

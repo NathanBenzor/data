@@ -243,7 +243,7 @@ function get_sets()
     -- Used for Magic Spells
     sets.Precast.FastCast = {
         main = "C. Palug Hammer",
-        sub = "Genmei Shield",
+        sub = "Chanter's Shield",
         range = {
             name = "Dunna",
             augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}

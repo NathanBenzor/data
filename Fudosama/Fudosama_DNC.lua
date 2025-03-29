@@ -62,8 +62,8 @@ function get_sets()
             augments = {'Path: A'}
         },
         right_ear = "Infused Earring",
-        left_ring = "Chirich Ring +1",
-        right_ring = "Chirich Ring +1",
+        left_ring = "Moonlight Ring",
+        right_ring = "Defending Ring",
         back = "Sacro Mantle"
     }
 
@@ -84,8 +84,8 @@ function get_sets()
             augments = {'Path: A'}
         },
         right_ear = "Infused Earring",
-        left_ring = "Chirich Ring +1",
-        right_ring = "Chirich Ring +1",
+        left_ring = "Moonlight Ring",
+        right_ring = "Defending Ring",
         back = "Sacro Mantle"
     }
 
