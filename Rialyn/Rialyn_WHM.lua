@@ -225,7 +225,7 @@ function init_gear_sets()
 
     sets.precast.FC = {
         main = "C. Palug Hammer",
-        sub = "Sors Shield",
+        sub = "Chanter's Shield",
         ammo = "Impatiens",
         head = "Ebers Cap +3",
         body = "Inyanga Jubbah +2",
@@ -774,7 +774,7 @@ function init_gear_sets()
             augments = {'Mag. Acc.+25 "Mag.Atk.Bns."+25', 'MND+13', 'Mag. Acc.+9', '"Mag.Atk.Bns."+15'}
         },
         feet = "Theo. Duckbills +3",
-        neck = "Incanter's Torque",
+        neck = "Henic Torque",
         waist = "Rumination Sash",
         left_ear = "Vor Earring",
         right_ear = "Malignance Earring",

@@ -92,7 +92,7 @@ function get_sets()
             name = "Nyame Sollerets",
             augments = {'Path: B'}
         },
-        neck = "Warder's Charm +1",
+        neck = "Rep. Plat. Medal",
         waist = "Null Belt",
         right_ear = {
             name = "Odnowa Earring +1",
@@ -335,7 +335,8 @@ function get_sets()
     }
 
     sets.JA["Boost"] = {
-        hands = "Anchorite's Gloves +3"
+        hands = "Anchorite's Gloves +2",
+        waist = "Ask Sash"
     }
     sets.JA["Counterstance"] = {
         feet = "Hes. Gaiters +3"
