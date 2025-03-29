@@ -75,10 +75,6 @@ function get_sets()
     -- Standard Idle set with -DT, Refresh, Regen and movement gear
     sets.Idle = {
         ammo = "Staunch Tathlum +1",
-        -- head = {
-        --     name = "Nyame Helm",
-        --     augments = {'Path: B'}
-        -- },
         head = "Null Masque",
         body = {
             name = "Nyame Mail",
@@ -96,8 +92,7 @@ function get_sets()
             name = "Nyame Sollerets",
             augments = {'Path: B'}
         },
-        neck = "Warder's Charm +1",
-        -- waist = "Engraved Belt",
+        neck = "Rep. Plat. Medal",
         waist = "Null Belt",
         right_ear = {
             name = "Odnowa Earring +1",
@@ -295,6 +290,7 @@ function get_sets()
     sets.JA["Provoke"] = sets.Enmity
     sets.JA["Focus"] = {}
     sets.JA["Dodge"] = {}
+
     sets.JA["Chakra"] = {
         ammo = "Crepuscular Pebble",
         head = {
@@ -337,8 +333,10 @@ function get_sets()
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%'}
         }
     }
+
     sets.JA["Boost"] = {
-        hands = "Anchorite's Gloves +3"
+        hands = "Anchorite's Gloves +2",
+        waist = "Ask Sash"
     }
     sets.JA["Counterstance"] = {
         feet = "Hes. Gaiters +3"
@@ -401,7 +399,7 @@ function get_sets()
         -- Need 10% SB
         waist = "Moonbow Belt +1", -- SB II 15
         left_ear = "Sherida Earring", -- SB II 5
-        -- left_ring="Niqmaddu Ring", -- SB II 5
+        left_ring = "Niqmaddu Ring", -- SB II 5
         legs = "Mpaca's Hose",
         ammo = "Coiste Bodhar", -- SB 3
         right_ear = {
@@ -485,11 +483,11 @@ function get_sets()
     sets.WS["Tornado Kick"] = sets.WS.Kicks
 
     sets.WS["Victory Smite"] = set_combine(sets.WS, {
-        -- ammo = {
-        --     name = "Coiste Bodhar",
-        --     augments = {'Path: A'}
-        -- },
-        ammo = "Crepuscular Pebble",
+        ammo = {
+            name = "Coiste Bodhar",
+            augments = {'Path: A'}
+        },
+        -- ammo = "Crepuscular Pebble",
         head = {
             name = "Adhemar Bonnet +1",
             augments = {'STR+12', 'DEX+12', 'Attack+20'}
@@ -512,6 +510,28 @@ function get_sets()
             augments = {'STR+20', 'Accuracy+20 Attack+20', 'Crit.hit rate+10', 'Phys. dmg. taken-10%'}
         }
     })
+
+    -- sets.WS["Victory Smite"] = { -- velner set for testing
+    --     ammo = "Coiste Bodhar",
+    --     head = "Mpaca's Cap",
+    --     neck = "Mnk. Nodowa +2",
+    --     ear1 = "Schere Earring",
+    --     ear2 = "Sherida Earring",
+    --     body = "Ken. Samue +1",
+    --     hands = "Ryuo Tekko +1",
+    --     ring1 = "Gere Ring",
+    --     ring2 = "Niqmaddu Ring",
+    --     back = {
+    --         name = "Segomo's Mantle",
+    --         augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Crit.hit rate+10', 'Damage taken-5%'}
+    --     },
+    --     waist = "Fotia Belt",
+    --     legs = "Mpaca's Hose",
+    --     feet = {
+    --         name = "Herculean Boots",
+    --         augments = {'Accuracy+20 Attack+20', 'Crit. hit damage +5%', 'STR+6', 'Accuracy+11'}
+    --     }
+    -- }
 
     sets.WS["Shijin Spiral"] = set_combine(sets.WS, {
         ammo = {
@@ -602,6 +622,10 @@ function get_sets()
     sets.TreasureHunter = {
         ammo = "Per. Lucky Egg",
         body = "Volte Jupon",
+        legs = {
+            name = "Herculean Trousers",
+            augments = {'CHR+3', '"Mag.Atk.Bns."+10', '"Treasure Hunter"+2'}
+        },
         waist = "Chaac Belt"
     }
 end

@@ -235,7 +235,7 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
 
     sets.Enmity = {
-        ammo = "Aqreqaq Bomblet",
+        ammo = "Sapience Orb",
         head = "Halitus Helm",
         body = "Emet Harness +1",
         hands = "Kurys Gloves",
@@ -382,7 +382,7 @@ function init_gear_sets()
     }
 
     sets.precast.FC.HP = set_combine(sets.precast.FC, {
-        ammo = "Aqreqaq Bomblet",
+        ammo = "Sapience Orb",
         head = {
             name = "Nyame Helm",
             augments = {'Path: B'}
@@ -469,7 +469,6 @@ function init_gear_sets()
     })
 
     sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, {
-        -- sub = "Utu Grip",
         ammo = {
             name = "Coiste Bodhar",
             augments = {'Path: A'}
@@ -892,10 +891,7 @@ function init_gear_sets()
 
     sets.idle.DT = {
         ammo = "Staunch Tathlum +1",
-        head = {
-            name = "Nyame Helm",
-            augments = {'Path: B'}
-        },
+        head = "Null Masque",
         body = "Erilaz Surcoat +3",
         hands = "Turms Mittens +1",
         legs = "Eri. Leg Guards +3",

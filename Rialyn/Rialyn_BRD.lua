@@ -597,19 +597,19 @@ function get_sets()
     sets.JA = {}
     sets.JA["Nightingale"] = {
         feet = {
-            name = "Bihu Slippers +3",
+            name = "Bihu Slippers +1",
             augments = {'Enhances "Nightingale" effect'}
         }
     }
     sets.JA["Troubadour"] = {
         body = {
-            name = "Bihu Jstcorps. +3",
+            name = "Bihu Jstcorps. +1",
             augments = {'Enhances "Troubadour" effect'}
         }
     }
     sets.JA["Soul Voice"] = {
         legs = {
-            name = "Bihu Cannions +3",
+            name = "Bihu Cannions +1",
             augments = {'Enhances "Soul Voice" effect'}
         }
     }
@@ -804,6 +804,7 @@ function get_sets()
     sets.Charm = set_combine(sets.Idle, {})
 
     sets.TreasureHunter = {
+        ammo = "Per. Lucky Egg",
         body = "Volte Jupon",
         legs = "Volte Hose",
         waist = "Chaac Belt"

@@ -224,12 +224,8 @@ function init_gear_sets()
     -- Fast cast sets for spells
 
     sets.precast.FC = {
-        -- main = {
-        --     name = "Queller Rod",
-        --     augments = {'Healing magic skill +15', '"Cure" potency +10%', '"Cure" spellcasting time -7%'}
-        -- },
         main = "C. Palug Hammer",
-        sub = "Sors Shield",
+        sub = "Chanter's Shield",
         ammo = "Impatiens",
         head = "Ebers Cap +3",
         body = "Inyanga Jubbah +2",
@@ -778,7 +774,7 @@ function init_gear_sets()
             augments = {'Mag. Acc.+25 "Mag.Atk.Bns."+25', 'MND+13', 'Mag. Acc.+9', '"Mag.Atk.Bns."+15'}
         },
         feet = "Theo. Duckbills +3",
-        neck = "Incanter's Torque",
+        neck = "Henic Torque",
         waist = "Rumination Sash",
         left_ear = "Vor Earring",
         right_ear = "Malignance Earring",

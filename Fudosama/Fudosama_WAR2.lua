@@ -70,7 +70,7 @@ function init_gear_sets()
 
     -- Enmity set
     sets.Enmity = {
-        ammo = "Aqreqaq Bomblet",
+        ammo = "Sapience Orb",
         head = "Pummeler's Mask +3",
         body = {
             name = "Souveran Cuirass",
@@ -89,7 +89,7 @@ function init_gear_sets()
         waist = "Trance Belt",
         left_ear = "Cryptic Earring",
         right_ear = "Trux Earring",
-        left_ring = "Begrudging Ring",
+        left_ring = "Pernicious Ring",
         right_ring = "Supershear Ring",
         back = "Enuma Mantle"
     }
@@ -418,7 +418,7 @@ function init_gear_sets()
         right_ring = "Niqmaddu Ring",
         back = {
             name = "Cichol's Mantle",
-            augments = {'VIT+20', 'Accuracy+20 Attack+20', 'Weapon skill damage +10%', 'Damage taken-5%'}
+            augments = {'VIT+20', 'Accuracy+20 Attack+20', 'VIT+10', 'Weapon skill damage +10%', 'Damage taken-5%'}
         }
     }
 
@@ -460,7 +460,7 @@ function init_gear_sets()
         right_ring = "Niqmaddu Ring",
         back = {
             name = "Cichol's Mantle",
-            augments = {'VIT+20', 'Accuracy+20 Attack+20', 'Weapon skill damage +10%', 'Damage taken-5%'}
+            augments = {'VIT+20', 'Accuracy+20 Attack+20', 'VIT+10', 'Weapon skill damage +10%', 'Damage taken-5%'}
         }
     })
 

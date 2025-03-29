@@ -1,6 +1,6 @@
 -- Mirdain
 -- Load and initialize the include file.
-include('Fudosama-Include2')
+include('Fudosama-Include')
 
 -- Set to ingame lockstyle and Macro Book/Set
 LockStylePallet = "133"
@@ -19,11 +19,11 @@ Random_Lockstyle = false
 -- Lockstyle sets to randomly equip
 Lockstyle_List = {1, 2, 6, 12}
 
--- Set default mode (TP,ACC,DT)
+state.OffenseMode:options('DT', 'TP', 'PDL', 'ACC', 'MagicDamage')
 state.OffenseMode:set('DT')
 
 -- Modes for specific to Ninja
-state.WeaponMode:options('Heishi', 'Savage Blade', 'Great Katana', 'Aeolian Edge', 'Enmity', 'Nuking', 'Abyssea')
+state.WeaponMode:options('Heishi', 'Savage Blade', 'Great Katana', 'Aeolian Edge', 'Enmity', 'Magic Damage', 'Abyssea')
 state.WeaponMode:set('Heishi')
 
 elemental_ws = S {'Aeolian Edge', 'Blade: Teki', 'Blade: To', 'Blade: Chi', 'Blade: Ei', 'Blade: Yu'}
@@ -70,7 +70,7 @@ function get_sets()
         }
     }
 
-    sets.Weapons['Nuking'] = {
+    sets.Weapons['Magic Damage'] = {
         main = "Gokotai",
         sub = {
             name = "Kunimitsu",
@@ -126,6 +126,44 @@ function get_sets()
         back = "Moonbeam Cape"
     }
 
+    sets.Idle.MagicDamage = {
+        ammo = "Seething Bomblet +1",
+        head = "Null Masque",
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
+        -- neck = {
+        --     name = "Loricate Torque +1",
+        --     augments = {'Path: A'}
+        -- },
+        neck = "Null Loop",
+        waist = "Null Belt",
+        left_ear = "Etiolation Earring",
+        right_ear = {
+            name = "Odnowa Earring +1",
+            augments = {'Path: A'}
+        },
+        left_ring = "Defending Ring",
+        right_ring = {
+            name = "Gelatinous Ring +1",
+            augments = {'Path: A'}
+        },
+        back = "Moonbeam Cape"
+    }
+
     -- Defined below based off time of day
     sets.Movement = {
         left_ring = "Shneddick Ring"
@@ -144,16 +182,8 @@ function get_sets()
     -- Set to be used if you get 
     sets.Cursna_Received = {
         neck = "Nicander's Necklace",
-        left_ring = {
-            name = "Saida Ring",
-            bag = "wardrobe3",
-            priority = 2
-        },
-        right_ring = {
-            name = "Saida Ring",
-            bag = "wardrobe4",
-            priority = 1
-        },
+        left_ring = "Eshmun's Ring",
+        right_ring = "Eshmun's Ring",
         waist = "Gishdubar Sash"
     }
 
@@ -209,6 +239,27 @@ function get_sets()
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Damage taken-5%'}
         }
     })
+
+    sets.OffenseMode.MagicDamage = set_combine(sets.OffenseMode.TP, {
+        ammo = "Seething Bomblet +1",
+        head = {
+            name = "Mpaca's Cap",
+            augments = {'Path: A'}
+        },
+        -- body = "Mpaca's Doublet",
+        body = "Malignance Tabard",
+        -- hands = "Mpaca's Gloves",
+        hands = "Malignance Gloves",
+        -- legs = "Mpaca's Hose",
+        legs = "Malignance Tights",
+        feet = "Malignance Boots",
+        left_ring = "Defending Ring",
+        back = {
+            name = "Andartia's Mantle",
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Damage taken-5%'}
+        }
+    })
+
     -- This set is used when OffenseMode is ACC and Enaged (Augments the TP base set)
     sets.OffenseMode.ACC = set_combine(sets.OffenseMode.TP, {
         -- head = "Ken. Jinpachi +1",
@@ -264,21 +315,44 @@ function get_sets()
             name = "Leyline Gloves",
             augments = {'Accuracy+14', 'Mag. Acc.+13', '"Mag.Atk.Bns."+13', '"Fast Cast"+2'}
         },
+        legs = "Gyve Trousers",
         neck = "Voltsurge Torque", -- 4
         waist = "Plat. Mog. Belt",
         left_ear = "Etiolation Earring", -- 1
         right_ear = "Loquac. Earring", -- 2
         left_ring = "Kishar Ring",
-        right_ring = "Prolix Ring"
+        right_ring = "Prolix Ring",
+        back = {
+            name = "Andartia's Mantle",
+            augments = {'"Fast Cast"+10'}
+        }
     } -- 67
 
     sets.Precast.Utsusemi = {
-        body = {
-            name = "Mochi. Chainmail +3",
-            augments = {'Enhances "Sange" effect'}
+        head = {
+            name = "Herculean Helm",
+            augments = {'"Fast Cast"+4', 'Haste+1', 'Accuracy+15 Attack+15'}
         },
-        neck = "Magoraga Beads",
-        feet = "Hattori Kyahan +3"
+        body = {
+            name = "Taeon Tabard",
+            augments = {'"Fast Cast"+5'}
+        },
+        hands = {
+            name = "Leyline Gloves",
+            augments = {'Accuracy+14', 'Mag. Acc.+13', '"Mag.Atk.Bns."+13', '"Fast Cast"+2'}
+        },
+        legs = "Gyve Trousers",
+        feet = "Hattori Kyahan +3",
+        neck = "Voltsurge Torque",
+        waist = "Plat. Mog. Belt",
+        left_ear = "Etiolation Earring",
+        right_ear = "Loquac. Earring",
+        left_ring = "Kishar Ring",
+        right_ring = "Prolix Ring",
+        back = {
+            name = "Andartia's Mantle",
+            augments = {'"Fast Cast"+10'}
+        }
     }
 
     sets.Precast.QuickMagic = {}
@@ -309,11 +383,27 @@ function get_sets()
     sets.Midcast = set_combine(sets.Idle, {})
     -- Utsusemi Set
     sets.Midcast.Utsusemi = {
+        head = "Null Masque",
+        body = {
+            name = "Mochi. Chainmail +3",
+            augments = {'Enhances "Sange" effect'}
+        },
+        hands = {
+            name = "Taeon Gloves",
+            augments = {'Spell interruption rate down -9%'}
+        },
+        legs = "Gyve Trousers",
+        neck = "Magoraga Beads",
+        feet = "Hattori Kyahan +3",
+        waist = "Trance Belt",
+        left_ear = "Trux Earring",
+        right_ear = "Cryptic Earring",
+        left_ring = "Pernicious Ring",
+        right_ring = "Supershear Ring",
         back = {
             name = "Andartia's Mantle",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Damage taken-5%'}
-        },
-        feet = "Hattori Kyahan +3"
+        }
     }
     -- This set is used as base as is overwrote by specific gear changes (Spell Interruption Rate Down)
     sets.Midcast.SIRD = {}
@@ -622,9 +712,13 @@ function get_sets()
             name = "Nyame Gauntlets",
             augments = {'Path: B'}
         },
+        -- legs = {
+        --     name = "Mochi. Hakama +3",
+        --     augments = {'Enhances "Mijin Gakure" effect'}
+        -- },
         legs = {
-            name = "Mochi. Hakama +3",
-            augments = {'Enhances "Mijin Gakure" effect'}
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
         },
         feet = {
             name = "Nyame Sollerets",
@@ -887,8 +981,10 @@ function get_sets()
 
     sets.TreasureHunter = {
         ammo = "Per. Lucky Egg",
-        head = "Volte Cap",
-        body = "Volte Jupon",
+        legs = {
+            name = "Herculean Trousers",
+            augments = {'CHR+3', '"Mag.Atk.Bns."+10', '"Treasure Hunter"+2'}
+        },
         waist = "Chaac Belt"
     }
 
@@ -911,6 +1007,16 @@ end
 function precast_custom(spell)
     equipSet = {}
 
+    if spell.type == 'WeaponSkill' then
+        if state.OffenseMode.current == 'PDL' and sets.WS.PDL[spell.english] then
+            equipSet = sets.WS.PDL[spell.english]
+        elseif sets.WS[spell.english] then
+            equipSet = sets.WS[spell.english]
+        else
+            equipSet = sets.WS
+        end
+    end
+
     return equipSet
 end
 -- Augment basic equipment sets
@@ -922,6 +1028,10 @@ end
 -- Augment basic equipment sets
 function aftercast_custom(spell)
     equipSet = {}
+
+    equipSet = choose_set_custom()
+    equip(equipSet)
+
     return equipSet
 end
 -- Function is called when the player gains or loses a buff

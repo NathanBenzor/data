@@ -184,8 +184,7 @@ function init_gear_sets()
     sets.precast.FC = {
         head = {
             name = "Merlinic Hood",
-            augments = {'Mag. Acc.+9', '"Avatar perpetuation cost" -2', '"Refresh"+1', 'Accuracy+3 Attack+3',
-                        'Mag. Acc.+20 "Mag.Atk.Bns."+20'}
+            augments = {'Accuracy+2 Attack+2', 'Pet: AGI+10', 'Phalanx +4'}
         },
         body = "Agwu's Robe",
         hands = "Agwu's Gages",
@@ -347,7 +346,7 @@ function init_gear_sets()
         },
         hands = "Geo. Mitaines +3",
         legs = {
-            name = "Bagua Pants +3",
+            name = "Bagua Pants +1",
             augments = {'Enhances "Mending Halation" effect'}
         },
         feet = "Azimuth Gaiters +3",
@@ -355,8 +354,8 @@ function init_gear_sets()
         waist = "Austerity Belt +1",
         left_ear = "Malignance Earring",
         right_ear = {
-            name = "Azimuth Earring +1",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Mag. Acc.+14', 'Damage taken-5%'}
+            name = "Azimuth Earring",
+            augments = {'System: 1 ID: 1676 Val: 0', 'Mag. Acc.+8'}
         },
         left_ring = "Stikini Ring",
         right_ring = "Stikini Ring",
@@ -564,8 +563,8 @@ function init_gear_sets()
         head = "Azi. Hood +3",
         body = "Azi. Coat +3",
         hands = "Agwu's Gages",
-        legs = "Agwu's Slops",
-        feet = "Azi. Gaiters +2",
+        legs = "Azi. Tights +3",
+        feet = "Azi. Gaiters +3",
         neck = "Mizu. Kubikazari",
         ear1 = "Malignance Earring",
         ear2 = "Regal Earring",
@@ -619,10 +618,7 @@ function init_gear_sets()
         },
         head = "Befouled Crown",
         body = "Azimuth Coat +3",
-        hands = {
-            name = "Bagua Mitaines +1",
-            augments = {'Enhances "Curative Recantation" effect'}
-        },
+        hands = "Azi. Gloves +3",
         legs = "Assid. Pants +1",
         feet = {
             name = "Bagua Sandals +2",
@@ -728,7 +724,7 @@ function init_gear_sets()
         },
         head = "Azimuth Hood +3",
         body = "Azimuth Coat +3",
-        hands = "Geomancy Mitaines +2",
+        hands = "Geomancy Mitaines +3",
         legs = {
             name = "Bagua Pants +3",
             augments = {'Enhances "Mending Halation" effect'}

@@ -55,6 +55,8 @@
 - `//gs c burstmode`
 - `/console gs c burstmode` : Put this in a macro
 
+- `//switch to fudo` switch between characters
+
 ## Macro Send commands
 
 - `/console send Rialyn /item 'PoisonPotion' <me>` : Tell character to do something from a Macro

@@ -401,10 +401,7 @@ function init_gear_sets()
         },
         feet = "Skulk. Poulaines",
         neck = "Anu Torque",
-        waist = {
-            name = "Sailfi Belt +1",
-            augments = {'Path: A'}
-        },
+        waist = "Chaac Belt",
         left_ear = "Sherida Earring",
         right_ear = {
             name = "Skulk. Earring +1",
@@ -1220,10 +1217,7 @@ function init_gear_sets()
 
     sets.idle = {
         ammo = "Staunch Tathlum +1", -- 3%
-        head = {
-            name = "Nyame Helm",
-            augments = {'Path: B'}
-        },
+        head = "Null Masque",
         body = {
             name = "Nyame Mail",
             augments = {'Path: B'}
@@ -1240,8 +1234,8 @@ function init_gear_sets()
             name = "Nyame Sollerets",
             augments = {'Path: B'}
         },
-        neck = "Sanctity Necklace",
-        waist = "Kasiri Belt",
+        neck = "Null Loop",
+        waist = "Null Belt",
         left_ear = "Eabani Earring",
         right_ear = "Hearty Earring",
         left_ring = "Shneddick Ring",

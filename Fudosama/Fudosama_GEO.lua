@@ -3,7 +3,7 @@
 include('Fudosama-Include')
 
 -- Set to ingame lockstyle and Macro Book/Set
-LockStylePallet = "19"
+LockStylePallet = "193"
 MacroBook = "31"
 MacroSet = "1"
 
@@ -14,10 +14,10 @@ Food = "Tropical Crepe"
 AutoItem = false
 
 -- Upon Job change will use a random lockstyleset
-Random_Lockstyle = false
+Random_Lockstyle = true
 
 -- Lockstyle sets to randomly equip
-Lockstyle_List = {1, 2, 6, 12}
+Lockstyle_List = {193, 200}
 
 -- 'TP','ACC','DT' are standard Default modes.  You may add more and assigne equipsets for them ( Idle.X and OffenseMode.X )
 state.OffenseMode:options('TP', 'ACC', 'DT', 'PDL', 'SB', 'MEVA') -- ACC effects WS and TP modes
@@ -30,7 +30,7 @@ Organizer = false
 
 -- Weapons options
 state.WeaponMode:options('Idris', 'DW', 'Unlocked')
-state.WeaponMode:set('Unlocked')
+state.WeaponMode:set('Idris')
 
 -- WS to check for Obi or Orpheus Check
 elemental_ws = S {'Aeolian Edge', 'Cyclone'}
@@ -54,10 +54,7 @@ function get_sets()
         sub = "Ternion Dagger +1"
     }
 
-    sets.Weapons['Unlocked'] = {
-        main = "Idris",
-        sub = "Genmei Shield"
-    }
+    sets.Weapons['Unlocked'] = {}
 
     sets.Weapons.Sleep = {
         main = "Lorg Mor"
@@ -65,17 +62,12 @@ function get_sets()
 
     -- Standard Idle set with -DT,Refresh,Regen and movement gear
     sets.Idle = {
-        -- main = "Bolelabunga",
+        main = "Idris",
         sub = "Genmei Shield",
         range = {
             name = "Dunna",
             augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
         },
-        -- head = {
-        --     name = "Merlinic Hood",
-        --     augments = {'Mag. Acc.+9', '"Avatar perpetuation cost" -2', '"Refresh"+1', 'Accuracy+3 Attack+3',
-        --                 'Mag. Acc.+20 "Mag.Atk.Bns."+20'}
-        -- },
         head = "Null Masque",
         body = "Azimuth Coat +3",
         hands = {
@@ -105,51 +97,16 @@ function get_sets()
         }
     } -- 50 PDT / 52 MDT (including shield)
 
-    sets.Idle.town = {
-        sub = "Ammurapi Shield",
-        range = {
-            name = "Dunna",
-            augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
-        },
-        head = "Azimuth Hood +3",
-        body = "Azimuth Coat +3",
-        hands = {
-            name = "Bagua Mitaines +3",
-            augments = {'Enhances "Curative Recantation" effect'}
-        },
-        legs = "Azi. Tights +3",
-        feet = {
-            name = "Bagua Sandals +3",
-            augments = {'Enhances "Radial Arcana" effect'}
-        },
-        neck = {
-            name = "Loricate Torque +1",
-            augments = {'Path: A'}
-        },
-        waist = "Fucho-no-Obi",
-        left_ear = "Infused Earring",
-        right_ear = {
-            name = "Azimuth Earring +1",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Mag. Acc.+14', 'Damage taken-5%'}
-        },
-        left_ring = "Shneddick Ring",
-        right_ring = "Stikini Ring +1",
-        back = {
-            name = "Nantosuelta's Cape",
-            augments = {'VIT+20', 'Eva.+20 /Mag. Eva.+20', 'Pet: "Regen"+10', 'Phys. dmg. taken-10%'}
-        }
-    } -- 50 PDT / 52 MDT (including shield)
-
     -- Sets for Idle when player has a pet
     sets.Idle.Pet = set_combine(sets.Idle, { -- 2278/1482
         -- Pet: -DT (37.5% to cap) / Pet: Regen  -DT cap -87.5%
         main = "Idris",
         sub = "Genmei Shield",
+        range = {
+            name = "Dunna",
+            augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
+        },
         head = "Azimuth Hood +3",
-        -- body = {
-        --     name = "Nyame Mail",
-        --     augments = {'Path: B'}
-        -- },
         body = "Azimuth Coat +3",
         hands = "Geo. Mitaines +3",
         legs = {
@@ -171,7 +128,6 @@ function get_sets()
             augments = {'System: 1 ID: 1676 Val: 0', 'Mag. Acc.+14', 'Damage taken-5%'}
         },
         left_ring = "Defending Ring",
-        -- left_ring = "Stikini Ring +1",
         right_ring = "Stikini Ring +1",
         back = {
             name = "Nantosuelta's Cape",
@@ -188,54 +144,12 @@ function get_sets()
     -- Set to be used if you get 
     sets.Cursna_Received = {
         neck = "Nicander's Necklace",
-        left_ring = {
-            name = "Saida Ring",
-            bag = "wardrobe2",
-            priority = 2
-        },
-        right_ring = {
-            name = "Saida Ring",
-            bag = "wardrobe3",
-            priority = 1
-        },
+        left_ring = "Eshmun's Ring",
+        right_ring = "Eshmun's Ring",
         waist = "Gishdubar Sash"
     }
 
     sets.OffenseMode = {
-        main = "Idris",
-        sub = "Genmei Shield",
-        head = {
-            name = "Nyame Helm",
-            augments = {'Path: B'}
-        },
-        body = {
-            name = "Nyame Mail",
-            augments = {'Path: B'}
-        },
-        hands = {
-            name = "Nyame Gauntlets",
-            augments = {'Path: B'}
-        },
-        legs = {
-            name = "Nyame Flanchard",
-            augments = {'Path: B'}
-        },
-        feet = {
-            name = "Nyame Sollerets",
-            augments = {'Path: B'}
-        },
-        neck = "Clotharius Torque",
-        waist = "Windbuffet Belt +1",
-        left_ear = "Telos Earring",
-        right_ear = "Crep. Earring",
-        left_ring = "Petrov Ring",
-        right_ring = "Chirich Ring +1",
-        back = "Penetrating Cape"
-    }
-    -- Base TP set
-    sets.OffenseMode.TP = {
-        main = "Idris",
-        sub = "Genmei Shield",
         ammo = {
             name = "Dunna",
             augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
@@ -260,18 +174,107 @@ function get_sets()
             name = "Nyame Sollerets",
             augments = {'Path: B'}
         },
-        neck = "Null Loop",
+        neck = "Lissome Necklace",
         waist = "Windbuffet Belt +1",
+        left_ear = "Telos Earring",
+        right_ear = "Crep. Earring",
+        left_ring = "Petrov Ring",
+        right_ring = "Chirich Ring +1",
+        back = "Penetrating Cape"
+    }
+    -- Base TP set
+    sets.OffenseMode.TP = {
+        ammo = {
+            name = "Dunna",
+            augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
+        },
+        head = {
+            name = "Nyame Helm",
+            augments = {'Path: B'}
+        },
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
+        hands = "Gazu Bracelets +1",
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
+        neck = "Lissome Necklace",
+        waist = "Grunfeld Rope",
         left_ear = "Telos Earring",
         right_ear = "Crep. Earring",
         left_ring = "Petrov Ring",
         right_ring = "Chirich Ring +1",
         back = "Null Shawl"
     }
+
     -- Set to use when Dual Wielding
-    sets.OffenseMode.TP.DW = {}
+    sets.OffenseMode.TP.DW = {
+        ammo = {
+            name = "Dunna",
+            augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
+        },
+        head = "Azimuth Hood +3",
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
+        hands = "Gazu Bracelets +1",
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
+        feet = "Azimuth Gaiters +3",
+        neck = "Lissome Necklace",
+        waist = "Grunfeld Rope",
+        left_ear = "Suppanomimi",
+        right_ear = "Telos Earring",
+        left_ring = "Defending Ring",
+        right_ring = "Chirich Ring +1",
+        back = "Null Shawl" -- need Ambu cape with "Dual Wield"+10
+    }
+
     -- TP set when in -Damage Taken mode
-    sets.OffenseMode.DT = {}
+    sets.OffenseMode.DT = {
+        ammo = {
+            name = "Dunna",
+            augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
+        },
+        head = {
+            name = "Nyame Helm",
+            augments = {'Path: B'}
+        },
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
+        hands = "Gazu Bracelets +1",
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
+        neck = {
+            name = "Bagua Charm +1",
+            augments = {'Path: A'}
+        },
+        waist = "Grunfeld Rope",
+        left_ear = "Digni. Earring",
+        right_ear = "Telos Earring",
+        left_ring = "Defending Ring",
+        right_ring = "Chirich Ring +1",
+        back = "Null Shawl"
+    }
+
     -- TP set to use when mode is in accuracy
     sets.OffenseMode.ACC = {}
     -- This set is used when OffenseMode is PDL and Enaged
@@ -306,29 +309,30 @@ function get_sets()
     sets.Precast = {}
     -- Used for Magic Spells
     sets.Precast.FastCast = {
-        main = {
+        main = { -- 5
             name = "Gada",
             augments = {'"Fast Cast"+5', 'STR+2', 'Mag. Acc.+20', '"Mag.Atk.Bns."+5'}
         },
-        range = {
+        sub = "Chanter's Shield", -- 3
+        range = { -- 3
             name = "Dunna",
             augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
         }, -- 3
-        head = {
+        head = { -- 14
             name = "Amalric Coif",
             augments = {'MP+60', 'Mag. Acc.+15', '"Mag.Atk.Bns."+15'}
         },
-        body = {
+        body = { -- 13
             name = "Merlinic Jubbah",
             augments = {'"Fast Cast"+5', 'VIT+9', '"Mag.Atk.Bns."+1'}
         },
-        hands = "Agwu's Gages",
-        legs = "Geomancy Pants +2", -- 15
-        feet = {
+        hands = "Agwu's Gages", -- 4
+        legs = "Geomancy Pants +3", -- 15
+        feet = { -- 5
             name = "Merlinic Crackows",
             augments = {'Pet: "Regen"+4', '"Fast Cast"+2', 'Accuracy+18 Attack+18'}
         },
-        neck = "Orunmila's Torque",
+        neck = "Orunmila's Torque", -- 5
         -- waist = "Embla Sash", -- 5
         waist = "Witful Belt",
         left_ear = "Etiolation Earring", -- 1
@@ -338,11 +342,11 @@ function get_sets()
             name = "Gelatinous Ring +1",
             augments = {'Path: A'}
         },
-        back = {
+        back = { -- 10
             name = "Nantosuelta's Cape",
             augments = {'MND+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'MND+10', '"Fast Cast"+10', 'Phys. dmg. taken-10%'}
         }
-    } -- 87
+    } -- 90
 
     -- Base set for midcast - if not defined will notify and use your idle set for surviability
     sets.Midcast = set_combine(sets.Idle, {})
@@ -353,10 +357,10 @@ function get_sets()
     sets.Midcast.Cure = {
         main = "Daybreak",
         sub = "Ammurapi Shield",
-        -- range = {
-        --     name = "Dunna",
-        --     augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
-        -- },
+        range = {
+            name = "Dunna",
+            augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
+        },
         ammo = "Hydrocera",
         head = {
             name = "Vanya Hood",
@@ -393,7 +397,7 @@ function get_sets()
     sets.Midcast.Enhancing = {
         main = {
             name = "Gada",
-            augments = {'Enh. Mag. eff. dur. +6', '"Mag.Atk.Bns."+2', 'DMG:+1'}
+            augments = {'"Fast Cast"+5', 'STR+2', 'Mag. Acc.+20', '"Mag.Atk.Bns."+5'}
         },
         sub = "Ammurapi Shield",
         range = {
@@ -421,7 +425,7 @@ function get_sets()
             augments = {'Enh. Mag. eff. dur. +9'}
         },
         neck = "Loricate Torque +1",
-        waist = "Olympus Sash",
+        waist = "Embla Sash",
         left_ear = {
             name = "Odnowa Earring +1",
             augments = {'Path: A'}
@@ -442,11 +446,10 @@ function get_sets()
     sets.Midcast.Enfeebling = {
         main = "Daybreak",
         sub = "Ammurapi shield",
-        -- ammo = "Pemphredo Tathlum",
         head = "Geo. Galero +1",
         body = "Jhakri Robe +2",
         hands = "Regal Cuffs",
-        legs = "Geomancy Pants +2",
+        legs = "Geomancy Pants +3",
         feet = "Bagua Sandals +3",
         neck = {
             name = "Bagua Charm +1",
@@ -466,10 +469,6 @@ function get_sets()
             augments = {'Path: A'}
         },
         sub = "Ammurapi Shield",
-        -- ammo = {
-        --     name = "Ghastly Tathlum +1",
-        --     augments = {'Path: A'}
-        -- }, -- 8/8
         head = "Azimuth Hood +3", -- 10/10
         body = "Azimuth Coat +3", -- 10/10
         hands = "Azimuth Gloves +3", -- 10/10
@@ -497,10 +496,6 @@ function get_sets()
             augments = {'Path: A'}
         },
         sub = "Ammurapi Shield",
-        -- ammo = {
-        --     name = "Ghastly Tathlum +1",
-        --     augments = {'Path: A'}
-        -- },
         head = "Agwu's Cap",
         body = "Azimuth Coat +3",
         hands = {
@@ -563,7 +558,7 @@ function get_sets()
             augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
         },
         head = {
-            name = "Bagua Galero +2",
+            name = "Bagua Galero +3",
             augments = {'Enhances "Primeval Zeal" effect'}
         },
         -- body = "Azimuth Coat +3",
@@ -600,7 +595,7 @@ function get_sets()
             augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
         },
         head = {
-            name = "Bagua Galero +2",
+            name = "Bagua Galero +3",
             augments = {'Enhances "Primeval Zeal" effect'}
         },
         -- body = "Azimuth Coat +3",
@@ -625,11 +620,57 @@ function get_sets()
             augments = {'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'INT+10', '"Mag.Atk.Bns."+10', 'Phys. dmg. taken-10%'}
         }
     }
+
+    sets.Midcast['Absorb-TP'] = {
+        sub = "Ammurapi Shield",
+        range = {
+            name = "Dunna",
+            augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
+        },
+        head = {
+            name = "Amalric Coif",
+            augments = {'MP+60', 'Mag. Acc.+15', '"Mag.Atk.Bns."+15'}
+        },
+        body = "Agwu's Robe",
+        hands = {
+            name = "Agwu's Gages",
+            augments = {'Path: A'}
+        },
+        legs = "Geomancy Pants +3",
+        feet = "Agwu's Pigaches",
+        -- neck = {
+        --     name = "Bagua Charm +1",
+        --     augments = {'Path: A'}
+        -- },
+        neck = "Erra Pendant",
+        -- waist = {
+        --     name = "Acuity Belt +1",
+        --     augments = {'Path: A'}
+        -- },
+        waist = "Witful Belt",
+        left_ear = "Regal Earring",
+        -- right_ear = {
+        --     name = "Azimuth Earring +1",
+        --     augments = {'System: 1 ID: 1676 Val: 0', 'Mag. Acc.+14', 'Damage taken-5%'}
+        -- },
+        right_ear = "Malignance Earring",
+        left_ring = {
+            name = "Metamor. Ring +1",
+            augments = {'Path: A'}
+        },
+        -- right_ring = "Stikini Ring +1",
+        right_ring = "Kisha Ring",
+        back = {
+            name = "Nantosuelta's Cape",
+            augments = {'MND+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'MND+10', '"Fast Cast"+10', 'Phys. dmg. taken-10%'}
+        }
+    }
+
     -- Indi Duration
     sets.Geomancy = {}
     sets.Geomancy.Indi = {
         main = "Idris",
-        sub = "Ammurapi Shield",
+        sub = "Genmei Shield",
         range = {
             name = "Dunna",
             augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
@@ -649,8 +690,8 @@ function get_sets()
             name = "Bagua Charm +1",
             augments = {'Path: A'}
         },
-        waist = "Austerity Belt +1",
-        left_ear = "Malignance Earring",
+        waist = "Kobo Obi",
+        left_ear = "Halasz Earring",
         right_ear = {
             name = "Azimuth Earring +1",
             augments = {'System: 1 ID: 1676 Val: 0', 'Mag. Acc.+14', 'Damage taken-5%'}
@@ -666,7 +707,7 @@ function get_sets()
     -- Geo Potency
     sets.Geomancy.Geo = set_combine(sets.Geomancy.Indi, {
         main = "Idris",
-        sub = "Ammurapi Shield",
+        sub = "Genmei Shield",
         range = {
             name = "Dunna",
             augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
@@ -689,8 +730,8 @@ function get_sets()
             name = "Bagua Charm +1",
             augments = {'Path: A'}
         },
-        waist = "Austerity Belt +1",
-        left_ear = "Malignance Earring",
+        waist = "Kobo Obi",
+        left_ear = "Halasz Earring",
         right_ear = {
             name = "Azimuth Earring +1",
             augments = {'System: 1 ID: 1676 Val: 0', 'Mag. Acc.+14', 'Damage taken-5%'}
@@ -708,7 +749,7 @@ function get_sets()
     -- Will be used to keep max HP of Luopan when casting spells but switches when below 70% to the Idle.Pet set.
     sets.Luopan = {
         head = {
-            name = "Bagua Galero +2",
+            name = "Bagua Galero +3",
             augments = {'Enhances "Primeval Zeal" effect'}
         }
     }
@@ -791,15 +832,51 @@ function get_sets()
             augments = {'Accuracy+4', 'TP Bonus +250'}
         },
         right_ear = "Telos Earring",
-        left_ring = "Epaminondas's Ring",
+        left_ring = "Chirich Ring +1",
         right_ring = "Cornelia's Ring",
         back = {
             name = "Nantosuelta's Cape",
-            augments = {'HP+60', 'Eva.+20 /Mag. Eva.+20', 'Mag. Evasion+10', 'Pet: "Regen"+10', 'Damage taken-5%'}
+            augments = {'STR+20', 'Accuracy+20 Attack+20', 'Weapon skill damage +10%', 'Damage taken-5%'}
         }
-    }
+    } -- need to add+10 STR to this cape
+
     -- This set is used when OffenseMode is ACC and a WS is used (Augments the WS base set)
     sets.WS.ACC = {}
+
+    sets.WS["Judgment"] = set_combine(sets.WS, {
+        neck = "Rep. Plat. Medal",
+        right_ear = "Regal Earring",
+        waist = "Grunfeld Rope"
+    })
+
+    sets.WS["Black Halo"] = set_combine(sets.WS, {
+        neck = "Rep. Plat. Medal",
+        right_ear = "Regal Earring",
+        waist = "Grunfeld Rope"
+    })
+
+    sets.WS["Hexa Strike"] = set_combine(sets.WS, {})
+
+    sets.WS["Exudation"] = set_combine(sets.WS, {
+        -- ammo = "Oshasha's Treatise",
+        neck = "Sibyl Scarf",
+        left_ear = "Moonshade Earring",
+        right_ear = "Regal Earring",
+        ring1 = "Freke Ring",
+        ring2 = "Cornelia's Ring",
+        waist = "Hachirin-no-Obi"
+    })
+
+    sets.WS["Moonlight"] = set_combine(sets.WS, {
+        -- ammo = "Oshasha's Treatise",
+        neck = "Sibyl Scarf",
+        left_ear = "Moonshade Earring",
+        right_ear = "Regal Earring",
+        ring1 = "Freke Ring",
+        ring2 = "Cornelia's Ring",
+        waist = "Hachirin-no-Obi"
+    })
+
     -- Set to equip when charmed
     sets.Charm = {}
 
@@ -850,12 +927,13 @@ end
 function aftercast_custom(spell)
     equipSet = {}
     -- Maintain the High HP of the Luopan
-    if geomancy:contains(spell.english) then
+    if Geomancy_List:contains(spell.english) then
         equipSet = set_combine(equipSet, sets.Luopan)
     else
         equipSet = Luopan(equipSet)
     end
     return equipSet
+
 end
 -- Function is called when the player gains or loses a buff
 function buff_change_custom(name, gain)
