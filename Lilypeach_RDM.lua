@@ -579,7 +579,43 @@ function get_sets()
         -- back={ name="Intarabus's Cape", augments={'VIT+20','Eva.+20 /Mag. Eva.+20','Enmity+10','Phys. dmg. taken-10%',}},
 	})
 
-	sets.Midcast["Diaga"] = set_combine (sets.Midcast.Enfeebling, sets.TreasureHunter)
+	sets.Midcast["Flash"] = set_combine(sets.Midcast.Enhancing, {
+		main="Mafic Cudgel",
+        sub="Genmei Shield",
+        range="Gjallarhorn",
+        head="Halitus Helm",
+        body="Emet Harness +1",
+        hands="Fili Manchettes +3",
+        legs="Zoar Subligar +1",
+        feet={ name="Nyame Sollerets", augments={'Path: B',}},
+        neck="Unmoving Collar +1",
+        waist="Trance Belt",
+        left_ear="Etiolation Earring",
+        right_ear="Cryptic Earring",
+        left_ring="Provocare Ring",
+        right_ring="Supershear Ring",
+        -- back={ name="Intarabus's Cape", augments={'VIT+20','Eva.+20 /Mag. Eva.+20','Enmity+10','Phys. dmg. taken-10%',}},
+	})
+
+	-- sets.Midcast["Diaga"] = set_combine (sets.Midcast.Enfeebling, sets.TreasureHunter)
+	sets.Midcast["Diaga"] = set_combine(sets.Midcast.Enhancing, {
+		main="Mafic Cudgel",
+        sub="Genmei Shield",
+        range="Gjallarhorn",
+        head="Halitus Helm",
+        body="Emet Harness +1",
+        hands="Fili Manchettes +3",
+        legs="Zoar Subligar +1",
+        feet={ name="Nyame Sollerets", augments={'Path: B',}},
+        neck="Unmoving Collar +1",
+        waist="Trance Belt",
+        left_ear="Etiolation Earring",
+        right_ear="Cryptic Earring",
+        left_ring="Provocare Ring",
+        right_ring="Supershear Ring",
+        -- back={ name="Intarabus's Cape", augments={'VIT+20','Eva.+20 /Mag. Eva.+20','Enmity+10','Phys. dmg. taken-10%',}},
+	})
+	
 	sets.Midcast["Dispelga"] = set_combine (sets.Midcast.Enfeebling, sets.TreasureHunter)
 
 	sets.Midcast.Refresh = set_combine(sets.Midcast.Enhancing, {
@@ -647,6 +683,58 @@ function get_sets()
         legs = "Leth. Fuseau +3",
         feet = "Leth. Houseaux +3"
     }
+	sets.JA["Tellus"] = {}
+	sets.JA["Vallation"] = {
+		main="Mafic Cudgel",
+        sub="Genmei Shield",
+        range="Gjallarhorn",
+        head="Halitus Helm",
+        body="Emet Harness +1",
+        hands="Fili Manchettes +3",
+        legs="Zoar Subligar +1",
+        feet={ name="Nyame Sollerets", augments={'Path: B',}},
+        neck="Unmoving Collar +1",
+        waist="Trance Belt",
+        left_ear="Etiolation Earring",
+        right_ear="Cryptic Earring",
+        left_ring="Provocare Ring",
+        right_ring="Supershear Ring",
+        -- back={ name="Intarabus's Cape", augments={'VIT+20','Eva.+20 /Mag. Eva.+20','Enmity+10','Phys. dmg. taken-10%',}},
+	}
+	sets.JA["Valiance"] = {
+		main="Mafic Cudgel",
+        sub="Genmei Shield",
+        range="Gjallarhorn",
+        head="Halitus Helm",
+        body="Emet Harness +1",
+        hands="Fili Manchettes +3",
+        legs="Zoar Subligar +1",
+        feet={ name="Nyame Sollerets", augments={'Path: B',}},
+        neck="Unmoving Collar +1",
+        waist="Trance Belt",
+        left_ear="Etiolation Earring",
+        right_ear="Cryptic Earring",
+        left_ring="Provocare Ring",
+        right_ring="Supershear Ring",
+        -- back={ name="Intarabus's Cape", augments={'VIT+20','Eva.+20 /Mag. Eva.+20','Enmity+10','Phys. dmg. taken-10%',}},
+	}
+	sets.JA["Pflug"] = {
+		main="Mafic Cudgel",
+        sub="Genmei Shield",
+        range="Gjallarhorn",
+        head="Halitus Helm",
+        body="Emet Harness +1",
+        hands="Fili Manchettes +3",
+        legs="Zoar Subligar +1",
+        feet={ name="Nyame Sollerets", augments={'Path: B',}},
+        neck="Unmoving Collar +1",
+        waist="Trance Belt",
+        left_ear="Etiolation Earring",
+        right_ear="Cryptic Earring",
+        left_ring="Provocare Ring",
+        right_ring="Supershear Ring",
+        -- back={ name="Intarabus's Cape", augments={'VIT+20','Eva.+20 /Mag. Eva.+20','Enmity+10','Phys. dmg. taken-10%',}},
+	}
 
 	-- ===================================================================================================================
 	--		sets.WS
