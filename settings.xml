@@ -91,4 +91,24 @@
             </pos>
         </Display_Box>
     </fudosama>
+    <lilypeach>
+        <Debug_Box>
+            <text>
+                <fonts>
+
+                </fonts>
+            </text>
+        </Debug_Box>
+        <Display_Box>
+            <pos>
+                <x>1615</x>
+                <y>602</y>
+            </pos>
+            <text>
+                <fonts>
+
+                </fonts>
+            </text>
+        </Display_Box>
+    </lilypeach>
 </settings>
