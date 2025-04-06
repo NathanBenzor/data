@@ -101,8 +101,13 @@
         </Debug_Box>
         <Display_Box>
             <pos>
+<<<<<<< HEAD
                 <x>1615</x>
                 <y>602</y>
+=======
+                <x>2046</x>
+                <y>715</y>
+>>>>>>> a027379ae802aa6e1c07530a67bd34c59df25c1a
             </pos>
             <text>
                 <fonts>
@@ -111,4 +116,15 @@
             </text>
         </Display_Box>
     </lilypeach>
+<<<<<<< HEAD
+=======
+    <rialyn>
+        <Display_Box>
+            <pos>
+                <x>2053</x>
+                <y>711</y>
+            </pos>
+        </Display_Box>
+    </rialyn>
+>>>>>>> a027379ae802aa6e1c07530a67bd34c59df25c1a
 </settings>

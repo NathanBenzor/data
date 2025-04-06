@@ -185,10 +185,11 @@ function get_sets()
             name = "Sakpata's Gauntlets",
             augments = {'Path: A'}
         },
-        legs = {
-            name = "Sakpata's Cuisses",
-            augments = {'Path: A'}
-        },
+        -- legs = {
+        --     name = "Sakpata's Cuisses",
+        --     augments = {'Path: A'}
+        -- },
+        legs = "Ignominy Flanchard +3",
         feet = "Flam. Gambieras +2",
         neck = {
             name = "Vim Torque +1",
@@ -198,12 +199,13 @@ function get_sets()
             name = "Sailfi Belt +1",
             augments = {'Path: A'}
         },
-        left_ear = "Dedition Earring",
-        right_ear = {
+        left_ear = {
             name = "Schere Earring",
             augments = {'Path: A'}
         },
-        left_ring = "Petrov Ring",
+        right_ear = "Dedition Earring",
+        -- left_ring = "Petrov Ring",
+        left_ring = "Chirich Ring +1",
         right_ring = "Moonlight Ring",
         back = {
             name = "Ankou's Mantle",
@@ -969,8 +971,8 @@ function get_sets()
             augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+14', 'Mag. Acc.+14', 'Weapon skill damage +3%'}
         },
         left_ring = "Sroda Ring",
-        -- right_ring = "Cornelia's Ring",
-        right_ring = "Regal Ring",
+        right_ring = "Cornelia's Ring",
+        -- right_ring = "Regal Ring",
         back = {
             name = "Ankou's Mantle",
             augments = {'VIT+20', 'Accuracy+20 Attack+20', 'VIT+10', 'Weapon skill damage +10%', 'Damage taken-5%'}
@@ -1381,14 +1383,12 @@ function get_sets()
             name = "Moonshade Earring",
             augments = {'Accuracy+4', 'TP Bonus +250'}
         },
-        -- right_ear = "Thrud Earring",
         right_ear = {
             name = "Heath. Earring +1",
             augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+14', 'Mag. Acc.+14', 'Weapon skill damage +3%'}
         },
         left_ring = "Sroda Ring",
         right_ring = "Regal Ring",
-        -- right_ring = "Cornelia's Ring",
         back = {
             name = "Ankou's Mantle",
             augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%'}
@@ -1428,7 +1428,8 @@ function get_sets()
             augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+14', 'Mag. Acc.+14', 'Weapon skill damage +3%'}
         },
         left_ring = "Sroda Ring",
-        right_ring = "Cornelia's Ring",
+        -- right_ring = "Cornelia's Ring",
+        right_ring = "Regal Ring",
         back = {
             name = "Ankou's Mantle",
             augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%'}
@@ -2005,7 +2006,7 @@ function choose_set_custom()
     equipSet = {}
 
     if player.status == "Engaged" then
-        if buffactive['Ballad'] or buffactive['Refresh'] and player.mp > 500 then
+        if buffactive['Ballad'] or buffactive['Refresh'] and player.mp > 300 then
             equipSet = sets.Schere
         end
 
