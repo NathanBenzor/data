@@ -1,0 +1,17 @@
+sets.exported={
+    main={ name="Carnwenhan", augments={'Path: A',}},
+    sub={ name="Kali", augments={'Mag. Acc.+15','String instrument skill +10','Wind instrument skill +10',}},
+    range="Loughnashade",
+    head="Fili Calot +3",
+    body="Bunzi's Robe",
+    hands="Bunzi's Gloves",
+    legs="Inyanga Shalwar +2",
+    feet={ name="Bunzi's Sabots", augments={'Path: A',}},
+    neck={ name="Loricate Torque +1", augments={'Path: A',}},
+    waist="Embla Sash",
+    left_ear="Odnowa Earring +1",
+    right_ear="Etiolation Earring",
+    left_ring="Shneddick Ring",
+    right_ring="Defending Ring",
+    back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','Phys. dmg. taken-10%',}},
+}
