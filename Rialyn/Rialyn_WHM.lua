@@ -639,10 +639,7 @@ function init_gear_sets()
             augments = {'Enhances "Benediction" effect'}
         },
         hands = "Inyan. Dastanas +2",
-        legs = {
-            name = "Piety Pantaln. +3",
-            augments = {'Enhances "Afflatus Misery" effect'}
-        },
+        legs = "Shedir Seraweels",
         feet = "Theo. Duckbills +3",
         neck = "Nodens Gorget",
         waist = "Siegel Sash",
@@ -666,6 +663,7 @@ function init_gear_sets()
                         'Mag. Acc.+5 "Mag.Atk.Bns."+5'}
         },
         hands = "Regal Cuffs",
+        legs = "Shedir Seraweels",
         ear1 = "Halasz Earring",
         ear2 = "Magnetic Earring",
         ring1 = "Freke Ring",
@@ -771,7 +769,7 @@ function init_gear_sets()
         },
         legs = {
             name = "Chironic Hose",
-            augments = {'Mag. Acc.+25 "Mag.Atk.Bns."+25', 'MND+13', 'Mag. Acc.+9', '"Mag.Atk.Bns."+15'}
+            augments = {'Mag. Acc.+22 "Mag.Atk.Bns."+22', '"Conserve MP"+2', 'INT+10', 'Mag. Acc.+9'}
         },
         feet = "Theo. Duckbills +3",
         neck = "Henic Torque",

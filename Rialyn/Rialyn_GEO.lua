@@ -467,12 +467,14 @@ function get_sets()
 
     -- Specific gear for spells
     sets.Midcast["Stoneskin"] = set_combine(sets.Midcast.Enhancing, {
+        legs = "Shedir Seraweels",
         left_ring = "Stikini Ring +1",
         right_ring = "Stikini Ring +1",
         waist = "Siegel Sash"
     })
     -- Aquaveil Set
     sets.Midcast["Aquaveil"] = set_combine(sets.Midcast.Enhancing, {
+        legs = "Shedir Seraweels",
         head = {
             name = "Amalric Coif +1",
             augments = {'MP+80', 'Mag. Acc.+20', '"Mag.Atk.Bns."+20'}

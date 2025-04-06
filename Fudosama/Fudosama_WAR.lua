@@ -30,7 +30,7 @@ state.OffenseMode:options('DT', 'PDL', 'Chango', 'TP', 'ACC', 'CRIT', 'HP')
 state.OffenseMode:set('DT')
 
 -- Weapons options
-state.WeaponMode:options('Naegling', 'Chango', 'Club', 'Shining One', 'Great Sword', 'Dolichenus', 'Unlocked')
+state.WeaponMode:options('Naegling', 'Chango', 'Loxotic Mace', 'Shining One', 'Agwus Claymore', 'Unlocked')
 state.WeaponMode:set('Naegling')
 
 -- Initialize Player
@@ -59,20 +59,12 @@ function get_sets()
         sub = "Blurred Shield +1"
     }
 
-    sets.Weapons['Dolichenus'] = {
-        main = "Dolichenus",
-        sub = {
-            name = "Digirbalag",
-            augments = {'"Dbl.Atk."+4', 'Accuracy+11', 'Attack+8'}
-        }
-    }
-
-    sets.Weapons['Great Sword'] = {
+    sets.Weapons['Agwus Claymore'] = {
         main = "Agwu's Claymore",
         sub = "Utu Grip"
     }
 
-    sets.Weapons['Club'] = {
+    sets.Weapons['Loxotic Mace'] = {
         main = {
             name = "Loxotic Mace +1",
             augments = {'Path: A'}
@@ -325,15 +317,8 @@ function get_sets()
     } -- 100% DA
 
     sets.OffenseMode.HP = {
-        ammo = {
-            name = "Coiste Bodhar",
-            augments = {'Path: A'}
-        },
-        head = "Boii Mask +3",
-        body = {
-            name = "Sakpata's Plate",
-            augments = {'Path: A'}
-        },
+        head = "Genmei Kabuto",
+        body = "Hjarrandi Breast.",
         hands = {
             name = "Sakpata's Gauntlets",
             augments = {'Path: A'}
@@ -348,16 +333,16 @@ function get_sets()
         },
         neck = "Null Loop",
         waist = "Plat. Mog. Belt",
-        left_ear = {
-            name = "Schere Earring",
+        left_ear = "Tuisto Earring",
+        right_ear = {
+            name = "Odnowa Earring +1",
             augments = {'Path: A'}
         },
-        right_ear = {
-            name = "Boii Earring +1",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+15', 'Mag. Acc.+15', 'Crit.hit rate+5'}
-        },
         left_ring = "Moonlight Ring",
-        right_ring = "Gelatinous Ring +1",
+        right_ring = {
+            name = "Gelatinous Ring +1",
+            augments = {'Path: A'}
+        },
         back = "Moonbeam Cape"
     }
 
