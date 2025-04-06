@@ -3,7 +3,7 @@
 include('Fudosama-Include')
 
 -- Set to ingame lockstyle and Macro Book/Set
-LockStylePallet = "20"
+LockStylePallet = "19"
 MacroBook = "6"
 MacroSet = "1"
 
@@ -23,7 +23,7 @@ Food = "Sublime Sushi"
 state.OffenseMode:options('DT', 'TP', 'SB', 'Farm') -- ACC effects WS and TP modes
 state.OffenseMode:set('DT')
 
-state.WeaponMode:options('Aeneas', 'Karambit')
+state.WeaponMode:options('Aeneas', 'Tauret', 'Karambit', 'Unlocked')
 state.WeaponMode:set('Aeneas')
 
 -- Initialize Player
@@ -36,26 +36,46 @@ function get_sets()
     sets.Weapons['Twashtar'] = {}
     sets.Weapons['Aeneas'] = {
         main = "Aeneas",
-        sub = "Gleti's Knife"
+        sub = {
+            name = "Gleti's Knife",
+            augments = {'Path: A'}
+        }
+    }
+    sets.Weapons['Tauret'] = {
+        main = "Tauret",
+        sub = {
+            name = "Gleti's Knife",
+            augments = {'Path: A'}
+        }
     }
     sets.Weapons['Karambit'] = {
         main = "Karambit"
     }
+    sets.Weapons['Unlocked'] = {}
 
     -- Standard Idle set with -DT, Refresh, Regen and movement gear
     sets.Idle = {}
 
     sets.Idle.DT = {
         ammo = "Staunch Tathlum +1",
-        head = "Malignance Chapeau",
-        body = "Malignance Tabard",
-        hands = "Malignance Gloves",
-        legs = "Malignance Tights",
-        feet = "Malignance Boots",
-        neck = {
-            name = "Loricate Torque +1",
-            augments = {'Path: A'}
+        head = "Null Masque",
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
         },
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
+        neck = "Null Loop",
         waist = "Flume Belt +1",
         left_ear = {
             name = "Odnowa Earring +1",
@@ -64,7 +84,7 @@ function get_sets()
         right_ear = "Infused Earring",
         left_ring = "Moonlight Ring",
         right_ring = "Defending Ring",
-        back = "Sacro Mantle"
+        back = "Null Shawl"
     }
 
     sets.Idle.TP = {
@@ -155,7 +175,7 @@ function get_sets()
         right_ear = "Telos Earring",
         left_ring = "Moonlight Ring",
         right_ring = "Moonlight Ring",
-        back = "Sacro Mantle"
+        back = "Null Shawl"
     }
     -- Base TP set to build off
     sets.OffenseMode.TP = {
