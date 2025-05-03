@@ -75,10 +75,7 @@ function get_sets()
             augments = {'Enhances "Curative Recantation" effect'}
         },
         legs = "Assid. Pants +1",
-        feet = {
-            name = "Bagua Sandals +3",
-            augments = {'Enhances "Radial Arcana" effect'}
-        },
+        feet = "Azimuth Gaiters +3",
         neck = {
             name = "Loricate Torque +1",
             augments = {'Path: A'}
@@ -93,7 +90,7 @@ function get_sets()
         right_ring = "Stikini Ring +1",
         back = {
             name = "Nantosuelta's Cape",
-            augments = {'VIT+20', 'Eva.+20 /Mag. Eva.+20', 'Pet: "Regen"+10', 'Phys. dmg. taken-10%'}
+            augments = {'VIT+20', 'Eva.+20 /Mag. Eva.+20', 'Pet: "Regen"+10', 'Damage taken-5%'}
         }
     } -- 50 PDT / 52 MDT (including shield)
 
@@ -301,7 +298,7 @@ function get_sets()
         right_ring = "Chirich Ring +1",
         back = {
             name = "Nantosuelta's Cape",
-            augments = {'HP+60', 'Eva.+20 /Mag. Eva.+20', 'Mag. Evasion+10', 'Pet: "Regen"+10', 'Damage taken-5%'}
+            augments = {'VIT+20', 'Eva.+20 /Mag. Eva.+20', 'Pet: "Regen"+10', 'Damage taken-5%'}
         }
     })
 

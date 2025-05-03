@@ -17,13 +17,13 @@ Food = "Sublime Sushi"
 state.OffenseMode:options('TP', 'ACC', 'DT', 'PDL', 'SB', 'MEVA') -- ACC effects WS and TP modes
 
 -- Upon Job change will use a random lockstyleset
-Random_Lockstyle = false
+Random_Lockstyle = true
 
 -- Set to true to run organizer on job changes
 Organizer = false
 
 -- Lockstyle sets to randomly equip
-Lockstyle_List = {1, 2, 6, 12}
+Lockstyle_List = {135, 137}
 
 -- Set Mode to Damage Taken as Default
 state.OffenseMode:set('DT')
@@ -131,73 +131,33 @@ function get_sets()
 
     -- Standard Idle set with -DT, Refresh, Regen and movement gear
     sets.Idle = {
-        -- ammo = "Staunch Tathlum +1",
-        -- head = "Null Masque",
-        -- body = {
-        --     name = "Nyame Mail",
-        --     augments = {'Path: B'}
-        -- },
-        -- hands = {
-        --     name = "Nyame Gauntlets",
-        --     augments = {'Path: B'}
-        -- },
-        -- legs = {
-        --     name = "Nyame Flanchard",
-        --     augments = {'Path: B'}
-        -- },
-        -- feet = {
-        --     name = "Nyame Sollerets",
-        --     augments = {'Path: B'}
-        -- },
-        -- neck = "Warder's Charm +1",
-        -- waist = "Carrier's Sash",
-        -- left_ear = "Etiolation Earring",
-        -- right_ear = {
-        --     name = "Odnowa Earring +1",
-        --     augments = {'Path: A'}
-        -- },
-        -- left_ring = {
-        --     name = "Moonlight Ring",
-        --     bag = "wardrobe1",
-        --     priority = 2
-        -- },
-        -- right_ring = {
-        --     name = "Moonlight Ring",
-        --     bag = "wardrobe2",
-        --     priority = 1
-        -- },
-        -- back = {
-        --     name = "Artio's Mantle",
-        --     augments = {'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20', 'Accuracy+20 Attack+20',
-        --                 'Accuracy+10', '"Store TP"+10', 'Damage taken-5%'}
-        -- }
         ammo = "Staunch Tathlum +1",
         head = "Null Masque",
-        neck = "Bathy Choker +1",
-        left_ear = "Eabani Earring",
-        right_ear = "Genmei Earring",
-        body = {
-            name = "Nyame Mail",
-            augments = {'Path: B', 'STR+10', 'Attack+15', 'Phys. dmg. taken-2'}
-        },
+        body = "Adamantite Armor",
         hands = {
             name = "Nyame Gauntlets",
-            augments = {'Path: B', 'STR+10', 'Attack+15', 'Phys. dmg. taken-2'}
+            augments = {'Path: B'}
         },
-        ring1 = "Defending Ring",
-        ring2 = "Moonlight Ring",
-        back = {
-            name = "Artio's Mantle",
-            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Phys. dmg. taken-10%'}
-        },
-        waist = "Null Belt",
         legs = {
             name = "Nyame Flanchard",
-            augments = {'Path: B', 'STR+10', 'Attack+15', 'Phys. dmg. taken-2'}
+            augments = {'Path: B'}
         },
         feet = {
             name = "Nyame Sollerets",
-            augments = {'Path: B', 'STR+10', 'Attack+15', 'Phys. dmg. taken-2'}
+            augments = {'Path: B'}
+        },
+        neck = "Null Loop",
+        waist = "Null Belt",
+        left_ear = "Etiolation Earring",
+        right_ear = {
+            name = "Odnowa Earring +1",
+            augments = {'Path: A'}
+        },
+        left_ring = "Defending Ring",
+        right_ring = "Moonlight Ring",
+        back = {
+            name = "Artio's Mantle",
+            augments = {'Eva.+20 /Mag. Eva.+20', 'Pet: "Regen"+10', 'Pet: Damage taken -5%'}
         }
     }
 
@@ -205,7 +165,7 @@ function get_sets()
         feet = "Gleti's Boots",
         right_ear = {
             name = "Nukumi Earring +1",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+13', 'Mag. Acc.+13', 'Pet: "Dbl. Atk."+6'}
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+11', 'Mag. Acc.+11', 'Pet: "Dbl. Atk."+5'}
         },
         left_ring = "C. Palug Ring",
         back = {
@@ -229,44 +189,6 @@ function get_sets()
     }
 
     sets.OffenseMode = {
-        -- ammo = {
-        --     name = "Coiste Bodhar",
-        --     augments = {'Path: A'}
-        -- },
-        -- head = {
-        --     name = "Gleti's Mask",
-        --     augments = {'Path: A'}
-        -- },
-        -- body = {
-        --     name = "Gleti's Cuirass",
-        --     augments = {'Path: A'}
-        -- },
-        -- hands = {
-        --     name = "Gleti's Gauntlets",
-        --     augments = {'Path: A'}
-        -- },
-        -- legs = {
-        --     name = "Gleti's Breeches",
-        --     augments = {'Path: A'}
-        -- },
-        -- feet = {
-        --     name = "Gleti's Boots",
-        --     augments = {'Path: A'}
-        -- },
-        -- neck = "Bst. Collar +2",
-        -- waist = {
-        --     name = "Sailfi Belt +1",
-        --     augments = {'Path: A'}
-        -- },
-        -- left_ear = "Sherida Earring",
-        -- right_ear = "Crep. Earring",
-        -- left_ring = "Gere Ring",
-        -- right_ring = "Epona's Ring",
-        -- back = {
-        --     name = "Artio's Mantle",
-        --     augments = {'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20', 'Accuracy+20 Attack+20',
-        --                 'Accuracy+10', '"Store TP"+10', 'Damage taken-5%'}
-        -- }
         ammo = {
             name = "Coiste Bodhar",
             augments = {'Path: A'}
@@ -318,10 +240,7 @@ function get_sets()
 
     -- Ready JA command
     sets.Ready = {
-        legs = {
-            name = "Gleti's Breeches",
-            augments = {'Path: A'}
-        }
+        legs = "Gleti's Breeches"
     }
 
     sets.Precast = {}
@@ -353,7 +272,22 @@ function get_sets()
 
     -- Debuff moves that need MACC
     sets.Pet_Midcast.MACC = {
-        right_ear = "Crep. Earring"
+        ammo = "Voluspa Tathlum",
+        head = "Nuk. Cabasset +2",
+        body = "Nukumi Gausape +3",
+        hands = "Nukumi Manoplas +3",
+        legs = "Nukumi Quijotes +2",
+        feet = "Gleti's Boots",
+        neck = "Bst. Collar +2",
+        waist = "Incarnation Sash",
+        left_ear = "Kyrene's Earring",
+        right_ear = "Enmerkar Earring",
+        left_ring = "Tali'ah Ring",
+        right_ring = "C. Palug Ring",
+        back = {
+            name = "Artio's Mantle",
+            augments = {'Pet: M.Acc.+20 Pet: M.Dmg.+20', 'Pet: Mag. Acc.+10'}
+        }
     }
 
     -- Example for a specific move
@@ -391,40 +325,37 @@ function get_sets()
             augments = {'Path: A'}
         },
         head = {
-            name = "Gleti's Mask",
-            augments = {'Path: A'}
+            name = "Nyame Helm",
+            augments = {'Path: B'}
         },
         body = {
-            name = "Gleti's Cuirass",
-            augments = {'Path: A'}
+            name = "Nyame Mail",
+            augments = {'Path: B'}
         },
         hands = {
-            name = "Gleti's Gauntlets",
-            augments = {'Path: A'}
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
         },
         legs = {
-            name = "Gleti's Breeches",
-            augments = {'Path: A'}
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
         },
         feet = {
-            name = "Gleti's Boots",
-            augments = {'Path: A'}
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
         },
-        neck = "Bst. Collar +2",
+        neck = "Fotia Gorget",
         waist = {
             name = "Sailfi Belt +1",
             augments = {'Path: A'}
         },
-        left_ear = "Sherida Earring",
-        right_ear = {
-            name = "Nukumi Earring +1",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+13', 'Mag. Acc.+13', 'Pet: "Dbl. Atk."+6'}
-        },
-        left_ring = "Gere Ring",
-        right_ring = "Epona's Ring",
+        left_ear = "Thrud Earring",
+        right_ear = "Sherida Earring",
+        left_ring = "Sroda Ring",
+        right_ring = "Gere Ring",
         back = {
             name = "Artio's Mantle",
-            augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', '"Dbl.Atk."+10', 'Damage taken-5%'}
+            augments = {'STR+20', 'Accuracy+20 Attack+20', 'Weapon skill damage +10%', 'Damage taken-5%'}
         }
     }
 
@@ -464,7 +395,6 @@ end
 
 -- Adjust custom precast actions
 function pretarget_custom(spell, action)
-
 end
 -- Augment basic equipment sets
 function precast_custom(spell)
@@ -551,7 +481,6 @@ function status_change_custom(new, old)
 end
 -- Function is called when a self command is issued
 function self_command_custom(command)
-
 end
 -- Custom Function
 function choose_gear()
@@ -586,5 +515,4 @@ end
 
 -- This function is called when the job file is unloaded
 function user_file_unload()
-
 end

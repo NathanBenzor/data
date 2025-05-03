@@ -19,11 +19,12 @@ Random_Lockstyle = false
 -- Lockstyle sets to randomly equip
 Lockstyle_List = {1, 2, 6, 12}
 
-state.OffenseMode:options('DT', 'TP', 'PDL', 'ACC', 'MagicDamage')
+state.OffenseMode:options('DT', 'TP', 'PDL', 'ACC', 'MagicDamage', 'EVA')
 state.OffenseMode:set('DT')
 
 -- Modes for specific to Ninja
-state.WeaponMode:options('Heishi', 'Savage Blade', 'Great Katana', 'Aeolian Edge', 'Enmity', 'Magic Damage', 'Abyssea')
+state.WeaponMode:options('Heishi', 'Savage Blade', 'Great Katana', 'Aeolian Edge', 'Enmity', 'Evasion', 'Magic Damage',
+    'Abyssea')
 state.WeaponMode:set('Heishi')
 
 elemental_ws = S {'Aeolian Edge', 'Blade: Teki', 'Blade: To', 'Blade: Chi', 'Blade: Ei', 'Blade: Yu'}
@@ -78,6 +79,17 @@ function get_sets()
         }
     }
 
+    sets.Weapons['Evasion'] = {
+        main = {
+            name = "Kunimitsu",
+            augments = {'Path: A'}
+        },
+        sub = {
+            name = "Tsuru",
+            augments = {'Path: A'}
+        }
+    }
+
     sets.Weapons['Abyssea'] = {
         main = "",
         sub = ""
@@ -91,10 +103,7 @@ function get_sets()
         --     augments = {'Path: B'}
         -- },
         head = "Null Masque",
-        body = {
-            name = "Nyame Mail",
-            augments = {'Path: B'}
-        },
+        body = "Adamantite Armor",
         hands = {
             name = "Nyame Gauntlets",
             augments = {'Path: B'}
@@ -162,6 +171,22 @@ function get_sets()
             augments = {'Path: A'}
         },
         back = "Moonbeam Cape"
+    }
+
+    sets.Idle.EVA = {
+        ammo = "Yamarang",
+        head = "Null Masque",
+        body = "Malignance Tabard",
+        hands = "Malignance Gloves",
+        legs = "Malignance Tights",
+        feet = "Malignance Boots",
+        neck = "Bathy Choker +1",
+        waist = "Null Belt",
+        left_ear = "Eabani Earring",
+        right_ear = "Infused Earring",
+        left_ring = "Defending Ring",
+        right_ring = "Vengeful Ring",
+        back = "Null Shawl"
     }
 
     -- Defined below based off time of day
@@ -298,6 +323,22 @@ function get_sets()
         feet = "Malignance Boots"
     })
 
+    sets.OffenseMode.EVA = set_combine(sets.OffenseMode.TP, {
+        ammo = "Date Shuriken",
+        head = "Malignance Chapeau",
+        body = "Malignance Tabard",
+        hands = "Malignance Gloves",
+        legs = "Malignance Tights",
+        feet = "Malignance Boots",
+        neck = "Bathy Choker +1",
+        waist = "Trance Belt",
+        left_ear = "Eabani Earring",
+        right_ear = "Infused Earring",
+        left_ring = "Defending Ring",
+        right_ring = "Vengeful Ring",
+        back = "Agema Cape"
+    })
+
     sets.DualWield = {}
 
     sets.Precast = {}
@@ -379,8 +420,47 @@ function get_sets()
         }
     }
 
+    sets.Midcast['Stun'] = {
+        ammo = "Date Shuriken",
+        head = "Genmei Kabuto",
+        body = "Emet Harness +1",
+        hands = "Kurys Gloves",
+        legs = "Zoar Subligar +1",
+        feet = {
+            name = "Mochi. Kyahan +3",
+            augments = {'Enh. Ninj. Mag. Acc/Cast Time Red.'}
+        },
+        neck = "Moonbeam Necklace",
+        waist = "Trance Belt",
+        left_ear = "Trux Earring",
+        right_ear = "Cryptic Earring",
+        left_ring = "Pernicious Ring",
+        right_ring = "Supershear Ring",
+        back = {
+            name = "Andartia's Mantle",
+            augments = {'HP+60', 'Enmity+10', 'Damage taken-5%'}
+        }
+    }
+
+    sets.Midcast["Absorb-TP"] = {
+        ammo = "Date Shuriken",
+        head = "Null Masque",
+        body = "Nyame Mail",
+        hands = "Nyame Gauntlets",
+        legs = "Nyame Flanchard",
+        feet = "Nyame Sollerets",
+        neck = "Null Loop",
+        waist = "Null Belt",
+        left_ear = "Trux Earring",
+        right_ear = "Cryptic Earring",
+        left_ring = "Stikini Ring",
+        right_ring = "Stikini Ring",
+        back = "Null Shawl"
+    }
+
     -- Base set for midcast - if not defined will notify and use your idle set for surviability
-    sets.Midcast = set_combine(sets.Idle, {})
+    sets.Midcast = {}
+
     -- Utsusemi Set
     sets.Midcast.Utsusemi = {
         head = "Null Masque",
@@ -1022,7 +1102,6 @@ end
 -- Augment basic equipment sets
 function midcast_custom(spell)
     equipSet = {}
-
     return equipSet
 end
 -- Augment basic equipment sets

@@ -83,10 +83,7 @@ function get_sets()
     sets.Idle = {
         ammo = "Staunch Tathlum +1",
         head = "Null Masque",
-        body = {
-            name = "Sakpata's Plate",
-            augments = {'Path: A'}
-        },
+        body = "Adamantite Armor",
         hands = {
             name = "Sakpata's Gauntlets",
             augments = {'Path: A'}
