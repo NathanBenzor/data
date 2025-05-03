@@ -98,10 +98,7 @@ function get_sets()
     sets.Idle = {
         ammo = "Staunch Tathlum +1",
         head = "Null Masque",
-        body = {
-            name = "Sakpata's Plate",
-            augments = {'Path: A'}
-        },
+        body = "Adamantite Armor",
         hands = {
             name = "Sakpata's Gauntlets",
             augments = {'Path: A'}
@@ -243,7 +240,11 @@ function get_sets()
             augments = {'Path: A'}
         },
         waist = "Ioskeha Belt +1",
-        left_ear = "Dedition Earring",
+        -- left_ear = "Dedition Earring",
+        left_ear = {
+            name = "Schere Earring",
+            augments = {'Path: A'}
+        },
         right_ear = "Telos Earring",
         left_ring = "Niqmaddu Ring",
         right_ring = "Moonlight Ring",
@@ -499,7 +500,27 @@ function get_sets()
     }
     sets.Midcast["Stun"] = set_combine(sets.Enmity, {})
 
-    sets.Midcast["Absorb-CHR"] = set_combine(sets.Enmity, {})
+    sets.Midcast["Absorb-CHR"] = {
+        ammo = "Pemphredo Tathlum",
+        head = "Heath. Bur. +3",
+        body = "Heath. Cuirass +3",
+        hands = "Heath. Gauntlets +3",
+        legs = "Heath. Flanchard +3",
+        feet = "Heath. Sollerets +3",
+        neck = "Erra Pendant",
+        waist = "Eschan Stone",
+        left_ear = "Malignance Earring",
+        right_ear = {
+            name = "Heath. Earring +1",
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+14', 'Mag. Acc.+14', 'Weapon skill damage +3%'}
+        },
+        left_ring = "Kishar Ring",
+        right_ring = "Stikini Ring +1",
+        back = {
+            name = "Ankou's Mantle",
+            augments = {'HP+60', 'Mag. Acc+20 /Mag. Dmg.+20', '"Fast Cast"+10', 'Damage taken-5%'}
+        }
+    }
 
     sets.Midcast["Absorb-MND"] = set_combine(sets.Enmity, {})
 
@@ -545,7 +566,7 @@ function get_sets()
         legs = "Fall. Flanchard +3",
         feet = "Ratri sollerets +1",
         neck = "Erra Pendant",
-        waist = "Eschan Stone",
+        waist = "Null Belt",
         ear1 = "Mani Earring",
         ear2 = "Heathen Earring +1",
         ring1 = "Kishar Ring",
@@ -561,18 +582,21 @@ function get_sets()
         legs = "Heath. Flanchard +3",
         feet = "Heath. Sollerets +3",
         neck = "Erra Pendant",
-        waist = "Eschan Stone",
+        waist = "Null Belt",
         left_ear = "Malignance Earring",
         right_ear = {
             name = "Heath. Earring +1",
             augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+14', 'Mag. Acc.+14', 'Weapon skill damage +3%'}
         },
-        left_ring = "Kishar Ring",
-        right_ring = "Stikini Ring +1",
-        back = {
-            name = "Ankou's Mantle",
-            augments = {'HP+60', 'Mag. Acc+20 /Mag. Dmg.+20', '"Fast Cast"+10', 'Damage taken-5%'}
-        }
+        left_ring = "Stikini Ring +1",
+        -- right_ring = "Kishar Ring",
+        right_ring = "Stikini Ring +1", -- testing , need to evaluate recast time
+        -- back = {
+        --     name = "Ankou's Mantle",
+        --     augments = {'HP+60', 'Mag. Acc+20 /Mag. Dmg.+20', '"Fast Cast"+10', 'Damage taken-5%'}
+        -- }
+        -- back = "Chuparrosa Mantle"
+        back = "Null Shawl"
     }
 
     sets.Midcast.Dark = {

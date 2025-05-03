@@ -170,10 +170,7 @@ function get_sets()
     -- Standard Idle set with -DT,Refresh,Regen with NO movement gear
     sets.Idle = {
         ammo = Ammo.Bullet.RA,
-        head = {
-            name = "Nyame Helm",
-            augments = {'Path: B'}
-        },
+        head = "Null Masque",
         body = {
             name = "Nyame Mail",
             augments = {'Path: B'}
@@ -194,17 +191,17 @@ function get_sets()
             name = "Loricate Torque +1",
             augments = {'Path: A'}
         },
-        waist = "Carrier's Sash",
+        waist = "Null Belt",
         left_ear = {
             name = "Odnowa Earring +1",
             augments = {'Path: A'}
         },
-        right_ear = "Sanare Earring",
-        left_ring = {
+        right_ear = "Etiolation Earring",
+        right_ring = {
             name = "Gelatinous Ring +1",
             augments = {'Path: A'}
         },
-        right_ring = "Shadow Ring",
+        left_ring = "Defending Ring",
         back = {
             name = "Camulus's Mantle",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
@@ -426,6 +423,22 @@ function get_sets()
             augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'Rng.Acc.+10', 'Crit.hit rate+10', 'Damage taken-5%'}
         }
     })
+
+    sets.Midcast["Absorb-TP"] = {
+        ammo = "Pemphredo Tathlum",
+        head = "Malignance Chapeau",
+        body = "Malignance Tabard",
+        hands = "Malignance Gloves",
+        legs = "Malignance Tights",
+        feet = "Malignance Boots",
+        neck = "Null Loop",
+        waist = "Null Belt",
+        left_ear = "Malignance Earring",
+        right_ear = "Crep. Earring",
+        left_ring = "Kishar Ring",
+        right_ring = "Stikini Ring +1",
+        back = "Null Shawl"
+    }
 
     sets.Utsusemi = set_combine(sets.Idle, {})
 

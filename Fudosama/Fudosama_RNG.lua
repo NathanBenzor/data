@@ -27,8 +27,8 @@ state.OffenseMode:options('TP', 'ACC', 'DT', 'PDL', 'CRIT', 'SB', 'True Shot')
 state.OffenseMode:set('TP')
 
 -- Modes for specific to Ranger
-state.WeaponMode:options('Gastraphetes', 'Fomalhaut', 'Annihilator', 'Armageddon', 'Gandiva', 'Fail-Not', 'Naegling',
-    'Tauret')
+state.WeaponMode:options('Gastraphetes', 'Fomalhaut', 'Annihilator', 'Armageddon', 'Arma-MagicATT', 'Gandiva',
+    'Fail-Not', 'Naegling', 'Tauret')
 state.WeaponMode:set('Gastraphetes')
 
 -- Enable JobMode for UI.
@@ -146,6 +146,18 @@ function get_sets()
         range = "Armageddon"
     }
 
+    sets.Weapons['Arma-MagicATT'] = {
+        main = {
+            name = "Malevolence",
+            augments = {'INT+6', 'Mag. Acc.+7', '"Mag.Atk.Bns."+4', '"Fast Cast"+3'}
+        },
+        sub = {
+            name = "Malevolence",
+            augments = {'INT+10', 'Mag. Acc.+10', '"Mag.Atk.Bns."+10', '"Fast Cast"+5'}
+        },
+        range = "Armageddon"
+    }
+
     sets.Weapons['Gandiva'] = {
         main = {
             name = "Perun +1",
@@ -248,7 +260,7 @@ function get_sets()
     sets.Idle = {
         ammo = Ammo.RA, -- Smart_Ammo() will select from your XXXX.RA type
         head = "Null Masque",
-        body = "Nyame Mail",
+        body = "Adamantite Armor",
         hands = "Nyame Gauntlets",
         legs = "Nyame Flanchard",
         feet = "Nyame Sollerets",

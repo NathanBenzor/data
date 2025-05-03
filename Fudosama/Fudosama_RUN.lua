@@ -312,6 +312,7 @@ function get_sets()
 
     -- DPS set for tanking
     sets.OffenseMode.TP = {
+        sub = "Utu Grip",
         ammo = {
             name = "Coiste Bodhar",
             augments = {'Path: A'}
@@ -320,10 +321,7 @@ function get_sets()
             name = "Nyame Helm",
             augments = {'Path: B'}
         },
-        body = {
-            name = "Nyame Mail",
-            augments = {'Path: B'}
-        },
+        body = "Ashera Harness",
         hands = {
             name = "Adhemar Wrist. +1",
             augments = {'DEX+12', 'AGI+12', 'Accuracy+20'}

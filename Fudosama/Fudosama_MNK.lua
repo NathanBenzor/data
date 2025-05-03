@@ -14,10 +14,10 @@ Food = "Sublime Sushi"
 AutoItem = false
 
 -- Upon Job change will use a random lockstyleset
-Random_Lockstyle = false
+Random_Lockstyle = true
 
 -- Lockstyle sets to randomly equip
-Lockstyle_List = {1, 2, 6, 12}
+Lockstyle_List = {128, 129}
 
 -- 'TP','ACC','DT' are standard Default modes.  You may add more and assigne equipsets for them ( Idle.X and OffenseMode.X )
 state.OffenseMode:options('TP', 'ACC', 'DT', 'PDL', 'SB', 'MEVA') -- ACC effects WS and TP modes
@@ -76,10 +76,7 @@ function get_sets()
     sets.Idle = {
         ammo = "Staunch Tathlum +1",
         head = "Null Masque",
-        body = {
-            name = "Nyame Mail",
-            augments = {'Path: B'}
-        },
+        body = "Adamantite Armor",
         hands = {
             name = "Nyame Gauntlets",
             augments = {'Path: B'}
@@ -135,16 +132,18 @@ function get_sets()
             name = "Coiste Bodhar",
             augments = {'Path: A'}
         },
-        head = {
-            name = "Adhemar Bonnet +1",
-            augments = {'STR+12', 'DEX+12', 'Attack+20'}
-        },
+        -- head = {
+        --     name = "Adhemar Bonnet +1",
+        --     augments = {'STR+12', 'DEX+12', 'Attack+20'}
+        -- },
+        head = "Mpaca's Cap",
         body = "Mpaca's Doublet",
-        hands = {
-            name = "Adhemar Wrist. +1",
-            augments = {'DEX+12', 'AGI+12', 'Accuracy+20'}
-        },
-        legs = "Bhikku Hose +2",
+        -- hands = {
+        --     name = "Adhemar Wrist. +1",
+        --     augments = {'DEX+12', 'AGI+12', 'Accuracy+20'}
+        -- },
+        hands = "Malignance Gloves",
+        legs = "Bhikku Hose +3",
         feet = "Anch. Gaiters +3",
         neck = {
             name = "Mnk. Nodowa +2",
@@ -166,9 +165,9 @@ function get_sets()
 
     -- This set is used when OffenseMode is DT and Enaged (Augments the TP base set)
     sets.OffenseMode.DT = set_combine(sets.OffenseMode.TP, {
-        head = "Bhikku Crown +2",
-        hands = "Mpaca's Gloves",
-        feet = "Mpaca's Boots",
+        head = "Malignance Chapeau",
+        -- hands = "Mpaca's Gloves",
+        feet = "Malignance Boots",
         neck = {
             name = "Mnk. Nodowa +2",
             augments = {'Path: A'}
@@ -357,7 +356,7 @@ function get_sets()
         head = "Bhikku Crown +2"
     }
     sets.JA["Impetus"] = {
-        body = "Bhikku Cyclas +2"
+        body = "Bhikku Cyclas +3"
     }
     sets.JA["Inner Strength"] = {}
 
@@ -469,11 +468,27 @@ function get_sets()
     sets.WS["Spinning Attack"] = set_combine(sets.WS, {})
 
     sets.WS["Howling Fist"] = set_combine(sets.WS, {
-        neck = {
-            name = "Mnk. Nodowa +2",
-            augments = {'Path: A'}
+        ammo = "Crepuscular Pebble",
+        head = "Mpaca's Cap",
+        neck = "Monk's Nodowa +2",
+        ear1 = "Schere Earring",
+        ear2 = "Moonshade Earring",
+        body = "Nyame Mail",
+        hands = "Bhikku Gloves +3",
+        ring1 = "Gere Ring",
+        ring2 = "Niqmaddu Ring",
+        back = {
+            name = "Segomo's Mantle",
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%'}
         },
-        feet = "Ken. Sune-Ate +1"
+        waist = "Moonbow Belt +1",
+        legs = "Mpaca's Hose",
+        feet = "Nyame Sollerets"
+        -- neck = {
+        --     name = "Mnk. Nodowa +2",
+        --     augments = {'Path: A'}
+        -- },
+        -- feet = "Ken. Sune-Ate +1"
     })
 
     sets.WS["Dragon Kick"] = sets.WS.Kicks
@@ -482,17 +497,52 @@ function get_sets()
 
     sets.WS["Tornado Kick"] = sets.WS.Kicks
 
-    sets.WS["Victory Smite"] = set_combine(sets.WS, {
+    sets.WS["Victory Smite"] = {
         ammo = {
             name = "Coiste Bodhar",
             augments = {'Path: A'}
         },
-        -- ammo = "Crepuscular Pebble",
+        -- head = {
+        --     name = "Adhemar Bonnet +1",
+        --     augments = {'STR+12', 'DEX+12', 'Attack+20'}
+        -- },
         head = {
-            name = "Adhemar Bonnet +1",
-            augments = {'STR+12', 'DEX+12', 'Attack+20'}
+            name = "Mpaca's Cap",
+            augments = {'Path: A'}
         },
-        body = "Bhikku Cyclas +2",
+        -- body = "Bhikku Cyclas +3",
+        body = "Ken. Samue +1",
+        hands = {
+            name = "Ryuo Tekko +1",
+            augments = {'STR+12', 'DEX+12', 'Accuracy+20'}
+        },
+        legs = "Mpaca's Hose",
+        feet = "Ken. Sune-Ate +1",
+        neck = "Fotia Gorget",
+        waist = "Moonbow Belt +1",
+        left_ear = "Sherida Earring",
+        right_ear = {
+            name = "Schere Earring",
+            augments = {'Path: A'}
+        },
+        left_ring = "Gere Ring",
+        right_ring = "Niqmaddu Ring",
+        back = {
+            name = "Segomo's Mantle",
+            augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Crit.hit rate+10', 'Phys. dmg. taken-10%'}
+        }
+    }
+
+    sets.WS['Victory Smite'].PDL = {
+        ammo = {
+            name = "Coiste Bodhar",
+            augments = {'Path: A'}
+        },
+        head = {
+            name = "Blistering Sallet +1",
+            augments = {'Path: A'}
+        },
+        body = "Bhikku Cyclas +3",
         hands = "Bhikku Gloves +2",
         legs = "Mpaca's Hose",
         feet = "Mpaca's Boots",
@@ -507,31 +557,9 @@ function get_sets()
         right_ring = "Niqmaddu Ring",
         back = {
             name = "Segomo's Mantle",
-            augments = {'STR+20', 'Accuracy+20 Attack+20', 'Crit.hit rate+10', 'Phys. dmg. taken-10%'}
+            augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Crit.hit rate+10', 'Phys. dmg. taken-10%'}
         }
-    })
-
-    -- sets.WS["Victory Smite"] = { -- velner set for testing
-    --     ammo = "Coiste Bodhar",
-    --     head = "Mpaca's Cap",
-    --     neck = "Mnk. Nodowa +2",
-    --     ear1 = "Schere Earring",
-    --     ear2 = "Sherida Earring",
-    --     body = "Ken. Samue +1",
-    --     hands = "Ryuo Tekko +1",
-    --     ring1 = "Gere Ring",
-    --     ring2 = "Niqmaddu Ring",
-    --     back = {
-    --         name = "Segomo's Mantle",
-    --         augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Crit.hit rate+10', 'Damage taken-5%'}
-    --     },
-    --     waist = "Fotia Belt",
-    --     legs = "Mpaca's Hose",
-    --     feet = {
-    --         name = "Herculean Boots",
-    --         augments = {'Accuracy+20 Attack+20', 'Crit. hit damage +5%', 'STR+6', 'Accuracy+11'}
-    --     }
-    -- }
+    }
 
     sets.WS["Shijin Spiral"] = set_combine(sets.WS, {
         ammo = {
@@ -542,7 +570,7 @@ function get_sets()
             name = "Mpaca's Cap",
             augments = {'Path: A'}
         },
-        body = "Bhikku Cyclas +2",
+        body = "Bhikku Cyclas +3",
         hands = "Bhikku Gloves +2",
         legs = {
             name = "Nyame Flanchard",
@@ -550,7 +578,7 @@ function get_sets()
         },
         feet = "Mpaca's Boots",
         neck = "Fotia Gorget",
-        waist = "Fotia Belt",
+        waist = "Moonbow Belt +1",
         left_ear = {
             name = "Schere Earring",
             augments = {'Path: A'}
@@ -560,7 +588,7 @@ function get_sets()
         right_ring = "Niqmaddu Ring",
         back = {
             name = "Segomo's Mantle",
-            augments = {'DEX+20', 'Accuracy+20 Attack+20', '"Dbl.Atk."+10', 'Damage taken-5%'}
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'DEX+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
         }
     })
 
@@ -600,17 +628,42 @@ function get_sets()
 
     -- Impetus set has priority over any other modes
     sets.Impetus = {
-        body = "Bhikku Cyclas +2"
+        body = "Bhikku Cyclas +3"
     }
 
     -- Impetus for the DT stance (need more PDT)
     sets.Impetus.DT = {
-        body = "Bhikku Cyclas +2"
+        body = "Bhikku Cyclas +3"
     }
 
     -- Impetus for the WS sets
     sets.Impetus.WS = {
-        body = "Bhikku Cyclas +2"
+        body = "Bhikku Cyclas +3"
+    }
+
+    sets.Footwork = {
+        feet = "Anch. Gaiters +3"
+    }
+
+    sets.Footwork.DT = {
+        feet = "Anch. Gaiters +3"
+    }
+
+    sets.Footwork.WS = {
+        feet = "Anch. Gaiters +3"
+    }
+
+    sets.ImpetusAndFootwork = {
+        body = "Bhikku Cyclas +3",
+        feet = "Anch. Gaiters +3"
+    }
+    sets.ImpetusAndFootwork.DT = {
+        body = "Bhikku Cyclas +3",
+        feet = "Anch. Gaiters +3"
+    }
+    sets.ImpetusAndFootwork.WS = {
+        body = "Bhikku Cyclas +3",
+        feet = "Anch. Gaiters +3"
     }
 
     sets.Boost = {
@@ -621,7 +674,6 @@ function get_sets()
 
     sets.TreasureHunter = {
         ammo = "Per. Lucky Egg",
-        body = "Volte Jupon",
         legs = {
             name = "Herculean Trousers",
             augments = {'CHR+3', '"Mag.Atk.Bns."+10', '"Treasure Hunter"+2'}
@@ -723,6 +775,24 @@ function choose_gear()
                 equipSet = sets.Impetus.DT
             else
                 equipSet = sets.Impetus
+            end
+        end
+    end
+    if player.status == "Engaged" then
+        if buffactive['Footwork'] then
+            if state.OffenseMode.value == "DT" then
+                equipSet = sets.Footwork.DT
+            else
+                equipSet = sets.Footwork
+            end
+        end
+    end
+    if player.status == "Engaged" then
+        if buffactive['Impetus'] and buffactive['Footwork'] then
+            if state.OffenseMode.value == "DT" then
+                equipSet = sets.ImpetusAndFootwork.DT
+            else
+                equipSet = sets.ImpetusAndFootwork
             end
         end
     end

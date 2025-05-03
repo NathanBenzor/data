@@ -84,14 +84,6 @@
         <visible>true</visible>
     </global>
     <fudosama>
-        <Display_Box>
-            <pos>
-                <x>2053</x>
-                <y>710</y>
-            </pos>
-        </Display_Box>
-    </fudosama>
-    <lilypeach>
         <Debug_Box>
             <text>
                 <fonts>
@@ -101,19 +93,30 @@
         </Debug_Box>
         <Display_Box>
             <pos>
-<<<<<<< HEAD
-                <x>1615</x>
-                <y>602</y>
-=======
-                <x>2046</x>
-                <y>715</y>
->>>>>>> a027379ae802aa6e1c07530a67bd34c59df25c1a
+                <x>2053</x>
+                <y>710</y>
             </pos>
             <text>
                 <fonts>
 
                 </fonts>
             </text>
+        </Display_Box>
+    </fudosama>
+    <gunbound>
+        <Display_Box>
+            <pos>
+                <x>2051</x>
+                <y>710</y>
+            </pos>
+        </Display_Box>
+    </gunbound>
+    <lilypeach>
+        <Display_Box>
+            <pos>
+                <x>2046</x>
+                <y>715</y>
+            </pos>
         </Display_Box>
     </lilypeach>
 <<<<<<< HEAD

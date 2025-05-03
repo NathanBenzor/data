@@ -4,7 +4,7 @@ include('Gunbound-Include')
 
 -- Set to ingame lockstyle and Macro Book/Set
 LockStylePallet = "1"
-MacroBook = "18" -- Sub Job macro pallets can be defined in the sub_job_change_custom function below
+MacroBook = "1" -- Sub Job macro pallets can be defined in the sub_job_change_custom function below
 MacroSet = "1"
 
 -- Use "gs c food" to use the specified food item 
@@ -150,27 +150,11 @@ function get_sets()
     -- Standard Idle set with -DT,Refresh,Regen with NO movement gear
     sets.Idle = {
         ammo = Ammo.Bullet.RA,
-        head = {
-            name = "Nyame Helm",
-            augments = {'Path: B'}
-        },
-        body = {
-            name = "Nyame Mail",
-            augments = {'Path: B'}
-        },
-        hands = {
-            name = "Nyame Gauntlets",
-            augments = {'Path: B'}
-        },
-        -- legs = {
-        --     name = "Nyame Flanchard",
-        --     augments = {'Path: B'}
-        -- },
-        legs = "Carmine Cuisses +1",
-        feet = {
-            name = "Nyame Sollerets",
-            augments = {'Path: B'}
-        },
+        head = "Nyame Helm",
+        body = "Nyame Mail",
+        hands = "Nyame Gauntlets",
+        legs = "Nyame Flanchard",
+        feet = "Nyame Sollerets",
         -- neck="Iskur Gorget",
         neck = {
             name = "Comm. Charm +2",
@@ -191,11 +175,7 @@ function get_sets()
     }
 
     sets.Movement = {
-        legs = {
-            name = "Carmine Cuisses +1",
-            augments = {'HP+80', 'STR+12', 'INT+12'}
-        },
-        right_ring = "Defending Ring"
+        legs = "Carmine Cuisses +1"
     }
 
     -- Set to be used if you get 
@@ -968,9 +948,9 @@ end
 function precast_custom(spell)
     equipSet = {}
     -- Check if the spell is a Corsair Roll
-    if spell.type == 'CorsairRoll' then
-        add_to_chat(123, "Test: You used " .. spell.english)
-    end
+    -- if spell.type == 'CorsairRoll' then
+    --     add_to_chat(123, "Test: You used " .. spell.english)
+    -- end
     if spell.english == 'Fold' then
         equipSet = set_combine(equipSet, {
             hands = {

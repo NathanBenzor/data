@@ -357,7 +357,17 @@ function init_gear_sets()
 
     sets.precast.Waltz['Healing Waltz'] = {}
 
-    sets.precast.FC = {}
+    sets.precast.FC.Absorb = {
+        head = {
+            name = "Nyame Helm",
+            augments = {'Path: B'}
+        },
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        }
+
+    }
 
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {
         body = "Passion Jacket",
@@ -601,6 +611,24 @@ function init_gear_sets()
     sets.midcast.SpellInterrupt = {}
 
     sets.midcast.Cure = {}
+
+    sets.midcast.Absorb = {
+        head = "Malignance Chapeau",
+        body = "Malignance Tabard",
+        hands = "Malignance Gloves",
+        legs = "Malignance Tights",
+        feet = "Malignance Boots",
+        neck = "Erra Pendant",
+        waist = "Rumination Sash",
+        left_ear = "Halasz Earring",
+        right_ear = "Loquacious Earring",
+        left_ring = "Kishar Ring",
+        right_ring = "Prolix Ring",
+        back = {
+            name = "Camulus's Mantle",
+            augments = {'"Fast Cast"+10', 'Damage taken-5%'}
+        }
+    }
 
     sets.midcast.Utsusemi = sets.midcast.SpellInterrupt
 
