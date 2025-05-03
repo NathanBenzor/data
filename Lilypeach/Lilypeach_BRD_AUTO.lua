@@ -65,7 +65,8 @@ function get_sets()
 
     sets.Weapons['Savage Blade'] = {
         main = "Naegling",
-        sub = "Centovente"
+        sub = "Ternion Dagger +1"
+        -- sub = "Centovente"
     }
 
     -- sets.Weapons['Eviceration'] = {
@@ -111,6 +112,9 @@ function get_sets()
     }
     Instrument.Potency = {
         name = "Gjallarhorn"
+    }
+    Instrument.Aria = {
+        name ="Loughnashade",
     }
     Instrument.Honor = {
         name = "Marsyas"
@@ -575,9 +579,13 @@ function get_sets()
     sets.Midcast["Stoneskin"] = {
         waist = "Siegel Sash"
     }
-
+    -- sets.midcast.AriaOfPassion = {
+    --     Range = "Loughnashade",
+    --     hands = "Fili Manchettes +3"
+    -- }
     -- Job Abilities
     sets.JA = {}
+    sets.JA["Box Step"] = {}
     sets.JA["Nightingale"] = {
         feet = {
             name = "Bihu Slippers +3",
@@ -600,6 +608,7 @@ function get_sets()
     sets.JA["Marcato"] = {}
     sets.JA["Clarion"] = {}
     sets.JA["Pianissimo"] = {}
+    sets.Samba = set_combine(sets.Idle.DT, {})
 
     -- Default WS set base
     sets.WS = {

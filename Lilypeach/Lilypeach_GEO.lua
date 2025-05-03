@@ -344,7 +344,7 @@ function init_gear_sets()
     sets.midcast.Cure = {
         main="Daybreak",
         sub="Ammurapi Shield",
-        ammo="Pemphredo Tathlum",
+        -- ammo="Pemphredo Tathlum",
         head={ name="Vanya Hood", augments={'MP+50','"Fast Cast"+10','Haste+2%',}},
         body={ name="Vanya Robe", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}},
         hands={ name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +8',}},

@@ -119,6 +119,8 @@
             </pos>
         </Display_Box>
     </lilypeach>
+<<<<<<< HEAD
+=======
     <rialyn>
         <Display_Box>
             <pos>
@@ -127,4 +129,5 @@
             </pos>
         </Display_Box>
     </rialyn>
+>>>>>>> a027379ae802aa6e1c07530a67bd34c59df25c1a
 </settings>
