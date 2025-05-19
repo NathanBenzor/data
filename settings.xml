@@ -93,7 +93,7 @@
         </Debug_Box>
         <Display_Box>
             <pos>
-                <x>2053</x>
+                <x>2041</x>
                 <y>710</y>
             </pos>
             <text>
@@ -106,28 +106,17 @@
     <gunbound>
         <Display_Box>
             <pos>
-                <x>2051</x>
-                <y>710</y>
-            </pos>
-        </Display_Box>
-    </gunbound>
-    <lilypeach>
-        <Display_Box>
-            <pos>
-                <x>2046</x>
-                <y>715</y>
-            </pos>
-        </Display_Box>
-    </lilypeach>
-<<<<<<< HEAD
-=======
-    <rialyn>
-        <Display_Box>
-            <pos>
-                <x>2053</x>
+                <x>2052</x>
                 <y>711</y>
             </pos>
         </Display_Box>
+    </gunbound>
+    <rialyn>
+        <Display_Box>
+            <pos>
+                <x>2045</x>
+                <y>712</y>
+            </pos>
+        </Display_Box>
     </rialyn>
->>>>>>> a027379ae802aa6e1c07530a67bd34c59df25c1a
 </settings>

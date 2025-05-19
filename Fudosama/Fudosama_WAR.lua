@@ -996,8 +996,13 @@ function get_sets()
     sets.WS["Ukko's Fury"] = {
         ammo = "Yetshila +1",
         head = "Boii Mask +3",
-        body = "Hjarrandi Breastplate",
-        hands = "Flamma Manopolas +2",
+        -- body = "Hjarrandi Breastplate",
+        body = {
+            name = "Sakpata's Plate",
+            augments = {'Path: A'}
+        },
+        -- hands = "Flamma Manopolas +2",
+        hands = "Boii Mufflers +3",
         legs = "Boii Cuisses +3",
         feet = "Boii Calligae +3",
         neck = {
@@ -1027,8 +1032,13 @@ function get_sets()
     sets.WS.PDL["Ukko's Fury"] = {
         ammo = "Yetshila +1",
         head = "Boii Mask +3",
-        body = "Hjarrandi Breastplate",
-        hands = "Flamma Manopolas +2",
+        -- body = "Hjarrandi Breastplate",
+        body = {
+            name = "Sakpata's Plate",
+            augments = {'Path: A'}
+        },
+        -- hands = "Flamma Manopolas +2",
+        hands = "Boii Mufflers +3",
         legs = "Boii Cuisses +3",
         feet = "Boii Calligae +3",
         neck = {
@@ -1047,7 +1057,8 @@ function get_sets()
             name = "Boii Earring +1",
             augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+15', 'Mag. Acc.+15', 'Crit.hit rate+5'}
         },
-        left_ring = "Regal Ring",
+        -- left_ring = "Regal Ring",
+        left_ring = "Sroda Ring",
         right_ring = "Niqmaddu Ring",
         back = {
             name = "Cichol's Mantle",

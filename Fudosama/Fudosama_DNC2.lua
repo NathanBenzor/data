@@ -674,44 +674,25 @@ function get_sets()
         waist = "Chaac Belt"
     }
 
-    rolls = {
-        "Corsair's Roll",
-        "Ninja Roll",
-        "Hunter's Roll",
-        "Chaos Roll",
-        "Magus's Roll",
-        "Healer's Roll",
-        "Drachen Roll",
-        "Choral Roll",
-        "Monk's Roll",
-        "Beast Roll",
-        "Samurai Roll",
-        "Evoker's Roll",
-        "Rogue's Roll",
-        "Warlock's Roll",
-        "Fighter's Roll",
-        "Puppet Roll",
-        "Gallant's Roll",
-        "Wizard's Roll",
-        "Dancer's Roll",
-        "Scholar's Roll",
-        "Naturalist's Roll",
-        "Runeist's Roll",
-        "Bolter's Roll",
-        "Caster's Roll",
-        "Courser's Roll",
-        "Blitzer's Roll",
-        "Tactician's Roll",
-        "Allies' Roll",
-        "Miser's Roll",
-        "Companion's Roll",
-        "Avenger's Roll"
+    sets.Rollers = {
+        left_ring = "Cornelia's Ring"
     }
 end
 
 -------------------------------------------------------------------------------------------------------------------
 -- DO NOT EDIT BELOW THIS LINE UNLESS YOU NEED TO MAKE JOB SPECIFIC RULES
 -------------------------------------------------------------------------------------------------------------------
+
+function hasCorsairRollXI()
+    for buffName, active in pairs(buffactive) do
+        if active == 11 and string.find(buffName, "Roll") then
+            windower.add_to_chat(8, "Detected XI Roll: " .. buffName)
+            return true
+        end
+    end
+    return false
+end
+
 
 -- Called when the player's subjob changes.
 function sub_job_change_custom(new, old)
@@ -736,14 +717,16 @@ end
 -- Augment basic equipment sets
 function aftercast_custom(spell)
     equipSet = {}
-
+    equip(choose_set_custom())
     return Weapon_Check(equipSet)
 end
 -- Function is called when the player gains or loses a buff
 function buff_change_custom(name, gain)
     equipSet = {}
 
-
+    if string.find(name, "Roll") then
+        equip(choose_set_custom())
+    end
 
     return Weapon_Check(equipSet)
 end
@@ -751,12 +734,25 @@ end
 function choose_set_custom()
     equipSet = {}
 
+    local equipSet = {}
+
+    if player.status == "Engaged" then
+        equipSet = sets.OffenseMode[state.OffenseMode.current] or sets.OffenseMode.DT
+    else
+        equipSet = sets.Idle[state.OffenseMode.current] or sets.Idle.DT
+    end
+
+    if hasCorsairRollXI() then
+        equipSet.right_ring = "Roller's Ring"
+        windower.add_to_chat(8, "Equipping Roller's Ring due to XI roll!")
+    end
+
     return Weapon_Check(equipSet)
 end
 -- Function is called when the player changes states
 function status_change_custom(new, old)
     equipSet = {}
-
+    equip(choose_set_custom())
     return Weapon_Check(equipSet)
 end
 -- Function is called when a self command is issued

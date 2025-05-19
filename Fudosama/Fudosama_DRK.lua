@@ -53,30 +53,6 @@ function get_sets()
         sub = "Utu Grip"
     }
 
-    sets.Weapons['Anguta'] = {
-        main = {
-            name = "Anguta",
-            augments = {'Path: A'}
-        },
-        sub = "Utu Grip"
-    }
-
-    sets.Weapons['Liberator'] = {
-        main = {
-            name = "Liberator",
-            augments = {'Path: A'}
-        },
-        sub = "Utu Grip"
-    }
-
-    sets.Weapons['Apocalypse'] = {
-        main = {
-            name = "Apocalypse",
-            augments = {'Path: A'}
-        },
-        sub = "Utu Grip"
-    }
-
     sets.Weapons['Naegling'] = {
         main = "Naegling",
         sub = "Blurred Shield +1"
@@ -94,6 +70,7 @@ function get_sets()
         main = "Lycurgos",
         sub = "Utu Grip"
     }
+    sets.Weapons['Unlocked'] = {}
 
     sets.Idle = {
         ammo = "Staunch Tathlum +1",
@@ -124,6 +101,8 @@ function get_sets()
 
     -- Regain set
     sets.Idle.TP = set_combine(sets.Idle, {})
+
+    sets.Idle.PDL = set_combine(sets.Idle, {})
 
     sets.Movement = {
         left_ring = "Shneddick Ring"
@@ -182,10 +161,6 @@ function get_sets()
             name = "Sakpata's Gauntlets",
             augments = {'Path: A'}
         },
-        -- legs = {
-        --     name = "Sakpata's Cuisses",
-        --     augments = {'Path: A'}
-        -- },
         legs = "Ignominy Flanchard +3",
         feet = "Flam. Gambieras +2",
         neck = {
@@ -508,7 +483,11 @@ function get_sets()
         legs = "Heath. Flanchard +3",
         feet = "Heath. Sollerets +3",
         neck = "Erra Pendant",
-        waist = "Eschan Stone",
+        -- waist = "Eschan Stone",
+        waist = {
+            name = "Sailfi Belt +1",
+            augments = {'Path: A'}
+        },
         left_ear = "Malignance Earring",
         right_ear = {
             name = "Heath. Earring +1",
@@ -599,6 +578,22 @@ function get_sets()
         back = "Null Shawl"
     }
 
+    sets.Midcast["Thunder III"] = {
+        ammo={ name="Coiste Bodhar", augments={'Path: A',}},
+        head="Hjarrandi Helm",
+        body="Hjarrandi Breast.",
+        hands={ name="Sakpata's Gauntlets", augments={'Path: A',}},
+        legs="Flamma Dirs +2",
+        feet="Heath. Sollerets +3",
+        neck={ name="Vim Torque +1", augments={'Path: A',}},
+        waist="Oneiros Rope",
+        left_ear="Crep. Earring",
+        right_ear="Dedition Earring",
+        left_ring="Crepuscular Ring",
+        right_ring="Chirich Ring +1",
+        back="Null Shawl",
+    }
+
     sets.Midcast.Dark = {
         ammo = "Pemphredo Tathlum",
         head = "Ig. Burgeonet +3",
@@ -667,6 +662,56 @@ function get_sets()
             augments = {'HP+60', 'Mag. Acc+20 /Mag. Dmg.+20', '"Fast Cast"+10', 'Damage taken-5%'}
         }
     })
+
+    sets.Midcast["Dread Spikes"] = {
+        ammo = "Impatiens",
+        head = "Ratri Sallet",
+        body = "Heathen's Cuirass +3",
+        hands = "Ratri Gadlings",
+        legs = "Ratri Cuisses",
+        feet = "Ratri Sollerets",
+        neck = {
+            name = "Unmoving Collar +1",
+            augments = {'Path: A'}
+        },
+        waist = "Plat. Mog. Belt",
+        left_ear = "Malignance Earring",
+        right_ear = {
+            name = "Odnowa Earring +1",
+            augments = {'Path: A'}
+        },
+        left_ring = "Moonlight Ring",
+        right_ring = {
+            name = "Gelatinous Ring +1",
+            augments = {'Path: A'}
+        },
+        back = "Moonbeam Cape"
+    }
+
+    sets.Midcast["Endark"] = {
+        ammo = "Pemphredo Tathlum",
+        head = "Ig. Burgeonet +3",
+        body = {
+            name = "Carm. Scale Mail",
+            augments = {'HP+60', 'STR+10', 'INT+10'}
+        },
+        hands = {
+            name = "Fall. Fin. Gaunt. +3",
+            augments = {'Enhances "Diabolic Eye" effect'}
+        },
+        legs = "Heath. Flanchard +3",
+        feet = "Ratri Sollerets",
+        neck = "Incanter's Torque",
+        waist = "Austerity Belt +1",
+        left_ear = "Hirudinea Earring",
+        right_ear = "Mani Earring",
+        left_ring = "Evanescence Ring",
+        right_ring = "Stikini Ring +1",
+        back = {
+            name = "Niht Mantle",
+            augments = {'Attack+13', 'Dark magic skill +10', '"Drain" and "Aspir" potency +24'}
+        }
+    }
 
     -- Job Abilities
     sets.JA = {}

@@ -468,7 +468,7 @@ function get_sets()
 
     sets.Precast.FastCast = {
         ammo = "Sapience Orb",
-        head = "Runeist's Bandeau +2",
+        head = "Rune. Bandeau +2",
         body = "Erilaz Surcoat +3",
         hands = {
             name = "Leyline Gloves",
@@ -479,14 +479,15 @@ function get_sets()
             name = "Carmine Greaves",
             augments = {'MP+60', 'INT+10', 'MND+10'}
         },
-        neck = "Voltsurge Torque",
+        neck = "Orunmila's Torque",
         waist = "Plat. Mog. Belt",
         left_ear = "Etiolation Earring",
         right_ear = "Loquac. Earring",
-        left_ring = {
-            name = "Gelatinous Ring +1",
-            augments = {'Path: A'}
-        },
+        left_ring = "Kishar Ring",
+        -- left_ring = {
+        --     name = "Gelatinous Ring +1",
+        --     augments = {'Path: A'}
+        -- },
         right_ring = "Moonlight Ring",
         back = {
             name = "Ogma's Cape",
@@ -503,7 +504,9 @@ function get_sets()
     }) -- 80+ FC
 
     -- Base set for midcast - if not defined will notify and use your idle set for surviability
-    sets.Midcast = set_combine(sets.Idle, sets.Enmity, sets.SIRD, {})
+    -- sets.Midcast = set_combine(sets.Idle, sets.Enmity, sets.SIRD, {})
+    sets.Midcast = set_combine(sets.SIRD, {})
+    -- sets.Midcast = set_combine(sets.Idle, sets.Enmity, sets.SIRD, {})
 
     -- Enhancing Skill
     sets.Midcast.Enhancing = {
@@ -630,11 +633,13 @@ function get_sets()
     sets.Midcast["Foil"] = set_combine(sets.Enmity, {})
     sets.Midcast["Stun"] = set_combine(sets.Enmity, {})
     sets.Midcast["Jettatura"] = set_combine(sets.Enmity, {})
-    sets.Midcast["Geist Wall"] = set_combine(sets.Enmity, {})
-    sets.Midcast["Sheep Song"] = set_combine(sets.Enmity, {})
     sets.Midcast["Blank Gaze"] = set_combine(sets.Enmity, {})
+    sets.Midcast['Cursed Sphere'] = set_combine(sets.Enmity, {})
 
-    sets.Midcast["Healing Breeze"] = set_combine(sets.Cure, {})
+    sets.Midcast["Geist Wall"] = sets.SIRD
+    sets.Midcast["Sheep Song"] = sets.SIRD
+    sets.Midcast["Healing Breeze"] = sets.SIRD
+
     sets.Midcast["Magic Fruit"] = set_combine(sets.Cure, {})
     sets.Midcast["Pollen"] = set_combine(sets.Cure, {})
     sets.Midcast["Wild Carrot"] = set_combine(sets.Cure, {})
