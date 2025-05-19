@@ -8,22 +8,22 @@ MacroBook = "37"
 MacroSet = "1"
 
 -- Use "gs c food" to use the specified food item 
-Food = "Sublime Sushi"
+Food = "Gape Daifuku"
 
 -- Uses Items Automatically
 AutoItem = false
 
 -- Upon Job change will use a random lockstyleset
-Random_Lockstyle = false
+Random_Lockstyle = true
 
 -- Lockstyle sets to randomly equip
-Lockstyle_List = {1, 2, 6, 12}
+Lockstyle_List = {133, 140}
 
 state.OffenseMode:options('DT', 'TP', 'PDL', 'ACC', 'MagicDamage', 'EVA')
 state.OffenseMode:set('DT')
 
 -- Modes for specific to Ninja
-state.WeaponMode:options('Heishi', 'Savage Blade', 'Great Katana', 'Aeolian Edge', 'Enmity', 'Evasion', 'Magic Damage',
+state.WeaponMode:options('Heishi', 'Yagyu', 'Savage Blade', 'Great Katana', 'Aeolian Edge', 'Enmity', 'Evasion', 'Magic Damage',
     'Abyssea')
 state.WeaponMode:set('Heishi')
 
@@ -40,6 +40,11 @@ function get_sets()
     sets.Weapons['Heishi'] = {
         main = "Heishi Shorinken",
         sub = "Kunimitsu"
+    }
+
+    sets.Weapons['Yagyu'] = {
+        main = "Heishi Shorinken",
+        sub = "Yagyu Darkblade"
     }
 
     sets.Weapons['Savage Blade'] = {
@@ -62,13 +67,10 @@ function get_sets()
 
     sets.Weapons['Enmity'] = {
         main = {
-            name = "Heishi Shorinken",
-            augments = {'Path: A'}
-        },
-        sub = {
             name = "Tsuru",
             augments = {'Path: A'}
-        }
+        },
+        sub = "Yagyu Darkblade",
     }
 
     sets.Weapons['Magic Damage'] = {
@@ -98,10 +100,6 @@ function get_sets()
     -- Standard Idle set with -DT, Refresh, Regen and movement gear
     sets.Idle = {
         ammo = "Seki Shuriken",
-        -- head = {
-        --     name = "Nyame Helm",
-        --     augments = {'Path: B'}
-        -- },
         head = "Null Masque",
         body = "Adamantite Armor",
         hands = {
@@ -116,10 +114,6 @@ function get_sets()
             name = "Nyame Sollerets",
             augments = {'Path: B'}
         },
-        -- neck = {
-        --     name = "Loricate Torque +1",
-        --     augments = {'Path: A'}
-        -- },
         neck = "Null Loop",
         waist = "Null Belt",
         left_ear = "Etiolation Earring",
@@ -154,10 +148,6 @@ function get_sets()
             name = "Nyame Sollerets",
             augments = {'Path: B'}
         },
-        -- neck = {
-        --     name = "Loricate Torque +1",
-        --     augments = {'Path: A'}
-        -- },
         neck = "Null Loop",
         waist = "Null Belt",
         left_ear = "Etiolation Earring",
@@ -224,7 +214,6 @@ function get_sets()
             name = "Samnuha Tights",
             augments = {'STR+10', 'DEX+10', '"Dbl.Atk."+3', '"Triple Atk."+3'}
         },
-        -- legs = "Malignance Tights",
         feet = "Malignance Boots",
         neck = {
             name = "Ninja Nodowa +1",
@@ -236,26 +225,19 @@ function get_sets()
         },
         left_ear = "Telos Earring",
         right_ear = "Dedition Earring",
-        left_ring = "Epona's Ring",
-        right_ring = "Gere Ring",
-        -- back = {
-        --     name = "Andartia's Mantle",
-        --     augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Damage taken-5%'}
-        -- }
+        left_ring = "Gere Ring",
+        right_ring = "Epona's Ring",
         back = "Null Shawl"
     }
     -- This set is used when OffenseMode is DT and Enaged (Augments the TP base set)
     sets.OffenseMode.DT = set_combine(sets.OffenseMode.TP, {
-        -- ammo = "Date Shuriken",
+        ammo = "Date Shuriken",
         head = {
             name = "Mpaca's Cap",
             augments = {'Path: A'}
         },
-        -- body = "Mpaca's Doublet",
         body = "Malignance Tabard",
-        -- hands = "Mpaca's Gloves",
         hands = "Malignance Gloves",
-        -- legs = "Mpaca's Hose",
         legs = "Malignance Tights",
         feet = "Malignance Boots",
         left_ring = "Defending Ring",
@@ -271,11 +253,8 @@ function get_sets()
             name = "Mpaca's Cap",
             augments = {'Path: A'}
         },
-        -- body = "Mpaca's Doublet",
         body = "Malignance Tabard",
-        -- hands = "Mpaca's Gloves",
         hands = "Malignance Gloves",
-        -- legs = "Mpaca's Hose",
         legs = "Malignance Tights",
         feet = "Malignance Boots",
         left_ring = "Defending Ring",
@@ -287,11 +266,6 @@ function get_sets()
 
     -- This set is used when OffenseMode is ACC and Enaged (Augments the TP base set)
     sets.OffenseMode.ACC = set_combine(sets.OffenseMode.TP, {
-        -- head = "Ken. Jinpachi +1",
-        -- body = "Ken. Samue +1",
-        -- hands = "Ken. Tekko +1",
-        -- legs = "Ken. Hakama +1",
-        -- feet = "Ken. Sune-Ate +1"
         ammo = "Seki Shuriken",
         head = {
             name = "Mpaca's Cap",
@@ -384,7 +358,7 @@ function get_sets()
         },
         legs = "Gyve Trousers",
         feet = "Hattori Kyahan +3",
-        neck = "Voltsurge Torque",
+        neck = "Magoraga Beads",
         waist = "Plat. Mog. Belt",
         left_ear = "Etiolation Earring",
         right_ear = "Loquac. Earring",
@@ -442,7 +416,10 @@ function get_sets()
         }
     }
 
-    sets.Midcast["Absorb-TP"] = {
+    sets.Midcast["Flash"] = set_combine(sets.Enmity, {})
+    sets.Midcast["Foil"] = set_combine(sets.Enmity, {})
+
+    sets.Midcast['Absorb-TP'] = {
         ammo = "Date Shuriken",
         head = "Null Masque",
         body = "Nyame Mail",
@@ -491,7 +468,7 @@ function get_sets()
     sets.Midcast.Cure = {}
     -- Enhancing Skill
     sets.Midcast.Enhancing = {
-        ammo = "Yamarang",
+        -- ammo = "Yamarang",
         head = "Hachiya Hatsu. +3",
         body = "Malignance Tabard",
         hands = "Malignance Gloves",
@@ -507,7 +484,7 @@ function get_sets()
     }
     -- High MACC for landing spells
     sets.Midcast.Enfeebling = {
-        ammo = "Yamarang",
+        -- ammo = "Yamarang",
         head = "Hachiya Hatsu. +3",
         body = "Malignance Tabard",
         hands = "Malignance Gloves",
@@ -523,28 +500,6 @@ function get_sets()
     }
     -- High MAB for spells
     sets.Midcast.Nuke = {
-        -- ammo = {
-        --     name = "Seeth. Bomblet +1",
-        --     augments = {'Path: A'}
-        -- },
-        -- head = {
-        --     name = "Mochi. Hatsuburi +3",
-        --     augments = {'Enhances "Yonin" and "Innin" effect'}
-        -- },
-        -- body = "Nyame Mail",
-        -- hands = "Nyame Gauntlets",
-        -- legs = "Nyame Flanchard",
-        -- feet = "Nyame Sollerets",
-        -- neck = "Sanctity Necklace",
-        -- waist = "Eschan Stone",
-        -- left_ear = "Hecate's Earring",
-        -- right_ear = "Friomisi Earring",
-        -- left_ring = "Dingir Ring",
-        -- right_ring = "Stikini Ring +1",
-        -- back = {
-        --     name = "Andartia's Mantle",
-        --     augments = {'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'Mag. Acc.+10', '"Fast Cast"+10'}
-        -- }
         head = {
             name = "Mochi. Hatsuburi +3",
             augments = {'Enhances "Yonin" and "Innin" effect'}
@@ -636,6 +591,10 @@ function get_sets()
         waist = "Fotia Belt"
     }
 
+    sets.JA['Vallation'] = sets.Enmity
+    sets.JA['Valiance'] = sets.Enmity
+    sets.JA['Pflug'] = sets.Enmity
+
     sets.WS.WSD = set_combine({
         sets.WS,
         left_ring = "Epaminondas's Ring",
@@ -723,8 +682,8 @@ function get_sets()
             augments = {'Path: B'}
         },
         legs = {
-            name = "Mochi. Hakama +3",
-            augments = {'Enhances "Mijin Gakure" effect'}
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
         },
         feet = {
             name = "Nyame Sollerets",
@@ -758,8 +717,8 @@ function get_sets()
             augments = {'Path: B'}
         },
         legs = {
-            name = "Mochi. Hakama +3",
-            augments = {'Enhances "Mijin Gakure" effect'}
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
         },
         feet = {
             name = "Nyame Sollerets",
@@ -792,10 +751,6 @@ function get_sets()
             name = "Nyame Gauntlets",
             augments = {'Path: B'}
         },
-        -- legs = {
-        --     name = "Mochi. Hakama +3",
-        --     augments = {'Enhances "Mijin Gakure" effect'}
-        -- },
         legs = {
             name = "Nyame Flanchard",
             augments = {'Path: B'}
@@ -971,8 +926,8 @@ function get_sets()
             augments = {'Path: B'}
         },
         feet = "Hattori Kyahan +3",
-        -- neck = "Rep. Plat. Medal",
-        neck = "Fotia Gorget",
+        neck = "Rep. Plat. Medal",
+        -- neck = "Fotia Gorget",
         waist = "Sailfi Belt",
         left_ear = {
             name = "Moonshade Earring",
@@ -1102,6 +1057,13 @@ end
 -- Augment basic equipment sets
 function midcast_custom(spell)
     equipSet = {}
+
+    if spell.english == 'Flash' or spell.english == 'Foil' then
+        equipSet = sets.Enmity
+    elseif sets.Midcast[spell.english] then
+        equipSet = sets.Midcast[spell.english]
+    end
+
     return equipSet
 end
 -- Augment basic equipment sets

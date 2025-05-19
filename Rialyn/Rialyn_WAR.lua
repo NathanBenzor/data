@@ -83,7 +83,7 @@ function get_sets()
         hands = "Sakpata's Gauntlets",
         legs = "Sakpata's Cuisses",
         feet = "Sakpata's Leggings",
-        neck = "Null Loop",
+        neck = "Rep. Plat. Medal",
         waist = "Null Belt",
         left_ear = "Infused Earring",
         right_ear = "Odnowa Earring +1",
@@ -95,7 +95,24 @@ function get_sets()
         }
     }
 
-    sets.Idle.DT = {}
+    sets.Idle.DT = {
+        ammo = "Coiste Bodhar",
+        head = "Sakpata's Helm",
+        body = "Sakpata's Plate",
+        hands = "Sakpata's Gauntlets",
+        legs = "Sakpata's Cuisses",
+        feet = "Sakpata's Leggings",
+        neck = "Rep. Plat. Medal",
+        waist = "Null Belt",
+        left_ear = "Infused Earring",
+        right_ear = "Odnowa Earring +1",
+        left_ring = "Defending Ring",
+        right_ring = "Regal Ring",
+        back = {
+            name = "Cichol's Mantle",
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%'}
+        }
+    }
     sets.Idle.PDT = {}
     sets.Idle.MEVA = {}
 
@@ -634,7 +651,10 @@ function get_sets()
         },
         hands = "Boii Mufflers +3",
         legs = "Boii Cuisses +3",
-        feet = "Sulevia's Leggings +2",
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
         neck = {
             name = "War. Beads +2",
             augments = {'Path: A'}
@@ -1195,7 +1215,10 @@ function get_sets()
             augments = {'Path: B'}
         },
         hands = "Boii Mufflers +3",
-        legs = "Boii Cuisses +3",
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
         feet = {
             name = "Nyame Sollerets",
             augments = {'Path: B'}
@@ -1229,7 +1252,10 @@ function get_sets()
         },
         hands = "Boii Mufflers +3",
         legs = "Boii Cuisses +3",
-        feet = "Boii Calligae +2",
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
         neck = {
             name = "War. Beads +2",
             augments = {'Path: A'}
@@ -1259,8 +1285,14 @@ function get_sets()
             augments = {'Path: B'}
         },
         hands = "Boii Mufflers +3",
-        legs = "Boii Cuisses +3",
-        feet = "Boii Calligae +2",
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
         neck = {
             name = "War. Beads +2",
             augments = {'Path: A'}
@@ -1294,7 +1326,10 @@ function get_sets()
             augments = {'Path: B'}
         },
         hands = "Boii Mufflers +3",
-        legs = "Boii Cuisses +",
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
         feet = {
             name = "Nyame Sollerets",
             augments = {'Path: B'}
@@ -1322,7 +1357,10 @@ function get_sets()
             augments = {'Path: A'}
         },
         hands = "Boii Mufflers +3",
-        legs = "Boii Cuisses +3",
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
         feet = {
             name = "Nyame Sollerets",
             augments = {'Path: B'}
@@ -1412,13 +1450,19 @@ function get_sets()
 
     sets.WS["Shockwave"] = {
         ammo = "Knobkierrie",
-        head = "Agoge Mask +3",
+        head = {
+            name = "Nyame Helm",
+            augments = {'Path: B'}
+        },
         body = {
             name = "Nyame Mail",
             augments = {'Path: B'}
         },
         hands = "Boii Mufflers +3",
-        legs = "Boii Cuisses +3",
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
         feet = {
             name = "Nyame Sollerets",
             augments = {'Path: B'}
@@ -1437,13 +1481,19 @@ function get_sets()
 
     sets.WS.PDL["Shockwave"] = {
         ammo = "Knobkierrie",
-        head = "Agoge Mask +3",
+        head = {
+            name = "Nyame Helm",
+            augments = {'Path: B'}
+        },
         body = {
             name = "Nyame Mail",
             augments = {'Path: B'}
         },
         hands = "Boii Mufflers +3",
-        legs = "Boii Cuisses +3",
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
         feet = {
             name = "Nyame Sollerets",
             augments = {'Path: B'}

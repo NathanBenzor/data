@@ -122,11 +122,11 @@ function get_sets()
     sets.Weapons['Gastraphetes'] = {
         main = {
             name = "Malevolence",
-            augments = {'INT+6', 'Mag. Acc.+7', '"Mag.Atk.Bns."+4', '"Fast Cast"+3'}
+            augments = {'INT+10', 'Mag. Acc.+10', '"Mag.Atk.Bns."+10', '"Fast Cast"+5'}
         },
         sub = {
             name = "Malevolence",
-            augments = {'INT+10', 'Mag. Acc.+10', '"Mag.Atk.Bns."+10', '"Fast Cast"+5'}
+            augments = {'INT+6', 'Mag. Acc.+7', '"Mag.Atk.Bns."+4', '"Fast Cast"+3'}
         },
         range = {
             name = "Gastraphetes",
@@ -149,11 +149,11 @@ function get_sets()
     sets.Weapons['Arma-MagicATT'] = {
         main = {
             name = "Malevolence",
-            augments = {'INT+6', 'Mag. Acc.+7', '"Mag.Atk.Bns."+4', '"Fast Cast"+3'}
+            augments = {'INT+10', 'Mag. Acc.+10', '"Mag.Atk.Bns."+10', '"Fast Cast"+5'}
         },
         sub = {
             name = "Malevolence",
-            augments = {'INT+10', 'Mag. Acc.+10', '"Mag.Atk.Bns."+10', '"Fast Cast"+5'}
+            augments = {'INT+6', 'Mag. Acc.+7', '"Mag.Atk.Bns."+4', '"Fast Cast"+3'}
         },
         range = "Armageddon"
     }
@@ -173,11 +173,11 @@ function get_sets()
     sets.Weapons['Fail-Not'] = {
         main = {
             name = "Malevolence",
-            augments = {'INT+6', 'Mag. Acc.+7', '"Mag.Atk.Bns."+4', '"Fast Cast"+3'}
+            augments = {'INT+10', 'Mag. Acc.+10', '"Mag.Atk.Bns."+10', '"Fast Cast"+5'}
         },
         sub = {
             name = "Malevolence",
-            augments = {'INT+10', 'Mag. Acc.+10', '"Mag.Atk.Bns."+10', '"Fast Cast"+5'}
+            augments = {'INT+6', 'Mag. Acc.+7', '"Mag.Atk.Bns."+4', '"Fast Cast"+3'}
         },
         range = "Fail-Not"
     }
@@ -281,6 +281,31 @@ function get_sets()
             augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'Rng.Acc.+10', '"Store TP"+10', 'Phys. dmg. taken-10%'}
         }
     }
+
+    sets.Idle.TP = set_combine(sets.Idle, {
+        ammo = Ammo.RA, -- Smart_Ammo() will select from your XXXX.RA type
+        head = "Null Masque",
+        body = "Adamantite Armor",
+        hands = "Nyame Gauntlets",
+        legs = "Nyame Flanchard",
+        feet = "Nyame Sollerets",
+        neck = "Rep. Plat. Medal",
+        waist = "Null Belt",
+        left_ear = {
+            name = "Odnowa Earring +1",
+            augments = {'Path: A'}
+        },
+        right_ear = "Infused Earring",
+        left_ring = {
+            name = "Gelatinous Ring +1",
+            augments = {'Path: A'}
+        },
+        right_ring = "Defending Ring",
+        back = {
+            name = "Belenus's Cape",
+            augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'Rng.Acc.+10', '"Store TP"+10', 'Phys. dmg. taken-10%'}
+        }
+    })
 
     sets.Movement = {
         right_ring = "Shneddick Ring"
@@ -557,20 +582,22 @@ function get_sets()
 
     -- Ranged Attack Gear (Double Shot Midshot)
     sets.Midcast.RA.DoubleShot = {
-        head = "Arcadian Beret +3",
+        head = "Oshosi Mask", -- 5
         body = "Arcadian Jerkin +3",
         hands = "Oshosi Gloves", -- 5
         legs = "Oshosi Trousers", -- 7
         feet = "Osh. Leggings +1",
-        neck = {
-            name = "Scout's Gorget +2",
-            augments = {'Path: A'}
-        },
-        waist = "K. Kachina Belt +1",
-        left_ear = "Odr Earring",
+        -- neck = {
+        --     name = "Scout's Gorget +2",
+        --     augments = {'Path: A'}
+        -- },
+        neck = "Iskur Gorget",
+        -- waist = "K. Kachina Belt +1",
+        waist = "Yemaya Belt",
+        left_ear = "Dedition Earring",
         right_ear = "Telos Earring",
-        left_ring = "Begrudging Ring",
-        right_ring = "Mummu Ring",
+        left_ring = "Ilabrat Ring",
+        right_ring = "Dingir Ring",
         back = {
             name = "Belenus's Cape",
             augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'Rng.Acc.+10', '"Store TP"+10', 'Phys. dmg. taken-10%'}
