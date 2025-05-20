@@ -224,7 +224,7 @@ function get_sets()
         --     augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
         -- }
         back = "Null Shawl"
-    } -- 100% DA  34% DT
+    } -- 100% DA  34% DT 
 
     sets.OffenseMode.DT = {
         ammo = {
@@ -551,7 +551,7 @@ function get_sets()
 
     sets.JA["Berserk"] = {
         body = "Pumm. Lorica +3",
-        feet = "Agoge Calligae +2",
+        feet = "Agoge Calligae +3",
         back = {
             name = "Cichol's Mantle",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
@@ -576,7 +576,7 @@ function get_sets()
 
     sets.JA["Tomahawk"] = {
         ammo = "Thr. Tomahawk",
-        feet = "Agoge Calligae +2"
+        feet = "Agoge Calligae +3"
     } -- Need to add feet
 
     sets.JA["Retaliation"] = {
