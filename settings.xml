@@ -84,6 +84,14 @@
         <visible>true</visible>
     </global>
     <fudosama>
+        <Display_Box>
+            <pos>
+                <x>1818</x>
+                <y>748</y>
+            </pos>
+        </Display_Box>
+    </fudosama>
+    <gunbound>
         <Debug_Box>
             <text>
                 <fonts>
@@ -93,8 +101,8 @@
         </Debug_Box>
         <Display_Box>
             <pos>
-                <x>2041</x>
-                <y>710</y>
+                <x>1831</x>
+                <y>752</y>
             </pos>
             <text>
                 <fonts>
@@ -102,20 +110,12 @@
                 </fonts>
             </text>
         </Display_Box>
-    </fudosama>
-    <gunbound>
-        <Display_Box>
-            <pos>
-                <x>2052</x>
-                <y>711</y>
-            </pos>
-        </Display_Box>
     </gunbound>
     <rialyn>
         <Display_Box>
             <pos>
-                <x>2045</x>
-                <y>712</y>
+                <x>1818</x>
+                <y>748</y>
             </pos>
         </Display_Box>
     </rialyn>

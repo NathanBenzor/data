@@ -3,7 +3,7 @@
 include('Fudosama-Include')
 
 -- Set to ingame lockstyle and Macro Book/Set
-LockStylePallet = "133"
+LockStylePallet = "140"
 MacroBook = "37"
 MacroSet = "1"
 
@@ -14,7 +14,7 @@ Food = "Gape Daifuku"
 AutoItem = false
 
 -- Upon Job change will use a random lockstyleset
-Random_Lockstyle = true
+Random_Lockstyle = false
 
 -- Lockstyle sets to randomly equip
 Lockstyle_List = {133, 140}
@@ -23,8 +23,8 @@ state.OffenseMode:options('DT', 'TP', 'PDL', 'ACC', 'MagicDamage', 'EVA')
 state.OffenseMode:set('DT')
 
 -- Modes for specific to Ninja
-state.WeaponMode:options('Heishi', 'Yagyu', 'Savage Blade', 'Great Katana', 'Aeolian Edge', 'Enmity', 'Evasion', 'Magic Damage',
-    'Abyssea')
+state.WeaponMode:options('Heishi', 'Yagyu', 'Fudo', 'Savage Blade', 'Great Katana', 'Aeolian Edge', 'Enmity', 'Evasion',
+    'Magic Damage', 'Abyssea')
 state.WeaponMode:set('Heishi')
 
 elemental_ws = S {'Aeolian Edge', 'Blade: Teki', 'Blade: To', 'Blade: Chi', 'Blade: Ei', 'Blade: Yu'}
@@ -70,7 +70,12 @@ function get_sets()
             name = "Tsuru",
             augments = {'Path: A'}
         },
-        sub = "Yagyu Darkblade",
+        sub = "Yagyu Darkblade"
+    }
+
+    sets.Weapons['Fudo'] = {
+        main = "Fudo Masamune",
+        sub = "Yagyu Darkblade"
     }
 
     sets.Weapons['Magic Damage'] = {
@@ -188,10 +193,10 @@ function get_sets()
         feet = "Danzo Sune-Ate"
     }
     sets.Movement.Night = {
-        feet = "Hachi. Kyahan +1"
+        feet = "Hachi. Kyahan +3"
     }
     sets.Movement.Dusk = {
-        feet = "Hachi. Kyahan +1"
+        feet = "Hachi. Kyahan +3"
     }
 
     -- Set to be used if you get 
