@@ -229,9 +229,9 @@ function get_sets()
         }
     })
 
-    sets.Scythe = {
-        head = "Heath. Bur. +3"
-    }
+    -- sets.Scythe = {
+    --     head = "Heath. Bur. +3"
+    -- }
 
     -- Same TP set but WSD can be altered also
     sets.OffenseMode.PDL = {
@@ -384,7 +384,7 @@ function get_sets()
     sets.Midcast.Enfeebling = {
         ammo = "Pemphredo Tathlum",
         head = "Carmine Mask +1",
-        body = "Ignominy Breastplate +3",
+        body = "Ignominy Cuirass +3",
         hands = {
             name = "Nyame Gauntlets",
             augments = {'Path: B'}
@@ -579,19 +579,28 @@ function get_sets()
     }
 
     sets.Midcast["Thunder III"] = {
-        ammo={ name="Coiste Bodhar", augments={'Path: A',}},
-        head="Hjarrandi Helm",
-        body="Hjarrandi Breast.",
-        hands={ name="Sakpata's Gauntlets", augments={'Path: A',}},
-        legs="Flamma Dirs +2",
-        feet="Heath. Sollerets +3",
-        neck={ name="Vim Torque +1", augments={'Path: A',}},
-        waist="Oneiros Rope",
-        left_ear="Crep. Earring",
-        right_ear="Dedition Earring",
-        left_ring="Crepuscular Ring",
-        right_ring="Chirich Ring +1",
-        back="Null Shawl",
+        ammo = {
+            name = "Coiste Bodhar",
+            augments = {'Path: A'}
+        },
+        head = "Hjarrandi Helm",
+        body = "Hjarrandi Breast.",
+        hands = {
+            name = "Sakpata's Gauntlets",
+            augments = {'Path: A'}
+        },
+        legs = "Flamma Dirs +2",
+        feet = "Heath. Sollerets +3",
+        neck = {
+            name = "Vim Torque +1",
+            augments = {'Path: A'}
+        },
+        waist = "Oneiros Rope",
+        left_ear = "Crep. Earring",
+        right_ear = "Dedition Earring",
+        left_ring = "Crepuscular Ring",
+        right_ring = "Chirich Ring +1",
+        back = "Null Shawl"
     }
 
     sets.Midcast.Dark = {

@@ -484,7 +484,7 @@ function init_gear_sets()
         ammo = "Sapience Orb",
         head = {
             name = "Herculean Helm",
-            augments = {'Mag. Acc.+6', '"Fast Cast"+6', 'INT+6', '"Mag.Atk.Bns."+2'}
+            augments = {'"Fast Cast"+5', 'Mag. Acc.+12', '"Mag.Atk.Bns."+11'}
         },
         body = {
             name = "Adhemar Jacket +1",

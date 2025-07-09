@@ -510,8 +510,8 @@ function init_gear_sets()
     sets.precast.WS['Savage Blade'].Acc = set_combine(sets.precast.WS['Savage Blade'], {
         ammo = "Aurgelmir Orb",
         head = {
-            name = "Herculean Helm",
-            augments = {'Magic dmg. taken -4%', 'Pet: Haste+1', 'Weapon skill damage +9%'}
+            name = "Nyame Helm",
+            augments = {'Path: B'}
         },
         body = {
             name = "Herculean Vest",

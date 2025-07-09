@@ -334,7 +334,7 @@ function get_sets()
         ammo = "Sapience Orb",
         head = {
             name = "Herculean Helm",
-            augments = {'"Subtle Blow"+1', 'STR+3', '"Treasure Hunter"+2', 'Mag. Acc.+10 "Mag.Atk.Bns."+10'}
+            augments = {'"Fast Cast"+5', 'Mag. Acc.+12', '"Mag.Atk.Bns."+11'}
         },
         hands = {
             name = "Leyline Gloves",
@@ -674,39 +674,12 @@ function get_sets()
         waist = "Chaac Belt"
     }
 
-    rolls = {
-        "Corsair's Roll",
-        "Ninja Roll",
-        "Hunter's Roll",
-        "Chaos Roll",
-        "Magus's Roll",
-        "Healer's Roll",
-        "Drachen Roll",
-        "Choral Roll",
-        "Monk's Roll",
-        "Beast Roll",
-        "Samurai Roll",
-        "Evoker's Roll",
-        "Rogue's Roll",
-        "Warlock's Roll",
-        "Fighter's Roll",
-        "Puppet Roll",
-        "Gallant's Roll",
-        "Wizard's Roll",
-        "Dancer's Roll",
-        "Scholar's Roll",
-        "Naturalist's Roll",
-        "Runeist's Roll",
-        "Bolter's Roll",
-        "Caster's Roll",
-        "Courser's Roll",
-        "Blitzer's Roll",
-        "Tactician's Roll",
-        "Allies' Roll",
-        "Miser's Roll",
-        "Companion's Roll",
-        "Avenger's Roll"
-    }
+    rolls = {"Corsair's Roll", "Ninja Roll", "Hunter's Roll", "Chaos Roll", "Magus's Roll", "Healer's Roll",
+             "Drachen Roll", "Choral Roll", "Monk's Roll", "Beast Roll", "Samurai Roll", "Evoker's Roll",
+             "Rogue's Roll", "Warlock's Roll", "Fighter's Roll", "Puppet Roll", "Gallant's Roll", "Wizard's Roll",
+             "Dancer's Roll", "Scholar's Roll", "Naturalist's Roll", "Runeist's Roll", "Bolter's Roll", "Caster's Roll",
+             "Courser's Roll", "Blitzer's Roll", "Tactician's Roll", "Allies' Roll", "Miser's Roll", "Companion's Roll",
+             "Avenger's Roll"}
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -742,8 +715,6 @@ end
 -- Function is called when the player gains or loses a buff
 function buff_change_custom(name, gain)
     equipSet = {}
-
-
 
     return Weapon_Check(equipSet)
 end

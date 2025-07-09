@@ -334,7 +334,7 @@ function get_sets()
         ammo = "Sapience Orb",
         head = {
             name = "Herculean Helm",
-            augments = {'"Subtle Blow"+1', 'STR+3', '"Treasure Hunter"+2', 'Mag. Acc.+10 "Mag.Atk.Bns."+10'}
+            augments = {'"Fast Cast"+5', 'Mag. Acc.+12', '"Mag.Atk.Bns."+11'}
         },
         hands = {
             name = "Leyline Gloves",
@@ -692,7 +692,6 @@ function hasCorsairRollXI()
     end
     return false
 end
-
 
 -- Called when the player's subjob changes.
 function sub_job_change_custom(new, old)

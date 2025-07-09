@@ -29,7 +29,7 @@ Lockstyle_List = {135, 137}
 state.OffenseMode:set('DT')
 
 -- Modes for specific to Ninja
-state.WeaponMode:options('Agwus Axe', 'Decimation', 'Aymur', 'Pangu', 'Unlocked', 'Locked')
+state.WeaponMode:options('Agwus Axe', 'Dolichenus', 'Aymur', 'Pangu', 'Unlocked', 'Locked')
 state.WeaponMode:set('Aymur')
 
 -- Enable JobMode for UI.
@@ -103,7 +103,7 @@ function get_sets()
     -- Weapon setup
     sets.Weapons = {}
 
-    sets.Weapons['Decimation'] = {
+    sets.Weapons['Dolichenus'] = {
         main = "Dolichenus",
         sub = "Ikenga's Axe"
     }

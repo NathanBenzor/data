@@ -388,8 +388,14 @@ function get_sets()
     sets.JA["Mighty Strikes"] = {}
     sets.JA["Berserk"] = {
         body = "Pumm. Lorica +3",
-        feet={ name="Agoge Calligae +3", augments={'Enhances "Tomahawk" effect',}},
-        back={ name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Damage taken-5%',}},
+        feet = {
+            name = "Agoge Calligae +3",
+            augments = {'Enhances "Tomahawk" effect'}
+        },
+        back = {
+            name = "Cichol's Mantle",
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%'}
+        }
     }
     sets.JA["Warcry"] = {
         head = {
@@ -401,16 +407,19 @@ function get_sets()
 
     sets.JA["Aggressor"] = {
         -- body = "Agoge Lorica +3",
-        body = "Warrior's Lorica ",
+        body = "Warrior's Lorica",
         head = "Pummeler's Mask +2"
     }
 
     sets.JA["Provoke"] = sets.Precast.Enmity
 
     sets.JA["Tomahawk"] = {
-        ammo = "Thr. Tomahawk", 
-        feet={ name="Agoge Calligae +3", augments={'Enhances "Tomahawk" effect',}},
-    } -- Need to add relic feet
+        ammo = "Thr. Tomahawk",
+        feet = {
+            name = "Agoge Calligae +3",
+            augments = {'Enhances "Tomahawk" effect'}
+        }
+    }
 
     sets.JA["Retaliation"] = {
         hands = "Pummeler's Mufflers +2",
@@ -418,7 +427,9 @@ function get_sets()
     }
 
     sets.JA["Restraint"] = {}
-    sets.JA["Blood Rage"] = {}
+    sets.JA["Blood Rage"] = {
+        body = "Boii Lorica +3"
+    }
     sets.JA["Brazen Rush"] = {}
 
     sets.JA["Jump"] = { -- need to worrk on this set
@@ -443,7 +454,7 @@ function get_sets()
         -- back = "Null Shawl"
         ammo = "Coiste Bodhar",
         head = "Flam. Zucchetto +2",
-        body = "Boii Lorica +2",
+        body = "Boii Lorica +3",
         hands = "Crusher Gauntlets",
         legs = "Flamma Dirs +2",
         feet = "Ostro Greaves",
@@ -451,18 +462,21 @@ function get_sets()
             name = "War. Beads +2",
             augments = {'Path: A'}
         },
-        waist = "Plat. Mog. Belt",
+        waist = {
+            name = "Sailfi Belt +1",
+            augments = {'Path: A'}
+        },
         left_ear = "Neritic Earring",
         right_ear = "Cessance Earring",
         left_ring = "Petrov Ring",
         right_ring = "Chirich Ring",
-        back = "Lupine Cape"
+        back = "Null Shawl"
     }
 
     sets.JA["High Jump"] = {
         ammo = "Coiste Bodhar",
         head = "Flam. Zucchetto +2",
-        body = "Boii Lorica +2",
+        body = "Boii Lorica +3",
         hands = "Crusher Gauntlets",
         legs = "Flamma Dirs +2",
         feet = "Ostro Greaves",
@@ -470,12 +484,15 @@ function get_sets()
             name = "War. Beads +2",
             augments = {'Path: A'}
         },
-        waist = "Plat. Mog. Belt",
+        waist = {
+            name = "Sailfi Belt +1",
+            augments = {'Path: A'}
+        },
         left_ear = "Neritic Earring",
         right_ear = "Cessance Earring",
         left_ring = "Petrov Ring",
         right_ring = "Chirich Ring",
-        back = "Lupine Cape"
+        back = "Null Shawl"
     }
 
     sets.JA["Hasso"] = {}
@@ -1197,7 +1214,7 @@ function get_sets()
             name = "War. Beads +2",
             augments = {'Path: A'}
         },
-        waist = "Fotia Belt",
+        waist = "Sailfi Belt +1",
         left_ear = "Thrud Earring",
         right_ear = "Ishvara Earring",
         left_ring = "Regal Ring",
