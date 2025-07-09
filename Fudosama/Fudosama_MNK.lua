@@ -226,8 +226,8 @@ function get_sets()
         ammo = "Sapience Orb", -- 2
         head = {
             name = "Herculean Helm",
-            augments = {'"Mag.Atk.Bns."+21', '"Fast Cast"+6'}
-        }, -- 13
+            augments = {'"Fast Cast"+5', 'Mag. Acc.+12', '"Mag.Atk.Bns."+11'}
+        },
         body = {
             name = "Taeon Tabard",
             augments = {'"Fast Cast"+5', 'HP+47'}

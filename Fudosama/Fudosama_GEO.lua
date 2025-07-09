@@ -247,7 +247,9 @@ function get_sets()
         neck = "Lissome Necklace",
         waist = "Grunfeld Rope",
         left_ear = "Telos Earring",
-        right_ear = "Crep. Earring",
+        -- right_ear = "Crep. Earring",
+        right_ear = "Cessance Earring",
+        -- left_ring = "Varar Ring +1",
         left_ring = "Petrov Ring",
         right_ring = "Chirich Ring +1",
         back = "Null Shawl"
@@ -285,33 +287,41 @@ function get_sets()
             name = "Dunna",
             augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
         },
-        head = {
-            name = "Nyame Helm",
-            augments = {'Path: B'}
-        },
+        -- head = {
+        --     name = "Nyame Helm",
+        --     augments = {'Path: B'}
+        -- },
+        head = "Azimuth Hood +3",
         body = {
             name = "Nyame Mail",
             augments = {'Path: B'}
         },
-        hands = "Gazu Bracelets +1",
+        hands = {
+            name = "Gazu Bracelets +1",
+            augments = {'Path: A'}
+        },
         legs = {
             name = "Nyame Flanchard",
             augments = {'Path: B'}
         },
-        feet = {
-            name = "Nyame Sollerets",
-            augments = {'Path: B'}
-        },
+        -- feet = {
+        --     name = "Nyame Sollerets",
+        --     augments = {'Path: B'}
+        -- },
+        feet = "Azimuth Gaiters +3",
         neck = {
             name = "Bagua Charm +1",
             augments = {'Path: A'}
         },
         waist = "Grunfeld Rope",
-        left_ear = "Digni. Earring",
+        left_ear = "Crep. Earring",
         right_ear = "Telos Earring",
-        left_ring = "Defending Ring",
+        left_ring = "Varar Ring +1",
         right_ring = "Chirich Ring +1",
-        back = "Null Shawl"
+        back = {
+            name = "Nantosuelta's Cape",
+            augments = {'VIT+20', 'Eva.+20 /Mag. Eva.+20', 'Pet: "Regen"+10', 'Damage taken-5%'}
+        }
     }
 
     sets.OffenseMode.Aminon = {
@@ -958,8 +968,8 @@ function get_sets()
             name = "Gazu Bracelets +1",
             augments = {'Path: A'}
         },
-        -- neck = "Rep. Plat. Medal",
-        left_ear = "Crep. Earring",
+        neck = "Rep. Plat. Medal"
+        -- left_ear = "Crep. Earring"
         -- right_ear = "Regal Earring",
         -- waist = "Grunfeld Rope"
     })

@@ -208,14 +208,11 @@ function get_sets()
         },
         feet = "Malignance Boots",
         neck = {
-            name = "Comm. Charm +2",
+            name = "Comm. Charm +1",
             augments = {'Path: A'}
         },
         -- neck="Iskur Gorget",
-        waist = {
-            name = "Sailfi Belt +1",
-            augments = {'Path: A'}
-        },
+        waist = "Sailfi Belt +1",
         left_ear = "Telos Earring",
         right_ear = "Cessance Earring",
         right_ring = "Chirich Ring +1",
@@ -496,7 +493,25 @@ function get_sets()
             augments = {'Enhances "Wild Card" effect'}
         }
     }
-    sets.JA["Phantom Roll"] = {}
+    sets.JA["Phantom Roll"] = {
+        range = "Compensator",
+        ammo = "Decimating Bullet",
+        head = "Nyame Helm",
+        body = "Nyame Mail",
+        hands = "Nyame Gauntlets",
+        legs = "Nyame Flanchard",
+        feet = "Nyame Sollerets",
+        neck = {
+            name = "Comm. Charm +1",
+            augments = {'Path: A'}
+        },
+        waist = "Sailfi Belt +1",
+        left_ear = "Odnowa Earring +1",
+        right_ear = "Ishvara Earring",
+        left_ring = "Petrov Ring",
+        right_ring = "Barataria Ring",
+        back = "Camulus's Mantle"
+    }
     sets.JA["Random Deal"] = {
         body = {
             name = "Lanun Frac +2",
@@ -548,6 +563,7 @@ function get_sets()
         }, -- 50% Job ability Bonus
         hands = "Chasseur's Gants +2", -- 60 sec Duration
         neck = "Regal Necklace", -- 20 sec Duration
+        left_ring = "Barataria Ring", -- 20 sec Duration
         right_ring = "Luzaf's Ring", -- 16 yalm range
         back = "Camulus's Mantle"
     })

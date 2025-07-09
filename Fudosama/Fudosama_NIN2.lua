@@ -259,7 +259,7 @@ function init_gear_sets()
     sets.precast.FC = {
         head = {
             name = "Herculean Helm",
-            augments = {'"Fast Cast"+4', 'Haste+1', 'Accuracy+15 Attack+15'}
+            augments = {'"Fast Cast"+5', 'Mag. Acc.+12', '"Mag.Atk.Bns."+11'}
         },
         body = {
             name = "Taeon Tabard",
@@ -396,8 +396,8 @@ function init_gear_sets()
     sets.precast.WS['Blade: Ten'] = {
         -- ammo = "Date Shuriken",
         head = {
-            name = "Herculean Helm",
-            augments = {'Magic dmg. taken -4%', 'Pet: Haste+1', 'Weapon skill damage +9%'}
+            name = "Mpaca's Cap",
+            augments = {'Path: A'}
         },
         body = "Ken. Samue +1",
         hands = "Mummu Wrists +2",

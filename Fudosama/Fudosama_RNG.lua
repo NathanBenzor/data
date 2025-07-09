@@ -1220,6 +1220,7 @@ function get_sets()
     sets.WS["Refulgent Arrow"] = set_combine(sets.WS.RA, {})
 
     sets.WS["Jishnu's Radiance"] = set_combine(sets.WS.RA, {
+        ammo = Ammo.CRIT,
         head = "Orion Beret +3",
         body = "Amini Caban +3",
         hands = "Amini Glove. +3",
@@ -1244,6 +1245,7 @@ function get_sets()
     })
 
     sets.WS.PDL["Jishnu's Radiance"] = set_combine(sets.WS.RA, {
+        ammo = Ammo.CRIT,
         head = {
             name = "Blistering Sallet +1",
             augments = {'Path: A'}

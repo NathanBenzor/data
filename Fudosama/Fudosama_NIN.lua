@@ -122,16 +122,13 @@ function get_sets()
         neck = "Null Loop",
         waist = "Null Belt",
         left_ear = "Etiolation Earring",
-        right_ear = {
-            name = "Odnowa Earring +1",
-            augments = {'Path: A'}
-        },
+        right_ear = "Infused Earring",
         left_ring = "Defending Ring",
         right_ring = {
             name = "Gelatinous Ring +1",
             augments = {'Path: A'}
         },
-        back = "Moonbeam Cape"
+        back = "Null Shawl"
     }
 
     sets.Idle.MagicDamage = {
@@ -325,7 +322,7 @@ function get_sets()
     sets.Precast.FastCast = {
         head = {
             name = "Herculean Helm",
-            augments = {'"Fast Cast"+4', 'Haste+1', 'Accuracy+15 Attack+15'}
+            augments = {'"Fast Cast"+5', 'Mag. Acc.+12', '"Mag.Atk.Bns."+11'}
         },
         body = {
             name = "Taeon Tabard",
@@ -351,19 +348,21 @@ function get_sets()
     sets.Precast.Utsusemi = {
         head = {
             name = "Herculean Helm",
-            augments = {'"Fast Cast"+4', 'Haste+1', 'Accuracy+15 Attack+15'}
+            augments = {'"Fast Cast"+5', 'Mag. Acc.+12', '"Mag.Atk.Bns."+11'}
         },
-        body = {
-            name = "Taeon Tabard",
-            augments = {'"Fast Cast"+5'}
-        },
+        -- body = {
+        --     name = "Taeon Tabard",
+        --     augments = {'"Fast Cast"+5'}
+        -- },
+        body = "Mochi. Chainmail +3",
         hands = {
             name = "Leyline Gloves",
             augments = {'Accuracy+14', 'Mag. Acc.+13', '"Mag.Atk.Bns."+13', '"Fast Cast"+2'}
         },
         legs = "Gyve Trousers",
         feet = "Hattori Kyahan +3",
-        neck = "Magoraga Beads",
+        -- neck = "Magoraga Beads",
+        neck = "Orunmila's Torque",
         waist = "Plat. Mog. Belt",
         left_ear = "Etiolation Earring",
         right_ear = "Loquac. Earring",
@@ -444,29 +443,29 @@ function get_sets()
     sets.Midcast = {}
 
     -- Utsusemi Set
-    sets.Midcast.Utsusemi = {
-        head = "Null Masque",
-        body = {
-            name = "Mochi. Chainmail +3",
-            augments = {'Enhances "Sange" effect'}
-        },
-        hands = {
-            name = "Taeon Gloves",
-            augments = {'Spell interruption rate down -9%'}
-        },
-        legs = "Gyve Trousers",
-        neck = "Magoraga Beads",
-        feet = "Hattori Kyahan +3",
-        waist = "Trance Belt",
-        left_ear = "Trux Earring",
-        right_ear = "Cryptic Earring",
-        left_ring = "Pernicious Ring",
-        right_ring = "Supershear Ring",
-        back = {
-            name = "Andartia's Mantle",
-            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Damage taken-5%'}
-        }
-    }
+    -- sets.Midcast.Utsusemi = {
+    --     head = "Null Masque",
+    --     body = {
+    --         name = "Mochi. Chainmail +3",
+    --         augments = {'Enhances "Sange" effect'}
+    --     },
+    --     hands = {
+    --         name = "Taeon Gloves",
+    --         augments = {'Spell interruption rate down -9%'}
+    --     },
+    --     legs = "Gyve Trousers",
+    --     feet = "Hattori Kyahan +3",
+    --     neck = "Magoraga Beads",
+    --     waist = "Trance Belt",
+    --     left_ear = "Trux Earring",
+    --     right_ear = "Cryptic Earring",
+    --     left_ring = "Pernicious Ring",
+    --     right_ring = "Supershear Ring",
+    --     back = {
+    --         name = "Andartia's Mantle",
+    --         augments = {'"Fast Cast"+10'}
+    --     }
+    -- }
     -- This set is used as base as is overwrote by specific gear changes (Spell Interruption Rate Down)
     sets.Midcast.SIRD = {}
     -- Cure Set
@@ -785,8 +784,8 @@ function get_sets()
     sets.WS["Blade: Jin"] = sets.WS.CRIT
     sets.WS["Blade: Ten"] = {
         head = {
-            name = "Herculean Helm",
-            augments = {'Magic dmg. taken -4%', 'Pet: Haste+1', 'Weapon skill damage +9%'}
+            name = "Mpaca's Cap",
+            augments = {'Path: A'}
         },
         body = "Ken. Samue +1",
         hands = "Mummu Wrists +2",
