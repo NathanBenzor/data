@@ -223,9 +223,7 @@ function get_sets()
     })
 
     sets.Movement = {
-        ammo = "Staunch Tathlum +1",
-        legs = "Carmine Cuisses +1",
-        right_ear = "Chev. Earring +1"
+        left_ring = "Shneddick Ring"
     }
 
     -- Set to be used if you get cursna casted on you

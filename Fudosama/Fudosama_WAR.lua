@@ -1110,9 +1110,13 @@ function get_sets()
             name = "Agoge Mask +3",
             augments = {'Enhances "Savagery" effect'}
         },
+        -- body = {
+        --     name = "Nyame Mail",
+        --     augments = {'Path: B'}
+        -- },
         body = {
-            name = "Nyame Mail",
-            augments = {'Path: B'}
+            name = "Sakpata's Plate",
+            augments = {'Path: A'}
         },
         hands = "Boii Mufflers +3",
         legs = "Boii Cuisses +3",
@@ -1717,7 +1721,12 @@ function get_sets()
             name = "Sailfi Belt +1",
             augments = {'Path: A'}
         },
-        left_ear = "Thrud Earring",
+        -- left_ear = "Thrud Earring",
+        left_ear = {
+            name = "Schere Earring",
+            augments = {'Path: A'}
+        },
+
         right_ear = "Moonshade Earring",
         left_ring = "Niqmaddu Ring",
         right_ring = "Cornelia's Ring",
