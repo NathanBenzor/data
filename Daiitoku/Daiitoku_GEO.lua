@@ -143,9 +143,7 @@ function get_sets()
 
     -- Used to swap into movement gear when the player is moving and not engaged
     sets.Movement = {
-        -- left_ring = "Shneddick Ring"
-        -- feet = "Geo. Sandals +3"
-        feet = "Herald's Gaiters"
+        left_ring = "Shneddick Ring"
     }
 
     -- Set to be used if you get 

@@ -34,7 +34,7 @@ Buff_Delay = 5 -- Used this to slow down auto buffing
 Tank_Delay = 5 -- delays between tanking actions (only used when auto-buffing enabled and target locked on)
 
 -- Set to ingame lockstyle and Macro Book/Set
-LockStylePallet = "192"
+LockStylePallet = "189"
 MacroBook = "22"
 MacroSet = Macro_Sub_Job()
 
@@ -556,13 +556,12 @@ function get_sets()
         },
         body = {
             name = "Herculean Vest",
-            augments = {'MND+2', 'CHR+6', 'Phalanx +1', 'Accuracy+11 Attack+11'}
+            augments = {'Pet: AGI+13', 'Pet: DEX+11', 'Phalanx +3', 'Accuracy+7 Attack+7'}
         },
-        -- hands = "Runeist Mitons +2",
+        hands = "Regal Gauntlets",
         legs = {
             name = "Herculean Trousers",
-            augments = {'"Snapshot"+5', 'Pet: DEX+9', 'Phalanx +2', 'Accuracy+6 Attack+6',
-                        'Mag. Acc.+3 "Mag.Atk.Bns."+3'}
+            augments = {'AGI+9', 'Accuracy+13', 'Phalanx +2', 'Accuracy+8 Attack+8', 'Mag. Acc.+15 "Mag.Atk.Bns."+15'}
         },
         feet = {
             name = "Herculean Boots",
@@ -582,7 +581,7 @@ function get_sets()
         right_ring = "Moonlight Ring",
         back = {
             name = "Ogma's Cape",
-            augments = {'HP+60', 'Eva.+20 /Mag. Eva.+20', 'Enmity+10', 'Phys. dmg. taken-10%'}
+            augments = {'HP+60', 'Eva.+20 /Mag. Eva.+20', 'HP+20', 'Enmity+10', 'Phys. dmg. taken-10%'}
         }
     })
 

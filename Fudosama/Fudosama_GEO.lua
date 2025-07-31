@@ -3,7 +3,7 @@
 include('Fudosama-Include')
 
 -- Set to ingame lockstyle and Macro Book/Set
-LockStylePallet = "195"
+LockStylePallet = "199"
 MacroBook = "31"
 MacroSet = "1"
 
@@ -17,7 +17,7 @@ AutoItem = false
 Random_Lockstyle = true
 
 -- Lockstyle sets to randomly equip
-Lockstyle_List = {195, 200}
+Lockstyle_List = {195, 199}
 
 -- 'TP','ACC','DT' are standard Default modes.  You may add more and assigne equipsets for them ( Idle.X and OffenseMode.X )
 state.OffenseMode:options('TP', 'ACC', 'DT', 'PDL', 'SB', 'MEVA', 'Aminon') -- ACC effects WS and TP modes

@@ -421,16 +421,25 @@ function get_sets()
     sets.WS.PDL = set_combine(sets.WS, {})
 
     sets.WS.Kicks = {
-        ammo = "Crepuscular Pebble",
-        head = "Mpaca's Cap",
-        body = "Ken. Samue +1",
+        ammo = {
+            name = "Coiste Bodhar",
+            augments = {'Path: A'}
+        },
+        head = {
+            name = "Mpaca's Cap",
+            augments = {'Path: A'}
+        },
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
         hands = {
-            name = "Ryuo Tekko +1",
-            augments = {'STR+12', 'DEX+12', 'Accuracy+20'}
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
         },
         legs = {
-            name = "Hes. Hose +3",
-            augments = {'Enhances "Hundred Fists" effect'}
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
         },
         feet = "Anch. Gaiters +3",
         neck = {
@@ -438,9 +447,15 @@ function get_sets()
             augments = {'Path: A'}
         },
         waist = "Moonbow Belt +1",
-        left_ear = "Sherida Earring",
-        right_ear = "Odr Earring",
-        -- left_ring="Niqmaddu Ring",
+        left_ear = {
+            name = "Moonshade Earring",
+            augments = {'Attack+4', 'TP Bonus +250'}
+        },
+        right_ear = {
+            name = "Schere Earring",
+            augments = {'Path: A'}
+        },
+        left_ring = "Niqmaddu Ring",
         right_ring = "Gere Ring",
         back = {
             name = "Segomo's Mantle",
@@ -510,14 +525,15 @@ function get_sets()
             name = "Mpaca's Cap",
             augments = {'Path: A'}
         },
-        -- body = "Bhikku Cyclas +3",
-        body = "Ken. Samue +1",
+        body = "Bhikku Cyclas +3",
+        -- body = "Ken. Samue +1",
         hands = {
             name = "Ryuo Tekko +1",
             augments = {'STR+12', 'DEX+12', 'Accuracy+20'}
         },
         legs = "Mpaca's Hose",
-        feet = "Ken. Sune-Ate +1",
+        -- feet = "Ken. Sune-Ate +1",
+        feet = "Mpaca's Boots",
         neck = "Fotia Gorget",
         waist = "Moonbow Belt +1",
         left_ear = "Sherida Earring",
@@ -543,7 +559,7 @@ function get_sets()
             augments = {'Path: A'}
         },
         body = "Bhikku Cyclas +3",
-        hands = "Bhikku Gloves +2",
+        hands = "Bhikku Gloves +3",
         legs = "Mpaca's Hose",
         feet = "Mpaca's Boots",
         neck = "Fotia Gorget",
@@ -571,7 +587,7 @@ function get_sets()
             augments = {'Path: A'}
         },
         body = "Bhikku Cyclas +3",
-        hands = "Bhikku Gloves +2",
+        hands = "Bhikku Gloves +3",
         legs = {
             name = "Nyame Flanchard",
             augments = {'Path: B'}
