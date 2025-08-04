@@ -34,7 +34,7 @@ Buff_Delay = 5 -- Used this to slow down auto buffing
 Tank_Delay = 5 -- delays between tanking actions (only used when auto-buffing enabled and target locked on)
 
 -- Set to ingame lockstyle and Macro Book/Set
-LockStylePallet = "189"
+LockStylePallet = "187"
 MacroBook = "22"
 MacroSet = Macro_Sub_Job()
 
