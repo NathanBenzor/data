@@ -566,10 +566,6 @@ function get_sets()
         ring1 = "Freke Ring",
         ring2 = "Shiva Ring +1",
         waist = "Sacro Cord",
-        -- waist = {
-        --     name = "Acuity Belt +1",
-        --     augments = {'Path: A'}
-        -- },
         back = {
             name = "Nantosuelta's Cape",
             augments = {'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'INT+10', '"Mag.Atk.Bns."+10', 'Phys. dmg. taken-10%'}
