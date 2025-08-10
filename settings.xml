@@ -85,22 +85,6 @@
         <warn>true</warn>
     </global>
     <daiitoku>
-        <Display_Box>
-            <pos>
-                <x>1790</x>
-                <y>748</y>
-            </pos>
-        </Display_Box>
-    </daiitoku>
-    <fudosama>
-        <Display_Box>
-            <pos>
-                <x>1790</x>
-                <y>748</y>
-            </pos>
-        </Display_Box>
-    </fudosama>
-    <gunbound>
         <Debug_Box>
             <text>
                 <fonts>
@@ -110,8 +94,8 @@
         </Debug_Box>
         <Display_Box>
             <pos>
-                <x>1790</x>
-                <y>748</y>
+                <x>1903</x>
+                <y>712</y>
             </pos>
             <text>
                 <fonts>
@@ -119,12 +103,28 @@
                 </fonts>
             </text>
         </Display_Box>
+    </daiitoku>
+    <fudosama>
+        <Display_Box>
+            <pos>
+                <x>1900</x>
+                <y>709</y>
+            </pos>
+        </Display_Box>
+    </fudosama>
+    <gunbound>
+        <Display_Box>
+            <pos>
+                <x>1895</x>
+                <y>709</y>
+            </pos>
+        </Display_Box>
     </gunbound>
     <karinii>
         <Display_Box>
             <pos>
-                <x>1790</x>
-                <y>748</y>
+                <x>1898</x>
+                <y>710</y>
             </pos>
         </Display_Box>
     </karinii>

@@ -92,14 +92,14 @@ function get_sets()
         }
     }
 
-    sets.Weapons['Death Penalty'] = {
-        main = {
-            name = "Rostam",
-            augments = {'Path: C'}
-        },
-        sub = "Tauret",
-        range = "Molybdosis"
-    }
+    -- sets.Weapons['Death Penalty'] = {
+    --     main = {
+    --         name = "Rostam",
+    --         augments = {'Path: C'}
+    --     },
+    --     sub = "Tauret",
+    --     range = "Molybdosis"
+    -- }
 
     sets.Weapons['Aeolian Edge'] = {
         ammo = Ammo.Bullet.MAG_WS,
@@ -141,10 +141,11 @@ function get_sets()
         },
         sub = "Tauret",
 
-        range = {
-            name = "Anarchy +3",
-            augments = {'Delay:+60', 'TP Bonus +1000'}
-        }
+        -- range = {
+        --     name = "Anarchy +3",
+        --     augments = {'Delay:+60', 'TP Bonus +1000'}
+        -- }
+        range = "Fomalhaut"
     }
 
     sets.Weapons['Trials'] = {
@@ -161,12 +162,10 @@ function get_sets()
         sub = "Tauret"
     }
     -- Ammo Selection
-    -- Ammo.Bullet.RA = "Chrono Bullet" -- TP Ammo
-    -- Ammo.Bullet.WS = "Chrono Bullet" -- Physical Weaponskills
+    Ammo.Bullet.RA = "Chrono Bullet" -- TP Ammo
+    Ammo.Bullet.WS = "Chrono Bullet" -- Physical Weaponskills
     -- Ammo.Bullet.RA = "Decimating Bullet" -- TP Ammo
     -- Ammo.Bullet.WS = "Decimating Bullet" -- Physical Weaponskills
-    Ammo.Bullet.RA = "Bronze Bullet" -- TP Ammo
-    Ammo.Bullet.WS = "Bronze Bullet" -- Physical Weaponskills
     Ammo.Bullet.CRIT = "Chrono Bullet" -- Critical Hit Mode
     Ammo.Bullet.PDL = "Chrono Bullet" -- Physical Damage Mode
     Ammo.Bullet.SB = "Chrono Bullet" -- Subtle Blow Mode
@@ -183,10 +182,11 @@ function get_sets()
         hands = "Nyame Gauntlets",
         legs = "Nyame Flanchard",
         feet = "Nyame Sollerets",
-        neck = {
-            name = "Comm. Charm +1",
-            augments = {'Path: A'}
-        },
+        -- neck = {
+        --     name = "Comm. Charm +1",
+        --     augments = {'Path: A'}
+        -- },
+        neck = "Iskur Gorget",
         waist = {
             name = "Sailfi Belt +1",
             augments = {'Path: A'}
@@ -709,10 +709,11 @@ function get_sets()
             name = "Lanun Bottes +3",
             augments = {'Enhances "Wild Card" effect'}
         },
-        neck = {
-            name = "Comm. Charm +1",
-            augments = {'Path: A'}
-        },
+        -- neck = {
+        --     name = "Comm. Charm +1",
+        --     augments = {'Path: A'}
+        -- },
+        neck = "Iskur Gorget",
         waist = "Sailfi Belt +1",
         left_ear = "Odnowa Earring +1",
         right_ear = "Ishvara Earring",

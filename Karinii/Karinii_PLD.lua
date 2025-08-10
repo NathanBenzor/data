@@ -106,8 +106,8 @@ Runes = {
 }
 
 -- Set to ingame lockstyle and Macro Book/Set
-LockStylePallet = "13"
-MacroBook = "5"
+LockStylePallet = "3"
+MacroBook = "1"
 MacroSet = Macro_Sub_Job()
 
 -- Command to Lock Style and Set the correct macros
