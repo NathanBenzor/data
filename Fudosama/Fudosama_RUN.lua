@@ -34,7 +34,7 @@ Buff_Delay = 5 -- Used this to slow down auto buffing
 Tank_Delay = 5 -- delays between tanking actions (only used when auto-buffing enabled and target locked on)
 
 -- Set to ingame lockstyle and Macro Book/Set
-LockStylePallet = "187"
+LockStylePallet = "186"
 MacroBook = "22"
 MacroSet = Macro_Sub_Job()
 
@@ -633,7 +633,7 @@ function get_sets()
     sets.Midcast["Stun"] = set_combine(sets.Enmity, {})
     sets.Midcast["Jettatura"] = set_combine(sets.Enmity, {})
     sets.Midcast["Blank Gaze"] = set_combine(sets.Enmity, {})
-    sets.Midcast['Cursed Sphere'] = set_combine(sets.Enmity, {})
+    sets.Midcast['Cursed Sphere'] = set_combine(sets.SIRD, {})
 
     sets.Midcast["Geist Wall"] = sets.SIRD
     sets.Midcast["Sheep Song"] = sets.SIRD
@@ -642,13 +642,13 @@ function get_sets()
     sets.Midcast["Magic Fruit"] = set_combine(sets.Cure, {})
     sets.Midcast["Pollen"] = set_combine(sets.Cure, {})
     sets.Midcast["Wild Carrot"] = set_combine(sets.Cure, {})
-    -- sets.Midcast["Cure"] = set_combine(sets.Cure, {})
-    -- sets.Midcast["Cure II"] = set_combine(sets.Cure, {})
-    -- sets.Midcast["Cure III"] = set_combine(sets.Cure, {})
-    -- sets.Midcast["Cure IV"] = set_combine(sets.Cure, {})
-    -- sets.Midcast["Curaga"] = set_combine(sets.Cure, {})
-    -- sets.Midcast["Curaga II"] = set_combine(sets.Cure, {})
-    -- sets.Midcast["Curaga III"] = set_combine(sets.Cure, {})
+    sets.Midcast["Cure"] = set_combine(sets.Cure, {})
+    sets.Midcast["Cure II"] = set_combine(sets.Cure, {})
+    sets.Midcast["Cure III"] = set_combine(sets.Cure, {})
+    sets.Midcast["Cure IV"] = set_combine(sets.Cure, {})
+    sets.Midcast["Curaga"] = set_combine(sets.Cure, {})
+    sets.Midcast["Curaga II"] = set_combine(sets.Cure, {})
+    sets.Midcast["Curaga III"] = set_combine(sets.Cure, {})
 
     sets.Midcast["Cursna"] = set_combine(sets.Cursna_Received, {})
 
