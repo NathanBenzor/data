@@ -999,10 +999,23 @@ function init_gear_sets()
     })
 
     sets.midcast.Phalanx = set_combine(sets.midcast.EnhancingDuration, {
-        body = gear.Taeon_Phalanx_body, -- 3(10)
-        hands = gear.Taeon_Phalanx_hands, -- 3(10)
-        legs = gear.Taeon_Phalanx_legs, -- 3(10)
-        feet = gear.Taeon_Phalanx_feet -- 3(10)
+        -- body = gear.Taeon_Phalanx_body, -- 3(10)
+        -- hands = gear.Taeon_Phalanx_hands, -- 3(10)
+        -- legs = gear.Taeon_Phalanx_legs, -- 3(10)
+        -- feet = gear.Taeon_Phalanx_feet -- 3(10)
+        body = {
+            name = "Herculean Vest",
+            augments = {'Pet: AGI+13', 'Pet: DEX+11', 'Phalanx +3', 'Accuracy+7 Attack+7'}
+        },
+        -- hands = "Regal Gauntlets",
+        legs = {
+            name = "Herculean Trousers",
+            augments = {'AGI+9', 'Accuracy+13', 'Phalanx +2', 'Accuracy+8 Attack+8', 'Mag. Acc.+15 "Mag.Atk.Bns."+15'}
+        },
+        feet = {
+            name = "Herculean Boots",
+            augments = {'Magic dmg. taken -3%', 'Attack+12', 'Phalanx +4', 'Mag. Acc.+17 "Mag.Atk.Bns."+17'}
+        }
     })
 
     sets.midcast.Aquaveil = set_combine(sets.midcast.EnhancingDuration, {

@@ -9,10 +9,10 @@ AutoItem = false
 Random_Lockstyle = true
 
 -- Lockstyle sets to randomly equip
-Lockstyle_List = {115, 116, 118, 119}
+Lockstyle_List = {116, 118, 119}
 
 -- Set to ingame lockstyle and Macro Book/Set
-LockStylePallet = "115"
+LockStylePallet = "116"
 MacroBook = "20" -- Sub Job macro pallets can be defined in the sub_job_change_custom function below
 MacroSet = "1"
 

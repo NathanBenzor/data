@@ -23,7 +23,7 @@ Food = "Sublime Sushi"
 state.OffenseMode:options('DT', 'TP', 'SB', 'Aminon') -- ACC effects WS and TP modes
 state.OffenseMode:set('DT')
 
-state.WeaponMode:options('Aeneas', 'Tauret', 'Karambit', 'Unlocked')
+state.WeaponMode:options('Aeneas', 'Tauret', 'Aeolian Edge', 'Karambit', 'Unlocked')
 state.WeaponMode:set('Aeneas')
 
 -- Initialize Player
@@ -46,6 +46,13 @@ function get_sets()
         sub = {
             name = "Gleti's Knife",
             augments = {'Path: A'}
+        }
+    }
+    sets.Weapons['Aeolian Edge'] = {
+        main = "Aeneas",
+        sub = {
+            name = "Fusetto +3",
+            augments = {'TP Bonus +1000'}
         }
     }
     sets.Weapons['Karambit'] = {
@@ -72,7 +79,8 @@ function get_sets()
             name = "Nyame Sollerets",
             augments = {'Path: B'}
         },
-        neck = "Rep. Plat. Medal",
+        -- neck = "Rep. Plat. Medal",
+        neck = "Etoile Gorget +2",
         waist = "Null Belt",
         left_ear = {
             name = "Odnowa Earring +1",
@@ -498,7 +506,7 @@ function get_sets()
         hands = "Malignance Gloves",
         legs = "Malignance Tights",
         feet = "Malignance Boots",
-        neck = "Etoile Gorget +1",
+        neck = "Etoile Gorget +2",
         waist = "Reiki Yotai",
         left_ear = "Odr Earring",
         right_ear = "Telos Earring",
@@ -538,7 +546,8 @@ function get_sets()
             name = "Nyame Sollerets",
             augments = {'Path: B'}
         },
-        neck = "Fotia Gorget",
+        -- neck = "Fotia Gorget",
+        neck = "Etoile Gorget +2",
         waist = {
             name = "Sailfi Belt +1",
             augments = {'Path: A'}
@@ -552,7 +561,7 @@ function get_sets()
         right_ring = "Epona's Ring",
         back = {
             name = "Senuna's Mantle",
-            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Weapon skill damage +10%', 'Damage taken-5%'}
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'DEX+5', 'Weapon skill damage +10%', 'Damage taken-5%'}
         }
     }
 
@@ -587,11 +596,11 @@ function get_sets()
         right_ring = "Epona's Ring",
         back = {
             name = "Senuna's Mantle",
-            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Weapon skill damage +10%', 'Damage taken-5%'}
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'DEX+5', 'Weapon skill damage +10%', 'Damage taken-5%'}
         }
     }
     sets.WS["Aeolian Edge"] = {
-        ammo = "Yamarang",
+        ammo = "Ghastly Tathlum +1",
         head = "Nyame Helm",
         body = {
             name = "Nyame Mail",
@@ -601,17 +610,17 @@ function get_sets()
         legs = "Nyame Flanchard",
         feet = "Nyame Sollerets",
         neck = "Baetyl Pendant",
-        waist = "Fotia Belt",
+        waist = "Orpheus's Sash",
         left_ear = {
             name = "Moonshade Earring",
             augments = {'Attack+4', 'TP Bonus +250'}
         },
         right_ear = "Friomisi Earring",
-        left_ring = "Regal Ring",
-        right_ring = "Ilabrat Ring",
+        left_ring = "Shiva Ring +1",
+        right_ring = "Cornelia's Ring",
         back = {
             name = "Senuna's Mantle",
-            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Weapon skill damage +10%', 'Damage taken-5%'}
+            augments = {'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'INT+10', 'Weapon skill damage +10%', 'Damage taken-5%'}
         }
     }
     sets.WS["Rudra's Storm"] = {
@@ -639,7 +648,8 @@ function get_sets()
             name = "Nyame Sollerets",
             augments = {'Path: B'}
         },
-        neck = "Fotia Gorget",
+        -- neck = "Fotia Gorget",
+        neck = "Etoile Gorget +2",
         waist = "Fotia Belt",
         left_ear = {
             name = "Moonshade Earring",
@@ -650,7 +660,7 @@ function get_sets()
         right_ring = "Regal Ring",
         back = {
             name = "Senuna's Mantle",
-            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Weapon skill damage +10%', 'Damage taken-5%'}
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'DEX+5', 'Weapon skill damage +10%', 'Damage taken-5%'}
         }
     }
 

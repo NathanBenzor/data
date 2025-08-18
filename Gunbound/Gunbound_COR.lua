@@ -186,7 +186,7 @@ function get_sets()
         --     name = "Comm. Charm +1",
         --     augments = {'Path: A'}
         -- },
-        neck = "Iskur Gorget",
+        neck = "Loricate Torque +1",
         waist = {
             name = "Sailfi Belt +1",
             augments = {'Path: A'}
@@ -693,10 +693,7 @@ function get_sets()
             name = "Herculean Helm",
             augments = {'Accuracy+15', 'Weapon skill damage +5%', 'Attack+4'}
         },
-        body = {
-            name = "Herculean Vest",
-            augments = {'Accuracy+21', 'Weapon skill damage +5%', 'AGI+1'}
-        },
+        body = "Laksa. Frac +3",
         hands = {
             name = "Herculean Gloves",
             augments = {'Attack+28', 'Weapon skill damage +4%', 'Accuracy+14'}

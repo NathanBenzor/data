@@ -27,7 +27,7 @@ state.OffenseMode:options('DT', 'PDL', 'TP', 'ACC', 'SB') -- ACC effects WS and 
 state.OffenseMode:set('DT')
 
 -- Weapon Modes
-state.WeaponMode:options('Foenaria', 'Anguta', 'Caladbolg', 'Naegling', 'Loxotic Mace', 'Lycurgos') -- removed Apocalypse and Liberator :(
+state.WeaponMode:options('Foenaria', 'Liberator', 'Anguta', 'Caladbolg', 'Naegling', 'Loxotic Mace', 'Lycurgos') -- removed Apocalypse and Liberator :(
 state.WeaponMode:set('Foenaria')
 
 -- Initialize Player
@@ -48,6 +48,14 @@ function get_sets()
     sets.Weapons['Caladbolg'] = {
         main = {
             name = "Caladbolg",
+            augments = {'Path: A'}
+        },
+        sub = "Utu Grip"
+    }
+
+    sets.Weapons['Liberator'] = {
+        main = {
+            name = "Liberator",
             augments = {'Path: A'}
         },
         sub = "Utu Grip"
