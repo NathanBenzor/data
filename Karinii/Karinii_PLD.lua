@@ -106,7 +106,7 @@ Runes = {
 }
 
 -- Set to ingame lockstyle and Macro Book/Set
-LockStylePallet = "3"
+LockStylePallet = "4"
 MacroBook = "1"
 MacroSet = Macro_Sub_Job()
 
@@ -123,7 +123,11 @@ function get_sets()
     sets.Weapons = {}
 
     sets.Weapons['Sakpatas Sword'] = {
-        main = "Sakpata's Sword"
+        main = "Sakpata's Sword",
+        sub = {
+            name = "Priwen",
+            augments = {'HP+50', 'Mag. Evasion+50', 'Damage Taken -3%'}
+        }
     }
 
     sets.Weapons['Burtgang'] = {
@@ -163,11 +167,7 @@ function get_sets()
         }, -- 8
         legs = "Sakpata's Cuisses", -- 9
         feet = "Sakpata's Leggings", -- 6
-        neck = {
-            name = "Unmoving Collar +1",
-            augments = {'Path: A'},
-            priority = 1
-        },
+        neck = "Loricate Torque +1",
         waist = "Carrier's Sash",
         left_ear = {
             name = "Odnowa Earring +1",

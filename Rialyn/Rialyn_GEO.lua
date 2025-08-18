@@ -29,8 +29,8 @@ state.OffenseMode:set('DT')
 Organizer = false
 
 -- Weapons options
-state.WeaponMode:options('Idris', 'Solstice', 'Unlocked')
-state.WeaponMode:set('Unlocked')
+state.WeaponMode:options('Idris', 'Unlocked')
+state.WeaponMode:set('Idris')
 
 -- WS to check for Obi or Orpheus Check
 elemental_ws = S {'Aeolian Edge', 'Cyclone'}
@@ -46,14 +46,6 @@ function get_sets()
 
     sets.Weapons['Idris'] = {
         main = "Idris",
-        sub = "Genmei Shield"
-    }
-
-    sets.Weapons['Solstice'] = {
-        main = {
-            name = "Solstice",
-            augments = {'Mag. Acc.+20', 'Pet: Damage taken -4%', '"Fast Cast"+5'}
-        },
         sub = "Genmei Shield"
     }
 
@@ -97,7 +89,7 @@ function get_sets()
     -- Sets for Idle when player has a pet
     sets.Idle.Pet = set_combine(sets.Idle, { -- 2278/1482
         -- Pet: -DT (37.5% to cap) / Pet: Regen  -DT cap -87.5%
-        main = "Solstice",
+        main = "Idris",
         sub = "Genmei Shield",
         head = "Azimuth Hood +3",
         body = "Azimuth Coat +3",
@@ -565,10 +557,7 @@ function get_sets()
     -- Indi Duration
     sets.Geomancy = {}
     sets.Geomancy.Indi = {
-        main = {
-            name = "Solstice",
-            augments = {'Mag. Acc.+20', 'Pet: Damage taken -4%', '"Fast Cast"+5'}
-        },
+        main = "Idris",
         sub = "Genmei Shield",
         range = {
             name = "Dunna",
@@ -606,10 +595,7 @@ function get_sets()
     sets.Geomancy.Indi.Entrust = set_combine(sets.Geomancy.Indi, {})
     -- Geo Potency
     sets.Geomancy.Geo = set_combine(sets.Geomancy.Indi, {
-        main = {
-            name = "Solstice",
-            augments = {'Mag. Acc.+20', 'Pet: Damage taken -4%', '"Fast Cast"+5'}
-        },
+        main = "Idris",
         sub = "Genmei Shield",
         range = {
             name = "Dunna",

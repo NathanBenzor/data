@@ -513,9 +513,7 @@ function get_sets()
         ammo = "Staunch Tathlum +1",
         head = "Erilaz Galea +3",
         body = "Runeist Coat +3",
-        hands = {
-            name = "Regal Gauntlets"
-        },
+        hands = "Regal Gauntlets",
         legs = {
             name = "Futhark Trousers +2",
             augments = {'Enhances "Inspire" effect'}
@@ -541,11 +539,11 @@ function get_sets()
     })
 
     sets.Midcast["Aquaveil"] = set_combine(sets.Midcast.Enhancing, sets.SIRD, {
-        body = "Runeist Coat +3",
-        head = "Erilaz Galea +3",
-        hands = "Regal Gauntlets",
-        neck = "Sacro Gorget",
-        legs = "Futhark Trousers +2"
+        -- body = "Runeist Coat +3"
+        -- head = "Erilaz Galea +3",
+        -- hands = "Regal Gauntlets",
+        -- neck = "Sacro Gorget",
+        -- legs = "Futhark Trousers +2"
     })
 
     sets.Midcast["Phalanx"] = set_combine(sets.Midcast.Enhancing, {
