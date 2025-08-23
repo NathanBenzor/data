@@ -234,15 +234,15 @@ function init_gear_sets()
         --     augments = {'Mag. Acc.+15', 'String instrument skill +10', 'Wind instrument skill +10'}
         -- }, -- 7
         -- sub = "Genmei Shield",
-        head="Fili Calot +3",
+        head="Bunzi's Hat", -- 10
         body = "Inyanga Jubbah +2", -- 14
-        hands={ name="Leyline Gloves", augments={'Accuracy+15','Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+3',}},
+        hands={ name="Leyline Gloves", augments={'Accuracy+15','Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+3',}}, --8
         legs = "Aya. Cosciales +2", -- 6
-        feet = "Bihu Slippers +3", -- 5
+        feet = "Fili Cothurnes +3", -- 10
         neck = "Baetyl Pendant", -- 4
         waist = "Embla Sash", -- 5
-        right_ear = "Loquac. Earring", -- 2
-        left_ear = "Etiolation Earring", -- 1
+        right_ear = "Loquacious Earring", -- 2
+        left_ear = "Enchanter's Earring +1", -- 2
         left_ring = "Rahab Ring", -- 2
         right_ring = "Kishar ring", -- 4
         back = {
@@ -323,7 +323,7 @@ function init_gear_sets()
             name = "Bihu Jstcorps. +3",
             augments = {'Enhances "Troubadour" effect'}
         },
-        hands = "Nyame Gauntlets",
+        hands={ name="Nyame Gauntlets", augments={'Path: B',}},
         legs = {
             name = "Nyame Flanchard",
             augments = {'Path: B'}
@@ -403,30 +403,30 @@ function init_gear_sets()
             augments = {'Accuracy+13', 'Weapon skill damage +3%', 'STR+8'}
         },
         head = {
-            name = "Bihu Roundlet +3",
-            augments = {'Enhances "Con Anima" effect'}
+            name = "Nyame Helm",
+            augments = {'Path: B'}
         },
         body = {
             name = "Bihu Jstcorps. +3",
             augments = {'Enhances "Troubadour" effect'}
         },
-        hands = {
-            name = "Bihu Cuffs +3",
-            augments = {'Enhances "Con Brio" effect'}
-        },
+        hands={ name="Nyame Gauntlets", augments={'Path: B',}},
         legs = {
-            name = "Bihu Cannions +3",
-            augments = {'Enhances "Soul Voice" effect'}
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
         },
         feet = {
-            name = "Bihu Slippers +3",
-            augments = {'Enhances "Nightingale" effect'}
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
         },
         neck = {
             name = "Bard's Charm +1",
             augments = {'Path: A'}
         },
-        waist = "Kentarch Belt +1",
+        waist = {
+            name = "Sailfi Belt +1",
+            augments = {'Path: A'}
+        },
         left_ear = "Ishvara Earring",
         right_ear = "Regal Earring",
         right_ring = "Cornelia's Ring",
@@ -434,10 +434,9 @@ function init_gear_sets()
             name = "Metamor. Ring +1",
             augments = {'Path: A'}
         },
-        back = {
-            name = "Intarabus's Cape",
-            augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%'}
-        }
+        back={ 
+            name="Intarabus's Cape", 
+            augments={'CHR+20','Accuracy+20 Attack+20','CHR+10','Weapon skill damage +10%','Damage taken-5%',}},
     })
 
     sets.precast.WS['Rudra\'s Storm'] = set_combine(sets.precast.WS, {
@@ -492,6 +491,10 @@ function init_gear_sets()
             name = "Nyame Helm",
             augments = {'Path: B'}
         },
+        -- body = {
+        --     name = "Nyame Mail",
+        --     augments = {'Path: B'}
+        -- },
         body = {
             name = "Bihu Jstcorps. +3",
             augments = {'Enhances "Troubadour" effect'}
@@ -601,7 +604,7 @@ function init_gear_sets()
         head = "Brioso Roundlet +3"
     }
     sets.midcast.Threnody = {
-        body = "File Hongreline +3"
+        body = "Mousai Manteel +1",
     }
     sets.midcast['Adventurer\'s Dirge'] = {
         range = "Marsyas"
@@ -610,9 +613,9 @@ function init_gear_sets()
         range = "Marsyas"
     }
     sets.midcast['Magic Finale'] = {
-        legs = "Fili Rhingrave +2"
+        legs = "Fili Rhingrave +3"
     }
-    -- sets.midcast["Sentinel's Scherzo"] = {feet="Fili Cothurnes +2"}
+    -- sets.midcast["Sentinel's Scherzo"] = {feet="Fili Cothurnes +3"}
     sets.midcast["Chocobo Mazurka"] = {
         range = "Marsyas"
     }
@@ -648,10 +651,7 @@ function init_gear_sets()
         legs = "Inyanga Shalwar +2",
         feet = "Brioso Slippers +3",
         neck = "Moonbow Whistle +1",
-        right_ear = {
-            name = "Fili Earring",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+10', 'Mag. Acc.+10'}
-        },
+        right_ear={ name="Fili Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+12','Mag. Acc.+12','Damage taken-4%',}},
         left_ear = "Etiolation Earring",
         ring2 = "Stikini Ring +1",
         ring1 = "Defending Ring",
@@ -673,7 +673,7 @@ function init_gear_sets()
         head = "Brioso Roundlet +3",
         body = "Fili Hongreline +3",
         hands = "Brioso Cuffs +3",
-        legs = "Bihu Cannions +3",
+        legs = "Fili Rhingrave +3",
         feet = "Brioso Slippers +3",
         neck = "Mnbw. Whistle +1",
         waist = {
@@ -681,10 +681,7 @@ function init_gear_sets()
             augments = {'Path: A'}
         },
         left_ear = "Regal Earring",
-        right_ear = {
-            name = "Fili Earring",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+10', 'Mag. Acc.+10'}
-        },
+        right_ear={ name="Fili Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+12','Mag. Acc.+12','Damage taken-4%',}},
         left_ring = {
             name = "Metamor. Ring +1",
             augments = {'Path: A'}
@@ -709,24 +706,21 @@ function init_gear_sets()
         range = "Daurdabla",
         head = "Brioso Roundlet +3",
         body = "Fili Hongreline +3",
-        hands = "Inyan. Dastanas +2",
-        legs = "Inyanga Shalwar +2",
-        feet = {
-            name = "Bihu Slippers +3",
-            augments = {'Enhances "Nightingale" effect'}
-        },
+        hands = "Brioso Cuffs +3",
+        legs = "Fili Rhingrave +3",
+        feet = "Brioso Slippers +3",
         neck = "Mnbw. Whistle +1",
-        waist = "Harfner's Sash",
-        left_ear = "Gersemi Earring",
-        right_ear = "Regal Earring",
+        waist = {
+            name = "Acuity Belt +1",
+            augments = {'Path: A'}
+        },
+        left_ear = "Regal Earring",
+        right_ear={ name="Fili Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+12','Mag. Acc.+12','Damage taken-4%',}},
         left_ring = {
-            name = "Stikini Ring +1",
-            bag = "wardrobe"
+            name = "Metamor. Ring +1",
+            augments = {'Path: A'}
         },
-        right_ring = {
-            name = "Stikini Ring +1",
-            bag = "wardrobe4"
-        },
+        right_ring = "Stikini Ring +1",
         back = {
             name = "Intarabus's Cape",
             augments = {'CHR+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'Mag. Acc.+10', '"Fast Cast"+10'}
@@ -870,30 +864,23 @@ function init_gear_sets()
     sets.midcast.Shellra = sets.midcast.Shell
 
     sets.midcast['Enfeebling Magic'] = {
-        main = {
-            name = "Grioavolr",
-            augments = {'Enfb.mag. skill +13', 'Mag. Acc.+18', '"Mag.Atk.Bns."+30'}
-        },
-        sub = "Enki Strap",
+        -- main = {
+        --     name = "Grioavolr",
+        --     augments = {'Enfb.mag. skill +13', 'Mag. Acc.+18', '"Mag.Atk.Bns."+30'}
+        -- },
+        -- sub = "Enki Strap",
         range = "Gjallarhorn",
-        body = {
-            name = "Cohort Cloak +1",
-            augments = {'Path: A'}
-        },
-        hands = {
-            name = "Kaykaus Cuffs +1",
-            augments = {'MP+80', 'MND+12', 'Mag. Acc.+20'}
-        },
-        legs = {
-            name = "Chironic Hose",
-            augments = {'Mag. Acc.+25 "Mag.Atk.Bns."+25', 'MND+13', 'Mag. Acc.+9', '"Mag.Atk.Bns."+15'}
-        },
+        head="Brioso Roundlet +3",
+        body = "Fili Hongreline +3",
+        hands = "Fili Manchettes +3",
+        legs = "Fili Rhingrave +3",
         feet = "Brioso Slippers +3",
         neck = "Mnbw. Whistle +1",
-        waist = {
-            name = "Obstin. Sash",
-            augments = {'Path: A'}
-        },
+        waist ="Null Belt",
+        -- waist = {
+        --     name = "Obstin. Sash",
+        --     augments = {'Path: A'}
+        -- },
         left_ear = "Digni. Earring",
         right_ear = "Regal Earring",
         left_ring = "Stikini Ring +1",
@@ -909,6 +896,31 @@ function init_gear_sets()
         sub = "Ammurapi Shield"
     })
 
+    sets.midcast['Absorb-TP'] = {
+        -- head="Brioso Roundlet +3",
+        head="Bunzi's Hat",
+        body = "Fili Hongreline +3",
+        hands = "Fili Manchettes +3",
+        legs = "Fili Rhingrave +3",
+        -- feet = "Brioso Slippers +3",
+        feet = "Fili Cothurnes +3",
+        -- feet = "Bihu Slippers +3",
+        -- neck = "Mnbw. Whistle +1",
+        neck = "baetyl Pendant",
+        waist = "Null Belt",
+        -- waist = {
+        --     name = "Obstin. Sash",
+        --     augments = {'Path: A'}
+        -- },
+        left_ear = "Regal Earring",
+        right_ear={ name="Fili Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+12','Mag. Acc.+12','Damage taken-4%',}},
+        left_ring = "Stikini Ring +1",
+        right_ring = "Kishar Ring",
+        back = {
+            name = "Aurist's Cape +1",
+            augments = {'Path: A'},
+        }
+    }
     ------------------------------------------------------------------------------------------------
     ----------------------------------------- Idle Sets --------------------------------------------
     ------------------------------------------------------------------------------------------------
@@ -918,10 +930,10 @@ function init_gear_sets()
         -- sub="Genmei Shield",
         range="Gjallarhorn",
         head="Fili Calot +3",
-        body="Ashera Harness",
+        body="Adamantite Armor",
         hands = "Fili Manchettes +3",
-        legs="Fili Rhingrave +2",
-        feet="Fili Cothurnes +2",
+        legs="Fili Rhingrave +3",
+        feet="Fili Cothurnes +3",
         neck={ name="Loricate Torque +1", augments={'Path: A',}},
         waist="Plat. Mog. Belt",
         left_ear="Regal Earring",
@@ -965,10 +977,7 @@ function init_gear_sets()
         },
         neck = "Loricate Torque +1",
         waist = "Carrier's Sash",
-        right_ear = {
-            name = "Fili Earring",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+10', 'Mag. Acc.+10'}
-        },
+        right_ear={ name="Fili Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+12','Mag. Acc.+12','Damage taken-4%',}},
         left_ear = "Etiolation Earring",
         left_ring = "Stikini Ring +1",
         right_ring = "Stikini Ring +1",
@@ -1003,7 +1012,7 @@ function init_gear_sets()
         body="Ashera Harness",
         hands="Fili Manchettes +3",
         legs = "Bihu Cannions +3",
-        feet = "Fili Cothurnes +2",
+        feet = "Fili Cothurnes +3",
         neck = "Mnbw. Whistle +1",
         waist = "Orpheus's Sash",
         left_ear = "Regal Earring",
@@ -1022,7 +1031,7 @@ function init_gear_sets()
     sets.defense.MDT = sets.idle.MDT
 
     sets.Kiting = {
-        feet = "Fili Cothurnes +2"
+        feet = "Fili Cothurnes +3"
     }
     sets.latent_refresh = {
         waist = "Fucho-no-obi"
@@ -1089,10 +1098,10 @@ function init_gear_sets()
         right_ear = "Dedition Earring",
         left_ring = "Chirich Ring +1",
         right_ring = "Chirich Ring +1",
-        back = {
-            name = "Intarabus's Cape",
-            augments = {'DEX+20', 'Accuracy+20 Attack+20', '"Store TP"+10', 'Phys. dmg. taken-10%'}
-        }
+        back = "Null Shawl",
+        -- back = {
+        --     name = "Intarabus's Cape",
+        --     augments = {'DEX+20', 'Accuracy+20 Attack+20', '"Store TP"+10', 'Phys. dmg. taken-10%'}
     }
 
     sets.engaged.Acc = set_combine(sets.engaged, {

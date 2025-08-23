@@ -50,6 +50,7 @@ jobsetup (LockStylePallet,MacroBook,MacroSet)
 Ammo_Warning_Limit = 99
 
 function get_sets()
+    define_roll_values()
 
 	--Set the weapon options.  This is set below in job customization section
 
@@ -150,7 +151,7 @@ function get_sets()
 	sets.Cursna_Received = {
 	    neck="Nicander's Necklace",
 	    left_ring={ name="Saida Ring", bag="wardrobe3", priority=2},
-		right_ring={ name="Saida Ring", bag="wardrobe4", priority=1},
+		right_ring= "Purity ring",
 		waist="Gishdubar Sash",
 	}
 
@@ -576,6 +577,178 @@ end
 -- DO NOT EDIT BELOW THIS LINE UNLESS YOU NEED TO MAKE JOB SPECIFIC RULES
 -------------------------------------------------------------------------------------------------------------------
 
+function define_roll_values()
+    rolls = {
+        ["Corsair's Roll"] = {
+            lucky = 5,
+            unlucky = 9,
+            bonus = "Experience Points"
+        },
+        ["Ninja Roll"] = {
+            lucky = 4,
+            unlucky = 8,
+            bonus = "Evasion"
+        },
+        ["Hunter's Roll"] = {
+            lucky = 4,
+            unlucky = 8,
+            bonus = "Accuracy"
+        },
+        ["Chaos Roll"] = {
+            lucky = 4,
+            unlucky = 8,
+            bonus = "Attack"
+        },
+        ["Magus's Roll"] = {
+            lucky = 2,
+            unlucky = 6,
+            bonus = "Magic Defense"
+        },
+        ["Healer's Roll"] = {
+            lucky = 3,
+            unlucky = 7,
+            bonus = "Cure Potency Received"
+        },
+        ["Drachen Roll"] = {
+            lucky = 4,
+            unlucky = 8,
+            bonus = "Pet Magic Accuracy/Attack"
+        },
+        ["Choral Roll"] = {
+            lucky = 2,
+            unlucky = 6,
+            bonus = "Spell Interruption Rate"
+        },
+        ["Monk's Roll"] = {
+            lucky = 3,
+            unlucky = 7,
+            bonus = "Subtle Blow"
+        },
+        ["Beast Roll"] = {
+            lucky = 4,
+            unlucky = 8,
+            bonus = "Pet Attack"
+        },
+        ["Samurai Roll"] = {
+            lucky = 2,
+            unlucky = 6,
+            bonus = "Store TP"
+        },
+        ["Evoker's Roll"] = {
+            lucky = 5,
+            unlucky = 9,
+            bonus = "Refresh"
+        },
+        ["Rogue's Roll"] = {
+            lucky = 5,
+            unlucky = 9,
+            bonus = "Critical Hit Rate"
+        },
+        ["Warlock's Roll"] = {
+            lucky = 4,
+            unlucky = 8,
+            bonus = "Magic Accuracy"
+        },
+        ["Fighter's Roll"] = {
+            lucky = 5,
+            unlucky = 9,
+            bonus = "Double Attack Rate"
+        },
+        ["Puppet Roll"] = {
+            lucky = 3,
+            unlucky = 7,
+            bonus = "Pet Magic Attack/Accuracy"
+        },
+        ["Gallant's Roll"] = {
+            lucky = 3,
+            unlucky = 7,
+            bonus = "Defense"
+        },
+        ["Wizard's Roll"] = {
+            lucky = 5,
+            unlucky = 9,
+            bonus = "Magic Attack"
+        },
+        ["Dancer's Roll"] = {
+            lucky = 3,
+            unlucky = 7,
+            bonus = "Regen"
+        },
+        ["Scholar's Roll"] = {
+            lucky = 2,
+            unlucky = 6,
+            bonus = "Conserve MP"
+        },
+        ["Naturalist's Roll"] = {
+            lucky = 3,
+            unlucky = 7,
+            bonus = "Enh. Magic Duration"
+        },
+        ["Runeist's Roll"] = {
+            lucky = 4,
+            unlucky = 8,
+            bonus = "Magic Evasion"
+        },
+        ["Bolter's Roll"] = {
+            lucky = 3,
+            unlucky = 9,
+            bonus = "Movement Speed"
+        },
+        ["Caster's Roll"] = {
+            lucky = 2,
+            unlucky = 7,
+            bonus = "Fast Cast"
+        },
+        ["Courser's Roll"] = {
+            lucky = 3,
+            unlucky = 9,
+            bonus = "Snapshot"
+        },
+        ["Blitzer's Roll"] = {
+            lucky = 4,
+            unlucky = 9,
+            bonus = "Attack Delay"
+        },
+        ["Tactician's Roll"] = {
+            lucky = 5,
+            unlucky = 8,
+            bonus = "Regain"
+        },
+        ["Allies' Roll"] = {
+            lucky = 3,
+            unlucky = 10,
+            bonus = "Skillchain Damage"
+        },
+        ["Miser's Roll"] = {
+            lucky = 5,
+            unlucky = 7,
+            bonus = "Save TP"
+        },
+        ["Companion's Roll"] = {
+            lucky = 2,
+            unlucky = 10,
+            bonus = "Pet Regain and Regen"
+        },
+        ["Avenger's Roll"] = {
+            lucky = 4,
+            unlucky = 8,
+            bonus = "Counter Rate"
+        }
+    }
+end
+
+function display_roll_info(spell)
+    local rollinfo = rolls[spell.english] -- Get the roll information from the rolls table
+    if rollinfo then
+        add_to_chat(001,
+            string.char(129, 115) .. '  ' .. string.char(31, 210) .. spell.english .. string.char(31, 001) .. ' : ' ..
+                rollinfo.bonus .. ' ' .. string.char(129, 116) .. ' ' .. string.char(129, 195) .. '  Lucky: ' ..
+                string.char(31, 204) .. tostring(rollinfo.lucky) .. string.char(31, 001) .. ' /' .. ' Unlucky: ' ..
+                string.char(31, 167) .. tostring(rollinfo.unlucky) .. string.char(31, 002) .. '  ')
+    end
+end
+
+
 -- Called when the player's subjob changes.
 function sub_job_change_custom(new, old)
 	-- Typically used for Macro pallet changing
@@ -616,6 +789,9 @@ function aftercast_custom(spell)
 		equipSet = set_combine(equipSet, sets.OffenseMode.Ranged)
 	end
 	equipSet = Job_Mode_Check(equipSet)
+	if spell.type == 'CorsairRoll' and not spell.interrupted then
+        display_roll_info(spell)
+    end
 	return equipSet
 end
 --Function is called when the player gains or loses a buff

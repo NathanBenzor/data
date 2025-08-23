@@ -94,8 +94,8 @@
         </Debug_Box>
         <Display_Box>
             <pos>
-                <x>1903</x>
-                <y>712</y>
+                <x>1615</x>
+                <y>602</y>
             </pos>
             <text>
                 <fonts>
@@ -103,31 +103,7 @@
                 </fonts>
             </text>
         </Display_Box>
-    </daiitoku>
-    <fudosama>
-        <Display_Box>
-            <pos>
-                <x>1900</x>
-                <y>709</y>
-            </pos>
-        </Display_Box>
-    </fudosama>
-    <gunbound>
-        <Display_Box>
-            <pos>
-                <x>1895</x>
-                <y>709</y>
-            </pos>
-        </Display_Box>
-    </gunbound>
-    <karinii>
-        <Display_Box>
-            <pos>
-                <x>1898</x>
-                <y>710</y>
-            </pos>
-        </Display_Box>
-    </karinii>
+    </lilypeach>
     <rialyn>
         <Display_Box>
             <pos>

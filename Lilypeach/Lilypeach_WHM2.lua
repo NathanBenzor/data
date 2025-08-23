@@ -67,25 +67,22 @@ function get_sets()
     sets.Idle = {
         main = "Yagrush",
         sub = "Genmei Shield",
-        ammo = "Homiliary",
+        ammo = "Pemphredo Tathlum",
         head = "Nyame Helm",
         body = "Ebers Bliaut +3",
-        hands = "Nyame Gauntlets",
+        hands = "Ebers Mitts +3",
         legs = "Ebers Pant. +3",
-        feet = "Nyame Sollerets",
-        neck = {
-            name = "Clr. Torque +1",
-            augments = {'Path: A'}
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
         },
-        waist = "Shinjutsu-no-Obi +1",
+        neck={ name="Clr. Torque +2", augments={'Path: A',}},
+        waist = "Rumination Sash",
         left_ear = "Etiolation Earring",
         right_ear = "Genmei Earring",
-        left_ring = "Defending Ring",
-        right_ring = "Shneddick Ring",
-        back = {
-            name = "Alaunus's Cape",
-            augments = {'MND+20', 'Eva.+20 /Mag. Eva.+20', 'Phys. dmg. taken-10%'}
-        }
+        left_ring = "Shneddick Ring",
+        right_ring = "Stikini Ring +1",
+        back = "Solemnity Cape"
     }
 
     -- Set is only applied when sublimation is charging

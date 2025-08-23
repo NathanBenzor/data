@@ -143,7 +143,7 @@ function init_gear_sets()
             augments = {'Path: A'}
         },
         legs = "Agwu's Slops",
-        feet = "Regal Pumps +1",
+        feet={ name="Merlinic Crackows", augments={'Attack+17','"Fast Cast"+6','MND+2','Mag. Acc.+1','"Mag.Atk.Bns."+13',}},
         neck = {
             name = "Src. Stole +2",
             augments = {'Path: A'}
@@ -717,7 +717,7 @@ function init_gear_sets()
         -- main={ name="Marin Staff +1", augments={'Path: A',}},
         main={ name="Laevateinn", augments={'Path: A',}},
         -- sub="Enki Strap",
-        sub="Alber Strap",
+        sub="Enki Strap",
         ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
         head="Ea Hat +1",
         body="Wicce Coat +3",

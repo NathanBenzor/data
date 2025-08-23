@@ -763,7 +763,8 @@ function init_gear_sets()
             name = "Nyame Mail",
             augments = {'Path: B'}
         },
-        hands = "Kasuga Kote +3",
+        hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+        -- hands = "Kasuga Kote +3",
         legs = {
             name = "Nyame Flanchard",
             augments = {'Path: B'}
@@ -783,7 +784,7 @@ function init_gear_sets()
         },
         right_ear = "Friomisi Earring",
         left_ring = "Cornelia's Ring",
-        right_ring = "Niqmaddu Ring",
+        right_ring = "Regal Ring",
         back = {
             name = "Smertrios's Mantle",
             augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%', 'Phys. dmg. taken-10%'}
@@ -978,7 +979,7 @@ function init_gear_sets()
     }
 
     sets.engaged.Subtle_Blow = {
-        ammo = "Aurgelmir Orb +1",
+        ammo = "Aurgelmir Orb",
         head = "Kasuga Kabuto +3",
         body = "Dagon Breast.",
         hands = "Wakido Kote +3",
