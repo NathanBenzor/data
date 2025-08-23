@@ -224,7 +224,7 @@ function init_gear_sets()
     -- Fast cast sets for spells
 
     sets.precast.FC = {
-        main={ name="Gada", augments={'"Fast Cast"+5','STR+9','"Mag.Atk.Bns."+17','DMG:+6',}},
+        main = "C. Palug Hammer",
         sub = "Chanter's Shield",
         ammo = "Impatiens",
         head = "Ebers Cap +3",
@@ -264,8 +264,20 @@ function init_gear_sets()
     })
 
     -- Precast sets to enhance JAs
-    sets.precast.JA.Benediction = {}
+    sets.precast.JA.Benediction = {
+        body = {
+            name = "Piety Bliaut +3",
+            augments = {'Enhances "Benediction" effect'}
+        }   
+    }
 
+    sets.precast.JA.Devotion = {
+        head = "Piety Cap"
+    }
+
+    sets.precast.JA.AfflatusSolace = {
+        feet = "Piety Duckbills"
+    }
     -- Weaponskill sets
 
     -- Default set for any weaponskill that isn't any more specifically defined
@@ -829,26 +841,21 @@ function init_gear_sets()
     }
 
     sets.idle.DT = set_combine(sets.idle, {
-        main = {
-            name = "Queller Rod",
-            augments = {'Healing magic skill +15', '"Cure" potency +10%', '"Cure" spellcasting time -7%'}
-        },
-        sub = "Sors Shield",
         ammo = "Pemphredo Tathlum",
         head = "Nyame Helm",
-        body = "Shamash Robe",
-        hands = "Nyame Gauntlets",
-        legs = "Nyame Flanchard",
+        body = "Ebers Bliaut +3",
+        hands = "Ebers Mitts +3",
+        legs = "Ebers Pant. +3",
         feet = {
             name = "Nyame Sollerets",
             augments = {'Path: B'}
         },
         neck={ name="Clr. Torque +2", augments={'Path: A',}},
         waist = "Rumination Sash",
-        left_ear = "Loquac. Earring",
-        right_ear = "Mendi. Earring",
-        -- left_ring = "Defending Ring",
-        left_ring = "Shneddick Ring",
+        left_ear = "Etiolation Earring",
+        right_ear = "Genmei Earring",
+        left_ring = "Defending Ring",
+        right_ring = "Stikini Ring +1",
         back = "Solemnity Cape"
     })
 

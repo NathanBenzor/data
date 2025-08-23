@@ -158,7 +158,11 @@ function get_sets()
         --     name = "Bard's Charm +1",
         --     augments = {'Path: A'}
         -- },
-        neck = "Null Loop",
+        -- neck = "Null Loop",
+        neck = {
+            name = "Bard's Charm +1",
+            augments = {'Path: A'}
+        },
         waist = "Carrier's Sash",
         right_ear = "Genmei Earring",
         left_ear = "Etiolation Earring",
@@ -642,7 +646,7 @@ function get_sets()
             augments = {'Path: B'}
         },
         neck = {
-            name = "Bard's Charm +2",
+            name = "Bard's Charm +1",
             augments = {'Path: A'}
         },
         waist = {

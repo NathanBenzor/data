@@ -12,10 +12,10 @@ MacroSet = "1"
 AutoItem = false
 
 --Upon Job change will use a random lockstyleset
-Random_Lockstyle = false
+Random_Lockstyle = true
 
 --Lockstyle sets to randomly equip
-Lockstyle_List = {1,2,6,12}
+Lockstyle_List = {58,59,60}
 
 -- Use "gs c food" to use the specified food item 
 Food = "Tropical Crepe"
@@ -62,7 +62,7 @@ function get_sets()
         left_ear="Regal Earring",
         right_ear="Etiolation Earring",
         left_ring="Stikini Ring +1",
-        right_ring="Shneddick Ring",
+        right_ring="Stikini Ring +1",
         back={ name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}},
     }
 
@@ -75,7 +75,7 @@ function get_sets()
 	sets.Cursna_Received = {
 	    neck="Nicander's Necklace",
 	    left_ring={ name="Saida Ring", bag="wardrobe1", priority=2},
-		right_ring={ name="Saida Ring", bag="wardrobe3", priority=1},
+		right_ring= "Purity Ring",
 		waist="Gishdubar Sash",
 	}
 

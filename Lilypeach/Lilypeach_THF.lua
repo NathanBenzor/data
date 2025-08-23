@@ -1194,7 +1194,7 @@ function init_gear_sets()
         left_ear = "Sherida Earring",
         right_ear = {
             name = "Skulk. Earring +1",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+12', 'Mag. Acc.+12', '"Store TP"+4'}
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+15', 'Mag. Acc.+15', '"Store TP"+5'}
         },
         left_ring = "Chirich Ring +1",
         right_ring = "Defending Ring", -- 10%
@@ -1234,7 +1234,7 @@ function init_gear_sets()
         left_ear = "Sherida Earring",
         right_ear = {
             name = "Skulk. Earring +1",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+12', 'Mag. Acc.+12', '"Store TP"+4'}
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+15', 'Mag. Acc.+15', '"Store TP"+5'}
         },
         right_ring = "Chirich Ring +1",
         left_ring = "Ilabrat Ring",
@@ -1259,7 +1259,7 @@ function init_gear_sets()
         left_ear = "Telos Earring",
         right_ear = {
             name = "Skulk. Earring +1",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+13', 'Mag. Acc.+13', '"Store TP"+4'}
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+15', 'Mag. Acc.+15', '"Store TP"+5'}
         },
         left_ring = "Chirich Ring +1",
         right_ring = "Chirich Ring+1",
@@ -1324,7 +1324,7 @@ function init_gear_sets()
         left_ear = "Telos Earring",
         right_ear = {
             name = "Skulk. Earring +1",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+13', 'Mag. Acc.+13', '"Store TP"+4'}
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+15', 'Mag. Acc.+15', '"Store TP"+5'}
         },
         left_ring = "Chirich Ring +1",
         right_ring = "Chirich Ring+1",
@@ -1500,7 +1500,7 @@ function init_gear_sets()
         left_ear = "Suppanomimi", -- 5%
         right_ear = {
             name = "Skulk. Earring +1",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+13', 'Mag. Acc.+13', '"Store TP"+4'}
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+15', 'Mag. Acc.+15', '"Store TP"+5'}
         },
         left_ring = "Gere Ring",
         right_ring = "Hetairoi Ring",
@@ -1537,7 +1537,7 @@ function init_gear_sets()
         left_ear = "Suppanomimi", -- 5%
         right_ear = {
             name = "Skulk. Earring +1",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+13', 'Mag. Acc.+13', '"Store TP"+4'}
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+15', 'Mag. Acc.+15', '"Store TP"+5'}
         },
         left_ring = "Gere Ring",
         right_ring = "Hetairoi Ring",
@@ -1572,7 +1572,7 @@ function init_gear_sets()
         left_ear = "Dedition Earring",
         right_ear = {
             name = "Skulk. Earring +1",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+13', 'Mag. Acc.+13', '"Store TP"+4'}
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+15', 'Mag. Acc.+15', '"Store TP"+5'}
         },
         left_ring = "Gere Ring",
         right_ring = "Hetairoi Ring",
@@ -1607,7 +1607,7 @@ function init_gear_sets()
         left_ear = "Dedition Earring",
         right_ear = {
             name = "Skulk. Earring +1",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+13', 'Mag. Acc.+13', '"Store TP"+4'}
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+15', 'Mag. Acc.+15', '"Store TP"+5'}
         },
         left_ring = "Gere Ring",
         right_ring = "Hetairoi Ring",
