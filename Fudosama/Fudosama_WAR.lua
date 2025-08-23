@@ -24,13 +24,13 @@ Elemental_WS = S {'Aeolian Edge', 'Seraph Blade', 'Shining Blade', 'Red Lotus Bl
                   'Energy Drain', 'Energy Steal', 'Cyclone', 'Gust Slash'}
 
 -- 'TP','ACC','DT' are standard Default modes.  You may add more and assigne equipsets for them ( Idle.X and OffenseMode.X )
-state.OffenseMode:options('DT', 'PDL', 'Chango', 'TP', 'ACC', 'CRIT', 'HP')
+state.OffenseMode:options('DT', 'PDL', 'TP', 'ACC', 'CRIT', 'HP')
 
 -- Set default mode (TP,ACC,DT,PDL)
 state.OffenseMode:set('DT')
 
 -- Weapons options
-state.WeaponMode:options('Naegling', 'Chango', 'Loxotic Mace', 'Shining One', 'Agwus Claymore', 'Unlocked')
+state.WeaponMode:options('Naegling', 'Laphria', 'Chango', 'Loxotic Mace', 'Shining One', 'Agwus Claymore', 'Unlocked')
 state.WeaponMode:set('Naegling')
 
 -- Initialize Player
@@ -40,6 +40,11 @@ function get_sets()
 
     -- Weapon setup
     sets.Weapons = {}
+
+    sets.Weapons['Laphria'] = {
+        main = "Laphria",
+        sub = "Utu Grip"
+    }
 
     sets.Weapons['Chango'] = {
         main = {
@@ -83,10 +88,7 @@ function get_sets()
     sets.Idle = {
         ammo = "Staunch Tathlum +1",
         head = "Null Masque",
-        body = {
-            name = "Sakpata's Plate",
-            augments = {'Path: A'}
-        },
+        body = "Adamantite Armor",
         hands = {
             name = "Sakpata's Gauntlets",
             augments = {'Path: A'}
@@ -108,13 +110,14 @@ function get_sets()
         },
         left_ring = "Moonlight Ring",
         right_ring = "Defending Ring",
-        back = "Moonbeam Cape"
+        back = "Null Shawl"
     }
 
     sets.Idle.DT = {}
     sets.Idle.PDT = {}
     sets.Idle.MEVA = {}
-    -- sets.Idle.Chango = set_combine(sets.OffenseMode.TP, {}) -- Chango Idle set
+    sets.Idle.Chango = {}
+    sets.Idle.GreatAxe = {}
 
     -- Used to swap into movement gear when the player is detected movement when not engaged
     sets.Movement = {
@@ -227,7 +230,7 @@ function get_sets()
         --     augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
         -- }
         back = "Null Shawl"
-    } -- 100% DA  34% DT
+    } -- 100% DA  34% DT 
 
     sets.OffenseMode.DT = {
         ammo = {
@@ -275,45 +278,46 @@ function get_sets()
 
     sets.OffenseMode.PDL = {
         ammo = {
-            name = "Coiste Bodhar", -- 3% DA
+            name = "Coiste Bodhar",
             augments = {'Path: A'}
         },
-        head = "Boii Mask +3", -- 7% DA
+        head = "Boii Mask +3",
         body = {
-            name = "Sakpata's Plate", -- 8% DA
+            name = "Sakpata's Plate",
             augments = {'Path: A'}
         },
         hands = {
-            name = "Sakpata's Gauntlets", -- 6% DA
+            name = "Sakpata's Gauntlets",
             augments = {'Path: A'}
         },
         legs = {
-            name = "Sakpata's Cuisses", -- 7% DA
+            name = "Sakpata's Cuisses",
             augments = {'Path: A'}
         },
-        feet = "Boii Calligae +3",
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
         neck = {
-            name = "War. Beads +2", -- 7% DA
+            name = "War. Beads +2",
             augments = {'Path: A'}
         },
-        waist = {
-            name = "Sailfi Belt +1", -- 5% DA
-            augments = {'Path: A'}
-        },
+        waist = "Ioskeha Belt +1",
         left_ear = {
-            name = "Schere Earring", -- 6% DA
+            name = "Schere Earring",
             augments = {'Path: A'}
         },
         right_ear = {
-            name = "Boii Earring +1", -- 8% DA
+            name = "Boii Earring +1",
             augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+15', 'Mag. Acc.+15', 'Crit.hit rate+5'}
         },
         left_ring = "Moonlight Ring",
         right_ring = "Niqmaddu Ring",
-        back = {
-            name = "Cichol's Mantle", -- 10%
-            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
-        }
+        -- back = {
+        --     name = "Cichol's Mantle",
+        --     augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
+        -- }
+        back = "Null Shawl"
     } -- 100% DA
 
     sets.OffenseMode.HP = {
@@ -373,6 +377,79 @@ function get_sets()
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
         }
     } -- 97% DA -- 104% with JSE neck
+
+    sets.GreatAxe = {
+        ammo = {
+            name = "Coiste Bodhar",
+            augments = {'Path: A'}
+        },
+        head = "Boii Mask +3", -- 11% DT
+        body = "Boii Lorica +3", -- 14% DT
+        hands = {
+            name = "Sakpata's Gauntlets", -- 8% DT
+            augments = {'Path: A'}
+        },
+        legs = {
+            name = "Sakpata's Cuisses", -- 9% DT
+            augments = {'Path: A'}
+        },
+        feet = {
+            name = "Nyame Sollerets", -- 7% DT
+            augments = {'Path: B'}
+        },
+        neck = {
+            name = "War. Beads +2",
+            augments = {'Path: A'}
+        },
+        waist = "Ioskeha Belt +1",
+        left_ear = {
+            name = "Schere Earring",
+            augments = {'Path: A'}
+        },
+        right_ear = {
+            name = "Boii Earring +1",
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+15', 'Mag. Acc.+15', 'Crit.hit rate+5'}
+        },
+        left_ring = "Moonlight Ring", -- 5% DT
+        right_ring = "Niqmaddu Ring",
+        back = "Null Shawl"
+        -- ammo = {
+        --     name = "Coiste Bodhar",
+        --     augments = {'Path: A'}
+        -- },
+        -- head = "Boii Mask +3", -- 11% DT
+        -- body = "Boii Lorica +3", -- 14% DT
+        -- hands = {
+        --     name = "Sakpata's Gauntlets", -- 8% DT
+        --     augments = {'Path: A'}
+        -- },
+        -- legs = {
+        --     name = "Sakpata's Cuisses", -- 9% DT
+        --     augments = {'Path: A'}
+        -- },
+        -- feet = "Pumm. Calligae +3",
+        -- neck = {
+        --     name = "War. Beads +2",
+        --     augments = {'Path: A'}
+        -- },
+        -- -- waist = {
+        -- --     name = "Sailfi Belt +1",
+        -- --     augments = {'Path: A'}
+        -- -- },
+        -- waist = "Ioskeha Belt +1",
+        -- left_ear = {
+        --     name = "Schere Earring",
+        --     augments = {'Path: A'}
+        -- },
+        -- right_ear = {
+        --     name = "Boii Earring +1",
+        --     augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+15', 'Mag. Acc.+15', 'Crit.hit rate+5'}
+        -- },
+        -- left_ring = "Moonlight Ring", -- 5% DT
+        -- right_ring = "Niqmaddu Ring",
+        -- back = "Null Shawl"
+    } -- 103% DA & 39 STP with Null Shawl and Sailfi Belt +1 / need to make JSE cape with STP +10 and use Ioskeha Belt +1
+    -- Possibly use Odin helm in head slot for 10% DA and 5% STP
 
     -- This set is used when OffenseMode is ACC and Enaged
     sets.OffenseMode.ACC = {}
@@ -554,7 +631,7 @@ function get_sets()
 
     sets.JA["Berserk"] = {
         body = "Pumm. Lorica +3",
-        feet = "Agoge Calligae +2",
+        feet = "Agoge Calligae +3",
         back = {
             name = "Cichol's Mantle",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
@@ -579,7 +656,7 @@ function get_sets()
 
     sets.JA["Tomahawk"] = {
         ammo = "Thr. Tomahawk",
-        feet = "Agoge Calligae +2"
+        feet = "Agoge Calligae +3"
     } -- Need to add feet
 
     sets.JA["Retaliation"] = {
@@ -992,15 +1069,86 @@ function get_sets()
         right_ring = "Niqmaddu Ring",
         back = {
             name = "Cichol's Mantle",
-            augments = {'VIT+20', 'Accuracy+20 Attack+20', 'VIT+10', 'Weapon skill damage +10%', 'Damage taken-5%'}
+            augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%'}
+        }
+    }
+
+    sets.WS['Disaster'] = {
+        ammo = "Knobkierrie",
+        head = {
+            name = "Agoge Mask +3",
+            augments = {'Enhances "Savagery" effect'}
+        },
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
+        hands = "Boii Mufflers +3",
+        legs = "Boii Cuisses +3",
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
+        neck = {
+            name = "War. Beads +2",
+            augments = {'Path: A'}
+        },
+        waist = "Sailfi Belt +1",
+        left_ear = "Thrud Earring",
+        right_ear = "Moonshade Earring",
+        left_ring = "Sroda Ring",
+        right_ring = "Cornelia's Ring",
+        back = {
+            name = "Cichol's Mantle",
+            augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%'}
+        }
+    }
+
+    sets.WS.PDL['Disaster'] = {
+        ammo = "Knobkierrie",
+        head = {
+            name = "Agoge Mask +3",
+            augments = {'Enhances "Savagery" effect'}
+        },
+        -- body = {
+        --     name = "Nyame Mail",
+        --     augments = {'Path: B'}
+        -- },
+        body = {
+            name = "Sakpata's Plate",
+            augments = {'Path: A'}
+        },
+        hands = "Boii Mufflers +3",
+        legs = "Boii Cuisses +3",
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
+        neck = {
+            name = "War. Beads +2",
+            augments = {'Path: A'}
+        },
+        waist = "Sailfi Belt +1",
+        left_ear = "Thrud Earring",
+        right_ear = "Moonshade Earring",
+        left_ring = "Sroda Ring",
+        right_ring = "Cornelia's Ring",
+        back = {
+            name = "Cichol's Mantle",
+            augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%'}
         }
     }
 
     sets.WS["Ukko's Fury"] = {
         ammo = "Yetshila +1",
         head = "Boii Mask +3",
-        body = "Hjarrandi Breastplate",
-        hands = "Flamma Manopolas +2",
+        -- body = "Hjarrandi Breastplate",
+        body = {
+            name = "Sakpata's Plate",
+            augments = {'Path: A'}
+        },
+        -- hands = "Flamma Manopolas +2",
+        hands = "Boii Mufflers +3",
         legs = "Boii Cuisses +3",
         feet = "Boii Calligae +3",
         neck = {
@@ -1030,8 +1178,13 @@ function get_sets()
     sets.WS.PDL["Ukko's Fury"] = {
         ammo = "Yetshila +1",
         head = "Boii Mask +3",
-        body = "Hjarrandi Breastplate",
-        hands = "Flamma Manopolas +2",
+        -- body = "Hjarrandi Breastplate",
+        body = {
+            name = "Sakpata's Plate",
+            augments = {'Path: A'}
+        },
+        -- hands = "Flamma Manopolas +2",
+        hands = "Boii Mufflers +3",
         legs = "Boii Cuisses +3",
         feet = "Boii Calligae +3",
         neck = {
@@ -1050,7 +1203,8 @@ function get_sets()
             name = "Boii Earring +1",
             augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+15', 'Mag. Acc.+15', 'Crit.hit rate+5'}
         },
-        left_ring = "Regal Ring",
+        -- left_ring = "Regal Ring",
+        left_ring = "Sroda Ring",
         right_ring = "Niqmaddu Ring",
         back = {
             name = "Cichol's Mantle",
@@ -1567,7 +1721,12 @@ function get_sets()
             name = "Sailfi Belt +1",
             augments = {'Path: A'}
         },
-        left_ear = "Thrud Earring",
+        -- left_ear = "Thrud Earring",
+        left_ear = {
+            name = "Schere Earring",
+            augments = {'Path: A'}
+        },
+
         right_ear = "Moonshade Earring",
         left_ring = "Niqmaddu Ring",
         right_ring = "Cornelia's Ring",
@@ -1789,13 +1948,17 @@ end
 function choose_set_custom()
     equipSet = {}
 
-    -- if player.status == "Engaged" then
-    --     if player.equipment.main == 'Chango' and state.OffenseMode == 'TP' then
-    --         equipSet = sets.Chango
-    --     else -- Use the default set
-    --         equipSet = sets.OffenseMode.TP
-    --     end
-    -- end
+    if player.status == "Engaged" then
+        -- Check if the equipped weapon is a Scythe and OffenseMode is DT, and not during a weapon skill
+        local scythe_weapons = {"Chango", "Laphria"}
+        if table.contains(scythe_weapons, player.equipment.main) then
+            if state.OffenseMode.current == 'DT' or state.OffenseMode.current == 'PDL' or state.OffenseMode.current ==
+                'TP' and not midaction() then
+                equipSet = sets.GreatAxe
+            end
+        end
+
+    end
 
     return equipSet
 end

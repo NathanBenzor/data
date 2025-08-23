@@ -408,7 +408,7 @@ function get_sets()
     sets.NINMagic.Utsusemi = {
         head = {
             name = "Herculean Helm",
-            augments = {"Accuracy+19 Attack+19", "Damage taken-3%", "AGI+3", "Accuracy+2"}
+            augments = {'"Fast Cast"+5', 'Mag. Acc.+12', '"Mag.Atk.Bns."+11'}
         },
         neck = "Loricate Torque",
         ar1 = "Brutal Earring",
@@ -527,7 +527,7 @@ function get_sets()
         ammo = "Sapience Orb",
         head = {
             name = "Herculean Helm",
-            augments = {"Accuracy+19 Attack+19", "Damage taken-3%", "AGI+3", "Accuracy+2"}
+            augments = {'"Fast Cast"+5', 'Mag. Acc.+12', '"Mag.Atk.Bns."+11'}
         },
         body = {
             name = "Adhemar Jacket +1",

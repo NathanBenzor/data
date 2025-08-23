@@ -82,16 +82,9 @@
         <debug>false</debug>
         <info>true</info>
         <visible>true</visible>
+        <warn>true</warn>
     </global>
-    <fudosama>
-        <Display_Box>
-            <pos>
-                <x>2053</x>
-                <y>710</y>
-            </pos>
-        </Display_Box>
-    </fudosama>
-    <lilypeach>
+    <daiitoku>
         <Debug_Box>
             <text>
                 <fonts>
@@ -114,8 +107,8 @@
     <rialyn>
         <Display_Box>
             <pos>
-                <x>2053</x>
-                <y>711</y>
+                <x>2049</x>
+                <y>854</y>
             </pos>
         </Display_Box>
     </rialyn>

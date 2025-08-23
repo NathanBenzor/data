@@ -3,12 +3,12 @@
 include('Fudosama-Include')
 
 -- Set to ingame lockstyle and Macro Book/Set
-LockStylePallet = "133"
+LockStylePallet = "140"
 MacroBook = "37"
 MacroSet = "1"
 
 -- Use "gs c food" to use the specified food item 
-Food = "Sublime Sushi"
+Food = "Gape Daifuku"
 
 -- Uses Items Automatically
 AutoItem = false
@@ -17,13 +17,14 @@ AutoItem = false
 Random_Lockstyle = false
 
 -- Lockstyle sets to randomly equip
-Lockstyle_List = {1, 2, 6, 12}
+Lockstyle_List = {133, 140}
 
-state.OffenseMode:options('DT', 'TP', 'PDL', 'ACC', 'MagicDamage')
+state.OffenseMode:options('DT', 'TP', 'PDL', 'ACC', 'MagicDamage', 'EVA')
 state.OffenseMode:set('DT')
 
 -- Modes for specific to Ninja
-state.WeaponMode:options('Heishi', 'Savage Blade', 'Great Katana', 'Aeolian Edge', 'Enmity', 'Magic Damage', 'Abyssea')
+state.WeaponMode:options('Heishi', 'Yagyu', 'Fudo', 'Savage Blade', 'Great Katana', 'Aeolian Edge', 'Enmity', 'Evasion',
+    'Magic Damage', 'Abyssea')
 state.WeaponMode:set('Heishi')
 
 elemental_ws = S {'Aeolian Edge', 'Blade: Teki', 'Blade: To', 'Blade: Chi', 'Blade: Ei', 'Blade: Yu'}
@@ -39,6 +40,11 @@ function get_sets()
     sets.Weapons['Heishi'] = {
         main = "Heishi Shorinken",
         sub = "Kunimitsu"
+    }
+
+    sets.Weapons['Yagyu'] = {
+        main = "Heishi Shorinken",
+        sub = "Yagyu Darkblade"
     }
 
     sets.Weapons['Savage Blade'] = {
@@ -61,19 +67,32 @@ function get_sets()
 
     sets.Weapons['Enmity'] = {
         main = {
-            name = "Heishi Shorinken",
-            augments = {'Path: A'}
-        },
-        sub = {
             name = "Tsuru",
             augments = {'Path: A'}
-        }
+        },
+        sub = "Yagyu Darkblade"
+    }
+
+    sets.Weapons['Fudo'] = {
+        main = "Fudo Masamune",
+        sub = "Yagyu Darkblade"
     }
 
     sets.Weapons['Magic Damage'] = {
         main = "Gokotai",
         sub = {
             name = "Kunimitsu",
+            augments = {'Path: A'}
+        }
+    }
+
+    sets.Weapons['Evasion'] = {
+        main = {
+            name = "Kunimitsu",
+            augments = {'Path: A'}
+        },
+        sub = {
+            name = "Tsuru",
             augments = {'Path: A'}
         }
     }
@@ -86,15 +105,8 @@ function get_sets()
     -- Standard Idle set with -DT, Refresh, Regen and movement gear
     sets.Idle = {
         ammo = "Seki Shuriken",
-        -- head = {
-        --     name = "Nyame Helm",
-        --     augments = {'Path: B'}
-        -- },
         head = "Null Masque",
-        body = {
-            name = "Nyame Mail",
-            augments = {'Path: B'}
-        },
+        body = "Adamantite Armor",
         hands = {
             name = "Nyame Gauntlets",
             augments = {'Path: B'}
@@ -107,23 +119,16 @@ function get_sets()
             name = "Nyame Sollerets",
             augments = {'Path: B'}
         },
-        -- neck = {
-        --     name = "Loricate Torque +1",
-        --     augments = {'Path: A'}
-        -- },
         neck = "Null Loop",
         waist = "Null Belt",
         left_ear = "Etiolation Earring",
-        right_ear = {
-            name = "Odnowa Earring +1",
-            augments = {'Path: A'}
-        },
+        right_ear = "Infused Earring",
         left_ring = "Defending Ring",
         right_ring = {
             name = "Gelatinous Ring +1",
             augments = {'Path: A'}
         },
-        back = "Moonbeam Cape"
+        back = "Null Shawl"
     }
 
     sets.Idle.MagicDamage = {
@@ -145,10 +150,6 @@ function get_sets()
             name = "Nyame Sollerets",
             augments = {'Path: B'}
         },
-        -- neck = {
-        --     name = "Loricate Torque +1",
-        --     augments = {'Path: A'}
-        -- },
         neck = "Null Loop",
         waist = "Null Belt",
         left_ear = "Etiolation Earring",
@@ -164,6 +165,22 @@ function get_sets()
         back = "Moonbeam Cape"
     }
 
+    sets.Idle.EVA = {
+        ammo = "Yamarang",
+        head = "Null Masque",
+        body = "Malignance Tabard",
+        hands = "Malignance Gloves",
+        legs = "Malignance Tights",
+        feet = "Malignance Boots",
+        neck = "Bathy Choker +1",
+        waist = "Null Belt",
+        left_ear = "Eabani Earring",
+        right_ear = "Infused Earring",
+        left_ring = "Defending Ring",
+        right_ring = "Vengeful Ring",
+        back = "Null Shawl"
+    }
+
     -- Defined below based off time of day
     sets.Movement = {
         left_ring = "Shneddick Ring"
@@ -173,10 +190,10 @@ function get_sets()
         feet = "Danzo Sune-Ate"
     }
     sets.Movement.Night = {
-        feet = "Hachi. Kyahan +1"
+        feet = "Hachi. Kyahan +3"
     }
     sets.Movement.Dusk = {
-        feet = "Hachi. Kyahan +1"
+        feet = "Hachi. Kyahan +3"
     }
 
     -- Set to be used if you get 
@@ -199,7 +216,6 @@ function get_sets()
             name = "Samnuha Tights",
             augments = {'STR+10', 'DEX+10', '"Dbl.Atk."+3', '"Triple Atk."+3'}
         },
-        -- legs = "Malignance Tights",
         feet = "Malignance Boots",
         neck = {
             name = "Ninja Nodowa +1",
@@ -211,26 +227,19 @@ function get_sets()
         },
         left_ear = "Telos Earring",
         right_ear = "Dedition Earring",
-        left_ring = "Epona's Ring",
-        right_ring = "Gere Ring",
-        -- back = {
-        --     name = "Andartia's Mantle",
-        --     augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Damage taken-5%'}
-        -- }
+        left_ring = "Gere Ring",
+        right_ring = "Epona's Ring",
         back = "Null Shawl"
     }
     -- This set is used when OffenseMode is DT and Enaged (Augments the TP base set)
     sets.OffenseMode.DT = set_combine(sets.OffenseMode.TP, {
-        -- ammo = "Date Shuriken",
+        ammo = "Date Shuriken",
         head = {
             name = "Mpaca's Cap",
             augments = {'Path: A'}
         },
-        -- body = "Mpaca's Doublet",
         body = "Malignance Tabard",
-        -- hands = "Mpaca's Gloves",
         hands = "Malignance Gloves",
-        -- legs = "Mpaca's Hose",
         legs = "Malignance Tights",
         feet = "Malignance Boots",
         left_ring = "Defending Ring",
@@ -246,11 +255,8 @@ function get_sets()
             name = "Mpaca's Cap",
             augments = {'Path: A'}
         },
-        -- body = "Mpaca's Doublet",
         body = "Malignance Tabard",
-        -- hands = "Mpaca's Gloves",
         hands = "Malignance Gloves",
-        -- legs = "Mpaca's Hose",
         legs = "Malignance Tights",
         feet = "Malignance Boots",
         left_ring = "Defending Ring",
@@ -262,11 +268,6 @@ function get_sets()
 
     -- This set is used when OffenseMode is ACC and Enaged (Augments the TP base set)
     sets.OffenseMode.ACC = set_combine(sets.OffenseMode.TP, {
-        -- head = "Ken. Jinpachi +1",
-        -- body = "Ken. Samue +1",
-        -- hands = "Ken. Tekko +1",
-        -- legs = "Ken. Hakama +1",
-        -- feet = "Ken. Sune-Ate +1"
         ammo = "Seki Shuriken",
         head = {
             name = "Mpaca's Cap",
@@ -298,6 +299,22 @@ function get_sets()
         feet = "Malignance Boots"
     })
 
+    sets.OffenseMode.EVA = set_combine(sets.OffenseMode.TP, {
+        ammo = "Date Shuriken",
+        head = "Malignance Chapeau",
+        body = "Malignance Tabard",
+        hands = "Malignance Gloves",
+        legs = "Malignance Tights",
+        feet = "Malignance Boots",
+        neck = "Bathy Choker +1",
+        waist = "Trance Belt",
+        left_ear = "Eabani Earring",
+        right_ear = "Infused Earring",
+        left_ring = "Defending Ring",
+        right_ring = "Vengeful Ring",
+        back = "Agema Cape"
+    })
+
     sets.DualWield = {}
 
     sets.Precast = {}
@@ -305,7 +322,7 @@ function get_sets()
     sets.Precast.FastCast = {
         head = {
             name = "Herculean Helm",
-            augments = {'"Fast Cast"+4', 'Haste+1', 'Accuracy+15 Attack+15'}
+            augments = {'"Fast Cast"+5', 'Mag. Acc.+12', '"Mag.Atk.Bns."+11'}
         },
         body = {
             name = "Taeon Tabard",
@@ -331,19 +348,21 @@ function get_sets()
     sets.Precast.Utsusemi = {
         head = {
             name = "Herculean Helm",
-            augments = {'"Fast Cast"+4', 'Haste+1', 'Accuracy+15 Attack+15'}
+            augments = {'"Fast Cast"+5', 'Mag. Acc.+12', '"Mag.Atk.Bns."+11'}
         },
-        body = {
-            name = "Taeon Tabard",
-            augments = {'"Fast Cast"+5'}
-        },
+        -- body = {
+        --     name = "Taeon Tabard",
+        --     augments = {'"Fast Cast"+5'}
+        -- },
+        body = "Mochi. Chainmail +3",
         hands = {
             name = "Leyline Gloves",
             augments = {'Accuracy+14', 'Mag. Acc.+13', '"Mag.Atk.Bns."+13', '"Fast Cast"+2'}
         },
         legs = "Gyve Trousers",
         feet = "Hattori Kyahan +3",
-        neck = "Voltsurge Torque",
+        -- neck = "Magoraga Beads",
+        neck = "Orunmila's Torque",
         waist = "Plat. Mog. Belt",
         left_ear = "Etiolation Earring",
         right_ear = "Loquac. Earring",
@@ -379,22 +398,17 @@ function get_sets()
         }
     }
 
-    -- Base set for midcast - if not defined will notify and use your idle set for surviability
-    sets.Midcast = set_combine(sets.Idle, {})
-    -- Utsusemi Set
-    sets.Midcast.Utsusemi = {
-        head = "Null Masque",
-        body = {
-            name = "Mochi. Chainmail +3",
-            augments = {'Enhances "Sange" effect'}
+    sets.Midcast['Stun'] = {
+        ammo = "Date Shuriken",
+        head = "Genmei Kabuto",
+        body = "Emet Harness +1",
+        hands = "Kurys Gloves",
+        legs = "Zoar Subligar +1",
+        feet = {
+            name = "Mochi. Kyahan +3",
+            augments = {'Enh. Ninj. Mag. Acc/Cast Time Red.'}
         },
-        hands = {
-            name = "Taeon Gloves",
-            augments = {'Spell interruption rate down -9%'}
-        },
-        legs = "Gyve Trousers",
-        neck = "Magoraga Beads",
-        feet = "Hattori Kyahan +3",
+        neck = "Moonbeam Necklace",
         waist = "Trance Belt",
         left_ear = "Trux Earring",
         right_ear = "Cryptic Earring",
@@ -402,16 +416,63 @@ function get_sets()
         right_ring = "Supershear Ring",
         back = {
             name = "Andartia's Mantle",
-            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Damage taken-5%'}
+            augments = {'HP+60', 'Enmity+10', 'Damage taken-5%'}
         }
     }
+
+    sets.Midcast["Flash"] = set_combine(sets.Enmity, {})
+    sets.Midcast["Foil"] = set_combine(sets.Enmity, {})
+
+    sets.Midcast['Absorb-TP'] = {
+        ammo = "Date Shuriken",
+        head = "Null Masque",
+        body = "Nyame Mail",
+        hands = "Nyame Gauntlets",
+        legs = "Nyame Flanchard",
+        feet = "Nyame Sollerets",
+        neck = "Null Loop",
+        waist = "Null Belt",
+        left_ear = "Trux Earring",
+        right_ear = "Cryptic Earring",
+        left_ring = "Stikini Ring",
+        right_ring = "Stikini Ring",
+        back = "Null Shawl"
+    }
+
+    -- Base set for midcast - if not defined will notify and use your idle set for surviability
+    sets.Midcast = {}
+
+    -- Utsusemi Set
+    -- sets.Midcast.Utsusemi = {
+    --     head = "Null Masque",
+    --     body = {
+    --         name = "Mochi. Chainmail +3",
+    --         augments = {'Enhances "Sange" effect'}
+    --     },
+    --     hands = {
+    --         name = "Taeon Gloves",
+    --         augments = {'Spell interruption rate down -9%'}
+    --     },
+    --     legs = "Gyve Trousers",
+    --     feet = "Hattori Kyahan +3",
+    --     neck = "Magoraga Beads",
+    --     waist = "Trance Belt",
+    --     left_ear = "Trux Earring",
+    --     right_ear = "Cryptic Earring",
+    --     left_ring = "Pernicious Ring",
+    --     right_ring = "Supershear Ring",
+    --     back = {
+    --         name = "Andartia's Mantle",
+    --         augments = {'"Fast Cast"+10'}
+    --     }
+    -- }
     -- This set is used as base as is overwrote by specific gear changes (Spell Interruption Rate Down)
     sets.Midcast.SIRD = {}
     -- Cure Set
     sets.Midcast.Cure = {}
     -- Enhancing Skill
     sets.Midcast.Enhancing = {
-        ammo = "Yamarang",
+        -- ammo = "Yamarang",
         head = "Hachiya Hatsu. +3",
         body = "Malignance Tabard",
         hands = "Malignance Gloves",
@@ -427,7 +488,7 @@ function get_sets()
     }
     -- High MACC for landing spells
     sets.Midcast.Enfeebling = {
-        ammo = "Yamarang",
+        -- ammo = "Yamarang",
         head = "Hachiya Hatsu. +3",
         body = "Malignance Tabard",
         hands = "Malignance Gloves",
@@ -443,28 +504,6 @@ function get_sets()
     }
     -- High MAB for spells
     sets.Midcast.Nuke = {
-        -- ammo = {
-        --     name = "Seeth. Bomblet +1",
-        --     augments = {'Path: A'}
-        -- },
-        -- head = {
-        --     name = "Mochi. Hatsuburi +3",
-        --     augments = {'Enhances "Yonin" and "Innin" effect'}
-        -- },
-        -- body = "Nyame Mail",
-        -- hands = "Nyame Gauntlets",
-        -- legs = "Nyame Flanchard",
-        -- feet = "Nyame Sollerets",
-        -- neck = "Sanctity Necklace",
-        -- waist = "Eschan Stone",
-        -- left_ear = "Hecate's Earring",
-        -- right_ear = "Friomisi Earring",
-        -- left_ring = "Dingir Ring",
-        -- right_ring = "Stikini Ring +1",
-        -- back = {
-        --     name = "Andartia's Mantle",
-        --     augments = {'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'Mag. Acc.+10', '"Fast Cast"+10'}
-        -- }
         head = {
             name = "Mochi. Hatsuburi +3",
             augments = {'Enhances "Yonin" and "Innin" effect'}
@@ -556,6 +595,10 @@ function get_sets()
         waist = "Fotia Belt"
     }
 
+    sets.JA['Vallation'] = sets.Enmity
+    sets.JA['Valiance'] = sets.Enmity
+    sets.JA['Pflug'] = sets.Enmity
+
     sets.WS.WSD = set_combine({
         sets.WS,
         left_ring = "Epaminondas's Ring",
@@ -643,8 +686,8 @@ function get_sets()
             augments = {'Path: B'}
         },
         legs = {
-            name = "Mochi. Hakama +3",
-            augments = {'Enhances "Mijin Gakure" effect'}
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
         },
         feet = {
             name = "Nyame Sollerets",
@@ -678,8 +721,8 @@ function get_sets()
             augments = {'Path: B'}
         },
         legs = {
-            name = "Mochi. Hakama +3",
-            augments = {'Enhances "Mijin Gakure" effect'}
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
         },
         feet = {
             name = "Nyame Sollerets",
@@ -712,10 +755,6 @@ function get_sets()
             name = "Nyame Gauntlets",
             augments = {'Path: B'}
         },
-        -- legs = {
-        --     name = "Mochi. Hakama +3",
-        --     augments = {'Enhances "Mijin Gakure" effect'}
-        -- },
         legs = {
             name = "Nyame Flanchard",
             augments = {'Path: B'}
@@ -745,8 +784,8 @@ function get_sets()
     sets.WS["Blade: Jin"] = sets.WS.CRIT
     sets.WS["Blade: Ten"] = {
         head = {
-            name = "Herculean Helm",
-            augments = {'Magic dmg. taken -4%', 'Pet: Haste+1', 'Weapon skill damage +9%'}
+            name = "Mpaca's Cap",
+            augments = {'Path: A'}
         },
         body = "Ken. Samue +1",
         hands = "Mummu Wrists +2",
@@ -891,8 +930,8 @@ function get_sets()
             augments = {'Path: B'}
         },
         feet = "Hattori Kyahan +3",
-        -- neck = "Rep. Plat. Medal",
-        neck = "Fotia Gorget",
+        neck = "Rep. Plat. Medal",
+        -- neck = "Fotia Gorget",
         waist = "Sailfi Belt",
         left_ear = {
             name = "Moonshade Earring",
@@ -1022,6 +1061,12 @@ end
 -- Augment basic equipment sets
 function midcast_custom(spell)
     equipSet = {}
+
+    if spell.english == 'Flash' or spell.english == 'Foil' then
+        equipSet = sets.Enmity
+    elseif sets.Midcast[spell.english] then
+        equipSet = sets.Midcast[spell.english]
+    end
 
     return equipSet
 end

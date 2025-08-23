@@ -869,19 +869,6 @@ function init_gear_sets()
     }
 
     sets.midcast.Pet.Normal = {
-        -- ammo = "Hesperiidae",
-        -- neck = "Shulmanu Collar",
-        -- ear1 = "Ruby Earring",
-        -- ear2 = "Hija Earring",
-        -- body = Ready_Atk_body,
-        -- hands = Ready_Atk_hands,
-        -- ring1 = "Thurandaut Ring +1",
-        -- ring2 = "Cath Palug Ring",
-        -- back = Ready_Atk_back,
-        -- waist = "Incarnation Sash",
-        -- legs = Ready_Atk_legs,
-        -- feet = Ready_Atk_feet
-
         ammo = {
             name = "Hesperiidae",
             augments = {'Path: A'}

@@ -34,7 +34,7 @@ Buff_Delay = 5 -- Used this to slow down auto buffing
 Tank_Delay = 5 -- delays between tanking actions (only used when auto-buffing enabled and target locked on)
 
 -- Set to ingame lockstyle and Macro Book/Set
-LockStylePallet = "192"
+LockStylePallet = "186"
 MacroBook = "22"
 MacroSet = Macro_Sub_Job()
 
@@ -312,6 +312,7 @@ function get_sets()
 
     -- DPS set for tanking
     sets.OffenseMode.TP = {
+        sub = "Utu Grip",
         ammo = {
             name = "Coiste Bodhar",
             augments = {'Path: A'}
@@ -320,10 +321,7 @@ function get_sets()
             name = "Nyame Helm",
             augments = {'Path: B'}
         },
-        body = {
-            name = "Nyame Mail",
-            augments = {'Path: B'}
-        },
+        body = "Ashera Harness",
         hands = {
             name = "Adhemar Wrist. +1",
             augments = {'DEX+12', 'AGI+12', 'Accuracy+20'}
@@ -470,7 +468,7 @@ function get_sets()
 
     sets.Precast.FastCast = {
         ammo = "Sapience Orb",
-        head = "Runeist's Bandeau +2",
+        head = "Rune. Bandeau +2",
         body = "Erilaz Surcoat +3",
         hands = {
             name = "Leyline Gloves",
@@ -481,14 +479,15 @@ function get_sets()
             name = "Carmine Greaves",
             augments = {'MP+60', 'INT+10', 'MND+10'}
         },
-        neck = "Voltsurge Torque",
+        neck = "Orunmila's Torque",
         waist = "Plat. Mog. Belt",
         left_ear = "Etiolation Earring",
         right_ear = "Loquac. Earring",
-        left_ring = {
-            name = "Gelatinous Ring +1",
-            augments = {'Path: A'}
-        },
+        left_ring = "Kishar Ring",
+        -- left_ring = {
+        --     name = "Gelatinous Ring +1",
+        --     augments = {'Path: A'}
+        -- },
         right_ring = "Moonlight Ring",
         back = {
             name = "Ogma's Cape",
@@ -505,16 +504,16 @@ function get_sets()
     }) -- 80+ FC
 
     -- Base set for midcast - if not defined will notify and use your idle set for surviability
-    sets.Midcast = set_combine(sets.Idle, sets.Enmity, sets.SIRD, {})
+    -- sets.Midcast = set_combine(sets.Idle, sets.Enmity, sets.SIRD, {})
+    sets.Midcast = set_combine(sets.SIRD, {})
+    -- sets.Midcast = set_combine(sets.Idle, sets.Enmity, sets.SIRD, {})
 
     -- Enhancing Skill
     sets.Midcast.Enhancing = {
         ammo = "Staunch Tathlum +1",
         head = "Erilaz Galea +3",
         body = "Runeist Coat +3",
-        hands = {
-            name = "Regal Gauntlets"
-        },
+        hands = "Regal Gauntlets",
         legs = {
             name = "Futhark Trousers +2",
             augments = {'Enhances "Inspire" effect'}
@@ -540,11 +539,11 @@ function get_sets()
     })
 
     sets.Midcast["Aquaveil"] = set_combine(sets.Midcast.Enhancing, sets.SIRD, {
-        body = "Runeist Coat +3",
-        head = "Erilaz Galea +3",
-        hands = "Regal Gauntlets",
-        neck = "Sacro Gorget",
-        legs = "Futhark Trousers +2"
+        -- body = "Runeist Coat +3"
+        -- head = "Erilaz Galea +3",
+        -- hands = "Regal Gauntlets",
+        -- neck = "Sacro Gorget",
+        -- legs = "Futhark Trousers +2"
     })
 
     sets.Midcast["Phalanx"] = set_combine(sets.Midcast.Enhancing, {
@@ -555,13 +554,12 @@ function get_sets()
         },
         body = {
             name = "Herculean Vest",
-            augments = {'MND+2', 'CHR+6', 'Phalanx +1', 'Accuracy+11 Attack+11'}
+            augments = {'Pet: AGI+13', 'Pet: DEX+11', 'Phalanx +3', 'Accuracy+7 Attack+7'}
         },
-        -- hands = "Runeist Mitons +2",
+        hands = "Regal Gauntlets",
         legs = {
             name = "Herculean Trousers",
-            augments = {'"Snapshot"+5', 'Pet: DEX+9', 'Phalanx +2', 'Accuracy+6 Attack+6',
-                        'Mag. Acc.+3 "Mag.Atk.Bns."+3'}
+            augments = {'AGI+9', 'Accuracy+13', 'Phalanx +2', 'Accuracy+8 Attack+8', 'Mag. Acc.+15 "Mag.Atk.Bns."+15'}
         },
         feet = {
             name = "Herculean Boots",
@@ -581,7 +579,7 @@ function get_sets()
         right_ring = "Moonlight Ring",
         back = {
             name = "Ogma's Cape",
-            augments = {'HP+60', 'Eva.+20 /Mag. Eva.+20', 'Enmity+10', 'Phys. dmg. taken-10%'}
+            augments = {'HP+60', 'Eva.+20 /Mag. Eva.+20', 'HP+20', 'Enmity+10', 'Phys. dmg. taken-10%'}
         }
     })
 
@@ -632,21 +630,23 @@ function get_sets()
     sets.Midcast["Foil"] = set_combine(sets.Enmity, {})
     sets.Midcast["Stun"] = set_combine(sets.Enmity, {})
     sets.Midcast["Jettatura"] = set_combine(sets.Enmity, {})
-    sets.Midcast["Geist Wall"] = set_combine(sets.Enmity, {})
-    sets.Midcast["Sheep Song"] = set_combine(sets.Enmity, {})
     sets.Midcast["Blank Gaze"] = set_combine(sets.Enmity, {})
+    sets.Midcast['Cursed Sphere'] = set_combine(sets.SIRD, {})
 
-    sets.Midcast["Healing Breeze"] = set_combine(sets.Cure, {})
+    sets.Midcast["Geist Wall"] = sets.SIRD
+    sets.Midcast["Sheep Song"] = sets.SIRD
+    sets.Midcast["Healing Breeze"] = sets.SIRD
+
     sets.Midcast["Magic Fruit"] = set_combine(sets.Cure, {})
     sets.Midcast["Pollen"] = set_combine(sets.Cure, {})
     sets.Midcast["Wild Carrot"] = set_combine(sets.Cure, {})
-    -- sets.Midcast["Cure"] = set_combine(sets.Cure, {})
-    -- sets.Midcast["Cure II"] = set_combine(sets.Cure, {})
-    -- sets.Midcast["Cure III"] = set_combine(sets.Cure, {})
-    -- sets.Midcast["Cure IV"] = set_combine(sets.Cure, {})
-    -- sets.Midcast["Curaga"] = set_combine(sets.Cure, {})
-    -- sets.Midcast["Curaga II"] = set_combine(sets.Cure, {})
-    -- sets.Midcast["Curaga III"] = set_combine(sets.Cure, {})
+    sets.Midcast["Cure"] = set_combine(sets.Cure, {})
+    sets.Midcast["Cure II"] = set_combine(sets.Cure, {})
+    sets.Midcast["Cure III"] = set_combine(sets.Cure, {})
+    sets.Midcast["Cure IV"] = set_combine(sets.Cure, {})
+    sets.Midcast["Curaga"] = set_combine(sets.Cure, {})
+    sets.Midcast["Curaga II"] = set_combine(sets.Cure, {})
+    sets.Midcast["Curaga III"] = set_combine(sets.Cure, {})
 
     sets.Midcast["Cursna"] = set_combine(sets.Cursna_Received, {})
 

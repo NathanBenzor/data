@@ -3,7 +3,7 @@
 include('Daiitoku-Include')
 
 -- Set to ingame lockstyle and Macro Book/Set
-LockStylePallet = "196"
+LockStylePallet = "1"
 MacroBook = "31"
 MacroSet = "1"
 
@@ -77,10 +77,11 @@ function get_sets()
             augments = {'Enhances "Curative Recantation" effect'}
         },
         legs = "Assid. Pants +1",
-        feet = {
-            name = "Bagua Sandals +3",
-            augments = {'Enhances "Radial Arcana" effect'}
-        },
+        -- feet = {
+        --     name = "Bagua Sandals +3",
+        --     augments = {'Enhances "Radial Arcana" effect'}
+        -- },
+        feet = "Nyame Sollerets",
         neck = {
             name = "Loricate Torque +1",
             augments = {'Path: A'}
@@ -99,43 +100,7 @@ function get_sets()
         }
     } -- 50 PDT / 52 MDT (including shield)
 
-    sets.Idle.town = {
-        sub = "Ammurapi Shield",
-        range = {
-            name = "Dunna",
-            augments = {'MP+20', 'Mag. Acc.+10', '"Fast Cast"+3'}
-        },
-        head = "Azimuth Hood +3",
-        body = "Azimuth Coat +3",
-        hands = {
-            name = "Bagua Mitaines +3",
-            augments = {'Enhances "Curative Recantation" effect'}
-        },
-        legs = {
-            name = "Bagua Pants +3",
-            augments = {'Enhances "Mending Halation" effect'}
-        },
-        feet = {
-            name = "Bagua Sandals +3",
-            augments = {'Enhances "Radial Arcana" effect'}
-        },
-        neck = {
-            name = "Loricate Torque +1",
-            augments = {'Path: A'}
-        },
-        waist = "Fucho-no-Obi",
-        left_ear = "Infused Earring",
-        right_ear = {
-            name = "Azimuth Earring +1",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Mag. Acc.+14', 'Damage taken-5%'}
-        },
-        left_ring = "Shneddick Ring",
-        right_ring = "Stikini Ring +1",
-        back = {
-            name = "Nantosuelta's Cape",
-            augments = {'VIT+20', 'Eva.+20 /Mag. Eva.+20', 'Pet: "Regen"+10', 'Phys. dmg. taken-10%'}
-        }
-    } -- 50 PDT / 52 MDT (including shield)
+    sets.Idle.DT = {} -- 50 PDT / 52 MDT (including shield)
 
     -- Sets for Idle when player has a pet
     sets.Idle.Pet = set_combine(sets.Idle, { -- 2278/1482
@@ -179,7 +144,6 @@ function get_sets()
     -- Used to swap into movement gear when the player is moving and not engaged
     sets.Movement = {
         left_ring = "Shneddick Ring"
-        -- feet = "Geo. Sandals +3"
     }
 
     -- Set to be used if you get 

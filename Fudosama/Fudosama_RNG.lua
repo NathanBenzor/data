@@ -9,10 +9,10 @@ AutoItem = false
 Random_Lockstyle = true
 
 -- Lockstyle sets to randomly equip
-Lockstyle_List = {115, 116, 118, 119}
+Lockstyle_List = {116, 118, 119}
 
 -- Set to ingame lockstyle and Macro Book/Set
-LockStylePallet = "115"
+LockStylePallet = "116"
 MacroBook = "20" -- Sub Job macro pallets can be defined in the sub_job_change_custom function below
 MacroSet = "1"
 
@@ -27,8 +27,8 @@ state.OffenseMode:options('TP', 'ACC', 'DT', 'PDL', 'CRIT', 'SB', 'True Shot')
 state.OffenseMode:set('TP')
 
 -- Modes for specific to Ranger
-state.WeaponMode:options('Gastraphetes', 'Fomalhaut', 'Annihilator', 'Armageddon', 'Gandiva', 'Fail-Not', 'Naegling',
-    'Tauret')
+state.WeaponMode:options('Gastraphetes', 'Fomalhaut', 'Annihilator', 'Armageddon', 'Arma-MagicATT', 'Gandiva',
+    'Fail-Not', 'Naegling', 'Tauret')
 state.WeaponMode:set('Gastraphetes')
 
 -- Enable JobMode for UI.
@@ -122,11 +122,11 @@ function get_sets()
     sets.Weapons['Gastraphetes'] = {
         main = {
             name = "Malevolence",
-            augments = {'INT+6', 'Mag. Acc.+7', '"Mag.Atk.Bns."+4', '"Fast Cast"+3'}
+            augments = {'INT+10', 'Mag. Acc.+10', '"Mag.Atk.Bns."+10', '"Fast Cast"+5'}
         },
         sub = {
             name = "Malevolence",
-            augments = {'INT+10', 'Mag. Acc.+10', '"Mag.Atk.Bns."+10', '"Fast Cast"+5'}
+            augments = {'INT+6', 'Mag. Acc.+7', '"Mag.Atk.Bns."+4', '"Fast Cast"+3'}
         },
         range = {
             name = "Gastraphetes",
@@ -146,6 +146,18 @@ function get_sets()
         range = "Armageddon"
     }
 
+    sets.Weapons['Arma-MagicATT'] = {
+        main = {
+            name = "Malevolence",
+            augments = {'INT+10', 'Mag. Acc.+10', '"Mag.Atk.Bns."+10', '"Fast Cast"+5'}
+        },
+        sub = {
+            name = "Malevolence",
+            augments = {'INT+6', 'Mag. Acc.+7', '"Mag.Atk.Bns."+4', '"Fast Cast"+3'}
+        },
+        range = "Armageddon"
+    }
+
     sets.Weapons['Gandiva'] = {
         main = {
             name = "Perun +1",
@@ -161,11 +173,11 @@ function get_sets()
     sets.Weapons['Fail-Not'] = {
         main = {
             name = "Malevolence",
-            augments = {'INT+6', 'Mag. Acc.+7', '"Mag.Atk.Bns."+4', '"Fast Cast"+3'}
+            augments = {'INT+10', 'Mag. Acc.+10', '"Mag.Atk.Bns."+10', '"Fast Cast"+5'}
         },
         sub = {
             name = "Malevolence",
-            augments = {'INT+10', 'Mag. Acc.+10', '"Mag.Atk.Bns."+10', '"Fast Cast"+5'}
+            augments = {'INT+6', 'Mag. Acc.+7', '"Mag.Atk.Bns."+4', '"Fast Cast"+3'}
         },
         range = "Fail-Not"
     }
@@ -248,7 +260,7 @@ function get_sets()
     sets.Idle = {
         ammo = Ammo.RA, -- Smart_Ammo() will select from your XXXX.RA type
         head = "Null Masque",
-        body = "Nyame Mail",
+        body = "Adamantite Armor",
         hands = "Nyame Gauntlets",
         legs = "Nyame Flanchard",
         feet = "Nyame Sollerets",
@@ -269,6 +281,31 @@ function get_sets()
             augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'Rng.Acc.+10', '"Store TP"+10', 'Phys. dmg. taken-10%'}
         }
     }
+
+    sets.Idle.TP = set_combine(sets.Idle, {
+        ammo = Ammo.RA, -- Smart_Ammo() will select from your XXXX.RA type
+        head = "Null Masque",
+        body = "Adamantite Armor",
+        hands = "Nyame Gauntlets",
+        legs = "Nyame Flanchard",
+        feet = "Nyame Sollerets",
+        neck = "Rep. Plat. Medal",
+        waist = "Null Belt",
+        left_ear = {
+            name = "Odnowa Earring +1",
+            augments = {'Path: A'}
+        },
+        right_ear = "Infused Earring",
+        left_ring = {
+            name = "Gelatinous Ring +1",
+            augments = {'Path: A'}
+        },
+        right_ring = "Defending Ring",
+        back = {
+            name = "Belenus's Cape",
+            augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'Rng.Acc.+10', '"Store TP"+10', 'Phys. dmg. taken-10%'}
+        }
+    })
 
     sets.Movement = {
         right_ring = "Shneddick Ring"
@@ -545,20 +582,22 @@ function get_sets()
 
     -- Ranged Attack Gear (Double Shot Midshot)
     sets.Midcast.RA.DoubleShot = {
-        head = "Arcadian Beret +3",
+        head = "Oshosi Mask", -- 5
         body = "Arcadian Jerkin +3",
         hands = "Oshosi Gloves", -- 5
         legs = "Oshosi Trousers", -- 7
         feet = "Osh. Leggings +1",
-        neck = {
-            name = "Scout's Gorget +2",
-            augments = {'Path: A'}
-        },
-        waist = "K. Kachina Belt +1",
-        left_ear = "Odr Earring",
+        -- neck = {
+        --     name = "Scout's Gorget +2",
+        --     augments = {'Path: A'}
+        -- },
+        neck = "Iskur Gorget",
+        -- waist = "K. Kachina Belt +1",
+        waist = "Yemaya Belt",
+        left_ear = "Dedition Earring",
         right_ear = "Telos Earring",
-        left_ring = "Begrudging Ring",
-        right_ring = "Mummu Ring",
+        left_ring = "Ilabrat Ring",
+        right_ring = "Dingir Ring",
         back = {
             name = "Belenus's Cape",
             augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'Rng.Acc.+10', '"Store TP"+10', 'Phys. dmg. taken-10%'}
@@ -1181,6 +1220,7 @@ function get_sets()
     sets.WS["Refulgent Arrow"] = set_combine(sets.WS.RA, {})
 
     sets.WS["Jishnu's Radiance"] = set_combine(sets.WS.RA, {
+        ammo = Ammo.CRIT,
         head = "Orion Beret +3",
         body = "Amini Caban +3",
         hands = "Amini Glove. +3",
@@ -1205,6 +1245,7 @@ function get_sets()
     })
 
     sets.WS.PDL["Jishnu's Radiance"] = set_combine(sets.WS.RA, {
+        ammo = Ammo.CRIT,
         head = {
             name = "Blistering Sallet +1",
             augments = {'Path: A'}

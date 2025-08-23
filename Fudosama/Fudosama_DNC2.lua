@@ -23,7 +23,7 @@ Food = "Sublime Sushi"
 state.OffenseMode:options('DT', 'TP', 'SB', 'Aminon') -- ACC effects WS and TP modes
 state.OffenseMode:set('DT')
 
-state.WeaponMode:options('Aeneas', 'Tauret', 'Aeolian Edge', 'Karambit', 'Unlocked')
+state.WeaponMode:options('Aeneas', 'Tauret', 'Karambit', 'Unlocked')
 state.WeaponMode:set('Aeneas')
 
 -- Initialize Player
@@ -46,13 +46,6 @@ function get_sets()
         sub = {
             name = "Gleti's Knife",
             augments = {'Path: A'}
-        }
-    }
-    sets.Weapons['Aeolian Edge'] = {
-        main = "Aeneas",
-        sub = {
-            name = "Fusetto +3",
-            augments = {'TP Bonus +1000'}
         }
     }
     sets.Weapons['Karambit'] = {
@@ -79,8 +72,7 @@ function get_sets()
             name = "Nyame Sollerets",
             augments = {'Path: B'}
         },
-        -- neck = "Rep. Plat. Medal",
-        neck = "Etoile Gorget +2",
+        neck = "Rep. Plat. Medal",
         waist = "Null Belt",
         left_ear = {
             name = "Odnowa Earring +1",
@@ -506,7 +498,7 @@ function get_sets()
         hands = "Malignance Gloves",
         legs = "Malignance Tights",
         feet = "Malignance Boots",
-        neck = "Etoile Gorget +2",
+        neck = "Etoile Gorget +1",
         waist = "Reiki Yotai",
         left_ear = "Odr Earring",
         right_ear = "Telos Earring",
@@ -546,8 +538,7 @@ function get_sets()
             name = "Nyame Sollerets",
             augments = {'Path: B'}
         },
-        -- neck = "Fotia Gorget",
-        neck = "Etoile Gorget +2",
+        neck = "Fotia Gorget",
         waist = {
             name = "Sailfi Belt +1",
             augments = {'Path: A'}
@@ -561,7 +552,7 @@ function get_sets()
         right_ring = "Epona's Ring",
         back = {
             name = "Senuna's Mantle",
-            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'DEX+5', 'Weapon skill damage +10%', 'Damage taken-5%'}
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Weapon skill damage +10%', 'Damage taken-5%'}
         }
     }
 
@@ -596,11 +587,11 @@ function get_sets()
         right_ring = "Epona's Ring",
         back = {
             name = "Senuna's Mantle",
-            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'DEX+5', 'Weapon skill damage +10%', 'Damage taken-5%'}
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Weapon skill damage +10%', 'Damage taken-5%'}
         }
     }
     sets.WS["Aeolian Edge"] = {
-        ammo = "Ghastly Tathlum +1",
+        ammo = "Yamarang",
         head = "Nyame Helm",
         body = {
             name = "Nyame Mail",
@@ -610,17 +601,17 @@ function get_sets()
         legs = "Nyame Flanchard",
         feet = "Nyame Sollerets",
         neck = "Baetyl Pendant",
-        waist = "Orpheus's Sash",
+        waist = "Fotia Belt",
         left_ear = {
             name = "Moonshade Earring",
             augments = {'Attack+4', 'TP Bonus +250'}
         },
         right_ear = "Friomisi Earring",
-        left_ring = "Shiva Ring +1",
-        right_ring = "Cornelia's Ring",
+        left_ring = "Regal Ring",
+        right_ring = "Ilabrat Ring",
         back = {
             name = "Senuna's Mantle",
-            augments = {'INT+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'INT+10', 'Weapon skill damage +10%', 'Damage taken-5%'}
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Weapon skill damage +10%', 'Damage taken-5%'}
         }
     }
     sets.WS["Rudra's Storm"] = {
@@ -648,8 +639,7 @@ function get_sets()
             name = "Nyame Sollerets",
             augments = {'Path: B'}
         },
-        -- neck = "Fotia Gorget",
-        neck = "Etoile Gorget +2",
+        neck = "Fotia Gorget",
         waist = "Fotia Belt",
         left_ear = {
             name = "Moonshade Earring",
@@ -660,7 +650,7 @@ function get_sets()
         right_ring = "Regal Ring",
         back = {
             name = "Senuna's Mantle",
-            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'DEX+5', 'Weapon skill damage +10%', 'Damage taken-5%'}
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Weapon skill damage +10%', 'Damage taken-5%'}
         }
     }
 
@@ -684,17 +674,24 @@ function get_sets()
         waist = "Chaac Belt"
     }
 
-    rolls = {"Corsair's Roll", "Ninja Roll", "Hunter's Roll", "Chaos Roll", "Magus's Roll", "Healer's Roll",
-             "Drachen Roll", "Choral Roll", "Monk's Roll", "Beast Roll", "Samurai Roll", "Evoker's Roll",
-             "Rogue's Roll", "Warlock's Roll", "Fighter's Roll", "Puppet Roll", "Gallant's Roll", "Wizard's Roll",
-             "Dancer's Roll", "Scholar's Roll", "Naturalist's Roll", "Runeist's Roll", "Bolter's Roll", "Caster's Roll",
-             "Courser's Roll", "Blitzer's Roll", "Tactician's Roll", "Allies' Roll", "Miser's Roll", "Companion's Roll",
-             "Avenger's Roll"}
+    sets.Rollers = {
+        left_ring = "Cornelia's Ring"
+    }
 end
 
 -------------------------------------------------------------------------------------------------------------------
 -- DO NOT EDIT BELOW THIS LINE UNLESS YOU NEED TO MAKE JOB SPECIFIC RULES
 -------------------------------------------------------------------------------------------------------------------
+
+function hasCorsairRollXI()
+    for buffName, active in pairs(buffactive) do
+        if active == 11 and string.find(buffName, "Roll") then
+            windower.add_to_chat(8, "Detected XI Roll: " .. buffName)
+            return true
+        end
+    end
+    return false
+end
 
 -- Called when the player's subjob changes.
 function sub_job_change_custom(new, old)
@@ -719,12 +716,16 @@ end
 -- Augment basic equipment sets
 function aftercast_custom(spell)
     equipSet = {}
-
+    equip(choose_set_custom())
     return Weapon_Check(equipSet)
 end
 -- Function is called when the player gains or loses a buff
 function buff_change_custom(name, gain)
     equipSet = {}
+
+    if string.find(name, "Roll") then
+        equip(choose_set_custom())
+    end
 
     return Weapon_Check(equipSet)
 end
@@ -732,12 +733,25 @@ end
 function choose_set_custom()
     equipSet = {}
 
+    local equipSet = {}
+
+    if player.status == "Engaged" then
+        equipSet = sets.OffenseMode[state.OffenseMode.current] or sets.OffenseMode.DT
+    else
+        equipSet = sets.Idle[state.OffenseMode.current] or sets.Idle.DT
+    end
+
+    if hasCorsairRollXI() then
+        equipSet.right_ring = "Roller's Ring"
+        windower.add_to_chat(8, "Equipping Roller's Ring due to XI roll!")
+    end
+
     return Weapon_Check(equipSet)
 end
 -- Function is called when the player changes states
 function status_change_custom(new, old)
     equipSet = {}
-
+    equip(choose_set_custom())
     return Weapon_Check(equipSet)
 end
 -- Function is called when a self command is issued

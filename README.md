@@ -54,8 +54,10 @@
 
 - `//gs c burstmode`
 - `/console gs c burstmode` : Put this in a macro
+- `//gs showswaps` will show equipment swaps for each state
 
 - `//switch to fudo` switch between characters
+- `//gs showswaps` Shows when your gear successfully changes and what it changes to
 
 ## Macro Send commands
 

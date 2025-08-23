@@ -17,20 +17,20 @@ Food = "Sublime Sushi"
 state.OffenseMode:options('TP', 'ACC', 'DT', 'PDL', 'SB', 'MEVA') -- ACC effects WS and TP modes
 
 -- Upon Job change will use a random lockstyleset
-Random_Lockstyle = false
+Random_Lockstyle = true
 
 -- Set to true to run organizer on job changes
 Organizer = false
 
 -- Lockstyle sets to randomly equip
-Lockstyle_List = {1, 2, 6, 12}
+Lockstyle_List = {135, 137}
 
 -- Set Mode to Damage Taken as Default
 state.OffenseMode:set('DT')
 
 -- Modes for specific to Ninja
-state.WeaponMode:options('Agwus Axe', 'Decimation', 'Aymur', 'Pangu', 'Unlocked', 'Locked')
-state.WeaponMode:set('Aymur')
+state.WeaponMode:options('Agwus Axe', 'Dolichenus', 'Naegling', 'Unlocked', 'Locked')
+state.WeaponMode:set('Agwus Axe')
 
 -- Enable JobMode for UI.
 UI_Name = 'Pet'
@@ -103,7 +103,7 @@ function get_sets()
     -- Weapon setup
     sets.Weapons = {}
 
-    sets.Weapons['Decimation'] = {
+    sets.Weapons['Dolichenus'] = {
         main = "Dolichenus",
         sub = "Ikenga's Axe"
     }
@@ -123,6 +123,11 @@ function get_sets()
         sub = "Farsha"
     }
 
+    sets.Weapons['Naegling'] = {
+        main = "Naegling",
+        sub = "Fernagu"
+    }
+
     sets.Weapons['Unlocked'] = {}
 
     sets.Weapons.Shield = {
@@ -131,88 +136,48 @@ function get_sets()
 
     -- Standard Idle set with -DT, Refresh, Regen and movement gear
     sets.Idle = {
-        -- ammo = "Staunch Tathlum +1",
-        -- head = "Null Masque",
-        -- body = {
-        --     name = "Nyame Mail",
-        --     augments = {'Path: B'}
-        -- },
-        -- hands = {
-        --     name = "Nyame Gauntlets",
-        --     augments = {'Path: B'}
-        -- },
-        -- legs = {
-        --     name = "Nyame Flanchard",
-        --     augments = {'Path: B'}
-        -- },
-        -- feet = {
-        --     name = "Nyame Sollerets",
-        --     augments = {'Path: B'}
-        -- },
-        -- neck = "Warder's Charm +1",
-        -- waist = "Carrier's Sash",
-        -- left_ear = "Etiolation Earring",
-        -- right_ear = {
-        --     name = "Odnowa Earring +1",
-        --     augments = {'Path: A'}
-        -- },
-        -- left_ring = {
-        --     name = "Moonlight Ring",
-        --     bag = "wardrobe1",
-        --     priority = 2
-        -- },
-        -- right_ring = {
-        --     name = "Moonlight Ring",
-        --     bag = "wardrobe2",
-        --     priority = 1
-        -- },
-        -- back = {
-        --     name = "Artio's Mantle",
-        --     augments = {'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20', 'Accuracy+20 Attack+20',
-        --                 'Accuracy+10', '"Store TP"+10', 'Damage taken-5%'}
-        -- }
         ammo = "Staunch Tathlum +1",
         head = "Null Masque",
-        neck = "Bathy Choker +1",
-        left_ear = "Eabani Earring",
-        right_ear = "Genmei Earring",
-        body = {
-            name = "Nyame Mail",
-            augments = {'Path: B', 'STR+10', 'Attack+15', 'Phys. dmg. taken-2'}
-        },
+        body = "Adamantite Armor",
         hands = {
             name = "Nyame Gauntlets",
-            augments = {'Path: B', 'STR+10', 'Attack+15', 'Phys. dmg. taken-2'}
+            augments = {'Path: B'}
         },
-        ring1 = "Defending Ring",
-        ring2 = "Moonlight Ring",
-        back = {
-            name = "Artio's Mantle",
-            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Phys. dmg. taken-10%'}
-        },
-        waist = "Null Belt",
         legs = {
             name = "Nyame Flanchard",
-            augments = {'Path: B', 'STR+10', 'Attack+15', 'Phys. dmg. taken-2'}
+            augments = {'Path: B'}
         },
         feet = {
             name = "Nyame Sollerets",
-            augments = {'Path: B', 'STR+10', 'Attack+15', 'Phys. dmg. taken-2'}
+            augments = {'Path: B'}
+        },
+        neck = "Null Loop",
+        waist = "Null Belt",
+        left_ear = "Etiolation Earring",
+        right_ear = {
+            name = "Odnowa Earring +1",
+            augments = {'Path: A'}
+        },
+        left_ring = "Defending Ring",
+        right_ring = "Moonlight Ring",
+        back = {
+            name = "Artio's Mantle",
+            augments = {'Eva.+20 /Mag. Eva.+20', 'Pet: "Regen"+10', 'Pet: Damage taken -5%'}
         }
     }
 
     sets.Idle.Pet = set_combine(sets.Idle, {
+        hands = "Gleti's Gauntlets",
         feet = "Gleti's Boots",
-        right_ear = {
-            name = "Nukumi Earring +1",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+13', 'Mag. Acc.+13', 'Pet: "Dbl. Atk."+6'}
-        },
+        neck = "Empath Necklace",
+        waist = "Isa Belt",
+        left_ear = "Enmerkar Earring",
+        right_ear = "Handler's Earring +1",
         left_ring = "C. Palug Ring",
         back = {
             name = "Artio's Mantle",
             augments = {'Eva.+20 /Mag. Eva.+20', 'Pet: "Regen"+10', 'Pet: Damage taken -5%'}
-        },
-        waist = "Isa Belt"
+        }
     })
 
     -- Used to swap into movement gear when the player is detected movement when not engaged
@@ -229,44 +194,6 @@ function get_sets()
     }
 
     sets.OffenseMode = {
-        -- ammo = {
-        --     name = "Coiste Bodhar",
-        --     augments = {'Path: A'}
-        -- },
-        -- head = {
-        --     name = "Gleti's Mask",
-        --     augments = {'Path: A'}
-        -- },
-        -- body = {
-        --     name = "Gleti's Cuirass",
-        --     augments = {'Path: A'}
-        -- },
-        -- hands = {
-        --     name = "Gleti's Gauntlets",
-        --     augments = {'Path: A'}
-        -- },
-        -- legs = {
-        --     name = "Gleti's Breeches",
-        --     augments = {'Path: A'}
-        -- },
-        -- feet = {
-        --     name = "Gleti's Boots",
-        --     augments = {'Path: A'}
-        -- },
-        -- neck = "Bst. Collar +2",
-        -- waist = {
-        --     name = "Sailfi Belt +1",
-        --     augments = {'Path: A'}
-        -- },
-        -- left_ear = "Sherida Earring",
-        -- right_ear = "Crep. Earring",
-        -- left_ring = "Gere Ring",
-        -- right_ring = "Epona's Ring",
-        -- back = {
-        --     name = "Artio's Mantle",
-        --     augments = {'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20', 'Accuracy+20 Attack+20',
-        --                 'Accuracy+10', '"Store TP"+10', 'Damage taken-5%'}
-        -- }
         ammo = {
             name = "Coiste Bodhar",
             augments = {'Path: A'}
@@ -284,7 +211,7 @@ function get_sets()
             name = "Sailfi Belt +1",
             augments = {'Path: A'}
         },
-        left_ear = "Telos Earring",
+        left_ear = "Crep. Earring",
         right_ear = "Sherida Earring",
         left_ring = "Gere Ring",
         right_ring = "Moonlight Ring",
@@ -295,7 +222,12 @@ function get_sets()
     }
 
     -- Base TP set to build off
-    sets.OffenseMode.TP = set_combine(sets.OffenseMode, {})
+    sets.OffenseMode.TP = set_combine(sets.OffenseMode, {
+        neck = "Anu Torque",
+        left_ear = "Telos Earring",
+        right_ring = "Epona's Ring",
+        back = "Null Shawl"
+    })
     -- This set is used when OffenseMode is DT and Enaged (Augments the TP base set)
     sets.OffenseMode.DT = set_combine(sets.OffenseMode.TP, {})
     -- This set is used when OffenseMode is ACC and Enaged (Augments the TP base set)
@@ -311,23 +243,46 @@ function get_sets()
     -- Cap is 75% - 50% limit in I or II
     sets.OffenseMode.SB = {}
 
-    set.DualWield = {
+    sets.DualWield = {
         left_ear = "Eabani Earring",
         waist = "Reiki Yotai"
     }
 
     -- Ready JA command
     sets.Ready = {
-        legs = {
-            name = "Gleti's Breeches",
-            augments = {'Path: A'}
-        }
+        legs = "Gleti's Breeches"
     }
 
     sets.Precast = {}
 
     -- Used for Magic Spells
-    sets.Precast.FastCast = {}
+    sets.Precast.FastCast = {
+        ammo = "Sapience Orb",
+        head = {
+            name = "Valorous Mask",
+            augments = {'"Resist Silence"+2', 'MND+3', '"Fast Cast"+7', 'Mag. Acc.+9 "Mag.Atk.Bns."+9'}
+        },
+        neck = "Orunmila's Torque",
+        ear1 = "Loquacious Earring",
+        ear2 = "Enchanter Earring +1",
+        body = "Sacro Breastplate",
+        hands = "Leyline Gloves",
+        legs = {
+            name = "Valorous Hose",
+            augments = {'Crit.hit rate+2', '"Dual Wield"+1', '"Fast Cast"+7'}
+        },
+        feet = {
+            name = "Valorous Greaves",
+            augments = {'"Mag.Atk.Bns."+17', 'AGI+7', '"Fast Cast"+7', 'Accuracy+14 Attack+14'}
+        },
+        left_ring = "Prolix Ring",
+        right_ring = "Rahab Ring",
+        back = {
+            name = "Artio's Mantle",
+            augments = {'INT+20', 'Eva.+20 /Mag. Eva.+20', 'Mag. Evasion+10', '"Fast Cast"+10',
+                        'Spell interruption rate down-10%'}
+        }
+    }
 
     sets.Precast.Enmity = {}
 
@@ -338,22 +293,66 @@ function get_sets()
 
     -- Default
     sets.Pet_Midcast = {
-        waist = "Gishdubar Sash"
+        ammo = {
+            name = "Hesperiidae",
+            augments = {'Path: A'}
+        },
+        head = "Nuk. Cabasset +2",
+        body = "Nukumi Gausape +3",
+        hands = "Nukumi Manoplas +3",
+        legs = "Nukumi Quijotes +2",
+        feet = "Gleti's Boots",
+        neck = {
+            name = "Bst. Collar +2",
+            augments = {'Path: A'}
+        },
+        waist = "Incarnation Sash",
+        left_ear = "Sroda Earring",
+        right_ear = {
+            name = "Nukumi Earring",
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+8', 'Mag. Acc.+8'}
+        },
+        left_ring = "Tali'ah Ring",
+        right_ring = "C. Palug Ring",
+        back = {
+            name = "Artio's Mantle",
+            augments = {'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20', 'Pet: Accuracy+10 Pet: Rng. Acc.+10',
+                        'Pet: Haste+10', 'Pet: Damage taken -5%'}
+        }
     }
 
     -- TP based Ready moves
     sets.Pet_Midcast.TP = {
-        left_ear = "Eabani Earring"
+        hands = "Nukumi Manoplas +3"
     }
 
     -- Magic Attack Bonus Ready moves
     sets.Pet_Midcast.MAB = {
-        right_ring = "Epona's Ring"
+        ammo = "Voluspa Tathlum",
+        neck = "Adad Amulet",
+        left_ring = "Tali'ah Ring",
+        right_ring = "Cath Palug Ring",
+        waist = "Incarnation Sash"
     }
 
     -- Debuff moves that need MACC
     sets.Pet_Midcast.MACC = {
-        right_ear = "Crep. Earring"
+        ammo = "Voluspa Tathlum",
+        head = "Nuk. Cabasset +2",
+        body = "Nukumi Gausape +3",
+        hands = "Nukumi Manoplas +3",
+        legs = "Nukumi Quijotes +2",
+        feet = "Gleti's Boots",
+        neck = "Bst. Collar +2",
+        waist = "Incarnation Sash",
+        left_ear = "Kyrene's Earring",
+        right_ear = "Enmerkar Earring",
+        left_ring = "Tali'ah Ring",
+        right_ring = "C. Palug Ring",
+        back = {
+            name = "Artio's Mantle",
+            augments = {'Pet: M.Acc.+20 Pet: M.Dmg.+20', 'Pet: Mag. Acc.+10'}
+        }
     }
 
     -- Example for a specific move
@@ -361,18 +360,116 @@ function get_sets()
 
     -- Job Abilities
     sets.JA = {}
-    sets.JA['Familiar'] = set_combine(sets.Idle, {}) -- legs="Ankusa Trousers +3"
-    sets.JA['Charm'] = set_combine(sets.Idle, {})
-    sets.JA['Gauge'] = set_combine(sets.Idle, {})
-    sets.JA['Tame'] = set_combine(sets.Idle, {}) -- head="Totemic Helm +3"
-    sets.JA['Reward'] = set_combine(sets.Idle, {
-        ammo = "Pet Food Theta"
+    sets.JA['Familiar'] = set_combine(sets.Idle, {
+        legs = {
+            name = "Ankusa Trousers +3",
+            augments = {'Enhances "Familiar" effect'}
+        }
     })
-    sets.JA['Call Beast'] = set_combine(sets.Idle, {}) -- hands="Ankusa Gloves +3"
-    sets.JA['Feral Howl'] = set_combine(sets.Idle, {})
+
+    sets.JA['Charm'] = set_combine(sets.Idle, {
+        ammo = "Voluspa Tathlum",
+        head = "Totemic Helm +3",
+        neck = "Unmoving Collar +1",
+        ear1 = "Enchanter's Earring",
+        ear2 = "Enchanter Earring +1",
+        body = "Ankusa Jackcoat +2",
+        hands = "Ankusa Gloves +3",
+        ring1 = "Dawnsoul Ring",
+        ring2 = "Dawnsoul Ring",
+        back = {
+            name = "Artio's Mantle",
+            augments = {'MND+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'MND+10', 'Weapon skill damage +10%', 'Damage taken-5%'}
+        },
+        waist = "Aristo Belt",
+        legs = {
+            name = "Ankusa Trousers +3",
+            augments = {'Enhances "Familiar" effect'}
+        },
+        feet = {
+            name = "Ankusa Gaiters +3",
+            augments = {'Enhances "Beast Healer" effect'}
+        }
+    })
+
+    sets.JA['Gauge'] = set_combine(sets.Idle, {})
+
+    sets.JA['Tame'] = set_combine(sets.Idle, {
+        head = "Totemic Helm +3",
+        ear1 = "Tamer's Earring",
+        legs = "Stout Kecks"
+    })
+
+    sets.JA['Reward'] = set_combine(sets.Idle, {
+        ammo = "Pet Food Theta",
+        head = "Brave's Warbonnet",
+        neck = "Aife's Medal",
+        body = "Totemic Jackcoat +3",
+        hands = "Malignance Gloves",
+        legs = {
+            name = "Ankusa Trousers +3",
+            augments = {'Enhances "Familiar" effect'}
+        },
+        feet = {
+            name = "Ankusa Gaiters +3",
+            augments = {'Enhances "Beast Healer" effect'}
+        },
+        left_ring = "Leviathan Ring +1",
+        right_ring = "Metamorph Ring +1",
+        waist = "Engraved Belt",
+        back = {
+            name = "Artio's Mantle",
+            augments = {'MND+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'MND+10', 'Weapon skill damage +10%', 'Damage taken-5%'}
+        }
+    })
+    sets.JA['Call Beast'] = set_combine(sets.Idle, {
+        head = {
+            name = "Acro Helm",
+            augments = {'"Call Beast" ability delay -5'}
+        },
+        body = {
+            name = "Acro Surcoat",
+            augments = {'"Call Beast" ability delay -5'}
+        },
+        hands = {
+            name = "Ankusa Gloves +3",
+            augments = {'Enhances "Beast Affinity" effect'}
+        },
+        legs = {
+            name = "Acro Breeches",
+            augments = {'"Call Beast" ability delay -5'}
+        },
+        feet = {
+            name = "Acro Leggings",
+            augments = {'"Call Beast" ability delay -5'}
+        },
+        neck = {
+            name = "Bst. Collar +2",
+            augments = {'Path: A'}
+        }
+    })
+
+    sets.JA['Feral Howl'] = set_combine(sets.Idle, {
+        body = {
+            name = "An. Jackcoat +3",
+            augments = {'Enhances "Feral Howl" effect'}
+        }
+    })
+
     sets.JA['Unleash'] = set_combine(sets.Idle, {})
-    sets.JA['Bestial Loyalty'] = set_combine(sets.Idle, {}) -- hands="Ankusa Gloves +3"
-    sets.JA['Killer Instinct'] = set_combine(sets.Idle, {}) -- head="Ankusa Helm +3"
+
+    sets.JA['Bestial Loyalty'] = set_combine(sets.Idle, {
+        hands = {
+            name = "Ankusa Gloves +3",
+            augments = {'Enhances "Bestial Loyalty" effect'}
+        }
+    })
+    sets.JA['Killer Instinct'] = set_combine(sets.Idle, {
+        head = {
+            name = "Ankusa Helm +3",
+            augments = {'Enhances "Killer Instinct" effect'}
+        }
+    })
 
     -- Pet Commands
     sets.JA['Fight'] = set_combine(sets.Idle, {})
@@ -381,7 +478,10 @@ function get_sets()
     sets.JA['Stay'] = set_combine(sets.Idle, {})
     sets.JA['Snarl'] = set_combine(sets.Idle, {})
     sets.JA['Ready'] = set_combine(sets.Idle, {})
-    sets.JA['Spur'] = set_combine(sets.Idle, {}) -- feet="Nukumi Ocreae +3"
+    sets.JA['Spur'] = set_combine(sets.Idle, {
+        back = "Artio's Mantle",
+        feet = "Nukumi Ocreae +2"
+    })
     sets.JA['Run Wild'] = set_combine(sets.Idle, {})
 
     -- Default WS set base
@@ -391,40 +491,34 @@ function get_sets()
             augments = {'Path: A'}
         },
         head = {
-            name = "Gleti's Mask",
-            augments = {'Path: A'}
+            name = "Nyame Helm",
+            augments = {'Path: B'}
         },
-        body = {
-            name = "Gleti's Cuirass",
-            augments = {'Path: A'}
-        },
+        body = "Nukumi Gausape +3",
         hands = {
-            name = "Gleti's Gauntlets",
-            augments = {'Path: A'}
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
         },
         legs = {
-            name = "Gleti's Breeches",
-            augments = {'Path: A'}
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
         },
         feet = {
-            name = "Gleti's Boots",
-            augments = {'Path: A'}
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
         },
-        neck = "Bst. Collar +2",
+        neck = "Fotia Gorget",
         waist = {
             name = "Sailfi Belt +1",
             augments = {'Path: A'}
         },
-        left_ear = "Sherida Earring",
-        right_ear = {
-            name = "Nukumi Earring +1",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+13', 'Mag. Acc.+13', 'Pet: "Dbl. Atk."+6'}
-        },
-        left_ring = "Gere Ring",
-        right_ring = "Epona's Ring",
+        left_ear = "Thrud Earring",
+        right_ear = "Sherida Earring",
+        left_ring = "Sroda Ring",
+        right_ring = "Gere Ring",
         back = {
             name = "Artio's Mantle",
-            augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', '"Dbl.Atk."+10', 'Damage taken-5%'}
+            augments = {'STR+20', 'Accuracy+20 Attack+20', 'Weapon skill damage +10%', 'Damage taken-5%'} -- need to update +10 STR
         }
     }
 
@@ -445,11 +539,81 @@ function get_sets()
     sets.WS["Spinning Axe"] = set_combine(sets.WS, {})
     sets.WS["Rampage"] = set_combine(sets.WS, {})
     sets.WS["Calamity"] = set_combine(sets.WS, {})
-    sets.WS["Mistral Axe"] = set_combine(sets.WS, {})
-    sets.WS["Decimation"] = set_combine(sets.WS, {})
     sets.WS["Bora Axe"] = set_combine(sets.WS, {})
 
-    sets.TreasureHunter = {}
+    sets.WS["Mistral Axe"] = set_combine(sets.WS, {
+        neck = "Rep. Plat. Medal",
+        left_ear = {
+            name = "Moonshade Earring",
+            augments = {'Attack+4', 'TP Bonus +250'}
+        },
+        right_ear = "Thrud Earring"
+    })
+
+    sets.WS["Decimation"] = set_combine(sets.WS, {
+        feet = "Nukumi Ocreae +2",
+        neck = "Beastmaster Collar +2",
+        waist = "Fotia Belt",
+        left_ear = "Sroda Earring",
+        back = {
+            name = "Artio's Mantle",
+            augments = {'STR+20', 'Accuracy+20 Attack+20', 'Weapon skill damage +10%', 'Damage taken-5%'} -- should be DA here
+        }
+    })
+
+    sets.WS['Cloudsplitter'] = set_combine(sets.WS, {
+        ammo = "Oshasha's Treatise",
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
+        neck = "Baetyl Pendant",
+        waist = "Orpheus's Sash",
+        left_ear = {
+            name = "Moonshade Earring",
+            augments = {'Accuracy+4', 'TP Bonus +250'}
+        },
+        right_ear = "Friomisi Earring",
+        left_ring = "Beithir Ring",
+        right_ring = "Cornelia's Ring",
+        back = {
+            name = "Artio's Mantle",
+            augments = {'STR+20', 'Accuracy+20 Attack+20', 'Weapon skill damage +10%', 'Damage taken-5%'} -- more STR
+        }
+    })
+
+    sets.WS['Primal Rend'] = set_combine(sets.WS, {
+        ammo = "Oshasha's Treatise",
+        body = {
+            name = "Nyame Mail",
+            augments = {'Path: B'}
+        },
+        neck = "Baetyl Pendant",
+        waist = "Orpheus's Sash",
+        left_ear = {
+            name = "Moonshade Earring",
+            augments = {'Accuracy+4', 'TP Bonus +250'}
+        },
+        right_ear = "Friomisi Earring",
+        left_ring = "Beithir Ring",
+        right_ring = "Cornelia's Ring",
+        back = {
+            name = "Artio's Mantle",
+            augments = {'STR+20', 'Accuracy+20 Attack+20', 'Weapon skill damage +10%', 'Damage taken-5%'}
+        }
+    })
+
+    sets.WS['Savage Blade'] = set_combine(sets.WS, {})
+
+    sets.TreasureHunter = {
+        ammo = "Per. Lucky Egg",
+        body = {
+            name = "Valorous Mail",
+            augments = {'"Triple Atk."+3', 'INT+12', '"Treasure Hunter"+1', 'Accuracy+16 Attack+16',
+                        'Mag. Acc.+1 "Mag.Atk.Bns."+1'}
+        },
+        waist = "Chaac Belt"
+    }
 
 end
 
@@ -464,7 +628,6 @@ end
 
 -- Adjust custom precast actions
 function pretarget_custom(spell, action)
-
 end
 -- Augment basic equipment sets
 function precast_custom(spell)
@@ -551,7 +714,6 @@ function status_change_custom(new, old)
 end
 -- Function is called when a self command is issued
 function self_command_custom(command)
-
 end
 -- Custom Function
 function choose_gear()
@@ -586,5 +748,4 @@ end
 
 -- This function is called when the job file is unloaded
 function user_file_unload()
-
 end

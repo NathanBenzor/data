@@ -486,7 +486,7 @@ function init_gear_sets()
         body = "Ebers Bliaut +3",
         hands = {
             name = "Fanatic Gloves",
-            augments = {'MP+35', 'Healing magic skill +10'}
+            augments = {'MP+45', 'Healing magic skill +9', '"Conserve MP"+6', '"Fast Cast"+5'}
         },
         legs = "Th. Pant. +2",
         feet = {

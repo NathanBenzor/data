@@ -906,20 +906,22 @@ function init_gear_sets()
     })
 
     sets.DoubleShot = {
-        head = "Arcadian Beret +3",
+        head = "Oshosi Mask", -- 5
         body = "Arcadian Jerkin +3",
         hands = "Oshosi Gloves", -- 5
         legs = "Oshosi Trousers", -- 7
         feet = "Osh. Leggings +1",
-        neck = {
-            name = "Scout's Gorget +2",
-            augments = {'Path: A'}
-        },
-        waist = "K. Kachina Belt +1",
-        left_ear = "Odr Earring",
+        -- neck = {
+        --     name = "Scout's Gorget +2",
+        --     augments = {'Path: A'}
+        -- },
+        neck = "Iskur Gorget",
+        -- waist = "K. Kachina Belt +1",
+        waist = "Yemaya Belt",
+        left_ear = "Dedition Earring",
         right_ear = "Telos Earring",
-        left_ring = "Begrudging Ring",
-        right_ring = "Mummu Ring",
+        left_ring = "Ilabrat Ring",
+        right_ring = "Dingir Ring",
         back = {
             name = "Belenus's Cape",
             augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'Rng.Acc.+10', '"Store TP"+10', 'Phys. dmg. taken-10%'}
