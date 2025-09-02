@@ -1,0 +1,17 @@
+sets.exported={
+    main="Naegling",
+    sub="Kaja Rod",
+    ammo="Pemphredo Tathlum",
+    head="Nyame Helm",
+    body="Nyame Mail",
+    hands="Malignance Gloves",
+    legs="Nyame Flanchard",
+    feet="Nyame Sollerets",
+    neck="Loricate Torque +1",
+    waist="Embla Sash",
+    left_ear="Sherida Earring",
+    right_ear="Malignance Earring",
+    left_ring="Shneddick Ring",
+    right_ring="Metamor. Ring +1",
+    back={ name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Fast Cast"+10',}},
+}

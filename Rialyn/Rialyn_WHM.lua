@@ -468,7 +468,7 @@ function init_gear_sets()
         left_ear = "Meili Earring",
         right_ear = {
             name = "Ebers Earring",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+6', 'Mag. Acc.+6'}
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+8', 'Mag. Acc.+8'}
         },
         left_ring = "Menelaus's Ring",
         right_ring = "Haoma's Ring",
@@ -498,7 +498,7 @@ function init_gear_sets()
         left_ear = "Meili Earring",
         right_ear = {
             name = "Ebers Earring",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+6', 'Mag. Acc.+6'}
+            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+8', 'Mag. Acc.+8'}
         },
         left_ring = "Menelaus's Ring",
         right_ring = "Haoma's Ring",

@@ -1,0 +1,17 @@
+sets.exported={
+    main="Daybreak",
+    sub="Kaja Rod",
+    ammo="Pemphredo Tathlum",
+    head="Vanya Hood",
+    body="Nyame Mail",
+    hands="Jhakri Cuffs +2",
+    legs="Atrophy Tights +2",
+    feet={ name="Merlinic Crackows", augments={'MND+10','Mag. Acc.+20 "Mag.Atk.Bns."+20','Accuracy+8 Attack+8',}},
+    neck="Loricate Torque +1",
+    waist="Embla Sash",
+    left_ear="Malignance Earring",
+    right_ear={ name="Lethargy Earring", augments={'System: 1 ID: 1676 Val: 0','Accuracy+7','Mag. Acc.+7',}},
+    left_ring="Lebeche Ring",
+    right_ring="Metamor. Ring +1",
+    back="Perimede Cape",
+}

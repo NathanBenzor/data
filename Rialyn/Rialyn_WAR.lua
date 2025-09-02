@@ -157,10 +157,8 @@ function get_sets()
         --     augments = {'Path: A'}
         -- },
         left_ear = "Telos Earring",
-        right_ear = {
-            name = "Boii Earring",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+10', 'Mag. Acc.+10'}
-        },
+        right_ear={ name="Boii Earring +1", 
+            augments={'System: 1 ID: 1676 Val: 0','Accuracy+12','Mag. Acc.+12','Crit.hit rate+4',}},
         left_ring = "Niqmaddu Ring",
         right_ring = "Moonlight Ring",
         back = {
@@ -192,10 +190,9 @@ function get_sets()
         --     augments = {'Path: A'}
         -- },
         left_ear = "Cessance Earring",
-        right_ear = {
-            name = "Boii Earring",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+10', 'Mag. Acc.+10'}
-        },
+        right_ear={ 
+            name="Boii Earring +1", 
+            augments={'System: 1 ID: 1676 Val: 0','Accuracy+12','Mag. Acc.+12','Crit.hit rate+4',}},
         left_ring = "Niqmaddu Ring",
         right_ring = "Moonlight Ring",
         back = {
@@ -215,10 +212,9 @@ function get_sets()
         legs = "Sakpata's Cuisses",
         feet = "Sakpata's Leggings",
         left_ear = "Cessance Earring",
-        right_ear = {
-            name = "Boii Earring",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+10', 'Mag. Acc.+10'}
-        },
+        right_ear={ 
+            name="Boii Earring +1", 
+            augments={'System: 1 ID: 1676 Val: 0','Accuracy+12','Mag. Acc.+12','Crit.hit rate+4',}},
         left_ring = "Niqmaddu Ring",
         right_ring = "Petrov Ring",
         neck = {
@@ -1252,10 +1248,9 @@ function get_sets()
             augments = {'Path: A'}
         },
         left_ear = "Ishvara Earring",
-        right_ear = {
-            name = "Boii Earring",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+10', 'Mag. Acc.+10'}
-        },
+        right_ear={ 
+            name="Boii Earring +1", 
+            augments={'System: 1 ID: 1676 Val: 0','Accuracy+12','Mag. Acc.+12','Crit.hit rate+4',}},
         left_ring = "Niqmaddu Ring",
         right_ring = "Regal Ring",
         back = {
@@ -1289,10 +1284,9 @@ function get_sets()
             augments = {'Path: A'}
         },
         left_ear = "Ishvara Earring",
-        right_ear = {
-            name = "Boii Earring",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+10', 'Mag. Acc.+10'}
-        },
+        right_ear={ 
+            name="Boii Earring +1", 
+            augments={'System: 1 ID: 1676 Val: 0','Accuracy+12','Mag. Acc.+12','Crit.hit rate+4',}},
         left_ring = "Niqmaddu Ring",
         right_ring = "Regal Ring",
         back = {

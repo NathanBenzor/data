@@ -475,7 +475,11 @@ function get_sets()
 		hands="Regal Cuffs", --20% swaps out with Saboteur active
 		-- hands = "Leth. Ganth. +3",
 		body="Lethargy Sayon +3",
-		legs="Leth. Fuseau +3",
+		legs = {
+            name = "Chironic Hose",
+            augments = {'Mag. Acc.+25 "Mag.Atk.Bns."+25', 'MND+13', 'Mag. Acc.+9', '"Mag.Atk.Bns."+15'}
+        },
+		-- legs="Leth. Fuseau +3",
 		feet="Leth. Houseaux +3",
 		right_ear="Snotra Earring", -- 10%
 		left_ring="Kishar Ring", -- 10%
@@ -485,6 +489,7 @@ function get_sets()
             name = "Aurist's Cape +1",
             augments = {'Path: A'}
         }
+		-- back={ name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Fast Cast"+10',}},
 	})
 
 	-- sets.midcast['Divine Magic'] = {
