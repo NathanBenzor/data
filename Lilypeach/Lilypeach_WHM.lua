@@ -835,7 +835,7 @@ function init_gear_sets()
         waist = "Rumination Sash",
         left_ear = "Etiolation Earring",
         right_ear = "Genmei Earring",
-        left_ring = "Shneddick Ring",
+        left_ring = "Defending Ring",
         right_ring = "Stikini Ring +1",
         back = "Solemnity Cape"
     }

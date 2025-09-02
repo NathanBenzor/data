@@ -1098,11 +1098,12 @@ function init_gear_sets()
         right_ear = "Dedition Earring",
         left_ring = "Chirich Ring +1",
         right_ring = "Chirich Ring +1",
-        back = "Null Shawl",
-        -- back = {
-        --     name = "Intarabus's Cape",
-        --     augments = {'DEX+20', 'Accuracy+20 Attack+20', '"Store TP"+10', 'Phys. dmg. taken-10%'}
-    }
+        -- back = "Null Shawl",
+        back = {
+            name = "Intarabus's Cape",
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', '"Store TP"+10', 'Phys. dmg. taken-10%'}
+        }
+    }           
 
     sets.engaged.Acc = set_combine(sets.engaged, {
         --     hands="Raetic Bangles +1",

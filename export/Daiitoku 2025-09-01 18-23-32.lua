@@ -1,0 +1,17 @@
+sets.exported={
+    main={ name="Colada", augments={'Enh. Mag. eff. dur. +2','STR+3','"Mag.Atk.Bns."+13','DMG:+5',}},
+    sub="Forfend +1",
+    ammo="Pemphredo Tathlum",
+    head={ name="Telchine Cap", augments={'Enh. Mag. eff. dur. +9',}},
+    body="Nyame Mail",
+    hands="Nyame Gauntlets",
+    legs="Nyame Flanchard",
+    feet="Nyame Sollerets",
+    neck="Loricate Torque +1",
+    waist="Embla Sash",
+    left_ear="Malignance Earring",
+    right_ear={ name="Lethargy Earring", augments={'System: 1 ID: 1676 Val: 0','Accuracy+7','Mag. Acc.+7',}},
+    left_ring="Shneddick Ring",
+    right_ring="Metamor. Ring +1",
+    back={ name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Fast Cast"+10','Phys. dmg. taken-10%',}},
+}
