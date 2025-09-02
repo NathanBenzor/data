@@ -84,15 +84,23 @@
         <visible>true</visible>
         <warn>true</warn>
     </global>
-    <fudosama>
+    <daiitoku>
         <Display_Box>
             <pos>
-                <x>2053</x>
-                <y>710</y>
+                <x>1615</x>
+                <y>602</y>
             </pos>
         </Display_Box>
-    </fudosama>
-    <lilypeach>
+    </daiitoku>
+    <rialyn>
+        <Display_Box>
+            <pos>
+                <x>2049</x>
+                <y>854</y>
+            </pos>
+        </Display_Box>
+    </rialyn>
+        <fudosama>
         <Debug_Box>
             <text>
                 <fonts>
@@ -102,8 +110,8 @@
         </Debug_Box>
         <Display_Box>
             <pos>
-                <x>1615</x>
-                <y>602</y>
+                <x>1883</x>
+                <y>709</y>
             </pos>
             <text>
                 <fonts>
@@ -111,21 +119,45 @@
                 </fonts>
             </text>
         </Display_Box>
-    </lilypeach>
-    <rialyn>
+    </fudosama>
+    <gunbound>
+        <Debug_Box>
+            <text>
+                <fonts>
+
+                </fonts>
+            </text>
+        </Debug_Box>
         <Display_Box>
             <pos>
-                <x>2049</x>
-                <y>854</y>
+                <x>1883</x>
+                <y>709</y>
             </pos>
+            <text>
+                <fonts>
+
+                </fonts>
+            </text>
+        </Display_Box>
+    </gunbound>
+    <karinii>
+        <Debug_Box>
+            <text>
+                <fonts>
+
+                </fonts>
+            </text>
+        </Debug_Box>
+        <Display_Box>
+            <pos>
+                <x>1883</x>
+                <y>709</y>
+            </pos>
+            <text>
+                <fonts>
+
+                </fonts>
+            </text>
         </Display_Box>
     </rialyn>
-    <daiitoku>
-        <Display_Box>
-            <pos>
-                <x>1615</x>
-                <y>602</y>
-            </pos>
-        </Display_Box>
-    </daiitoku>
 </settings>
