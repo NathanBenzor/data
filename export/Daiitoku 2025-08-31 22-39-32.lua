@@ -1,0 +1,17 @@
+sets.exported={
+    main="Naegling",
+    sub="Kaja Rod",
+    ammo="Pemphredo Tathlum",
+    head="Aya. Zucchetto +2",
+    body="Ayanmo Corazza +2",
+    hands="Malignance Gloves",
+    legs="Aya. Cosciales +2",
+    feet="Aya. Gambieras +2",
+    neck="Loricate Torque +1",
+    waist="Embla Sash",
+    left_ear="Malignance Earring",
+    right_ear={ name="Lethargy Earring", augments={'System: 1 ID: 1676 Val: 0','Accuracy+7','Mag. Acc.+7',}},
+    left_ring="Hetairoi Ring",
+    right_ring="Apate Ring",
+    back={ name="Sucellos's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Damage taken-5%',}},
+}

@@ -139,43 +139,58 @@ function get_sets()
 
     -- Standard Idle set with -DT,Refresh,Regen and movement gear
     sets.Idle = {
-        ammo = "Staunch Tathlum +1", -- 3/3
-        head = {
-            name = "Viti. Chapeau +3",
-            augments = {'Enfeebling Magic duration', 'Magic Accuracy'},
-            priority = 3
-        }, -- +3 Refresh
-        body = "Lethargy Sayon +3", -- 14/14  +4 Refresh
-        hands = "Leth. Ganth. +3", -- 11/11
-        legs = "Bunzi's Pants", -- 9/9
-        feet = {
-            name = "Bunzi's Sabots",
-            augments = {'Path: A'}
-        }, -- 6/6
-        neck = "Loricate Torque +1", -- 6/6
-        waist = "Carrier's Sash",
-        left_ear = {
-            name = "Etiolation Earring",
-            priority = 1
-        }, -- Used to Keep HP/MP pool
-        right_ear = {
-            name = "Odnowa Earring +1",
-            augments = {'Path: A'},
-            priority = 2
-        }, -- 3/5
-        left_ring = {
-            name = "Stikini Ring +1",
-            bag = "wardrobe1"
-        }, -- +1 Refresh
-        right_ring = {
-            name = "Stikini Ring +1",
-            bag = "wardrobe2"
-        }, -- +1 Refresh
-        back = {
-            name = "Sucellos's Cape",
-            augments = {'MND+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'Mag. Acc.+10', '"Fast Cast"+10', 'Phys. dmg. taken-10%'}
-        } -- 10/0
-    }
+        ammo="Pemphredo Tathlum",
+        head="Nyame Helm",
+        body="Nyame Mail",
+        hands="Nyame Gauntlets",
+        legs="Nyame Flanchard",
+        feet="Nyame Sollerets",
+        neck="Loricate Torque +1",
+        waist="Embla Sash",
+        left_ear="Malignance Earring",
+        right_ear={ name="Lethargy Earring", augments={'System: 1 ID: 1676 Val: 0','Accuracy+7','Mag. Acc.+7',}},
+        left_ring="Shneddick Ring",
+        right_ring="Stikini Ring +1",
+        back={ name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Fast Cast"+10','Phys. dmg. taken-10%',}},
+}       
+        
+    --     ammo = "Staunch Tathlum +1", -- 3/3
+    --     head = {
+    --         name = "Viti. Chapeau +3",
+    --         augments = {'Enfeebling Magic duration', 'Magic Accuracy'},
+    --         priority = 3
+    --     }, -- +3 Refresh
+    --     body = "Lethargy Sayon +3", -- 14/14  +4 Refresh
+    --     hands = "Leth. Ganth. +3", -- 11/11
+    --     legs = "Bunzi's Pants", -- 9/9
+    --     feet = {
+    --         name = "Bunzi's Sabots",
+    --         augments = {'Path: A'}
+    --     }, -- 6/6
+    --     neck = "Loricate Torque +1", -- 6/6
+    --     waist = "Carrier's Sash",
+    --     left_ear = {
+    --         name = "Etiolation Earring",
+    --         priority = 1
+    --     }, -- Used to Keep HP/MP pool
+    --     right_ear = {
+    --         name = "Odnowa Earring +1",
+    --         augments = {'Path: A'},
+    --         priority = 2
+    --     }, -- 3/5
+    --     left_ring = {
+    --         name = "Stikini Ring +1",
+    --         bag = "wardrobe1"
+    --     }, -- +1 Refresh
+    --     right_ring = {
+    --         name = "Stikini Ring +1",
+    --         bag = "wardrobe2"
+    --     }, -- +1 Refresh
+    --     back = {
+    --         name = "Sucellos's Cape",
+    --         augments = {'MND+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'Mag. Acc.+10', '"Fast Cast"+10', 'Phys. dmg. taken-10%'}
+    --     } -- 10/0
+    -- }
     sets.Idle.TP = sets.Idle
     sets.Idle.ACC = sets.Idle
     sets.Idle.DT = sets.Idle
@@ -216,37 +231,56 @@ function get_sets()
 
     -- 'TP','ACC','DT','PDL','SB','Enspell'
     sets.OffenseMode = {
-        ammo = {
-            name = "Coiste Bodhar",
-            augments = {'Path: A'}
-        },
-        head = "Malignance Chapeau",
-        body = "Malignance Tabard",
-        hands = "Malignance Gloves",
-        legs = "Malignance Tights",
-        feet = "Malignance Boots",
-        neck = "Anu Torque",
-        waist = {
-            name = "Sailfi Belt +1",
-            augments = {'Path: A'}
-        },
-        left_ear = "Sherida Earring",
-        right_ear = {
-            name = "Leth. Earring +1"
-        },
-        left_ring = {
-            name = "Chirich Ring +1",
-            bag = "wardrobe1"
-        },
-        right_ring = {
-            name = "Chirich Ring +1",
-            bag = "wardrobe2"
-        },
-        back = {
-            name = "Sucellos's Cape",
-            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Phys. dmg. taken-10%'}
-        }
+        ammo="Hasty Pinion +1",
+        head="Aya. Zucchetto +2",
+        body="Ayanmo Corazza +2",
+        hands="Malignance Gloves",
+        legs={ 
+            name="Carmine Cuisses +1", 
+            augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}},
+        feet="Aya. Gambieras +2",
+        neck="Anu Torque",
+        waist="Eschan Stone",
+        left_ear="Sherida Earring",
+        right_ear="Digni. Earring",
+        left_ring="Hetairoi Ring",
+        right_ring="Apate Ring",
+        back={ 
+            name="Sucellos's Cape", 
+            augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dual Wield"+10','Damage taken-5%',}},
     }
+          
+    --     ammo = {
+    --         name = "Coiste Bodhar",
+    --         augments = {'Path: A'}
+    --     },
+    --     head = "Malignance Chapeau",
+    --     body = "Malignance Tabard",
+    --     hands = "Malignance Gloves",
+    --     legs = "Malignance Tights",
+    --     feet = "Malignance Boots",
+    --     neck = "Anu Torque",
+    --     waist = {
+    --         name = "Sailfi Belt +1",
+    --         augments = {'Path: A'}
+    --     },
+    --     left_ear = "Sherida Earring",
+    --     right_ear = {
+    --         name = "Leth. Earring +1"
+    --     },
+    --     left_ring = {
+    --         name = "Chirich Ring +1",
+    --         bag = "wardrobe1"
+    --     },
+    --     right_ring = {
+    --         name = "Chirich Ring +1",
+    --         bag = "wardrobe2"
+    --     },
+    --     back = {
+    --         name = "Sucellos's Cape",
+    --         augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Phys. dmg. taken-10%'}
+    --     }
+    -- }
 
     sets.OffenseMode.TP = set_combine(sets.OffenseMode, {})
     sets.OffenseMode.DT = set_combine(sets.OffenseMode, {})
@@ -315,44 +349,59 @@ function get_sets()
     -- 42% Fast Cast is needed on RDM (Fast Cast IX - 38%)
     -- 10% is Quick Magic limit
     sets.Precast.FastCast = {
-        ammo = "Impatiens", -- 2 Quick Magic
-        head = "Bunzi's Hat", -- 10
-        body = {
-            name = "Viti. Tabard +3",
-            augments = {'Enhances "Chainspell" effect'}
-        }, -- 15
-        hands = {
-            name = "Leyline Gloves",
-            augments = {'Accuracy+15', 'Mag. Acc.+15', '"Mag.Atk.Bns."+15', '"Fast Cast"+3'}
-        }, -- 8
-        legs = {
-            name = "Kaykaus Tights +1",
-            augments = {'MP+80', '"Cure" spellcasting time -7%', 'Enmity-6'}
-        }, -- 7
-        feet = {
-            name = "Bunzi's Sabots",
-            augments = {'Path: A'}
-        },
-        neck = {
-            name = "Unmoving Collar +1",
-            augments = {'Path: A'},
-            priority = 3
-        },
-        waist = "Witful Belt", -- 3 Quick Magic
-        left_ear = {
-            name = "Etiolation Earring",
-            priority = 1
-        }, -- Used to Keep HP/MP pool
-        right_ear = {
-            name = "Leth. Earring +1"
-        }, -- 8
-        left_ring = "Lebeche Ring", -- 2 Quick Magic
-        right_ring = {
-            name = "Etana Ring",
-            priority = 2
-        },
-        back = "Perimede Cape" -- 4 Quick Magic
-    } -- 50%+ total Fast Cast and 11% Quick Magic
+        ammo="Pemphredo Tathlum",
+        head="Atro. Chapeau +2",
+        body="Nyame Mail",
+        hands="Jhakri Cuffs +2",
+        legs="Aya. Cosciales +2",
+        feet={ name="Merlinic Crackows", augments={'MND+10','Mag. Acc.+20 "Mag.Atk.Bns."+20','Accuracy+8 Attack+8',}},
+        neck="Loricate Torque +1",
+        waist="Embla Sash",
+        left_ear="Malignance Earring",
+        right_ear={ name="Lethargy Earring", augments={'System: 1 ID: 1676 Val: 0','Accuracy+7','Mag. Acc.+7',}},
+        left_ring="Lebeche Ring",
+        right_ring="Jhakri Ring",
+        back={ name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Fast Cast"+10','Phys. dmg. taken-10%',}},
+    }
+        
+    --     ammo = "Impatiens", -- 2 Quick Magic
+    --     head = "Bunzi's Hat", -- 10
+    --     body = {
+    --         name = "Viti. Tabard +3",
+    --         augments = {'Enhances "Chainspell" effect'}
+    --     }, -- 15
+    --     hands = {
+    --         name = "Leyline Gloves",
+    --         augments = {'Accuracy+15', 'Mag. Acc.+15', '"Mag.Atk.Bns."+15', '"Fast Cast"+3'}
+    --     }, -- 8
+    --     legs = {
+    --         name = "Kaykaus Tights +1",
+    --         augments = {'MP+80', '"Cure" spellcasting time -7%', 'Enmity-6'}
+    --     }, -- 7
+    --     feet = {
+    --         name = "Bunzi's Sabots",
+    --         augments = {'Path: A'}
+    --     },
+    --     neck = {
+    --         name = "Unmoving Collar +1",
+    --         augments = {'Path: A'},
+    --         priority = 3
+    --     },
+    --     waist = "Witful Belt", -- 3 Quick Magic
+    --     left_ear = {
+    --         name = "Etiolation Earring",
+    --         priority = 1
+    --     }, -- Used to Keep HP/MP pool
+    --     right_ear = {
+    --         name = "Leth. Earring +1"
+    --     }, -- 8
+    --     left_ring = "Lebeche Ring", -- 2 Quick Magic
+    --     right_ring = {
+    --         name = "Etana Ring",
+    --         priority = 2
+    --     },
+    --     back = "Perimede Cape" -- 4 Quick Magic
+    -- } -- 50%+ total Fast Cast and 11% Quick Magic
 
     -- Used for Enhancing Magic
     sets.Precast.Enhancing = set_combine(sets.Precast.FastCast, sets.Precast.QuickMagic, {})
@@ -402,50 +451,67 @@ function get_sets()
 
     -- Cure Set
     sets.Midcast.Cure = {
-        ammo = "Staunch Tathlum +1",
-        head = {
-            name = "Kaykaus Mitra +1",
-            augments = {'MP+80', '"Cure" spellcasting time -7%', 'Enmity-6'}
-        }, -- 11
-        body = {
-            name = "Kaykaus Bliaut +1",
-            augments = {'MP+80', '"Cure" potency +6%', '"Conserve MP"+7'}
-        }, -- 6
-        hands = {
-            name = "Kaykaus Cuffs +1",
-            augments = {'MP+80', '"Cure" spellcasting time -7%', 'Enmity-6'}
-        }, -- 11
-        legs = {
-            name = "Kaykaus Tights +1",
-            augments = {'MP+80', '"Cure" spellcasting time -7%', 'Enmity-6'}
-        }, -- 11
-        feet = {
-            name = "Kaykaus Boots +1",
-            augments = {'MP+80', '"Cure" spellcasting time -7%', 'Enmity-6'}
-        }, -- 11
-        neck = {
-            name = "Loricate Torque +1",
-            augments = {'Path: A'}
-        },
-        waist = "Sacro Cord",
-        left_ear = {
-            name = "Etiolation Earring",
-            priority = 1
-        }, -- Used to Keep HP/MP pool
-        right_ear = {
-            name = "Odnowa Earring +1",
-            augments = {'Path: A'}
-        },
-        right_ring = {
-            name = "Gelatinous Ring +1",
-            augments = {'Path: A'}
-        },
-        left_ring = "Defending Ring",
-        back = {
-            name = "Sucellos's Cape",
-            augments = {'MND+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'Mag. Acc.+10', '"Fast Cast"+10', 'Phys. dmg. taken-10%'}
-        }
-    } -- 50% Cure I, 16% Cure II
+        main="Daybreak",
+        sub="Kaja Rod",
+        ammo="Pemphredo Tathlum",
+        head="Vanya Hood",
+        body="Nyame Mail",
+        hands="Jhakri Cuffs +2",
+        legs="Atrophy Tights +2",
+        feet={ name="Merlinic Crackows", augments={'MND+10','Mag. Acc.+20 "Mag.Atk.Bns."+20','Accuracy+8 Attack+8',}},
+        neck="Loricate Torque +1",
+        waist="Embla Sash",
+        left_ear="Malignance Earring",
+        right_ear={ name="Lethargy Earring", augments={'System: 1 ID: 1676 Val: 0','Accuracy+7','Mag. Acc.+7',}},
+        left_ring="Lebeche Ring",
+        right_ring="Metamor. Ring +1",
+        back="Perimede Cape",
+    }
+        
+    --     ammo = "Staunch Tathlum +1",
+    --     head = {
+    --         name = "Kaykaus Mitra +1",
+    --         augments = {'MP+80', '"Cure" spellcasting time -7%', 'Enmity-6'}
+    --     }, -- 11
+    --     body = {
+    --         name = "Kaykaus Bliaut +1",
+    --         augments = {'MP+80', '"Cure" potency +6%', '"Conserve MP"+7'}
+    --     }, -- 6
+    --     hands = {
+    --         name = "Kaykaus Cuffs +1",
+    --         augments = {'MP+80', '"Cure" spellcasting time -7%', 'Enmity-6'}
+    --     }, -- 11
+    --     legs = {
+    --         name = "Kaykaus Tights +1",
+    --         augments = {'MP+80', '"Cure" spellcasting time -7%', 'Enmity-6'}
+    --     }, -- 11
+    --     feet = {
+    --         name = "Kaykaus Boots +1",
+    --         augments = {'MP+80', '"Cure" spellcasting time -7%', 'Enmity-6'}
+    --     }, -- 11
+    --     neck = {
+    --         name = "Loricate Torque +1",
+    --         augments = {'Path: A'}
+    --     },
+    --     waist = "Sacro Cord",
+    --     left_ear = {
+    --         name = "Etiolation Earring",
+    --         priority = 1
+    --     }, -- Used to Keep HP/MP pool
+    --     right_ear = {
+    --         name = "Odnowa Earring +1",
+    --         augments = {'Path: A'}
+    --     },
+    --     right_ring = {
+    --         name = "Gelatinous Ring +1",
+    --         augments = {'Path: A'}
+    --     },
+    --     left_ring = "Defending Ring",
+    --     back = {
+    --         name = "Sucellos's Cape",
+    --         augments = {'MND+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'Mag. Acc.+10', '"Fast Cast"+10', 'Phys. dmg. taken-10%'}
+    --     }
+    -- } -- 50% Cure I, 16% Cure II
 
     sets.Midcast.Curaga = set_combine(sets.Midcast.Cure, {})
 
@@ -459,45 +525,65 @@ function get_sets()
 
     -- Enhancing Duration on SELF
     sets.Midcast.Enhancing = {
-        sub = "Ammurapi Shield",
-        ammo = "Staunch Tathlum +1",
-        head = {
-            name = "Telchine Cap",
-            augments = {'"Regen"+2', 'Enh. Mag. eff. dur. +10'}
-        },
-        body = {
-            name = "Viti. Tabard +3",
-            augments = {'Enhances "Chainspell" effect'}
-        }, -- 15
-        hands = "Atrophy Gloves +3", -- 20
-        legs = {
-            name = "Telchine Braconi",
-            augments = {'"Regen"+2', 'Enh. Mag. eff. dur. +10'}
-        },
-        feet = "Leth. Houseaux +3", -- 35
-        neck = {
-            name = "Dls. Torque +2",
-            augments = {'Path: A'}
-        }, -- 25
-        waist = "Embla Sash", -- 10
-        left_ear = {
-            name = "Etiolation Earring",
-            priority = 1
-        }, -- Used to Keep HP/MP pool
-        right_ear = "Leth. Earring +1", -- 8
-        left_ring = {
-            name = "Stikini Ring +1",
-            bag = "wardrobe1"
-        },
-        right_ring = {
-            name = "Stikini Ring +1",
-            bag = "wardrobe2"
-        },
-        back = {
-            name = "Sucellos's Cape",
-            augments = {'MND+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'Mag. Acc.+10', '"Fast Cast"+10', 'Phys. dmg. taken-10%'}
-        } -- 20
-    } -- 150% Duration
+        main={ name="Colada", augments={'Enh. Mag. eff. dur. +2','STR+3','"Mag.Atk.Bns."+13','DMG:+5',}},
+        sub={ 
+            name="Forfend +1", 
+            augments={'Path: A',}},
+        ammo="Pemphredo Tathlum",
+        head={ name="Telchine Cap", augments={'Enh. Mag. eff. dur. +9',}},
+        body="Atrophy Tabard +2",
+        hands="Atrophy Gloves +2",
+        legs="Atrophy Tights +2",
+        feet="Nyame Sollerets",
+        neck="Loricate Torque +1",
+        waist="Embla Sash",
+        left_ear="Malignance Earring",
+        right_ear={ name="Lethargy Earring", augments={'System: 1 ID: 1676 Val: 0','Accuracy+7','Mag. Acc.+7',}},
+        left_ring="Lebeche Ring",
+        right_ring="Stikini Ring +1",
+        back={ name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Fast Cast"+10','Phys. dmg. taken-10%',}},
+    }
+        
+    --     main={ name="Colada", augments={'Enh. Mag. eff. dur. +2','STR+3','"Mag.Atk.Bns."+13','DMG:+5',}},
+    --     sub = "Ammurapi Shield",
+    --     ammo = "Pemphredo Tathlum",
+    --     head = {
+    --         name = "Telchine Cap",
+    --         augments = {'"Regen"+2', 'Enh. Mag. eff. dur. +10'}
+    --     },
+    --     body = {
+    --         name = "Viti. Tabard +3",
+    --         augments = {'Enhances "Chainspell" effect'}
+    --     }, -- 15
+    --     hands = "Atrophy Gloves +2", -- 20
+    --     legs = {
+    --         name = "Telchine Braconi",
+    --         augments = {'"Regen"+2', 'Enh. Mag. eff. dur. +10'}
+    --     },
+    --     feet = "Leth. Houseaux +3", -- 35
+    --     neck = {
+    --         name = "Dls. Torque +2",
+    --         augments = {'Path: A'}
+    --     }, -- 25
+    --     waist = "Embla Sash", -- 10
+    --     left_ear = {
+    --         name = "Etiolation Earring",
+    --         priority = 1
+    --     }, -- Used to Keep HP/MP pool
+    --     right_ear = "Lethargy Earring", -- 8
+    --     left_ring = {
+    --         name = "Stikini Ring +1",
+    --         bag = "wardrobe1"
+    --     },
+    --     right_ring = {
+    --         name = "Stikini Ring +1",
+    --         bag = "wardrobe2"
+    --     },
+    --     back = {
+    --         name = "Sucellos's Cape",
+    --         augments = {'MND+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'Mag. Acc.+10', '"Fast Cast"+10', 'Phys. dmg. taken-10%'}
+    --     } -- 20
+    -- } -- 150% Duration
 
     -- Enhancing Duration on OTHERS
     sets.Midcast.Enhancing.Others = set_combine(sets.Midcast.Enhancing, {
@@ -508,7 +594,11 @@ function get_sets()
 
     -- Spells that require SKILL - RDM only needs 500 or more except Temper II
     sets.Midcast.Enhancing.Skill = set_combine(sets.Midcast.Enhancing, {
-        sub = "Ammurapi Shield",
+        main="Pukulatmuj +1",
+        sub={ 
+            name="Forfend +1", 
+            augments={'Path: A',}},
+        ammo = "Staunch Tathlum",
         head = "Befouled Crown",
         body = {
             name = "Viti. Tabard +3",
@@ -518,7 +608,7 @@ function get_sets()
             name = "Viti. Gloves +3",
             augments = {'Enhancing Magic duration'}
         },
-        legs = "Atrophy Tights +3",
+        legs = "Atrophy Tights +2",
         feet = "Leth. Houseaux +3",
         neck = "Incanter's Torque",
         waist = "Olympus Sash",
@@ -550,48 +640,86 @@ function get_sets()
 
     -- Enfeebling
     sets.Midcast.Enfeebling = {
-        ammo = "Regal Gem",
+        main="Daybreak",
+        sub="Kaja Rod",
+        ammo="Pemphredo Tathlum",
+        head="Befouled Crown",
+        body="Atrophy Tabard +2",
+        hands="Malignance Gloves",
+        legs={ name="Psycloth Lappas", augments={'MP+80','Mag. Acc.+15','"Fast Cast"+7',}},
+        feet={ name="Vitiation Boots +2", augments={'Immunobreak Chance',}},
+        neck="Loricate Torque +1",
+        waist="Luminary Sash",
+        left_ear="Malignance Earring",
+        right_ear="Digni. Earring",
+        left_ring="Metamor. Ring+1",
+        right_ring="Stikini Ring +1",
+        back={ name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Fast Cast"+10','Phys. dmg. taken-10%',}},
+    }
+        
+    --     ammo = "Regal Gem",
+    --     head = {
+    --         name = "Viti. Chapeau +3",
+    --         augments = {'Enfeebling Magic duration', 'Magic Accuracy'}
+    --     },
+    --     body = "Atrophy Tabard +2",
+    --     hands = "Leth. Ganth. +3",
+    --     legs = {
+    --         name = "Chironic Hose",
+    --         augments = {'Mag. Acc.+23 "Mag.Atk.Bns."+23', '"Drain" and "Aspir" potency +8', 'MND+1', 'Mag. Acc.+12'}
+    --     },
+    --     feet = {
+    --         name = "Vitiation Boots +3",
+    --         augments = {'Immunobreak Chance'}
+    --     },
+    --     neck = {
+    --         name = "Dls. Torque +2",
+    --         augments = {'Path: A'}
+    --     },
+    --     waist = {
+    --         name = "Obstin. Sash",
+    --         augments = {'Path: A'}
+    --     },
+    --     left_ear = "Regal Earring",
+    --     right_ear = "Snotra Earring",
+    --     left_ring = {
+    --         name = "Stikini Ring +1",
+    --         bag = "wardrobe2"
+    --     },
+    --     right_ring = {
+    --         name = "Stikini Ring +1",
+    --         bag = "wardrobe1"
+    --     },
+    --     back = {
+    --         name = "Sucellos's Cape",
+    --         augments = {'MND+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'Mag. Acc.+10', '"Fast Cast"+10', 'Phys. dmg. taken-10%'}
+    --     }
+    -- }
+
+    -- Skill Based ('Dispel','Aspir','Aspir II','Aspir III','Drain','Drain II','Drain III','Frazzle','Frazzle II','Stun','Poison','Poison II','Poisonga')
+    sets.Midcast.Enfeebling.MACC = set_combine(sets.Midcast.Enfeebling, {
+        range = "Kaja bow",
+        ammo = empty,
         head = {
             name = "Viti. Chapeau +3",
             augments = {'Enfeebling Magic duration', 'Magic Accuracy'}
         },
         body = "Atrophy Tabard +3",
         hands = "Leth. Ganth. +3",
-        legs = {
-            name = "Chironic Hose",
-            augments = {'Mag. Acc.+23 "Mag.Atk.Bns."+23', '"Drain" and "Aspir" potency +8', 'MND+1', 'Mag. Acc.+12'}
-        },
-        feet = {
-            name = "Vitiation Boots +3",
-            augments = {'Immunobreak Chance'}
-        },
-        neck = {
-            name = "Dls. Torque +2",
-            augments = {'Path: A'}
-        },
-        waist = {
-            name = "Obstin. Sash",
-            augments = {'Path: A'}
-        },
-        left_ear = "Regal Earring",
-        right_ear = "Snotra Earring",
+		neck = "Null Loop",
         left_ring = {
-            name = "Stikini Ring +1",
-            bag = "wardrobe2"
+            name = "Metamor. Ring +1",
+            augments = {'Path: A'}
         },
-        right_ring = {
-            name = "Stikini Ring +1",
-            bag = "wardrobe1"
-        },
+        waist={ name="Obstin. Sash", augments={'Path: A',}},
         back = {
-            name = "Sucellos's Cape",
-            augments = {'MND+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'Mag. Acc.+10', '"Fast Cast"+10', 'Phys. dmg. taken-10%'}
+            name = "Aurist's Cape +1",
+            augments = {'Path: A'}
         }
-    }
+    })
 
-    -- Skill Based ('Dispel','Aspir','Aspir II','Aspir III','Drain','Drain II','Drain III','Frazzle','Frazzle II','Stun','Poison','Poison II','Poisonga')
-    sets.Midcast.Enfeebling.MACC = set_combine(sets.Midcast.Enfeebling, {})
 
+    
     -- Potency Basted ('Paralyze','Paralyze II','Slow','Slow II','Addle','Addle II','Distract','Distract II','Distract III','Frazzle III','Blind','Blind II')
     sets.Midcast.Enfeebling.Potency = set_combine(sets.Midcast.Enfeebling, {
         ammo = "Regal Gem", -- 10%
@@ -633,12 +761,15 @@ function get_sets()
     sets.Midcast["Stoneskin"] = set_combine(sets.Midcast.Enhancing, {
         neck = "Nodens Gorget",
         waist = "Siegel Sash",
+        legs="Shedir Seraweels",
         left_ear = "Earthcry Earring"
     })
 
     sets.Midcast["Aquaveil"] = set_combine(sets.Midcast.Enhancing, {
         hands = "Regal Cuffs",
-        head = "Amalric Coif +1"
+        head = "Chironic Hat",
+        legs = "Shedir Seraweels",
+        waist = "Emphatikos Rope"
     })
 
     -- Spells that require SKILL - RDM only needs +500 skill except Temper II
@@ -649,7 +780,7 @@ function get_sets()
             name = "Viti. Gloves +3",
             augments = {'Enhancing Magic duration'}
         },
-        legs = "Atrophy Tights +3",
+        legs = "Atrophy Tights +2",
         neck = "Incanter's Torque",
         left_ear = "Mimir Earring",
         right_ear = "Andoaa Earring",
@@ -662,11 +793,39 @@ function get_sets()
 
     sets.Midcast.Refresh = set_combine(sets.Midcast.Enhancing, {
         head = "Amalric Coif +1",
-        body = "Atrophy Tabard +3",
+        body = "Atrophy Tabard +2",
         legs = "Leth. Fuseau +3"
     })
 
-    sets.Midcast.Phalanx = set_combine(sets.Midcast.Enhancing.Skill, {})
+    sets.Midcast.Phalanx = set_combine(sets.Midcast.Enhancing.Skill, {
+            main = "Sakpata's Sword",
+            head={ name="Chironic Hat", augments={'CHR+5','Phalanx +3',}},
+            body = {
+                name = "Taeon Tabard",
+                augments = {'Phalanx +2'}
+            },
+            hands={ name="Taeon Gloves", augments={'Phalanx +2',}},
+            legs = {
+                name = "Taeon Tights",
+                augments = {'Phalanx +2'}
+            },
+            feet={ name="Chironic Slippers", augments={'Attack+14','"Dbl.Atk."+4','Phalanx +3','Accuracy+5 Attack+5',}}
+        })
+
+        sets.Midcast["Phalanx II"] = set_combine(sets.Midcast.Enhancing, {
+            main = "Sakpata's Sword",
+            head={ name="Chironic Hat", augments={'CHR+5','Phalanx +3',}},
+            body = {
+                name = "Taeon Tabard",
+                augments = {'Phalanx +2'}
+            },
+            hands={ name="Taeon Gloves", augments={'Phalanx +2',}},
+            legs = {
+                name = "Taeon Tights",
+                augments = {'Phalanx +2'}
+            },
+            feet={ name="Chironic Slippers", augments={'Attack+14','"Dbl.Atk."+4','Phalanx +3','Accuracy+5 Attack+5',}}
+    })
 
     sets.Midcast.Dark = set_combine(sets.Midcast.Enfeebling, {})
 
@@ -854,7 +1013,22 @@ function get_sets()
 
     sets.WS["Chant du Cygne"] = sets.WS.CRIT
 
-    sets.WS["Savage Blade"] = sets.WS.WSD
+    sets.WS["Savage Blade"] = sets_combine(sets.WS,{
+    ammo="Hasty Pinion +1",
+        head="Aya. Zucchetto +2",
+        body="Ayanmo Corazza +2",
+        hands="Malignance Gloves",
+        legs="Aya. Cosciales +2",
+        feet="Aya. Gambieras +2",
+        neck="Anu Torque",
+        waist="Eschan Stone",
+        left_ear="Sherida Earring",
+        right_ear="Digni. Earring",
+        left_ring="Hetairoi Ring",
+        right_ring="Apate Ring", 
+        back={ name="Sucellos's Cape", 
+        augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Damage taken-5%',}},
+    })
 
     sets.WS["Black Halo"] = sets.WS.WSD
 

@@ -1,0 +1,17 @@
+sets.exported={
+    main="Daybreak",
+    sub="Kaja Rod",
+    ammo="Pemphredo Tathlum",
+    head="Befouled Crown",
+    body="Atrophy Tabard +2",
+    hands="Malignance Gloves",
+    legs={ name="Psycloth Lappas", augments={'MP+80','Mag. Acc.+15','"Fast Cast"+7',}},
+    feet={ name="Merlinic Crackows", augments={'MND+10','Mag. Acc.+20 "Mag.Atk.Bns."+20','Accuracy+8 Attack+8',}},
+    neck="Loricate Torque +1",
+    waist="Luminary Sash",
+    left_ear="Malignance Earring",
+    right_ear="Digni. Earring",
+    left_ring="Jhakri Ring",
+    right_ring="Metamor. Ring +1",
+    back={ name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Fast Cast"+10','Phys. dmg. taken-10%',}},
+}
