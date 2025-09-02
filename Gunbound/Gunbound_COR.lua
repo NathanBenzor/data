@@ -542,7 +542,7 @@ function get_sets()
         waist = "Sailfi Belt +1",
         left_ear = "Odnowa Earring +1",
         right_ear = "Ishvara Earring",
-        left_ring = "Petrov Ring",
+        left_ring = "Luzaf's Ring",
         right_ring = "Barataria Ring",
         back = {
             name = "Camulus's Mantle",
@@ -700,7 +700,7 @@ function get_sets()
         },
         legs = {
             name = "Herculean Trousers",
-            augments = {'Weapon skill damage +4%', 'Accuracy+12'}
+            augments = {'Weapon skill damage +5%', 'Accuracy+3'}
         },
         feet = {
             name = "Lanun Bottes +3",
@@ -839,6 +839,8 @@ function get_sets()
     sets.WS["Circle Blade"] = set_combine(sets.WS, {})
     sets.WS["Spirits Within"] = set_combine(sets.WS, {})
     sets.WS["Requiescat"] = set_combine(sets.WS, {})
+
+    sets.WS["Fast Blade II"] = set_combine(sets.WS, {})
 
     sets.TreasureHunter = {
         waist = "Chaac Belt"

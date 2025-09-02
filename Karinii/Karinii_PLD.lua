@@ -174,16 +174,18 @@ function get_sets()
             augments = {'Path: A'}
         }, -- 3
         right_ear = "Sanare Earring",
-        left_ring = {
-            name = "Moonlight Ring",
-            bag = "wardrobe1",
-            priority = 2
-        },
-        right_ring = {
-            name = "Moonlight Ring",
-            bag = "wardrobe2",
-            priority = 3
-        },
+        -- left_ring = {
+        --     name = "Moonlight Ring",
+        --     bag = "wardrobe1",
+        --     priority = 2
+        -- },
+        -- right_ring = {
+        --     name = "Moonlight Ring",
+        --     bag = "wardrobe2",
+        --     priority = 3
+        -- },
+        left_ring = "Defending Ring", -- 10
+        right_ring = "Gelatinous Ring +1", -- 7
         back = {
             name = "Rudianos's Mantle",
             augments = {'HP+60', 'Eva.+20 /Mag. Eva.+20', 'HP+20', 'Enmity+10', 'Mag. Evasion+15'},
@@ -321,41 +323,67 @@ function get_sets()
     sets.OffenseMode.AoE = set_combine(sets.Idle.AoE, {})
 
     sets.Enmity = { -- Goal is 200 total -Crusade is 30 and Burtang is 23
-        ammo = "Sapience Orb", -- 2
-        head = {
-            name = "Loess Barbuta +1",
-            augments = {'Path: A'}
-        }, -- 24
-        body = {
-            name = "Souv. Cuirass +1",
-            augments = {'HP+105', 'Enmity+9', 'Potency of "Cure" effect received +15%'},
-            priority = 1
-        }, -- 20
+        -- ammo = "Sapience Orb", -- 2
+        -- head = {
+        --     name = "Loess Barbuta +1",
+        --     augments = {'Path: A'}
+        -- }, -- 24
+        -- body = {
+        --     name = "Souv. Cuirass +1",
+        --     augments = {'HP+105', 'Enmity+9', 'Potency of "Cure" effect received +15%'},
+        --     priority = 1
+        -- }, -- 20
+        -- hands = {
+        --     name = "Souv. Handsch. +1",
+        --     augments = {'HP+105', 'Enmity+9', 'Potency of "Cure" effect received +15%'},
+        --     priority = 2
+        -- }, -- 9
+        -- legs = {
+        --     name = "Souv. Diechlings +1",
+        --     augments = {'HP+105', 'Enmity+9', 'Potency of "Cure" effect received +15%'},
+        --     priority = 3
+        -- }, -- 9
+        -- feet = {
+        --     name = "Souveran Schuhs +1",
+        --     augments = {'HP+105', 'Enmity+9', 'Potency of "Cure" effect received +15%'},
+        --     priority = 4
+        -- }, -- 9
+        -- neck = "Moonlight Necklace", -- 15
+        -- waist = "Creed Baudrier", -- 5
+        -- left_ear = "Trux Earring", -- 5
+        -- right_ear = "Cryptic Earring", -- 5
+        -- left_ring = "Apeile Ring +1", -- 9
+        -- right_ring = "Eihwaz Ring", -- 5
+        -- back = {
+        --     name = "Rudianos's Mantle",
+        --     augments = {'HP+60', 'Eva.+20 /Mag. Eva.+20', 'HP+20', 'Enmity+10', 'Mag. Evasion+15'}
+        -- } -- 10
+
+        ammo = "Sapience Orb",
+        head = "Loess Barbuta +1",
+        body = "Obviation Cuirass",
         hands = {
-            name = "Souv. Handsch. +1",
-            augments = {'HP+105', 'Enmity+9', 'Potency of "Cure" effect received +15%'},
-            priority = 2
-        }, -- 9
-        legs = {
-            name = "Souv. Diechlings +1",
-            augments = {'HP+105', 'Enmity+9', 'Potency of "Cure" effect received +15%'},
-            priority = 3
-        }, -- 9
+            name = "Yorium Gauntlets",
+            augments = {'Mag. Evasion+14', 'Enmity+10'}
+        },
+        legs = "Sakpata's Cuisses",
         feet = {
-            name = "Souveran Schuhs +1",
-            augments = {'HP+105', 'Enmity+9', 'Potency of "Cure" effect received +15%'},
-            priority = 4
-        }, -- 9
-        neck = "Moonlight Necklace", -- 15
-        waist = "Creed Baudrier", -- 5
-        left_ear = "Trux Earring", -- 5
-        right_ear = "Cryptic Earring", -- 5
-        left_ring = "Apeile Ring +1", -- 9
-        right_ring = "Eihwaz Ring", -- 5
+            name = "Eschite Greaves",
+            augments = {'Mag. Evasion+15', 'Spell interruption rate down +15%', 'Enmity+7'}
+        },
+        neck = {
+            name = "Loricate Torque +1",
+            augments = {'Path: A'}
+        },
+        waist = "Creed Baudrier",
+        left_ear = "Tuisto Earring",
+        right_ear = "Odnowa Earring",
+        left_ring = "Shneddick Ring",
+        right_ring = "Eihwaz Ring",
         back = {
             name = "Rudianos's Mantle",
-            augments = {'HP+60', 'Eva.+20 /Mag. Eva.+20', 'HP+20', 'Enmity+10', 'Mag. Evasion+15'}
-        } -- 10
+            augments = {'HP+60', 'Eva.+20 /Mag. Eva.+20', 'Mag. Evasion+10', 'Enmity+10', 'Mag. Evasion+15'}
+        }
     } -- 127 in gear with Burtang (163 with Crusade)
 
     sets.Precast = {}
@@ -608,6 +636,7 @@ function get_sets()
     sets.JA["Cover"] = set_combine(sets.Enmity, {}) -- Need AF head
     sets.JA["Provoke"] = set_combine(sets.Enmity, {})
     sets.JA["Rampart"] = set_combine(sets.Enmity, {
+        sub = "Diamond Aspis",
         head = {
             name = "Cab. Coronet +3",
             augments = {'Enhances "Iron Will" effect'}
