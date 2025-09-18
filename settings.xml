@@ -100,7 +100,7 @@
             </pos>
         </Display_Box>
     </rialyn>
-        <fudosama>
+    <fudosama>
         <Debug_Box>
             <text>
                 <fonts>
@@ -159,5 +159,5 @@
                 </fonts>
             </text>
         </Display_Box>
-    </rialyn>
+    </karinii>
 </settings>

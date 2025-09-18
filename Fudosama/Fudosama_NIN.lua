@@ -19,12 +19,12 @@ Random_Lockstyle = false
 -- Lockstyle sets to randomly equip
 Lockstyle_List = {133, 140}
 
-state.OffenseMode:options('DT', 'TP', 'PDL', 'ACC', 'MagicDamage', 'EVA')
+state.OffenseMode:options('DT', 'TP', 'PDL', 'ACC', 'MagicDamage', 'EVA', 'CRIT')
 state.OffenseMode:set('DT')
 
 -- Modes for specific to Ninja
 state.WeaponMode:options('Heishi', 'Yagyu', 'Fudo', 'Savage Blade', 'Great Katana', 'Aeolian Edge', 'Enmity', 'Evasion',
-    'Magic Damage', 'Abyssea')
+    'Magic Damage', 'Abyssea', 'Ambu', 'CRIT')
 state.WeaponMode:set('Heishi')
 
 elemental_ws = S {'Aeolian Edge', 'Blade: Teki', 'Blade: To', 'Blade: Chi', 'Blade: Ei', 'Blade: Yu'}
@@ -95,6 +95,19 @@ function get_sets()
             name = "Tsuru",
             augments = {'Path: A'}
         }
+    }
+
+    sets.Weapons['CRIT'] = {
+        main = "Yagyu Darkblade",
+        sub = {
+            name = "Gleti's Knife",
+            augments = {'Path: A'}
+        }
+    }
+
+    sets.Weapons['Ambu'] = {
+        main = "Yagyu Darkblade",
+        sub = "Yagyu Short. +1"
     }
 
     sets.Weapons['Abyssea'] = {
@@ -313,6 +326,31 @@ function get_sets()
         left_ring = "Defending Ring",
         right_ring = "Vengeful Ring",
         back = "Agema Cape"
+    })
+
+    sets.OffenseMode.CRIT = set_combine(sets.OffenseMode.TP, {
+        ammo = "Happo Shuriken",
+        head = {
+            name = "Mpaca's Cap",
+            augments = {'Path: A'}
+        },
+        body = "Ken. Samue +1",
+        hands = "Mpaca's Gloves",
+        legs = "Ken. Hakama +1",
+        feet = "Ken. Sune-Ate +1",
+        neck = "Null Loop",
+        waist = {
+            name = "Sailfi Belt +1",
+            augments = {'Path: A'}
+        },
+        left_ear = "Telos Earring",
+        right_ear = "Odr Earring",
+        left_ring = "Mummu Ring",
+        right_ring = "Gere Ring",
+        back = {
+            name = "Andartia's Mantle",
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'DEX+10', 'Crit.hit rate+10', 'Damage taken-5%'}
+        }
     })
 
     sets.DualWield = {}
