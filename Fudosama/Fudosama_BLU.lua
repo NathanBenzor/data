@@ -778,10 +778,6 @@ function init_gear_sets()
             name = "Ghastly Tathlum +1",
             augments = {'Path: A'}
         },
-        -- body = {
-        --     name = "Cohort Cloak +1",
-        --     augments = {'Path: A'}
-        -- },
         head = "Hashishin Kavuk +2",
         body = "Hashishin Mintan +2",
         hands = "Hashi. Bazu. +2",

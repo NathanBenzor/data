@@ -31,7 +31,7 @@ state.OffenseMode:set('DT')
 
 -- Weapons options
 state.WeaponMode:options('Naegling', 'Laphria', 'Chango', 'Loxotic Mace', 'Shining One', 'Agwus Claymore',
-    'Ikengas Axe', 'Unlocked')
+    'Ikengas Axe', 'Unlocked', 'Trials')
 state.WeaponMode:set('Naegling')
 
 -- Initialize Player
@@ -81,6 +81,11 @@ function get_sets()
     sets.Weapons['Ikengas Axe'] = {
         main = "Ikenga's Axe",
         sub = "Blurred Shield +1"
+    }
+
+    sets.Weapons['Trials'] = {
+        main = "Ethereal Great Axe",
+        sub = "Utu Grip"
     }
 
     -- This stops GS from chaning weapons (Abyssea Proc etc)
