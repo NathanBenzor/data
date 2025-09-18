@@ -92,14 +92,15 @@ function get_sets()
         }
     }
 
-    -- sets.Weapons['Death Penalty'] = {
-    --     main = {
-    --         name = "Rostam",
-    --         augments = {'Path: C'}
-    --     },
-    --     sub = "Tauret",
-    --     range = "Molybdosis"
-    -- }
+    sets.Weapons['Death Penalty'] = {
+        -- main = {
+        --     name = "Rostam",
+        --     augments = {'Path: C'}
+        -- },
+        main = "Naegling",
+        sub = "Tauret",
+        range = "Fomalhaut"
+    }
 
     sets.Weapons['Aeolian Edge'] = {
         ammo = Ammo.Bullet.MAG_WS,
@@ -124,10 +125,7 @@ function get_sets()
     }
 
     sets.Weapons.Shield = {
-        sub = {
-            name = "Nusku Shield",
-            priority = 1
-        }
+        sub = "Nusku Shield"
     }
 
     sets.Weapons.Sleep = {
@@ -149,12 +147,13 @@ function get_sets()
     }
 
     sets.Weapons['Trials'] = {
-        main = "Ibushi Shinai",
-        sub = "Kyukoto",
-        range = {
-            name = "Anarchy",
-            augments = {'DMG:+3', 'Split Shot:DMG:+10%'}
-        }
+        main = {
+            name = "Rostam",
+            augments = {'Path: C'}
+        },
+        sub = "Tauret",
+        range = "Quicksilver",
+        ammo = "Chrono Bullet"
     }
 
     sets.Weapons['DI'] = {
@@ -202,7 +201,7 @@ function get_sets()
     }
 
     sets.Movement = {
-        legs = "Carmine Cuisses +1"
+        left_ring = "Shneddick Ring"
     }
 
     -- Set to be used if you get 
@@ -221,7 +220,35 @@ function get_sets()
         waist = "Gishdubar Sash"
     }
 
-    sets.OffenseMode = {}
+    sets.OffenseMode = {
+        ammo = Ammo.Bullet.RA,
+        head = "Malignance Chapeau",
+        body = "Malignance Tabard",
+        hands = "Malignance Gloves",
+        -- legs = {
+        --     name = "Samnuha Tights",
+        --     augments = {'STR+10', 'DEX+10', '"Dbl.Atk."+3', '"Triple Atk."+3'}
+        -- },
+        legs = "Malignance Tights",
+        feet = "Malignance Boots",
+        neck = "Iskur Gorget",
+        -- neck = {
+        --     name = "Comm. Charm +1",
+        --     augments = {'Path: A'}
+        -- },
+        waist = {
+            name = "Sailfi Belt +1",
+            augments = {'Path: A'}
+        },
+        left_ear = "Telos Earring",
+        right_ear = "Crep. Earring",
+        left_ring = "Lehko's Ring",
+        right_ring = "Epona's Ring",
+        back = {
+            name = "Camulus's Mantle",
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
+        }
+    }
 
     -- Base TP set to build off when melee'n
     sets.OffenseMode.TP = {
@@ -250,7 +277,7 @@ function get_sets()
         right_ring = "Epona's Ring",
         back = {
             name = "Camulus's Mantle",
-            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dual Wield"+10', 'Damage taken-5%'}
+            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%'}
         }
     }
 
@@ -287,7 +314,7 @@ function get_sets()
     -- No flurry - 60 Snapshot needed
     sets.Precast.RA = {
         ammo = Ammo.Bullet.RA,
-        head = "Chass. Tricorne +3", -- 0/14
+        head = "Chass. Tricorne +#", -- 0/14
         body = "Oshosi Vest", -- 12/0
         -- hands={ name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}}, -- 8/11
         hands = {
@@ -308,13 +335,13 @@ function get_sets()
         left_ring = "Dingir Ring",
         right_ring = "Defending Ring", -- 3/0
         neck = {
-            name = "Comm. Charm +2",
+            name = "Comm. Charm +1",
             augments = {'Path: A'}
         }, -- 4/0
         waist = "Yemaya Belt", -- 0/5
         back = {
             name = "Camulus's Mantle",
-            augments = {'"Snapshot"+10'}
+            augments = {'HP+60', '"Snapshot"+10'}
         }
     } -- Totals 59/43
 
@@ -383,20 +410,20 @@ function get_sets()
         hands = "Malignance Gloves",
         legs = "Chas. Culottes +2",
         feet = "Malignance Boots",
-        neck = {
-            name = "Comm. Charm +2",
-            augments = {'Path: A'}
-        },
-        -- neck="Iskur Gorget",
+        -- neck = {
+        --     name = "Comm. Charm +2",
+        --     augments = {'Path: A'}
+        -- },
+        neck = "Iskur Gorget",
         waist = "Yemaya Belt",
         left_ear = "Telos Earring",
         right_ear = "Enervating Earring",
         left_ring = "Ilabrat Ring",
-        right_right = "Dingir Ring",
+        right_ring = "Dingir Ring",
         -- right_ring="Crepuscular Ring",
         back = {
             name = "Camulus's Mantle",
-            augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'Rng.Acc.+10', '"Store TP"+10', 'Phys. dmg. taken-10%'}
+            augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'AGI+10', '"Store TP"+10', 'Damage taken-5%'}
         }
     }
 
@@ -598,7 +625,7 @@ function get_sets()
             name = "Lanun Tricorne +3",
             augments = {'Enhances "Winning Streak" effect'}
         }, -- 50% Job ability Bonus
-        hands = "Chasseur's Gants +2", -- 60 sec Duration
+        hands = "Chasseur's Gants +3", -- 60 sec Duration
         neck = "Regal Necklace", -- 20 sec Duration
         left_ring = "Barataria Ring", -- 20 sec Duration
         right_ring = "Luzaf's Ring", -- 16 yalm range
@@ -633,7 +660,7 @@ function get_sets()
         body = "Chasseur's Frac +2"
     })
     sets.PhantomRoll["Allies\' Roll"] = set_combine(sets.PhantomRoll, {
-        hands = "Chasseur's Gants +2"
+        hands = "Chasseur's Gants +3"
     })
     sets.PhantomRoll['Miser\'s Roll'] = sets.PhantomRoll
     sets.PhantomRoll['Companion\'s Roll'] = sets.PhantomRoll
@@ -643,7 +670,7 @@ function get_sets()
         feet = "Chass. Bottes +2"
     })
     sets.PhantomRoll["Blitzer\'s Roll"] = set_combine(sets.PhantomRoll, {
-        head = "Chass. Tricorne +2"
+        head = "Chass. Tricorne +3"
     })
 
     -- Melee Base set
@@ -694,10 +721,7 @@ function get_sets()
             augments = {'Accuracy+15', 'Weapon skill damage +5%', 'Attack+4'}
         },
         body = "Laksa. Frac +3",
-        hands = {
-            name = "Herculean Gloves",
-            augments = {'Attack+28', 'Weapon skill damage +4%', 'Accuracy+14'}
-        },
+        hands = "Chasseur's Gants +3",
         legs = {
             name = "Herculean Trousers",
             augments = {'Weapon skill damage +5%', 'Accuracy+3'}
@@ -725,7 +749,7 @@ function get_sets()
     -- Ranged Base Set
     sets.WS.RA = set_combine(sets.WS, {
         body = "Laksa. Frac +3",
-        hands = "Chasseur's Gants +2",
+        hands = "Chasseur's Gants +3",
         back = {
             name = "Camulus's Mantle",
             augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'AGI+10', 'Weapon skill damage +10%', 'Damage taken-5%'}
@@ -754,7 +778,7 @@ function get_sets()
     sets.WS.MAB = set_combine(sets.WS, {
         -- ammo=Ammo.Bullet.MAB,
         feet = {
-            name = "Lanun Bottes +2",
+            name = "Lanun Bottes +3",
             augments = {'Enhances "Wild Card" effect'}
         },
         waist = "Eschan Stone",
@@ -774,13 +798,32 @@ function get_sets()
 
     sets.WS["Leaden Salute"] = set_combine(sets.WS.MAB, {
         head = "Pixie Hairpin +1",
-        -- right_ring="Archon Ring",
-        right_ring = "Dingir Ring",
-        right_ear = {
-            name = "Moonshade Earring",
-            augments = {'Accuracy+4', 'TP Bonus +250'}
+        body = {
+            name = "Lanun Frac +3",
+            augments = {'Enhances "Loaded Deck" effect'}
         },
-        waist = "Eschan Stone"
+        hands = "Chasseur's Gants +3",
+        legs = {
+            name = "Herculean Trousers",
+            augments = {'Weapon skill damage +5%', 'Accuracy+3'}
+        },
+        feet = {
+            name = "Lanun Bottes +3",
+            augments = {'Enhances "Wild Card" effect'}
+        },
+        neck = {
+            name = "Comm. Charm +1",
+            augments = {'Path: A'}
+        },
+        waist = "Eschan Stone",
+        left_ear = "Friomisi Earring",
+        right_ear = "Hermetic Earring",
+        left_ring = "Archon Ring",
+        right_ring = "Dingir Ring",
+        back = {
+            name = "Camulus's Mantle",
+            augments = {'AGI+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'AGI+10', 'Weapon skill damage +10%', 'Damage taken-5%'}
+        }
         -- waist="Svelt. Gouriz +1",   -- Changes based off elemental function
     })
 
@@ -804,7 +847,7 @@ function get_sets()
             augments = {'Enhances "Winning Streak" effect'}
         },
         body = "Ikenga's Vest",
-        hands = "Chasseur's Gants +2",
+        hands = "Chasseur's Gants +3",
         legs = {
             name = "Nyame Flanchard",
             augments = {'Path: B'}
