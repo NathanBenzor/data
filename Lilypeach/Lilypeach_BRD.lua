@@ -651,7 +651,7 @@ function init_gear_sets()
         legs = "Inyanga Shalwar +2",
         feet = "Brioso Slippers +3",
         neck = "Moonbow Whistle +1",
-        right_ear={ name="Fili Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+12','Mag. Acc.+12','Damage taken-4%',}},
+        right_ear={ name="Fili Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+13','Mag. Acc.+13','Damage taken-4%',}},
         left_ear = "Etiolation Earring",
         ring2 = "Stikini Ring +1",
         ring1 = "Defending Ring",
@@ -681,7 +681,7 @@ function init_gear_sets()
             augments = {'Path: A'}
         },
         left_ear = "Regal Earring",
-        right_ear={ name="Fili Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+12','Mag. Acc.+12','Damage taken-4%',}},
+        right_ear={ name="Fili Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+13','Mag. Acc.+13','Damage taken-4%',}},
         left_ring = {
             name = "Metamor. Ring +1",
             augments = {'Path: A'}
@@ -715,7 +715,7 @@ function init_gear_sets()
             augments = {'Path: A'}
         },
         left_ear = "Regal Earring",
-        right_ear={ name="Fili Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+12','Mag. Acc.+12','Damage taken-4%',}},
+        right_ear={ name="Fili Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+13','Mag. Acc.+13','Damage taken-4%',}},
         left_ring = {
             name = "Metamor. Ring +1",
             augments = {'Path: A'}
@@ -913,7 +913,7 @@ function init_gear_sets()
         --     augments = {'Path: A'}
         -- },
         left_ear = "Regal Earring",
-        right_ear={ name="Fili Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+12','Mag. Acc.+12','Damage taken-4%',}},
+        right_ear={ name="Fili Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+13','Mag. Acc.+13','Damage taken-4%',}},
         left_ring = "Stikini Ring +1",
         right_ring = "Kishar Ring",
         back = {
@@ -937,7 +937,7 @@ function init_gear_sets()
         neck={ name="Loricate Torque +1", augments={'Path: A',}},
         waist="Plat. Mog. Belt",
         left_ear="Regal Earring",
-        right_ear={ name="Fili Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+12','Mag. Acc.+12','Damage taken-4%',}},
+        right_ear={ name="Fili Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+13','Mag. Acc.+13','Damage taken-4%',}},
         left_ring="Defending Ring",
         right_ring="Shneddick Ring",
         back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','Phys. dmg. taken-10%',}},
@@ -977,7 +977,7 @@ function init_gear_sets()
         },
         neck = "Loricate Torque +1",
         waist = "Carrier's Sash",
-        right_ear={ name="Fili Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+12','Mag. Acc.+12','Damage taken-4%',}},
+        right_ear={ name="Fili Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+13','Mag. Acc.+13','Damage taken-4%',}},
         left_ear = "Etiolation Earring",
         left_ring = "Stikini Ring +1",
         right_ring = "Stikini Ring +1",
@@ -1016,7 +1016,7 @@ function init_gear_sets()
         neck = "Mnbw. Whistle +1",
         waist = "Orpheus's Sash",
         left_ear = "Regal Earring",
-        right_ear={ name="Fili Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+12','Mag. Acc.+12','Damage taken-4%',}},
+        right_ear={ name="Fili Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+13','Mag. Acc.+13','Damage taken-4%',}},
         left_ring = "Defending Ring",
         right_ring = "Stikini Ring +1",
         back = "Moonlight Cape"
@@ -1078,10 +1078,7 @@ function init_gear_sets()
         },
         body = "Ashera Harness",
         hands = "Bunzi's Gloves",
-        legs = {
-            name = "Nyame Flanchard",
-            augments = {'Path: B'}
-        },
+        legs = "Volte Tights",
         feet = {
             name = "Nyame Sollerets",
             augments = {'Path: B'}

@@ -715,6 +715,7 @@ function get_sets()
 		head="Amalric Coif +1",
 		body="Atrophy Tabard +3",
 		legs="Leth. Fuseau +3",
+		waist = "Gishdubar Sash",
 		right_ear={ name="Tuisto Earring", priority=1},
 	})
 
