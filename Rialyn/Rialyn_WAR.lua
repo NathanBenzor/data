@@ -1,6 +1,6 @@
 -- Mirdain
 -- Load and initialize the include file.
-include('Mirdain-Include')
+include('Rialyn-Include')
 
 -- Set to ingame lockstyle and Macro Book/Set
 LockStylePallet = "9"
@@ -86,8 +86,8 @@ function get_sets()
         neck = "Rep. Plat. Medal",
         waist = "Null Belt",
         left_ear = "Infused Earring",
-        right_ear = "Odnowa Earring +1",
-        left_ring = "Defending Ring",
+        right_ear = "Alabaster Earring",
+        left_ring = "Murky Ring",
         right_ring = "Regal Ring",
         back = {
             name = "Cichol's Mantle",
@@ -105,8 +105,8 @@ function get_sets()
         neck = "Rep. Plat. Medal",
         waist = "Null Belt",
         left_ear = "Infused Earring",
-        right_ear = "Odnowa Earring +1",
-        left_ring = "Defending Ring",
+        right_ear = "Alabaster Earring",
+        left_ring = "Murky Ring",
         right_ring = "Regal Ring",
         back = {
             name = "Cichol's Mantle",
@@ -383,7 +383,7 @@ function get_sets()
     sets.JA = {}
     sets.JA["Mighty Strikes"] = {}
     sets.JA["Berserk"] = {
-        body = "Pumm. Lorica +3",
+        body = "Pumm. Lorica +4",
         feet = {
             name = "Agoge Calligae +3",
             augments = {'Enhances "Tomahawk" effect'}
@@ -1193,10 +1193,7 @@ function get_sets()
             name = "Agoge Mask +3",
             augments = {'Enhances "Savagery" effect'}
         },
-        body = {
-            name = "Nyame Mail",
-            augments = {'Path: B'}
-        },
+        body = "Pumm. Lorica +4",
         hands = "Boii Mufflers +3",
         legs = {
             name = "Nyame Flanchard",
@@ -1302,10 +1299,7 @@ function get_sets()
             name = "Agoge Mask +3",
             augments = {'Enhances "Savagery" effect'}
         },
-        body = {
-            name = "Nyame Mail",
-            augments = {'Path: B'}
-        },
+        body = "Pumm. Lorica +4",
         hands = "Boii Mufflers +3",
         legs = {
             name = "Nyame Flanchard",

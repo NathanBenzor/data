@@ -138,13 +138,13 @@ function get_sets()
 		left_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
 		right_ear="Etiolation Earring",
 		left_ring="Regal Ring",
-		right_ring="Defending Ring",
+		right_ring="Murky Ring",
 		back={ name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
     }
 
 	sets.Movement = {
 		legs={ name="Carmine Cuisses +1", augments={'HP+80','STR+12','INT+12',}},
-		right_ring="Defending Ring",
+		right_ring="Murky Ring",
 	}
 
 	-- Set to be used if you get 
@@ -220,7 +220,7 @@ function get_sets()
 		left_ear={ name="Tuisto Earring", priority=2},
 		right_ear={ name="Etiolation Earring", priority=1},
 		left_ring="Dingir Ring",
-		right_ring="Defending Ring", -- 3/0
+		right_ring="Murky Ring", -- 3/0
 		neck={ name="Comm. Charm +2", augments={'Path: A',}}, -- 4/0
 		waist="Yemaya Belt", -- 0/5
 		back={ name="Camulus's Mantle", augments={'"Snapshot"+10',}},

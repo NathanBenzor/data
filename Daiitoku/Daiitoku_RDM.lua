@@ -150,7 +150,7 @@ function get_sets()
         right_ear={ 
             name="Leth. Earring +1", 
             augments={'System: 1 ID: 1676 Val: 0','Accuracy+11','Mag. Acc.+11','"Dbl.Atk."+3',}},
-        left_ring="Shneddick Ring",
+        left_ring="Murky Ring",
         right_ring="Stikini Ring +1",
         back={ name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Fast Cast"+10','Phys. dmg. taken-10%',}},
 }       
@@ -668,13 +668,13 @@ function get_sets()
         sub="Kaja Rod",
         ammo="Pemphredo Tathlum",
         head = {
-            name = "Viti. Chapeau +2",
+            name = "Viti. Chapeau +3",
             augments = {'Enfeebling Magic duration', 'Magic Accuracy'}
         },
-        body="Atrophy Tabard +2",
+        body="Atrophy Tabard +4",
         hands = "Leth. Ganth. +2",
         legs={ name="Psycloth Lappas", augments={'MP+80','Mag. Acc.+15','"Fast Cast"+7',}},
-        feet={ name="Vitiation Boots +2", augments={'Immunobreak Chance',}},
+        feet={ name="Vitiation Boots +3", augments={'Immunobreak Chance',}},
         neck={ 
             name="Dls. Torque +2", 
             augments={'Path: A',}},
@@ -730,10 +730,10 @@ function get_sets()
         range = "Kaja bow",
         ammo = empty,
         head = {
-            name = "Viti. Chapeau +2",
+            name = "Viti. Chapeau +3",
             augments = {'Enfeebling Magic duration', 'Magic Accuracy'}
         },
-        body = "Atrophy Tabard +2",
+        body = "Atrophy Tabard +4",
         hands = "Leth. Ganth. +2",
 
 		neck={ 
@@ -764,7 +764,7 @@ function get_sets()
             augments = {'MND+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'Mag. Acc.+10', '"Fast Cast"+10', 'Phys. dmg. taken-10%'}
         }, -- 10%
         feet = {
-            name = "Vitiation Boots +2",
+            name = "Vitiation Boots +3",
             augments = {'Immunobreak Chance'}
         }, -- 10%
         neck = {
@@ -776,7 +776,7 @@ function get_sets()
     -- Duration Based ('Sleep','Sleep II','Sleepga','Sleepga II','Diaga','Dia','Dia II','Dia III','Bio','Bio II','Bio III','Silence','Gravity','Gravity II','Inundation','Break','Breakaga', 'Bind', 'Bind II')
     sets.Midcast.Enfeebling.Duration = set_combine(sets.Midcast.Enfeebling, {
         head = {
-            name = "Viti. Chapeau +2",
+            name = "Viti. Chapeau +3",
             augments = {'Enfeebling Magic duration', 'Magic Accuracy'}
         }, -- 15s (3 seconds x 5 merits)
         hands = "Regal Cuffs", -- 20% swaps out with Saboteur active
@@ -837,7 +837,7 @@ function get_sets()
 
     sets.Midcast.Refresh = set_combine(sets.Midcast.Enhancing, {
         head = "Amalric Coif +1",
-        body = "Atrophy Tabard +2",
+        body = "Atrophy Tabard +4",
         legs = "Leth. Fuseau +2",
         waist = "Gishdubar Sash",
     })
@@ -895,7 +895,7 @@ function get_sets()
         hands = "Leth. Ganth. +2",
         legs = "Leth. Fuseau +2",
         feet = "Leth. Houseaux +3",
-        neck = "Mizu. Kubikazari",
+        neck = "Sibyl Scarf",
         waist = {
             name = "Acuity Belt +1",
             augments = {'Path: A'}
@@ -1071,17 +1071,18 @@ function get_sets()
     sets.WS["Chant du Cygne"] = sets.WS.CRIT
 
     sets.WS["Savage Blade"] = set_combine(sets.WS,{
-        ammo="Pemphredo Tathlum",
-        head={ name="Viti. Chapeau +2", augments={'Enfeebling Magic duration','Magic Accuracy',}},
+        ammo="Oshasha's Treatise",
+        head={ name="Viti. Chapeau +3", augments={'Enfeebling Magic duration','Magic Accuracy',}},
         body="Lethargy Sayon +3",
         hands="Atrophy Gloves +2",
         legs="Leth. Fuseau +2",
         feet="Leth. Houseaux +3",
-        neck={ name="Dls. Torque +2", augments={'Path: A',}},
+        neck = "Republican Platinum Medal",
+        -- neck={ name="Dls. Torque +2", augments={'Path: A',}},
         waist="Sailfi Belt +1",
         left_ear="Sherida Earring",
-        right_ear="Malignance Earring",
-        left_ring="Apate Ring",
+        right_ear="Regal Earring",
+        left_ring="Cornelia's Ring",
         right_ring="Rufescent Ring",
         back={ name="Sucellos's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Damage taken-5%',}},
         
@@ -1102,17 +1103,18 @@ function get_sets()
     })
 
     sets.WS["Black Halo"] = set_combine(sets.WS.WSD, {
-        ammo="Pemphredo Tathlum",
-        head={ name="Viti. Chapeau +2", augments={'Enfeebling Magic duration','Magic Accuracy',}},
+        ammo="Oshasha's Treatise",
+        head={ name="Viti. Chapeau +3", augments={'Enfeebling Magic duration','Magic Accuracy',}},
         body="Lethargy Sayon +3",
         hands="Atrophy Gloves +2",
         legs="Leth. Fuseau +2",
         feet="Leth. Houseaux +3",
-        neck={ name="Dls. Torque +2", augments={'Path: A',}},
+        neck = "Republican Platinum Medal",
+        -- neck={ name="Dls. Torque +2", augments={'Path: A',}},
         waist="Sailfi Belt +1",
         left_ear="Sherida Earring",
-        right_ear="Malignance Earring",
-        left_ring="Apate Ring",
+        right_ear="Regal Earring",
+        left_ring="Cornelia's Ring",
         right_ring="Rufescent Ring",
         back={ name="Sucellos's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Damage taken-5%',}},
     })

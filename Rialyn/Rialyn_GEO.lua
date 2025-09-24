@@ -79,7 +79,7 @@ function get_sets()
         left_ear = "Infused Earring",
         right_ear = "Etiolation Earring",
         left_ring = "Stikini Ring",
-        right_ring = "Defending Ring",
+        right_ring = "Murky Ring",
         back = {
             name = "Nantosuelta's Cape",
             augments = {'VIT+20', 'Eva.+20 /Mag. Eva.+20', 'Pet: "Regen"+10', 'Phys. dmg. taken-10%'}
@@ -109,8 +109,8 @@ function get_sets()
         waist = "Isa Belt",
         left_ear = "Etiolation Earring",
         right_ear = "Genmei Earring",
-        left_rring = "Stikini Ring",
-        right_ring = "Defending Ring",
+        left_ring = "Stikini Ring",
+        right_ring = "Murky Ring",
         back = {
             name = "Nantosuelta's Cape",
             augments = {'VIT+20', 'Eva.+20 /Mag. Eva.+20', 'Pet: "Regen"+10', 'Pet: Phys. dmg. taken-10%'}

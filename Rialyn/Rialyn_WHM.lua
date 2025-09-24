@@ -80,8 +80,8 @@ function get_sets()
         waist = "Shinjutsu-no-Obi +1",
         left_ear = "Etiolation Earring",
         right_ear = "Genmei Earring",
-        left_ring = "Defending Ring",
-        right_ring = "Shneddick Ring",
+        left_ring = "Murky Ring",
+        right_ring = "Stikini Ring",
         back = {
             name = "Alaunus's Cape",
             augments = {'MND+20', 'Eva.+20 /Mag. Eva.+20', 'Phys. dmg. taken-10%'}
@@ -117,7 +117,7 @@ function get_sets()
         waist = "Rumination Sash",
         left_ear = "Loquac. Earring",
         right_ear = "Mendi. Earring",
-        left_ring = "Defending Ring",
+        left_ring = "Murky Ring",
         right_ring = "Stikini Ring",
         back = "Solemnity Cape"
     }

@@ -166,7 +166,7 @@ function get_sets()
         waist = "Carrier's Sash",
         right_ear = "Genmei Earring",
         left_ear = "Etiolation Earring",
-        left_ring = "Defending Ring",
+        left_ring = "Murky Ring",
         right_ring = "Stikini Ring +1",
         -- back = "Moonlight Cape"
         back = "Null Shawl"
@@ -360,7 +360,7 @@ function get_sets()
             augments = {'Path: A'},
             priority = 2
         }, -- 7/-1
-        right_ring = "Defending Ring",
+        right_ring = "Murky Ring",
         back = {
             name = "Intarabus's Cape",
             augments = {'CHR+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'Mag. Acc.+10', '"Fast Cast"+10', 'Phys. dmg. taken-10%'}

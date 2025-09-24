@@ -204,7 +204,7 @@ function get_sets()
         --     augments = {'HP+80', 'STR+12', 'INT+12'}
         -- },
         left_ring = "Shneddick Ring",
-        right_ring = "Defending Ring"
+        right_ring = "Murky Ring"
     }
 
     -- Set to be used if you get 

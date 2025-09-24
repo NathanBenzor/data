@@ -99,7 +99,7 @@ function get_sets()
         right_ear={ 
             name="Azimuth Earring +1", 
             augments = {'System: 1 ID: 1676 Val: 0','Mag. Acc.+15','Damage taken-5%',}},
-        left_ring = "Defending Ring",
+        left_ring = "Murky Ring",
         right_ring = "Stikini Ring +1",
         back={ 
             name="Nantosuelta's Cape", 
@@ -133,7 +133,7 @@ function get_sets()
         waist = "Isa Belt",
         left_ear = "Etiolation Earring",
         right_ear={ name="Azimuth Earring +1", augments={'System: 1 ID: 1676 Val: 0','Mag. Acc.+15','Damage taken-5%',}},
-        left_ring = "Defending Ring",
+        left_ring = "Murky Ring",
         right_ring = "Stikini Ring +1",
         back={ 
             name="Nantosuelta's Cape", 
@@ -243,7 +243,7 @@ function get_sets()
         waist = "Grunfeld Rope",
         left_ear = "Suppanomimi",
         right_ear = "Telos Earring",
-        left_ring = "Defending Ring",
+        left_ring = "Murky Ring",
         right_ring = "Chirich Ring +1",
         back = "Null Shawl" -- need Ambu cape with "Dual Wield"+10
     }
@@ -364,7 +364,7 @@ function get_sets()
         right_ear = "Etiolation Earring", -- 1
         left_ear = "Malignance Earring", -- 4
         left_ring = "Kishar Ring", -- 4
-        right_ring = "Defending Ring",
+        right_ring = "Murky Ring",
         back={ name="Nantosuelta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Magic Damage +10','"Fast Cast"+10',}}, -- 10
     } -- 90
 
