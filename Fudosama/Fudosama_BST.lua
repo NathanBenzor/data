@@ -153,12 +153,12 @@ function get_sets()
         },
         neck = "Null Loop",
         waist = "Null Belt",
-        left_ear = "Etiolation Earring",
+        left_ear = "Alabaster Earring",
         right_ear = {
             name = "Odnowa Earring +1",
             augments = {'Path: A'}
         },
-        left_ring = "Defending Ring",
+        left_ring = "Murky Ring",
         right_ring = "Moonlight Ring",
         back = {
             name = "Artio's Mantle",
@@ -343,11 +343,14 @@ function get_sets()
         hands = "Nukumi Manoplas +3",
         legs = "Nukumi Quijotes +2",
         feet = "Gleti's Boots",
-        neck = "Bst. Collar +2",
+        neck = {
+            name = "Bst. Collar +2",
+            augments = {'Path: A'}
+        },
         waist = "Incarnation Sash",
         left_ear = "Kyrene's Earring",
         right_ear = "Enmerkar Earring",
-        left_ring = "Tali'ah Ring",
+        left_ring = "Murky Ring",
         right_ring = "C. Palug Ring",
         back = {
             name = "Artio's Mantle",

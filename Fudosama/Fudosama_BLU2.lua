@@ -148,7 +148,7 @@ function get_sets()
         left_ear = "Suppanomimi",
         right_ear = "Dedition Earring",
         left_ring = "Epona's Ring",
-        right_ring = "Defending Ring",
+        right_ring = "Murky Ring",
         back = {
             name = "Rosmerta's Cape",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
@@ -183,7 +183,7 @@ function get_sets()
         left_ear = "Suppanomimi",
         right_ear = "Dedition Earring",
         left_ring = "Epona's Ring",
-        right_ring = "Defending Ring",
+        right_ring = "Murky Ring",
         back = {
             name = "Rosmerta's Cape",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}

@@ -650,7 +650,7 @@ function init_gear_sets()
         },
         left_ear = "Suppanomimi",
         right_ear = "Halasz Earring",
-        left_ring = "Defending Ring",
+        left_ring = "Murky Ring",
         right_ring = "Evanescence Ring",
         back = {
             name = "Rosmerta's Cape",
@@ -1187,7 +1187,7 @@ function init_gear_sets()
         left_ear = "Suppanomimi",
         right_ear = "Dedition Earring",
         left_ring = "Epona's Ring",
-        right_ring = "Defending Ring",
+        right_ring = "Murky Ring",
         back = {
             name = "Rosmerta's Cape",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
@@ -1555,7 +1555,7 @@ function init_gear_sets()
         left_ear = "Suppanomimi",
         right_ear = "Cessance Earring",
         left_ring = "Epona's Ring",
-        right_ring = "Defending Ring",
+        right_ring = "Murky Ring",
         back = {
             name = "Rosmerta's Cape",
             augments = {'Accuracy+20 Attack+20', '"Dbl.Atk."+6'}

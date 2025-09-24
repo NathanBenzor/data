@@ -100,7 +100,7 @@ function get_sets()
             name = "Gelatinous Ring +1",
             augments = {'Path: A'}
         },
-        left_ring = "Defending Ring",
+        left_ring = "Murky Ring",
         back = "Moonbeam Cape"
     }
     -- Used to swap into movement gear when the player is detected movement when not engaged
@@ -412,7 +412,7 @@ function get_sets()
             name = "Warder's Charm +1",
             augments = {'Path: A'}
         },
-        left_ring = "Defending Ring"
+        left_ring = "Murky Ring"
     })
 
     -- This set is used when OffenseMode is ACC and a WS is used (Augments the WS base set)

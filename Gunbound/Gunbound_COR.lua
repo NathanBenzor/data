@@ -181,10 +181,6 @@ function get_sets()
         hands = "Nyame Gauntlets",
         legs = "Nyame Flanchard",
         feet = "Nyame Sollerets",
-        -- neck = {
-        --     name = "Comm. Charm +1",
-        --     augments = {'Path: A'}
-        -- },
         neck = "Loricate Torque +1",
         waist = {
             name = "Sailfi Belt +1",
@@ -192,7 +188,7 @@ function get_sets()
         },
         left_ear = "Odnowa Earring +1",
         right_ear = "Eabani Earring",
-        left_ring = "Petrov Ring",
+        left_ring = "Murky Ring",
         right_ring = "Epona's Ring",
         back = {
             name = "Camulus's Mantle",
@@ -333,7 +329,7 @@ function get_sets()
             priority = 1
         },
         left_ring = "Dingir Ring",
-        right_ring = "Defending Ring", -- 3/0
+        right_ring = "Murky Ring", -- 3/0
         neck = {
             name = "Comm. Charm +1",
             augments = {'Path: A'}
@@ -720,7 +716,7 @@ function get_sets()
             name = "Herculean Helm",
             augments = {'Accuracy+15', 'Weapon skill damage +5%', 'Attack+4'}
         },
-        body = "Laksa. Frac +3",
+        body = "Laksa. Frac +4",
         hands = "Chasseur's Gants +3",
         legs = {
             name = "Herculean Trousers",
@@ -730,15 +726,11 @@ function get_sets()
             name = "Lanun Bottes +3",
             augments = {'Enhances "Wild Card" effect'}
         },
-        -- neck = {
-        --     name = "Comm. Charm +1",
-        --     augments = {'Path: A'}
-        -- },
-        neck = "Iskur Gorget",
+        neck = "Rep. Plat. Medal",
         waist = "Sailfi Belt +1",
         left_ear = "Odnowa Earring +1",
         right_ear = "Ishvara Earring",
-        left_ring = "Petrov Ring",
+        left_ring = "Cornelia's Ring",
         right_ring = "Ilabrat Ring",
         back = {
             name = "Camulus's Mantle",
@@ -748,7 +740,7 @@ function get_sets()
 
     -- Ranged Base Set
     sets.WS.RA = set_combine(sets.WS, {
-        body = "Laksa. Frac +3",
+        body = "Laksa. Frac +4",
         hands = "Chasseur's Gants +3",
         back = {
             name = "Camulus's Mantle",
@@ -835,7 +827,7 @@ function get_sets()
     })
 
     sets.WS["Savage Blade"] = set_combine(sets.WS.WSD, {
-        left_ring = "Sroda Ring",
+        right = "Sroda Ring",
         neck = "Rep. Plat. Medal"
     })
 
@@ -852,7 +844,6 @@ function get_sets()
             name = "Nyame Flanchard",
             augments = {'Path: B'}
         },
-        -- feet = "Meg. Jam. +2",
         feet = "Lanun Bottes +3",
         neck = "Fotia Gorget",
         waist = "Fotia Belt",

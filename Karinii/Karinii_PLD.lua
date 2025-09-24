@@ -106,7 +106,7 @@ Runes = {
 }
 
 -- Set to ingame lockstyle and Macro Book/Set
-LockStylePallet = "18"
+LockStylePallet = "3"
 MacroBook = "1"
 MacroSet = Macro_Sub_Job()
 
@@ -157,17 +157,18 @@ function get_sets()
     sets.Idle = {
         ammo = "Staunch Tathlum", -- 2
         head = "Chev. Armet +3", -- 11
-        body = "Sakpata's Plate", -- 10
+        -- body = "Sakpata's Plate", -- 10
+        body = "Rev. Surcoat +4",
         hands = "Sakpata's Gauntlets", -- 8
         legs = "Sakpata's Cuisses", -- 9
         feet = "Chev. Sabatons +3",
-        neck = "Loricate Torque +1",
+        neck = "Coatl Gorget +1",
         -- waist = "Carrier's Sash",
-        waist = "Creed Baudrier", -- 5
+        waist = "Plat. Mog. Belt", -- 3
         left_ear = "Tuisto Earring",
-        right_ear = "Odnowa Earring +1", -- 3
-        left_ring = "Gelatinous Ring +1", -- 7
-        right_ring = "Fortified Ring",
+        right_ear = "Alabaster Earring", -- 5
+        left_ring = "Murky Ring",
+        right_ring = "Ragelise's Ring",
         back = {
             name = "Rudianos's Mantle",
             augments = {'HP+60', 'Eva.+20 /Mag. Eva.+20', 'Mag. Evasion+10', 'Enmity+10', 'Mag. Evasion+15'}
@@ -384,56 +385,35 @@ function get_sets()
 
     -- Used for Magic Spells
     sets.Precast.FastCast = { -- 61 FC with 3029/890
-        -- ammo = "Sapience Orb", -- 2
-        -- head = {
-        --     name = "Carmine Mask +1",
-        --     augments = {'Accuracy+20', 'Mag. Acc.+12', '"Fast Cast"+4'}
-        -- }, -- 14
-        -- body = "Rev. Surcoat +3", -- 10
-        -- hands = {
-        --     name = "Leyline Gloves",
-        --     augments = {'Accuracy+15', 'Mag. Acc.+15', '"Mag.Atk.Bns."+15', '"Fast Cast"+3'}
-        -- }, -- 8
-        -- legs = {
-        --     name = "Odyssean Cuisses",
-        --     augments = {'"Fast Cast"+6', 'Accuracy+13', 'Attack+2'}
-        -- }, -- 6
+
         -- feet = {
         --     name = "Odyssean Greaves",
         --     augments = {'Rng.Acc.+14', 'MND+8', '"Fast Cast"+6', 'Accuracy+19 Attack+19'}
         -- }, -- 11
-        -- neck = "Voltsurge Torque", -- 4
-        -- waist = {
-        --     name = "Plat. Mog. Belt",
-        --     priority = 1
-        -- },
-        -- left_ear = {
-        --     name = "Tuisto Earring",
-        --     priority = 2
-        -- },
-        -- right_ear = "Etiolation Earring", -- 1
-        -- left_ring = "Weather. Ring", -- 5
         -- right_ring = "Kishar Ring", -- 4
         -- back = {
         --     name = "Rudianos's Mantle",
         --     augments = {'HP+60', 'HP+20', '"Fast Cast"+10'}
         -- } -- 10
 
-        ammo = "Sapience Orb",
-        head = "Chev. Armet +3",
-        body = "Rev. Surcoat +3",
-        hands = {
-            name = "Odyssean Gauntlets",
-            augments = {'Accuracy+25', '"Fast Cast"+2', '"Mag.Atk.Bns."+10'}
+        ammo = "Sapience Orb", -- 2
+        head = { --
+            name = "Carmine Mask +1",
+            augments = {'Accuracy+20', 'Mag. Acc.+12', '"Fast Cast"+4'}
+        },
+        body = "Rev. Surcoat +4", -- 13
+        hands = { -- 
+            name = "Leyline Gloves",
+            augments = {'Accuracy+14', 'Mag. Acc.+13', '"Mag.Atk.Bns."+13', '"Fast Cast"+2'}
         },
         legs = "Enif Cosciales",
         feet = "Chev. Sabatons +3",
         neck = "Voltsurge Torque",
-        waist = "Creed Baudrier",
+        waist = "Plat. Mog. Belt",
         left_ear = "Tuisto Earring",
         right_ear = "Etiolation Earring",
         left_ring = "Gelatinous Ring +1",
-        right_ring = "Defending Ring",
+        right_ring = "Murky Ring",
         back = {
             name = "Rudianos's Mantle",
             augments = {'HP+60', 'HP+10', '"Fast Cast"+10'}
@@ -518,7 +498,7 @@ function get_sets()
         left_ear = "Nourish. Earring +1", -- 5 SIRD / 6 Cure
         right_ear = "Chev. Earring +1", -- 3 DT / 11 Cure
         left_ring = "Eihwaz Ring", -- 5 DT
-        right_ring = "Defending Ring", -- 10 DT
+        right_ring = "Ragelise's Ring", -- 10 DT
         back = {
             name = "Rudianos's Mantle",
             augments = {'HP+60', 'Eva.+20 /Mag. Eva.+20', 'HP+20', '"Cure" potency +10%',
@@ -579,8 +559,8 @@ function get_sets()
 
     sets.Midcast["Phalanx"] = set_combine(sets.Idle, sets.Midcast.SIRD, {
         head = {
-            name = "Yorium Barbuta",
-            augments = {'Phalanx +3'}
+            name = "Odyssean Helm",
+            augments = {'Magic dmg. taken -2%', 'CHR+10', 'Phalanx +3', 'Accuracy+1 Attack+1'}
         },
         body = {
             name = "Yorium Cuirass",
@@ -589,7 +569,7 @@ function get_sets()
         hands = "Souv. Handsch. +1",
         legs = "Sakpata's Cuisses",
         feet = "Souveran Schuhs +1",
-        right_ring = "Defending Ring",
+        right_ring = "Murky Ring",
         right_ear = "Mimir Earring",
         back = {
             name = "Weard Mantle",
@@ -634,6 +614,8 @@ function get_sets()
                         'Spell interruption rate down-10%'}
         }
     }
+
+    sets.Midcast.Skill = set_combine(sets.Idle, sets.Enmity, sets.Midcast.SIRD, {})
 
     sets.Midcast["Flash"] = set_combine(sets.Idle, sets.Enmity, sets.Midcast.SIRD, {})
 
