@@ -91,7 +91,7 @@ function get_sets()
             name = "Azimuth Earring +1",
             augments = {'System: 1 ID: 1676 Val: 0', 'Mag. Acc.+14', 'Damage taken-5%'}
         },
-        left_ring = "Defending Ring",
+        left_ring = "Murky Ring",
         right_ring = "Stikini Ring +1",
         back = {
             name = "Nantosuelta's Cape",
@@ -129,7 +129,7 @@ function get_sets()
             name = "Azimuth Earring +1",
             augments = {'System: 1 ID: 1676 Val: 0', 'Mag. Acc.+14', 'Damage taken-5%'}
         },
-        left_ring = "Defending Ring",
+        left_ring = "Murky Ring",
         right_ring = "Stikini Ring +1",
         back = {
             name = "Nantosuelta's Cape",
@@ -162,7 +162,7 @@ function get_sets()
             name = "Azimuth Earring +1",
             augments = {'System: 1 ID: 1676 Val: 0', 'Mag. Acc.+14', 'Damage taken-5%'}
         },
-        left_ring = "Defending Ring",
+        left_ring = "Murky Ring",
         right_ring = "Stikini Ring +1",
         back = {
             name = "Nantosuelta's Cape",
@@ -276,7 +276,7 @@ function get_sets()
         waist = "Grunfeld Rope",
         left_ear = "Suppanomimi",
         right_ear = "Telos Earring",
-        left_ring = "Defending Ring",
+        left_ring = "Murky Ring",
         right_ring = "Chirich Ring +1",
         back = "Null Shawl" -- need Ambu cape with "Dual Wield"+10
     }
@@ -356,7 +356,7 @@ function get_sets()
         waist = "Grunfeld Rope",
         left_ear = "Digni. Earring",
         right_ear = "Telos Earring",
-        left_ring = "Defending Ring",
+        left_ring = "Murky Ring",
         right_ring = "Chirich Ring +1",
         back = "Null Shawl"
     }
@@ -517,7 +517,7 @@ function get_sets()
             augments = {'Path: A'}
         },
         right_ear = "Etiolation Earring",
-        left_ring = "Defending Ring",
+        left_ring = "Murky Ring",
         right_ring = {
             name = "Gelatinous Ring +1",
             augments = {'Path: A'}

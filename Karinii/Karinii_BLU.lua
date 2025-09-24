@@ -231,7 +231,7 @@ function get_sets()
         hands = "Malignance Gloves",
         legs = "Malignance Tights",
         feet = "Malignance Boots",
-        left_ring = "Defending Ring",
+        left_ring = "Murky Ring",
         right_ear = {
             name = "Odnowa Earring +1",
             augments = {'Path: A'}

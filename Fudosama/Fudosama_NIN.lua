@@ -136,7 +136,7 @@ function get_sets()
         waist = "Null Belt",
         left_ear = "Etiolation Earring",
         right_ear = "Infused Earring",
-        left_ring = "Defending Ring",
+        left_ring = "Murky Ring",
         right_ring = {
             name = "Gelatinous Ring +1",
             augments = {'Path: A'}
@@ -170,7 +170,7 @@ function get_sets()
             name = "Odnowa Earring +1",
             augments = {'Path: A'}
         },
-        left_ring = "Defending Ring",
+        left_ring = "Murky Ring",
         right_ring = {
             name = "Gelatinous Ring +1",
             augments = {'Path: A'}
@@ -189,7 +189,7 @@ function get_sets()
         waist = "Null Belt",
         left_ear = "Eabani Earring",
         right_ear = "Infused Earring",
-        left_ring = "Defending Ring",
+        left_ring = "Murky Ring",
         right_ring = "Vengeful Ring",
         back = "Null Shawl"
     }
@@ -255,7 +255,7 @@ function get_sets()
         hands = "Malignance Gloves",
         legs = "Malignance Tights",
         feet = "Malignance Boots",
-        left_ring = "Defending Ring",
+        left_ring = "Murky Ring",
         back = {
             name = "Andartia's Mantle",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Damage taken-5%'}
@@ -272,7 +272,7 @@ function get_sets()
         hands = "Malignance Gloves",
         legs = "Malignance Tights",
         feet = "Malignance Boots",
-        left_ring = "Defending Ring",
+        left_ring = "Murky Ring",
         back = {
             name = "Andartia's Mantle",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Damage taken-5%'}
@@ -323,7 +323,7 @@ function get_sets()
         waist = "Trance Belt",
         left_ear = "Eabani Earring",
         right_ear = "Infused Earring",
-        left_ring = "Defending Ring",
+        left_ring = "Murky Ring",
         right_ring = "Vengeful Ring",
         back = "Agema Cape"
     })

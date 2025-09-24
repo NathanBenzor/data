@@ -96,7 +96,7 @@ function get_sets()
         left_ear = "Eabani Earring",
         right_ear = "Hearty Earring",
         left_ring = "Moonlight Ring",
-        right_ring = "Defending Ring",
+        right_ring = "Murky Ring",
         back = "Null Shawl"
     }
     sets.Idle.TP = set_combine(sets.Idle, {})
@@ -319,7 +319,7 @@ function get_sets()
             name = "Odnowa Earring +1",
             augments = {'Path: A'}
         },
-        right_ring = "Defending Ring",
+        right_ring = "Murky Ring",
         left_ring = "Moonlight Ring",
         back = {
             name = "Toutatis's Cape",

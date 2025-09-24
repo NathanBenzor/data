@@ -81,7 +81,7 @@ function get_sets()
             name = "Odnowa Earring +1",
             augments = {'Path: A'}
         },
-        left_ring = "Defending Ring",
+        left_ring = "Murky Ring",
         right_ring = {
             name = "Gelatinous Ring +1",
             augments = {'Path: A'}
@@ -178,7 +178,7 @@ function get_sets()
             name = "Nyame Mail",
             augments = {'Path: B'}
         },
-        left_ring = "Defending Ring"
+        left_ring = "Murky Ring"
     })
 
     -- This set is used when OffenseMode is ACC and Enaged (Augments the TP base set)
@@ -231,7 +231,7 @@ function get_sets()
             name = "Schere Earring",
             augments = {'Path: A'}
         },
-        left_ring = "Defending Ring",
+        left_ring = "Murky Ring",
         right_ring = "Niqmaddu Ring",
         back = {
             name = "Smertrios's Mantle",

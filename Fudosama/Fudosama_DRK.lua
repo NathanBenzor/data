@@ -99,8 +99,8 @@ function get_sets()
         neck = "Rep. Plat. Medal",
         waist = "Null Belt",
         left_ear = "Infused Earring",
-        right_ear = "Eabani Earring",
-        left_ring = "Defending Ring",
+        right_ear = "Alabaster Earring",
+        left_ring = "Murky Ring",
         right_ring = "Moonlight Ring",
         back = "Moonbeam Cape"
     }
@@ -128,34 +128,6 @@ function get_sets()
 
     -- Base TP set to build off
     sets.OffenseMode.TP = {
-        -- ammo = {
-        --     name = "Coiste Bodhar",
-        --     augments = {'Path: A'}
-        -- },
-        -- head = "Flam. Zucchetto +2",
-        -- body = {
-        --     name = "Sakpata's Plate",
-        --     augments = {'Path: A'}
-        -- },
-        -- hands = {
-        --     name = "Sakpata's Gauntlets",
-        --     augments = {'Path: A'}
-        -- },
-        -- legs = "Ignominy Flanchard +3",
-        -- feet = "Flam. Gambieras +2",
-        -- neck = {
-        --     name = "Abyssal Beads +2",
-        --     augments = {'Path: A'}
-        -- },
-        -- waist = "Ioskeha Belt +1",
-        -- left_ear = "Cessance Earring",
-        -- right_ear = "Schere Earring",
-        -- right_ring = "Moonlight Ring",
-        -- left_ring = "Niqmaddu Ring",
-        -- back = {
-        --     name = "Ankou's Mantle",
-        --     augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%'}
-        -- }
         ammo = {
             name = "Coiste Bodhar",
             augments = {'Path: A'}
@@ -193,53 +165,54 @@ function get_sets()
         }
     }
 
-    sets.OffenseMode.DT = set_combine(sets.OffenseMode.TP, {
+    sets.OffenseMode.DT = {
         ammo = {
             name = "Coiste Bodhar",
             augments = {'Path: A'}
         },
-        head = {
+        head = { -- 7 DT
             name = "Sakpata's Helm",
             augments = {'Path: A'}
         },
-        body = {
+        body = { -- 10 DT
             name = "Sakpata's Plate",
             augments = {'Path: A'}
         },
-        hands = {
+        hands = { -- 8 DT
             name = "Sakpata's Gauntlets",
             augments = {'Path: A'}
         },
-        legs = {
+        legs = { -- 9 DT
             name = "Sakpata's Cuisses",
             augments = {'Path: A'}
         },
-        feet = {
+        feet = { -- 6 DT
             name = "Sakpata's Leggings",
             augments = {'Path: A'}
         },
+        -- neck = {
+        --     name = "Abyssal Beads +2",
+        --     augments = {'Path: A'}
+        -- },
         neck = {
-            name = "Abyssal Beads +2",
+            name = "Vim Torque +1",
             augments = {'Path: A'}
         },
+        -- waist = {
+        --     name = "Sailfi Belt +1",
+        --     augments = {'Path: A'}
+        -- },
         waist = "Ioskeha Belt +1",
-        -- left_ear = "Dedition Earring",
-        left_ear = {
-            name = "Schere Earring",
-            augments = {'Path: A'}
-        },
-        right_ear = "Telos Earring",
+        right_ear = "Dedition Earring",
+        -- right_ear = "Telos Earring",
         left_ring = "Niqmaddu Ring",
-        right_ring = "Moonlight Ring",
-        back = {
-            name = "Ankou's Mantle",
-            augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%'}
-        }
-    })
-
-    -- sets.Scythe = {
-    --     head = "Heath. Bur. +3"
-    -- }
+        right_ring = "Moonlight Ring", -- 5 DT
+        -- back = { -- 5 DT
+        --     name = "Ankou's Mantle",
+        --     augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%'}
+        -- }
+        back = "Null Shawl"
+    } -- 45 DT total
 
     -- Same TP set but WSD can be altered also
     sets.OffenseMode.PDL = {
@@ -392,7 +365,7 @@ function get_sets()
     sets.Midcast.Enfeebling = {
         ammo = "Pemphredo Tathlum",
         head = "Carmine Mask +1",
-        body = "Ignominy Cuirass +3",
+        body = "Ig. Cuirass +4",
         hands = {
             name = "Nyame Gauntlets",
             augments = {'Path: B'}
@@ -987,10 +960,7 @@ function get_sets()
             name = "Nyame Helm",
             augments = {'Path: B'}
         },
-        body = {
-            name = "Nyame Mail",
-            augments = {'Path: B'}
-        },
+        body = "Ig. Cuirass +4",
         hands = {
             name = "Nyame Gauntlets",
             augments = {'Path: B'}
@@ -1444,10 +1414,7 @@ function get_sets()
             name = "Nyame Helm",
             augments = {'Path: B'}
         },
-        body = {
-            name = "Nyame Mail",
-            augments = {'Path: B'}
-        },
+        body = "Ig. Cuirass +4",
         hands = {
             name = "Nyame Gauntlets",
             augments = {'Path: B'}
@@ -1728,10 +1695,7 @@ function get_sets()
             name = "Nyame Helm",
             augments = {'Path: B'}
         },
-        body = {
-            name = "Nyame Mail",
-            augments = {'Path: B'}
-        },
+        body = "Ig. Cuirass +4",
         hands = {
             name = "Nyame Gauntlets",
             augments = {'Path: B'}
@@ -1802,10 +1766,7 @@ function get_sets()
             name = "Nyame Helm",
             augments = {'Path: B'}
         },
-        body = {
-            name = "Nyame Mail",
-            augments = {'Path: B'}
-        },
+        body = "Ig. Cuirass +4",
         hands = {
             name = "Nyame Gauntlets",
             augments = {'Path: B'}
@@ -1876,7 +1837,7 @@ function get_sets()
             name = "Sakpata's Helm",
             augments = {'Path: A'}
         },
-        body = "Ignominy Cuirass +3",
+        body = "Ig. Cuirass +4",
         hands = {
             name = "Sakpata's Gauntlets",
             augments = {'Path: A'}
@@ -1910,7 +1871,7 @@ function get_sets()
             name = "Sakpata's Helm",
             augments = {'Path: A'}
         },
-        body = "Ignominy Cuirass +3",
+        body = "Ig. Cuirass +4",
         hands = {
             name = "Sakpata's Gauntlets",
             augments = {'Path: A'}

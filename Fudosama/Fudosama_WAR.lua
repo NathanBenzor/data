@@ -115,12 +115,9 @@ function get_sets()
         neck = "Rep. Plat. Medal",
         waist = "Null Belt",
         left_ear = "Infused Earring",
-        right_ear = {
-            name = "Odnowa Earring +1",
-            augments = {'Path: A'}
-        },
+        right_ear = "Alabaster Earring",
         left_ring = "Moonlight Ring",
-        right_ring = "Defending Ring",
+        right_ring = "Murky Ring",
         back = "Null Shawl"
     }
 
@@ -651,7 +648,7 @@ function get_sets()
 
     sets.JA["Warcry"] = {
         head = {
-            name = "Agoge Mask +3",
+            name = "Agoge Mask +4",
             augments = {'Enhances "Savagery" effect'}
         }
     }
@@ -731,7 +728,7 @@ function get_sets()
     sets.WS = {
         ammo = "Knobkierrie",
         head = {
-            name = "Agoge Mask +3",
+            name = "Agoge Mask +4",
             augments = {'Enhances "Savagery" effect'}
         },
         body = {
@@ -844,7 +841,10 @@ function get_sets()
 
     sets.WS.PDL = {
         ammo = "Knobkierrie",
-        head = "Agoge Mask +3",
+        head = {
+            name = "Agoge Mask +4",
+            augments = {'Enhances "Savagery" effect'}
+        },
         body = {
             name = "Sakpata's Plate",
             augments = {'Path: A'}
@@ -899,7 +899,10 @@ function get_sets()
 
     sets.WS["Mistral Axe"] = {
         ammo = "Knobkierrie",
-        head = "Agoge Mask +3",
+        head = {
+            name = "Agoge Mask +4",
+            augments = {'Enhances "Savagery" effect'}
+        },
         body = {
             name = "Sakpata's Plate",
             augments = {'Path: A'}
@@ -928,7 +931,10 @@ function get_sets()
 
     sets.WS.PDL["Mistral Axe"] = {
         ammo = "Knobkierrie",
-        head = "Agoge Mask +3",
+        head = {
+            name = "Agoge Mask +4",
+            augments = {'Enhances "Savagery" effect'}
+        },
         body = {
             name = "Sakpata's Plate",
             augments = {'Path: A'}
@@ -953,7 +959,10 @@ function get_sets()
 
     sets.WS["Calamity"] = {
         ammo = "Knobkierrie",
-        head = "Agoge Mask +3",
+        head = {
+            name = "Agoge Mask +4",
+            augments = {'Enhances "Savagery" effect'}
+        },
         body = {
             name = "Sakpata's Plate",
             augments = {'Path: A'}
@@ -982,7 +991,10 @@ function get_sets()
 
     sets.WS.PDL["Calamity"] = {
         ammo = "Knobkierrie",
-        head = "Agoge Mask +3",
+        head = {
+            name = "Agoge Mask +4",
+            augments = {'Enhances "Savagery" effect'}
+        },
         body = {
             name = "Sakpata's Plate",
             augments = {'Path: A'}
@@ -1007,7 +1019,10 @@ function get_sets()
 
     sets.WS["Cloudsplitter"] = {
         ammo = "Knobkierrie",
-        head = "Agoge Mask +3",
+        head = {
+            name = "Agoge Mask +4",
+            augments = {'Enhances "Savagery" effect'}
+        },
         body = "Pumm. Lorica +3",
         hands = {
             name = "Nyame Gauntlets",
@@ -1046,7 +1061,10 @@ function get_sets()
 
     sets.WS["Savage Blade"] = {
         ammo = "Knobkierrie",
-        head = "Agoge Mask +3",
+        head = {
+            name = "Agoge Mask +4",
+            augments = {'Enhances "Savagery" effect'}
+        },
         body = {
             name = "Sakpata's Plate",
             augments = {'Path: A'}
@@ -1071,7 +1089,10 @@ function get_sets()
 
     sets.WS.PDL["Savage Blade"] = {
         ammo = "Knobkierrie",
-        head = "Agoge Mask +3",
+        head = {
+            name = "Agoge Mask +4",
+            augments = {'Enhances "Savagery" effect'}
+        },
         body = {
             name = "Sakpata's Plate",
             augments = {'Path: A'}
@@ -1128,7 +1149,7 @@ function get_sets()
     sets.WS['Upheaval'] = {
         ammo = "Knobkierrie",
         head = {
-            name = "Agoge Mask +3",
+            name = "Agoge Mask +4",
             augments = {'Enhances "Savagery" effect'}
         },
         body = {
@@ -1193,7 +1214,7 @@ function get_sets()
     sets.WS['Disaster'] = {
         ammo = "Knobkierrie",
         head = {
-            name = "Agoge Mask +3",
+            name = "Agoge Mask +4",
             augments = {'Enhances "Savagery" effect'}
         },
         body = {
@@ -1201,7 +1222,11 @@ function get_sets()
             augments = {'Path: B'}
         },
         hands = "Boii Mufflers +3",
-        legs = "Boii Cuisses +3",
+        -- legs = "Boii Cuisses +3",
+        legs = {
+            name = {"Nyame Flanchard"},
+            augments = {'Path: B'}
+        },
         feet = {
             name = "Nyame Sollerets",
             augments = {'Path: B'}
@@ -1213,8 +1238,10 @@ function get_sets()
         waist = "Sailfi Belt +1",
         left_ear = "Thrud Earring",
         right_ear = "Moonshade Earring",
-        left_ring = "Sroda Ring",
-        right_ring = "Cornelia's Ring",
+        -- left_ring = "Sroda Ring",
+        -- right_ring = "Cornelia's Ring",
+        left_ring = "Regal Ring",
+        right_ring = "Niqmaddu Ring",
         back = {
             name = "Cichol's Mantle",
             augments = {'STR+20', 'Accuracy+20 Attack+20', 'STR+10', 'Weapon skill damage +10%'}
@@ -1224,13 +1251,9 @@ function get_sets()
     sets.WS.PDL['Disaster'] = {
         ammo = "Knobkierrie",
         head = {
-            name = "Agoge Mask +3",
+            name = "Agoge Mask +4",
             augments = {'Enhances "Savagery" effect'}
         },
-        -- body = {
-        --     name = "Nyame Mail",
-        --     augments = {'Path: B'}
-        -- },
         body = {
             name = "Sakpata's Plate",
             augments = {'Path: A'}
@@ -1394,7 +1417,7 @@ function get_sets()
     sets.WS["King's Justice"] = {
         ammo = "Knobkierrie",
         head = {
-            name = "Agoge Mask +3",
+            name = "Agoge Mask +4",
             augments = {'Enhances "Savagery" effect'}
         },
         body = {
@@ -1434,7 +1457,7 @@ function get_sets()
     sets.WS.PDL["King's Justice"] = {
         ammo = "Knobkierrie",
         head = {
-            name = "Agoge Mask +3",
+            name = "Agoge Mask +4",
             augments = {'Enhances "Savagery" effect'}
         },
         body = {
@@ -1816,7 +1839,10 @@ function get_sets()
     -- Club
     sets.WS["Judgement"] = {
         ammo = "Knobkierrie",
-        head = "Agoge Mask +3",
+        head = {
+            name = "Agoge Mask +4",
+            augments = {'Enhances "Savagery" effect'}
+        },
         body = {
             name = "Nyame Mail",
             augments = {'Path: B'}
@@ -1855,7 +1881,10 @@ function get_sets()
 
     sets.WS.PDL["Judgement"] = {
         ammo = "Knobkierrie",
-        head = "Agoge Mask +3",
+        head = {
+            name = "Agoge Mask +4",
+            augments = {'Enhances "Savagery" effect'}
+        },
         body = {
             name = "Sakpata's Plate",
             augments = {'Path: A'}
@@ -1951,7 +1980,10 @@ function get_sets()
 
     sets.WS["Shockwave"] = {
         ammo = "Knobkierrie",
-        head = "Agoge Mask +3",
+        head = {
+            name = "Agoge Mask +4",
+            augments = {'Enhances "Savagery" effect'}
+        },
         body = {
             name = "Nyame Mail",
             augments = {'Path: B'}

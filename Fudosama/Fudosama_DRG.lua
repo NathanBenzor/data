@@ -93,7 +93,7 @@ function get_sets()
             name = "Gelatinous Ring +1",
             augments = {'Path: A'}
         },
-        right_ring = "Defending Ring",
+        right_ring = "Murky Ring",
         -- back = {
         --     name = "Brigantia's Mantle",
         --     augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%'}

@@ -130,12 +130,9 @@ function get_sets()
         neck = "Warder's Charm +1",
         waist = "Plat. Mog. Belt",
         left_ear = "Tuisto Earring",
-        right_ear = {
-            name = "Odnowa Earring +1",
-            augments = {'Path: A'}
-        },
+        right_ear = "Alabaster Earring",
         right_ring = "Moonlight Ring",
-        left_ring = "Defending Ring",
+        left_ring = "Murky Ring",
         back = {
             name = "Ogma's Cape",
             augments = {'HP+60', 'Eva.+20 /Mag. Eva.+20', 'Enmity+10', 'Phys. dmg. taken-10%'}
@@ -163,7 +160,7 @@ function get_sets()
             augments = {'Path: A'}
         },
         right_ring = "Moonlight Ring",
-        left_ring = "Defending Ring",
+        left_ring = "Murky Ring",
         back = {
             name = "Ogma's Cape",
             augments = {'HP+60', 'Eva.+20 /Mag. Eva.+20', 'Enmity+10', 'Phys. dmg. taken-10%'}
@@ -197,12 +194,9 @@ function get_sets()
         neck = "Warder's Charm +1",
         waist = "Plat. Mog. Belt",
         left_ear = "Tuisto Earring",
-        right_ear = {
-            name = "Odnowa Earring +1",
-            augments = {'Path: A'}
-        },
+        right_ear = "Alabaster Earring",
         right_ring = "Moonlight Ring",
-        left_ring = "Defending Ring",
+        left_ring = "Murky Ring",
         back = {
             name = "Ogma's Cape",
             augments = {'HP+60', 'Eva.+20 /Mag. Eva.+20', 'Enmity+10', 'Phys. dmg. taken-10%'}
@@ -398,7 +392,7 @@ function get_sets()
         ear1 = "Hermodr Earring",
         body = "Nyame Mail",
         hands = "Turms Mittens +1",
-        ring1 = "Defending Ring",
+        ring1 = "Murky Ring",
         ring2 = "Moonlight Ring",
         waist = "Plat. Mog. Belt",
         legs = "Eri. Leg Guards +3",
@@ -524,7 +518,7 @@ function get_sets()
         left_ear = "Tuisto Earring",
         right_ear = "Mimir Earring",
         left_ring = "Moonlight Ring",
-        right_ring = "Defending Ring",
+        right_ring = "Murky Ring",
         back = {
             name = "Ogma's Cape",
             augments = {'HP+60', 'Eva.+20 /Mag. Eva.+20', 'Enmity+10', 'Phys. dmg. taken-10%'}

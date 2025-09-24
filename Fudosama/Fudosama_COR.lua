@@ -201,7 +201,7 @@ function get_sets()
             name = "Gelatinous Ring +1",
             augments = {'Path: A'}
         },
-        left_ring = "Defending Ring",
+        left_ring = "Murky Ring",
         back = {
             name = "Camulus's Mantle",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Phys. dmg. taken-10%'}
@@ -214,7 +214,7 @@ function get_sets()
         --     augments = {'HP+80', 'STR+12', 'INT+12'}
         -- },
         left_ring = "Shneddick Ring",
-        right_ring = "Defending Ring"
+        right_ring = "Murky Ring"
     }
 
     -- Set to be used if you get 

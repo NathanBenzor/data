@@ -88,7 +88,7 @@ function get_sets()
         },
         right_ear = "Infused Earring",
         left_ring = "Regal Ring",
-        right_ring = "Defending Ring",
+        right_ring = "Murky Ring",
         back = {
             name = "Senuna's Mantle",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Weapon skill damage +10%', 'Damage taken-5%'}
@@ -119,7 +119,7 @@ function get_sets()
         },
         right_ear = "Infused Earring",
         left_ring = "Moonlight Ring",
-        right_ring = "Defending Ring",
+        right_ring = "Murky Ring",
         back = {
             name = "Senuna's Mantle",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Weapon skill damage +10%', 'Damage taken-5%'}

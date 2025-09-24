@@ -275,7 +275,7 @@ function get_sets()
             name = "Gelatinous Ring +1",
             augments = {'Path: A'}
         },
-        right_ring = "Defending Ring",
+        right_ring = "Murky Ring",
         back = {
             name = "Belenus's Cape",
             augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'Rng.Acc.+10', '"Store TP"+10', 'Phys. dmg. taken-10%'}
@@ -300,7 +300,7 @@ function get_sets()
             name = "Gelatinous Ring +1",
             augments = {'Path: A'}
         },
-        right_ring = "Defending Ring",
+        right_ring = "Murky Ring",
         back = {
             name = "Belenus's Cape",
             augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'Rng.Acc.+10', '"Store TP"+10', 'Phys. dmg. taken-10%'}
@@ -345,7 +345,7 @@ function get_sets()
         left_ear = "Telos Earring",
         right_ear = "Sherida Earring",
         left_ring = "Epona's Ring",
-        right_ring = "Defending Ring",
+        right_ring = "Murky Ring",
         back = { -- look into dual wield cape
             name = "Belenus's Cape",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Dbl.Atk."+10', 'Damage taken-5%'}
