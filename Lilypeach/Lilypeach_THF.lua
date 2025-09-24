@@ -465,7 +465,7 @@ function init_gear_sets()
         left_ear = "Etiolation Earring",
         right_ear = "Loquac. Earring",
         left_ring = "Rahab Ring",
-        right_ring = "Defending Ring",
+        right_ring = "Murky Ring",
         back = {
             name = "Toutatis's Cape",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Phys. dmg. taken-10%'}
@@ -508,7 +508,7 @@ function init_gear_sets()
             name = "Gelatinous Ring +1",
             augments = {'Path: A'}
         },
-        right_ring = "Defending Ring",
+        right_ring = "Murky Ring",
         back = {
             name = "Toutatis's Cape",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Phys. dmg. taken-10%'}
@@ -1197,7 +1197,7 @@ function init_gear_sets()
             augments = {'System: 1 ID: 1676 Val: 0', 'Accuracy+15', 'Mag. Acc.+15', '"Store TP"+5'}
         },
         left_ring = "Chirich Ring +1",
-        right_ring = "Defending Ring", -- 10%
+        right_ring = "Murky Ring", -- 10%
         back = {
             name = "Toutatis's Cape",
             augments = {'DEX+20', 'Accuracy+20 Attack+20', 'Accuracy+10', '"Store TP"+10', 'Phys. dmg. taken-10%'}

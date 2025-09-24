@@ -130,8 +130,8 @@ function get_sets()
 
 	-- Standard Idle set with -DT,Refresh,Regen and movement gear
 	sets.Idle = {
-		ammo="Staunch Tathlum +1", -- 3/3
-		head={ name="Viti. Chapeau +3", augments={'Enfeebling Magic duration','Magic Accuracy'}, priority=3}, -- +3 Refresh
+		ammo="Staunch Tathlum", -- 3/3
+		head={ name="Viti. Chapeau +4", augments={'Enfeebling Magic duration','Magic Accuracy'}, priority=3}, -- +3 Refresh
 		body="Lethargy Sayon +3", -- 14/14  +4 Refresh
 		hands="Leth. Ganth. +3", -- 11/11
 		legs="Malignance Tights", -- 7/7
@@ -147,7 +147,7 @@ function get_sets()
     }
 	-- Gear to swap out for Movement
 	sets.Movement = {
-		left_ring="Defending Ring",
+		left_ring="Murky Ring",
 		legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}}
 	}
 
@@ -181,13 +181,36 @@ function get_sets()
 		right_ring="Chirich Ring +1",
 		back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dual Wield"+10','Damage taken-5%',}},
 	}
-
+	--Used for Aminon Idle: 
 	sets.OffenseMode.TP = set_combine(sets.OffenseMode, {
+		ammo={ 
+			name="Coiste Bodhar", 
+			augments={'Path: A',}},
+		head={ 
+			name="Viti. Chapeau +4", 
+			augments={'Enfeebling Magic duration','Magic Accuracy',}},
+		body="Lethargy Sayon +3",
+		hands="Leth. Ganth. +3",
+		legs="Malignance Tights",
+		feet="Malignance Boots",
+		neck="Anu Torque",
+		waist = {
+            name = "Sailfi Belt +1",
+            augments = {'Path: A'}
+        },
+		left_ear="Alabaster Earring",
+		right_ear={ 
+			name="Leth. Earring +1", 
+			augments={'System: 1 ID: 1676 Val: 0','Accuracy+14','Mag. Acc.+14','"Dbl.Atk."+5',}},
+		left_ring="Stikini Ring +1",
+		right_ring="Chirich Ring +1",
+		back={ 
+		name="Sucellos's Cape", 
+		augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dual Wield"+10','Damage taken-5%',}},
+	}) --Need to create another TP cape that include STP
 
-	})
+	sets.OffenseMode.DT = set_combine(sets.OffenseMode, {
 
-	sets.OffenseMode.DT = set_combine(sets.OffenseMode, { 
-	
 	})
 	sets.OffenseMode.ACC = set_combine(sets.OffenseMode, { 
 	
@@ -201,7 +224,9 @@ function get_sets()
             name = "Carmine Cuisses +1",
             augments = {'Accuracy+20', 'Attack+12', '"Dual Wield"+6'},
         },
-        back={ name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dual Wield"+10','Damage taken-5%',}},
+        back={ 
+			name="Sucellos's Cape", 
+			augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dual Wield"+10','Damage taken-5%',}},
 	}
 
 	-- ===================================================================================================================
@@ -214,7 +239,9 @@ function get_sets()
 	-- 50% Fast Cast is needed on RDM (Fast Cast V - 30%)
 	sets.Precast.FastCast = {
         head = "Atrophy Chapeau +3", -- 16%
-		body={ name="Viti. Tabard +3", augments={'Enhances "Chainspell" effect',}}, --15
+		body={ 
+			name="Viti. Tabard +3", 
+			augments={'Enhances "Chainspell" effect',}}, --15
 		hands="Malignance Gloves",
 		legs="Aya. Cosciales +2", -- 6
 		feet="Malignance Boots",
@@ -223,7 +250,9 @@ function get_sets()
 		left_ear={ name="Eabani Earring", priority=4},
 		right_ear={ name="Etiolation Earring", priority=3}, --1
 		left_ring="Kishar Ring",
-		right_ring={ name="Gelatinous Ring +1", augments={'Path: A',}, priority=1},
+		right_ring={ 
+			name="Gelatinous Ring +1", 
+			augments={'Path: A',}, priority=1},
 		back = {
             name = "Sucellos's Cape",
             augments = {'MND+20', 'Mag. Acc+20 /Mag. Dmg.+20', 'Mag. Acc.+10', '"Fast Cast"+10'}
@@ -376,11 +405,20 @@ function get_sets()
 	-- Spells that require SKILL - RDM only needs 500 or more except Temper II
 	sets.Midcast.Enhancing.Skill = set_combine(sets.Midcast.Enhancing, {
         main="Pukulatmuj +1",
-        sub={ name="Forfend +1", augments={'Path: A',}},
+        sub={ 
+			name="Forfend +1", 
+			augments={'Path: A',}
+		},
         ammo="Staunch Tathlum",
         head="Befouled Crown",
-        body={ name="Viti. Tabard +3", augments={'Enhances "Chainspell" effect',}},
-        hands={ name="Viti. Gloves +3", augments={'Enhancing Magic duration',}},
+        body={ 
+			name="Viti. Tabard +3", 
+			augments={'Enhances "Chainspell" effect',}
+		},
+        hands={ 
+			name="Viti. Gloves +3", 
+			augments={'Enhancing Magic duration',}
+		},
         legs="Atrophy Tights +3",
         feet="Leth. Houseaux +3",
         neck="Incanter's Torque",
@@ -391,7 +429,8 @@ function get_sets()
         right_ring="Stikini Ring +1",
         back={ 
 			name="Ghostfyre Cape", 
-			augments={'Enfb.mag. skill +5','Enha.mag. skill +10','Mag. Acc.+9','Enh. Mag. eff. dur. +20',}}, 
+			augments={'Enfb.mag. skill +5','Enha.mag. skill +10','Mag. Acc.+9','Enh. Mag. eff. dur. +20',}
+		}, 
 	})
 
 	-- used to boost Gain Spells
@@ -401,24 +440,42 @@ function get_sets()
 
 	-- Enfeebling
 	sets.Midcast.Enfeebling = {
-		main={ name="Crocea Mors", augments={'Path: C',}},
+		main={ 
+			name="Crocea Mors", 
+			augments={'Path: C',}
+		},
 		sub="Ammurapi Shield",
 		ammo="Regal Gem",
-		head={ name="Viti. Chapeau +3", augments={'Enfeebling Magic duration','Magic Accuracy',}},
-		body="Atrophy Tabard +3",
+		head={ 
+			name="Viti. Chapeau +4", 
+			augments={'Enfeebling Magic duration','Magic Accuracy',}
+		},
+		body="Atrophy Tabard +4",
 		hands="Leth. Ganth. +3",
         legs = {
             name = "Chironic Hose",
             augments = {'Mag. Acc.+25 "Mag.Atk.Bns."+25', 'MND+13', 'Mag. Acc.+9', '"Mag.Atk.Bns."+15'}
         },
-		feet={ name="Vitiation Boots +3", augments={'Immunobreak Chance',}},
-		neck={ name="Dls. Torque +2", augments={'Path: A',}},
-		waist={ name="Obstin. Sash", augments={'Path: A',}},
+		feet={ 
+			name="Vitiation Boots +3", 
+			augments={'Immunobreak Chance',}
+		},
+		neck={ 
+			name="Dls. Torque +2", 
+			augments={'Path: A',}
+		},
+		waist={ 
+			name="Obstin. Sash", 
+			augments={'Path: A',}
+		},
 		left_ear="Regal Earring",
 		right_ear="Snotra Earring",
 		left_ring={name="Stikini Ring +1", bag="wardrobe3"},
 		right_ring={name="Stikini Ring +1", bag="wardrobe4"},
-		back={ name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Fast Cast"+10',}},
+		back={ 
+			name="Sucellos's Cape", 
+			augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Fast Cast"+10',}
+		},
 	}
 
 	-- Skill Based ('Dispel','Aspir','Aspir II','Aspir III','Drain','Drain II','Drain III','Frazzle','Frazzle II','Stun','Poison','Poison II','Poisonga')
@@ -431,10 +488,10 @@ function get_sets()
         range = "Ullr",
         ammo = empty,
         head = {
-            name = "Viti. Chapeau +3",
+            name = "Viti. Chapeau +4",
             augments = {'Enfeebling Magic duration', 'Magic Accuracy'}
         },
-        body = "Atrophy Tabard +3",
+        body = "Atrophy Tabard +4",
         hands = "Leth. Ganth. +3",
 		neck = "Null Loop",
         left_ring = {
@@ -459,9 +516,18 @@ function get_sets()
 		body="Lethargy Sayon +3", -- 14%
 		-- legs="Lethargy Fuseau +3",
 		left_ear="Malignance Earring",
-		back={ name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Fast Cast"+10',}}, -- 10%
-		feet={ name="Vitiation Boots +3", augments={'Immunobreak Chance',}}, -- 10%
-		neck={ name="Dls. Torque +2", augments={'Path: A',}}, -- 10%
+		back={ 
+			name="Sucellos's Cape", 
+			augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Fast Cast"+10',}
+		}, -- 10%
+		feet={ 
+			name="Vitiation Boots +3", 
+			augments={'Immunobreak Chance',}
+		}, -- 10%
+		neck={ 
+			name="Dls. Torque +2", 
+			augments={'Path: A',}
+		}, -- 10%
 		-- back = {
         --     name = "Aurist's Cape +1",
         --     augments = {'Path: A'}
@@ -644,7 +710,7 @@ function get_sets()
 		-- sub = "Enki Strap",
         -- range = "Ullr",
         head = "Leth. Chappel +3",
-        body = "Atrophy Tabard +3",
+        body = "Atrophy Tabard +4",
 		-- body = "Lethargy Sayon +3",
         hands = "Leth. Ganth. +3",
 		legs = "Leth. Fuseau +3",
@@ -713,7 +779,7 @@ function get_sets()
 
 	sets.Midcast.Refresh = set_combine(sets.Midcast.Enhancing, {
 		head="Amalric Coif +1",
-		body="Atrophy Tabard +3",
+		body="Atrophy Tabard +4",
 		legs="Leth. Fuseau +3",
 		waist = "Gishdubar Sash",
 		right_ear={ name="Tuisto Earring", priority=1},

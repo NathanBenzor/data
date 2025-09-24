@@ -268,7 +268,7 @@ function init_gear_sets()
         feet = "Bihu Slippers +3", -- 9
         neck = "Moonbow Whistle +1",
         -- ear1="Genmei Earring",
-        ring1 = "Defending Ring",
+        ring1 = "Murky Ring",
         waist = "Embla sash"
     })
 
@@ -654,7 +654,7 @@ function init_gear_sets()
         right_ear={ name="Fili Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+13','Mag. Acc.+13','Damage taken-4%',}},
         left_ear = "Etiolation Earring",
         ring2 = "Stikini Ring +1",
-        ring1 = "Defending Ring",
+        ring1 = "Murky Ring",
         waist = "Flume Belt",
         back = {
             name = "Intarabus's Cape",
@@ -938,7 +938,7 @@ function init_gear_sets()
         waist="Plat. Mog. Belt",
         left_ear="Regal Earring",
         right_ear={ name="Fili Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+13','Mag. Acc.+13','Damage taken-4%',}},
-        left_ring="Defending Ring",
+        left_ring="Murky Ring",
         right_ring="Shneddick Ring",
         back={ name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','Phys. dmg. taken-10%',}},
     }
@@ -956,7 +956,7 @@ function init_gear_sets()
         waist = "Flume Belt",
         -- left_ear="Genmei Earring",
         right_ear = "Odnowa Earring +1",
-        left_ring = "Defending Ring",
+        left_ring = "Murky Ring",
         right_ring = "Moonlight Ring",
         back = "Moonlight Cape"
     }
@@ -995,7 +995,7 @@ function init_gear_sets()
         waist = "Carrier's Sash",
         right_ear = "Eabani Earring",
         left_ear = "Etiolation Earring",
-        left_ring = "Defending Ring",
+        left_ring = "Murky Ring",
         right_ring = "Moonlight Ring",
         back = "Moonlight Cape"
     }
@@ -1017,7 +1017,7 @@ function init_gear_sets()
         waist = "Orpheus's Sash",
         left_ear = "Regal Earring",
         right_ear={ name="Fili Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+13','Mag. Acc.+13','Damage taken-4%',}},
-        left_ring = "Defending Ring",
+        left_ring = "Murky Ring",
         right_ring = "Stikini Ring +1",
         back = "Moonlight Cape"
 
@@ -1072,9 +1072,9 @@ function init_gear_sets()
             name = "Coiste Bodhar",
             augments = {'Path: A'}
         },
-        head = {
-            name = "Nyame Helm",
-            augments = {'Path: B'}
+        head={ 
+            name="Bunzi's Hat", 
+            augments={'Path: A',}
         },
         body = "Ashera Harness",
         hands = "Bunzi's Gloves",
@@ -1212,7 +1212,7 @@ function init_gear_sets()
     sets.engaged.Hybrid = {
         neck = "Loricate Torque +1", -- 6/6
         ring1 = "Moonlight Ring", -- 5/5
-        ring2 = "Defending Ring" -- 10/10
+        ring2 = "Murky Ring" -- 10/10
     }
 
     sets.engaged.DT = set_combine(sets.engaged, sets.engaged.Hybrid)
@@ -1373,7 +1373,7 @@ function job_midcast(spell, action, spellMap, eventArgs)
                 right_ear = "Zennaroi Earring"
             })
             equip({
-                left_ring = "Defending Ring"
+                left_ring = "Murky Ring"
             })
             equip({
                 right_ring = "Inyanga Ring"
@@ -1410,7 +1410,7 @@ function job_midcast(spell, action, spellMap, eventArgs)
                 right_ear = "Zennaroi Earring"
             })
             equip({
-                left_ring = "Defending Ring"
+                left_ring = "Murky Ring"
             })
             equip({
                 right_ring = "Inyanga Ring"
@@ -1447,7 +1447,7 @@ function job_midcast(spell, action, spellMap, eventArgs)
                 right_ear = "Zennaroi Earring"
             })
             equip({
-                left_ring = "Defending Ring"
+                left_ring = "Murky Ring"
             })
             equip({
                 right_ring = "Inyanga Ring"
@@ -1484,7 +1484,7 @@ function job_midcast(spell, action, spellMap, eventArgs)
                 right_ear = "Zennaroi Earring"
             })
             equip({
-                left_ring = "Defending Ring"
+                left_ring = "Murky Ring"
             })
             equip({
                 right_ring = "Inyanga Ring"
@@ -1521,7 +1521,7 @@ function job_midcast(spell, action, spellMap, eventArgs)
                 right_ear = "Zennaroi Earring"
             })
             equip({
-                left_ring = "Defending Ring"
+                left_ring = "Murky Ring"
             })
             equip({
                 right_ring = "Inyanga Ring"
