@@ -261,13 +261,22 @@ function get_sets()
         ammo = Ammo.RA, -- Smart_Ammo() will select from your XXXX.RA type
         head = "Null Masque",
         body = "Adamantite Armor",
-        hands = "Nyame Gauntlets",
-        legs = "Nyame Flanchard",
-        feet = "Nyame Sollerets",
+        hands = {
+            name = "Nyame Gauntlets",
+            augments = {'Path: B'}
+        },
+        legs = {
+            name = "Nyame Flanchard",
+            augments = {'Path: B'}
+        },
+        feet = {
+            name = "Nyame Sollerets",
+            augments = {'Path: B'}
+        },
         neck = "Rep. Plat. Medal",
         waist = "Null Belt",
         left_ear = {
-            name = "Odnowa Earring +1",
+            name = "Alabaster Earring",
             augments = {'Path: A'}
         },
         right_ear = "Infused Earring",
@@ -275,7 +284,10 @@ function get_sets()
             name = "Gelatinous Ring +1",
             augments = {'Path: A'}
         },
-        right_ring = "Murky Ring",
+        right_ring = {
+            name = "Murky Ring",
+            augments = {'Path: A'}
+        },
         back = {
             name = "Belenus's Cape",
             augments = {'AGI+20', 'Rng.Acc.+20 Rng.Atk.+20', 'Rng.Acc.+10', '"Store TP"+10', 'Phys. dmg. taken-10%'}
@@ -292,7 +304,7 @@ function get_sets()
         neck = "Rep. Plat. Medal",
         waist = "Null Belt",
         left_ear = {
-            name = "Odnowa Earring +1",
+            name = "Alabaster Earring",
             augments = {'Path: A'}
         },
         right_ear = "Infused Earring",

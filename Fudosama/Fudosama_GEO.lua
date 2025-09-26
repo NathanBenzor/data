@@ -87,10 +87,7 @@ function get_sets()
         },
         waist = "Fucho-no-Obi",
         left_ear = "Infused Earring",
-        right_ear = {
-            name = "Azimuth Earring +1",
-            augments = {'System: 1 ID: 1676 Val: 0', 'Mag. Acc.+14', 'Damage taken-5%'}
-        },
+        right_ear = "Alabaster Earring",
         left_ring = "Murky Ring",
         right_ring = "Stikini Ring +1",
         back = {
