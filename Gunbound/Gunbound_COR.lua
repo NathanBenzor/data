@@ -160,6 +160,7 @@ function get_sets()
         main = "Voluspa Knife",
         sub = "Tauret"
     }
+
     -- Ammo Selection
     Ammo.Bullet.RA = "Chrono Bullet" -- TP Ammo
     Ammo.Bullet.WS = "Chrono Bullet" -- Physical Weaponskills
@@ -723,7 +724,7 @@ function get_sets()
             augments = {'Weapon skill damage +5%', 'Accuracy+3'}
         },
         feet = {
-            name = "Lanun Bottes +3",
+            name = "Lanun Bottes +4",
             augments = {'Enhances "Wild Card" effect'}
         },
         neck = "Rep. Plat. Medal",
@@ -770,7 +771,7 @@ function get_sets()
     sets.WS.MAB = set_combine(sets.WS, {
         -- ammo=Ammo.Bullet.MAB,
         feet = {
-            name = "Lanun Bottes +3",
+            name = "Lanun Bottes +4",
             augments = {'Enhances "Wild Card" effect'}
         },
         waist = "Eschan Stone",
@@ -800,7 +801,7 @@ function get_sets()
             augments = {'Weapon skill damage +5%', 'Accuracy+3'}
         },
         feet = {
-            name = "Lanun Bottes +3",
+            name = "Lanun Bottes +4",
             augments = {'Enhances "Wild Card" effect'}
         },
         neck = {
@@ -844,7 +845,7 @@ function get_sets()
             name = "Nyame Flanchard",
             augments = {'Path: B'}
         },
-        feet = "Lanun Bottes +3",
+        feet = "Lanun Bottes +4",
         neck = "Fotia Gorget",
         waist = "Fotia Belt",
         left_ear = "Ishvara Earring",
