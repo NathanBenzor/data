@@ -77,7 +77,7 @@ function get_sets()
         --     name = "Demers. Degen +1",
         --     augments = {'Path: A'}
         -- }
-        sub = "Kaja Rod"
+        sub = "Machaera +2"
     }
 
     sets.Weapons['Eviceration'] = {
@@ -98,7 +98,7 @@ function get_sets()
 
     sets.Weapons['Black Halo'] = {
         main="Kaja Rod",
-        sub="Naegling",
+        sub="Machaera +2",
     }
 
     sets.Weapons['Ullr'] = {
@@ -139,9 +139,9 @@ function get_sets()
         ammo="Pemphredo Tathlum",
         head="Leth. Chappel +2",
         body = "Lethargy Sayon +3", -- 14/14  +4 Refresh
-        hands="Leth. Ganth. +2", -- 11/11
+        hands="Leth. Ganth. +3", -- 11/11
         legs="Nyame Flanchard",
-        feet="Nyame Sollerets",
+        feet="Malignance Boots",
         neck={ 
             name="Dls. Torque +2", 
             augments={'Path: A',}},
@@ -239,7 +239,7 @@ function get_sets()
         legs={ 
             name="Carmine Cuisses +1", 
             augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}},
-        feet="Aya. Gambieras +2",
+        feet="Malignance Boots",
         -- neck="Anu Torque",
         neck={ 
             name="Dls. Torque +2", 
@@ -333,7 +333,7 @@ function get_sets()
     sets.Enspell = {}
 
     sets.Saboteur = {
-        hands = "Leth. Ganth. +2"
+        hands = "Leth. Ganth. +3"
     }
 
     sets.TreasureHunter = {
@@ -668,11 +668,11 @@ function get_sets()
         sub="Kaja Rod",
         ammo="Pemphredo Tathlum",
         head = {
-            name = "Viti. Chapeau +3",
+            name = "Viti. Chapeau +4",
             augments = {'Enfeebling Magic duration', 'Magic Accuracy'}
         },
         body="Atrophy Tabard +4",
-        hands = "Leth. Ganth. +2",
+        hands = "Leth. Ganth. +3",
         legs={ name="Psycloth Lappas", augments={'MP+80','Mag. Acc.+15','"Fast Cast"+7',}},
         feet={ name="Vitiation Boots +3", augments={'Immunobreak Chance',}},
         neck={ 
@@ -730,11 +730,11 @@ function get_sets()
         range = "Kaja bow",
         ammo = empty,
         head = {
-            name = "Viti. Chapeau +3",
+            name = "Viti. Chapeau +4",
             augments = {'Enfeebling Magic duration', 'Magic Accuracy'}
         },
         body = "Atrophy Tabard +4",
-        hands = "Leth. Ganth. +2",
+        hands = "Leth. Ganth. +3",
 
 		neck={ 
             name="Dls. Torque +2", 
@@ -776,7 +776,7 @@ function get_sets()
     -- Duration Based ('Sleep','Sleep II','Sleepga','Sleepga II','Diaga','Dia','Dia II','Dia III','Bio','Bio II','Bio III','Silence','Gravity','Gravity II','Inundation','Break','Breakaga', 'Bind', 'Bind II')
     sets.Midcast.Enfeebling.Duration = set_combine(sets.Midcast.Enfeebling, {
         head = {
-            name = "Viti. Chapeau +3",
+            name = "Viti. Chapeau +4",
             augments = {'Enfeebling Magic duration', 'Magic Accuracy'}
         }, -- 15s (3 seconds x 5 merits)
         hands = "Regal Cuffs", -- 20% swaps out with Saboteur active
@@ -892,7 +892,7 @@ function get_sets()
         },
         head = "Leth. Chappel +2",
         body = "Lethargy Sayon +3",
-        hands = "Leth. Ganth. +2",
+        hands = "Leth. Ganth. +3",
         legs = "Leth. Fuseau +2",
         feet = "Leth. Houseaux +3",
         neck = "Sibyl Scarf",
@@ -936,8 +936,8 @@ function get_sets()
     sets.JA["Convert"] = {}
     sets.JA["Composure"] = {
         head = "Leth. Chappel +2",
-        body = "Lethargy Sayon +2",
-        hands = "Leth. Ganth. +2",
+        body = "Lethargy Sayon +3",
+        hands = "Leth. Ganth. +3",
         legs = "Leth. Fuseau +2",
         feet = "Leth. Houseaux +3"
     }
@@ -1072,7 +1072,7 @@ function get_sets()
 
     sets.WS["Savage Blade"] = set_combine(sets.WS,{
         ammo="Oshasha's Treatise",
-        head={ name="Viti. Chapeau +3", augments={'Enfeebling Magic duration','Magic Accuracy',}},
+        head={ name="Viti. Chapeau +4", augments={'Enfeebling Magic duration','Magic Accuracy',}},
         body="Lethargy Sayon +3",
         hands="Atrophy Gloves +2",
         legs="Leth. Fuseau +2",
@@ -1104,7 +1104,7 @@ function get_sets()
 
     sets.WS["Black Halo"] = set_combine(sets.WS.WSD, {
         ammo="Oshasha's Treatise",
-        head={ name="Viti. Chapeau +3", augments={'Enfeebling Magic duration','Magic Accuracy',}},
+        head={ name="Viti. Chapeau +4", augments={'Enfeebling Magic duration','Magic Accuracy',}},
         body="Lethargy Sayon +3",
         hands="Atrophy Gloves +2",
         legs="Leth. Fuseau +2",
